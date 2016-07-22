@@ -1,0 +1,30 @@
+{
+    "name": "printu/elektroniczny-nadawca",
+    "description": "Elektroniczny Nadawca WebAPI",
+    "keywords": [
+        "soap",
+        "poczta polska",
+        "e-nadawca",
+        "elektroniczny nadawca",
+        "client",
+        "poczta-polska"
+    ],
+    "type": "library",
+    "homepage": "https://e-nadawca.poczta-polska.pl/",
+    "authors": [
+        {
+            "name": "Paweł Krzaczkowski",
+            "email": "pawel@freshmind.pl",
+            "homepage": "https://github.com/krzaczek"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "PocztaPolska\\": "src/"
+        }
+    }
+}
