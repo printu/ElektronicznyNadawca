@@ -1,6 +1,7 @@
-{
+    {
     "name": "printu/elektroniczny-nadawca",
     "description": "Elektroniczny Nadawca WebAPI",
+    "license": "MIT"
     "keywords": [
         "soap",
         "poczta polska",
