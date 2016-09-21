@@ -2244,7 +2244,7 @@ class ElektronicznyNadawca extends \SoapClient
         'addZalacznikDoReklamacjiResponse' => 'addZalacznikDoReklamacjiResponse'
     );
 
-    public function ElektronicznyNadawca($wsdl = "en.wsdl", $options = array())
+    public function __construct($wsdl = "en.wsdl", $options = array())
     {
         foreach (self::$classmap as $key => $value) {
             if (!isset($options['classmap'][$key])) {
