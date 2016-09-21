@@ -1,6 +1,6 @@
 <?php
 
-namespace PocztaPolska\ElektronicznyNadawcaLabs;
+namespace PocztaPolska;
 
 class addShipment
 {
@@ -158,7 +158,6 @@ class kodPocztowyType
 
 class paczkaPocztowaType
 {
-    public $epo; // EPOType
     public $posteRestante; // boolean
     public $iloscPotwierdzenOdbioru; // iloscPotwierdzenOdbioruType
     public $kategoria; // kategoriaType
@@ -224,8 +223,6 @@ class przesylkaPoleconaKrajowaType
     public $masa; // masaType
     public $egzemplarzBiblioteczny; // boolean
     public $dlaOciemnialych; // boolean
-    public $obszarMiasto; // boolean
-    public $miejscowa; // boolean
 }
 
 class przesylkaHandlowaType
@@ -279,7 +276,6 @@ class sendEnvelope
     public $urzadNadania; // urzadNadaniaType
     public $pakiet; // pakietType
     public $idBufor; // int
-    public $profil; // profilType
 }
 
 class sendEnvelopeResponseType
@@ -287,7 +283,6 @@ class sendEnvelopeResponseType
     public $idEnvelope; // int
     public $envelopeStatus; // envelopeStatusType
     public $error; // errorType
-    public $envelopeFilename; // string
 }
 
 class urzadNadaniaType
@@ -449,7 +444,6 @@ class addShipmentResponseItemType
     public $error; // errorType
     public $numerNadania; // numerNadaniaType
     public $guid; // guidType
-    public $numerTransakcjiOdbioru; // string
 }
 
 class getKarty
@@ -593,7 +587,6 @@ class przesylkaZagranicznaType
 class przesylkaRejestrowanaType
 {
     public $adres; // adresType
-    public $nadawca; // adresType
     public $numerNadania; // numerNadaniaType
 }
 
@@ -612,12 +605,10 @@ class przesylkaBiznesowaType
     public $urzadWydaniaEPrzesylki; // urzadWydaniaEPrzesylkiType
     public $subPrzesylka; // subPrzesylkaBiznesowaType
     public $ubezpieczenie; // ubezpieczenieType
-    public $epo; // EPOType
     public $masa; // masaType
     public $gabaryt; // gabarytBiznesowaType
     public $wartosc; // wartoscType
     public $ostroznie; // boolean
-    public $numerTransakcjiOdbioru; // numerTransakcjiOdbioruType
 }
 
 class gabarytBiznesowaType
@@ -632,6 +623,7 @@ class gabarytBiznesowaType
 
 class subPrzesylkaBiznesowaType
 {
+    public $pobranie; // pobranieType
     public $ubezpieczenie; // ubezpieczenieType
     public $numerNadania; // numerNadaniaType
     public $masa; // masaType
@@ -650,7 +642,6 @@ class subPrzesylkaBiznesowaPlusType
     public $ostroznie; // boolean
     public $numerPrzesylkiKlienta; // string
     public $kwotaTranzakcji; // int
-    public $numerTransakcjiOdbioru; // numerTransakcjiOdbioruType
 }
 
 class getAddresLabelByGuid
@@ -687,7 +678,6 @@ class przesylkaBiznesowaPlusType
     public $iloscDniOczekiwaniaNaWydanie; // int
     public $oczekiwanyTerminDoreczenia; // dateTime
     public $terminRodzajPlus; // terminRodzajPlusType
-    public $numerTransakcjiOdbioru; // numerTransakcjiOdbioruType
 }
 
 class opisType
@@ -843,8 +833,6 @@ class placowkaPocztowaType
     public $powiadomienieSMS; // boolean
     public $punktWydaniaPrzesylkiBiznesowejPlus; // boolean
     public $punktWydaniaPrzesylkiBiznesowej; // boolean
-    public $siecPlacowek; // siecPlacowekEnum
-    public $idZPO; // string
 }
 
 class anonymous124
@@ -1085,21 +1073,6 @@ class listZwyklyType
     public $masa; // masaType
     public $egzemplarzBiblioteczny; // boolean
     public $dlaOciemnialych; // boolean
-    public $obszarMiasto; // boolean
-    public $miejscowa; // boolean
-}
-
-class listZwyklyFirmowyType
-{
-    public $adres; // adresType
-    public $posteRestante; // boolean
-    public $miejscowa; // boolean
-    public $masa; // masaType
-    public $egzemplarzBiblioteczny; // boolean
-    public $dlaOciemnialych; // boolean
-    public $obszarMiasto; // boolean
-    public $kategoria; // kategoriaType
-    public $gabaryt; // gabarytType
 }
 
 class reklamowaType
@@ -1113,7 +1086,6 @@ class getEPOStatus
     public $guid; // guidType
     public $endedOnly; // boolean
     public $idEnvelope; // int
-    public $withBioepo; // boolean
 }
 
 class getEPOStatusResponse
@@ -1160,7 +1132,6 @@ class zasadySpecjalneEnum
 class przesylkaEPOType
 {
     public $EPOInfo; // EPOInfoType
-    public $biometricSignatureContent; // base64Binary
     public $guid; // guidType
     public $numerNadania; // numerNadaniaType
     public $statusEPO; // statusEPOEnum
@@ -1173,9 +1144,6 @@ class przesylkaFirmowaPoleconaType
     public $iloscPotwierdzenOdbioru; // iloscPotwierdzenOdbioruType
     public $masa; // masaType
     public $miejscowa; // boolean
-    public $obszarMiasto; // boolean
-    public $kategoria; // kategoriaType
-    public $gabaryt; // gabarytType
 }
 
 class EPOInfoType
@@ -1198,10 +1166,6 @@ class doreczeniePrzesylkiType
     public $data; // dateTime
     public $osobaOdbierajaca; // string
     public $podmiotDoreczenia; // podmiotDoreczeniaEnum
-    public $dataPelnomocnictwa; // date
-    public $numerPelnomocnictwa; // string
-    public $pieczecFirmowa; // boolean
-    public $miejscePozostawieniaZawiadomieniaODoreczeniu; // miejscePozostawieniaZawiadomieniaODoreczeniuEnum
 }
 
 class zwrotPrzesylkiType
@@ -1225,9 +1189,6 @@ class podmiotDoreczeniaEnum
     const PELNOLETNI_DOMOWNIK = 'PELNOLETNI_DOMOWNIK';
     const SASIAD = 'SASIAD';
     const DOZORCA_DOMU = 'DOZORCA_DOMU';
-    const PELNOMOCNIK_ADRESATA = 'PELNOMOCNIK_ADRESATA';
-    const PRZEDSTAWICIEL_USTAWOWY = 'PRZEDSTAWICIEL_USTAWOWY';
-    const OSOBA_UPOWAZNIONA = 'OSOBA_UPOWAZNIONA';
 }
 
 class przyczynaZwrotuEnum
@@ -1238,12 +1199,6 @@ class przyczynaZwrotuEnum
     const ADRESAT_WYPROWADZIL_SIE = 'ADRESAT_WYPROWADZIL_SIE';
     const ADRESAT_NIE_PODJAL = 'ADRESAT_NIE_PODJAL';
     const INNA = 'INNA';
-}
-
-class miejscePozostawieniaZawiadomieniaODoreczeniuEnum
-{
-    const SKRZYNKA_ADRESATA = 'SKRZYNKA_ADRESATA';
-    const DRZWI_MIESZKANIA = 'DRZWI_MIESZKANIA';
 }
 
 class getAddresLabelCompact
@@ -1321,7 +1276,6 @@ class getEnvelopeBuforListResponse
 
 class buforType
 {
-    public $profil; // profilType
     public $idBufor; // int
     public $dataNadania; // date
     public $urzadNadania; // urzadNadaniaType
@@ -1510,10 +1464,6 @@ class accountType
     public $karta; // kartaType
     public $permision; // permisionType
     public $profil; // profilType
-    public $jednostka; // jednostkaOrganizacyjnaType
-    public $domyslnaJednostka; // jednostkaOrganizacyjnaType
-    public $domyslnyProfil; // profilType
-    public $dostepPoAdresieIP; // string
     public $userName; // string
     public $firstName; // string
     public $lastName; // string
@@ -1527,10 +1477,6 @@ class permisionType
     const TRANSMIT = 'TRANSMIT';
     const MANAGE_PROFILES = 'MANAGE_PROFILES';
     const MANAGE_ORGANIZATION_UNIT = 'MANAGE_ORGANIZATION_UNIT';
-    const MANAGE_TEMPLATES = 'MANAGE_TEMPLATES';
-    const EDIT_PARCELS = 'EDIT_PARCELS';
-    const EDIT_PARCELS_FROM_TEMPLATES = 'EDIT_PARCELS_FROM_TEMPLATES';
-    const MANAGE_ADDRESS_BOOK = 'MANAGE_ADDRESS_BOOK';
 }
 
 class getAccountList
@@ -1585,7 +1531,6 @@ class uslugaPaczkowaType
     public $ubezpieczenie; // ubezpieczenieType
     public $zwrotDokumentow; // zwrotDokumentowPaczkowaType
     public $doreczenie; // doreczenieUslugaPocztowaType
-    public $epo; // EPOType
     public $masa; // masaType
     public $wartosc; // wartoscType
     public $ponadgabaryt; // boolean
@@ -1596,8 +1541,6 @@ class uslugaPaczkowaType
     public $termin; // terminPaczkowaType
     public $opakowanie; // opakowaniePocztowaType
     public $numerPrzesylkiKlienta; // string
-    public $numerTransakcjiOdbioru; // numerTransakcjiOdbioruType
-    public $gabaryt; // gabarytType
 }
 
 class subUslugaPaczkowaType
@@ -1611,7 +1554,6 @@ class subUslugaPaczkowaType
     public $opakowanie; // opakowaniePocztowaType
     public $ponadgabaryt; // boolean
     public $numerPrzesylkiKlienta; // string
-    public $gabaryt; // gabarytType
 }
 
 class terminPaczkowaType
@@ -1643,7 +1585,6 @@ class uslugaKurierskaType
     public $ubezpieczenie; // ubezpieczenieType
     public $zwrotDokumentow; // zwrotDokumentowKurierskaType
     public $doreczenie; // doreczenieUslugaKurierskaType
-    public $epo; // EPOType
     public $masa; // masaType
     public $wartosc; // wartoscType
     public $ponadgabaryt; // boolean
@@ -1655,7 +1596,6 @@ class uslugaKurierskaType
     public $termin; // terminKurierskaType
     public $opakowanie; // opakowanieKurierskaType
     public $numerPrzesylkiKlienta; // string
-    public $numerTransakcjiOdbioru; // numerTransakcjiOdbioruType
 }
 
 class subUslugaKurierskaType
@@ -1791,7 +1731,7 @@ class addReklamacje
 class addReklamacjeResponse
 {
     public $error; // errorType
-    public $reklamacjaInfo; // reklamacjaInfoType
+    public $idReklamacja; // string
 }
 
 class getReklamacje
@@ -1822,7 +1762,7 @@ class addOdwolanieDoReklamacji
 class addOdwolanieDoReklamacjiResponse
 {
     public $error; // errorType
-    public $reklamacjaInfo; // reklamacjaInfoType
+    public $idReklamacja; // string
 }
 
 class addRozbieznoscDoZapowiedziFaktur
@@ -1844,7 +1784,6 @@ class reklamowanaPrzesylkaType
     public $powodReklamacjiOpis; // string
     public $odszkodowanie; // int
     public $oplata; // int
-    public $oczekiwaneOdszkodowanie; // int
 }
 
 class powodReklamacjiType
@@ -2020,250 +1959,6 @@ class addZalacznikDoReklamacjiResponse
     public $error; // errorType
 }
 
-class updateShopEZwroty
-{
-    public $shop; // shopEZwrotyType
-}
-
-class updateShopEZwrotyResponse
-{
-    public $error; // errorType
-}
-
-class shopEZwrotyType
-{
-    public $eZwrotPrzesylki; // eZwrotPrzesylkiType
-    public $idShop; // int
-    public $nazwa; // nazwaEZwrotyType
-    public $nazwa2; // nazwaEZwrotyType
-    public $przyjaznaNazwa; // nazwaEZwrotyType
-    public $ulica; // ulicaType
-    public $numerDomu; // numerDomuType
-    public $numerLokalu; // numerLokaluType
-    public $miejscowosc; // miejscowoscType
-    public $kodPocztowy; // kodPocztowyType
-    public $mobile; // mobileType
-    public $email; // emailType
-    public $nip; // string
-    public $regon; // string
-    public $krs; // string
-    public $eZwrotTyp; // eZwrotTypZgodyType
-    public $wymagalnoscNumeruIdentyfikujacegoPrzesylke; // boolean
-}
-
-class nazwaEZwrotyType
-{
-}
-
-class statusZgodyEZwrotNameType
-{
-    const NOWY = 'NOWY';
-    const ZAAKCEPTOWANY = 'ZAAKCEPTOWANY';
-    const ODRZUCONY = 'ODRZUCONY';
-}
-
-class eZwrotPrzesylkiType
-{
-    const ZWROTPACZKA48 = 'ZWROTPACZKA48';
-    const ZWROTKURIEREKSPRES24 = 'ZWROTKURIEREKSPRES24';
-}
-
-class getListaZgodEZwrotow
-{
-    public $status; // statusZgodyEZwrotNameType
-}
-
-class getListaZgodEZwrotowResponse
-{
-    public $lista; // oczekujeNaZgodeEZwrotType
-    public $error; // errorType
-}
-
-class oczekujeNaZgodeEZwrotType
-{
-    public $idZgody; // int
-    public $nazwaProduktu; // nazwaProduktuEZwrotType
-    public $numerZamowienia; // numerZamowieniaEZwrotType
-    public $numerNadania; // numerNadaniaType
-    public $email; // emailType
-    public $dataNadania; // date
-    public $guidZgodaEZwrot; // guidType
-}
-
-class nazwaProduktuEZwrotType
-{
-}
-
-class numerZamowieniaEZwrotType
-{
-}
-
-class setStatusZgodyNaEZwrot
-{
-    public $statusZgody; // statusZgodyEZwrotType
-}
-
-class setStatusZgodyNaEZwrotResponse
-{
-    public $error; // errorType
-}
-
-class statusZgodyEZwrotType
-{
-    public $eZwrotPrzesylki; // eZwrotPrzesylkiType
-    public $guidZgodaEZwrot; // guidType
-    public $status; // statusZgodyEZwrotNameType
-}
-
-class eZwrotTypZgodyType
-{
-    const ZGODA_BRAK = 'ZGODA_BRAK';
-    const ZGODA_AUTOMATYCZNA = 'ZGODA_AUTOMATYCZNA';
-    const ZGODA_INDYWIDUALNA = 'ZGODA_INDYWIDUALNA';
-}
-
-class przesylkaEZwrotPocztexType
-{
-    public $numerNadaniaZwrot; // numerNadaniaType
-}
-
-class przesylkaEZwrotPaczkaType
-{
-    public $numerNadaniaZwrot; // numerNadaniaType
-}
-
-class nazwaProduktuType
-{
-}
-
-class numerZamowieniaType
-{
-}
-
-class wyslijLinkaOStatusieEZwrotu
-{
-    public $guidZgodaEZwrot; // guidType
-}
-
-class wyslijLinkaOStatusieEZwrotuResponse
-{
-    public $error; // errorType
-}
-
-class isObszarMiasto
-{
-    public $adres; // obszarAdresowyType
-}
-
-class isObszarMiastoResponse
-{
-    public $obszarAdresowy; // obszarAdresowyResponseType
-}
-
-class obszarAdresowyType
-{
-    public $kodPocztowy; // kodPocztowyType
-    public $miejscowosc; // miejscowoscType
-    public $ulica; // ulicaType
-    public $numerDomu; // numerDomuType
-    public $guid; // guidType
-}
-
-class obszarAdresowyResponseType
-{
-    public $isObszarMiasto; // boolean
-    public $guid; // guidType
-}
-
-class getPaczkaKorzysciInfo
-{
-}
-
-class statusPaczkaKorzysciType
-{
-    const ERROR = 'ERROR';
-    const NIEAKTYWNA = 'NIEAKTYWNA';
-    const AKTYWNA = 'AKTYWNA';
-    const PRZETERMINOWANA = 'PRZETERMINOWANA';
-}
-
-class infoPaczkaKorzysciType
-{
-    public $iloscStandardDo5kg; // int
-    public $iloscPobranieDo5kg; // int
-    public $iloscOdbiorWPunkcieDo5kg; // int
-    public $iloscPobranieOdbiorWPunkcieDo5kg; // int
-    public $iloscStandardDo30kg; // int
-    public $iloscPobranieDo30kg; // int
-    public $iloscOdbiorWPunkcieDo30kg; // int
-    public $iloscPobranieOdbiorWPunkcieDo30kg; // int
-    public $dataWaznosciUmowy; // date
-}
-
-class getPaczkaKorzysciInfoResponse
-{
-    public $status; // statusPaczkaKorzysciType
-    public $idKarta; // int
-    public $info; // infoPaczkaKorzysciType
-    public $error; // errorType
-}
-
-class reklamacjaInfoType
-{
-    public $idReklamacja; // string
-    public $guidPrzesylki; // guidType
-}
-
-class setJednostkaOrganizacyjna
-{
-    public $jednostkaOrganizacyjna; // jednostkaOrganizacyjnaType
-}
-
-class setJednostkaOrganizacyjnaResponse
-{
-    public $error; // errorType
-    public $jednostkaOrganizacyjna; // jednostkaOrganizacyjnaType
-}
-
-class jednostkaOrganizacyjnaType
-{
-    public $account; // accountType
-    public $jednostkaNadrzedna; // jednostkaOrganizacyjnaType
-    public $id; // int
-    public $nazwa; // anonymous309
-    public $opis; // anonymous310
-    public $mpk; // string
-}
-
-class anonymous309
-{
-}
-
-class anonymous310
-{
-}
-
-class getJednostkaOrganizacyjna
-{
-    public $jednostka; // jednostkaOrganizacyjnaType
-}
-
-class getJednostkaOrganizacyjnaResponse
-{
-    public $jednostkaOrganizacyjna; // jednostkaOrganizacyjnaType
-    public $error; // errorType
-}
-
-class siecPlacowekEnum
-{
-    const POCZTAPOLSKA = 'POCZTAPOLSKA';
-    const ORLEN = 'ORLEN';
-}
-
-class numerTransakcjiOdbioruType
-{
-}
-
 /**
  * ElektronicznyNadawca class
  * @author {author}
@@ -2426,7 +2121,6 @@ class ElektronicznyNadawca extends \SoapClient
         'zwrotType' => 'zwrotType',
         'sposobZwrotuType' => 'sposobZwrotuType',
         'listZwyklyType' => 'listZwyklyType',
-        'listZwyklyFirmowyType' => 'listZwyklyFirmowyType',
         'reklamowaType' => 'reklamowaType',
         'getEPOStatus' => 'getEPOStatus',
         'getEPOStatusResponse' => 'getEPOStatusResponse',
@@ -2444,7 +2138,6 @@ class ElektronicznyNadawca extends \SoapClient
         'miejscaPozostawieniaAwizoEnum' => 'miejscaPozostawieniaAwizoEnum',
         'podmiotDoreczeniaEnum' => 'podmiotDoreczeniaEnum',
         'przyczynaZwrotuEnum' => 'przyczynaZwrotuEnum',
-        'miejscePozostawieniaZawiadomieniaODoreczeniuEnum' => 'miejscePozostawieniaZawiadomieniaODoreczeniuEnum',
         'getAddresLabelCompact' => 'getAddresLabelCompact',
         'getAddresLabelCompactResponse' => 'getAddresLabelCompactResponse',
         'getAddresLabelByGuidCompact' => 'getAddresLabelByGuidCompact',
@@ -2548,49 +2241,10 @@ class ElektronicznyNadawca extends \SoapClient
         'cancelReklamacjaResponse' => 'cancelReklamacjaResponse',
         'zalacznikDoReklamacjiType' => 'zalacznikDoReklamacjiType',
         'addZalacznikDoReklamacji' => 'addZalacznikDoReklamacji',
-        'addZalacznikDoReklamacjiResponse' => 'addZalacznikDoReklamacjiResponse',
-        'updateShopEZwroty' => 'updateShopEZwroty',
-        'updateShopEZwrotyResponse' => 'updateShopEZwrotyResponse',
-        'shopEZwrotyType' => 'shopEZwrotyType',
-        'nazwaEZwrotyType' => 'nazwaEZwrotyType',
-        'statusZgodyEZwrotNameType' => 'statusZgodyEZwrotNameType',
-        'eZwrotPrzesylkiType' => 'eZwrotPrzesylkiType',
-        'getListaZgodEZwrotow' => 'getListaZgodEZwrotow',
-        'getListaZgodEZwrotowResponse' => 'getListaZgodEZwrotowResponse',
-        'oczekujeNaZgodeEZwrotType' => 'oczekujeNaZgodeEZwrotType',
-        'nazwaProduktuEZwrotType' => 'nazwaProduktuEZwrotType',
-        'numerZamowieniaEZwrotType' => 'numerZamowieniaEZwrotType',
-        'setStatusZgodyNaEZwrot' => 'setStatusZgodyNaEZwrot',
-        'setStatusZgodyNaEZwrotResponse' => 'setStatusZgodyNaEZwrotResponse',
-        'statusZgodyEZwrotType' => 'statusZgodyEZwrotType',
-        'eZwrotTypZgodyType' => 'eZwrotTypZgodyType',
-        'przesylkaEZwrotPocztexType' => 'przesylkaEZwrotPocztexType',
-        'przesylkaEZwrotPaczkaType' => 'przesylkaEZwrotPaczkaType',
-        'nazwaProduktuType' => 'nazwaProduktuType',
-        'numerZamowieniaType' => 'numerZamowieniaType',
-        'wyslijLinkaOStatusieEZwrotu' => 'wyslijLinkaOStatusieEZwrotu',
-        'wyslijLinkaOStatusieEZwrotuResponse' => 'wyslijLinkaOStatusieEZwrotuResponse',
-        'isObszarMiasto' => 'isObszarMiasto',
-        'isObszarMiastoResponse' => 'isObszarMiastoResponse',
-        'obszarAdresowyType' => 'obszarAdresowyType',
-        'obszarAdresowyResponseType' => 'obszarAdresowyResponseType',
-        'getPaczkaKorzysciInfo' => 'getPaczkaKorzysciInfo',
-        'statusPaczkaKorzysciType' => 'statusPaczkaKorzysciType',
-        'infoPaczkaKorzysciType' => 'infoPaczkaKorzysciType',
-        'getPaczkaKorzysciInfoResponse' => 'getPaczkaKorzysciInfoResponse',
-        'reklamacjaInfoType' => 'reklamacjaInfoType',
-        'setJednostkaOrganizacyjna' => 'setJednostkaOrganizacyjna',
-        'setJednostkaOrganizacyjnaResponse' => 'setJednostkaOrganizacyjnaResponse',
-        'jednostkaOrganizacyjnaType' => 'jednostkaOrganizacyjnaType',
-        'anonymous309' => 'anonymous309',
-        'anonymous310' => 'anonymous310',
-        'getJednostkaOrganizacyjna' => 'getJednostkaOrganizacyjna',
-        'getJednostkaOrganizacyjnaResponse' => 'getJednostkaOrganizacyjnaResponse',
-        'siecPlacowekEnum' => 'siecPlacowekEnum',
-        'numerTransakcjiOdbioruType' => 'numerTransakcjiOdbioruType'
+        'addZalacznikDoReklamacjiResponse' => 'addZalacznikDoReklamacjiResponse'
     );
 
-    public function __construct($wsdl = "labs.wsdl", $options = array())
+    public function __construct($wsdl = "wsdl/en.wsdl", $options = array())
     {
         foreach (self::$classmap as $key => $value) {
             if (!isset($options['classmap'][$key])) {
@@ -2617,21 +2271,6 @@ class ElektronicznyNadawca extends \SoapClient
 
     /**
      *
-     * @param changePassword $parameters
-     * @return changePasswordResponse
-     */
-    public function changePassword(changePassword $parameters)
-    {
-        return $this->__soapCall('changePassword', array(
-            $parameters
-        ), array(
-            'uri' => 'http://e-nadawca.poczta-polska.pl',
-            'soapaction' => ''
-        ));
-    }
-
-    /**
-     *
      * @param sendEnvelope $parameters
      * @return sendEnvelopeResponseType
      */
@@ -2647,12 +2286,72 @@ class ElektronicznyNadawca extends \SoapClient
 
     /**
      *
-     * @param getUrzedyNadania $parameters
-     * @return getUrzedyNadaniaResponse
+     * @param getEnvelopeBufor $parameters
+     * @return getEnvelopeBuforResponse
      */
-    public function getUrzedyNadania(getUrzedyNadania $parameters)
+    public function getEnvelopeBufor(getEnvelopeBufor $parameters)
     {
-        return $this->__soapCall('getUrzedyNadania', array(
+        return $this->__soapCall('getEnvelopeBufor', array(
+            $parameters
+        ), array(
+            'uri' => 'http://e-nadawca.poczta-polska.pl',
+            'soapaction' => ''
+        ));
+    }
+
+    /**
+     *
+     * @param getEnvelopeBuforList $parameters
+     * @return getEnvelopeBuforListResponse
+     */
+    public function getEnvelopeBuforList(getEnvelopeBuforList $parameters)
+    {
+        return $this->__soapCall('getEnvelopeBuforList', array(
+            $parameters
+        ), array(
+            'uri' => 'http://e-nadawca.poczta-polska.pl',
+            'soapaction' => ''
+        ));
+    }
+
+    /**
+     *
+     * @param createEnvelopeBufor $parameters
+     * @return createEnvelopeBuforResponse
+     */
+    public function createEnvelopeBufor(createEnvelopeBufor $parameters)
+    {
+        return $this->__soapCall('createEnvelopeBufor', array(
+            $parameters
+        ), array(
+            'uri' => 'http://e-nadawca.poczta-polska.pl',
+            'soapaction' => ''
+        ));
+    }
+
+    /**
+     *
+     * @param updateEnvelopeBufor $parameters
+     * @return updateEnvelopeBuforResponse
+     */
+    public function updateEnvelopeBufor(updateEnvelopeBufor $parameters)
+    {
+        return $this->__soapCall('updateEnvelopeBufor', array(
+            $parameters
+        ), array(
+            'uri' => 'http://e-nadawca.poczta-polska.pl',
+            'soapaction' => ''
+        ));
+    }
+
+    /**
+     *
+     * @param clearEnvelopeByGuids $parameters
+     * @return clearEnvelopeByGuidsResponse
+     */
+    public function clearEnvelopeByGuids(clearEnvelopeByGuids $parameters)
+    {
+        return $this->__soapCall('clearEnvelopeByGuids', array(
             $parameters
         ), array(
             'uri' => 'http://e-nadawca.poczta-polska.pl',
@@ -2677,147 +2376,12 @@ class ElektronicznyNadawca extends \SoapClient
 
     /**
      *
-     * @param getUrzedyWydajaceEPrzesylki $parameters
-     * @return getUrzedyWydajaceEPrzesylkiResponse
+     * @param moveShipments $parameters
+     * @return moveShipmentsResponse
      */
-    public function getUrzedyWydajaceEPrzesylki(getUrzedyWydajaceEPrzesylki $parameters)
+    public function moveShipments(moveShipments $parameters)
     {
-        return $this->__soapCall('getUrzedyWydajaceEPrzesylki', array(
-            $parameters
-        ), array(
-            'uri' => 'http://e-nadawca.poczta-polska.pl',
-            'soapaction' => ''
-        ));
-    }
-
-    /**
-     *
-     * @param uploadIWDContent $parameters
-     * @return sendEnvelopeResponseType
-     */
-    public function uploadIWDContent(uploadIWDContent $parameters)
-    {
-        return $this->__soapCall('uploadIWDContent', array(
-            $parameters
-        ), array(
-            'uri' => 'http://e-nadawca.poczta-polska.pl',
-            'soapaction' => ''
-        ));
-    }
-
-    /**
-     *
-     * @param getEnvelopeStatus $parameters
-     * @return getEnvelopeStatusResponse
-     */
-    public function getEnvelopeStatus(getEnvelopeStatus $parameters)
-    {
-        return $this->__soapCall('getEnvelopeStatus', array(
-            $parameters
-        ), array(
-            'uri' => 'http://e-nadawca.poczta-polska.pl',
-            'soapaction' => ''
-        ));
-    }
-
-    /**
-     *
-     * @param downloadIWDContent $parameters
-     * @return downloadIWDContentResponse
-     */
-    public function downloadIWDContent(downloadIWDContent $parameters)
-    {
-        return $this->__soapCall('downloadIWDContent', array(
-            $parameters
-        ), array(
-            'uri' => 'http://e-nadawca.poczta-polska.pl',
-            'soapaction' => ''
-        ));
-    }
-
-    /**
-     *
-     * @param getKarty $parameters
-     * @return getKartyResponse
-     */
-    public function getKarty(getKarty $parameters)
-    {
-        return $this->__soapCall('getKarty', array(
-            $parameters
-        ), array(
-            'uri' => 'http://e-nadawca.poczta-polska.pl',
-            'soapaction' => ''
-        ));
-    }
-
-    /**
-     *
-     * @param getPasswordExpiredDate $parameters
-     * @return getPasswordExpiredDateResponse
-     */
-    public function getPasswordExpiredDate(getPasswordExpiredDate $parameters)
-    {
-        return $this->__soapCall('getPasswordExpiredDate', array(
-            $parameters
-        ), array(
-            'uri' => 'http://e-nadawca.poczta-polska.pl',
-            'soapaction' => ''
-        ));
-    }
-
-    /**
-     *
-     * @param setAktywnaKarta $parameters
-     * @return setAktywnaKartaResponse
-     */
-    public function setAktywnaKarta(setAktywnaKarta $parameters)
-    {
-        return $this->__soapCall('setAktywnaKarta', array(
-            $parameters
-        ), array(
-            'uri' => 'http://e-nadawca.poczta-polska.pl',
-            'soapaction' => ''
-        ));
-    }
-
-    /**
-     *
-     * @param hello $parameters
-     * @return helloResponse
-     */
-    public function hello(hello $parameters)
-    {
-        return $this->__soapCall('hello', array(
-            $parameters
-        ), array(
-            'uri' => 'http://e-nadawca.poczta-polska.pl',
-            'soapaction' => ''
-        ));
-    }
-
-    /**
-     *
-     * @param getEnvelopeContentShort $parameters
-     * @return getEnvelopeContentShortResponse
-     */
-    public function getEnvelopeContentShort(getEnvelopeContentShort $parameters)
-    {
-        return $this->__soapCall('getEnvelopeContentShort', array(
-            $parameters
-        ), array(
-            'uri' => 'http://e-nadawca.poczta-polska.pl',
-            'soapaction' => ''
-        ));
-    }
-
-    /**
-     *
-     * @param getEnvelopeContentFull $parameters
-     * @return getEnvelopeContentFullResponse
-     */
-    public function getEnvelopeContentFull(getEnvelopeContentFull $parameters)
-    {
-        return $this->__soapCall('getEnvelopeContentFull', array(
+        return $this->__soapCall('moveShipments', array(
             $parameters
         ), array(
             'uri' => 'http://e-nadawca.poczta-polska.pl',
@@ -2833,6 +2397,21 @@ class ElektronicznyNadawca extends \SoapClient
     public function getAddressLabel(getAddressLabel $parameters)
     {
         return $this->__soapCall('getAddressLabel', array(
+            $parameters
+        ), array(
+            'uri' => 'http://e-nadawca.poczta-polska.pl',
+            'soapaction' => ''
+        ));
+    }
+
+    /**
+     *
+     * @param getAddresLabelCompact $parameters
+     * @return getAddresLabelCompactResponse
+     */
+    public function getAddresLabelCompact(getAddresLabelCompact $parameters)
+    {
+        return $this->__soapCall('getAddresLabelCompact', array(
             $parameters
         ), array(
             'uri' => 'http://e-nadawca.poczta-polska.pl',
@@ -2872,6 +2451,21 @@ class ElektronicznyNadawca extends \SoapClient
 
     /**
      *
+     * @param getEnvelopeStatus $parameters
+     * @return getEnvelopeStatusResponse
+     */
+    public function getEnvelopeStatus(getEnvelopeStatus $parameters)
+    {
+        return $this->__soapCall('getEnvelopeStatus', array(
+            $parameters
+        ), array(
+            'uri' => 'http://e-nadawca.poczta-polska.pl',
+            'soapaction' => ''
+        ));
+    }
+
+    /**
+     *
      * @param getEnvelopeList $parameters
      * @return getEnvelopeListResponse
      */
@@ -2887,12 +2481,192 @@ class ElektronicznyNadawca extends \SoapClient
 
     /**
      *
+     * @param getEnvelopeContentShort $parameters
+     * @return getEnvelopeContentShortResponse
+     */
+    public function getEnvelopeContentShort(getEnvelopeContentShort $parameters)
+    {
+        return $this->__soapCall('getEnvelopeContentShort', array(
+            $parameters
+        ), array(
+            'uri' => 'http://e-nadawca.poczta-polska.pl',
+            'soapaction' => ''
+        ));
+    }
+
+    /**
+     *
+     * @param getEnvelopeContentFull $parameters
+     * @return getEnvelopeContentFullResponse
+     */
+    public function getEnvelopeContentFull(getEnvelopeContentFull $parameters)
+    {
+        return $this->__soapCall('getEnvelopeContentFull', array(
+            $parameters
+        ), array(
+            'uri' => 'http://e-nadawca.poczta-polska.pl',
+            'soapaction' => ''
+        ));
+    }
+
+    /**
+     *
+     * @param getKarty $parameters
+     * @return getKartyResponse
+     */
+    public function getKarty(getKarty $parameters)
+    {
+        return $this->__soapCall('getKarty', array(
+            $parameters
+        ), array(
+            'uri' => 'http://e-nadawca.poczta-polska.pl',
+            'soapaction' => ''
+        ));
+    }
+
+    /**
+     *
+     * @param setAktywnaKarta $parameters
+     * @return setAktywnaKartaResponse
+     */
+    public function setAktywnaKarta(setAktywnaKarta $parameters)
+    {
+        return $this->__soapCall('setAktywnaKarta', array(
+            $parameters
+        ), array(
+            'uri' => 'http://e-nadawca.poczta-polska.pl',
+            'soapaction' => ''
+        ));
+    }
+
+    /**
+     *
+     * @param getUrzedyNadania $parameters
+     * @return getUrzedyNadaniaResponse
+     */
+    public function getUrzedyNadania(getUrzedyNadania $parameters)
+    {
+        return $this->__soapCall('getUrzedyNadania', array(
+            $parameters
+        ), array(
+            'uri' => 'http://e-nadawca.poczta-polska.pl',
+            'soapaction' => ''
+        ));
+    }
+
+    /**
+     *
+     * @param getUrzedyWydajaceEPrzesylki $parameters
+     * @return getUrzedyWydajaceEPrzesylkiResponse
+     */
+    public function getUrzedyWydajaceEPrzesylki(getUrzedyWydajaceEPrzesylki $parameters)
+    {
+        return $this->__soapCall('getUrzedyWydajaceEPrzesylki', array(
+            $parameters
+        ), array(
+            'uri' => 'http://e-nadawca.poczta-polska.pl',
+            'soapaction' => ''
+        ));
+    }
+
+    /**
+     *
+     * @param uploadIWDContent $parameters
+     * @return sendEnvelopeResponseType
+     */
+    public function uploadIWDContent(uploadIWDContent $parameters)
+    {
+        return $this->__soapCall('uploadIWDContent', array(
+            $parameters
+        ), array(
+            'uri' => 'http://e-nadawca.poczta-polska.pl',
+            'soapaction' => ''
+        ));
+    }
+
+    /**
+     *
+     * @param downloadIWDContent $parameters
+     * @return downloadIWDContentResponse
+     */
+    public function downloadIWDContent(downloadIWDContent $parameters)
+    {
+        return $this->__soapCall('downloadIWDContent', array(
+            $parameters
+        ), array(
+            'uri' => 'http://e-nadawca.poczta-polska.pl',
+            'soapaction' => ''
+        ));
+    }
+
+    /**
+     *
+     * @param changePassword $parameters
+     * @return changePasswordResponse
+     */
+    public function changePassword(changePassword $parameters)
+    {
+        return $this->__soapCall('changePassword', array(
+            $parameters
+        ), array(
+            'uri' => 'http://e-nadawca.poczta-polska.pl',
+            'soapaction' => ''
+        ));
+    }
+
+    /**
+     *
+     * @param getPasswordExpiredDate $parameters
+     * @return getPasswordExpiredDateResponse
+     */
+    public function getPasswordExpiredDate(getPasswordExpiredDate $parameters)
+    {
+        return $this->__soapCall('getPasswordExpiredDate', array(
+            $parameters
+        ), array(
+            'uri' => 'http://e-nadawca.poczta-polska.pl',
+            'soapaction' => ''
+        ));
+    }
+
+    /**
+     *
+     * @param hello $parameters
+     * @return helloResponse
+     */
+    public function hello(hello $parameters)
+    {
+        return $this->__soapCall('hello', array(
+            $parameters
+        ), array(
+            'uri' => 'http://e-nadawca.poczta-polska.pl',
+            'soapaction' => ''
+        ));
+    }
+
+    /**
+     *
      * @param getAddresLabelByGuid $parameters
      * @return getAddresLabelByGuidResponse
      */
     public function getAddresLabelByGuid(getAddresLabelByGuid $parameters)
     {
         return $this->__soapCall('getAddresLabelByGuid', array(
+            $parameters
+        ), array(
+            'uri' => 'http://e-nadawca.poczta-polska.pl',
+            'soapaction' => ''
+        ));
+    }
+
+    /**
+     *
+     * @param getAddresLabelByGuidCompact $parameters
+     * @return getAddresLabelByGuidCompactResponse
+     */
+    public function getAddresLabelByGuidCompact(getAddresLabelByGuidCompact $parameters)
+    {
+        return $this->__soapCall('getAddresLabelByGuidCompact', array(
             $parameters
         ), array(
             'uri' => 'http://e-nadawca.poczta-polska.pl',
@@ -2962,51 +2736,6 @@ class ElektronicznyNadawca extends \SoapClient
 
     /**
      *
-     * @param getEnvelopeBufor $parameters
-     * @return getEnvelopeBuforResponse
-     */
-    public function getEnvelopeBufor(getEnvelopeBufor $parameters)
-    {
-        return $this->__soapCall('getEnvelopeBufor', array(
-            $parameters
-        ), array(
-            'uri' => 'http://e-nadawca.poczta-polska.pl',
-            'soapaction' => ''
-        ));
-    }
-
-    /**
-     *
-     * @param clearEnvelopeByGuids $parameters
-     * @return clearEnvelopeByGuidsResponse
-     */
-    public function clearEnvelopeByGuids(clearEnvelopeByGuids $parameters)
-    {
-        return $this->__soapCall('clearEnvelopeByGuids', array(
-            $parameters
-        ), array(
-            'uri' => 'http://e-nadawca.poczta-polska.pl',
-            'soapaction' => ''
-        ));
-    }
-
-    /**
-     *
-     * @param setEnvelopeBuforDataNadania $parameters
-     * @return setEnvelopeBuforDataNadaniaResponse
-     */
-    public function setEnvelopeBuforDataNadania(setEnvelopeBuforDataNadania $parameters)
-    {
-        return $this->__soapCall('setEnvelopeBuforDataNadania', array(
-            $parameters
-        ), array(
-            'uri' => 'http://e-nadawca.poczta-polska.pl',
-            'soapaction' => ''
-        ));
-    }
-
-    /**
-     *
      * @param getEPOStatus $parameters
      * @return getEPOStatusResponse
      */
@@ -3022,87 +2751,12 @@ class ElektronicznyNadawca extends \SoapClient
 
     /**
      *
-     * @param getAddresLabelCompact $parameters
-     * @return getAddresLabelCompactResponse
+     * @param setEnvelopeBuforDataNadania $parameters
+     * @return setEnvelopeBuforDataNadaniaResponse
      */
-    public function getAddresLabelCompact(getAddresLabelCompact $parameters)
+    public function setEnvelopeBuforDataNadania(setEnvelopeBuforDataNadania $parameters)
     {
-        return $this->__soapCall('getAddresLabelCompact', array(
-            $parameters
-        ), array(
-            'uri' => 'http://e-nadawca.poczta-polska.pl',
-            'soapaction' => ''
-        ));
-    }
-
-    /**
-     *
-     * @param getAddresLabelByGuidCompact $parameters
-     * @return getAddresLabelByGuidCompactResponse
-     */
-    public function getAddresLabelByGuidCompact(getAddresLabelByGuidCompact $parameters)
-    {
-        return $this->__soapCall('getAddresLabelByGuidCompact', array(
-            $parameters
-        ), array(
-            'uri' => 'http://e-nadawca.poczta-polska.pl',
-            'soapaction' => ''
-        ));
-    }
-
-    /**
-     *
-     * @param getEnvelopeBuforList $parameters
-     * @return getEnvelopeBuforListResponse
-     */
-    public function getEnvelopeBuforList(getEnvelopeBuforList $parameters)
-    {
-        return $this->__soapCall('getEnvelopeBuforList', array(
-            $parameters
-        ), array(
-            'uri' => 'http://e-nadawca.poczta-polska.pl',
-            'soapaction' => ''
-        ));
-    }
-
-    /**
-     *
-     * @param createEnvelopeBufor $parameters
-     * @return createEnvelopeBuforResponse
-     */
-    public function createEnvelopeBufor(createEnvelopeBufor $parameters)
-    {
-        return $this->__soapCall('createEnvelopeBufor', array(
-            $parameters
-        ), array(
-            'uri' => 'http://e-nadawca.poczta-polska.pl',
-            'soapaction' => ''
-        ));
-    }
-
-    /**
-     *
-     * @param updateEnvelopeBufor $parameters
-     * @return updateEnvelopeBuforResponse
-     */
-    public function updateEnvelopeBufor(updateEnvelopeBufor $parameters)
-    {
-        return $this->__soapCall('updateEnvelopeBufor', array(
-            $parameters
-        ), array(
-            'uri' => 'http://e-nadawca.poczta-polska.pl',
-            'soapaction' => ''
-        ));
-    }
-
-    /**
-     *
-     * @param moveShipments $parameters
-     * @return moveShipmentsResponse
-     */
-    public function moveShipments(moveShipments $parameters)
-    {
-        return $this->__soapCall('moveShipments', array(
+        return $this->__soapCall('setEnvelopeBuforDataNadania', array(
             $parameters
         ), array(
             'uri' => 'http://e-nadawca.poczta-polska.pl',
@@ -3157,57 +2811,12 @@ class ElektronicznyNadawca extends \SoapClient
 
     /**
      *
-     * @param updateAccount $parameters
-     * @return updateAccountResponse
-     */
-    public function updateAccount(updateAccount $parameters)
-    {
-        return $this->__soapCall('updateAccount', array(
-            $parameters
-        ), array(
-            'uri' => 'http://e-nadawca.poczta-polska.pl',
-            'soapaction' => ''
-        ));
-    }
-
-    /**
-     *
      * @param getAccountList $parameters
      * @return getAccountListResponse
      */
     public function getAccountList(getAccountList $parameters)
     {
         return $this->__soapCall('getAccountList', array(
-            $parameters
-        ), array(
-            'uri' => 'http://e-nadawca.poczta-polska.pl',
-            'soapaction' => ''
-        ));
-    }
-
-    /**
-     *
-     * @param getProfilList $parameters
-     * @return getProfilListResponse
-     */
-    public function getProfilList(getProfilList $parameters)
-    {
-        return $this->__soapCall('getProfilList', array(
-            $parameters
-        ), array(
-            'uri' => 'http://e-nadawca.poczta-polska.pl',
-            'soapaction' => ''
-        ));
-    }
-
-    /**
-     *
-     * @param updateProfil $parameters
-     * @return updateProfilResponse
-     */
-    public function updateProfil(updateProfil $parameters)
-    {
-        return $this->__soapCall('updateProfil', array(
             $parameters
         ), array(
             'uri' => 'http://e-nadawca.poczta-polska.pl',
@@ -3232,12 +2841,57 @@ class ElektronicznyNadawca extends \SoapClient
 
     /**
      *
+     * @param updateAccount $parameters
+     * @return updateAccountResponse
+     */
+    public function updateAccount(updateAccount $parameters)
+    {
+        return $this->__soapCall('updateAccount', array(
+            $parameters
+        ), array(
+            'uri' => 'http://e-nadawca.poczta-polska.pl',
+            'soapaction' => ''
+        ));
+    }
+
+    /**
+     *
+     * @param getProfilList $parameters
+     * @return getProfilListResponse
+     */
+    public function getProfilList(getProfilList $parameters)
+    {
+        return $this->__soapCall('getProfilList', array(
+            $parameters
+        ), array(
+            'uri' => 'http://e-nadawca.poczta-polska.pl',
+            'soapaction' => ''
+        ));
+    }
+
+    /**
+     *
      * @param createProfil $parameters
      * @return createProfilResponse
      */
     public function createProfil(createProfil $parameters)
     {
         return $this->__soapCall('createProfil', array(
+            $parameters
+        ), array(
+            'uri' => 'http://e-nadawca.poczta-polska.pl',
+            'soapaction' => ''
+        ));
+    }
+
+    /**
+     *
+     * @param updateProfil $parameters
+     * @return updateProfilResponse
+     */
+    public function updateProfil(updateProfil $parameters)
+    {
+        return $this->__soapCall('updateProfil', array(
             $parameters
         ), array(
             'uri' => 'http://e-nadawca.poczta-polska.pl',
@@ -3262,12 +2916,42 @@ class ElektronicznyNadawca extends \SoapClient
 
     /**
      *
+     * @param addZalacznikDoReklamacji $parameters
+     * @return addZalacznikDoReklamacjiResponse
+     */
+    public function addZalacznikDoReklamacji(addZalacznikDoReklamacji $parameters)
+    {
+        return $this->__soapCall('addZalacznikDoReklamacji', array(
+            $parameters
+        ), array(
+            'uri' => 'http://e-nadawca.poczta-polska.pl',
+            'soapaction' => ''
+        ));
+    }
+
+    /**
+     *
      * @param getReklamacje $parameters
      * @return getReklamacjeResponse
      */
     public function getReklamacje(getReklamacje $parameters)
     {
         return $this->__soapCall('getReklamacje', array(
+            $parameters
+        ), array(
+            'uri' => 'http://e-nadawca.poczta-polska.pl',
+            'soapaction' => ''
+        ));
+    }
+
+    /**
+     *
+     * @param getZapowiedziFaktur $parameters
+     * @return getZapowiedziFakturResponse
+     */
+    public function getZapowiedziFaktur(getZapowiedziFaktur $parameters)
+    {
+        return $this->__soapCall('getZapowiedziFaktur', array(
             $parameters
         ), array(
             'uri' => 'http://e-nadawca.poczta-polska.pl',
@@ -3298,21 +2982,6 @@ class ElektronicznyNadawca extends \SoapClient
     public function cancelReklamacja(cancelReklamacja $parameters)
     {
         return $this->__soapCall('cancelReklamacja', array(
-            $parameters
-        ), array(
-            'uri' => 'http://e-nadawca.poczta-polska.pl',
-            'soapaction' => ''
-        ));
-    }
-
-    /**
-     *
-     * @param getZapowiedziFaktur $parameters
-     * @return getZapowiedziFakturResponse
-     */
-    public function getZapowiedziFaktur(getZapowiedziFaktur $parameters)
-    {
-        return $this->__soapCall('getZapowiedziFaktur', array(
             $parameters
         ), array(
             'uri' => 'http://e-nadawca.poczta-polska.pl',
@@ -3409,141 +3078,4 @@ class ElektronicznyNadawca extends \SoapClient
             'soapaction' => ''
         ));
     }
-
-    /**
-     *
-     * @param addZalacznikDoReklamacji $parameters
-     * @return addZalacznikDoReklamacjiResponse
-     */
-    public function addZalacznikDoReklamacji(addZalacznikDoReklamacji $parameters)
-    {
-        return $this->__soapCall('addZalacznikDoReklamacji', array(
-            $parameters
-        ), array(
-            'uri' => 'http://e-nadawca.poczta-polska.pl',
-            'soapaction' => ''
-        ));
-    }
-
-    /**
-     *
-     * @param updateShopEZwroty $parameters
-     * @return updateShopEZwrotyResponse
-     */
-    public function updateShopEZwroty(updateShopEZwroty $parameters)
-    {
-        return $this->__soapCall('updateShopEZwroty', array(
-            $parameters
-        ), array(
-            'uri' => 'http://e-nadawca.poczta-polska.pl',
-            'soapaction' => ''
-        ));
-    }
-
-    /**
-     *
-     * @param getListaZgodEZwrotow $parameters
-     * @return getListaZgodEZwrotowResponse
-     */
-    public function getListaZgodEZwrotow(getListaZgodEZwrotow $parameters)
-    {
-        return $this->__soapCall('getListaZgodEZwrotow', array(
-            $parameters
-        ), array(
-            'uri' => 'http://e-nadawca.poczta-polska.pl',
-            'soapaction' => ''
-        ));
-    }
-
-    /**
-     *
-     * @param setStatusZgodyNaEZwrot $parameters
-     * @return setStatusZgodyNaEZwrotResponse
-     */
-    public function setStatusZgodyNaEZwrot(setStatusZgodyNaEZwrot $parameters)
-    {
-        return $this->__soapCall('setStatusZgodyNaEZwrot', array(
-            $parameters
-        ), array(
-            'uri' => 'http://e-nadawca.poczta-polska.pl',
-            'soapaction' => ''
-        ));
-    }
-
-    /**
-     *
-     * @param wyslijLinkaOStatusieEZwrotu $parameters
-     * @return wyslijLinkaOStatusieEZwrotuResponse
-     */
-    public function wyslijLinkaOStatusieEZwrotu(wyslijLinkaOStatusieEZwrotu $parameters)
-    {
-        return $this->__soapCall('wyslijLinkaOStatusieEZwrotu', array(
-            $parameters
-        ), array(
-            'uri' => 'http://e-nadawca.poczta-polska.pl',
-            'soapaction' => ''
-        ));
-    }
-
-    /**
-     *
-     * @param isObszarMiasto $parameters
-     * @return isObszarMiastoResponse
-     */
-    public function isObszarMiasto(isObszarMiasto $parameters)
-    {
-        return $this->__soapCall('isObszarMiasto', array(
-            $parameters
-        ), array(
-            'uri' => 'http://e-nadawca.poczta-polska.pl',
-            'soapaction' => ''
-        ));
-    }
-
-    /**
-     *
-     * @param getPaczkaKorzysciInfo $parameters
-     * @return getPaczkaKorzysciInfoResponse
-     */
-    public function getPaczkaKorzysciInfo(getPaczkaKorzysciInfo $parameters)
-    {
-        return $this->__soapCall('getPaczkaKorzysciInfo', array(
-            $parameters
-        ), array(
-            'uri' => 'http://e-nadawca.poczta-polska.pl',
-            'soapaction' => ''
-        ));
-    }
-
-    /**
-     *
-     * @param setJednostkaOrganizacyjna $parameters
-     * @return setJednostkaOrganizacyjnaResponse
-     */
-    public function setJednostkaOrganizacyjna(setJednostkaOrganizacyjna $parameters)
-    {
-        return $this->__soapCall('setJednostkaOrganizacyjna', array(
-            $parameters
-        ), array(
-            'uri' => 'http://e-nadawca.poczta-polska.pl',
-            'soapaction' => ''
-        ));
-    }
-
-    /**
-     *
-     * @param getJednostkaOrganizacyjna $parameters
-     * @return getJednostkaOrganizacyjnaResponse
-     */
-    public function getJednostkaOrganizacyjna(getJednostkaOrganizacyjna $parameters)
-    {
-        return $this->__soapCall('getJednostkaOrganizacyjna', array(
-            $parameters
-        ), array(
-            'uri' => 'http://e-nadawca.poczta-polska.pl',
-            'soapaction' => ''
-        ));
-    }
 }
-
-?>
