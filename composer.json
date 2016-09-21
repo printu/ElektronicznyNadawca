@@ -25,7 +25,7 @@
     },
     "autoload": {
         "classmap": [
-            "ElektronicznyNadawca.php"
+            "src/PocztaPolska/ElektronicznyNadawca.php"
         ]
     }
 }
