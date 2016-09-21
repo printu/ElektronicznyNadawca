@@ -2244,14 +2244,14 @@ class ElektronicznyNadawca extends \SoapClient
         'addZalacznikDoReklamacjiResponse' => 'addZalacznikDoReklamacjiResponse'
     );
 
-    public function __construct($wsdl = __DIR__ . "/wsdl/en.wsdl", $options = array())
+    public function __construct($wsdl = "wsdl/en.wsdl", $options = array())
     {
         foreach (self::$classmap as $key => $value) {
             if (!isset($options['classmap'][$key])) {
                 $options['classmap'][$key] = $value;
             }
         }
-        parent::__construct($wsdl, $options);
+        parent::__construct(__DIR__ . '/' . $wsdl, $options);
     }
 
     /**
