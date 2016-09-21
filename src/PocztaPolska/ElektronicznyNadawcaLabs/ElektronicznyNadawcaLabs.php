@@ -2590,7 +2590,7 @@ class ElektronicznyNadawca extends \SoapClient
         'numerTransakcjiOdbioruType' => 'numerTransakcjiOdbioruType'
     );
 
-    public function ElektronicznyNadawca($wsdl = "labs.wsdl", $options = array())
+    public function __construct($wsdl = "labs.wsdl", $options = array())
     {
         foreach (self::$classmap as $key => $value) {
             if (!isset($options['classmap'][$key])) {
