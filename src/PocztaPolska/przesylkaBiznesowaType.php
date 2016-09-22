@@ -12,7 +12,6 @@ class przesylkaBiznesowaType extends \PocztaPolska\przesylkaRejestrowanaType {
 	/** @var \PocztaPolska\gabarytBiznesowaType */	public $gabaryt;
 	/** @var \PocztaPolska\wartoscType */	public $wartosc;
 	/** @var boolean */	public $ostroznie;
-	/** @var \PocztaPolska\numerTransakcjiOdbioruType */	public $numerTransakcjiOdbioru;
 }
 
 

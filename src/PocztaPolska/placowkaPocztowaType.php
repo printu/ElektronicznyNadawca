@@ -9,8 +9,8 @@ class placowkaPocztowaType {
 	/** @var string */	public $wojewodztwo;
 	/** @var string */	public $powiat;
 	/** @var string */	public $miejsce;
-	/** @var \PocztaPolska\anonymous127 */	public $kodPocztowy;
-	/** @var \PocztaPolska\anonymous128 */	public $miejscowosc;
+	/** @var \PocztaPolska\anonymous124 */	public $kodPocztowy;
+	/** @var \PocztaPolska\anonymous125 */	public $miejscowosc;
 	/** @var string */	public $ulica;
 	/** @var string */	public $numerDomu;
 	/** @var string */	public $numerLokalu;
@@ -19,8 +19,6 @@ class placowkaPocztowaType {
 	/** @var boolean */	public $powiadomienieSMS;
 	/** @var boolean */	public $punktWydaniaPrzesylkiBiznesowejPlus;
 	/** @var boolean */	public $punktWydaniaPrzesylkiBiznesowej;
-	/** @var \PocztaPolska\siecPlacowekEnum */	public $siecPlacowek;
-	/** @var string */	public $idZPO;
 }
 
 

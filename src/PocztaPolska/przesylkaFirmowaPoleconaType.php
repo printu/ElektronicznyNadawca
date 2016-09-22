@@ -8,9 +8,6 @@ class przesylkaFirmowaPoleconaType extends \PocztaPolska\przesylkaRejestrowanaTy
 	/** @var \PocztaPolska\iloscPotwierdzenOdbioruType */	public $iloscPotwierdzenOdbioru;
 	/** @var \PocztaPolska\masaType */	public $masa;
 	/** @var boolean */	public $miejscowa;
-	/** @var boolean */	public $obszarMiasto;
-	/** @var \PocztaPolska\kategoriaType */	public $kategoria;
-	/** @var \PocztaPolska\gabarytType */	public $gabaryt;
 }
 
 

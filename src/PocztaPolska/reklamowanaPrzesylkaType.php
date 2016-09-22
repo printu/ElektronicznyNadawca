@@ -9,7 +9,6 @@ class reklamowanaPrzesylkaType {
 	/** @var string */	public $powodReklamacjiOpis;
 	/** @var int */	public $odszkodowanie;
 	/** @var int */	public $oplata;
-	/** @var int */	public $oczekiwaneOdszkodowanie;
 }
 
 

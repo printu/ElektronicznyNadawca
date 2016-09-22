@@ -11,7 +11,6 @@ class subUslugaPaczkowaType extends \PocztaPolska\przesylkaType {
 	/** @var \PocztaPolska\opakowaniePocztowaType */	public $opakowanie;
 	/** @var boolean */	public $ponadgabaryt;
 	/** @var string */	public $numerPrzesylkiKlienta;
-	/** @var \PocztaPolska\gabarytType */	public $gabaryt;
 }
 
 

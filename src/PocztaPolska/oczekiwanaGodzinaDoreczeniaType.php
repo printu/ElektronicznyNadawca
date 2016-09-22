@@ -15,6 +15,7 @@ class oczekiwanaGodzinaDoreczeniaType
     const NA_18_00 = 'NA 18:00';
     const NA_19_00 = 'NA 19:00';
     const NA_20_00 = 'NA 20:00';
+    const PO_17_00 = 'PO 17:00';
 }
 
 

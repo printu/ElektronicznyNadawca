@@ -2,7 +2,7 @@
 
 namespace PocztaPolska;
 class przesylkaNieRejestrowanaType extends \PocztaPolska\przesylkaType {
-	/** @var \PocztaPolska\anonymous97 */	public $ilosc;
+	/** @var \PocztaPolska\anonymous94 */	public $ilosc;
 }
 
 

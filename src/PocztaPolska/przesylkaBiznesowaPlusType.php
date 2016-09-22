@@ -22,7 +22,6 @@ class przesylkaBiznesowaPlusType extends \PocztaPolska\przesylkaRejestrowanaType
 	/** @var int */	public $iloscDniOczekiwaniaNaWydanie;
 	/** @var dateTime */	public $oczekiwanyTerminDoreczenia;
 	/** @var \PocztaPolska\terminRodzajPlusType */	public $terminRodzajPlus;
-	/** @var \PocztaPolska\numerTransakcjiOdbioruType */	public $numerTransakcjiOdbioru;
 }
 
 

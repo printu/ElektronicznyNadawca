@@ -8,8 +8,6 @@ class AlistZwyklyType extends \PocztaPolska\przesylkaNieRejestrowanaType {
 	/** @var \PocztaPolska\masaType */	public $masa;
 	/** @var boolean */	public $egzemplarzBiblioteczny;
 	/** @var boolean */	public $dlaOciemnialych;
-	/** @var boolean */	public $obszarMiasto;
-	/** @var boolean */	public $miejscowa;
 }
 
 

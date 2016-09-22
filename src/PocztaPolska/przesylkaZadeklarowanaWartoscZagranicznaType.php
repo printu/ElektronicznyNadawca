@@ -5,7 +5,6 @@ class przesylkaZadeklarowanaWartoscZagranicznaType extends \PocztaPolska\przesyl
 	/** @var boolean */	public $posteRestante;
 	/** @var \PocztaPolska\masaType */	public $masa;
 	/** @var \PocztaPolska\iloscPotwierdzenOdbioruType */	public $iloscPotwierdzenOdbioru;
-	/** @var \PocztaPolska\wartoscType */	public $wartosc;
 }
 
 

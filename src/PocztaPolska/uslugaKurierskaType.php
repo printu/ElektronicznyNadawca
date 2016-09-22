@@ -24,7 +24,6 @@ class uslugaKurierskaType extends \PocztaPolska\przesylkaRejestrowanaType {
 	/** @var \PocztaPolska\terminKurierskaType */	public $termin;
 	/** @var \PocztaPolska\opakowanieKurierskaType */	public $opakowanie;
 	/** @var string */	public $numerPrzesylkiKlienta;
-	/** @var \PocztaPolska\numerTransakcjiOdbioruType */	public $numerTransakcjiOdbioru;
 }
 
 
