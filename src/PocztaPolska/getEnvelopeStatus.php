@@ -1,8 +1,11 @@
 <?php
 
 namespace PocztaPolska;
-class getEnvelopeStatus {
-	/** @var int */	public $idEnvelope;
+
+class getEnvelopeStatus
+{
+    /** @var int */
+    public $idEnvelope;
 }
 
 

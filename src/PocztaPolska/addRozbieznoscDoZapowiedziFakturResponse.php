@@ -1,8 +1,11 @@
 <?php
 
 namespace PocztaPolska;
-class addRozbieznoscDoZapowiedziFakturResponse {
-	/** @var \PocztaPolska\errorType */	public $error;
+
+class addRozbieznoscDoZapowiedziFakturResponse
+{
+    /** @var \PocztaPolska\errorType */
+    public $error;
 }
 
 

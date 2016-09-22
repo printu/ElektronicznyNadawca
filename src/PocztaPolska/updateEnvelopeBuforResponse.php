@@ -1,8 +1,11 @@
 <?php
 
 namespace PocztaPolska;
-class updateEnvelopeBuforResponse {
-	/** @var \PocztaPolska\errorType */	public $error;
+
+class updateEnvelopeBuforResponse
+{
+    /** @var \PocztaPolska\errorType */
+    public $error;
 }
 
 

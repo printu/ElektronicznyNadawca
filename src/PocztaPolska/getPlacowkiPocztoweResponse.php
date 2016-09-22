@@ -1,8 +1,11 @@
 <?php
 
 namespace PocztaPolska;
-class getPlacowkiPocztoweResponse {
-	/** @var \PocztaPolska\placowkaPocztowaType */	public $placowka;
+
+class getPlacowkiPocztoweResponse
+{
+    /** @var \PocztaPolska\placowkaPocztowaType */
+    public $placowka;
 }
 
 

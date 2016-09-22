@@ -1,8 +1,11 @@
 <?php
 
 namespace PocztaPolska;
-class helloResponse {
-	/** @var string */	public $out;
+
+class helloResponse
+{
+    /** @var string */
+    public $out;
 }
 
 

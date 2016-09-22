@@ -1,9 +1,11 @@
 <?php
 
 namespace PocztaPolska;
-class kategoriaType {
-	const EKONOMICZNA = 'EKONOMICZNA';
-	const PRIORYTETOWA = 'PRIORYTETOWA';
+
+class kategoriaType
+{
+    const EKONOMICZNA = 'EKONOMICZNA';
+    const PRIORYTETOWA = 'PRIORYTETOWA';
 }
 
 

@@ -1,8 +1,11 @@
 <?php
 
 namespace PocztaPolska;
-class addZalacznikDoReklamacjiResponse {
-	/** @var \PocztaPolska\errorType */	public $error;
+
+class addZalacznikDoReklamacjiResponse
+{
+    /** @var \PocztaPolska\errorType */
+    public $error;
 }
 
 

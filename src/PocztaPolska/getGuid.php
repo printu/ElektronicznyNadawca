@@ -1,8 +1,11 @@
 <?php
 
 namespace PocztaPolska;
-class getGuid {
-	/** @var int */	public $ilosc;
+
+class getGuid
+{
+    /** @var int */
+    public $ilosc;
 }
 
 

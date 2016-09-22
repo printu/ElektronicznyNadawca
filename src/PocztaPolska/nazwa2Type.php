@@ -1,7 +1,9 @@
 <?php
 
 namespace PocztaPolska;
-class nazwa2Type {
+
+class nazwa2Type
+{
 }
 
 

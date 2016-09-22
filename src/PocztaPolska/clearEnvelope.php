@@ -1,8 +1,11 @@
 <?php
 
 namespace PocztaPolska;
-class clearEnvelope {
-	/** @var int */	public $idBufor;
+
+class clearEnvelope
+{
+    /** @var int */
+    public $idBufor;
 }
 
 

@@ -1,8 +1,11 @@
 <?php
 
 namespace PocztaPolska;
-class setJednostkaOrganizacyjna {
-	/** @var \PocztaPolska\jednostkaOrganizacyjnaType */	public $jednostkaOrganizacyjna;
+
+class setJednostkaOrganizacyjna
+{
+    /** @var \PocztaPolska\jednostkaOrganizacyjnaType */
+    public $jednostkaOrganizacyjna;
 }
 
 

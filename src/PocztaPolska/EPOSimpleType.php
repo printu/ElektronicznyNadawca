@@ -1,7 +1,9 @@
 <?php
 
 namespace PocztaPolska;
-class EPOSimpleType extends \PocztaPolska\EPOType {
+
+class EPOSimpleType extends \PocztaPolska\EPOType
+{
 }
 
 

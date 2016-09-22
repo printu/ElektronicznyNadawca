@@ -1,8 +1,11 @@
 <?php
 
 namespace PocztaPolska;
-class isMiejscowa {
-	/** @var \PocztaPolska\trasaRequestType */	public $trasaRequest;
+
+class isMiejscowa
+{
+    /** @var \PocztaPolska\trasaRequestType */
+    public $trasaRequest;
 }
 
 

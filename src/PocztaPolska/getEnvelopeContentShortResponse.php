@@ -1,8 +1,11 @@
 <?php
 
 namespace PocztaPolska;
-class getEnvelopeContentShortResponse {
-	/** @var \PocztaPolska\przesylkaShortType */	public $przesylka;
+
+class getEnvelopeContentShortResponse
+{
+    /** @var \PocztaPolska\przesylkaShortType */
+    public $przesylka;
 }
 
 

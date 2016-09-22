@@ -1,8 +1,11 @@
 <?php
 
 namespace PocztaPolska;
-class getEnvelopeContentFull {
-	/** @var int */	public $idEnvelope;
+
+class getEnvelopeContentFull
+{
+    /** @var int */
+    public $idEnvelope;
 }
 
 

@@ -1,9 +1,11 @@
 <?php
 
 namespace PocztaPolska;
-class eSposobPowiadomieniaType {
-	const SMS = 'SMS';
-	const EMAIL = 'EMAIL';
+
+class eSposobPowiadomieniaType
+{
+    const SMS = 'SMS';
+    const EMAIL = 'EMAIL';
 }
 
 

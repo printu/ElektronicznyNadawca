@@ -1,8 +1,11 @@
 <?php
 
 namespace PocztaPolska;
-class getPlacowkiPocztowe {
-	/** @var \PocztaPolska\idWojewodztwoType */	public $idWojewodztwo;
+
+class getPlacowkiPocztowe
+{
+    /** @var \PocztaPolska\idWojewodztwoType */
+    public $idWojewodztwo;
 }
 
 

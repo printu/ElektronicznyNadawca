@@ -1,8 +1,11 @@
 <?php
 
 namespace PocztaPolska;
-class isObszarMiasto {
-	/** @var \PocztaPolska\obszarAdresowyType */	public $adres;
+
+class isObszarMiasto
+{
+    /** @var \PocztaPolska\obszarAdresowyType */
+    public $adres;
 }
 
 

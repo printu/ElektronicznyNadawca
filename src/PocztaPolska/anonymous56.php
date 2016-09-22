@@ -1,7 +1,9 @@
 <?php
 
 namespace PocztaPolska;
-class anonymous56 {
+
+class anonymous56
+{
 }
 
 

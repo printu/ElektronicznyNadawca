@@ -1,8 +1,11 @@
 <?php
 
 namespace PocztaPolska;
-class getUrzedyWydajaceEPrzesylkiResponse {
-	/** @var \PocztaPolska\urzadWydaniaEPrzesylkiType */	public $urzadWydaniaEPrzesylki;
+
+class getUrzedyWydajaceEPrzesylkiResponse
+{
+    /** @var \PocztaPolska\urzadWydaniaEPrzesylkiType */
+    public $urzadWydaniaEPrzesylki;
 }
 
 

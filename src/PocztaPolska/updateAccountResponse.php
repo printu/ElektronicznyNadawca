@@ -1,8 +1,11 @@
 <?php
 
 namespace PocztaPolska;
-class updateAccountResponse {
-	/** @var \PocztaPolska\errorType */	public $error;
+
+class updateAccountResponse
+{
+    /** @var \PocztaPolska\errorType */
+    public $error;
 }
 
 

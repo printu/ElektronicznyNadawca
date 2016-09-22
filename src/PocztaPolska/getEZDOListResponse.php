@@ -1,8 +1,11 @@
 <?php
 
 namespace PocztaPolska;
-class getEZDOListResponse {
-	/** @var \PocztaPolska\EZDOPakietType */	public $EZDOPakiet;
+
+class getEZDOListResponse
+{
+    /** @var \PocztaPolska\EZDOPakietType */
+    public $EZDOPakiet;
 }
 
 

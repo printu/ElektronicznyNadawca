@@ -1,8 +1,11 @@
 <?php
 
 namespace PocztaPolska;
-class getListaZgodEZwrotow {
-	/** @var \PocztaPolska\statusZgodyEZwrotNameType */	public $status;
+
+class getListaZgodEZwrotow
+{
+    /** @var \PocztaPolska\statusZgodyEZwrotNameType */
+    public $status;
 }
 
 

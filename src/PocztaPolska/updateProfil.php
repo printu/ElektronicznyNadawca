@@ -1,8 +1,11 @@
 <?php
 
 namespace PocztaPolska;
-class updateProfil {
-	/** @var \PocztaPolska\profilType */	public $profil;
+
+class updateProfil
+{
+    /** @var \PocztaPolska\profilType */
+    public $profil;
 }
 
 

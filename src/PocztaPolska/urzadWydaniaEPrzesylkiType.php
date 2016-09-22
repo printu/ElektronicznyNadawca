@@ -1,7 +1,9 @@
 <?php
 
 namespace PocztaPolska;
-class urzadWydaniaEPrzesylkiType extends \PocztaPolska\placowkaPocztowaType {
+
+class urzadWydaniaEPrzesylkiType extends \PocztaPolska\placowkaPocztowaType
+{
 }
 
 

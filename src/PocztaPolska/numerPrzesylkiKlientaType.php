@@ -1,7 +1,9 @@
 <?php
 
 namespace PocztaPolska;
-class numerPrzesylkiKlientaType {
+
+class numerPrzesylkiKlientaType
+{
 }
 
 

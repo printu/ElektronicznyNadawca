@@ -1,8 +1,11 @@
 <?php
 
 namespace PocztaPolska;
-class getAccountListResponse {
-	/** @var \PocztaPolska\accountType */	public $account;
+
+class getAccountListResponse
+{
+    /** @var \PocztaPolska\accountType */
+    public $account;
 }
 
 

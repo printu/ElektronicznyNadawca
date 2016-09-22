@@ -1,8 +1,11 @@
 <?php
 
 namespace PocztaPolska;
-class getProfilListResponse {
-	/** @var \PocztaPolska\profilType */	public $profil;
+
+class getProfilListResponse
+{
+    /** @var \PocztaPolska\profilType */
+    public $profil;
 }
 
 

@@ -1,8 +1,11 @@
 <?php
 
 namespace PocztaPolska;
-class addOdwolanieDoReklamacji {
-	/** @var \PocztaPolska\reklamowanaPrzesylkaType */	public $reklamacja;
+
+class addOdwolanieDoReklamacji
+{
+    /** @var \PocztaPolska\reklamowanaPrzesylkaType */
+    public $reklamacja;
 }
 
 

@@ -1,8 +1,11 @@
 <?php
 
 namespace PocztaPolska;
-class setEnvelopeBuforDataNadania {
-	/** @var \PocztaPolska\date */	public $dataNadania;
+
+class setEnvelopeBuforDataNadania
+{
+    /** @var \PocztaPolska\date */
+    public $dataNadania;
 }
 
 
