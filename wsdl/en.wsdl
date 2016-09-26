@@ -1,0 +1,3391 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://e-nadawca.poczta-polska.pl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="en" targetNamespace="http://e-nadawca.poczta-polska.pl">
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://e-nadawca.poczta-polska.pl">
+			<xsd:element name="addShipment">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="przesylki" type="tns:przesylkaType" minOccurs="1" maxOccurs="500" />
+						<xsd:element name="idBufor" type="xsd:int" maxOccurs="1" minOccurs="0" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="addShipmentResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="retval" type="tns:addShipmentResponseItemType" minOccurs="1" maxOccurs="500" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:complexType name="przesylkaType" abstract="true">
+				<xsd:attribute name="guid" type="tns:guidType" use="required" />
+				<xsd:attribute name="pakietGuid" type="tns:guidType" />
+				<xsd:attribute name="opakowanieGuid" type="tns:guidType" />
+				<xsd:attribute name="opis" type="tns:opisType" />
+			</xsd:complexType>
+			<xsd:complexType name="pocztexKrajowyType">
+				<xsd:complexContent>
+					<xsd:extension base="tns:przesylkaRejestrowanaType">
+						<xsd:sequence>
+							<xsd:element name="pobranie" type="tns:pobranieType" minOccurs="0" />
+							<xsd:element name="odbiorPrzesylkiOdNadawcy" type="tns:odbiorPrzesylkiOdNadawcyType" maxOccurs="1" minOccurs="0" />
+							<xsd:element name="doreczenie" type="tns:doreczenieType" maxOccurs="1" minOccurs="0" />
+							<xsd:element name="zwrotDokumentow" type="tns:zwrotDokumentowType" maxOccurs="1" minOccurs="0" />
+							<xsd:element name="potwierdzenieOdbioru" type="tns:potwierdzenieOdbioruType" maxOccurs="1" minOccurs="0" />
+							<xsd:element name="potwierdzenieDoreczenia" type="tns:potwierdzenieDoreczeniaType" maxOccurs="1" minOccurs="0" />
+							<!-- <xsd:element name="powiadomienieAdresata" type="tns:powiadomienieType" maxOccurs="1" minOccurs="0"></xsd:element> <xsd:element name="powiadomienieNadawcy" 
+								type="tns:powiadomienieType" maxOccurs="1" minOccurs="0"></xsd:element> -->
+							<!-- <xsd:element name="epo" type="tns:EPOSimpleType" maxOccurs="1" minOccurs="0"></xsd:element> -->
+							<xsd:element name="ubezpieczenie" type="tns:ubezpieczenieType" maxOccurs="1" minOccurs="0" />
+						</xsd:sequence>
+						<xsd:attribute name="posteRestante" type="xsd:boolean" use="optional" default="false" />
+						<xsd:attribute name="terminRodzaj" type="tns:terminRodzajType" use="required" />
+						<xsd:attribute name="kopertaFirmowa" type="xsd:boolean" />
+						<xsd:attribute name="masa" type="tns:masaType" use="required" />
+						<xsd:attribute name="wartosc" type="tns:wartoscType" use="required" />
+						<xsd:attribute name="ostroznie" type="xsd:boolean" use="optional" />
+						<xsd:attribute name="ponadgabaryt" type="xsd:boolean" />
+						<xsd:attribute name="uiszczaOplate" type="tns:uiszczaOplateType" use="required" />
+						<xsd:attribute name="odleglosc" type="xsd:int" />
+						<xsd:attribute name="zawartosc" type="xsd:string" />
+						<xsd:attribute name="sprawdzenieZawartosciPrzesylkiPrzezOdbiorce" type="xsd:boolean" />
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:simpleType name="umowaType">
+				<xsd:annotation>
+					<xsd:documentation>Pole na umowę</xsd:documentation>
+				</xsd:annotation>
+				<xsd:restriction base="xsd:long">
+					<xsd:whiteSpace value="collapse" />
+					<xsd:maxInclusive value="9999999999" />
+					<xsd:minInclusive value="0" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="masaType">
+				<xsd:annotation>
+					<xsd:documentation>masa przesyłki podana w gramach
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:restriction base="xsd:int">
+					<xsd:minInclusive value="1" />
+					<xsd:maxInclusive value="9999999" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="numerNadaniaType">
+				<xsd:restriction base="xsd:string">
+					<xsd:minLength value="13" />
+					<xsd:maxLength value="20" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:element name="changePassword">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="newPassword" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="changePasswordResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="error" type="tns:errorType" maxOccurs="unbounded" minOccurs="0" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:simpleType name="terminRodzajType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="MIEJSKI_DO_3H_DO_5KM" />
+					<xsd:enumeration value="MIEJSKI_DO_3H_DO_10KM" />
+					<xsd:enumeration value="MIEJSKI_DO_3H_DO_15KM" />
+					<xsd:enumeration value="MIEJSKI_DO_3H_POWYZEJ_15KM" />
+					<xsd:enumeration value="MIEJSKI_DO_4H_DO_10KM" />
+					<xsd:enumeration value="MIEJSKI_DO_4H_DO_15KM" />
+					<xsd:enumeration value="MIEJSKI_DO_4H_DO_20KM" />
+					<xsd:enumeration value="MIEJSKI_DO_4H_DO_30KM" />
+					<xsd:enumeration value="MIEJSKI_DO_4H_DO_40KM" />
+					<xsd:enumeration value="KRAJOWY" />
+					<xsd:enumeration value="BEZPOSREDNI_DO_20KG" />
+					<xsd:enumeration value="BEZPOSREDNI_DO_30KG" />
+					<xsd:enumeration value="BEZPOSREDNI_OD_30KG_DO_100KG" />
+					<xsd:enumeration value="EKSPRES24" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="uiszczaOplateType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="NADAWCA" />
+					<xsd:enumeration value="ADRESAT" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="wartoscType">
+				<xsd:annotation>
+					<xsd:documentation> zadeklarowana wartość przesyłki w groszach
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:restriction base="xsd:int">
+					<xsd:minInclusive value="0" />
+					<xsd:maxInclusive value="9999999" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="kwotaPobraniaType">
+				<xsd:annotation>
+					<xsd:documentation>kwota jaką należy pobrać podana w groszach
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:restriction base="xsd:int">
+					<xsd:minInclusive value="0" />
+					<xsd:maxInclusive value="9999999" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="sposobPobraniaType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="PRZEKAZ" />
+					<xsd:enumeration value="RACHUNEK_BANKOWY" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="sposobPrzekazaniaType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="LIST_ZWYKLY_PRIOTYTET" />
+					<xsd:enumeration value="POCZTEX" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="sposobDoreczeniaPotwierdzeniaType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="TELEFON" />
+					<xsd:enumeration value="TELEFAX" />
+					<xsd:enumeration value="SMS" />
+					<xsd:enumeration value="EMAIL" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="iloscPotwierdzenOdbioruType">
+				<xsd:restriction base="xsd:int">
+					<xsd:minInclusive value="0" />
+					<xsd:maxInclusive value="9" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="dataDlaDostarczeniaType">
+				<xsd:restriction base="xsd:date" />
+			</xsd:simpleType>
+			<xsd:simpleType name="razemType">
+				<xsd:restriction base="xsd:int">
+					<xsd:minInclusive value="0" />
+					<xsd:maxInclusive value="9999999" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="nazwaType">
+				<xsd:restriction base="xsd:string">
+					<xsd:minLength value="1" />
+					<xsd:maxLength value="30" />
+					<xsd:whiteSpace value="collapse" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="nazwa2Type">
+				<xsd:restriction base="xsd:string">
+					<xsd:minLength value="0" />
+					<xsd:maxLength value="30" />
+					<xsd:whiteSpace value="collapse" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="ulicaType">
+				<xsd:restriction base="xsd:string">
+					<xsd:minLength value="1" />
+					<xsd:maxLength value="57" />
+					<xsd:whiteSpace value="collapse" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="numerDomuType">
+				<xsd:restriction base="xsd:string">
+					<xsd:minLength value="0" />
+					<xsd:maxLength value="11" />
+					<xsd:whiteSpace value="collapse" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="numerLokaluType">
+				<xsd:restriction base="xsd:string">
+					<xsd:minLength value="0" />
+					<xsd:maxLength value="11" />
+					<xsd:whiteSpace value="collapse" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="miejscowoscType">
+				<xsd:restriction base="xsd:string">
+					<xsd:minLength value="1" />
+					<xsd:maxLength value="30" />
+					<xsd:whiteSpace value="collapse" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="kodPocztowyType">
+				<xsd:restriction base="xsd:string">
+					<xsd:whiteSpace value="collapse" />
+					<xsd:maxLength value="10" />
+					<xsd:minLength value="5" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="paczkaPocztowaType">
+				<xsd:complexContent>
+					<xsd:extension base="tns:przesylkaRejestrowanaType">
+						<xsd:sequence>
+							<xsd:element name="epo" type="tns:EPOType" maxOccurs="1" minOccurs="0" />
+						</xsd:sequence>
+						<xsd:attribute name="zasadySpecjalne" type="tns:zasadySpecjalneEnum" use="optional" />
+						<xsd:attribute name="posteRestante" type="xsd:boolean" use="optional" default="false" />
+						<xsd:attribute name="iloscPotwierdzenOdbioru" type="tns:iloscPotwierdzenOdbioruType" use="optional" default="0" />
+						<xsd:attribute name="kategoria" type="tns:kategoriaType" use="required" />
+						<xsd:attribute name="gabaryt" type="tns:gabarytType" use="required" />
+						<xsd:attribute name="masa" type="tns:masaType" />
+						<xsd:attribute name="wartosc" type="tns:wartoscType" use="optional" />
+						<xsd:attribute name="zwrotDoslanie" type="xsd:boolean" />
+						<xsd:attribute name="egzemplarzBiblioteczny" type="xsd:boolean" default="false" />
+						<xsd:attribute name="dlaOciemnialych" type="xsd:boolean" default="false" />
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:simpleType name="kategoriaType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="EKONOMICZNA" />
+					<xsd:enumeration value="PRIORYTETOWA" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="gabarytType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="GABARYT_A" />
+					<xsd:enumeration value="GABARYT_B" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="paczkaPocztowaPLUSType">
+				<xsd:complexContent>
+					<xsd:extension base="tns:przesylkaRejestrowanaType">
+						<!-- <xsd:sequence> <xsd:element name="epo" type="tns:EPOSimpleType" maxOccurs="1" minOccurs="0" /> </xsd:sequence> -->
+						<xsd:attribute name="posteRestante" type="xsd:boolean" use="optional" default="false" />
+						<xsd:attribute name="iloscPotwierdzenOdbioru" type="tns:iloscPotwierdzenOdbioruType" use="optional" default="0" />
+						<xsd:attribute name="kategoria" type="tns:kategoriaType" use="required" />
+						<xsd:attribute name="gabaryt" type="tns:gabarytType" use="required" />
+						<xsd:attribute name="wartosc" type="tns:wartoscType" use="required" />
+						<xsd:attribute name="masa" type="tns:masaType" use="required" />
+						<xsd:attribute name="zwrotDoslanie" type="xsd:boolean" />
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="przesylkaPobraniowaType">
+				<xsd:complexContent>
+					<xsd:extension base="tns:przesylkaRejestrowanaType">
+						<xsd:sequence>
+							<xsd:element name="pobranie" type="tns:pobranieType" minOccurs="0" />
+							<!-- <xsd:element name="epo" type="tns:EPOSimpleType" maxOccurs="1" minOccurs="0" /> -->
+						</xsd:sequence>
+						<xsd:attribute name="posteRestante" type="xsd:boolean" use="optional" default="false" />
+						<xsd:attribute name="iloscPotwierdzenOdbioru" type="tns:iloscPotwierdzenOdbioruType" use="optional" default="0" />
+						<xsd:attribute name="kategoria" type="tns:kategoriaType" use="required" />
+						<xsd:attribute name="gabaryt" type="tns:gabarytType" use="required" />
+						<xsd:attribute name="ostroznie" type="xsd:boolean" use="optional" default="false" />
+						<xsd:attribute name="wartosc" type="tns:wartoscType" use="required" />
+						<xsd:attribute name="masa" type="tns:masaType" use="optional" />
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="przesylkaNaWarunkachSzczegolnychType">
+				<xsd:complexContent>
+					<xsd:extension base="tns:przesylkaRejestrowanaType">
+						<xsd:attribute name="posteRestante" type="xsd:boolean" use="optional" default="false" />
+						<xsd:attribute name="iloscPotwierdzenOdbioru" type="tns:iloscPotwierdzenOdbioruType" use="optional" default="0" />
+						<xsd:attribute name="kategoria" type="tns:kategoriaType" use="required" />
+						<xsd:attribute name="wartosc" type="tns:wartoscType" use="optional" />
+						<xsd:attribute name="masa" type="tns:masaType" use="optional" />
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="przesylkaPoleconaKrajowaType">
+				<xsd:complexContent>
+					<xsd:extension base="tns:przesylkaRejestrowanaType">
+						<xsd:sequence>
+							<xsd:element name="epo" type="tns:EPOType" maxOccurs="1" minOccurs="0" />
+						</xsd:sequence>
+						<xsd:attribute name="zasadySpecjalne" type="tns:zasadySpecjalneEnum" use="optional" />
+						<xsd:attribute name="posteRestante" type="xsd:boolean" use="optional" default="false" />
+						<xsd:attribute name="iloscPotwierdzenOdbioru" type="tns:iloscPotwierdzenOdbioruType" use="optional" default="0" />
+						<xsd:attribute name="kategoria" type="tns:kategoriaType" use="required" />
+						<xsd:attribute name="gabaryt" type="tns:gabarytType" use="required" />
+						<xsd:attribute name="masa" type="tns:masaType" use="optional" />
+						<xsd:attribute name="egzemplarzBiblioteczny" type="xsd:boolean" />
+						<xsd:attribute name="dlaOciemnialych" type="xsd:boolean" />
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="przesylkaHandlowaType">
+				<xsd:complexContent>
+					<xsd:extension base="tns:przesylkaRejestrowanaType">
+						<xsd:attribute name="posteRestante" type="xsd:boolean" use="optional" default="false" />
+						<xsd:attribute name="masa" type="tns:masaType" use="optional" />
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="przesylkaListowaZadeklarowanaWartoscType">
+				<xsd:complexContent>
+					<xsd:extension base="tns:przesylkaRejestrowanaType">
+						<!-- <xsd:sequence> <xsd:element name="epo" type="tns:EPOSimpleType" maxOccurs="1" minOccurs="0" /> </xsd:sequence> -->
+						<xsd:attribute name="posteRestante" type="xsd:boolean" use="optional" default="false" />
+						<xsd:attribute name="wartosc" type="tns:wartoscType" />
+						<xsd:attribute name="iloscPotwierdzenOdbioru" type="tns:iloscPotwierdzenOdbioruType" use="optional" default="0" />
+						<xsd:attribute name="kategoria" type="tns:kategoriaType" use="required" />
+						<xsd:attribute name="gabaryt" type="tns:gabarytType" use="required" />
+						<xsd:attribute name="masa" type="tns:masaType" use="optional" />
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="przesylkaFullType">
+				<xsd:sequence>
+					<xsd:element name="przesylkaShort" type="tns:przesylkaShortType" />
+					<xsd:element name="przesylkaFull" type="tns:przesylkaType" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="errorType">
+				<xsd:attribute name="errorNumber" type="xsd:int" use="optional" default="0" />
+				<xsd:attribute name="errorDesc" type="xsd:string" use="optional" />
+				<xsd:attribute name="guid" type="tns:guidType" />
+			</xsd:complexType>
+			<xsd:complexType name="adresType">
+				<xsd:attribute name="nazwa" type="tns:nazwaType" />
+				<xsd:attribute name="nazwa2" type="tns:nazwa2Type" />
+				<xsd:attribute name="ulica" type="tns:ulicaType" />
+				<xsd:attribute name="numerDomu" type="tns:numerDomuType" />
+				<xsd:attribute name="numerLokalu" type="tns:numerLokaluType" />
+				<xsd:attribute name="miejscowosc" type="tns:miejscowoscType" />
+				<xsd:attribute name="kodPocztowy" type="tns:kodPocztowyType" />
+				<xsd:attribute name="kraj" type="tns:krajType" use="optional" default="Polska" />
+				<xsd:attribute name="telefon" type="tns:telefonType" />
+				<xsd:attribute name="email" type="tns:emailType" />
+				<xsd:attribute name="mobile" type="tns:mobileType" />
+				<xsd:attribute name="osobaKontaktowa" type="xsd:string" />
+				<xsd:attribute name="nip" type="xsd:string" />
+			</xsd:complexType>
+			<xsd:element name="sendEnvelope">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="urzadNadania" type="tns:urzadNadaniaType" maxOccurs="1" minOccurs="0" />
+						<xsd:element name="pakiet" type="tns:pakietType" maxOccurs="unbounded" minOccurs="0" />
+						<xsd:element name="idBufor" type="xsd:int" maxOccurs="1" minOccurs="0" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:complexType name="sendEnvelopeResponseType">
+				<xsd:sequence>
+					<xsd:element name="idEnvelope" type="xsd:int" maxOccurs="1" minOccurs="0" />
+					<xsd:element name="envelopeStatus" type="tns:envelopeStatusType" maxOccurs="1" minOccurs="0" />
+					<xsd:element name="error" type="tns:errorType" maxOccurs="unbounded" minOccurs="0" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="sendEnvelopeResponse" type="tns:sendEnvelopeResponseType" />
+			<xsd:simpleType name="urzadNadaniaType">
+				<xsd:restriction base="xsd:int" />
+			</xsd:simpleType>
+			<xsd:element name="getUrzedyNadania">
+				<xsd:complexType />
+			</xsd:element>
+			<xsd:element name="getUrzedyNadaniaResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="urzedyNadania" type="tns:urzadNadaniaFullType" minOccurs="0" maxOccurs="unbounded" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="clearEnvelope">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="idBufor" type="xsd:int" maxOccurs="1" minOccurs="0" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="clearEnvelopeResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="retval" type="xsd:boolean" maxOccurs="1" minOccurs="1" />
+						<xsd:element name="error" type="tns:errorType" maxOccurs="unbounded" minOccurs="0" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:complexType name="urzadNadaniaFullType">
+				<xsd:attribute name="urzadNadania" type="tns:urzadNadaniaType" />
+				<xsd:attribute name="opis" type="xsd:string" />
+				<xsd:attribute name="nazwaWydruk" type="xsd:string" />
+			</xsd:complexType>
+			<xsd:simpleType name="guidType">
+				<xsd:restriction base="xsd:string">
+					<xsd:whiteSpace value="collapse" />
+					<xsd:length value="32" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="ePrzesylkaType">
+				<xsd:complexContent>
+					<xsd:extension base="tns:przesylkaRejestrowanaType">
+						<xsd:sequence>
+							<xsd:element name="urzadWydaniaEPrzesylki" type="tns:urzadWydaniaEPrzesylkiType" minOccurs="1" maxOccurs="1" />
+							<xsd:element name="pobranie" type="tns:pobranieType" minOccurs="0" maxOccurs="1" />
+						</xsd:sequence>
+						<xsd:attribute name="masa" type="tns:masaType" />
+						<xsd:attribute name="eSposobPowiadomieniaAdresata" type="tns:eSposobPowiadomieniaType" />
+						<xsd:attribute name="eSposobPowiadomieniaNadawcy" type="tns:eSposobPowiadomieniaType" />
+						<xsd:attribute name="eKontaktAdresata" type="tns:eKontaktType" />
+						<xsd:attribute name="eKontaktNadawcy" type="tns:eKontaktType" />
+						<xsd:attribute name="ostroznie" type="xsd:boolean" />
+						<xsd:attribute name="wartosc" type="tns:wartoscType" />
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:simpleType name="eSposobPowiadomieniaType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="SMS" />
+					<xsd:enumeration value="EMAIL" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="eKontaktType">
+				<xsd:restriction base="xsd:string">
+					<xsd:minLength value="0" />
+					<xsd:maxLength value="50" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="urzadWydaniaEPrzesylkiType">
+				<xsd:complexContent>
+					<xsd:extension base="tns:placowkaPocztowaType" />
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="pobranieType">
+				<xsd:attribute name="sposobPobrania" type="tns:sposobPobraniaType" />
+				<xsd:attribute name="kwotaPobrania" type="tns:kwotaPobraniaType" />
+				<xsd:attribute name="nrb">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:minLength value="0" />
+							<xsd:maxLength value="26" />
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:attribute>
+				<xsd:attribute name="tytulem">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:minLength value="0" />
+							<xsd:maxLength value="30" />
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:attribute>
+				<xsd:attribute name="sprawdzenieZawartosciPrzesylkiPrzezOdbiorce" type="xsd:boolean" />
+			</xsd:complexType>
+			<xsd:complexType name="przesylkaPoleconaZagranicznaType">
+				<xsd:complexContent>
+					<xsd:extension base="tns:przesylkaRejestrowanaType">
+						<xsd:attribute name="posteRestante" type="xsd:boolean" use="optional" default="false" />
+						<xsd:attribute name="masa" type="tns:masaType" />
+						<xsd:attribute name="iloscPotwierdzenOdbioru" type="tns:iloscPotwierdzenOdbioruType" />
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="przesylkaZadeklarowanaWartoscZagranicznaType">
+				<xsd:complexContent>
+					<xsd:extension base="tns:przesylkaRejestrowanaType">
+						<xsd:attribute name="posteRestante" type="xsd:boolean" use="optional" default="false" />
+						<xsd:attribute name="masa" type="tns:masaType" />
+						<xsd:attribute name="iloscPotwierdzenOdbioru" type="tns:iloscPotwierdzenOdbioruType" />
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:simpleType name="krajType">
+				<xsd:restriction base="xsd:string">
+					<xsd:minLength value="0" />
+					<xsd:maxLength value="40" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:element name="getUrzedyWydajaceEPrzesylki">
+				<xsd:complexType />
+			</xsd:element>
+			<xsd:element name="getUrzedyWydajaceEPrzesylkiResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="urzadWydaniaEPrzesylki" type="tns:urzadWydaniaEPrzesylkiType" maxOccurs="unbounded" minOccurs="1" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="uploadIWDContent">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="urzadNadania" type="tns:urzadNadaniaType" maxOccurs="1" minOccurs="0" />
+						<xsd:element name="IWDContent" type="xsd:base64Binary" minOccurs="1" maxOccurs="1" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="uploadIWDContentResponse" type="tns:sendEnvelopeResponseType" />
+			<xsd:element name="getEnvelopeStatus">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="idEnvelope" type="xsd:int" maxOccurs="1" minOccurs="1" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getEnvelopeStatusResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="envelopeStatus" type="tns:envelopeStatusType" maxOccurs="1" minOccurs="0" />
+						<xsd:element name="error" minOccurs="0" maxOccurs="unbounded" type="tns:errorType" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:simpleType name="envelopeStatusType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="WYSLANY" />
+					<xsd:enumeration value="DOSTARCZONY" />
+					<xsd:enumeration value="PRZYJETY" />
+					<xsd:enumeration value="WALIDOWANY" />
+					<xsd:enumeration value="BLEDNY" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:element name="downloadIWDContent">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="idEnvelope" type="xsd:int" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="downloadIWDContentResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="IWDContent" type="xsd:base64Binary" minOccurs="1" />
+						<xsd:element name="error" type="tns:errorType" minOccurs="0" maxOccurs="unbounded" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:complexType name="przesylkaShortType">
+				<xsd:sequence>
+					<xsd:element name="czynnosciUpustowe" type="tns:czynnoscUpustowaType" maxOccurs="unbounded" minOccurs="0" />
+				</xsd:sequence>
+				<xsd:attribute name="numerNadania" type="tns:numerNadaniaType" />
+				<xsd:attribute name="guid" type="tns:guidType" use="required" />
+				<xsd:attribute name="dataNadania" type="xsd:date" />
+				<xsd:attribute name="razem" type="xsd:int" />
+				<xsd:attribute name="pobranie" type="xsd:int" use="optional" />
+				<xsd:attribute name="status" type="tns:statusType" />
+			</xsd:complexType>
+			<xsd:complexType name="addShipmentResponseItemType">
+				<xsd:sequence>
+					<xsd:element name="error" type="tns:errorType" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+				<xsd:attribute name="numerNadania" type="tns:numerNadaniaType" />
+				<xsd:attribute name="guid" type="tns:guidType" use="required" />
+			</xsd:complexType>
+			<xsd:element name="getKarty">
+				<xsd:complexType />
+			</xsd:element>
+			<xsd:element name="getKartyResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="karta" type="tns:kartaType" minOccurs="1" maxOccurs="unbounded" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getPasswordExpiredDate">
+				<xsd:complexType />
+			</xsd:element>
+			<xsd:element name="getPasswordExpiredDateResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="dataWygasniecia" type="xsd:date" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="setAktywnaKarta">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="idKarta" type="xsd:int" maxOccurs="1" minOccurs="1" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="setAktywnaKartaResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="error" type="tns:errorType" minOccurs="0" maxOccurs="unbounded" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getEnvelopeContentFull">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="idEnvelope" type="xsd:int" maxOccurs="1" minOccurs="1" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getEnvelopeContentFullResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="przesylka" type="tns:przesylkaFullType" minOccurs="0" maxOccurs="unbounded" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getEnvelopeContentShort">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="idEnvelope" type="xsd:int" maxOccurs="1" minOccurs="1" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getEnvelopeContentShortResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="przesylka" type="tns:przesylkaShortType" minOccurs="0" maxOccurs="unbounded" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="hello">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="in" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="helloResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="out" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:complexType name="kartaType">
+				<xsd:attribute name="idKarta" type="xsd:int" />
+				<xsd:attribute name="opis" type="xsd:string" />
+				<xsd:attribute name="aktywna" type="xsd:boolean" />
+			</xsd:complexType>
+			<xsd:simpleType name="telefonType">
+				<xsd:restriction base="xsd:string">
+					<xsd:minLength value="0" />
+					<xsd:maxLength value="20" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:element name="getAddressLabel">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="idEnvelope" type="xsd:int" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getAddressLabelResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="content" type="tns:addressLabelContent" maxOccurs="unbounded" minOccurs="0" />
+						<xsd:element name="error" type="tns:errorType" maxOccurs="unbounded" minOccurs="0" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:complexType name="addressLabelContent">
+				<xsd:sequence>
+					<xsd:element name="pdfContent" type="xsd:base64Binary" />
+				</xsd:sequence>
+				<xsd:attribute name="nrNadania" type="xsd:string" />
+				<xsd:attribute name="guid" type="xsd:string" />
+			</xsd:complexType>
+			<xsd:element name="getOutboxBook">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="idEnvelope" type="xsd:int" maxOccurs="1" minOccurs="1" />
+						<xsd:element name="includeNierejestrowane" maxOccurs="1" minOccurs="0" type="xsd:boolean" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getOutboxBookResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="pdfContent" type="xsd:base64Binary" />
+						<xsd:element name="error" type="tns:errorType" maxOccurs="unbounded" minOccurs="0" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getFirmowaPocztaBook">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="idEnvelope" type="xsd:int" maxOccurs="1" minOccurs="1" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getFirmowaPocztaBookResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="pdfContent" type="xsd:base64Binary" />
+						<xsd:element name="error" type="tns:errorType" maxOccurs="unbounded" minOccurs="0" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getEnvelopeList">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="startDate" type="xsd:date" />
+						<xsd:element name="endDate" type="xsd:date" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getEnvelopeListResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="envelopes" type="tns:envelopeInfoType" maxOccurs="unbounded" minOccurs="0" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:complexType name="envelopeInfoType">
+				<xsd:sequence>
+					<xsd:element name="error" type="tns:errorType" maxOccurs="unbounded" minOccurs="0" />
+				</xsd:sequence>
+				<xsd:attribute name="idEnvelope" type="xsd:int" />
+				<xsd:attribute name="envelopeStatus" type="tns:envelopeStatusType" />
+				<xsd:attribute name="dataTransmisji" type="xsd:date" />
+			</xsd:complexType>
+			<xsd:complexType name="przesylkaZagranicznaType">
+				<xsd:complexContent>
+					<xsd:extension base="tns:przesylkaNieRejestrowanaType">
+						<xsd:attribute name="posteRestante" type="xsd:boolean" use="optional" default="false" />
+						<xsd:attribute name="kategoria" type="tns:kategoriaType" />
+						<xsd:attribute name="masa" type="tns:masaType" />
+						<xsd:attribute name="ekspres" type="xsd:boolean" default="false" />
+						<xsd:attribute name="kraj" type="xsd:string" />
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="przesylkaRejestrowanaType" abstract="true">
+				<xsd:complexContent>
+					<xsd:extension base="tns:przesylkaType">
+						<xsd:sequence>
+							<xsd:element name="adres" type="tns:adresType" />
+						</xsd:sequence>
+						<xsd:attribute name="numerNadania" type="tns:numerNadaniaType" />
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="przesylkaNieRejestrowanaType" abstract="true">
+				<xsd:complexContent>
+					<xsd:extension base="tns:przesylkaType">
+						<xsd:attribute name="ilosc">
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:int">
+									<xsd:minInclusive value="1" />
+									<xsd:maxInclusive value="9999999" />
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:attribute>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="przesylkaBiznesowaType">
+				<xsd:complexContent>
+					<xsd:extension base="tns:przesylkaRejestrowanaType">
+						<xsd:sequence>
+							<xsd:element name="pobranie" type="tns:pobranieType" maxOccurs="1" minOccurs="0" />
+							<xsd:choice>
+								<xsd:element name="urzadWydaniaEPrzesylki" type="tns:urzadWydaniaEPrzesylkiType" maxOccurs="1" minOccurs="0" />
+								<xsd:element name="subPrzesylka" type="tns:subPrzesylkaBiznesowaType" minOccurs="1" maxOccurs="unbounded" />
+							</xsd:choice>
+							<xsd:element name="ubezpieczenie" type="tns:ubezpieczenieType" maxOccurs="1" minOccurs="0" />
+							<xsd:element name="epo" type="tns:EPOType" maxOccurs="1" minOccurs="0" />
+						</xsd:sequence>
+						<xsd:attribute name="zasadySpecjalne" type="tns:zasadySpecjalneEnum" use="optional" />
+						<xsd:attribute name="masa" type="tns:masaType" />
+						<xsd:attribute name="gabaryt" type="tns:gabarytBiznesowaType" />
+						<xsd:attribute name="wartosc" type="tns:wartoscType" />
+						<xsd:attribute name="ostroznie" type="xsd:boolean" />
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:simpleType name="gabarytBiznesowaType">
+				<xsd:annotation>
+					<xsd:documentation>gabaryt Maksymalne wymiary przesyłki (w cm) XS 25,0 x 20,0 x 10,0 S 30,0 x 25,0 x 15,0 M 35,0 x 30,0 x 20,0 L 45,0 x 35,0 x 25,0 XL 60,0
+						x 50,0 x 30,0 XXL 90,0 x 60,0 x 35,0
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="XS" />
+					<xsd:enumeration value="S" />
+					<xsd:enumeration value="M" />
+					<xsd:enumeration value="L" />
+					<xsd:enumeration value="XL" />
+					<xsd:enumeration value="XXL" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="subPrzesylkaBiznesowaType">
+				<xsd:complexContent>
+					<xsd:extension base="tns:przesylkaType">
+						<xsd:sequence>
+							<xsd:element name="pobranie" type="tns:pobranieType" maxOccurs="1" minOccurs="0" />
+							<xsd:element name="ubezpieczenie" type="tns:ubezpieczenieType" maxOccurs="1" minOccurs="0" />
+						</xsd:sequence>
+						<xsd:attribute name="numerNadania" type="tns:numerNadaniaType" />
+						<xsd:attribute name="masa" type="tns:masaType" />
+						<xsd:attribute name="gabaryt" type="tns:gabarytBiznesowaType" />
+						<xsd:attribute name="wartosc" type="tns:wartoscType" />
+						<xsd:attribute name="ostroznie" type="xsd:boolean" />
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="subPrzesylkaBiznesowaPlusType">
+				<xsd:complexContent>
+					<xsd:extension base="tns:przesylkaType">
+						<xsd:sequence>
+							<xsd:element name="pobranie" type="tns:pobranieType" maxOccurs="1" minOccurs="0" />
+						</xsd:sequence>
+						<xsd:attribute name="numerNadania" type="tns:numerNadaniaType" />
+						<xsd:attribute name="masa" type="tns:masaType" />
+						<xsd:attribute name="gabaryt" type="tns:gabarytBiznesowaType" />
+						<xsd:attribute name="wartosc" type="tns:wartoscType" />
+						<xsd:attribute name="ostroznie" type="xsd:boolean" />
+						<xsd:attribute name="numerPrzesylkiKlienta" type="xsd:string" />
+						<xsd:attribute name="kwotaTranzakcji" type="xsd:int" />
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:element name="getAddresLabelByGuid">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="guid" type="tns:guidType" maxOccurs="unbounded" minOccurs="1" />
+						<xsd:element name="idBufor" type="xsd:int" maxOccurs="1" minOccurs="0" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getAddresLabelByGuidResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="content" type="tns:addressLabelContent" maxOccurs="unbounded" minOccurs="1" />
+						<xsd:element name="error" type="tns:errorType" maxOccurs="unbounded" minOccurs="0" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:complexType name="przesylkaBiznesowaPlusType">
+				<xsd:complexContent>
+					<xsd:extension base="tns:przesylkaRejestrowanaType">
+						<xsd:sequence>
+							<xsd:element name="pobranie" type="tns:pobranieType" maxOccurs="1" minOccurs="0" />
+							<xsd:element name="urzadWydaniaPrzesylki" type="tns:placowkaPocztowaType" maxOccurs="1" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>Wystarczy przesłac obiekt z ustawionym id reszta pól moż ezostać pominięta (aby zmniejszyć ilośc danych do tansmisji)
+									</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="subPrzesylka" type="tns:subPrzesylkaBiznesowaPlusType" maxOccurs="100" minOccurs="0" />
+							<xsd:choice>
+								<xsd:element name="dataDrugiejProbyDoreczenia" type="xsd:date" />
+								<xsd:element name="drugaProbaDoreczeniaPoLiczbieDni" type="xsd:int" />
+							</xsd:choice>
+						</xsd:sequence>
+						<xsd:attribute name="posteRestante" type="xsd:boolean" />
+						<xsd:attribute name="masa" type="tns:masaType" />
+						<xsd:attribute name="gabaryt" type="tns:gabarytBiznesowaType" />
+						<xsd:attribute name="wartosc" type="tns:wartoscType" />
+						<xsd:attribute name="kwotaTranzakcji" type="tns:kwotaTranzakcjiType" />
+						<xsd:attribute name="ostroznie" type="xsd:boolean" />
+						<xsd:attribute name="kategoria" type="tns:kategoriaType" />
+						<xsd:attribute name="iloscPotwierdzenOdbioru" type="tns:iloscPotwierdzenOdbioruType" />
+						<xsd:attribute name="zwrotDoslanie" type="xsd:boolean" />
+						<xsd:attribute name="eKontaktAdresata" type="tns:eKontaktType" />
+						<xsd:attribute name="eSposobPowiadomieniaAdresata" type="tns:eSposobPowiadomieniaType" />
+						<xsd:attribute name="numerPrzesylkiKlienta" type="tns:numerPrzesylkiKlientaType" />
+						<xsd:attribute name="iloscDniOczekiwaniaNaWydanie" type="xsd:int" />
+						<xsd:attribute name="oczekiwanyTerminDoreczenia" type="xsd:dateTime" />
+						<xsd:attribute name="terminRodzajPlus" type="tns:terminRodzajPlusType" />
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:simpleType name="opisType">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="500" />
+					<xsd:whiteSpace value="collapse" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="numerPrzesylkiKlientaType">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="20" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="pakietType">
+				<xsd:sequence>
+					<xsd:element name="kierunek" type="tns:kierunekType" maxOccurs="1" minOccurs="0">
+						<xsd:annotation>
+							<xsd:documentation> Uwaga w tym miejscu wystarczy jak obiekt kierunke będzie miał ustawioną tylko własność id (nie jest potrzebne przesyłanie pełnego
+								obiektu kierunekType pobranego z metody getKierunki)
+							</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="opakowanie" type="tns:opakowanieType" maxOccurs="unbounded" minOccurs="0" />
+					<xsd:element name="czynnoscUpustowa" maxOccurs="unbounded" minOccurs="0" type="tns:czynnoscUpustowaType" />
+				</xsd:sequence>
+				<xsd:attribute name="pakietGuid" type="tns:guidType" />
+				<xsd:attribute name="miejsceOdbioru" type="tns:miejsceOdbioruType" default="URZAD_NADANIA" use="optional" />
+				<xsd:attribute name="sposobNadania" type="tns:sposobNadaniaType" />
+			</xsd:complexType>			<xsd:complexType name="opakowanieType">
+				<xsd:attribute name="opakowanieGuid" type="tns:guidType" />
+				<xsd:attribute name="typ" type="tns:typOpakowanieType" />
+				<xsd:attribute name="sygnatura" type="xsd:string" />
+				<xsd:attribute name="ilosc" type="xsd:int" />
+				<xsd:attribute name="numerOpakowaniaZbiorczego" type="xsd:string" />
+			</xsd:complexType>
+			<xsd:simpleType name="typOpakowaniaType">
+				<xsd:restriction base="xsd:string" />
+			</xsd:simpleType>
+			<xsd:element name="getPlacowkiPocztowe">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="idWojewodztwo" type="tns:idWojewodztwoType" maxOccurs="1" minOccurs="1" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getPlacowkiPocztoweResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="placowka" type="tns:placowkaPocztowaType" maxOccurs="unbounded" minOccurs="1" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getGuid">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="ilosc" type="xsd:int" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getGuidResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="guid" type="tns:guidType" maxOccurs="100" minOccurs="1" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:complexType name="kierunekType">
+				<xsd:sequence>
+					<xsd:element name="kodPocztowy" type="tns:kodPocztowyType" maxOccurs="unbounded" minOccurs="0" />
+				</xsd:sequence>
+				<xsd:attribute name="id" type="xsd:int" use="required" />
+				<xsd:attribute name="opis" type="xsd:string" />
+				<xsd:attribute name="pna" type="tns:kodPocztowyType" />
+			</xsd:complexType>
+			<xsd:element name="getKierunki">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="plan" type="xsd:string" />
+						<xsd:element name="prefixKodPocztowy">
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:length value="2" />
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getKierunkiResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="kierunek" type="tns:kierunekType" maxOccurs="1000" minOccurs="0" />
+						<xsd:element name="error" type="tns:errorType" maxOccurs="unbounded" minOccurs="0" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:simpleType name="czynnoscUpustowaType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="POSORTOWANA" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="miejsceOdbioruType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="NADAWCA" />
+					<xsd:enumeration value="URZAD_NADANIA" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="sposobNadaniaType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="WERYFIKACJA_WEZEL_DOCELOWY" />
+					<xsd:enumeration value="WERYFIKACJA_WEZEL_NADAWCZY" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:element name="getKierunkiInfo">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="plan" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getKierunkiInfoResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="lastUpdate" type="xsd:date" maxOccurs="1" minOccurs="1" />
+						<xsd:element name="usluga" type="tns:uslugiType" maxOccurs="unbounded" minOccurs="1" />
+						<xsd:element name="error" type="tns:errorType" maxOccurs="unbounded" minOccurs="0" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:simpleType name="kwotaTranzakcjiType">
+				<xsd:restriction base="xsd:int">
+					<xsd:minInclusive value="0" />
+					<xsd:maxInclusive value="9999999" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="uslugiType">
+				<xsd:attribute name="id" type="xsd:string" />
+				<xsd:attribute name="opis" type="xsd:string" />
+			</xsd:complexType>
+			<xsd:simpleType name="idWojewodztwoType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="02" />
+					<xsd:enumeration value="04" />
+					<xsd:enumeration value="06" />
+					<xsd:enumeration value="08" />
+					<xsd:enumeration value="10" />
+					<xsd:enumeration value="12" />
+					<xsd:enumeration value="14" />
+					<xsd:enumeration value="16" />
+					<xsd:enumeration value="18" />
+					<xsd:enumeration value="20" />
+					<xsd:enumeration value="22" />
+					<xsd:enumeration value="24" />
+					<xsd:enumeration value="26" />
+					<xsd:enumeration value="28" />
+					<xsd:enumeration value="30" />
+					<xsd:enumeration value="32" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="placowkaPocztowaType">
+				<xsd:sequence>
+					<xsd:element name="lokalizacjaGeograficzna" type="tns:lokalizacjaGeograficznaType" maxOccurs="1" minOccurs="0" />
+				</xsd:sequence>
+				<xsd:attribute name="id" type="xsd:int" use="required" />
+				<xsd:attribute name="prefixNazwy" type="xsd:string" />
+				<xsd:attribute name="nazwa" type="xsd:string">
+					<xsd:annotation>
+						<xsd:documentation />
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="wojewodztwo" type="xsd:string" />
+				<xsd:attribute name="powiat" type="xsd:string" />
+				<xsd:attribute name="miejsce" type="xsd:string" />
+				<xsd:attribute name="kodPocztowy">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:length value="5" />
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:attribute>
+				<xsd:attribute name="miejscowosc">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:minLength value="0" />
+							<xsd:maxLength value="30" />
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:attribute>
+				<xsd:attribute name="ulica" type="xsd:string" />
+				<xsd:attribute name="numerDomu" type="xsd:string" />
+				<xsd:attribute name="numerLokalu" type="xsd:string" />
+				<xsd:attribute name="nazwaWydruk" type="xsd:string">
+					<xsd:annotation>
+						<xsd:documentation>Pole dedykowane do wykorzystania na nalepkach adresowych przy określaniu punktu odbioru
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="punktWydaniaEPrzesylki" type="xsd:boolean" />
+				<xsd:attribute name="powiadomienieSMS" type="xsd:boolean" />
+				<xsd:attribute name="punktWydaniaPrzesylkiBiznesowejPlus" type="xsd:boolean" />
+				<xsd:attribute name="punktWydaniaPrzesylkiBiznesowej" type="xsd:boolean" />
+			</xsd:complexType>
+			<xsd:complexType name="punktWydaniaPrzesylkiBiznesowejPlus" />
+			<xsd:simpleType name="statusType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="NIEPOTWIERDZONA" />
+					<xsd:enumeration value="POTWIERDZONA" />
+					<xsd:enumeration value="NOWA" />
+					<xsd:enumeration value="BRAK" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="terminRodzajPlusType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="PORANEK" />
+					<xsd:enumeration value="POLUDNIE" />
+					<xsd:enumeration value="STANDARD" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="typOpakowanieType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="KL1" />
+					<xsd:enumeration value="KL2" />
+					<xsd:enumeration value="KL3" />
+					<xsd:enumeration value="S21" />
+					<xsd:enumeration value="S22" />
+					<xsd:enumeration value="S23" />
+					<xsd:enumeration value="P31" />
+					<xsd:enumeration value="P32" />
+					<xsd:enumeration value="P33" />
+					<xsd:enumeration value="SP41" />
+					<xsd:enumeration value="SP42" />
+					<xsd:enumeration value="WKL51" />
+					<xsd:enumeration value="K1" />
+					<xsd:enumeration value="K2" />
+					<xsd:enumeration value="K3" />
+					<xsd:enumeration value="P" />
+					<xsd:enumeration value="W" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:element name="getEnvelopeBufor">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="idBufor" type="xsd:int" maxOccurs="1" minOccurs="0" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getEnvelopeBuforResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="przesylka" type="tns:przesylkaType" maxOccurs="unbounded" minOccurs="0" />
+						<xsd:element name="error" type="tns:errorType" maxOccurs="unbounded" minOccurs="0" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="clearEnvelopeByGuids">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="guid" type="tns:guidType" maxOccurs="unbounded" minOccurs="1" />
+						<xsd:element name="idBufor" type="xsd:int" maxOccurs="1" minOccurs="0" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="clearEnvelopeByGuidsResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="error" type="tns:errorType" maxOccurs="unbounded" minOccurs="0" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:complexType name="zwrotDokumentowType">
+				<xsd:choice>
+					<xsd:element name="rodzajPocztex" type="tns:terminRodzajType" maxOccurs="1" minOccurs="0" />
+					<xsd:element name="rodzajList" type="tns:rodzajListType" maxOccurs="1" minOccurs="0" />
+				</xsd:choice>
+				<xsd:attribute name="odleglosc" type="xsd:int" />
+			</xsd:complexType>
+			<xsd:complexType name="odbiorPrzesylkiOdNadawcyType">
+				<xsd:attribute name="wSobote" type="xsd:boolean" />
+				<xsd:attribute name="wNiedzieleLubSwieto" type="xsd:boolean" />
+				<xsd:attribute name="wGodzinachOd20Do7" type="xsd:boolean" />
+			</xsd:complexType>
+			<xsd:complexType name="potwierdzenieDoreczeniaType">
+				<xsd:attribute name="sposob" type="tns:sposobDoreczeniaPotwierdzeniaType" />
+				<xsd:attribute name="kontakt" type="xsd:string" />
+			</xsd:complexType>
+			<xsd:complexType name="rodzajListType">
+				<xsd:attribute name="polecony" type="xsd:boolean" />
+				<xsd:attribute name="kategoria" type="tns:kategoriaType" />
+			</xsd:complexType>
+			<xsd:complexType name="potwierdzenieOdbioruType">
+				<xsd:attribute name="ilosc" type="tns:iloscPotwierdzenOdbioruType" />
+				<xsd:attribute name="sposob" type="tns:sposobPrzekazaniaPotwierdzeniaOdbioruType" />
+			</xsd:complexType>
+			<xsd:simpleType name="sposobPrzekazaniaPotwierdzeniaOdbioruType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="MIEJSKI_DO_3H_DO_5KM" />
+					<xsd:enumeration value="MIEJSKI_DO_3H_DO_10KM" />
+					<xsd:enumeration value="MIEJSKI_DO_3H_DO_15KM" />
+					<xsd:enumeration value="MIEJSKI_DO_3H_POWYZEJ_15KM" />
+					<xsd:enumeration value="MIEJSKI_DO_4H_DO_10KM" />
+					<xsd:enumeration value="MIEJSKI_DO_4H_DO_15KM" />
+					<xsd:enumeration value="MIEJSKI_DO_4H_DO_20KM" />
+					<xsd:enumeration value="MIEJSKI_DO_4H_DO_30KM" />
+					<xsd:enumeration value="MIEJSKI_DO_4H_DO_40KM" />
+					<xsd:enumeration value="EKSPRES24" />
+					<xsd:enumeration value="LIST_ZWYKLY" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="doreczenieType">
+				<xsd:attribute name="oczekiwanyTerminDoreczenia" type="xsd:date" />
+				<xsd:attribute name="oczekiwanaGodzinaDoreczenia" type="tns:oczekiwanaGodzinaDoreczeniaType" />
+				<xsd:attribute name="wSobote" type="xsd:boolean" />
+				<xsd:attribute name="w90Minut" type="xsd:boolean" />
+				<xsd:attribute name="wNiedzieleLubSwieto" type="xsd:boolean" />
+				<xsd:attribute name="doRakWlasnych" type="xsd:boolean" />
+				<xsd:attribute name="wGodzinachOd20Do7" type="xsd:boolean" />
+			</xsd:complexType>
+			<xsd:complexType name="doreczenieUslugaPocztowaType">
+				<xsd:attribute name="oczekiwanyTerminDoreczenia" type="xsd:date" />
+				<xsd:attribute name="oczekiwanaGodzinaDoreczenia" type="tns:oczekiwanaGodzinaDoreczeniaUslugiType" />
+				<xsd:attribute name="wSobote" type="xsd:boolean" />
+				<xsd:attribute name="doRakWlasnych" type="xsd:boolean" />
+			</xsd:complexType>
+			<xsd:complexType name="doreczenieUslugaKurierskaType">
+				<xsd:attribute name="oczekiwanyTerminDoreczenia" type="xsd:date" />
+				<xsd:attribute name="oczekiwanaGodzinaDoreczenia" type="tns:oczekiwanaGodzinaDoreczeniaUslugiType" />
+				<xsd:attribute name="wSobote" type="xsd:boolean" />
+				<xsd:attribute name="w90Minut" type="xsd:boolean" />
+				<xsd:attribute name="wNiedzieleLubSwieto" type="xsd:boolean" />
+				<xsd:attribute name="doRakWlasnych" type="xsd:boolean" />
+				<xsd:attribute name="wGodzinachOd20Do7" type="xsd:boolean" />
+				<xsd:attribute name="po17" type="xsd:boolean" />
+			</xsd:complexType>
+			<!-- <xsd:complexType name="powiadomienieType"> <xsd:attribute name="sposob" type="tns:sposobDoreczeniaPotwierdzeniaType"></xsd:attribute> <xsd:attribute name="kontakt" 
+				type="tns:eKontaktType"></xsd:attribute> </xsd:complexType> -->
+			<xsd:simpleType name="oczekiwanaGodzinaDoreczeniaType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="DO 08:00" />
+					<xsd:enumeration value="DO 09:00" />
+					<xsd:enumeration value="DO 12:00" />
+					<xsd:enumeration value="NA 13:00" />
+					<xsd:enumeration value="NA 14:00" />
+					<xsd:enumeration value="NA 15:00" />
+					<xsd:enumeration value="NA 16:00" />
+					<xsd:enumeration value="NA 17:00" />
+					<xsd:enumeration value="NA 18:00" />
+					<xsd:enumeration value="NA 19:00" />
+					<xsd:enumeration value="NA 20:00" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="oczekiwanaGodzinaDoreczeniaUslugiType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="DO 08:00" />
+					<xsd:enumeration value="DO 09:00" />
+					<xsd:enumeration value="DO 12:00" />
+					<xsd:enumeration value="NA 13:00" />
+					<xsd:enumeration value="NA 14:00" />
+					<xsd:enumeration value="NA 15:00" />
+					<xsd:enumeration value="NA 16:00" />
+					<xsd:enumeration value="NA 17:00" />
+					<xsd:enumeration value="NA 18:00" />
+					<xsd:enumeration value="NA 19:00" />
+					<xsd:enumeration value="NA 20:00" />
+					<xsd:enumeration value="PO 17:00" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="paczkaZagranicznaType">
+				<xsd:complexContent>
+					<xsd:extension base="tns:przesylkaRejestrowanaType">
+						<xsd:sequence>
+							<xsd:element name="zwrot" type="tns:zwrotType" maxOccurs="1" minOccurs="0" />
+							<xsd:element name="deklaracjaCelna" type="tns:deklaracjaCelnaType" maxOccurs="1" minOccurs="0" />
+						</xsd:sequence>
+						<xsd:attribute name="posteRestante" type="xsd:boolean" />
+						<xsd:attribute name="masa" type="tns:masaType" />
+						<xsd:attribute name="wartosc" type="tns:wartoscType" />
+						<xsd:attribute name="kategoria" type="tns:kategoriaType" />
+						<xsd:attribute name="iloscPotwierdzenOdbioru" type="tns:iloscPotwierdzenOdbioruType" />
+						<xsd:attribute name="utrudnionaManipulacja" type="xsd:boolean" />
+						<xsd:attribute name="ekspres" type="xsd:boolean" />
+						<xsd:attribute name="numerReferencyjnyCelny" type="xsd:string" />
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:element name="setEnvelopeBuforDataNadania">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="dataNadania" type="xsd:date" maxOccurs="1" minOccurs="1" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="setEnvelopeBuforDataNadaniaResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="error" type="tns:errorType" maxOccurs="unbounded" minOccurs="0" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:complexType name="lokalizacjaGeograficznaType">
+				<xsd:sequence>
+					<xsd:element name="dlugosc" type="tns:wspolrzednaGeograficznaType" maxOccurs="1" minOccurs="1" />
+					<xsd:element name="szerokosc" type="tns:wspolrzednaGeograficznaType" maxOccurs="1" minOccurs="1" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="wspolrzednaGeograficznaType">
+				<xsd:attribute name="dec" type="xsd:float" />
+				<xsd:attribute name="stopien" type="xsd:int" />
+				<xsd:attribute name="minuta" type="xsd:int" />
+				<xsd:attribute name="sekunda" type="xsd:float" />
+			</xsd:complexType>
+			<xsd:complexType name="zwrotType">
+				<xsd:attribute name="zwrotPoLiczbieDni" type="xsd:int" />
+				<xsd:attribute name="traktowacJakPorzucona" type="xsd:boolean" />
+				<xsd:attribute name="sposobZwrotu" type="tns:sposobZwrotuType" />
+			</xsd:complexType>
+			<xsd:simpleType name="sposobZwrotuType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="LADOWO_MORSKA" />
+					<xsd:enumeration value="LOTNICZA" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="listZwyklyType">
+				<xsd:complexContent>
+					<xsd:extension base="tns:przesylkaNieRejestrowanaType">
+						<xsd:attribute name="posteRestante" type="xsd:boolean" />
+						<xsd:attribute name="kategoria" type="tns:kategoriaType" />
+						<xsd:attribute name="gabaryt" type="tns:gabarytType" />
+						<xsd:attribute name="masa" type="tns:masaType" />
+						<xsd:attribute name="egzemplarzBiblioteczny" type="xsd:boolean" default="false" />
+						<xsd:attribute name="dlaOciemnialych" type="xsd:boolean" default="false" />
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<!-- <xsd:complexType name="listZwyklyFirmowyType"> <xsd:complexContent> <xsd:extension base="tns:przesylkaNieRejestrowanaType"> <xsd:attribute name="posteRestante" 
+				type="xsd:boolean" /> <xsd:attribute name="masa" type="tns:masaType" /> <xsd:attribute name="miejscowa" type="xsd:boolean" default="false" /> <xsd:attribute name="egzemplarzBiblioteczny" 
+				type="xsd:boolean" default="false" /> <xsd:attribute name="dlaOciemnialych" type="xsd:boolean" default="false" /> </xsd:extension> </xsd:complexContent> <xsd:attribute 
+				name="miejscowa" type="xsd:boolean" /> <xsd:attribute name="obszarMiasto" type="xsd:boolean" /> </xsd:complexType> -->
+			<xsd:complexType name="reklamowaType">
+				<xsd:complexContent>
+					<xsd:extension base="tns:przesylkaNieRejestrowanaType">
+						<xsd:attribute name="masa" type="tns:masaType" />
+						<xsd:attribute name="gabaryt" type="tns:gabarytType" />
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:element name="getEPOStatus">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="guid" type="tns:guidType" maxOccurs="500" minOccurs="1" />
+						<xsd:element name="endedOnly" type="xsd:boolean" maxOccurs="1" minOccurs="1" />
+						<xsd:element name="idEnvelope" type="xsd:int" maxOccurs="1" minOccurs="1" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getEPOStatusResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="epo" type="tns:przesylkaEPOType" maxOccurs="unbounded" minOccurs="0" />
+						<xsd:element name="error" type="tns:errorType" maxOccurs="unbounded" minOccurs="0" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:simpleType name="statusEPOEnum">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="ERROR" />
+					<xsd:enumeration value="NADANIE" />
+					<xsd:enumeration value="W_TRANSPORCIE" />
+					<xsd:enumeration value="CLO" />
+					<xsd:enumeration value="SMS" />
+					<xsd:enumeration value="W_DORECZENIU" />
+					<xsd:enumeration value="AWIZO" />
+					<xsd:enumeration value="PONOWNE_AWIZO" />
+					<xsd:enumeration value="ZWROT" />
+					<xsd:enumeration value="DORECZONA" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="EPOType" abstract="true" />
+			<xsd:complexType name="EPOSimpleType">
+				<xsd:complexContent>
+					<xsd:extension base="tns:EPOType" />
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="EPOExtendedType">
+				<xsd:annotation>
+					<xsd:documentation>atrybut zasadySpecjalne zostanie usunięty z EPOExtendedType do końca 2016 roku
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexContent>
+					<xsd:extension base="tns:EPOType">
+						<xsd:attribute name="zasadySpecjalne" type="tns:zasadySpecjalneEnum" />
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:simpleType name="zasadySpecjalneEnum">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="ADMINISTRACYJNA" />
+					<xsd:enumeration value="PODATKOWA" />
+					<xsd:enumeration value="SADOWA_CYWILNA" />
+					<xsd:enumeration value="SADOWA_KARNA" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="przesylkaEPOType">
+				<xsd:sequence>
+					<xsd:element name="EPOInfo" type="tns:EPOInfoType" maxOccurs="1" minOccurs="0" />
+				</xsd:sequence>
+				<xsd:attribute name="guid" type="tns:guidType" />
+				<xsd:attribute name="numerNadania" type="tns:numerNadaniaType" />
+				<xsd:attribute name="statusEPO" type="tns:statusEPOEnum" />
+			</xsd:complexType>
+			<xsd:complexType name="przesylkaFirmowaPoleconaType">
+				<xsd:complexContent>
+					<xsd:extension base="tns:przesylkaRejestrowanaType">
+						<xsd:sequence>
+							<xsd:element name="epo" type="tns:EPOType" maxOccurs="1" minOccurs="0" />
+						</xsd:sequence>
+						<xsd:attribute name="zasadySpecjalne" type="tns:zasadySpecjalneEnum" use="optional" />
+						<xsd:attribute name="posteRestante" type="xsd:boolean" />
+						<xsd:attribute name="iloscPotwierdzenOdbioru" type="tns:iloscPotwierdzenOdbioruType" />
+						<xsd:attribute name="masa" type="tns:masaType" />
+						<xsd:attribute name="miejscowa" type="xsd:boolean" />
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="EPOInfoType">
+				<xsd:sequence>
+					<xsd:element name="awizoPrzesylki" type="tns:awizoPrzesylkiType" minOccurs="0" />
+					<xsd:element name="doreczeniePrzesylki" type="tns:doreczeniePrzesylkiType" minOccurs="0" />
+					<xsd:element name="zwrotPrzesylki" type="tns:zwrotPrzesylkiType" minOccurs="0" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="awizoPrzesylkiType">
+				<xsd:attribute name="dataPierwszegoAwizowania" type="xsd:date" />
+				<xsd:attribute name="dataDrugiegoAwizowania" type="xsd:date" />
+				<xsd:attribute name="miejscePozostawienia" type="tns:miejscaPozostawieniaAwizoEnum" />
+				<xsd:attribute name="idPlacowkaPocztowaWydajaca" type="xsd:int" />
+			</xsd:complexType>
+			<xsd:complexType name="doreczeniePrzesylkiType">
+				<xsd:attribute name="data" type="xsd:dateTime" />
+				<xsd:attribute name="osobaOdbierajaca" type="xsd:string" />
+				<xsd:attribute name="podmiotDoreczenia" type="tns:podmiotDoreczeniaEnum" />
+			</xsd:complexType>
+			<xsd:complexType name="zwrotPrzesylkiType">
+				<xsd:attribute name="przyczyna" type="tns:przyczynaZwrotuEnum" />
+				<xsd:attribute name="data" type="xsd:dateTime" />
+			</xsd:complexType>
+			<xsd:simpleType name="miejscaPozostawieniaAwizoEnum">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="SKRZYNKA_ADRESATA" />
+					<xsd:enumeration value="DRZWI_MIESZKANIA" />
+					<xsd:enumeration value="DRZWI_BIURA" />
+					<xsd:enumeration value="DRZWI_INNE" />
+					<xsd:enumeration value="PRZY_WEJSCIU_NA_POSESJE" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="podmiotDoreczeniaEnum">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="ADRESAT" />
+					<xsd:enumeration value="PELNOLETNI_DOMOWNIK" />
+					<xsd:enumeration value="SASIAD" />
+					<xsd:enumeration value="DOZORCA_DOMU" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="przyczynaZwrotuEnum">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="ODMOWA" />
+					<xsd:enumeration value="ADRESAT_ZMARL" />
+					<xsd:enumeration value="ADRESAT_NIEZNANY" />
+					<xsd:enumeration value="ADRESAT_WYPROWADZIL_SIE" />
+					<xsd:enumeration value="ADRESAT_NIE_PODJAL" />
+					<xsd:enumeration value="INNA" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:element name="getAddresLabelCompact">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="idEnvelope" type="xsd:int" maxOccurs="1" minOccurs="1" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getAddresLabelCompactResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="pdfContent" type="xsd:base64Binary" maxOccurs="1" minOccurs="0" />
+						<xsd:element name="error" type="tns:errorType" maxOccurs="unbounded" minOccurs="0" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getAddresLabelByGuidCompact">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="guid" type="tns:guidType" maxOccurs="unbounded" minOccurs="1" />
+						<xsd:element name="idBufor" type="xsd:int" maxOccurs="1" minOccurs="0" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getAddresLabelByGuidCompactResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="pdfContent" type="xsd:base64Binary" maxOccurs="1" minOccurs="0" />
+						<xsd:element name="error" type="tns:errorType" maxOccurs="unbounded" minOccurs="0" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:complexType name="ubezpieczenieType">
+				<xsd:attribute name="rodzaj" type="tns:rodzajUbezpieczeniaType" use="required" />
+				<xsd:attribute name="kwota" type="tns:kwotaUbezpieczeniaType" use="required" />
+			</xsd:complexType>
+			<xsd:simpleType name="rodzajUbezpieczeniaType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="STANDARD" />
+					<xsd:enumeration value="PRECJOZA" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="kwotaUbezpieczeniaType">
+				<xsd:restriction base="xsd:decimal" />
+			</xsd:simpleType>
+			<xsd:simpleType name="emailType">
+				<xsd:restriction base="xsd:string">
+					<xsd:minLength value="6" />
+					<xsd:maxLength value="50" />
+					<xsd:pattern value="[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="mobileType">
+				<xsd:restriction base="xsd:string">
+					<xsd:length value="9" />
+					<xsd:pattern value="[5-8]{1}[0-9]{8}" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="EMSType">
+				<xsd:complexContent>
+					<xsd:extension base="tns:przesylkaRejestrowanaType">
+						<xsd:sequence>
+							<xsd:element name="ubezpieczenie" type="tns:ubezpieczenieType" maxOccurs="1" minOccurs="0" />
+							<xsd:element name="deklaracjaCelna" type="tns:deklaracjaCelnaType" maxOccurs="1" minOccurs="0" />
+						</xsd:sequence>
+						<xsd:attribute name="typOpakowania" type="tns:EMSTypOpakowaniaType" />
+						<xsd:attribute name="masa" type="tns:masaType" />
+						<xsd:attribute name="zalaczoneDokumenty" type="xsd:boolean" />
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:simpleType name="EMSTypOpakowaniaType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="ZWYKLY" />
+					<xsd:enumeration value="DOKUMENT_PACK" />
+					<xsd:enumeration value="KILO_PACK" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:element name="getEnvelopeBuforList">
+				<xsd:complexType />
+			</xsd:element>
+			<xsd:element name="getEnvelopeBuforListResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="bufor" type="tns:buforType" maxOccurs="unbounded" minOccurs="0" />
+						<xsd:element name="error" type="tns:errorType" maxOccurs="unbounded" minOccurs="0" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:complexType name="buforType">
+				<xsd:attribute name="idBufor" type="xsd:int" />
+				<xsd:attribute name="dataNadania" type="xsd:date" />
+				<xsd:attribute name="urzadNadania" type="tns:urzadNadaniaType" />
+				<xsd:attribute name="active" type="xsd:boolean" />
+				<xsd:attribute name="opis" type="xsd:string" />
+			</xsd:complexType>
+			<xsd:element name="createEnvelopeBufor">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="bufor" type="tns:buforType" maxOccurs="unbounded" minOccurs="1" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="createEnvelopeBuforResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="createdBufor" type="tns:buforType" maxOccurs="unbounded" minOccurs="0" />
+						<xsd:element name="error" type="tns:errorType" maxOccurs="unbounded" minOccurs="0" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="moveShipments">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="idBuforFrom" type="xsd:int" maxOccurs="1" minOccurs="1" />
+						<xsd:element name="idBuforTo" type="xsd:int" maxOccurs="1" minOccurs="1" />
+						<xsd:element name="guid" type="tns:guidType" maxOccurs="unbounded" minOccurs="1" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="moveShipmentsResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="notMovedGuid" type="tns:guidType" maxOccurs="unbounded" minOccurs="0" />
+						<xsd:element name="error" type="tns:errorType" maxOccurs="unbounded" minOccurs="0" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="updateEnvelopeBufor">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="bufor" type="tns:buforType" maxOccurs="unbounded" minOccurs="1" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="updateEnvelopeBuforResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="error" type="tns:errorType" maxOccurs="unbounded" minOccurs="0" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getUbezpieczeniaInfo">
+				<xsd:complexType />
+			</xsd:element>
+			<xsd:element name="getUbezpieczeniaInfoResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="poziomyUbezpieczenia" type="tns:ubezpieczeniaInfoType" maxOccurs="unbounded" minOccurs="0" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:complexType name="ubezpieczeniaInfoType">
+				<xsd:attribute name="typPrzesylki" type="xsd:string" />
+				<xsd:attribute name="kwota" type="tns:kwotaUbezpieczeniaType" />
+			</xsd:complexType>
+			<xsd:element name="isMiejscowa">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="trasaRequest" type="tns:trasaRequestType" maxOccurs="500" minOccurs="1" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="isMiejscowaResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="trasaResponse" type="tns:trasaResponseType" maxOccurs="500" minOccurs="1" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:complexType name="trasaRequestType">
+				<xsd:sequence>
+					<xsd:element name="fromUrzadNadania" type="tns:urzadNadaniaType" />
+					<xsd:element name="toKodPocztowy" type="tns:kodPocztowyType" />
+					<xsd:element name="guid" type="tns:guidType" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="trasaResponseType">
+				<xsd:sequence>
+					<xsd:element name="isMiejscowa" type="xsd:boolean" />
+					<xsd:element name="guid" type="tns:guidType" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="deklaracjaCelnaType">
+				<xsd:sequence>
+					<xsd:element name="szczegoly" type="tns:szczegolyDeklaracjiCelnejType" maxOccurs="5" minOccurs="1" />
+				</xsd:sequence>
+				<xsd:attribute name="podarunek" type="xsd:boolean" />
+				<xsd:attribute name="dokument" type="xsd:boolean" />
+				<xsd:attribute name="probkaHandlowa" type="xsd:boolean" />
+				<xsd:attribute name="zwrotTowaru" type="xsd:boolean" />
+				<xsd:attribute name="towary" type="xsd:boolean" />
+				<xsd:attribute name="inny" type="xsd:boolean" />
+				<xsd:attribute name="wyjasnienie" type="xsd:string" />
+				<xsd:attribute name="oplatyPocztowe" type="xsd:string" />
+				<xsd:attribute name="uwagi" type="xsd:string" />
+				<xsd:attribute name="licencja" type="xsd:string" />
+				<xsd:attribute name="swiadectwo" type="xsd:string" />
+				<xsd:attribute name="faktura" type="xsd:string" />
+				<xsd:attribute name="numerReferencyjnyImportera" type="xsd:string" />
+				<xsd:attribute name="numerTelefonuImportera" type="xsd:string" />
+				<xsd:attribute name="waluta" type="xsd:string" />
+			</xsd:complexType>
+			<xsd:complexType name="szczegolyDeklaracjiCelnejType">
+				<xsd:attribute name="zawartosc" type="xsd:string" />
+				<xsd:attribute name="ilosc" type="xsd:float" />
+				<xsd:attribute name="masa" type="xsd:int" />
+				<xsd:attribute name="wartosc" type="xsd:int" />
+				<xsd:attribute name="numerTaryfowy" type="xsd:string" />
+				<xsd:attribute name="krajPochodzenia" type="xsd:string" />
+			</xsd:complexType>
+			<xsd:complexType name="przesylkaPaletowaType">
+				<xsd:complexContent>
+					<xsd:extension base="tns:przesylkaRejestrowanaType">
+						<xsd:sequence>
+							<xsd:element name="miejsceOdbioru" type="tns:adresType" maxOccurs="1" minOccurs="0" />
+							<xsd:element name="miejsceDoreczenia" type="tns:adresType" maxOccurs="1" minOccurs="0" />
+							<xsd:element name="paleta" type="tns:paletaType" maxOccurs="1" minOccurs="1" />
+							<xsd:element name="platnik" type="tns:platnikType" maxOccurs="1" minOccurs="1" />
+							<xsd:element name="pobranie" type="tns:pobranieType" maxOccurs="1" minOccurs="0" />
+							<xsd:element name="subPaleta" type="tns:subPrzesylkaPaletowaType" maxOccurs="32" minOccurs="0" />
+						</xsd:sequence>
+						<xsd:attribute name="zawartosc" type="xsd:string" />
+						<xsd:attribute name="masa" type="tns:masaType" />
+						<xsd:attribute name="dataZaladunku" type="xsd:date" />
+						<xsd:attribute name="dataDostawy" type="xsd:date" />
+						<xsd:attribute name="wartosc" type="tns:wartoscType" />
+						<xsd:attribute name="iloscZwracanychPaletEUR" type="xsd:int" />
+						<xsd:attribute name="zalaczonaFV" type="xsd:string" />
+						<xsd:attribute name="zalaczonyWZ" type="xsd:string" />
+						<xsd:attribute name="zalaczoneInne" type="xsd:string" />
+						<xsd:attribute name="zwracanaFV" type="xsd:string" />
+						<xsd:attribute name="zwracanyWZ" type="xsd:string" />
+						<xsd:attribute name="zwracaneInne" type="xsd:string" />
+						<xsd:attribute name="powiadomienieNadawcy" type="xsd:string" />
+						<xsd:attribute name="powiadomienieOdbiorcy" type="tns:eSposobPowiadomieniaType" />
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:simpleType name="rodzajPaletyType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="EUR" />
+					<xsd:enumeration value="POLPALETA" />
+					<xsd:enumeration value="INNA" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="paletaType">
+				<xsd:attribute name="rodzajPalety" type="tns:rodzajPaletyType" />
+				<xsd:attribute name="szerokosc" type="xsd:int" />
+				<xsd:attribute name="dlugosc" type="xsd:string" />
+				<xsd:attribute name="wysokosc" type="xsd:string" />
+			</xsd:complexType>
+			<xsd:complexType name="platnikType">
+				<xsd:choice>
+					<xsd:element name="uiszczaOplate" type="tns:uiszczaOplateType" />
+					<xsd:element name="adresPlatnika" type="tns:adresType" />
+				</xsd:choice>
+			</xsd:complexType>
+			<xsd:complexType name="subPrzesylkaPaletowaType">
+				<xsd:complexContent>
+					<xsd:extension base="tns:przesylkaType">
+						<xsd:sequence>
+							<xsd:element name="paleta" type="tns:paletaType" maxOccurs="1" minOccurs="1" />
+						</xsd:sequence>
+						<xsd:attribute name="zawartosc" type="xsd:string" />
+						<xsd:attribute name="masa" type="tns:masaType" />
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:element name="getBlankietPobraniaByGuids">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="guid" type="tns:guidType" maxOccurs="unbounded" minOccurs="1" />
+						<xsd:element name="idBufor" type="xsd:int" maxOccurs="1" minOccurs="0" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getBlankietPobraniaByGuidsResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="content" type="tns:addressLabelContent" maxOccurs="unbounded" minOccurs="0" />
+						<xsd:element name="error" type="tns:errorType" maxOccurs="unbounded" minOccurs="0" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="updateAccount">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="account" type="tns:accountType" maxOccurs="1" minOccurs="1" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="updateAccountResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="error" type="tns:errorType" maxOccurs="unbounded" minOccurs="0" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:complexType name="accountType">
+				<xsd:sequence>
+					<xsd:element name="karta" type="tns:kartaType" maxOccurs="unbounded" minOccurs="1" />
+					<xsd:element name="permision" type="tns:permisionType" maxOccurs="unbounded" minOccurs="0" />
+					<xsd:element name="profil" type="tns:profilType" maxOccurs="1" minOccurs="1" />
+				</xsd:sequence>
+				<xsd:attribute name="userName" type="xsd:string" />
+				<xsd:attribute name="firstName" type="xsd:string" />
+				<xsd:attribute name="lastName" type="xsd:string" />
+				<xsd:attribute name="email" type="xsd:string" />
+				<xsd:attribute name="status" type="tns:statusAccountType" />
+			</xsd:complexType>
+			<xsd:simpleType name="permisionType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="MANAGE_USERS" />
+					<xsd:enumeration value="TRANSMIT" />
+					<xsd:enumeration value="MANAGE_PROFILES" />
+					<xsd:enumeration value="MANAGE_ORGANIZATION_UNIT" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:element name="getAccountList">
+				<xsd:complexType />
+			</xsd:element>
+			<xsd:element name="getAccountListResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="account" type="tns:accountType" maxOccurs="unbounded" minOccurs="0" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:complexType name="profilType">
+				<xsd:complexContent>
+					<xsd:extension base="tns:adresType">
+						<xsd:attribute name="idProfil" type="xsd:int" />
+						<xsd:attribute name="nazwaSkrocona" type="xsd:string" />
+						<xsd:attribute name="fax" type="xsd:string" />
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:element name="getProfilList">
+				<xsd:complexType />
+			</xsd:element>
+			<xsd:element name="getProfilListResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="profil" type="tns:profilType" maxOccurs="unbounded" minOccurs="1" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="updateProfil">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="profil" type="tns:profilType" maxOccurs="1" minOccurs="1" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="updateProfilResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="error" type="tns:errorType" maxOccurs="unbounded" minOccurs="0" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:simpleType name="statusAccountType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="WYLACZONY" />
+					<xsd:enumeration value="ZABLOKOWANY" />
+					<xsd:enumeration value="ODBLOKOWANY" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="uslugaPaczkowaType">
+				<xsd:complexContent>
+					<xsd:extension base="tns:przesylkaRejestrowanaType">
+						<xsd:sequence>
+							<xsd:element name="pobranie" type="tns:pobranieType" maxOccurs="1" minOccurs="0" />
+							<xsd:element name="potwierdzenieDoreczenia" type="tns:potwierdzenieDoreczeniaType" maxOccurs="1" minOccurs="0" />
+							<xsd:choice>
+								<xsd:element name="urzadWydaniaEPrzesylki" type="tns:urzadWydaniaEPrzesylkiType" maxOccurs="1" minOccurs="0" />
+								<xsd:element name="subPrzesylka" type="tns:subUslugaPaczkowaType" maxOccurs="unbounded" minOccurs="1" />
+							</xsd:choice>
+							<xsd:element name="potwierdzenieOdbioru" type="tns:potwierdzenieOdbioruPaczkowaType" maxOccurs="1" minOccurs="0" />
+							<xsd:element name="ubezpieczenie" type="tns:ubezpieczenieType" maxOccurs="1" minOccurs="0" />
+							<xsd:element name="zwrotDokumentow" type="tns:zwrotDokumentowPaczkowaType" maxOccurs="1" minOccurs="0" />
+							<xsd:element name="doreczenie" type="tns:doreczenieUslugaPocztowaType" maxOccurs="1" minOccurs="0" />
+							<xsd:element name="epo" type="tns:EPOType" maxOccurs="1" minOccurs="0" />
+						</xsd:sequence>
+						<xsd:attribute name="zasadySpecjalne" type="tns:zasadySpecjalneEnum" use="optional" />
+						<xsd:attribute name="masa" type="tns:masaType" />
+						<xsd:attribute name="wartosc" type="tns:wartoscType" />
+						<xsd:attribute name="ponadgabaryt" type="xsd:boolean" />
+						<xsd:attribute name="zawartosc" type="xsd:string" />
+						<xsd:attribute name="sprawdzenieZawartosciPrzesylkiPrzezOdbiorce" type="xsd:boolean" />
+						<xsd:attribute name="ostroznie" type="xsd:boolean" />
+						<xsd:attribute name="uiszczaOplate" type="tns:uiszczaOplateType" />
+						<xsd:attribute name="termin" type="tns:terminPaczkowaType" />
+						<xsd:attribute name="opakowanie" type="tns:opakowaniePocztowaType" />
+						<xsd:attribute name="numerPrzesylkiKlienta" type="xsd:string" />
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="subUslugaPaczkowaType">
+				<xsd:complexContent>
+					<xsd:extension base="tns:przesylkaType">
+						<xsd:sequence>
+							<xsd:element name="pobranie" type="tns:pobranieType" />
+							<xsd:element name="ubezpieczenie" type="tns:ubezpieczenieType" />
+						</xsd:sequence>
+						<xsd:attribute name="numerNadania" type="tns:numerNadaniaType" />
+						<xsd:attribute name="masa" type="tns:masaType" />
+						<xsd:attribute name="wartosc" type="tns:wartoscType" />
+						<xsd:attribute name="ostroznie" type="xsd:boolean" />
+						<xsd:attribute name="opakowanie" type="tns:opakowaniePocztowaType" />
+						<xsd:attribute name="ponadgabaryt" type="xsd:boolean" />
+						<xsd:attribute name="numerPrzesylkiKlienta" type="xsd:string" />
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:simpleType name="terminPaczkowaType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="PACZKA_24" />
+					<xsd:enumeration value="PACZKA_48" />
+					<xsd:enumeration value="PACZKA_EKSTRA_24" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="opakowaniePocztowaType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="PACZKA_DO_POL_KILO" />
+					<xsd:enumeration value="FIRMOWA_DO_1KG" />
+					<xsd:enumeration value="GABARYT_G1" />
+					<xsd:enumeration value="GABARYT_G2" />
+					<xsd:enumeration value="GABARYT_G3" />
+					<xsd:enumeration value="GABARYT_G4" />
+					<xsd:enumeration value="GABARYT_G5" />				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="uslugaKurierskaType">
+				<xsd:complexContent>
+					<xsd:extension base="tns:przesylkaRejestrowanaType">
+						<xsd:sequence>
+							<xsd:element name="pobranie" type="tns:pobranieType" maxOccurs="1" minOccurs="0" />
+							<xsd:element name="odbiorPrzesylkiOdNadawcy" type="tns:odbiorPrzesylkiOdNadawcyType" maxOccurs="1" minOccurs="0" />
+							<xsd:element name="potwierdzenieDoreczenia" type="tns:potwierdzenieDoreczeniaType" maxOccurs="1" minOccurs="0" />
+							<xsd:choice>
+								<xsd:element name="urzadWydaniaEPrzesylki" type="tns:urzadWydaniaEPrzesylkiType" maxOccurs="1" minOccurs="0" />
+								<xsd:element name="subPrzesylka" type="tns:subUslugaKurierskaType" maxOccurs="unbounded" minOccurs="1" />
+							</xsd:choice>
+							<xsd:element name="potwierdzenieOdbioru" type="tns:potwierdzenieOdbioruKurierskaType" maxOccurs="1" minOccurs="0" />
+							<xsd:element name="ubezpieczenie" type="tns:ubezpieczenieType" maxOccurs="1" minOccurs="0" />
+							<xsd:element name="zwrotDokumentow" type="tns:zwrotDokumentowKurierskaType" maxOccurs="1" minOccurs="0" />
+							<xsd:element name="doreczenie" type="tns:doreczenieUslugaKurierskaType" maxOccurs="1" minOccurs="0" />
+							<xsd:element name="epo" type="tns:EPOType" maxOccurs="1" minOccurs="0" />
+						</xsd:sequence>
+						<xsd:attribute name="zasadySpecjalne" type="tns:zasadySpecjalneEnum" use="optional" />
+						<xsd:attribute name="masa" type="tns:masaType" />
+						<xsd:attribute name="wartosc" type="tns:wartoscType" />
+						<xsd:attribute name="ponadgabaryt" type="xsd:boolean" />
+						<xsd:attribute name="odleglosc" type="xsd:int" />
+						<xsd:attribute name="zawartosc" type="xsd:string" />
+						<xsd:attribute name="sprawdzenieZawartosciPrzesylkiPrzezOdbiorce" type="xsd:boolean" />
+						<xsd:attribute name="ostroznie" type="xsd:boolean" />
+						<xsd:attribute name="uiszczaOplate" type="tns:uiszczaOplateType" />
+						<xsd:attribute name="termin" type="tns:terminKurierskaType" />
+						<xsd:attribute name="opakowanie" type="tns:opakowanieKurierskaType" />
+						<xsd:attribute name="numerPrzesylkiKlienta" type="xsd:string" />
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="subUslugaKurierskaType">
+				<xsd:complexContent>
+					<xsd:extension base="tns:przesylkaType">
+						<xsd:sequence>
+							<xsd:element name="pobranie" type="tns:pobranieType" />
+							<xsd:element name="ubezpieczenie" type="tns:ubezpieczenieType" />
+						</xsd:sequence>
+						<xsd:attribute name="numerNadania" type="tns:numerNadaniaType" />
+						<xsd:attribute name="masa" type="tns:masaType" />
+						<xsd:attribute name="wartosc" type="tns:wartoscType" />
+						<xsd:attribute name="ostroznie" type="xsd:boolean" />
+						<xsd:attribute name="opakowanie" type="tns:opakowanieKurierskaType" />
+						<xsd:attribute name="ponadgabaryt" type="xsd:boolean" />
+						<xsd:attribute name="numerPrzesylkiKlienta" type="xsd:string" />
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:element name="createAccount">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="account" type="tns:accountType" maxOccurs="1" minOccurs="1" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="createAccountResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="error" type="tns:errorType" maxOccurs="unbounded" minOccurs="0" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="createProfil">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="profil" type="tns:profilType" maxOccurs="1" minOccurs="1" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="createProfilResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="error" type="tns:errorType" maxOccurs="unbounded" minOccurs="0" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:simpleType name="terminKurierskaType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="MIEJSKI_DO_3H_DO_5KM" />
+					<xsd:enumeration value="MIEJSKI_DO_3H_DO_10KM" />
+					<xsd:enumeration value="MIEJSKI_DO_3H_DO_15KM" />
+					<xsd:enumeration value="MIEJSKI_DO_3H_POWYZEJ_15KM" />
+					<xsd:enumeration value="MIEJSKI_DO_4H_DO_10KM" />
+					<xsd:enumeration value="MIEJSKI_DO_4H_DO_15KM" />
+					<xsd:enumeration value="MIEJSKI_DO_4H_DO_20KM" />
+					<xsd:enumeration value="MIEJSKI_DO_4H_DO_30KM" />
+					<xsd:enumeration value="MIEJSKI_DO_4H_DO_40KM" />
+					<xsd:enumeration value="KRAJOWY" />
+					<xsd:enumeration value="BEZPOSREDNI_DO_20KG" />
+					<xsd:enumeration value="BEZPOSREDNI_OD_20KG_DO_30KG" />
+					<xsd:enumeration value="BEZPOSREDNI_OD_30KG_DO_100KG" />
+					<xsd:enumeration value="EKSPRES24" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="opakowanieKurierskaType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="FIRMOWA_DO_1KG" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="zwrotDokumentowPaczkowaType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="EKSPRES24" />
+					<xsd:enumeration value="PACZKA_EKSTRA_24" />
+					<xsd:enumeration value="PACZKA_24" />
+					<xsd:enumeration value="PACZKA_48" />
+					<xsd:enumeration value="LIST_ZWYKLY_PRIORYTETOWY" />
+					<xsd:enumeration value="LIST_ZWYKLY_EKONOMICZNY" />
+					<xsd:enumeration value="LIST_POLECONY_PRIORYTETOWY" />
+					<xsd:enumeration value="LIST_POLECONY_EKONOMICZNY" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="potwierdzenieOdbioruPaczkowaType">
+				<xsd:attribute name="ilosc" type="tns:iloscPotwierdzenOdbioruType" />
+				<xsd:attribute name="sposob" type="tns:sposobPrzekazaniaPotwierdzeniaOdbioruPocztowaType" />
+			</xsd:complexType>
+			<xsd:simpleType name="sposobPrzekazaniaPotwierdzeniaOdbioruPocztowaType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="EKSPRES24" />
+					<xsd:enumeration value="PACZKA_EKSTRA_24" />
+					<xsd:enumeration value="PACZKA_24" />
+					<xsd:enumeration value="PACZKA_48" />
+					<xsd:enumeration value="LIST_ZWYKLY_PRIORYTETOWY" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="zwrotDokumentowKurierskaType">
+				<xsd:choice>
+					<xsd:element name="rodzajPocztex" type="tns:terminZwrotDokumentowKurierskaType" maxOccurs="1" minOccurs="0" />
+					<xsd:element name="rodzajPaczka" type="tns:terminZwrotDokumentowPaczkowaType" maxOccurs="1" minOccurs="0" />
+					<xsd:element name="rodzajList" type="tns:rodzajListType" maxOccurs="1" minOccurs="0" />
+				</xsd:choice>
+			</xsd:complexType>
+			<xsd:simpleType name="terminZwrotDokumentowKurierskaType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="MIEJSKI_DO_3H_DO_5KM" />
+					<xsd:enumeration value="MIEJSKI_DO_3H_DO_10KM" />
+					<xsd:enumeration value="MIEJSKI_DO_3H_DO_15KM" />
+					<xsd:enumeration value="MIEJSKI_DO_3H_POWYZEJ_15KM" />
+					<xsd:enumeration value="BEZPOSREDNI_DO_20KG" />
+					<xsd:enumeration value="EKSPRES24" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="terminZwrotDokumentowPaczkowaType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="PACZKA_24" />
+					<xsd:enumeration value="PACZKA_48" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="potwierdzenieOdbioruKurierskaType">
+				<xsd:attribute name="ilosc" type="tns:iloscPotwierdzenOdbioruType" />
+				<xsd:attribute name="sposob" type="tns:sposobPrzekazaniaPotwierdzeniaOdbioruKurierskaType" />
+			</xsd:complexType>
+			<xsd:simpleType name="sposobPrzekazaniaPotwierdzeniaOdbioruKurierskaType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="MIEJSKI_DO_3H_DO_5KM" />
+					<xsd:enumeration value="MIEJSKI_DO_3H_DO_10KM" />
+					<xsd:enumeration value="MIEJSKI_DO_3H_DO_15KM" />
+					<xsd:enumeration value="MIEJSKI_DO_3H_POWYZEJ_15KM" />
+					<xsd:enumeration value="BEZPOSREDNI_DO_20KG" />
+					<xsd:enumeration value="EKSPRES24" />
+					<xsd:enumeration value="PACZKA_24" />
+					<xsd:enumeration value="PACZKA_48" />
+					<xsd:enumeration value="LIST_ZWYKLY_PRIORYTETOWY" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:element name="addReklamacje">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="reklamowanaPrzesylka" type="tns:reklamowanaPrzesylkaType" maxOccurs="500" minOccurs="1" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="addReklamacjeResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="error" type="tns:errorType" maxOccurs="unbounded" minOccurs="0" />
+						<xsd:element name="idReklamacja" type="xsd:string" maxOccurs="1" minOccurs="0" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getReklamacje">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="dataRozpatrzenia" type="xsd:date" maxOccurs="1" minOccurs="1" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getReklamacjeResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="reklamacja" type="tns:reklamacjaRozpatrzonaType" maxOccurs="unbounded" minOccurs="0" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getZapowiedziFaktur">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="data" type="xsd:date" maxOccurs="1" minOccurs="1" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getZapowiedziFakturResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="zapowiedzFakturyZipFile" type="xsd:base64Binary" maxOccurs="unbounded" minOccurs="0" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="addOdwolanieDoReklamacji">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="reklamacja" type="tns:reklamowanaPrzesylkaType" maxOccurs="500" minOccurs="1" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="addOdwolanieDoReklamacjiResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="error" type="tns:errorType" maxOccurs="unbounded" minOccurs="0" />
+						<xsd:element name="idReklamacja" type="xsd:string" maxOccurs="1" minOccurs="0" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="addRozbieznoscDoZapowiedziFaktur">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="rozbieznosciZipFile" type="xsd:base64Binary" maxOccurs="10" minOccurs="1" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="addRozbieznoscDoZapowiedziFakturResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="error" type="tns:errorType" maxOccurs="unbounded" minOccurs="0" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:complexType name="reklamowanaPrzesylkaType">
+				<xsd:sequence>
+					<xsd:element name="przesylka" type="tns:przesylkaType" maxOccurs="1" minOccurs="1" />
+					<xsd:element name="powodReklamacji" type="tns:powodReklamacjiType" maxOccurs="1" minOccurs="1" />
+				</xsd:sequence>
+				<xsd:attribute name="dataNadania" type="xsd:date" use="required" />
+				<xsd:attribute name="urzadNadania" type="tns:urzadNadaniaType" use="required" />
+				<xsd:attribute name="powodReklamacjiOpis" type="xsd:string" use="optional" />
+				<xsd:attribute name="odszkodowanie" type="xsd:int" />
+				<xsd:attribute name="oplata" type="xsd:int" />
+			</xsd:complexType>
+			<xsd:complexType name="powodReklamacjiType">
+				<xsd:sequence>
+					<xsd:element name="powodSzczegolowy" type="tns:powodSzczegolowyType" maxOccurs="unbounded" minOccurs="1" />
+				</xsd:sequence>
+				<xsd:attribute name="idPowodGlowny" type="xsd:int" />
+				<xsd:attribute name="powodGlownyOpis" type="xsd:string" />
+			</xsd:complexType>
+			<xsd:complexType name="reklamacjaRozpatrzonaType">
+				<xsd:attribute name="guid" type="tns:guidType" />
+				<xsd:attribute name="numerNadania" type="tns:numerNadaniaType" />
+				<xsd:attribute name="rozstrzygniecie" type="tns:rozstrzygniecieType" />
+				<xsd:attribute name="przyznaneOdszkodowanie" type="xsd:int" />
+				<xsd:attribute name="uzasadnienie" type="xsd:string" />
+				<xsd:attribute name="dataRozpatrzenia" type="xsd:date" />
+				<xsd:attribute name="nazwaJednostkiRozpatrujacej" type="xsd:string" />
+				<xsd:attribute name="osobaRozpatrujaca" type="xsd:string" />
+				<xsd:attribute name="idReklamacja" type="xsd:string" />
+			</xsd:complexType>
+			<xsd:simpleType name="rozstrzygniecieType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="UZASADNIONA" />
+					<xsd:enumeration value="NIEUZASADNIONA" />
+					<xsd:enumeration value="NIEWNIESIONA" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:element name="getListaPowodowReklamacji">
+				<xsd:complexType />
+			</xsd:element>
+			<xsd:element name="getListaPowodowReklamacjiResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="kategoriePowodowReklamacji" type="tns:kategoriePowodowReklamacjiType" maxOccurs="unbounded" minOccurs="1" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:complexType name="powodSzczegolowyType">
+				<xsd:attribute name="idPowodSzczegolowy" type="xsd:int" />
+				<xsd:attribute name="powodSzczegolowyOpis" type="xsd:string" />
+			</xsd:complexType>
+			<xsd:complexType name="kategoriePowodowReklamacjiType">
+				<xsd:sequence>
+					<xsd:element name="nazwa" type="xsd:string" maxOccurs="1" minOccurs="1" />
+					<xsd:element name="powodReklamacji" type="tns:powodReklamacjiType" maxOccurs="unbounded" minOccurs="1" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="listBiznesowyType">
+				<xsd:complexContent>
+					<xsd:extension base="tns:przesylkaNieRejestrowanaType">
+						<xsd:attribute name="masa" type="tns:masaType" />
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:element name="zamowKuriera">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="miejsceOdbioru" type="tns:adresType" maxOccurs="1" minOccurs="1" />
+						<xsd:element name="nadawca" type="tns:adresType" maxOccurs="1" minOccurs="0" />
+						<xsd:element name="oczekiwanaDataOdbioru" type="xsd:string" maxOccurs="1" minOccurs="1" />
+						<xsd:element name="oczekiwanaGodzinaOdbioru" type="xsd:string" maxOccurs="1" minOccurs="1" />
+						<xsd:element name="szacowanaIloscPrzeslek" type="xsd:string" maxOccurs="1" minOccurs="1" />
+						<xsd:element name="szacowanaLacznaMasaPrzesylek" type="xsd:string" maxOccurs="1" minOccurs="1" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="zamowKurieraResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="error" type="tns:errorType" maxOccurs="unbounded" minOccurs="0" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getEZDOList">
+				<xsd:complexType />
+			</xsd:element>
+			<xsd:element name="getEZDOListResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="EZDOPakiet" type="tns:EZDOPakietType" maxOccurs="unbounded" minOccurs="0" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getEZDO">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="idEZDOPakiet" type="xsd:int" maxOccurs="1" minOccurs="1" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getEZDOResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="adres" type="tns:adresType" maxOccurs="1" minOccurs="1" />
+						<xsd:element name="przesylka" type="tns:EZDOPrzesylkaType" maxOccurs="unbounded" minOccurs="1" />
+						<xsd:element name="error" type="tns:errorType" maxOccurs="unbounded" minOccurs="0" />
+					</xsd:sequence>
+					<xsd:attribute name="numerKD" type="xsd:string" />
+					<xsd:attribute name="numerEZDO" type="xsd:string" />
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:complexType name="EZDOPakietType">
+				<xsd:attribute name="idEZDOPakiet" type="xsd:int" />
+				<xsd:attribute name="exported" type="xsd:date" />
+				<xsd:attribute name="idEZDOFile" type="xsd:string" />
+			</xsd:complexType>
+			<xsd:complexType name="EZDOPrzesylkaType">
+				<xsd:attribute name="numerNadania" type="tns:numerNadaniaType" />
+				<xsd:attribute name="rodzaj" type="xsd:string" />
+				<xsd:attribute name="kategoria" type="tns:kategoriaType" />
+				<xsd:attribute name="masa" type="tns:masaType" />
+				<xsd:attribute name="wartosc" type="tns:wartoscType" />
+				<xsd:attribute name="kwotaPobrania" type="tns:kwotaPobraniaType" />
+				<xsd:attribute name="numerWewnetrznyPrzesylki" type="xsd:string" />
+				<xsd:attribute name="zwrot" type="xsd:string" />
+			</xsd:complexType>
+			<xsd:complexType name="wplataCKPType">
+				<xsd:attribute name="unikalnyIdentyfikatorWplaty" type="xsd:string" use="required" />
+				<xsd:attribute name="numerNadania" type="tns:numerNadaniaType" use="required" />
+				<xsd:attribute name="kwota" type="xsd:int" use="required">
+					<xsd:annotation>
+						<xsd:documentation>Kwota w groszach</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="dataPobrania" type="xsd:date" use="required" />
+				<xsd:attribute name="dataPrzelewu" type="xsd:date" use="optional" />
+				<xsd:attribute name="idUmowy" type="xsd:int" use="required" />
+				<xsd:attribute name="tytulPrzelewuZbiorczego" type="xsd:string" use="required" />
+			</xsd:complexType>
+			<xsd:element name="getWplatyCKP">
+				<xsd:complexType>
+					<xsd:choice>
+						<xsd:element name="numerNadania" type="tns:numerNadaniaType" minOccurs="1" maxOccurs="1" />
+						<xsd:sequence>
+							<xsd:element name="startDate" type="xsd:date" maxOccurs="1" minOccurs="1" />
+							<xsd:element name="stopDate" type="xsd:date" maxOccurs="1" minOccurs="0" />
+						</xsd:sequence>
+					</xsd:choice>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getWplatyCKPResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="wplaty" type="tns:wplataCKPType" maxOccurs="unbounded" minOccurs="0" />
+						<xsd:element name="error" type="tns:errorType" maxOccurs="unbounded" minOccurs="0" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:complexType name="globalExpresType">
+				<xsd:complexContent>
+					<xsd:extension base="tns:przesylkaRejestrowanaType">
+						<xsd:sequence>
+							<xsd:element name="ubezpieczenie" type="tns:ubezpieczenieType" />
+							<xsd:element name="potwierdzenieDoreczenia" type="tns:potwierdzenieDoreczeniaType" />
+						</xsd:sequence>
+						<xsd:attribute name="masa" type="tns:masaType" />
+						<xsd:attribute name="posteRestante" type="xsd:boolean" />
+						<xsd:attribute name="zawartosc" type="xsd:string" />
+						<xsd:attribute name="kategoria" type="tns:kategoriaType" />
+						<xsd:attribute name="numerPrzesylkiKlienta" type="xsd:string" />
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:element name="cancelReklamacja">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="idRelkamacja" type="xsd:int" maxOccurs="1" minOccurs="1" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="cancelReklamacjaResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="error" type="tns:errorType" maxOccurs="unbounded" minOccurs="0" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:complexType name="zalacznikDoReklamacjiType">
+				<xsd:sequence>
+					<xsd:element name="fileContent" type="xsd:base64Binary" maxOccurs="1" minOccurs="1" />
+					<xsd:element name="fileName" type="xsd:string" maxOccurs="1" minOccurs="1" />
+					<xsd:element name="fileDesc" type="xsd:string" maxOccurs="1" minOccurs="0" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="addZalacznikDoReklamacji">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="idReklamacja" type="xsd:string" maxOccurs="1" minOccurs="1" />
+						<xsd:element name="zalacznik" type="tns:zalacznikDoReklamacjiType" maxOccurs="5" minOccurs="1" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="addZalacznikDoReklamacjiResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="error" type="tns:errorType" minOccurs="0" maxOccurs="unbounded" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="addShipmentRequest">
+		<wsdl:part name="parameters" element="tns:addShipment" />
+	</wsdl:message>
+	<wsdl:message name="addShipmentResponse">
+		<wsdl:part name="parameters" element="tns:addShipmentResponse" />
+	</wsdl:message>
+	<wsdl:message name="changePasswordRequest">
+		<wsdl:part name="parameters" element="tns:changePassword" />
+	</wsdl:message>
+	<wsdl:message name="changePasswordResponse">
+		<wsdl:part name="parameters" element="tns:changePasswordResponse" />
+	</wsdl:message>
+	<wsdl:message name="sendEnvelopeRequest">
+		<wsdl:part name="parameters" element="tns:sendEnvelope" />
+	</wsdl:message>
+	<wsdl:message name="sendEnvelopeResponse">
+		<wsdl:part name="parameters" element="tns:sendEnvelopeResponse" />
+	</wsdl:message>
+	<wsdl:message name="getUrzedyNadaniaRequest">
+		<wsdl:part name="parameters" element="tns:getUrzedyNadania" />
+	</wsdl:message>
+	<wsdl:message name="getUrzedyNadaniaResponse">
+		<wsdl:part name="parameters" element="tns:getUrzedyNadaniaResponse" />
+	</wsdl:message>
+	<wsdl:message name="setEnvelopeBuforDataNadaniaRequest">
+		<wsdl:part name="parameters" element="tns:setEnvelopeBuforDataNadania" />
+	</wsdl:message>
+	<wsdl:message name="setEnvelopeBuforDataNadaniaResponse">
+		<wsdl:part name="parameters" element="tns:setEnvelopeBuforDataNadaniaResponse" />
+	</wsdl:message>
+	<wsdl:message name="clearEnvelopeRequest">
+		<wsdl:part name="parameters" element="tns:clearEnvelope" />
+	</wsdl:message>
+	<wsdl:message name="clearEnvelopeResponse">
+		<wsdl:part name="parameters" element="tns:clearEnvelopeResponse" />
+	</wsdl:message>
+	<wsdl:message name="getUrzedyWydajaceEPrzesylkiRequest">
+		<wsdl:part name="parameters" element="tns:getUrzedyWydajaceEPrzesylki" />
+	</wsdl:message>
+	<wsdl:message name="getUrzedyWydajaceEPrzesylkiResponse">
+		<wsdl:part name="parameters" element="tns:getUrzedyWydajaceEPrzesylkiResponse" />
+	</wsdl:message>
+	<wsdl:message name="uploadIWDContentRequest">
+		<wsdl:part name="parameters" element="tns:uploadIWDContent" />
+	</wsdl:message>
+	<wsdl:message name="uploadIWDContentResponse">
+		<wsdl:part name="parameters" element="tns:uploadIWDContentResponse" />
+	</wsdl:message>
+	<wsdl:message name="getEnvelopeStatusRequest">
+		<wsdl:part name="parameters" element="tns:getEnvelopeStatus" />
+	</wsdl:message>
+	<wsdl:message name="getEnvelopeStatusResponse">
+		<wsdl:part name="parameters" element="tns:getEnvelopeStatusResponse" />
+	</wsdl:message>
+	<wsdl:message name="downloadIWDContentRequest">
+		<wsdl:part name="parameters" element="tns:downloadIWDContent" />
+	</wsdl:message>
+	<wsdl:message name="downloadIWDContentResponse">
+		<wsdl:part name="parameters" element="tns:downloadIWDContentResponse" />
+	</wsdl:message>
+	<wsdl:message name="getKartyRequest">
+		<wsdl:part name="parameters" element="tns:getKarty" />
+	</wsdl:message>
+	<wsdl:message name="getKartyResponse">
+		<wsdl:part name="parameters" element="tns:getKartyResponse" />
+	</wsdl:message>
+	<wsdl:message name="getPasswordExpiredDateRequest">
+		<wsdl:part name="parameters" element="tns:getPasswordExpiredDate" />
+	</wsdl:message>
+	<wsdl:message name="getPasswordExpiredDateResponse">
+		<wsdl:part name="parameters" element="tns:getPasswordExpiredDateResponse" />
+	</wsdl:message>
+	<wsdl:message name="setAktywnaKartaRequest">
+		<wsdl:part name="parameters" element="tns:setAktywnaKarta" />
+	</wsdl:message>
+	<wsdl:message name="setAktywnaKartaResponse">
+		<wsdl:part name="parameters" element="tns:setAktywnaKartaResponse" />
+	</wsdl:message>
+	<wsdl:message name="getEnvelopeContentFullRequest">
+		<wsdl:part name="parameters" element="tns:getEnvelopeContentFull" />
+	</wsdl:message>
+	<wsdl:message name="getEnvelopeContentFullResponse">
+		<wsdl:part name="parameters" element="tns:getEnvelopeContentFullResponse" />
+	</wsdl:message>
+	<wsdl:message name="getEnvelopeContentShortRequest">
+		<wsdl:part name="parameters" element="tns:getEnvelopeContentShort" />
+	</wsdl:message>
+	<wsdl:message name="getEnvelopeContentShortResponse">
+		<wsdl:part name="parameters" element="tns:getEnvelopeContentShortResponse" />
+	</wsdl:message>
+	<wsdl:message name="helloRequest">
+		<wsdl:part name="parameters" element="tns:hello" />
+	</wsdl:message>
+	<wsdl:message name="helloResponse">
+		<wsdl:part name="parameters" element="tns:helloResponse" />
+	</wsdl:message>
+	<wsdl:message name="getAddressLabelRequest">
+		<wsdl:part name="parameters" element="tns:getAddressLabel" />
+	</wsdl:message>
+	<wsdl:message name="getAddressLabelResponse">
+		<wsdl:part name="parameters" element="tns:getAddressLabelResponse" />
+	</wsdl:message>
+	<wsdl:message name="getOutboxBookRequest">
+		<wsdl:part name="parameters" element="tns:getOutboxBook" />
+	</wsdl:message>
+	<wsdl:message name="getOutboxBookResponse">
+		<wsdl:part name="parameters" element="tns:getOutboxBookResponse" />
+	</wsdl:message>
+	<wsdl:message name="getFirmowaPocztaBookRequest">
+		<wsdl:part name="parameters" element="tns:getFirmowaPocztaBook" />
+	</wsdl:message>
+	<wsdl:message name="getFirmowaPocztaBookResponse">
+		<wsdl:part name="parameters" element="tns:getFirmowaPocztaBookResponse" />
+	</wsdl:message>
+	<wsdl:message name="getEnvelopeListRequest">
+		<wsdl:part name="parameters" element="tns:getEnvelopeList" />
+	</wsdl:message>
+	<wsdl:message name="getEnvelopeListResponse">
+		<wsdl:part name="parameters" element="tns:getEnvelopeListResponse" />
+	</wsdl:message>
+	<wsdl:message name="getAddresLabelByGuidRequest">
+		<wsdl:part name="parameters" element="tns:getAddresLabelByGuid" />
+	</wsdl:message>
+	<wsdl:message name="getAddresLabelByGuidResponse">
+		<wsdl:part name="parameters" element="tns:getAddresLabelByGuidResponse" />
+	</wsdl:message>
+	<wsdl:message name="getPlacowkiPocztoweRequest">
+		<wsdl:part name="parameters" element="tns:getPlacowkiPocztowe" />
+	</wsdl:message>
+	<wsdl:message name="getPlacowkiPocztoweResponse">
+		<wsdl:part name="parameters" element="tns:getPlacowkiPocztoweResponse" />
+	</wsdl:message>
+	<wsdl:message name="getGuidRequest">
+		<wsdl:part name="parameters" element="tns:getGuid" />
+	</wsdl:message>
+	<wsdl:message name="getGuidResponse">
+		<wsdl:part name="parameters" element="tns:getGuidResponse" />
+	</wsdl:message>
+	<wsdl:message name="getKierunkiRequest">
+		<wsdl:part name="parameters" element="tns:getKierunki" />
+	</wsdl:message>
+	<wsdl:message name="getKierunkiResponse">
+		<wsdl:part name="parameters" element="tns:getKierunkiResponse" />
+	</wsdl:message>
+	<wsdl:message name="getKierunkiInfoRequest">
+		<wsdl:part name="parameters" element="tns:getKierunkiInfo" />
+	</wsdl:message>
+	<wsdl:message name="getKierunkiInfoResponse">
+		<wsdl:part name="parameters" element="tns:getKierunkiInfoResponse" />
+	</wsdl:message>
+	<wsdl:message name="getEnvelopeBuforRequest">
+		<wsdl:part name="parameters" element="tns:getEnvelopeBufor" />
+	</wsdl:message>
+	<wsdl:message name="getEnvelopeBuforResponse">
+		<wsdl:part name="parameters" element="tns:getEnvelopeBuforResponse" />
+	</wsdl:message>
+	<wsdl:message name="clearEnvelopeByGuidsRequest">
+		<wsdl:part name="parameters" element="tns:clearEnvelopeByGuids" />
+	</wsdl:message>
+	<wsdl:message name="clearEnvelopeByGuidsResponse">
+		<wsdl:part name="parameters" element="tns:clearEnvelopeByGuidsResponse" />
+	</wsdl:message>
+	<wsdl:message name="getEPOStatusRequest">
+		<wsdl:part name="parameters" element="tns:getEPOStatus" />
+	</wsdl:message>
+	<wsdl:message name="getEPOStatusResponse">
+		<wsdl:part name="parameters" element="tns:getEPOStatusResponse" />
+	</wsdl:message>
+	<wsdl:message name="getAddresLabelCompactRequest">
+		<wsdl:part name="parameters" element="tns:getAddresLabelCompact" />
+	</wsdl:message>
+	<wsdl:message name="getAddresLabelCompactResponse">
+		<wsdl:part name="parameters" element="tns:getAddresLabelCompactResponse" />
+	</wsdl:message>
+	<wsdl:message name="getAddresLabelByGuidCompactRequest">
+		<wsdl:part name="parameters" element="tns:getAddresLabelByGuidCompact" />
+	</wsdl:message>
+	<wsdl:message name="getAddresLabelByGuidCompactResponse">
+		<wsdl:part name="parameters" element="tns:getAddresLabelByGuidCompactResponse" />
+	</wsdl:message>
+	<wsdl:message name="getEnvelopeBuforListRequest">
+		<wsdl:part name="parameters" element="tns:getEnvelopeBuforList" />
+	</wsdl:message>
+	<wsdl:message name="getEnvelopeBuforListResponse">
+		<wsdl:part name="parameters" element="tns:getEnvelopeBuforListResponse" />
+	</wsdl:message>
+	<wsdl:message name="createEnvelopeBuforRequest">
+		<wsdl:part name="parameters" element="tns:createEnvelopeBufor" />
+	</wsdl:message>
+	<wsdl:message name="createEnvelopeBuforResponse">
+		<wsdl:part name="parameters" element="tns:createEnvelopeBuforResponse" />
+	</wsdl:message>
+	<wsdl:message name="moveShipmentsRequest">
+		<wsdl:part name="parameters" element="tns:moveShipments" />
+	</wsdl:message>
+	<wsdl:message name="moveShipmentsResponse">
+		<wsdl:part name="parameters" element="tns:moveShipmentsResponse" />
+	</wsdl:message>
+	<wsdl:message name="updateEnvelopeBuforRequest">
+		<wsdl:part name="parameters" element="tns:updateEnvelopeBufor" />
+	</wsdl:message>
+	<wsdl:message name="updateEnvelopeBuforResponse">
+		<wsdl:part name="parameters" element="tns:updateEnvelopeBuforResponse" />
+	</wsdl:message>
+	<wsdl:message name="getUbezpieczeniaInfoRequest">
+		<wsdl:part name="parameters" element="tns:getUbezpieczeniaInfo" />
+	</wsdl:message>
+	<wsdl:message name="getUbezpieczeniaInfoResponse">
+		<wsdl:part name="parameters" element="tns:getUbezpieczeniaInfoResponse" />
+	</wsdl:message>
+	<wsdl:message name="isMiejscowaRequest">
+		<wsdl:part name="parameters" element="tns:isMiejscowa" />
+	</wsdl:message>
+	<wsdl:message name="isMiejscowaResponse">
+		<wsdl:part name="parameters" element="tns:isMiejscowaResponse" />
+	</wsdl:message>
+	<wsdl:message name="getBlankietPobraniaByGuidsRequest">
+		<wsdl:part name="parameters" element="tns:getBlankietPobraniaByGuids" />
+	</wsdl:message>
+	<wsdl:message name="getBlankietPobraniaByGuidsResponse">
+		<wsdl:part name="parameters" element="tns:getBlankietPobraniaByGuidsResponse" />
+	</wsdl:message>
+	<wsdl:message name="getAccountListRequest">
+		<wsdl:part name="parameters" element="tns:getAccountList" />
+	</wsdl:message>
+	<wsdl:message name="getAccountListResponse">
+		<wsdl:part name="parameters" element="tns:getAccountListResponse" />
+	</wsdl:message>
+	<wsdl:message name="createAccountRequest">
+		<wsdl:part name="parameters" element="tns:createAccount" />
+	</wsdl:message>
+	<wsdl:message name="createAccountResponse">
+		<wsdl:part name="parameters" element="tns:createAccountResponse" />
+	</wsdl:message>
+	<wsdl:message name="updateAccountRequest">
+		<wsdl:part name="parameters" element="tns:updateAccount" />
+	</wsdl:message>
+	<wsdl:message name="updateAccountResponse">
+		<wsdl:part name="parameters" element="tns:updateAccountResponse" />
+	</wsdl:message>
+	<wsdl:message name="getProfilListRequest">
+		<wsdl:part name="parameters" element="tns:getProfilList" />
+	</wsdl:message>
+	<wsdl:message name="getProfilListResponse">
+		<wsdl:part name="parameters" element="tns:getProfilListResponse" />
+	</wsdl:message>
+	<wsdl:message name="updateProfilRequest">
+		<wsdl:part name="parameters" element="tns:updateProfil" />
+	</wsdl:message>
+	<wsdl:message name="updateProfilResponse">
+		<wsdl:part name="parameters" element="tns:updateProfilResponse" />
+	</wsdl:message>
+	<wsdl:message name="createProfilRequest">
+		<wsdl:part name="parameters" element="tns:createProfil" />
+	</wsdl:message>
+	<wsdl:message name="createProfilResponse">
+		<wsdl:part name="parameters" element="tns:createProfilResponse" />
+	</wsdl:message>
+	<wsdl:message name="addReklamacjeRequest">
+		<wsdl:part name="parameters" element="tns:addReklamacje" />
+	</wsdl:message>
+	<wsdl:message name="addReklamacjeResponse">
+		<wsdl:part name="parameters" element="tns:addReklamacjeResponse" />
+	</wsdl:message>
+	<wsdl:message name="getReklamacjeRequest">
+		<wsdl:part name="parameters" element="tns:getReklamacje" />
+	</wsdl:message>
+	<wsdl:message name="getReklamacjeResponse">
+		<wsdl:part name="parameters" element="tns:getReklamacjeResponse" />
+	</wsdl:message>
+	<wsdl:message name="getZapowiedziFakturRequest">
+		<wsdl:part name="parameters" element="tns:getZapowiedziFaktur" />
+	</wsdl:message>
+	<wsdl:message name="getZapowiedziFakturResponse">
+		<wsdl:part name="parameters" element="tns:getZapowiedziFakturResponse" />
+	</wsdl:message>
+	<wsdl:message name="addOdwolanieDoReklamacjiRequest">
+		<wsdl:part name="parameters" element="tns:addOdwolanieDoReklamacji" />
+	</wsdl:message>
+	<wsdl:message name="addOdwolanieDoReklamacjiResponse">
+		<wsdl:part name="parameters" element="tns:addOdwolanieDoReklamacjiResponse" />
+	</wsdl:message>
+	<wsdl:message name="cancelReklamacjaRequest">
+		<wsdl:part name="parameters" element="tns:cancelReklamacja" />
+	</wsdl:message>
+	<wsdl:message name="cancelReklamacjaResponse">
+		<wsdl:part name="parameters" element="tns:cancelReklamacjaResponse" />
+	</wsdl:message>
+	<wsdl:message name="addRozbieznoscDoZapowiedziFakturRequest">
+		<wsdl:part name="parameters" element="tns:addRozbieznoscDoZapowiedziFaktur" />
+	</wsdl:message>
+	<wsdl:message name="addRozbieznoscDoZapowiedziFakturResponse">
+		<wsdl:part name="parameters" element="tns:addRozbieznoscDoZapowiedziFakturResponse" />
+	</wsdl:message>
+	<wsdl:message name="getListaPowodowReklamacjiRequest">
+		<wsdl:part name="parameters" element="tns:getListaPowodowReklamacji" />
+	</wsdl:message>
+	<wsdl:message name="getListaPowodowReklamacjiResponse">
+		<wsdl:part name="parameters" element="tns:getListaPowodowReklamacjiResponse" />
+	</wsdl:message>
+	<wsdl:message name="zamowKurieraRequest">
+		<wsdl:part name="parameters" element="tns:zamowKuriera" />
+	</wsdl:message>
+	<wsdl:message name="zamowKurieraResponse">
+		<wsdl:part name="parameters" element="tns:zamowKurieraResponse" />
+	</wsdl:message>
+	<wsdl:message name="getEZDOListRequest">
+		<wsdl:part name="parameters" element="tns:getEZDOList" />
+	</wsdl:message>
+	<wsdl:message name="getEZDOListResponse">
+		<wsdl:part name="parameters" element="tns:getEZDOListResponse" />
+	</wsdl:message>
+	<wsdl:message name="getEZDORequest">
+		<wsdl:part name="parameters" element="tns:getEZDO" />
+	</wsdl:message>
+	<wsdl:message name="getEZDOResponse">
+		<wsdl:part name="parameters" element="tns:getEZDOResponse" />
+	</wsdl:message>
+	<wsdl:message name="getWplatyCKPRequest">
+		<wsdl:part name="parameters" element="tns:getWplatyCKP" />
+	</wsdl:message>
+	<wsdl:message name="getWplatyCKPResponse">
+		<wsdl:part name="parameters" element="tns:getWplatyCKPResponse" />
+	</wsdl:message>
+	<wsdl:message name="addZalacznikDoReklamacjiRequest">
+		<wsdl:part name="parameters" element="tns:addZalacznikDoReklamacji" />
+	</wsdl:message>
+	<wsdl:message name="addZalacznikDoReklamacjiResponse">
+		<wsdl:part name="parameters" element="tns:addZalacznikDoReklamacjiResponse" />
+	</wsdl:message>
+	<wsdl:portType name="ElektronicznyNadawca">
+		<wsdl:operation name="addShipment">
+			<wsdl:input message="tns:addShipmentRequest" />
+			<wsdl:output message="tns:addShipmentResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="sendEnvelope">
+			<wsdl:input message="tns:sendEnvelopeRequest" />
+			<wsdl:output message="tns:sendEnvelopeResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="getEnvelopeBufor">
+			<wsdl:input message="tns:getEnvelopeBuforRequest" />
+			<wsdl:output message="tns:getEnvelopeBuforResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="getEnvelopeBuforList">
+			<wsdl:input message="tns:getEnvelopeBuforListRequest" />
+			<wsdl:output message="tns:getEnvelopeBuforListResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="createEnvelopeBufor">
+			<wsdl:input message="tns:createEnvelopeBuforRequest" />
+			<wsdl:output message="tns:createEnvelopeBuforResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="updateEnvelopeBufor">
+			<wsdl:input message="tns:updateEnvelopeBuforRequest" />
+			<wsdl:output message="tns:updateEnvelopeBuforResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="clearEnvelopeByGuids">
+			<wsdl:input message="tns:clearEnvelopeByGuidsRequest" />
+			<wsdl:output message="tns:clearEnvelopeByGuidsResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="clearEnvelope">
+			<wsdl:input message="tns:clearEnvelopeRequest" />
+			<wsdl:output message="tns:clearEnvelopeResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="moveShipments">
+			<wsdl:input message="tns:moveShipmentsRequest" />
+			<wsdl:output message="tns:moveShipmentsResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="getAddressLabel">
+			<wsdl:input message="tns:getAddressLabelRequest" />
+			<wsdl:output message="tns:getAddressLabelResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="getAddresLabelCompact">
+			<wsdl:input message="tns:getAddresLabelCompactRequest" />
+			<wsdl:output message="tns:getAddresLabelCompactResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="getOutboxBook">
+			<wsdl:input message="tns:getOutboxBookRequest" />
+			<wsdl:output message="tns:getOutboxBookResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="getFirmowaPocztaBook">
+			<wsdl:input message="tns:getFirmowaPocztaBookRequest" />
+			<wsdl:output message="tns:getFirmowaPocztaBookResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="getEnvelopeStatus">
+			<wsdl:input message="tns:getEnvelopeStatusRequest" />
+			<wsdl:output message="tns:getEnvelopeStatusResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="getEnvelopeList">
+			<wsdl:input message="tns:getEnvelopeListRequest" />
+			<wsdl:output message="tns:getEnvelopeListResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="getEnvelopeContentShort">
+			<wsdl:input message="tns:getEnvelopeContentShortRequest" />
+			<wsdl:output message="tns:getEnvelopeContentShortResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="getEnvelopeContentFull">
+			<wsdl:input message="tns:getEnvelopeContentFullRequest" />
+			<wsdl:output message="tns:getEnvelopeContentFullResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="getKarty">
+			<wsdl:input message="tns:getKartyRequest" />
+			<wsdl:output message="tns:getKartyResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="setAktywnaKarta">
+			<wsdl:input message="tns:setAktywnaKartaRequest" />
+			<wsdl:output message="tns:setAktywnaKartaResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="getUrzedyNadania">
+			<wsdl:input message="tns:getUrzedyNadaniaRequest" />
+			<wsdl:output message="tns:getUrzedyNadaniaResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="getUrzedyWydajaceEPrzesylki">
+			<wsdl:input message="tns:getUrzedyWydajaceEPrzesylkiRequest" />
+			<wsdl:output message="tns:getUrzedyWydajaceEPrzesylkiResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="uploadIWDContent">
+			<wsdl:input message="tns:uploadIWDContentRequest" />
+			<wsdl:output message="tns:uploadIWDContentResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="downloadIWDContent">
+			<wsdl:input message="tns:downloadIWDContentRequest" />
+			<wsdl:output message="tns:downloadIWDContentResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="changePassword">
+			<wsdl:input message="tns:changePasswordRequest" />
+			<wsdl:output message="tns:changePasswordResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="getPasswordExpiredDate">
+			<wsdl:input message="tns:getPasswordExpiredDateRequest" />
+			<wsdl:output message="tns:getPasswordExpiredDateResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="hello">
+			<wsdl:input message="tns:helloRequest" />
+			<wsdl:output message="tns:helloResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="getAddresLabelByGuid">
+			<wsdl:input message="tns:getAddresLabelByGuidRequest" />
+			<wsdl:output message="tns:getAddresLabelByGuidResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="getAddresLabelByGuidCompact">
+			<wsdl:input message="tns:getAddresLabelByGuidCompactRequest" />
+			<wsdl:output message="tns:getAddresLabelByGuidCompactResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="getPlacowkiPocztowe">
+			<wsdl:input message="tns:getPlacowkiPocztoweRequest" />
+			<wsdl:output message="tns:getPlacowkiPocztoweResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="getGuid">
+			<wsdl:input message="tns:getGuidRequest" />
+			<wsdl:output message="tns:getGuidResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="getKierunki">
+			<wsdl:input message="tns:getKierunkiRequest" />
+			<wsdl:output message="tns:getKierunkiResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="getKierunkiInfo">
+			<wsdl:input message="tns:getKierunkiInfoRequest" />
+			<wsdl:output message="tns:getKierunkiInfoResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="getEPOStatus">
+			<wsdl:input message="tns:getEPOStatusRequest" />
+			<wsdl:output message="tns:getEPOStatusResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="setEnvelopeBuforDataNadania">
+			<wsdl:input message="tns:setEnvelopeBuforDataNadaniaRequest" />
+			<wsdl:output message="tns:setEnvelopeBuforDataNadaniaResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="getUbezpieczeniaInfo">
+			<wsdl:input message="tns:getUbezpieczeniaInfoRequest" />
+			<wsdl:output message="tns:getUbezpieczeniaInfoResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="isMiejscowa">
+			<wsdl:input message="tns:isMiejscowaRequest" />
+			<wsdl:output message="tns:isMiejscowaResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="getBlankietPobraniaByGuids">
+			<wsdl:input message="tns:getBlankietPobraniaByGuidsRequest" />
+			<wsdl:output message="tns:getBlankietPobraniaByGuidsResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="getAccountList">
+			<wsdl:input message="tns:getAccountListRequest" />
+			<wsdl:output message="tns:getAccountListResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="createAccount">
+			<wsdl:input message="tns:createAccountRequest" />
+			<wsdl:output message="tns:createAccountResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="updateAccount">
+			<wsdl:input message="tns:updateAccountRequest" />
+			<wsdl:output message="tns:updateAccountResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="getProfilList">
+			<wsdl:input message="tns:getProfilListRequest" />
+			<wsdl:output message="tns:getProfilListResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="createProfil">
+			<wsdl:input message="tns:createProfilRequest" />
+			<wsdl:output message="tns:createProfilResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="updateProfil">
+			<wsdl:input message="tns:updateProfilRequest" />
+			<wsdl:output message="tns:updateProfilResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="addReklamacje">
+			<wsdl:input message="tns:addReklamacjeRequest" />
+			<wsdl:output message="tns:addReklamacjeResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="addZalacznikDoReklamacji">
+			<wsdl:input message="tns:addZalacznikDoReklamacjiRequest" />
+			<wsdl:output message="tns:addZalacznikDoReklamacjiResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="getReklamacje">
+			<wsdl:input message="tns:getReklamacjeRequest" />
+			<wsdl:output message="tns:getReklamacjeResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="getZapowiedziFaktur">
+			<wsdl:input message="tns:getZapowiedziFakturRequest" />
+			<wsdl:output message="tns:getZapowiedziFakturResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="addOdwolanieDoReklamacji">
+			<wsdl:input message="tns:addOdwolanieDoReklamacjiRequest" />
+			<wsdl:output message="tns:addOdwolanieDoReklamacjiResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="cancelReklamacja">
+			<wsdl:input message="tns:cancelReklamacjaRequest" />
+			<wsdl:output message="tns:cancelReklamacjaResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="addRozbieznoscDoZapowiedziFaktur">
+			<wsdl:input message="tns:addRozbieznoscDoZapowiedziFakturRequest" />
+			<wsdl:output message="tns:addRozbieznoscDoZapowiedziFakturResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="getListaPowodowReklamacji">
+			<wsdl:input message="tns:getListaPowodowReklamacjiRequest" />
+			<wsdl:output message="tns:getListaPowodowReklamacjiResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="zamowKuriera">
+			<wsdl:input message="tns:zamowKurieraRequest" />
+			<wsdl:output message="tns:zamowKurieraResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="getEZDO">
+			<wsdl:input message="tns:getEZDORequest" />
+			<wsdl:output message="tns:getEZDOResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="getEZDOList">
+			<wsdl:input message="tns:getEZDOListRequest" />
+			<wsdl:output message="tns:getEZDOListResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="getWplatyCKP">
+			<wsdl:input message="tns:getWplatyCKPRequest" />
+			<wsdl:output message="tns:getWplatyCKPResponse" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="ENBinding" type="tns:ElektronicznyNadawca">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="addShipment">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/addShipment" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="sendEnvelope">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/sendEnvelope" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getEnvelopeBufor">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/getEnvelopeBufor" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getEnvelopeBuforList">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/getEnvelopeBuforList" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="createEnvelopeBufor">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/createEnvelopeBufor" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="updateEnvelopeBufor">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/updateEnvelopeBufor" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="clearEnvelopeByGuids">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/clearEnvelopeByGuids" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="clearEnvelope">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/clearEnvelope" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="moveShipments">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/moveShipments" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getAddressLabel">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/getAddressLabel" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getAddresLabelCompact">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/getAddresLabelCompact" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getOutboxBook">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/getOutboxBook" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getFirmowaPocztaBook">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/getFirmowaPocztaBook" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getEnvelopeStatus">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/getEnvelopeStatus" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getEnvelopeList">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/getEnvelopeList" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getEnvelopeContentShort">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/getEnvelopeContentShort" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getEnvelopeContentFull">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/getEnvelopeContentFull" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getKarty">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/getKarty" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="setAktywnaKarta">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/setAktywnaKarta" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getUrzedyNadania">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/getUrzedyNadania" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getUrzedyWydajaceEPrzesylki">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/getUrzedyWydajaceEPrzesylki" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="uploadIWDContent">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/uploadIWDContent" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="downloadIWDContent">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/downloadIWDContent" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="changePassword">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/changePassword" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getPasswordExpiredDate">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/getPasswordExpiredDate" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="hello">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/hello" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getAddresLabelByGuid">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/getAddresLabelByGuid" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getAddresLabelByGuidCompact">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/getAddresLabelByGuidCompact" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getPlacowkiPocztowe">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/getPlacowkiPocztowe" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getGuid">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/getGuid" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getKierunki">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/getKierunki" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getKierunkiInfo">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/getKierunkiInfo" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getEPOStatus">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/getEPOStatus" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="setEnvelopeBuforDataNadania">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/setEnvelopeBuforDataNadania" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getUbezpieczeniaInfo">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/getUbezpieczeniaInfo" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="isMiejscowa">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/isMiejscowa" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getBlankietPobraniaByGuids">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/getBlankietPobraniaByGuids" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getAccountList">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/getAccountList" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="createAccount">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/createAccount" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="updateAccount">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/updateAccount" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getProfilList">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/getProfilList" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="createProfil">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/createProfil" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="updateProfil">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/updateProfil" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="addReklamacje">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/addReklamacje" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="addZalacznikDoReklamacji">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/addZalacznikDoReklamacji" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getReklamacje">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/getReklamacje" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getZapowiedziFaktur">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/getZapowiedziFaktur" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="addOdwolanieDoReklamacji">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/addOdwolanieDoReklamacji" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="cancelReklamacja">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/cancelReklamacja" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="addRozbieznoscDoZapowiedziFaktur">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/addRozbieznoscDoZapowiedziFaktur" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getListaPowodowReklamacji">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/getListaPowodowReklamacji" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="zamowKuriera">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/zamowKuriera" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getEZDO">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/getEZDO" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getEZDOList">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/getEZDOList" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getWplatyCKP">
+			<soap:operation soapAction="http://e-nadawca.poczta-polska.pl/getWplatyCKP" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="ElektronicznyNadawca">
+		<wsdl:port name="ENSoap" binding="tns:ENBinding">
+			<soap:address location="https://e-nadawca.poczta-polska.pl/websrv/en.php" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

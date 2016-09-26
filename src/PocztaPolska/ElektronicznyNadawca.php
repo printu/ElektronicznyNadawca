@@ -12,8 +12,8 @@ namespace PocztaPolska;
  */
 class ElektronicznyNadawca extends \SoapClient
 {
-
-    const WSDL_FILE = "https://e-nadawca.poczta-polska.pl/websrv/en.wsdl";
+    const WSDL_FILE = 'wsdl/en.wsdl';
+    const WSDL_TEST_FILE = 'wsdl/test/en.wsdl';
     private $classmap = array(
         'addShipment' => 'PocztaPolska\addShipment',
         'addShipmentResponse' => 'PocztaPolska\addShipmentResponse',
@@ -301,7 +301,16 @@ class ElektronicznyNadawca extends \SoapClient
         if (isset($options['headers'])) {
             $this->__setSoapHeaders($options['headers']);
         }
-        parent::__construct($wsdl ?: self::WSDL_FILE, $options);
+
+        if (!$wsdl) {
+            $wsdl = realpath(__DIR__ . '/../../' . self::WSDL_FILE);
+        }
+
+        if (!file_exists($wsdl)) {
+            $wsdl = realpath(__DIR__ . '/../../' . $wsdl);
+        }
+
+        parent::__construct($wsdl, $options);
     }
 
     /**
