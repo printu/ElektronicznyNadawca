@@ -11,5 +11,3 @@ class zwrotDokumentowKurierskaType
     /** @var \PocztaPolska\rodzajListType */
     public $rodzajList;
 }
-
-

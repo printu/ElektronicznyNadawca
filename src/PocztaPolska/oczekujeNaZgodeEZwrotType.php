@@ -19,5 +19,3 @@ class oczekujeNaZgodeEZwrotType
     /** @var \PocztaPolska\guidType */
     public $guidZgodaEZwrot;
 }
-
-

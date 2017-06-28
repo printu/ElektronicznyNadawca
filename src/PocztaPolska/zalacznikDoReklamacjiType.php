@@ -11,5 +11,3 @@ class zalacznikDoReklamacjiType
     /** @var string */
     public $fileDesc;
 }
-
-

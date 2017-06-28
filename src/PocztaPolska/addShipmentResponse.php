@@ -7,5 +7,3 @@ class addShipmentResponse
     /** @var \PocztaPolska\addShipmentResponseItemType */
     public $retval;
 }
-
-

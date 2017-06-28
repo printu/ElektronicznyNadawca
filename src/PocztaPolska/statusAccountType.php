@@ -8,5 +8,3 @@ class statusAccountType
     const ZABLOKOWANY = 'ZABLOKOWANY';
     const ODBLOKOWANY = 'ODBLOKOWANY';
 }
-
-

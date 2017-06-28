@@ -9,5 +9,3 @@ class moveShipmentsResponse
     /** @var \PocztaPolska\errorType */
     public $error;
 }
-
-

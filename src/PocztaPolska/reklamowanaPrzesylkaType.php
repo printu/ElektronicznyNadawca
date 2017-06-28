@@ -18,6 +18,6 @@ class reklamowanaPrzesylkaType
     public $odszkodowanie;
     /** @var int */
     public $oplata;
+    /** @var int */
+    public $oczekiwaneOdszkodowanie;
 }
-
-

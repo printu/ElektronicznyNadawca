@@ -7,5 +7,3 @@ class updateAccountResponse
     /** @var \PocztaPolska\errorType */
     public $error;
 }
-
-

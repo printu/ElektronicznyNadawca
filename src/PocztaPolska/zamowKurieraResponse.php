@@ -7,5 +7,3 @@ class zamowKurieraResponse
     /** @var \PocztaPolska\errorType */
     public $error;
 }
-
-

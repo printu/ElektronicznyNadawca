@@ -9,5 +9,3 @@ class przesylkaHandlowaType extends \PocztaPolska\przesylkaRejestrowanaType
     /** @var \PocztaPolska\masaType */
     public $masa;
 }
-
-

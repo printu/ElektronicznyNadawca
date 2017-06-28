@@ -27,5 +27,3 @@ class paczkaPocztowaType extends \PocztaPolska\przesylkaRejestrowanaType
     /** @var boolean */
     public $dlaOciemnialych;
 }
-
-

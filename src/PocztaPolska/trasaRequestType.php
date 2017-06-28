@@ -11,5 +11,3 @@ class trasaRequestType
     /** @var \PocztaPolska\guidType */
     public $guid;
 }
-
-

@@ -11,5 +11,3 @@ class addressLabelContent
     /** @var string */
     public $guid;
 }
-
-

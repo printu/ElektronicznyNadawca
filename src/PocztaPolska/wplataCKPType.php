@@ -19,5 +19,3 @@ class wplataCKPType
     /** @var string */
     public $tytulPrzelewuZbiorczego;
 }
-
-

@@ -7,5 +7,3 @@ class getPlacowkiPocztowe
     /** @var \PocztaPolska\idWojewodztwoType */
     public $idWojewodztwo;
 }
-
-

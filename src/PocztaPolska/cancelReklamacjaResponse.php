@@ -7,5 +7,3 @@ class cancelReklamacjaResponse
     /** @var \PocztaPolska\errorType */
     public $error;
 }
-
-

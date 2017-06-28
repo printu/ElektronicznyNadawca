@@ -7,5 +7,3 @@ class setStatusZgodyNaEZwrot
     /** @var \PocztaPolska\statusZgodyEZwrotType */
     public $statusZgody;
 }
-
-

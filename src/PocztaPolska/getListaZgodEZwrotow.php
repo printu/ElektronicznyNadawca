@@ -7,5 +7,3 @@ class getListaZgodEZwrotow
     /** @var \PocztaPolska\statusZgodyEZwrotNameType */
     public $status;
 }
-
-

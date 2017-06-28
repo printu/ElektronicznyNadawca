@@ -9,5 +9,3 @@ class addZalacznikDoReklamacji
     /** @var \PocztaPolska\zalacznikDoReklamacjiType */
     public $zalacznik;
 }
-
-

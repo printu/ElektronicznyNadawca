@@ -9,5 +9,3 @@ class getBlankietPobraniaByGuidsResponse
     /** @var \PocztaPolska\errorType */
     public $error;
 }
-
-

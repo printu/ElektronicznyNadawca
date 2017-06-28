@@ -7,5 +7,3 @@ class setStatusZgodyNaEZwrotResponse
     /** @var \PocztaPolska\errorType */
     public $error;
 }
-
-

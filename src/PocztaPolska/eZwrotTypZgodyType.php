@@ -8,5 +8,3 @@ class eZwrotTypZgodyType
     const ZGODA_AUTOMATYCZNA = 'ZGODA_AUTOMATYCZNA';
     const ZGODA_INDYWIDUALNA = 'ZGODA_INDYWIDUALNA';
 }
-
-

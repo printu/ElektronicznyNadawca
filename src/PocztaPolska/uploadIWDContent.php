@@ -9,5 +9,3 @@ class uploadIWDContent
     /** @var base64Binary */
     public $IWDContent;
 }
-
-

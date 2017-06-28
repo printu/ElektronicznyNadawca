@@ -9,5 +9,3 @@ class getEPOStatusResponse
     /** @var \PocztaPolska\errorType */
     public $error;
 }
-
-

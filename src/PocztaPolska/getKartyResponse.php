@@ -7,5 +7,3 @@ class getKartyResponse
     /** @var \PocztaPolska\kartaType */
     public $karta;
 }
-
-

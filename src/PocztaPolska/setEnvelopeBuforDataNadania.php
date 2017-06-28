@@ -7,5 +7,3 @@ class setEnvelopeBuforDataNadania
     /** @var \PocztaPolska\date */
     public $dataNadania;
 }
-
-

@@ -39,5 +39,3 @@ class shopEZwrotyType
     /** @var boolean */
     public $wymagalnoscNumeruIdentyfikujacegoPrzesylke;
 }
-
-

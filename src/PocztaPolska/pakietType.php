@@ -17,5 +17,3 @@ class pakietType
     /** @var \PocztaPolska\sposobNadaniaType */
     public $sposobNadania;
 }
-
-

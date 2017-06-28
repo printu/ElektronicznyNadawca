@@ -11,5 +11,3 @@ class moveShipments
     /** @var \PocztaPolska\guidType */
     public $guid;
 }
-
-

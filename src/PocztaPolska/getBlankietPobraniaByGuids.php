@@ -9,5 +9,3 @@ class getBlankietPobraniaByGuids
     /** @var int */
     public $idBufor;
 }
-
-

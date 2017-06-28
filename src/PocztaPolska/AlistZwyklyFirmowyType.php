@@ -23,5 +23,3 @@ class AlistZwyklyFirmowyType extends \PocztaPolska\przesylkaNieRejestrowanaType
     /** @var \PocztaPolska\gabarytType */
     public $gabaryt;
 }
-
-

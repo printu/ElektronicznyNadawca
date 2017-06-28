@@ -9,5 +9,3 @@ class addShipment
     /** @var int */
     public $idBufor;
 }
-
-

@@ -15,5 +15,3 @@ class obszarAdresowyType
     /** @var \PocztaPolska\guidType */
     public $guid;
 }
-
-

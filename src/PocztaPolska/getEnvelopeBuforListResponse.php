@@ -9,5 +9,3 @@ class getEnvelopeBuforListResponse
     /** @var \PocztaPolska\errorType */
     public $error;
 }
-
-

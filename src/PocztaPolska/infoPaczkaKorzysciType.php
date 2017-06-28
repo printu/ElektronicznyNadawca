@@ -23,5 +23,3 @@ class infoPaczkaKorzysciType
     /** @var \PocztaPolska\date */
     public $dataWaznosciUmowy;
 }
-
-

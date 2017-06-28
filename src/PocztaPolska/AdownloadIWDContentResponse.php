@@ -9,5 +9,3 @@ class AdownloadIWDContentResponse
     /** @var \PocztaPolska\errorType */
     public $error;
 }
-
-

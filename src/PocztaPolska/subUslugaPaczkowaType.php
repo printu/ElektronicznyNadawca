@@ -22,6 +22,6 @@ class subUslugaPaczkowaType extends \PocztaPolska\przesylkaType
     public $ponadgabaryt;
     /** @var string */
     public $numerPrzesylkiKlienta;
+    /** @var \PocztaPolska\gabarytType */
+    public $gabaryt;
 }
-
-

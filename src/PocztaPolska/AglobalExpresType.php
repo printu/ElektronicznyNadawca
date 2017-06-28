@@ -19,5 +19,3 @@ class AglobalExpresType extends \PocztaPolska\przesylkaRejestrowanaType
     /** @var string */
     public $numerPrzesylkiKlienta;
 }
-
-

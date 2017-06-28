@@ -8,5 +8,3 @@ class rozstrzygniecieType
     const NIEUZASADNIONA = 'NIEUZASADNIONA';
     const NIEWNIESIONA = 'NIEWNIESIONA';
 }
-
-

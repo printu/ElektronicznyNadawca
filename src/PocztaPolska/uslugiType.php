@@ -9,5 +9,3 @@ class uslugiType
     /** @var string */
     public $opis;
 }
-
-

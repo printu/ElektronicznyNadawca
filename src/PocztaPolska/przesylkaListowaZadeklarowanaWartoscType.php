@@ -17,5 +17,3 @@ class przesylkaListowaZadeklarowanaWartoscType extends \PocztaPolska\przesylkaRe
     /** @var \PocztaPolska\masaType */
     public $masa;
 }
-
-

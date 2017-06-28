@@ -9,5 +9,3 @@ class platnikType
     /** @var \PocztaPolska\adresType */
     public $adresPlatnika;
 }
-
-

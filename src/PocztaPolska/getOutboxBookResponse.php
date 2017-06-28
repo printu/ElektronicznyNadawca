@@ -9,5 +9,3 @@ class getOutboxBookResponse
     /** @var \PocztaPolska\errorType */
     public $error;
 }
-
-

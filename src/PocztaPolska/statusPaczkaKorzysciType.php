@@ -9,5 +9,3 @@ class statusPaczkaKorzysciType
     const AKTYWNA = 'AKTYWNA';
     const PRZETERMINOWANA = 'PRZETERMINOWANA';
 }
-
-

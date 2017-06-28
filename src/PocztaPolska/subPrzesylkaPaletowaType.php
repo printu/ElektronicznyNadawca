@@ -11,5 +11,3 @@ class subPrzesylkaPaletowaType extends \PocztaPolska\przesylkaType
     /** @var \PocztaPolska\masaType */
     public $masa;
 }
-
-

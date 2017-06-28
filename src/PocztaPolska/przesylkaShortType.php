@@ -19,5 +19,3 @@ class przesylkaShortType
     /** @var \PocztaPolska\statusType */
     public $status;
 }
-
-

@@ -9,5 +9,3 @@ class miejscePozostawieniaZawiadomieniaODoreczeniuEnum
     const INNE_WIDOCZNE_MIEJSCE = 'INNE_WIDOCZNE_MIEJSCE';
     const SKRYTKA_POCZTOWA = 'SKRYTKA_POCZTOWA';
 }
-
-

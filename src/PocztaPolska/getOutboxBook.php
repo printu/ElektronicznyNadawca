@@ -9,5 +9,3 @@ class getOutboxBook
     /** @var boolean */
     public $includeNierejestrowane;
 }
-
-

@@ -21,5 +21,3 @@ class idWojewodztwoType
     const value_30 = '30';
     const value_32 = '32';
 }
-
-

@@ -31,5 +31,3 @@ class adresType
     /** @var string */
     public $nip;
 }
-
-

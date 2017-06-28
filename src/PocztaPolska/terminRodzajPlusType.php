@@ -8,5 +8,3 @@ class terminRodzajPlusType
     const POLUDNIE = 'POLUDNIE';
     const STANDARD = 'STANDARD';
 }
-
-

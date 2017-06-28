@@ -11,5 +11,3 @@ class odbiorPrzesylkiOdNadawcyType
     /** @var boolean */
     public $wGodzinachOd20Do7;
 }
-
-

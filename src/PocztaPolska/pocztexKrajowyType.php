@@ -41,5 +41,3 @@ class pocztexKrajowyType extends \PocztaPolska\przesylkaRejestrowanaType
     /** @var boolean */
     public $sprawdzenieZawartosciPrzesylkiPrzezOdbiorce;
 }
-
-

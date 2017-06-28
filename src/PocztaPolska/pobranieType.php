@@ -8,12 +8,10 @@ class pobranieType
     public $sposobPobrania;
     /** @var \PocztaPolska\kwotaPobraniaType */
     public $kwotaPobrania;
-    /** @var \PocztaPolska\anonymous52 */
+    /** @var \PocztaPolska\anonymous55 */
     public $nrb;
-    /** @var \PocztaPolska\anonymous53 */
+    /** @var \PocztaPolska\anonymous56 */
     public $tytulem;
     /** @var boolean */
     public $sprawdzenieZawartosciPrzesylkiPrzezOdbiorce;
 }
-
-

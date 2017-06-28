@@ -11,5 +11,3 @@ class profilType extends \PocztaPolska\adresType
     /** @var string */
     public $fax;
 }
-
-

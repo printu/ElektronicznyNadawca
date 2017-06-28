@@ -10,5 +10,3 @@ class sposobPrzekazaniaPotwierdzeniaOdbioruPocztowaType
     const PACZKA_48 = 'PACZKA_48';
     const LIST_ZWYKLY_PRIORYTETOWY = 'LIST_ZWYKLY_PRIORYTETOWY';
 }
-
-

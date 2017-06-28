@@ -7,5 +7,3 @@ class addReklamacje
     /** @var \PocztaPolska\reklamowanaPrzesylkaType */
     public $reklamowanaPrzesylka;
 }
-
-

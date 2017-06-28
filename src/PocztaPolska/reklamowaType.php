@@ -9,5 +9,3 @@ class reklamowaType extends \PocztaPolska\przesylkaNieRejestrowanaType
     /** @var \PocztaPolska\gabarytType */
     public $gabaryt;
 }
-
-

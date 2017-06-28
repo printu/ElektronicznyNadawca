@@ -11,5 +11,3 @@ class przesylkaPoleconaZagranicznaType extends \PocztaPolska\przesylkaRejestrowa
     /** @var \PocztaPolska\iloscPotwierdzenOdbioruType */
     public $iloscPotwierdzenOdbioru;
 }
-
-

@@ -19,5 +19,3 @@ class paczkaPocztowaPLUSType extends \PocztaPolska\przesylkaRejestrowanaType
     /** @var boolean */
     public $zwrotDoslanie;
 }
-
-

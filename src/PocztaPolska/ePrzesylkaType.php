@@ -23,5 +23,3 @@ class ePrzesylkaType extends \PocztaPolska\przesylkaRejestrowanaType
     /** @var \PocztaPolska\wartoscType */
     public $wartosc;
 }
-
-

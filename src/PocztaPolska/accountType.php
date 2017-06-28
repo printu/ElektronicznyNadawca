@@ -10,6 +10,14 @@ class accountType
     public $permision;
     /** @var \PocztaPolska\profilType */
     public $profil;
+    /** @var \PocztaPolska\jednostkaOrganizacyjnaType */
+    public $jednostka;
+    /** @var \PocztaPolska\jednostkaOrganizacyjnaType */
+    public $domyslnaJednostka;
+    /** @var \PocztaPolska\profilType */
+    public $domyslnyProfil;
+    /** @var string */
+    public $dostepPoAdresieIP;
     /** @var string */
     public $userName;
     /** @var string */
@@ -21,5 +29,3 @@ class accountType
     /** @var \PocztaPolska\statusAccountType */
     public $status;
 }
-
-

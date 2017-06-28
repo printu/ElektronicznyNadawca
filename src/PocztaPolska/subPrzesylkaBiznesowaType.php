@@ -4,8 +4,6 @@ namespace PocztaPolska;
 
 class subPrzesylkaBiznesowaType extends \PocztaPolska\przesylkaType
 {
-    /** @var \PocztaPolska\pobranieType */
-    public $pobranie;
     /** @var \PocztaPolska\ubezpieczenieType */
     public $ubezpieczenie;
     /** @var \PocztaPolska\numerNadaniaType */
@@ -19,5 +17,3 @@ class subPrzesylkaBiznesowaType extends \PocztaPolska\przesylkaType
     /** @var boolean */
     public $ostroznie;
 }
-
-

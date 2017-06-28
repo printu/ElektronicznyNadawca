@@ -16,6 +16,8 @@ class AlistZwyklyType extends \PocztaPolska\przesylkaNieRejestrowanaType
     public $egzemplarzBiblioteczny;
     /** @var boolean */
     public $dlaOciemnialych;
+    /** @var boolean */
+    public $obszarMiasto;
+    /** @var boolean */
+    public $miejscowa;
 }
-
-

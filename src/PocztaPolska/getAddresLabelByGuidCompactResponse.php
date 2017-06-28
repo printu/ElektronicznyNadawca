@@ -9,5 +9,3 @@ class getAddresLabelByGuidCompactResponse
     /** @var \PocztaPolska\errorType */
     public $error;
 }
-
-

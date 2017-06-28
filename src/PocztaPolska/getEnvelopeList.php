@@ -9,5 +9,3 @@ class getEnvelopeList
     /** @var \PocztaPolska\date */
     public $endDate;
 }
-
-

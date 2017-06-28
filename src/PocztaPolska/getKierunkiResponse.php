@@ -9,5 +9,3 @@ class getKierunkiResponse
     /** @var \PocztaPolska\errorType */
     public $error;
 }
-
-

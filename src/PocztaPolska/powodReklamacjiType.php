@@ -11,5 +11,3 @@ class powodReklamacjiType
     /** @var string */
     public $powodGlownyOpis;
 }
-
-

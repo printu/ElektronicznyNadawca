@@ -15,5 +15,3 @@ class przesylkaZagranicznaType extends \PocztaPolska\przesylkaNieRejestrowanaTyp
     /** @var string */
     public $kraj;
 }
-
-

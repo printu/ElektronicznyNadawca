@@ -20,6 +20,6 @@ class subPrzesylkaBiznesowaPlusType extends \PocztaPolska\przesylkaType
     public $numerPrzesylkiKlienta;
     /** @var int */
     public $kwotaTranzakcji;
+    /** @var \PocztaPolska\numerTransakcjiOdbioruType */
+    public $numerTransakcjiOdbioru;
 }
-
-

@@ -23,5 +23,3 @@ class subUslugaKurierskaType extends \PocztaPolska\przesylkaType
     /** @var string */
     public $numerPrzesylkiKlienta;
 }
-
-

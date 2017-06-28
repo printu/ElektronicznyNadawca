@@ -8,5 +8,3 @@ class EMSTypOpakowaniaType
     const DOKUMENT_PACK = 'DOKUMENT_PACK';
     const KILO_PACK = 'KILO_PACK';
 }
-
-

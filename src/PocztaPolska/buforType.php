@@ -4,6 +4,8 @@ namespace PocztaPolska;
 
 class buforType
 {
+    /** @var \PocztaPolska\profilType */
+    public $profil;
     /** @var int */
     public $idBufor;
     /** @var \PocztaPolska\date */
@@ -15,5 +17,3 @@ class buforType
     /** @var string */
     public $opis;
 }
-
-

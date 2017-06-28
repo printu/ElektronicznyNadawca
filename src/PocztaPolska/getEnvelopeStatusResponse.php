@@ -9,5 +9,3 @@ class getEnvelopeStatusResponse
     /** @var \PocztaPolska\errorType */
     public $error;
 }
-
-

@@ -8,5 +8,3 @@ class rodzajPaletyType
     const POLPALETA = 'POLPALETA';
     const INNA = 'INNA';
 }
-
-

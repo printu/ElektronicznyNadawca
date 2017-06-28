@@ -9,5 +9,3 @@ class potwierdzenieOdbioruType
     /** @var \PocztaPolska\sposobPrzekazaniaPotwierdzeniaOdbioruType */
     public $sposob;
 }
-
-

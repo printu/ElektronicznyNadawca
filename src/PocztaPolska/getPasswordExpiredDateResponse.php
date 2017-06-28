@@ -7,5 +7,3 @@ class getPasswordExpiredDateResponse
     /** @var \PocztaPolska\date */
     public $dataWygasniecia;
 }
-
-

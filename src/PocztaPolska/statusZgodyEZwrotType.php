@@ -11,5 +11,3 @@ class statusZgodyEZwrotType
     /** @var \PocztaPolska\statusZgodyEZwrotNameType */
     public $status;
 }
-
-

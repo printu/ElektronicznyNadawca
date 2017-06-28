@@ -6,8 +6,6 @@ class addOdwolanieDoReklamacjiResponse
 {
     /** @var \PocztaPolska\errorType */
     public $error;
-    /** @var string */
-    public $idReklamacja;
+    /** @var \PocztaPolska\reklamacjaInfoType */
+    public $reklamacjaInfo;
 }
-
-

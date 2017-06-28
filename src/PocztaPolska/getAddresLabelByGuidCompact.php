@@ -9,5 +9,3 @@ class getAddresLabelByGuidCompact
     /** @var int */
     public $idBufor;
 }
-
-

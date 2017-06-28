@@ -15,5 +15,3 @@ class EMSType extends \PocztaPolska\przesylkaRejestrowanaType
     /** @var boolean */
     public $zalaczoneDokumenty;
 }
-
-

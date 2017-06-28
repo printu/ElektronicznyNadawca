@@ -7,5 +7,3 @@ class updateProfilResponse
     /** @var \PocztaPolska\errorType */
     public $error;
 }
-
-
