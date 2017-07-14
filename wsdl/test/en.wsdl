@@ -189,7 +189,7 @@
 			<xsd:simpleType name="ulicaType">
 				<xsd:restriction base="xsd:string">
 					<xsd:minLength value="1" />
-					<xsd:maxLength value="74" />
+					<xsd:maxLength value="255" />
 					<xsd:whiteSpace value="collapse" />
 				</xsd:restriction>
 			</xsd:simpleType>
@@ -210,7 +210,7 @@
 			<xsd:simpleType name="miejscowoscType">
 				<xsd:restriction base="xsd:string">
 					<xsd:minLength value="1" />
-					<xsd:maxLength value="30" />
+					<xsd:maxLength value="63" />
 					<xsd:whiteSpace value="collapse" />
 				</xsd:restriction>
 			</xsd:simpleType>
