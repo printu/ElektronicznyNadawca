@@ -22,6 +22,8 @@ class przesylkaPoleconaKrajowaType extends \PocztaPolska\przesylkaRejestrowanaTy
     public $egzemplarzBiblioteczny;
     /** @var boolean */
     public $dlaOciemnialych;
+    /** @var boolean */
+    public $obszarMiasto;
+    /** @var boolean */
+    public $miejscowa;
 }
-
-

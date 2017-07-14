@@ -11,5 +11,3 @@ class EPOInfoType
     /** @var \PocztaPolska\zwrotPrzesylkiType */
     public $zwrotPrzesylki;
 }
-
-

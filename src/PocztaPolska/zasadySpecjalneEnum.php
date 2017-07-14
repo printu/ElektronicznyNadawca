@@ -9,5 +9,3 @@ class zasadySpecjalneEnum
     const SADOWA_CYWILNA = 'SADOWA_CYWILNA';
     const SADOWA_KARNA = 'SADOWA_KARNA';
 }
-
-

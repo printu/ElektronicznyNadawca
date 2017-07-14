@@ -10,6 +10,6 @@ class getEPOStatus
     public $endedOnly;
     /** @var int */
     public $idEnvelope;
+    /** @var boolean */
+    public $withBioepo;
 }
-
-

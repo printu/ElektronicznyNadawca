@@ -9,5 +9,3 @@ class getJednostkaOrganizacyjnaResponse
     /** @var \PocztaPolska\errorType */
     public $error;
 }
-
-

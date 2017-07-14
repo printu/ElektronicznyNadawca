@@ -7,5 +7,3 @@ class createProfil
     /** @var \PocztaPolska\profilType */
     public $profil;
 }
-
-

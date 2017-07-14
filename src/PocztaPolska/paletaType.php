@@ -13,5 +13,3 @@ class paletaType
     /** @var string */
     public $wysokosc;
 }
-
-

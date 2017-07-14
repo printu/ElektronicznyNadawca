@@ -15,5 +15,3 @@ class przesylkaNaWarunkachSzczegolnychType extends \PocztaPolska\przesylkaRejest
     /** @var \PocztaPolska\masaType */
     public $masa;
 }
-
-

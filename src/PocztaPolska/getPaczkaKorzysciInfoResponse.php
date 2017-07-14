@@ -13,5 +13,3 @@ class getPaczkaKorzysciInfoResponse
     /** @var \PocztaPolska\errorType */
     public $error;
 }
-
-

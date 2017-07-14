@@ -9,5 +9,3 @@ class clearEnvelopeResponse
     /** @var \PocztaPolska\errorType */
     public $error;
 }
-
-

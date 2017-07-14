@@ -7,5 +7,3 @@ class getUrzedyWydajaceEPrzesylkiResponse
     /** @var \PocztaPolska\urzadWydaniaEPrzesylkiType */
     public $urzadWydaniaEPrzesylki;
 }
-
-

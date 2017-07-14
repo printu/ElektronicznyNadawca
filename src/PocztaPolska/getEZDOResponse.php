@@ -15,5 +15,3 @@ class getEZDOResponse
     /** @var string */
     public $numerEZDO;
 }
-
-

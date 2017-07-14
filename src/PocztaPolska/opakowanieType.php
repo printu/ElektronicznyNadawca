@@ -15,5 +15,3 @@ class opakowanieType
     /** @var string */
     public $numerOpakowaniaZbiorczego;
 }
-
-

@@ -11,5 +11,3 @@ class errorType
     /** @var \PocztaPolska\guidType */
     public $guid;
 }
-
-

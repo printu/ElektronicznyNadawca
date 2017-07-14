@@ -13,5 +13,3 @@ class envelopeInfoType
     /** @var \PocztaPolska\date */
     public $dataTransmisji;
 }
-
-

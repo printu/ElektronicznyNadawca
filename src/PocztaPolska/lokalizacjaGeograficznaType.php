@@ -9,5 +9,3 @@ class lokalizacjaGeograficznaType
     /** @var \PocztaPolska\wspolrzednaGeograficznaType */
     public $szerokosc;
 }
-
-

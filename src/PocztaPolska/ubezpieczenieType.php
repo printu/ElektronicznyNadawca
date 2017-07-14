@@ -9,5 +9,3 @@ class ubezpieczenieType
     /** @var \PocztaPolska\kwotaUbezpieczeniaType */
     public $kwota;
 }
-
-

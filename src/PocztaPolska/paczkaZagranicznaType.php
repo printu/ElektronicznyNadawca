@@ -25,5 +25,3 @@ class paczkaZagranicznaType extends \PocztaPolska\przesylkaRejestrowanaType
     /** @var string */
     public $numerReferencyjnyCelny;
 }
-
-

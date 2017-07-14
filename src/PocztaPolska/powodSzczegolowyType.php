@@ -9,5 +9,3 @@ class powodSzczegolowyType
     /** @var string */
     public $powodSzczegolowyOpis;
 }
-
-

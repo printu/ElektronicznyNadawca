@@ -9,5 +9,3 @@ class getListaZgodEZwrotowResponse
     /** @var \PocztaPolska\errorType */
     public $error;
 }
-
-

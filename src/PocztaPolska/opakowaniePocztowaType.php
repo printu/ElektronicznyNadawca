@@ -12,5 +12,3 @@ class opakowaniePocztowaType
     const GABARYT_G4 = 'GABARYT_G4';
     const GABARYT_G5 = 'GABARYT_G5';
 }
-
-

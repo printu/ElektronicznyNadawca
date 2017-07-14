@@ -23,5 +23,3 @@ class reklamacjaRozpatrzonaType
     /** @var string */
     public $idReklamacja;
 }
-
-

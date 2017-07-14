@@ -5,5 +5,3 @@ namespace PocztaPolska;
 class getEnvelopeBuforList
 {
 }
-
-

@@ -9,5 +9,3 @@ class obszarAdresowyResponseType
     /** @var \PocztaPolska\guidType */
     public $guid;
 }
-
-

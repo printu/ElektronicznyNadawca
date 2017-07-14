@@ -9,5 +9,3 @@ class clearEnvelopeByGuids
     /** @var int */
     public $idBufor;
 }
-
-

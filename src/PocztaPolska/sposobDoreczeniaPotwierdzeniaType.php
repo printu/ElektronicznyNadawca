@@ -9,5 +9,3 @@ class sposobDoreczeniaPotwierdzeniaType
     const SMS = 'SMS';
     const EMAIL = 'EMAIL';
 }
-
-

@@ -9,5 +9,3 @@ class potwierdzenieDoreczeniaType
     /** @var string */
     public $kontakt;
 }
-
-

@@ -9,5 +9,3 @@ class reklamacjaInfoType
     /** @var \PocztaPolska\guidType */
     public $guidPrzesylki;
 }
-
-

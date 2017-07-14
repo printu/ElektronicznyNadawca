@@ -19,5 +19,3 @@ class AdoreczenieType
     /** @var boolean */
     public $wGodzinachOd20Do7;
 }
-
-

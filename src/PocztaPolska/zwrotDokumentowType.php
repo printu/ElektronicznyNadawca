@@ -11,5 +11,3 @@ class zwrotDokumentowType
     /** @var int */
     public $odleglosc;
 }
-
-

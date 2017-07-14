@@ -9,5 +9,3 @@ class przesylkaFullType
     /** @var \PocztaPolska\przesylkaType */
     public $przesylkaFull;
 }
-
-

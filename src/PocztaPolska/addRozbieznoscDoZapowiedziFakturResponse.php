@@ -7,5 +7,3 @@ class addRozbieznoscDoZapowiedziFakturResponse
     /** @var \PocztaPolska\errorType */
     public $error;
 }
-
-

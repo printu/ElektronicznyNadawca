@@ -19,5 +19,3 @@ class terminKurierskaType
     const BEZPOSREDNI_OD_30KG_DO_100KG = 'BEZPOSREDNI_OD_30KG_DO_100KG';
     const EKSPRES24 = 'EKSPRES24';
 }
-
-

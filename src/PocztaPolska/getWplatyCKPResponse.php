@@ -9,5 +9,3 @@ class getWplatyCKPResponse
     /** @var \PocztaPolska\errorType */
     public $error;
 }
-
-

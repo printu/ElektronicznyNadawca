@@ -16,5 +16,3 @@ class sposobPrzekazaniaPotwierdzeniaOdbioruType
     const EKSPRES24 = 'EKSPRES24';
     const LIST_ZWYKLY = 'LIST_ZWYKLY';
 }
-
-

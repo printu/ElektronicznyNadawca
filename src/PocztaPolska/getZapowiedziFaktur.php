@@ -7,5 +7,3 @@ class getZapowiedziFaktur
     /** @var \PocztaPolska\date */
     public $data;
 }
-
-

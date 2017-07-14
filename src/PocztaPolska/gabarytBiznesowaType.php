@@ -11,5 +11,3 @@ class gabarytBiznesowaType
     const XL = 'XL';
     const XXL = 'XXL';
 }
-
-

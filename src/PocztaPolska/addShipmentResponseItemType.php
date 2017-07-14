@@ -10,6 +10,6 @@ class addShipmentResponseItemType
     public $numerNadania;
     /** @var \PocztaPolska\guidType */
     public $guid;
+    /** @var string */
+    public $numerTransakcjiOdbioru;
 }
-
-

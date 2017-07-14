@@ -7,5 +7,3 @@ class createProfilResponse
     /** @var \PocztaPolska\errorType */
     public $error;
 }
-
-

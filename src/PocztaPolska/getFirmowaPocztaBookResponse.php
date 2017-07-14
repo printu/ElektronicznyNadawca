@@ -9,5 +9,3 @@ class getFirmowaPocztaBookResponse
     /** @var \PocztaPolska\errorType */
     public $error;
 }
-
-

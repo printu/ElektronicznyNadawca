@@ -7,5 +7,3 @@ class isMiejscowaResponse
     /** @var \PocztaPolska\trasaResponseType */
     public $trasaResponse;
 }
-
-

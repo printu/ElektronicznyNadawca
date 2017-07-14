@@ -13,5 +13,3 @@ class kierunekType
     /** @var \PocztaPolska\kodPocztowyType */
     public $pna;
 }
-
-

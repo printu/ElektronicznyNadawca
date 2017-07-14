@@ -9,5 +9,3 @@ class kategoriePowodowReklamacjiType
     /** @var \PocztaPolska\powodReklamacjiType */
     public $powodReklamacji;
 }
-
-

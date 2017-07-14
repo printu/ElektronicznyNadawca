@@ -10,6 +10,6 @@ class sendEnvelope
     public $pakiet;
     /** @var int */
     public $idBufor;
+    /** @var \PocztaPolska\profilType */
+    public $profil;
 }
-
-

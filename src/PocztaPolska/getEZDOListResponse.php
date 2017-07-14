@@ -7,5 +7,3 @@ class getEZDOListResponse
     /** @var \PocztaPolska\EZDOPakietType */
     public $EZDOPakiet;
 }
-
-

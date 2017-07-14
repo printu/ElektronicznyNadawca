@@ -9,5 +9,3 @@ class zwrotPrzesylkiType
     /** @var dateTime */
     public $data;
 }
-
-

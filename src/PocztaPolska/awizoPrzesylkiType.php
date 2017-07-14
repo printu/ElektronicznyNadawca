@@ -13,5 +13,3 @@ class awizoPrzesylkiType
     /** @var int */
     public $idPlacowkaPocztowaWydajaca;
 }
-
-

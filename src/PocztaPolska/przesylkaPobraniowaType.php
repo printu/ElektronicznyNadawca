@@ -21,5 +21,3 @@ class przesylkaPobraniowaType extends \PocztaPolska\przesylkaRejestrowanaType
     /** @var \PocztaPolska\masaType */
     public $masa;
 }
-
-

@@ -11,5 +11,3 @@ class urzadNadaniaFullType
     /** @var string */
     public $nazwaWydruk;
 }
-
-

@@ -21,5 +21,3 @@ class AdoreczenieUslugaKurierskaType
     /** @var boolean */
     public $po17;
 }
-
-

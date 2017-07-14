@@ -15,5 +15,3 @@ class statusEPOEnum
     const ZWROT = 'ZWROT';
     const DORECZONA = 'DORECZONA';
 }
-
-

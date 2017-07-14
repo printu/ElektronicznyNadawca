@@ -11,5 +11,3 @@ class terminZwrotDokumentowKurierskaType
     const BEZPOSREDNI_DO_20KG = 'BEZPOSREDNI_DO_20KG';
     const EKSPRES24 = 'EKSPRES24';
 }
-
-

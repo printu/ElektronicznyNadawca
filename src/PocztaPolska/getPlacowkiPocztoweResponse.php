@@ -7,5 +7,3 @@ class getPlacowkiPocztoweResponse
     /** @var \PocztaPolska\placowkaPocztowaType */
     public $placowka;
 }
-
-

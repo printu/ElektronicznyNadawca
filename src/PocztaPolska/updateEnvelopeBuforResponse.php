@@ -7,5 +7,3 @@ class updateEnvelopeBuforResponse
     /** @var \PocztaPolska\errorType */
     public $error;
 }
-
-

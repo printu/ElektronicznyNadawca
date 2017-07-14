@@ -8,5 +8,3 @@ class statusZgodyEZwrotNameType
     const ZAAKCEPTOWANY = 'ZAAKCEPTOWANY';
     const ODRZUCONY = 'ODRZUCONY';
 }
-
-

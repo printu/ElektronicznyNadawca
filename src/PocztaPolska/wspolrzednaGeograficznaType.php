@@ -13,5 +13,3 @@ class wspolrzednaGeograficznaType
     /** @var float */
     public $sekunda;
 }
-
-

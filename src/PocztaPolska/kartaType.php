@@ -11,5 +11,3 @@ class kartaType
     /** @var boolean */
     public $aktywna;
 }
-
-

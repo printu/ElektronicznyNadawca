@@ -44,6 +44,8 @@ class uslugaPaczkowaType extends \PocztaPolska\przesylkaRejestrowanaType
     public $opakowanie;
     /** @var string */
     public $numerPrzesylkiKlienta;
+    /** @var \PocztaPolska\numerTransakcjiOdbioruType */
+    public $numerTransakcjiOdbioru;
+    /** @var \PocztaPolska\gabarytType */
+    public $gabaryt;
 }
-
-

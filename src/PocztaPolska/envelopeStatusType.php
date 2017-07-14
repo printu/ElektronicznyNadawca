@@ -10,5 +10,3 @@ class envelopeStatusType
     const WALIDOWANY = 'WALIDOWANY';
     const BLEDNY = 'BLEDNY';
 }
-
-

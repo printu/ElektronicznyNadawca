@@ -21,5 +21,3 @@ class EZDOPrzesylkaType
     /** @var string */
     public $zwrot;
 }
-
-

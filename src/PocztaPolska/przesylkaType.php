@@ -13,5 +13,3 @@ class przesylkaType
     /** @var \PocztaPolska\opisType */
     public $opis;
 }
-
-

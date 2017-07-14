@@ -17,5 +17,3 @@ class szczegolyDeklaracjiCelnejType
     /** @var string */
     public $krajPochodzenia;
 }
-
-

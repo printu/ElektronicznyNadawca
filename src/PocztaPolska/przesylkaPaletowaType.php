@@ -45,5 +45,3 @@ class przesylkaPaletowaType extends \PocztaPolska\przesylkaRejestrowanaType
     /** @var \PocztaPolska\eSposobPowiadomieniaType */
     public $powiadomienieOdbiorcy;
 }
-
-

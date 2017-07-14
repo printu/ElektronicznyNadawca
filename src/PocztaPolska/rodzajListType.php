@@ -9,5 +9,3 @@ class rodzajListType
     /** @var \PocztaPolska\kategoriaType */
     public $kategoria;
 }
-
-

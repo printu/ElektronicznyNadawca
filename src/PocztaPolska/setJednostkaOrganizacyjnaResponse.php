@@ -9,5 +9,3 @@ class setJednostkaOrganizacyjnaResponse
     /** @var \PocztaPolska\jednostkaOrganizacyjnaType */
     public $jednostkaOrganizacyjna;
 }
-
-

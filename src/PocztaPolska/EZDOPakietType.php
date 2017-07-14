@@ -11,5 +11,3 @@ class EZDOPakietType
     /** @var string */
     public $idEZDOFile;
 }
-
-

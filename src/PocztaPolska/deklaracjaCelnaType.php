@@ -37,5 +37,3 @@ class deklaracjaCelnaType
     /** @var string */
     public $waluta;
 }
-
-

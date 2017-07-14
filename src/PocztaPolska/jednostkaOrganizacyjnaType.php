@@ -17,5 +17,3 @@ class jednostkaOrganizacyjnaType
     /** @var string */
     public $mpk;
 }
-
-

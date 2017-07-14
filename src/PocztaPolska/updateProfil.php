@@ -7,5 +7,3 @@ class updateProfil
     /** @var \PocztaPolska\profilType */
     public $profil;
 }
-
-

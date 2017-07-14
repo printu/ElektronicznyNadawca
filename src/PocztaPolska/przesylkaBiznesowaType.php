@@ -24,6 +24,6 @@ class przesylkaBiznesowaType extends \PocztaPolska\przesylkaRejestrowanaType
     public $wartosc;
     /** @var boolean */
     public $ostroznie;
+    /** @var \PocztaPolska\numerTransakcjiOdbioruType */
+    public $numerTransakcjiOdbioru;
 }
-
-

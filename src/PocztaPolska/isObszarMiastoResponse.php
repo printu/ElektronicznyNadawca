@@ -7,5 +7,3 @@ class isObszarMiastoResponse
     /** @var \PocztaPolska\obszarAdresowyResponseType */
     public $obszarAdresowy;
 }
-
-

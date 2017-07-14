@@ -13,5 +13,3 @@ class AdoreczenieUslugaPocztowaType
     /** @var boolean */
     public $doRakWlasnych;
 }
-
-

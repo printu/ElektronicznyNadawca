@@ -9,5 +9,3 @@ class trasaResponseType
     /** @var \PocztaPolska\guidType */
     public $guid;
 }
-
-

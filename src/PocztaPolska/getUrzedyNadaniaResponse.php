@@ -7,5 +7,3 @@ class getUrzedyNadaniaResponse
     /** @var \PocztaPolska\urzadNadaniaFullType */
     public $urzedyNadania;
 }
-
-

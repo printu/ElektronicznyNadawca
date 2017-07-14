@@ -11,5 +11,3 @@ class zwrotType
     /** @var \PocztaPolska\sposobZwrotuType */
     public $sposobZwrotu;
 }
-
-

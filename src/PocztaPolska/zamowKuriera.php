@@ -17,5 +17,3 @@ class zamowKuriera
     /** @var string */
     public $szacowanaLacznaMasaPrzesylek;
 }
-
-

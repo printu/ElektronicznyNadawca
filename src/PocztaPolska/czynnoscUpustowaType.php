@@ -6,5 +6,3 @@ class czynnoscUpustowaType
 {
     const POSORTOWANA = 'POSORTOWANA';
 }
-
-

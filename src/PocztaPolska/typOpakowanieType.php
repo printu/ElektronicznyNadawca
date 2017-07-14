@@ -22,5 +22,3 @@ class typOpakowanieType
     const P = 'P';
     const W = 'W';
 }
-
-

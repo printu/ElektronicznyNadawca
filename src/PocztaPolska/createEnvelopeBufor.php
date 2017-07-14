@@ -7,5 +7,3 @@ class createEnvelopeBufor
     /** @var \PocztaPolska\buforType */
     public $bufor;
 }
-
-

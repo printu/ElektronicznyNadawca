@@ -7,5 +7,3 @@ class setAktywnaKarta
     /** @var int */
     public $idKarta;
 }
-
-

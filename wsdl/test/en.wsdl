@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://e-nadawca.poczta-polska.pl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
-	xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="en" targetNamespace="http://e-nadawca.poczta-polska.pl">
+				  xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="en" targetNamespace="http://e-nadawca.poczta-polska.pl">
 	<wsdl:types>
 		<xsd:schema targetNamespace="http://e-nadawca.poczta-polska.pl">
 			<xsd:element name="addShipment">
@@ -34,7 +34,7 @@
 							<xsd:element name="zwrotDokumentow" type="tns:zwrotDokumentowType" maxOccurs="1" minOccurs="0" />
 							<xsd:element name="potwierdzenieOdbioru" type="tns:potwierdzenieOdbioruType" maxOccurs="1" minOccurs="0" />
 							<xsd:element name="potwierdzenieDoreczenia" type="tns:potwierdzenieDoreczeniaType" maxOccurs="1" minOccurs="0" />
-							<!-- <xsd:element name="powiadomienieAdresata" type="tns:powiadomienieType" maxOccurs="1" minOccurs="0"></xsd:element> <xsd:element name="powiadomienieNadawcy" 
+							<!-- <xsd:element name="powiadomienieAdresata" type="tns:powiadomienieType" maxOccurs="1" minOccurs="0"></xsd:element> <xsd:element name="powiadomienieNadawcy"
 								type="tns:powiadomienieType" maxOccurs="1" minOccurs="0"></xsd:element> -->
 							<!-- <xsd:element name="epo" type="tns:EPOType" maxOccurs="1" minOccurs="0"></xsd:element> -->
 							<xsd:element name="ubezpieczenie" type="tns:ubezpieczenieType" maxOccurs="1" minOccurs="0" />
@@ -189,7 +189,7 @@
 			<xsd:simpleType name="ulicaType">
 				<xsd:restriction base="xsd:string">
 					<xsd:minLength value="1" />
-					<xsd:maxLength value="74" />
+					<xsd:maxLength value="255" />
 					<xsd:whiteSpace value="collapse" />
 				</xsd:restriction>
 			</xsd:simpleType>
@@ -210,7 +210,7 @@
 			<xsd:simpleType name="miejscowoscType">
 				<xsd:restriction base="xsd:string">
 					<xsd:minLength value="1" />
-					<xsd:maxLength value="30" />
+					<xsd:maxLength value="63" />
 					<xsd:whiteSpace value="collapse" />
 				</xsd:restriction>
 			</xsd:simpleType>
@@ -885,7 +885,7 @@
 			<xsd:element name="getAddresLabelByGuidResponse">
 				<xsd:complexType>
 					<xsd:sequence>
-						<xsd:element name="content" type="tns:addressLabelContent" maxOccurs="unbounded" minOccurs="1" />
+						<xsd:element name="content" type="tns:addressLabelContent" maxOccurs="unbounded" minOccurs="0" />
 						<xsd:element name="error" type="tns:errorType" maxOccurs="unbounded" minOccurs="0" />
 					</xsd:sequence>
 				</xsd:complexType>
@@ -1260,7 +1260,7 @@
 				<xsd:attribute name="wGodzinachOd20Do7" type="xsd:boolean" />
 				<xsd:attribute name="po17" type="xsd:boolean" />
 			</xsd:complexType>
-			<!-- <xsd:complexType name="powiadomienieType"> <xsd:attribute name="sposob" type="tns:sposobDoreczeniaPotwierdzeniaType"></xsd:attribute> <xsd:attribute name="kontakt" 
+			<!-- <xsd:complexType name="powiadomienieType"> <xsd:attribute name="sposob" type="tns:sposobDoreczeniaPotwierdzeniaType"></xsd:attribute> <xsd:attribute name="kontakt"
 				type="tns:eKontaktType"></xsd:attribute> </xsd:complexType> -->
 			<xsd:simpleType name="oczekiwanaGodzinaDoreczeniaType">
 				<xsd:restriction base="xsd:string">
@@ -1635,7 +1635,6 @@
 				<xsd:restriction base="xsd:string">
 					<xsd:minLength value="6" />
 					<xsd:maxLength value="50" />
-					<xsd:pattern value="[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})" />
 				</xsd:restriction>
 			</xsd:simpleType>
 			<xsd:simpleType name="mobileType">
@@ -1912,9 +1911,11 @@
 					<xsd:enumeration value="MANAGE_ORGANIZATION_UNIT" />
 					<xsd:enumeration value="MANAGE_TEMPLATES" />
 					<xsd:enumeration value="EDIT_PARCELS" />
-					<xsd:enumeration value="EDIT_PARCELS_FROM_TEMPLATES" />
+					<xsd:enumeration
+							value="EDIT_PARCELS_FROM_TEMPLATES" />
 					<xsd:enumeration value="MANAGE_ADDRESS_BOOK" />
 					<xsd:enumeration value="SAVE_SELF_SETTINGS" />
+					<xsd:enumeration value="MANAGE_DICTIONARIES"></xsd:enumeration>
 				</xsd:restriction>
 			</xsd:simpleType>
 			<xsd:element name="getAccountList">

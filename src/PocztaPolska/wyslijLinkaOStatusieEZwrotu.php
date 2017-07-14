@@ -7,5 +7,3 @@ class wyslijLinkaOStatusieEZwrotu
     /** @var \PocztaPolska\guidType */
     public $guidZgodaEZwrot;
 }
-
-

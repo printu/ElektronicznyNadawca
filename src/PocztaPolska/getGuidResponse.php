@@ -7,5 +7,3 @@ class getGuidResponse
     /** @var \PocztaPolska\guidType */
     public $guid;
 }
-
-

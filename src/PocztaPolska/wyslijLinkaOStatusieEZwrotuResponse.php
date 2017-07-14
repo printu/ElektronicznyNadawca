@@ -7,5 +7,3 @@ class wyslijLinkaOStatusieEZwrotuResponse
     /** @var \PocztaPolska\errorType */
     public $error;
 }
-
-

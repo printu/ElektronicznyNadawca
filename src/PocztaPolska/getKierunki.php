@@ -9,5 +9,3 @@ class getKierunki
     /** @var \PocztaPolska\prefixKodPocztowy */
     public $prefixKodPocztowy;
 }
-
-

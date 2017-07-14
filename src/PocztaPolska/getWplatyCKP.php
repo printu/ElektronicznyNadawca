@@ -11,5 +11,3 @@ class getWplatyCKP
     /** @var \PocztaPolska\date */
     public $stopDate;
 }
-
-

@@ -7,5 +7,3 @@ class addZalacznikDoReklamacjiResponse
     /** @var \PocztaPolska\errorType */
     public $error;
 }
-
-

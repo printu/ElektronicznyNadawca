@@ -9,5 +9,3 @@ class statusType
     const NOWA = 'NOWA';
     const BRAK = 'BRAK';
 }
-
-

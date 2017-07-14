@@ -18,9 +18,9 @@ class placowkaPocztowaType
     public $powiat;
     /** @var string */
     public $miejsce;
-    /** @var \PocztaPolska\anonymous124 */
+    /** @var \PocztaPolska\anonymous127 */
     public $kodPocztowy;
-    /** @var \PocztaPolska\anonymous125 */
+    /** @var \PocztaPolska\anonymous128 */
     public $miejscowosc;
     /** @var string */
     public $ulica;
@@ -38,6 +38,8 @@ class placowkaPocztowaType
     public $punktWydaniaPrzesylkiBiznesowejPlus;
     /** @var boolean */
     public $punktWydaniaPrzesylkiBiznesowej;
+    /** @var \PocztaPolska\siecPlacowekEnum */
+    public $siecPlacowek;
+    /** @var string */
+    public $idZPO;
 }
-
-

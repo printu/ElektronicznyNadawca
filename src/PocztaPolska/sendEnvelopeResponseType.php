@@ -10,6 +10,6 @@ class sendEnvelopeResponseType
     public $envelopeStatus;
     /** @var \PocztaPolska\errorType */
     public $error;
+    /** @var string */
+    public $envelopeFilename;
 }
-
-
