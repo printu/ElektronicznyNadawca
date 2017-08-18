@@ -349,11 +349,11 @@ class ElektronicznyNadawca extends \SoapClient
         }
 
         if (!$wsdl) {
-            $wsdl = realpath(__DIR__ . '/../../' . self::WSDL_FILE);
+            $wsdl = realpath(__DIR__.'/../../'.self::WSDL_FILE);
         }
 
         if (!file_exists($wsdl)) {
-            $wsdl = realpath(__DIR__ . '/../../' . $wsdl);
+            $wsdl = realpath(__DIR__.'/../../'.$wsdl);
         }
 
         parent::__construct($wsdl, $options);
