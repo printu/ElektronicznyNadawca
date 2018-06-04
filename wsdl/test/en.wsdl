@@ -218,7 +218,7 @@
 				<xsd:restriction base="xsd:string">
 					<xsd:whiteSpace value="collapse" />
 					<xsd:maxLength value="10" />
-					<xsd:minLength value="5" />
+					<xsd:minLength value="0" />
 				</xsd:restriction>
 			</xsd:simpleType>
 			<xsd:simpleType name="terminType">
@@ -1638,9 +1638,12 @@
 				</xsd:restriction>
 			</xsd:simpleType>
 			<xsd:simpleType name="mobileType">
+				<xsd:annotation>
+					<xsd:documentation>źródło danych: http://www.uke.gov.pl/tablice/NumerPlmn-list.do?execution=e5s1 -- wygenerowano 2017-10-13 14:29:07</xsd:documentation>
+				</xsd:annotation>
 				<xsd:restriction base="xsd:string">
 					<xsd:length value="9" />
-					<xsd:pattern value="[5-8]{1}[0-9]{8}" />
+					<xsd:pattern value="(45|50|51|53|57|60|66|69|72|73|78|79|88)[0-9]{7}" />
 				</xsd:restriction>
 			</xsd:simpleType>
 			<xsd:complexType name="EMSType">
