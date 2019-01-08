@@ -4,6 +4,8 @@ namespace PocztaPolska;
 
 class oczekujeNaZgodeEZwrotType
 {
+    /** @var \PocztaPolska\shopEZwrotyType */
+    public $sklepEZwrot;
     /** @var int */
     public $idZgody;
     /** @var \PocztaPolska\nazwaProduktuEZwrotType */

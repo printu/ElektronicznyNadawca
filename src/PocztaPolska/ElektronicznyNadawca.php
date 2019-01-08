@@ -335,6 +335,8 @@ class ElektronicznyNadawca extends \SoapClient
         'getJednostkaOrganizacyjnaResponse' => 'PocztaPolska\getJednostkaOrganizacyjnaResponse',
         'siecPlacowekEnum' => 'PocztaPolska\siecPlacowekEnum',
         'numerTransakcjiOdbioruType' => 'PocztaPolska\numerTransakcjiOdbioruType',
+        'daneSentType' => 'PocztaPolska\daneSentType',
+        'awizacjaType' => 'PocztaPolska\awizacjaType',
     );
 
     public function __construct($wsdl = null, $options = array())

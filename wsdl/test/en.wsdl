@@ -1686,6 +1686,16 @@
 				<xsd:attribute name="urzadNadania" type="tns:urzadNadaniaType" />
 				<xsd:attribute name="active" type="xsd:boolean" />
 				<xsd:attribute name="opis" type="xsd:string" />
+				<xsd:attribute name="aktualizujPlanowanaDateNadaniaPrzesylek" type="xsd:boolean" use="optional">
+					<xsd:annotation>
+						<xsd:documentation>W przypadku ustawienia TRUE zostaną zmodyfikowane planowane daty nadania dla przesyłek znajdujących się w aktualizowanym buforze.
+							Dla przesyłek dla których wcześniej pobrano etykietę adresową zostaną wygenerowane nowe przesyłki  z identycznymi parametrami jednak z NOWYM numerem nadania i GUID.
+							Przesyłki pierwotne (tzn. te dla których pobrano wcześniej etykiety adresowe) nie będą już dostępne.
+
+							W przypadku ustawienia FALSE lub nie przekazania tego atrybutu, planowane daty nadania przesyłek nie będą modyfikowane.
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
 			</xsd:complexType>
 			<xsd:element name="createEnvelopeBufor">
 				<xsd:complexType>
@@ -1809,9 +1819,11 @@
 							<xsd:element name="miejsceOdbioru" type="tns:adresType" maxOccurs="1" minOccurs="0" />
 							<xsd:element name="miejsceDoreczenia" type="tns:adresType" maxOccurs="1" minOccurs="0" />
 							<xsd:element name="paleta" type="tns:paletaType" maxOccurs="1" minOccurs="1" />
-							<xsd:element name="platnik" type="tns:platnikType" maxOccurs="1" minOccurs="1" />
+							<xsd:element name="platnik" type="tns:platnikType" maxOccurs="1" minOccurs="0" />
 							<xsd:element name="pobranie" type="tns:pobranieType" maxOccurs="1" minOccurs="0" />
 							<xsd:element name="subPaleta" type="tns:subPrzesylkaPaletowaType" maxOccurs="32" minOccurs="0" />
+							<xsd:element name="daneSent" type="tns:daneSentType" maxOccurs="10" minOccurs="0" />
+							<xsd:element name="awizacja" type="tns:awizacjaType" maxOccurs="1" minOccurs="0" />
 						</xsd:sequence>
 						<xsd:attribute name="zawartosc" type="xsd:string" />
 						<xsd:attribute name="masa" type="tns:masaType" />
@@ -1827,6 +1839,15 @@
 						<xsd:attribute name="zwracaneInne" type="xsd:string" />
 						<xsd:attribute name="powiadomienieNadawcy" type="xsd:string" />
 						<xsd:attribute name="powiadomienieOdbiorcy" type="tns:eSposobPowiadomieniaType" />
+						<xsd:attribute name="dostawaWSobote" type="xsd:boolean" />
+						<xsd:attribute name="przygotowanieDokumentowPrzewozowych" type="xsd:boolean" />
+						<xsd:attribute name="dostawaSamochodemDedykowanym" type="xsd:boolean" />
+						<xsd:attribute name="zmianaDanychAdresowych" type="xsd:boolean" />
+						<xsd:attribute name="ustalenieTerminuDostawy" type="xsd:boolean" />
+						<xsd:attribute name="samochodZWinda" type="xsd:boolean" />
+						<xsd:attribute name="zabranieOpakowania" type="xsd:boolean" />
+						<xsd:attribute name="wniesienie" type="xsd:boolean" />
+						<xsd:attribute name="awizoSMS" type="xsd:boolean" />
 					</xsd:extension>
 				</xsd:complexContent>
 			</xsd:complexType>
@@ -1835,6 +1856,7 @@
 					<xsd:enumeration value="EUR" />
 					<xsd:enumeration value="POLPALETA" />
 					<xsd:enumeration value="INNA" />
+					<xsd:enumeration value="PRZEMYSLOWA" />
 				</xsd:restriction>
 			</xsd:simpleType>
 			<xsd:complexType name="paletaType">
@@ -2557,13 +2579,20 @@
 				</xsd:complexType>
 			</xsd:element>
 			<xsd:complexType name="oczekujeNaZgodeEZwrotType">
+				<xsd:sequence>
+					<xsd:element name="sklepEZwrot" type="tns:shopEZwrotyType" maxOccurs="1" minOccurs="0"></xsd:element>
+				</xsd:sequence>
 				<xsd:attribute name="idZgody" type="xsd:int" />
-				<xsd:attribute name="nazwaProduktu" type="tns:nazwaProduktuEZwrotType" />
-				<xsd:attribute name="numerZamowienia" type="tns:numerZamowieniaEZwrotType" />
-				<xsd:attribute name="numerNadania" type="tns:numerNadaniaType" />
+				<xsd:attribute name="nazwaProduktu"
+							   type="tns:nazwaProduktuEZwrotType" />
+				<xsd:attribute name="numerZamowienia"
+							   type="tns:numerZamowieniaEZwrotType" />
+				<xsd:attribute name="numerNadania"
+							   type="tns:numerNadaniaType" />
 				<xsd:attribute name="email" type="tns:emailType" />
 				<xsd:attribute name="dataNadania" type="xsd:date" />
-				<xsd:attribute name="guidZgodaEZwrot" type="tns:guidType" />
+				<xsd:attribute name="guidZgodaEZwrot"
+							   type="tns:guidType" />
 			</xsd:complexType>
 			<xsd:simpleType name="nazwaProduktuEZwrotType">
 				<xsd:restriction base="xsd:string">
@@ -2591,10 +2620,23 @@
 			</xsd:element>
 			<xsd:complexType name="statusZgodyEZwrotType">
 				<xsd:sequence>
-					<xsd:element name="eZwrotPrzesylki" type="tns:eZwrotPrzesylkiType" maxOccurs="2" minOccurs="1" />
+					<xsd:element name="eZwrotPrzesylki"
+								 type="tns:eZwrotPrzesylkiType" maxOccurs="2" minOccurs="1" />
 				</xsd:sequence>
-				<xsd:attribute name="guidZgodaEZwrot" type="tns:guidType" />
-				<xsd:attribute name="status" type="tns:statusZgodyEZwrotNameType" />
+				<xsd:attribute name="guidZgodaEZwrot"
+							   type="tns:guidType" />
+				<xsd:attribute name="status"
+							   type="tns:statusZgodyEZwrotNameType" />
+				<xsd:attribute name="platnoscZaPrzesylke"
+							   type="xsd:boolean" use="optional">
+				</xsd:attribute>
+				<xsd:attribute name="kosztKontrahenta" type="xsd:int"
+							   use="optional">
+					<xsd:annotation>
+						<xsd:documentation>Kwota w groszach</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="dataWygasnieciaZgody" type="xsd:date" use="optional"></xsd:attribute>
 			</xsd:complexType>
 			<xsd:simpleType name="eZwrotTypZgodyType">
 				<xsd:restriction base="xsd:string">
@@ -2783,6 +2825,24 @@
 					<xsd:maxLength value="50" />
 				</xsd:restriction>
 			</xsd:simpleType>
+			<xsd:complexType name="daneSentType">
+				<xsd:sequence>
+					<xsd:element name="numer" maxOccurs="1" minOccurs="1" type="xsd:string"></xsd:element>
+					<xsd:element name="kluczPrzewoznika" type="xsd:string" maxOccurs="1" minOccurs="1"></xsd:element>
+					<xsd:choice>
+						<xsd:element name="kodCN" type="xsd:string" maxOccurs="1" minOccurs="0"></xsd:element>
+						<xsd:element name="kodPKWiU" type="xsd:string" maxOccurs="1" minOccurs="0"></xsd:element>
+					</xsd:choice>
+					<xsd:element name="masa" type="xsd:decimal" maxOccurs="1" minOccurs="0"></xsd:element>
+					<xsd:element name="proceduraAwaryjna" type="xsd:boolean" maxOccurs="1" minOccurs="0"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="awizacjaType">
+				<xsd:all>
+					<xsd:element name="od" type="xsd:time" maxOccurs="1" minOccurs="1"></xsd:element>
+					<xsd:element name="do" type="xsd:time" maxOccurs="1" minOccurs="1"></xsd:element>
+				</xsd:all>
+			</xsd:complexType>
 		</xsd:schema>
 	</wsdl:types>
 	<wsdl:message name="addShipmentRequest">
