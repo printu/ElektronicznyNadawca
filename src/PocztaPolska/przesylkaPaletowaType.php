@@ -16,6 +16,10 @@ class przesylkaPaletowaType extends \PocztaPolska\przesylkaRejestrowanaType
     public $pobranie;
     /** @var \PocztaPolska\subPrzesylkaPaletowaType */
     public $subPaleta;
+    /** @var \PocztaPolska\daneSentType */
+    public $daneSent;
+    /** @var \PocztaPolska\awizacjaType */
+    public $awizacja;
     /** @var string */
     public $zawartosc;
     /** @var \PocztaPolska\masaType */
@@ -44,4 +48,22 @@ class przesylkaPaletowaType extends \PocztaPolska\przesylkaRejestrowanaType
     public $powiadomienieNadawcy;
     /** @var \PocztaPolska\eSposobPowiadomieniaType */
     public $powiadomienieOdbiorcy;
+    /** @var boolean */
+    public $dostawaWSobote;
+    /** @var boolean */
+    public $przygotowanieDokumentowPrzewozowych;
+    /** @var boolean */
+    public $dostawaSamochodemDedykowanym;
+    /** @var boolean */
+    public $zmianaDanychAdresowych;
+    /** @var boolean */
+    public $ustalenieTerminuDostawy;
+    /** @var boolean */
+    public $samochodZWinda;
+    /** @var boolean */
+    public $zabranieOpakowania;
+    /** @var boolean */
+    public $wniesienie;
+    /** @var boolean */
+    public $awizoSMS;
 }

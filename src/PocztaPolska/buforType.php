@@ -16,4 +16,6 @@ class buforType
     public $active;
     /** @var string */
     public $opis;
+    /** @var boolean */
+    public $aktualizujPlanowanaDateNadaniaPrzesylek;
 }
