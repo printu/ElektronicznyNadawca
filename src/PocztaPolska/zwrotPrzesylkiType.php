@@ -8,4 +8,6 @@ class zwrotPrzesylkiType
     public $przyczyna;
     /** @var dateTime */
     public $data;
+    /** @var \PocztaPolska\przyczynaZwrotuDodatkowaType */
+    public $przyczynaZwrotuDodatkowa;
 }

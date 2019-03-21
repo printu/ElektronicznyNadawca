@@ -2,30 +2,24 @@
 
 namespace PocztaPolska;
 
-class przesylkaPoleconaKrajowaType extends \PocztaPolska\przesylkaRejestrowanaType
+class AlistWartosciowyKrajowyType extends \PocztaPolska\przesylkaRejestrowanaType
 {
-    /** @var \PocztaPolska\EPOType */
-    public $epo;
-    /** @var \PocztaPolska\zasadySpecjalneEnum */
-    public $zasadySpecjalne;
     /** @var boolean */
     public $posteRestante;
+    /** @var \PocztaPolska\wartoscType */
+    public $wartosc;
     /** @var \PocztaPolska\iloscPotwierdzenOdbioruType */
     public $iloscPotwierdzenOdbioru;
     /** @var \PocztaPolska\kategoriaType */
     public $kategoria;
-    /** @var \PocztaPolska\gabarytType */
-    public $gabaryt;
     /** @var \PocztaPolska\formatType */
     public $format;
     /** @var \PocztaPolska\masaType */
     public $masa;
+    /** @var string */
+    public $numerWewnetrznyPrzesylki;
     /** @var boolean */
     public $egzemplarzBiblioteczny;
     /** @var boolean */
     public $dlaOciemnialych;
-    /** @var boolean */
-    public $obszarMiasto;
-    /** @var boolean */
-    public $miejscowa;
 }

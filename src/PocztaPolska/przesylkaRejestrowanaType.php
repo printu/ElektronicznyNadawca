@@ -8,6 +8,8 @@ class przesylkaRejestrowanaType extends \PocztaPolska\przesylkaType
     public $adres;
     /** @var \PocztaPolska\adresType */
     public $nadawca;
+    /** @var \PocztaPolska\relatedToAllegroType */
+    public $relatedToAllegro;
     /** @var \PocztaPolska\numerNadaniaType */
     public $numerNadania;
     /** @var \PocztaPolska\sygnaturaType */
