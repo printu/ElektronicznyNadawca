@@ -337,6 +337,15 @@ class ElektronicznyNadawca extends \SoapClient
         'numerTransakcjiOdbioruType' => 'PocztaPolska\numerTransakcjiOdbioruType',
         'daneSentType' => 'PocztaPolska\daneSentType',
         'awizacjaType' => 'PocztaPolska\awizacjaType',
+        'formatType' => 'PocztaPolska\AformatType',
+        'przesylkaNierejestrowanaKrajowaType' => 'PocztaPolska\przesylkaNierejestrowanaKrajowaType',
+        'listWartosciowyKrajowyType' => 'PocztaPolska\AlistWartosciowyKrajowyType',
+        'przyczynaZwrotuDodatkowaType' => 'PocztaPolska\przyczynaZwrotuDodatkowaType',
+        'relatedToAllegroType' => 'PocztaPolska\relatedToAllegroType',
+        'relatedToAllegroIdType' => 'PocztaPolska\relatedToAllegroIdType',
+        'relatedToAllegroSellerIdType' => 'PocztaPolska\relatedToAllegroSellerIdType',
+        'relatedToAllegroChannelType' => 'PocztaPolska\relatedToAllegroChannelType',
+        'relatedToAllegroDeliveryMethodType' => 'PocztaPolska\relatedToAllegroDeliveryMethodType',
     );
 
     public function __construct($wsdl = null, $options = array())
