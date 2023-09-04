@@ -22,6 +22,7 @@ class GetProfilListResponse extends AbstractStructBase
      * @var \PocztaPolska\StructType\ProfilType[]
      */
     protected array $profil;
+
     /**
      * Constructor method for getProfilListResponse
      * @uses GetProfilListResponse::setProfil()
@@ -32,6 +33,7 @@ class GetProfilListResponse extends AbstractStructBase
         $this
             ->setProfil($profil);
     }
+
     /**
      * Get profil value
      * @return \PocztaPolska\StructType\ProfilType[]
@@ -40,6 +42,7 @@ class GetProfilListResponse extends AbstractStructBase
     {
         return $this->profil;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setProfil method
      * This method is willingly generated in order to preserve the one-line inline validation within the setProfil method
@@ -64,9 +67,10 @@ class GetProfilListResponse extends AbstractStructBase
             $message = sprintf('The profil property can only contain items of type \PocztaPolska\StructType\ProfilType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set profil value
      * @throws InvalidArgumentException
@@ -80,9 +84,10 @@ class GetProfilListResponse extends AbstractStructBase
             throw new InvalidArgumentException($profilArrayErrorMessage, __LINE__);
         }
         $this->profil = $profil;
-        
+
         return $this;
     }
+
     /**
      * Add item to profil value
      * @throws InvalidArgumentException
@@ -96,7 +101,7 @@ class GetProfilListResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The profil property can only contain items of type \PocztaPolska\StructType\ProfilType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->profil[] = $item;
-        
+
         return $this;
     }
 }

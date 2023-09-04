@@ -38,6 +38,7 @@ class ZalacznikDoReklamacjiType extends AbstractStructBase
      * @var string|null
      */
     protected ?string $fileDesc = null;
+
     /**
      * Constructor method for zalacznikDoReklamacjiType
      * @uses ZalacznikDoReklamacjiType::setFileContent()
@@ -54,6 +55,7 @@ class ZalacznikDoReklamacjiType extends AbstractStructBase
             ->setFileName($fileName)
             ->setFileDesc($fileDesc);
     }
+
     /**
      * Get fileContent value
      * @return string
@@ -62,6 +64,7 @@ class ZalacznikDoReklamacjiType extends AbstractStructBase
     {
         return $this->fileContent;
     }
+
     /**
      * Set fileContent value
      * @param string $fileContent
@@ -74,9 +77,10 @@ class ZalacznikDoReklamacjiType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($fileContent, true), gettype($fileContent)), __LINE__);
         }
         $this->fileContent = $fileContent;
-        
+
         return $this;
     }
+
     /**
      * Get fileName value
      * @return string
@@ -85,6 +89,7 @@ class ZalacznikDoReklamacjiType extends AbstractStructBase
     {
         return $this->fileName;
     }
+
     /**
      * Set fileName value
      * @param string $fileName
@@ -97,9 +102,10 @@ class ZalacznikDoReklamacjiType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($fileName, true), gettype($fileName)), __LINE__);
         }
         $this->fileName = $fileName;
-        
+
         return $this;
     }
+
     /**
      * Get fileDesc value
      * @return string|null
@@ -108,6 +114,7 @@ class ZalacznikDoReklamacjiType extends AbstractStructBase
     {
         return $this->fileDesc;
     }
+
     /**
      * Set fileDesc value
      * @param string $fileDesc
@@ -120,7 +127,7 @@ class ZalacznikDoReklamacjiType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($fileDesc, true), gettype($fileDesc)), __LINE__);
         }
         $this->fileDesc = $fileDesc;
-        
+
         return $this;
     }
 }

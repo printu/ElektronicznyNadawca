@@ -31,6 +31,7 @@ class UploadIWDContent extends AbstractStructBase
      * @var int|null
      */
     protected ?int $urzadNadania = null;
+
     /**
      * Constructor method for uploadIWDContent
      * @uses UploadIWDContent::setIWDContent()
@@ -44,6 +45,7 @@ class UploadIWDContent extends AbstractStructBase
             ->setIWDContent($iWDContent)
             ->setUrzadNadania($urzadNadania);
     }
+
     /**
      * Get IWDContent value
      * @return string
@@ -52,6 +54,7 @@ class UploadIWDContent extends AbstractStructBase
     {
         return $this->IWDContent;
     }
+
     /**
      * Set IWDContent value
      * @param string $iWDContent
@@ -64,9 +67,10 @@ class UploadIWDContent extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($iWDContent, true), gettype($iWDContent)), __LINE__);
         }
         $this->IWDContent = $iWDContent;
-        
+
         return $this;
     }
+
     /**
      * Get urzadNadania value
      * @return int|null
@@ -75,6 +79,7 @@ class UploadIWDContent extends AbstractStructBase
     {
         return $this->urzadNadania;
     }
+
     /**
      * Set urzadNadania value
      * @param int $urzadNadania
@@ -87,7 +92,7 @@ class UploadIWDContent extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($urzadNadania, true), gettype($urzadNadania)), __LINE__);
         }
         $this->urzadNadania = $urzadNadania;
-        
+
         return $this;
     }
 }

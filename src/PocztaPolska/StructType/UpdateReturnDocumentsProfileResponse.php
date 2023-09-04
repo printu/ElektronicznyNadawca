@@ -35,6 +35,7 @@ class UpdateReturnDocumentsProfileResponse extends AbstractStructBase
      * @var \PocztaPolska\StructType\ErrorType[]
      */
     protected ?array $error = null;
+
     /**
      * Constructor method for updateReturnDocumentsProfileResponse
      * @uses UpdateReturnDocumentsProfileResponse::setResult()
@@ -51,6 +52,7 @@ class UpdateReturnDocumentsProfileResponse extends AbstractStructBase
             ->setIdProfile($idProfile)
             ->setError($error);
     }
+
     /**
      * Get result value
      * @return bool|null
@@ -59,6 +61,7 @@ class UpdateReturnDocumentsProfileResponse extends AbstractStructBase
     {
         return $this->result;
     }
+
     /**
      * Set result value
      * @param bool $result
@@ -71,9 +74,10 @@ class UpdateReturnDocumentsProfileResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($result, true), gettype($result)), __LINE__);
         }
         $this->result = $result;
-        
+
         return $this;
     }
+
     /**
      * Get idProfile value
      * @return int|null
@@ -82,6 +86,7 @@ class UpdateReturnDocumentsProfileResponse extends AbstractStructBase
     {
         return $this->idProfile;
     }
+
     /**
      * Set idProfile value
      * @param int $idProfile
@@ -94,9 +99,10 @@ class UpdateReturnDocumentsProfileResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($idProfile, true), gettype($idProfile)), __LINE__);
         }
         $this->idProfile = $idProfile;
-        
+
         return $this;
     }
+
     /**
      * Get error value
      * @return \PocztaPolska\StructType\ErrorType[]
@@ -105,6 +111,7 @@ class UpdateReturnDocumentsProfileResponse extends AbstractStructBase
     {
         return $this->error;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setError method
      * This method is willingly generated in order to preserve the one-line inline validation within the setError method
@@ -129,9 +136,10 @@ class UpdateReturnDocumentsProfileResponse extends AbstractStructBase
             $message = sprintf('The error property can only contain items of type \PocztaPolska\StructType\ErrorType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set error value
      * @throws InvalidArgumentException
@@ -145,9 +153,10 @@ class UpdateReturnDocumentsProfileResponse extends AbstractStructBase
             throw new InvalidArgumentException($errorArrayErrorMessage, __LINE__);
         }
         $this->error = $error;
-        
+
         return $this;
     }
+
     /**
      * Add item to error value
      * @throws InvalidArgumentException
@@ -161,7 +170,7 @@ class UpdateReturnDocumentsProfileResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The error property can only contain items of type \PocztaPolska\StructType\ErrorType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->error[] = $item;
-        
+
         return $this;
     }
 }

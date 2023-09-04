@@ -29,6 +29,7 @@ class EZDOPakietType extends AbstractStructBase
      * @var string|null
      */
     protected ?string $idEZDOFile = null;
+
     /**
      * Constructor method for EZDOPakietType
      * @uses EZDOPakietType::setIdEZDOPakiet()
@@ -45,6 +46,7 @@ class EZDOPakietType extends AbstractStructBase
             ->setExported($exported)
             ->setIdEZDOFile($idEZDOFile);
     }
+
     /**
      * Get idEZDOPakiet value
      * @return int|null
@@ -53,6 +55,7 @@ class EZDOPakietType extends AbstractStructBase
     {
         return $this->idEZDOPakiet;
     }
+
     /**
      * Set idEZDOPakiet value
      * @param int $idEZDOPakiet
@@ -65,9 +68,10 @@ class EZDOPakietType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($idEZDOPakiet, true), gettype($idEZDOPakiet)), __LINE__);
         }
         $this->idEZDOPakiet = $idEZDOPakiet;
-        
+
         return $this;
     }
+
     /**
      * Get exported value
      * @return string|null
@@ -76,6 +80,7 @@ class EZDOPakietType extends AbstractStructBase
     {
         return $this->exported;
     }
+
     /**
      * Set exported value
      * @param string $exported
@@ -88,9 +93,10 @@ class EZDOPakietType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($exported, true), gettype($exported)), __LINE__);
         }
         $this->exported = $exported;
-        
+
         return $this;
     }
+
     /**
      * Get idEZDOFile value
      * @return string|null
@@ -99,6 +105,7 @@ class EZDOPakietType extends AbstractStructBase
     {
         return $this->idEZDOFile;
     }
+
     /**
      * Set idEZDOFile value
      * @param string $idEZDOFile
@@ -111,7 +118,7 @@ class EZDOPakietType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($idEZDOFile, true), gettype($idEZDOFile)), __LINE__);
         }
         $this->idEZDOFile = $idEZDOFile;
-        
+
         return $this;
     }
 }

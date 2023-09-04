@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace PocztaPolska\StructType;
 
 use InvalidArgumentException;
-use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for marketingowaZbiorczoType StructType
@@ -34,6 +33,7 @@ class MarketingowaZbiorczoType extends PrzesylkaNieRejestrowanaType
      * @var string|null
      */
     protected ?string $gabaryt = null;
+
     /**
      * Constructor method for marketingowaZbiorczoType
      * @uses MarketingowaZbiorczoType::setMasa()
@@ -47,6 +47,7 @@ class MarketingowaZbiorczoType extends PrzesylkaNieRejestrowanaType
             ->setMasa($masa)
             ->setGabaryt($gabaryt);
     }
+
     /**
      * Get masa value
      * @return int
@@ -55,6 +56,7 @@ class MarketingowaZbiorczoType extends PrzesylkaNieRejestrowanaType
     {
         return $this->masa;
     }
+
     /**
      * Set masa value
      * @param int $masa
@@ -75,9 +77,10 @@ class MarketingowaZbiorczoType extends PrzesylkaNieRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 1', var_export($masa, true)), __LINE__);
         }
         $this->masa = $masa;
-        
+
         return $this;
     }
+
     /**
      * Get gabaryt value
      * @return string|null
@@ -86,6 +89,7 @@ class MarketingowaZbiorczoType extends PrzesylkaNieRejestrowanaType
     {
         return $this->gabaryt;
     }
+
     /**
      * Set gabaryt value
      * @uses \PocztaPolska\EnumType\GabarytType::valueIsValid()
@@ -101,7 +105,7 @@ class MarketingowaZbiorczoType extends PrzesylkaNieRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\GabarytType', is_array($gabaryt) ? implode(', ', $gabaryt) : var_export($gabaryt, true), implode(', ', \PocztaPolska\EnumType\GabarytType::getValidValues())), __LINE__);
         }
         $this->gabaryt = $gabaryt;
-        
+
         return $this;
     }
 }

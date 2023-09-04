@@ -22,6 +22,7 @@ class AddRozbieznoscDoZapowiedziFaktur extends AbstractStructBase
      * @var string[]
      */
     protected array $rozbieznosciZipFile;
+
     /**
      * Constructor method for addRozbieznoscDoZapowiedziFaktur
      * @uses AddRozbieznoscDoZapowiedziFaktur::setRozbieznosciZipFile()
@@ -32,6 +33,7 @@ class AddRozbieznoscDoZapowiedziFaktur extends AbstractStructBase
         $this
             ->setRozbieznosciZipFile($rozbieznosciZipFile);
     }
+
     /**
      * Get rozbieznosciZipFile value
      * @return string[]
@@ -40,6 +42,7 @@ class AddRozbieznoscDoZapowiedziFaktur extends AbstractStructBase
     {
         return $this->rozbieznosciZipFile;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setRozbieznosciZipFile method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRozbieznosciZipFile method
@@ -64,9 +67,10 @@ class AddRozbieznoscDoZapowiedziFaktur extends AbstractStructBase
             $message = sprintf('The rozbieznosciZipFile property can only contain items of type string, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set rozbieznosciZipFile value
      * @throws InvalidArgumentException
@@ -84,9 +88,10 @@ class AddRozbieznoscDoZapowiedziFaktur extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 10', count($rozbieznosciZipFile)), __LINE__);
         }
         $this->rozbieznosciZipFile = $rozbieznosciZipFile;
-        
+
         return $this;
     }
+
     /**
      * Add item to rozbieznosciZipFile value
      * @throws InvalidArgumentException
@@ -104,7 +109,7 @@ class AddRozbieznoscDoZapowiedziFaktur extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 10', count($this->rozbieznosciZipFile)), __LINE__);
         }
         $this->rozbieznosciZipFile[] = $item;
-        
+
         return $this;
     }
 }

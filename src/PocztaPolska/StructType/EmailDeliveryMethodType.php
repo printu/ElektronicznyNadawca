@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace PocztaPolska\StructType;
 
 use InvalidArgumentException;
-use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for EmailDeliveryMethodType StructType
@@ -25,6 +24,7 @@ class EmailDeliveryMethodType extends DeliveryMethodType
      * @var string
      */
     protected string $email;
+
     /**
      * Constructor method for EmailDeliveryMethodType
      * @uses EmailDeliveryMethodType::setEmail()
@@ -35,6 +35,7 @@ class EmailDeliveryMethodType extends DeliveryMethodType
         $this
             ->setEmail($email);
     }
+
     /**
      * Get email value
      * @return string
@@ -43,6 +44,7 @@ class EmailDeliveryMethodType extends DeliveryMethodType
     {
         return $this->email;
     }
+
     /**
      * Set email value
      * @param string $email
@@ -63,7 +65,7 @@ class EmailDeliveryMethodType extends DeliveryMethodType
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 6', mb_strlen((string) $email)), __LINE__);
         }
         $this->email = $email;
-        
+
         return $this;
     }
 }

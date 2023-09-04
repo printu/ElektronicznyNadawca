@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace PocztaPolska\StructType;
 
 use InvalidArgumentException;
-use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for przesylkaNieRejestrowanaType StructType
@@ -23,6 +22,7 @@ abstract class PrzesylkaNieRejestrowanaType extends PrzesylkaType
      * @var int|null
      */
     protected ?int $ilosc = null;
+
     /**
      * Constructor method for przesylkaNieRejestrowanaType
      * @uses PrzesylkaNieRejestrowanaType::setIlosc()
@@ -33,6 +33,7 @@ abstract class PrzesylkaNieRejestrowanaType extends PrzesylkaType
         $this
             ->setIlosc($ilosc);
     }
+
     /**
      * Get ilosc value
      * @return int|null
@@ -41,6 +42,7 @@ abstract class PrzesylkaNieRejestrowanaType extends PrzesylkaType
     {
         return $this->ilosc;
     }
+
     /**
      * Set ilosc value
      * @param int $ilosc
@@ -61,7 +63,7 @@ abstract class PrzesylkaNieRejestrowanaType extends PrzesylkaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 1', var_export($ilosc, true)), __LINE__);
         }
         $this->ilosc = $ilosc;
-        
+
         return $this;
     }
 }

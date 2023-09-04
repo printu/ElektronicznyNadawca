@@ -22,6 +22,7 @@ class GetEnvelopeContentFull extends AbstractStructBase
      * @var int
      */
     protected int $idEnvelope;
+
     /**
      * Constructor method for getEnvelopeContentFull
      * @uses GetEnvelopeContentFull::setIdEnvelope()
@@ -32,6 +33,7 @@ class GetEnvelopeContentFull extends AbstractStructBase
         $this
             ->setIdEnvelope($idEnvelope);
     }
+
     /**
      * Get idEnvelope value
      * @return int
@@ -40,6 +42,7 @@ class GetEnvelopeContentFull extends AbstractStructBase
     {
         return $this->idEnvelope;
     }
+
     /**
      * Set idEnvelope value
      * @param int $idEnvelope
@@ -52,7 +55,7 @@ class GetEnvelopeContentFull extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($idEnvelope, true), gettype($idEnvelope)), __LINE__);
         }
         $this->idEnvelope = $idEnvelope;
-        
+
         return $this;
     }
 }

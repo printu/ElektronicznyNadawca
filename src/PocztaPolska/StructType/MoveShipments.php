@@ -41,6 +41,7 @@ class MoveShipments extends AbstractStructBase
      * @var string[]
      */
     protected array $guid;
+
     /**
      * Constructor method for moveShipments
      * @uses MoveShipments::setIdBuforFrom()
@@ -57,6 +58,7 @@ class MoveShipments extends AbstractStructBase
             ->setIdBuforTo($idBuforTo)
             ->setGuid($guid);
     }
+
     /**
      * Get idBuforFrom value
      * @return int
@@ -65,6 +67,7 @@ class MoveShipments extends AbstractStructBase
     {
         return $this->idBuforFrom;
     }
+
     /**
      * Set idBuforFrom value
      * @param int $idBuforFrom
@@ -77,9 +80,10 @@ class MoveShipments extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($idBuforFrom, true), gettype($idBuforFrom)), __LINE__);
         }
         $this->idBuforFrom = $idBuforFrom;
-        
+
         return $this;
     }
+
     /**
      * Get idBuforTo value
      * @return int
@@ -88,6 +92,7 @@ class MoveShipments extends AbstractStructBase
     {
         return $this->idBuforTo;
     }
+
     /**
      * Set idBuforTo value
      * @param int $idBuforTo
@@ -100,9 +105,10 @@ class MoveShipments extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($idBuforTo, true), gettype($idBuforTo)), __LINE__);
         }
         $this->idBuforTo = $idBuforTo;
-        
+
         return $this;
     }
+
     /**
      * Get guid value
      * @return string[]
@@ -111,6 +117,7 @@ class MoveShipments extends AbstractStructBase
     {
         return $this->guid;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setGuid method
      * This method is willingly generated in order to preserve the one-line inline validation within the setGuid method
@@ -135,9 +142,10 @@ class MoveShipments extends AbstractStructBase
             $message = sprintf('The guid property can only contain items of type string, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setGuid method
      * This method is willingly generated in order to preserve the one-line inline validation within the setGuid method
@@ -159,9 +167,10 @@ class MoveShipments extends AbstractStructBase
             $message = sprintf('Invalid length for value(s) %s, the number of characters/octets contained by the literal must be equal to 32', implode(', ', $invalidValues));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set guid value
      * @throws InvalidArgumentException
@@ -179,9 +188,10 @@ class MoveShipments extends AbstractStructBase
             throw new InvalidArgumentException($guidLengthErrorMessage, __LINE__);
         }
         $this->guid = $guid;
-        
+
         return $this;
     }
+
     /**
      * Add item to guid value
      * @throws InvalidArgumentException
@@ -199,7 +209,7 @@ class MoveShipments extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 32', mb_strlen((string) $item)), __LINE__);
         }
         $this->guid[] = $item;
-        
+
         return $this;
     }
 }

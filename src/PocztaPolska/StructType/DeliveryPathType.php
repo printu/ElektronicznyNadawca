@@ -44,6 +44,7 @@ class DeliveryPathType extends AbstractStructBase
      * @var string|null
      */
     protected ?string $deliveryRegion = null;
+
     /**
      * Constructor method for deliveryPathType
      * @uses DeliveryPathType::setEndNode()
@@ -69,6 +70,7 @@ class DeliveryPathType extends AbstractStructBase
             ->setPostOffice($postOffice)
             ->setDeliveryRegion($deliveryRegion);
     }
+
     /**
      * Get endNode value
      * @return string|null
@@ -77,6 +79,7 @@ class DeliveryPathType extends AbstractStructBase
     {
         return $this->endNode;
     }
+
     /**
      * Set endNode value
      * @param string $endNode
@@ -89,9 +92,10 @@ class DeliveryPathType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($endNode, true), gettype($endNode)), __LINE__);
         }
         $this->endNode = $endNode;
-        
+
         return $this;
     }
+
     /**
      * Get targetingNode value
      * @return string|null
@@ -100,6 +104,7 @@ class DeliveryPathType extends AbstractStructBase
     {
         return $this->targetingNode;
     }
+
     /**
      * Set targetingNode value
      * @param string $targetingNode
@@ -112,9 +117,10 @@ class DeliveryPathType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($targetingNode, true), gettype($targetingNode)), __LINE__);
         }
         $this->targetingNode = $targetingNode;
-        
+
         return $this;
     }
+
     /**
      * Get assistantNode value
      * @return string|null
@@ -123,6 +129,7 @@ class DeliveryPathType extends AbstractStructBase
     {
         return $this->assistantNode;
     }
+
     /**
      * Set assistantNode value
      * @param string $assistantNode
@@ -135,9 +142,10 @@ class DeliveryPathType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($assistantNode, true), gettype($assistantNode)), __LINE__);
         }
         $this->assistantNode = $assistantNode;
-        
+
         return $this;
     }
+
     /**
      * Get reloadingPoint value
      * @return string|null
@@ -146,6 +154,7 @@ class DeliveryPathType extends AbstractStructBase
     {
         return $this->reloadingPoint;
     }
+
     /**
      * Set reloadingPoint value
      * @param string $reloadingPoint
@@ -158,9 +167,10 @@ class DeliveryPathType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($reloadingPoint, true), gettype($reloadingPoint)), __LINE__);
         }
         $this->reloadingPoint = $reloadingPoint;
-        
+
         return $this;
     }
+
     /**
      * Get postOffice value
      * @return string|null
@@ -169,6 +179,7 @@ class DeliveryPathType extends AbstractStructBase
     {
         return $this->postOffice;
     }
+
     /**
      * Set postOffice value
      * @param string $postOffice
@@ -181,9 +192,10 @@ class DeliveryPathType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($postOffice, true), gettype($postOffice)), __LINE__);
         }
         $this->postOffice = $postOffice;
-        
+
         return $this;
     }
+
     /**
      * Get deliveryRegion value
      * @return string|null
@@ -192,6 +204,7 @@ class DeliveryPathType extends AbstractStructBase
     {
         return $this->deliveryRegion;
     }
+
     /**
      * Set deliveryRegion value
      * @param string $deliveryRegion
@@ -204,7 +217,7 @@ class DeliveryPathType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($deliveryRegion, true), gettype($deliveryRegion)), __LINE__);
         }
         $this->deliveryRegion = $deliveryRegion;
-        
+
         return $this;
     }
 }

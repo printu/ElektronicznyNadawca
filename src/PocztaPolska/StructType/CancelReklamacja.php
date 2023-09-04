@@ -22,6 +22,7 @@ class CancelReklamacja extends AbstractStructBase
      * @var int
      */
     protected int $idRelkamacja;
+
     /**
      * Constructor method for cancelReklamacja
      * @uses CancelReklamacja::setIdRelkamacja()
@@ -32,6 +33,7 @@ class CancelReklamacja extends AbstractStructBase
         $this
             ->setIdRelkamacja($idRelkamacja);
     }
+
     /**
      * Get idRelkamacja value
      * @return int
@@ -40,6 +42,7 @@ class CancelReklamacja extends AbstractStructBase
     {
         return $this->idRelkamacja;
     }
+
     /**
      * Set idRelkamacja value
      * @param int $idRelkamacja
@@ -52,7 +55,7 @@ class CancelReklamacja extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($idRelkamacja, true), gettype($idRelkamacja)), __LINE__);
         }
         $this->idRelkamacja = $idRelkamacja;
-        
+
         return $this;
     }
 }

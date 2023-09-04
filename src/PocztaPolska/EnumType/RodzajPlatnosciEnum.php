@@ -16,17 +16,18 @@ class RodzajPlatnosciEnum extends AbstractStructEnumBase
      * Constant for value 'BLIK'
      * @return string 'BLIK'
      */
-    const VALUE_BLIK = 'BLIK';
+    public const VALUE_BLIK = 'BLIK';
     /**
      * Constant for value 'CARD'
      * @return string 'CARD'
      */
-    const VALUE_CARD = 'CARD';
+    public const VALUE_CARD = 'CARD';
     /**
      * Constant for value 'ONLINE'
      * @return string 'ONLINE'
      */
-    const VALUE_ONLINE = 'ONLINE';
+    public const VALUE_ONLINE = 'ONLINE';
+
     /**
      * Return allowed values
      * @uses self::VALUE_BLIK

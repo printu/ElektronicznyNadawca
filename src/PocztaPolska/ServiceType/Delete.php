@@ -27,14 +27,15 @@ class Delete extends AbstractSoapClientBase
             $this->setResult($resultDeleteShopEZwroty = $this->getSoapClient()->__soapCall('deleteShopEZwroty', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultDeleteShopEZwroty;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named deleteParcelContent
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -49,14 +50,15 @@ class Delete extends AbstractSoapClientBase
             $this->setResult($resultDeleteParcelContent = $this->getSoapClient()->__soapCall('deleteParcelContent', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultDeleteParcelContent;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named deleteReturnDocumentsProfile
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -71,14 +73,15 @@ class Delete extends AbstractSoapClientBase
             $this->setResult($resultDeleteReturnDocumentsProfile = $this->getSoapClient()->__soapCall('deleteReturnDocumentsProfile', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultDeleteReturnDocumentsProfile;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named deleteChecklistTemplate
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -93,14 +96,15 @@ class Delete extends AbstractSoapClientBase
             $this->setResult($resultDeleteChecklistTemplate = $this->getSoapClient()->__soapCall('deleteChecklistTemplate', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultDeleteChecklistTemplate;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Returns the result
      * @see AbstractSoapClientBase::getResult()

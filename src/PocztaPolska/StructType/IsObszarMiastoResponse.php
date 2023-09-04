@@ -22,6 +22,7 @@ class IsObszarMiastoResponse extends AbstractStructBase
      * @var \PocztaPolska\StructType\ObszarAdresowyResponseType[]
      */
     protected array $obszarAdresowy;
+
     /**
      * Constructor method for isObszarMiastoResponse
      * @uses IsObszarMiastoResponse::setObszarAdresowy()
@@ -32,6 +33,7 @@ class IsObszarMiastoResponse extends AbstractStructBase
         $this
             ->setObszarAdresowy($obszarAdresowy);
     }
+
     /**
      * Get obszarAdresowy value
      * @return \PocztaPolska\StructType\ObszarAdresowyResponseType[]
@@ -40,6 +42,7 @@ class IsObszarMiastoResponse extends AbstractStructBase
     {
         return $this->obszarAdresowy;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setObszarAdresowy method
      * This method is willingly generated in order to preserve the one-line inline validation within the setObszarAdresowy method
@@ -64,9 +67,10 @@ class IsObszarMiastoResponse extends AbstractStructBase
             $message = sprintf('The obszarAdresowy property can only contain items of type \PocztaPolska\StructType\ObszarAdresowyResponseType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set obszarAdresowy value
      * @throws InvalidArgumentException
@@ -80,9 +84,10 @@ class IsObszarMiastoResponse extends AbstractStructBase
             throw new InvalidArgumentException($obszarAdresowyArrayErrorMessage, __LINE__);
         }
         $this->obszarAdresowy = $obszarAdresowy;
-        
+
         return $this;
     }
+
     /**
      * Add item to obszarAdresowy value
      * @throws InvalidArgumentException
@@ -96,7 +101,7 @@ class IsObszarMiastoResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The obszarAdresowy property can only contain items of type \PocztaPolska\StructType\ObszarAdresowyResponseType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->obszarAdresowy[] = $item;
-        
+
         return $this;
     }
 }

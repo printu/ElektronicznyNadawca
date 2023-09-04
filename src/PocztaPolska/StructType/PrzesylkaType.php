@@ -72,6 +72,7 @@ abstract class PrzesylkaType extends AbstractStructBase
      * @var string|null
      */
     protected ?string $planowanaDataNadania = null;
+
     /**
      * Constructor method for przesylkaType
      * @uses PrzesylkaType::setGuid()
@@ -100,6 +101,7 @@ abstract class PrzesylkaType extends AbstractStructBase
             ->setOpis($opis)
             ->setPlanowanaDataNadania($planowanaDataNadania);
     }
+
     /**
      * Get guid value
      * @return string
@@ -108,6 +110,7 @@ abstract class PrzesylkaType extends AbstractStructBase
     {
         return $this->guid;
     }
+
     /**
      * Set guid value
      * @param string $guid
@@ -124,9 +127,10 @@ abstract class PrzesylkaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 32', mb_strlen((string) $guid)), __LINE__);
         }
         $this->guid = $guid;
-        
+
         return $this;
     }
+
     /**
      * Get oplacaOdbiorca value
      * @return \PocztaPolska\StructType\OplacaOdbiorcaType|null
@@ -135,6 +139,7 @@ abstract class PrzesylkaType extends AbstractStructBase
     {
         return $this->oplacaOdbiorca;
     }
+
     /**
      * Set oplacaOdbiorca value
      * @param \PocztaPolska\StructType\OplacaOdbiorcaType $oplacaOdbiorca
@@ -143,9 +148,10 @@ abstract class PrzesylkaType extends AbstractStructBase
     public function setOplacaOdbiorca(?\PocztaPolska\StructType\OplacaOdbiorcaType $oplacaOdbiorca = null): self
     {
         $this->oplacaOdbiorca = $oplacaOdbiorca;
-        
+
         return $this;
     }
+
     /**
      * Get mpk value
      * @return string|null
@@ -154,6 +160,7 @@ abstract class PrzesylkaType extends AbstractStructBase
     {
         return $this->mpk;
     }
+
     /**
      * Set mpk value
      * @param string $mpk
@@ -166,9 +173,10 @@ abstract class PrzesylkaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($mpk, true), gettype($mpk)), __LINE__);
         }
         $this->mpk = $mpk;
-        
+
         return $this;
     }
+
     /**
      * Get pakietGuid value
      * @return string|null
@@ -177,6 +185,7 @@ abstract class PrzesylkaType extends AbstractStructBase
     {
         return $this->pakietGuid;
     }
+
     /**
      * Set pakietGuid value
      * @param string $pakietGuid
@@ -193,9 +202,10 @@ abstract class PrzesylkaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 32', mb_strlen((string) $pakietGuid)), __LINE__);
         }
         $this->pakietGuid = $pakietGuid;
-        
+
         return $this;
     }
+
     /**
      * Get opakowanieGuid value
      * @return string|null
@@ -204,6 +214,7 @@ abstract class PrzesylkaType extends AbstractStructBase
     {
         return $this->opakowanieGuid;
     }
+
     /**
      * Set opakowanieGuid value
      * @param string $opakowanieGuid
@@ -220,9 +231,10 @@ abstract class PrzesylkaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 32', mb_strlen((string) $opakowanieGuid)), __LINE__);
         }
         $this->opakowanieGuid = $opakowanieGuid;
-        
+
         return $this;
     }
+
     /**
      * Get opis value
      * @return string|null
@@ -231,6 +243,7 @@ abstract class PrzesylkaType extends AbstractStructBase
     {
         return $this->opis;
     }
+
     /**
      * Set opis value
      * @param string $opis
@@ -247,9 +260,10 @@ abstract class PrzesylkaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 500', mb_strlen((string) $opis)), __LINE__);
         }
         $this->opis = $opis;
-        
+
         return $this;
     }
+
     /**
      * Get planowanaDataNadania value
      * @return string|null
@@ -258,6 +272,7 @@ abstract class PrzesylkaType extends AbstractStructBase
     {
         return $this->planowanaDataNadania;
     }
+
     /**
      * Set planowanaDataNadania value
      * @param string $planowanaDataNadania
@@ -270,7 +285,7 @@ abstract class PrzesylkaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($planowanaDataNadania, true), gettype($planowanaDataNadania)), __LINE__);
         }
         $this->planowanaDataNadania = $planowanaDataNadania;
-        
+
         return $this;
     }
 }

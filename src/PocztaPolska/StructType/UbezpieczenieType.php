@@ -39,6 +39,7 @@ class UbezpieczenieType extends AbstractStructBase
      * @var bool|null
      */
     protected ?bool $akceptacjaOWU = null;
+
     /**
      * Constructor method for ubezpieczenieType
      * @uses UbezpieczenieType::setRodzaj()
@@ -55,6 +56,7 @@ class UbezpieczenieType extends AbstractStructBase
             ->setKwota($kwota)
             ->setAkceptacjaOWU($akceptacjaOWU);
     }
+
     /**
      * Get rodzaj value
      * @return string
@@ -63,6 +65,7 @@ class UbezpieczenieType extends AbstractStructBase
     {
         return $this->rodzaj;
     }
+
     /**
      * Set rodzaj value
      * @param string $rodzaj
@@ -83,9 +86,10 @@ class UbezpieczenieType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $rodzaj)), __LINE__);
         }
         $this->rodzaj = $rodzaj;
-        
+
         return $this;
     }
+
     /**
      * Get kwota value
      * @return float
@@ -94,6 +98,7 @@ class UbezpieczenieType extends AbstractStructBase
     {
         return $this->kwota;
     }
+
     /**
      * Set kwota value
      * @param float $kwota
@@ -106,9 +111,10 @@ class UbezpieczenieType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($kwota, true), gettype($kwota)), __LINE__);
         }
         $this->kwota = $kwota;
-        
+
         return $this;
     }
+
     /**
      * Get akceptacjaOWU value
      * @return bool|null
@@ -117,6 +123,7 @@ class UbezpieczenieType extends AbstractStructBase
     {
         return $this->akceptacjaOWU;
     }
+
     /**
      * Set akceptacjaOWU value
      * @param bool $akceptacjaOWU
@@ -129,7 +136,7 @@ class UbezpieczenieType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($akceptacjaOWU, true), gettype($akceptacjaOWU)), __LINE__);
         }
         $this->akceptacjaOWU = $akceptacjaOWU;
-        
+
         return $this;
     }
 }

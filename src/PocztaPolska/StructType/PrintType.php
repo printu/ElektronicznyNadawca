@@ -46,6 +46,7 @@ class PrintType extends AbstractStructBase
      * @var string|null
      */
     protected ?string $resolution = null;
+
     /**
      * Constructor method for PrintType
      * @uses PrintType::setKind()
@@ -65,6 +66,7 @@ class PrintType extends AbstractStructBase
             ->setFormat($format)
             ->setResolution($resolution);
     }
+
     /**
      * Get kind value
      * @return string
@@ -73,6 +75,7 @@ class PrintType extends AbstractStructBase
     {
         return $this->kind;
     }
+
     /**
      * Set kind value
      * @uses \PocztaPolska\EnumType\PrintKindEnum::valueIsValid()
@@ -88,9 +91,10 @@ class PrintType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\PrintKindEnum', is_array($kind) ? implode(', ', $kind) : var_export($kind, true), implode(', ', \PocztaPolska\EnumType\PrintKindEnum::getValidValues())), __LINE__);
         }
         $this->kind = $kind;
-        
+
         return $this;
     }
+
     /**
      * Get method value
      * @return string
@@ -99,6 +103,7 @@ class PrintType extends AbstractStructBase
     {
         return $this->method;
     }
+
     /**
      * Set method value
      * @uses \PocztaPolska\EnumType\PrintMethodEnum::valueIsValid()
@@ -114,9 +119,10 @@ class PrintType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\PrintMethodEnum', is_array($method) ? implode(', ', $method) : var_export($method, true), implode(', ', \PocztaPolska\EnumType\PrintMethodEnum::getValidValues())), __LINE__);
         }
         $this->method = $method;
-        
+
         return $this;
     }
+
     /**
      * Get format value
      * @return string|null
@@ -125,6 +131,7 @@ class PrintType extends AbstractStructBase
     {
         return $this->format;
     }
+
     /**
      * Set format value
      * @uses \PocztaPolska\EnumType\PrintFormatEnum::valueIsValid()
@@ -140,9 +147,10 @@ class PrintType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\PrintFormatEnum', is_array($format) ? implode(', ', $format) : var_export($format, true), implode(', ', \PocztaPolska\EnumType\PrintFormatEnum::getValidValues())), __LINE__);
         }
         $this->format = $format;
-        
+
         return $this;
     }
+
     /**
      * Get resolution value
      * @return string|null
@@ -151,6 +159,7 @@ class PrintType extends AbstractStructBase
     {
         return $this->resolution;
     }
+
     /**
      * Set resolution value
      * @uses \PocztaPolska\EnumType\PrintResolutionEnum::valueIsValid()
@@ -166,7 +175,7 @@ class PrintType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\PrintResolutionEnum', is_array($resolution) ? implode(', ', $resolution) : var_export($resolution, true), implode(', ', \PocztaPolska\EnumType\PrintResolutionEnum::getValidValues())), __LINE__);
         }
         $this->resolution = $resolution;
-        
+
         return $this;
     }
 }

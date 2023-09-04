@@ -22,6 +22,7 @@ class GetPlacowkiPocztoweResponse extends AbstractStructBase
      * @var \PocztaPolska\StructType\PlacowkaPocztowaType[]
      */
     protected array $placowka;
+
     /**
      * Constructor method for getPlacowkiPocztoweResponse
      * @uses GetPlacowkiPocztoweResponse::setPlacowka()
@@ -32,6 +33,7 @@ class GetPlacowkiPocztoweResponse extends AbstractStructBase
         $this
             ->setPlacowka($placowka);
     }
+
     /**
      * Get placowka value
      * @return \PocztaPolska\StructType\PlacowkaPocztowaType[]
@@ -40,6 +42,7 @@ class GetPlacowkiPocztoweResponse extends AbstractStructBase
     {
         return $this->placowka;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setPlacowka method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPlacowka method
@@ -64,9 +67,10 @@ class GetPlacowkiPocztoweResponse extends AbstractStructBase
             $message = sprintf('The placowka property can only contain items of type \PocztaPolska\StructType\PlacowkaPocztowaType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set placowka value
      * @throws InvalidArgumentException
@@ -80,9 +84,10 @@ class GetPlacowkiPocztoweResponse extends AbstractStructBase
             throw new InvalidArgumentException($placowkaArrayErrorMessage, __LINE__);
         }
         $this->placowka = $placowka;
-        
+
         return $this;
     }
+
     /**
      * Add item to placowka value
      * @throws InvalidArgumentException
@@ -96,7 +101,7 @@ class GetPlacowkiPocztoweResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The placowka property can only contain items of type \PocztaPolska\StructType\PlacowkaPocztowaType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->placowka[] = $item;
-        
+
         return $this;
     }
 }

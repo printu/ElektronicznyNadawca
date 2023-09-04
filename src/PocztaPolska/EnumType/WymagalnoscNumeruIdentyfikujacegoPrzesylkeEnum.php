@@ -16,17 +16,18 @@ class WymagalnoscNumeruIdentyfikujacegoPrzesylkeEnum extends AbstractStructEnumB
      * Constant for value 'BRAK'
      * @return string 'BRAK'
      */
-    const VALUE_BRAK = 'BRAK';
+    public const VALUE_BRAK = 'BRAK';
     /**
      * Constant for value 'WYMAGANY'
      * @return string 'WYMAGANY'
      */
-    const VALUE_WYMAGANY = 'WYMAGANY';
+    public const VALUE_WYMAGANY = 'WYMAGANY';
     /**
      * Constant for value 'NIEWYMAGANY'
      * @return string 'NIEWYMAGANY'
      */
-    const VALUE_NIEWYMAGANY = 'NIEWYMAGANY';
+    public const VALUE_NIEWYMAGANY = 'NIEWYMAGANY';
+
     /**
      * Return allowed values
      * @uses self::VALUE_BRAK

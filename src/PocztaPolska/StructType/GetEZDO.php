@@ -22,6 +22,7 @@ class GetEZDO extends AbstractStructBase
      * @var int
      */
     protected int $idEZDOPakiet;
+
     /**
      * Constructor method for getEZDO
      * @uses GetEZDO::setIdEZDOPakiet()
@@ -32,6 +33,7 @@ class GetEZDO extends AbstractStructBase
         $this
             ->setIdEZDOPakiet($idEZDOPakiet);
     }
+
     /**
      * Get idEZDOPakiet value
      * @return int
@@ -40,6 +42,7 @@ class GetEZDO extends AbstractStructBase
     {
         return $this->idEZDOPakiet;
     }
+
     /**
      * Set idEZDOPakiet value
      * @param int $idEZDOPakiet
@@ -52,7 +55,7 @@ class GetEZDO extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($idEZDOPakiet, true), gettype($idEZDOPakiet)), __LINE__);
         }
         $this->idEZDOPakiet = $idEZDOPakiet;
-        
+
         return $this;
     }
 }

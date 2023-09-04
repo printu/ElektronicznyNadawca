@@ -19,6 +19,7 @@ class GetPasswordExpiredDateResponse extends AbstractStructBase
      * @var string|null
      */
     protected ?string $dataWygasniecia = null;
+
     /**
      * Constructor method for getPasswordExpiredDateResponse
      * @uses GetPasswordExpiredDateResponse::setDataWygasniecia()
@@ -29,6 +30,7 @@ class GetPasswordExpiredDateResponse extends AbstractStructBase
         $this
             ->setDataWygasniecia($dataWygasniecia);
     }
+
     /**
      * Get dataWygasniecia value
      * @return string|null
@@ -37,6 +39,7 @@ class GetPasswordExpiredDateResponse extends AbstractStructBase
     {
         return $this->dataWygasniecia;
     }
+
     /**
      * Set dataWygasniecia value
      * @param string $dataWygasniecia
@@ -49,7 +52,7 @@ class GetPasswordExpiredDateResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($dataWygasniecia, true), gettype($dataWygasniecia)), __LINE__);
         }
         $this->dataWygasniecia = $dataWygasniecia;
-        
+
         return $this;
     }
 }

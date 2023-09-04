@@ -22,6 +22,7 @@ class DeleteShopEZwroty extends AbstractStructBase
      * @var int
      */
     protected int $idShop;
+
     /**
      * Constructor method for deleteShopEZwroty
      * @uses DeleteShopEZwroty::setIdShop()
@@ -32,6 +33,7 @@ class DeleteShopEZwroty extends AbstractStructBase
         $this
             ->setIdShop($idShop);
     }
+
     /**
      * Get idShop value
      * @return int
@@ -40,6 +42,7 @@ class DeleteShopEZwroty extends AbstractStructBase
     {
         return $this->idShop;
     }
+
     /**
      * Set idShop value
      * @param int $idShop
@@ -52,7 +55,7 @@ class DeleteShopEZwroty extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($idShop, true), gettype($idShop)), __LINE__);
         }
         $this->idShop = $idShop;
-        
+
         return $this;
     }
 }

@@ -22,6 +22,7 @@ class GetShopEZwrotyListResponse extends AbstractStructBase
      * @var \PocztaPolska\StructType\ShopEZwrotyInfoType[]
      */
     protected ?array $shops = null;
+
     /**
      * Constructor method for getShopEZwrotyListResponse
      * @uses GetShopEZwrotyListResponse::setShops()
@@ -32,6 +33,7 @@ class GetShopEZwrotyListResponse extends AbstractStructBase
         $this
             ->setShops($shops);
     }
+
     /**
      * Get shops value
      * @return \PocztaPolska\StructType\ShopEZwrotyInfoType[]
@@ -40,6 +42,7 @@ class GetShopEZwrotyListResponse extends AbstractStructBase
     {
         return $this->shops;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setShops method
      * This method is willingly generated in order to preserve the one-line inline validation within the setShops method
@@ -64,9 +67,10 @@ class GetShopEZwrotyListResponse extends AbstractStructBase
             $message = sprintf('The shops property can only contain items of type \PocztaPolska\StructType\ShopEZwrotyInfoType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set shops value
      * @throws InvalidArgumentException
@@ -80,9 +84,10 @@ class GetShopEZwrotyListResponse extends AbstractStructBase
             throw new InvalidArgumentException($shopsArrayErrorMessage, __LINE__);
         }
         $this->shops = $shops;
-        
+
         return $this;
     }
+
     /**
      * Add item to shops value
      * @throws InvalidArgumentException
@@ -96,7 +101,7 @@ class GetShopEZwrotyListResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The shops property can only contain items of type \PocztaPolska\StructType\ShopEZwrotyInfoType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->shops[] = $item;
-        
+
         return $this;
     }
 }

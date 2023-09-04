@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace PocztaPolska\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -19,6 +18,7 @@ class UpdateReturnDocumentsProfile extends AbstractStructBase
      * @var \PocztaPolska\StructType\ReturnDocumentProfileType|null
      */
     protected ?\PocztaPolska\StructType\ReturnDocumentProfileType $profile = null;
+
     /**
      * Constructor method for updateReturnDocumentsProfile
      * @uses UpdateReturnDocumentsProfile::setProfile()
@@ -29,6 +29,7 @@ class UpdateReturnDocumentsProfile extends AbstractStructBase
         $this
             ->setProfile($profile);
     }
+
     /**
      * Get profile value
      * @return \PocztaPolska\StructType\ReturnDocumentProfileType|null
@@ -37,6 +38,7 @@ class UpdateReturnDocumentsProfile extends AbstractStructBase
     {
         return $this->profile;
     }
+
     /**
      * Set profile value
      * @param \PocztaPolska\StructType\ReturnDocumentProfileType $profile
@@ -45,7 +47,7 @@ class UpdateReturnDocumentsProfile extends AbstractStructBase
     public function setProfile(?\PocztaPolska\StructType\ReturnDocumentProfileType $profile = null): self
     {
         $this->profile = $profile;
-        
+
         return $this;
     }
 }

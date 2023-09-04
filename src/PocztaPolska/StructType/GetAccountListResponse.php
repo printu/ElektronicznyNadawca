@@ -22,6 +22,7 @@ class GetAccountListResponse extends AbstractStructBase
      * @var \PocztaPolska\StructType\AccountType[]
      */
     protected ?array $account = null;
+
     /**
      * Constructor method for getAccountListResponse
      * @uses GetAccountListResponse::setAccount()
@@ -32,6 +33,7 @@ class GetAccountListResponse extends AbstractStructBase
         $this
             ->setAccount($account);
     }
+
     /**
      * Get account value
      * @return \PocztaPolska\StructType\AccountType[]
@@ -40,6 +42,7 @@ class GetAccountListResponse extends AbstractStructBase
     {
         return $this->account;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setAccount method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAccount method
@@ -64,9 +67,10 @@ class GetAccountListResponse extends AbstractStructBase
             $message = sprintf('The account property can only contain items of type \PocztaPolska\StructType\AccountType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set account value
      * @throws InvalidArgumentException
@@ -80,9 +84,10 @@ class GetAccountListResponse extends AbstractStructBase
             throw new InvalidArgumentException($accountArrayErrorMessage, __LINE__);
         }
         $this->account = $account;
-        
+
         return $this;
     }
+
     /**
      * Add item to account value
      * @throws InvalidArgumentException
@@ -96,7 +101,7 @@ class GetAccountListResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The account property can only contain items of type \PocztaPolska\StructType\AccountType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->account[] = $item;
-        
+
         return $this;
     }
 }

@@ -22,6 +22,7 @@ class SetEnvelopeBuforDataNadania extends AbstractStructBase
      * @var string
      */
     protected string $dataNadania;
+
     /**
      * Constructor method for setEnvelopeBuforDataNadania
      * @uses SetEnvelopeBuforDataNadania::setDataNadania()
@@ -32,6 +33,7 @@ class SetEnvelopeBuforDataNadania extends AbstractStructBase
         $this
             ->setDataNadania($dataNadania);
     }
+
     /**
      * Get dataNadania value
      * @return string
@@ -40,6 +42,7 @@ class SetEnvelopeBuforDataNadania extends AbstractStructBase
     {
         return $this->dataNadania;
     }
+
     /**
      * Set dataNadania value
      * @param string $dataNadania
@@ -52,7 +55,7 @@ class SetEnvelopeBuforDataNadania extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($dataNadania, true), gettype($dataNadania)), __LINE__);
         }
         $this->dataNadania = $dataNadania;
-        
+
         return $this;
     }
 }

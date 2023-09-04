@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace PocztaPolska\StructType;
 
 use InvalidArgumentException;
-use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for adresKorespondencyjny StructType
@@ -21,6 +20,7 @@ class AdresKorespondencyjny extends AdresType
      * @var int|null
      */
     protected ?int $id = null;
+
     /**
      * Constructor method for adresKorespondencyjny
      * @uses AdresKorespondencyjny::setId()
@@ -31,6 +31,7 @@ class AdresKorespondencyjny extends AdresType
         $this
             ->setId($id);
     }
+
     /**
      * Get id value
      * @return int|null
@@ -39,6 +40,7 @@ class AdresKorespondencyjny extends AdresType
     {
         return $this->id;
     }
+
     /**
      * Set id value
      * @param int $id
@@ -51,7 +53,7 @@ class AdresKorespondencyjny extends AdresType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($id, true), gettype($id)), __LINE__);
         }
         $this->id = $id;
-        
+
         return $this;
     }
 }

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace PocztaPolska\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,6 +21,7 @@ class GetJednostkaOrganizacyjna extends AbstractStructBase
      * @var \PocztaPolska\StructType\JednostkaOrganizacyjnaType|null
      */
     protected ?\PocztaPolska\StructType\JednostkaOrganizacyjnaType $jednostka = null;
+
     /**
      * Constructor method for getJednostkaOrganizacyjna
      * @uses GetJednostkaOrganizacyjna::setJednostka()
@@ -32,6 +32,7 @@ class GetJednostkaOrganizacyjna extends AbstractStructBase
         $this
             ->setJednostka($jednostka);
     }
+
     /**
      * Get jednostka value
      * @return \PocztaPolska\StructType\JednostkaOrganizacyjnaType|null
@@ -40,6 +41,7 @@ class GetJednostkaOrganizacyjna extends AbstractStructBase
     {
         return $this->jednostka;
     }
+
     /**
      * Set jednostka value
      * @param \PocztaPolska\StructType\JednostkaOrganizacyjnaType $jednostka
@@ -48,7 +50,7 @@ class GetJednostkaOrganizacyjna extends AbstractStructBase
     public function setJednostka(?\PocztaPolska\StructType\JednostkaOrganizacyjnaType $jednostka = null): self
     {
         $this->jednostka = $jednostka;
-        
+
         return $this;
     }
 }

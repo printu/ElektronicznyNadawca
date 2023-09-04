@@ -45,6 +45,7 @@ class EnvelopeInfoType extends AbstractStructBase
      * @var string|null
      */
     protected ?string $dataTransmisji = null;
+
     /**
      * Constructor method for envelopeInfoType
      * @uses EnvelopeInfoType::setError()
@@ -67,6 +68,7 @@ class EnvelopeInfoType extends AbstractStructBase
             ->setEnvelopeStatus($envelopeStatus)
             ->setDataTransmisji($dataTransmisji);
     }
+
     /**
      * Get error value
      * @return \PocztaPolska\StructType\ErrorType[]
@@ -75,6 +77,7 @@ class EnvelopeInfoType extends AbstractStructBase
     {
         return $this->error;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setError method
      * This method is willingly generated in order to preserve the one-line inline validation within the setError method
@@ -99,9 +102,10 @@ class EnvelopeInfoType extends AbstractStructBase
             $message = sprintf('The error property can only contain items of type \PocztaPolska\StructType\ErrorType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set error value
      * @throws InvalidArgumentException
@@ -115,9 +119,10 @@ class EnvelopeInfoType extends AbstractStructBase
             throw new InvalidArgumentException($errorArrayErrorMessage, __LINE__);
         }
         $this->error = $error;
-        
+
         return $this;
     }
+
     /**
      * Add item to error value
      * @throws InvalidArgumentException
@@ -131,9 +136,10 @@ class EnvelopeInfoType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The error property can only contain items of type \PocztaPolska\StructType\ErrorType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->error[] = $item;
-        
+
         return $this;
     }
+
     /**
      * Get envelopeFilename value
      * @return string[]
@@ -142,6 +148,7 @@ class EnvelopeInfoType extends AbstractStructBase
     {
         return $this->envelopeFilename;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setEnvelopeFilename method
      * This method is willingly generated in order to preserve the one-line inline validation within the setEnvelopeFilename method
@@ -166,9 +173,10 @@ class EnvelopeInfoType extends AbstractStructBase
             $message = sprintf('The envelopeFilename property can only contain items of type string, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set envelopeFilename value
      * @throws InvalidArgumentException
@@ -182,9 +190,10 @@ class EnvelopeInfoType extends AbstractStructBase
             throw new InvalidArgumentException($envelopeFilenameArrayErrorMessage, __LINE__);
         }
         $this->envelopeFilename = $envelopeFilename;
-        
+
         return $this;
     }
+
     /**
      * Add item to envelopeFilename value
      * @throws InvalidArgumentException
@@ -198,9 +207,10 @@ class EnvelopeInfoType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The envelopeFilename property can only contain items of type string, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->envelopeFilename[] = $item;
-        
+
         return $this;
     }
+
     /**
      * Get idEnvelope value
      * @return int|null
@@ -209,6 +219,7 @@ class EnvelopeInfoType extends AbstractStructBase
     {
         return $this->idEnvelope;
     }
+
     /**
      * Set idEnvelope value
      * @param int $idEnvelope
@@ -221,9 +232,10 @@ class EnvelopeInfoType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($idEnvelope, true), gettype($idEnvelope)), __LINE__);
         }
         $this->idEnvelope = $idEnvelope;
-        
+
         return $this;
     }
+
     /**
      * Get envelopeStatus value
      * @return string|null
@@ -232,6 +244,7 @@ class EnvelopeInfoType extends AbstractStructBase
     {
         return $this->envelopeStatus;
     }
+
     /**
      * Set envelopeStatus value
      * @uses \PocztaPolska\EnumType\EnvelopeStatusType::valueIsValid()
@@ -247,9 +260,10 @@ class EnvelopeInfoType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\EnvelopeStatusType', is_array($envelopeStatus) ? implode(', ', $envelopeStatus) : var_export($envelopeStatus, true), implode(', ', \PocztaPolska\EnumType\EnvelopeStatusType::getValidValues())), __LINE__);
         }
         $this->envelopeStatus = $envelopeStatus;
-        
+
         return $this;
     }
+
     /**
      * Get dataTransmisji value
      * @return string|null
@@ -258,6 +272,7 @@ class EnvelopeInfoType extends AbstractStructBase
     {
         return $this->dataTransmisji;
     }
+
     /**
      * Set dataTransmisji value
      * @param string $dataTransmisji
@@ -270,7 +285,7 @@ class EnvelopeInfoType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($dataTransmisji, true), gettype($dataTransmisji)), __LINE__);
         }
         $this->dataTransmisji = $dataTransmisji;
-        
+
         return $this;
     }
 }

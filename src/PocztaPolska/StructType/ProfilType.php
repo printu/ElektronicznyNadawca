@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace PocztaPolska\StructType;
 
 use InvalidArgumentException;
-use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for profilType StructType
@@ -29,6 +28,7 @@ class ProfilType extends AdresType
      * @var string|null
      */
     protected ?string $fax = null;
+
     /**
      * Constructor method for profilType
      * @uses ProfilType::setIdProfil()
@@ -45,6 +45,7 @@ class ProfilType extends AdresType
             ->setNazwaSkrocona($nazwaSkrocona)
             ->setFax($fax);
     }
+
     /**
      * Get idProfil value
      * @return int|null
@@ -53,6 +54,7 @@ class ProfilType extends AdresType
     {
         return $this->idProfil;
     }
+
     /**
      * Set idProfil value
      * @param int $idProfil
@@ -65,9 +67,10 @@ class ProfilType extends AdresType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($idProfil, true), gettype($idProfil)), __LINE__);
         }
         $this->idProfil = $idProfil;
-        
+
         return $this;
     }
+
     /**
      * Get nazwaSkrocona value
      * @return string|null
@@ -76,6 +79,7 @@ class ProfilType extends AdresType
     {
         return $this->nazwaSkrocona;
     }
+
     /**
      * Set nazwaSkrocona value
      * @param string $nazwaSkrocona
@@ -88,9 +92,10 @@ class ProfilType extends AdresType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($nazwaSkrocona, true), gettype($nazwaSkrocona)), __LINE__);
         }
         $this->nazwaSkrocona = $nazwaSkrocona;
-        
+
         return $this;
     }
+
     /**
      * Get fax value
      * @return string|null
@@ -99,6 +104,7 @@ class ProfilType extends AdresType
     {
         return $this->fax;
     }
+
     /**
      * Set fax value
      * @param string $fax
@@ -111,7 +117,7 @@ class ProfilType extends AdresType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($fax, true), gettype($fax)), __LINE__);
         }
         $this->fax = $fax;
-        
+
         return $this;
     }
 }

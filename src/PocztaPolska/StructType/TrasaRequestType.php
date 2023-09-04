@@ -40,6 +40,7 @@ class TrasaRequestType extends AbstractStructBase
      * @var string|null
      */
     protected ?string $guid = null;
+
     /**
      * Constructor method for trasaRequestType
      * @uses TrasaRequestType::setFromUrzadNadania()
@@ -56,6 +57,7 @@ class TrasaRequestType extends AbstractStructBase
             ->setToKodPocztowy($toKodPocztowy)
             ->setGuid($guid);
     }
+
     /**
      * Get fromUrzadNadania value
      * @return int|null
@@ -64,6 +66,7 @@ class TrasaRequestType extends AbstractStructBase
     {
         return $this->fromUrzadNadania;
     }
+
     /**
      * Set fromUrzadNadania value
      * @param int $fromUrzadNadania
@@ -76,9 +79,10 @@ class TrasaRequestType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($fromUrzadNadania, true), gettype($fromUrzadNadania)), __LINE__);
         }
         $this->fromUrzadNadania = $fromUrzadNadania;
-        
+
         return $this;
     }
+
     /**
      * Get toKodPocztowy value
      * @return string|null
@@ -87,6 +91,7 @@ class TrasaRequestType extends AbstractStructBase
     {
         return $this->toKodPocztowy;
     }
+
     /**
      * Set toKodPocztowy value
      * @param string $toKodPocztowy
@@ -107,9 +112,10 @@ class TrasaRequestType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 0', mb_strlen((string) $toKodPocztowy)), __LINE__);
         }
         $this->toKodPocztowy = $toKodPocztowy;
-        
+
         return $this;
     }
+
     /**
      * Get guid value
      * @return string|null
@@ -118,6 +124,7 @@ class TrasaRequestType extends AbstractStructBase
     {
         return $this->guid;
     }
+
     /**
      * Set guid value
      * @param string $guid
@@ -134,7 +141,7 @@ class TrasaRequestType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 32', mb_strlen((string) $guid)), __LINE__);
         }
         $this->guid = $guid;
-        
+
         return $this;
     }
 }

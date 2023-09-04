@@ -30,6 +30,7 @@ class ZwrotDokumentowBiznesowaType extends AbstractStructBase
      * @var int|null
      */
     protected ?int $idDokumentyZwrotneAdresy = null;
+
     /**
      * Constructor method for zwrotDokumentowBiznesowaType
      * @uses ZwrotDokumentowBiznesowaType::setRodzaj()
@@ -43,6 +44,7 @@ class ZwrotDokumentowBiznesowaType extends AbstractStructBase
             ->setRodzaj($rodzaj)
             ->setIdDokumentyZwrotneAdresy($idDokumentyZwrotneAdresy);
     }
+
     /**
      * Get rodzaj value
      * @return string
@@ -51,6 +53,7 @@ class ZwrotDokumentowBiznesowaType extends AbstractStructBase
     {
         return $this->rodzaj;
     }
+
     /**
      * Set rodzaj value
      * @uses \PocztaPolska\EnumType\TerminZwrotDokumentowBiznesowaType::valueIsValid()
@@ -66,9 +69,10 @@ class ZwrotDokumentowBiznesowaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\TerminZwrotDokumentowBiznesowaType', is_array($rodzaj) ? implode(', ', $rodzaj) : var_export($rodzaj, true), implode(', ', \PocztaPolska\EnumType\TerminZwrotDokumentowBiznesowaType::getValidValues())), __LINE__);
         }
         $this->rodzaj = $rodzaj;
-        
+
         return $this;
     }
+
     /**
      * Get idDokumentyZwrotneAdresy value
      * @return int|null
@@ -77,6 +81,7 @@ class ZwrotDokumentowBiznesowaType extends AbstractStructBase
     {
         return $this->idDokumentyZwrotneAdresy;
     }
+
     /**
      * Set idDokumentyZwrotneAdresy value
      * @param int $idDokumentyZwrotneAdresy
@@ -89,7 +94,7 @@ class ZwrotDokumentowBiznesowaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($idDokumentyZwrotneAdresy, true), gettype($idDokumentyZwrotneAdresy)), __LINE__);
         }
         $this->idDokumentyZwrotneAdresy = $idDokumentyZwrotneAdresy;
-        
+
         return $this;
     }
 }

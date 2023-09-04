@@ -38,6 +38,7 @@ class ErrorType extends AbstractStructBase
      * @var string|null
      */
     protected ?string $guid = null;
+
     /**
      * Constructor method for errorType
      * @uses ErrorType::setErrorNumber()
@@ -54,6 +55,7 @@ class ErrorType extends AbstractStructBase
             ->setErrorDesc($errorDesc)
             ->setGuid($guid);
     }
+
     /**
      * Get errorNumber value
      * @return int|null
@@ -62,6 +64,7 @@ class ErrorType extends AbstractStructBase
     {
         return $this->errorNumber;
     }
+
     /**
      * Set errorNumber value
      * @param int $errorNumber
@@ -74,9 +77,10 @@ class ErrorType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($errorNumber, true), gettype($errorNumber)), __LINE__);
         }
         $this->errorNumber = $errorNumber;
-        
+
         return $this;
     }
+
     /**
      * Get errorDesc value
      * @return string|null
@@ -85,6 +89,7 @@ class ErrorType extends AbstractStructBase
     {
         return $this->errorDesc;
     }
+
     /**
      * Set errorDesc value
      * @param string $errorDesc
@@ -97,9 +102,10 @@ class ErrorType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($errorDesc, true), gettype($errorDesc)), __LINE__);
         }
         $this->errorDesc = $errorDesc;
-        
+
         return $this;
     }
+
     /**
      * Get guid value
      * @return string|null
@@ -108,6 +114,7 @@ class ErrorType extends AbstractStructBase
     {
         return $this->guid;
     }
+
     /**
      * Set guid value
      * @param string $guid
@@ -124,7 +131,7 @@ class ErrorType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 32', mb_strlen((string) $guid)), __LINE__);
         }
         $this->guid = $guid;
-        
+
         return $this;
     }
 }

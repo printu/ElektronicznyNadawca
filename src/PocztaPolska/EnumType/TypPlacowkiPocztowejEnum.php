@@ -16,12 +16,13 @@ class TypPlacowkiPocztowejEnum extends AbstractStructEnumBase
      * Constant for value 'PUNKT'
      * @return string 'PUNKT'
      */
-    const VALUE_PUNKT = 'PUNKT';
+    public const VALUE_PUNKT = 'PUNKT';
     /**
      * Constant for value 'AUTOMAT'
      * @return string 'AUTOMAT'
      */
-    const VALUE_AUTOMAT = 'AUTOMAT';
+    public const VALUE_AUTOMAT = 'AUTOMAT';
+
     /**
      * Return allowed values
      * @uses self::VALUE_PUNKT

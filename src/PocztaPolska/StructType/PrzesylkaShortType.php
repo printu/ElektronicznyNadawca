@@ -63,6 +63,7 @@ class PrzesylkaShortType extends AbstractStructBase
      * @var string|null
      */
     protected ?string $status = null;
+
     /**
      * Constructor method for przesylkaShortType
      * @uses PrzesylkaShortType::setGuid()
@@ -91,6 +92,7 @@ class PrzesylkaShortType extends AbstractStructBase
             ->setPobranie($pobranie)
             ->setStatus($status);
     }
+
     /**
      * Get guid value
      * @return string
@@ -99,6 +101,7 @@ class PrzesylkaShortType extends AbstractStructBase
     {
         return $this->guid;
     }
+
     /**
      * Set guid value
      * @param string $guid
@@ -115,9 +118,10 @@ class PrzesylkaShortType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 32', mb_strlen((string) $guid)), __LINE__);
         }
         $this->guid = $guid;
-        
+
         return $this;
     }
+
     /**
      * Get czynnosciUpustowe value
      * @return string[]
@@ -126,6 +130,7 @@ class PrzesylkaShortType extends AbstractStructBase
     {
         return $this->czynnosciUpustowe;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setCzynnosciUpustowe method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCzynnosciUpustowe method
@@ -150,9 +155,10 @@ class PrzesylkaShortType extends AbstractStructBase
             $message = sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\CzynnoscUpustowaType', is_array($invalidValues) ? implode(', ', $invalidValues) : var_export($invalidValues, true), implode(', ', \PocztaPolska\EnumType\CzynnoscUpustowaType::getValidValues()));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set czynnosciUpustowe value
      * @uses \PocztaPolska\EnumType\CzynnoscUpustowaType::valueIsValid()
@@ -168,9 +174,10 @@ class PrzesylkaShortType extends AbstractStructBase
             throw new InvalidArgumentException($czynnosciUpustoweArrayErrorMessage, __LINE__);
         }
         $this->czynnosciUpustowe = $czynnosciUpustowe;
-        
+
         return $this;
     }
+
     /**
      * Add item to czynnosciUpustowe value
      * @uses \PocztaPolska\EnumType\CzynnoscUpustowaType::valueIsValid()
@@ -186,9 +193,10 @@ class PrzesylkaShortType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\CzynnoscUpustowaType', is_array($item) ? implode(', ', $item) : var_export($item, true), implode(', ', \PocztaPolska\EnumType\CzynnoscUpustowaType::getValidValues())), __LINE__);
         }
         $this->czynnosciUpustowe[] = $item;
-        
+
         return $this;
     }
+
     /**
      * Get numerNadania value
      * @return string|null
@@ -197,6 +205,7 @@ class PrzesylkaShortType extends AbstractStructBase
     {
         return $this->numerNadania;
     }
+
     /**
      * Set numerNadania value
      * @param string $numerNadania
@@ -217,9 +226,10 @@ class PrzesylkaShortType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 10', mb_strlen((string) $numerNadania)), __LINE__);
         }
         $this->numerNadania = $numerNadania;
-        
+
         return $this;
     }
+
     /**
      * Get dataNadania value
      * @return string|null
@@ -228,6 +238,7 @@ class PrzesylkaShortType extends AbstractStructBase
     {
         return $this->dataNadania;
     }
+
     /**
      * Set dataNadania value
      * @param string $dataNadania
@@ -240,9 +251,10 @@ class PrzesylkaShortType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($dataNadania, true), gettype($dataNadania)), __LINE__);
         }
         $this->dataNadania = $dataNadania;
-        
+
         return $this;
     }
+
     /**
      * Get razem value
      * @return int|null
@@ -251,6 +263,7 @@ class PrzesylkaShortType extends AbstractStructBase
     {
         return $this->razem;
     }
+
     /**
      * Set razem value
      * @param int $razem
@@ -263,9 +276,10 @@ class PrzesylkaShortType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($razem, true), gettype($razem)), __LINE__);
         }
         $this->razem = $razem;
-        
+
         return $this;
     }
+
     /**
      * Get pobranie value
      * @return int|null
@@ -274,6 +288,7 @@ class PrzesylkaShortType extends AbstractStructBase
     {
         return $this->pobranie;
     }
+
     /**
      * Set pobranie value
      * @param int $pobranie
@@ -286,9 +301,10 @@ class PrzesylkaShortType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($pobranie, true), gettype($pobranie)), __LINE__);
         }
         $this->pobranie = $pobranie;
-        
+
         return $this;
     }
+
     /**
      * Get status value
      * @return string|null
@@ -297,6 +313,7 @@ class PrzesylkaShortType extends AbstractStructBase
     {
         return $this->status;
     }
+
     /**
      * Set status value
      * @uses \PocztaPolska\EnumType\StatusType::valueIsValid()
@@ -312,7 +329,7 @@ class PrzesylkaShortType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\StatusType', is_array($status) ? implode(', ', $status) : var_export($status, true), implode(', ', \PocztaPolska\EnumType\StatusType::getValidValues())), __LINE__);
         }
         $this->status = $status;
-        
+
         return $this;
     }
 }

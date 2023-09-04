@@ -16,22 +16,23 @@ class ZasadySpecjalneEnum extends AbstractStructEnumBase
      * Constant for value 'ADMINISTRACYJNA'
      * @return string 'ADMINISTRACYJNA'
      */
-    const VALUE_ADMINISTRACYJNA = 'ADMINISTRACYJNA';
+    public const VALUE_ADMINISTRACYJNA = 'ADMINISTRACYJNA';
     /**
      * Constant for value 'PODATKOWA'
      * @return string 'PODATKOWA'
      */
-    const VALUE_PODATKOWA = 'PODATKOWA';
+    public const VALUE_PODATKOWA = 'PODATKOWA';
     /**
      * Constant for value 'SADOWA_CYWILNA'
      * @return string 'SADOWA_CYWILNA'
      */
-    const VALUE_SADOWA_CYWILNA = 'SADOWA_CYWILNA';
+    public const VALUE_SADOWA_CYWILNA = 'SADOWA_CYWILNA';
     /**
      * Constant for value 'SADOWA_KARNA'
      * @return string 'SADOWA_KARNA'
      */
-    const VALUE_SADOWA_KARNA = 'SADOWA_KARNA';
+    public const VALUE_SADOWA_KARNA = 'SADOWA_KARNA';
+
     /**
      * Return allowed values
      * @uses self::VALUE_ADMINISTRACYJNA

@@ -134,6 +134,7 @@ class ReturnDocumentProfileType extends AbstractStructBase
      * @var bool|null
      */
     protected ?bool $default = null;
+
     /**
      * Constructor method for returnDocumentProfileType
      * @uses ReturnDocumentProfileType::setIdProfile()
@@ -180,6 +181,7 @@ class ReturnDocumentProfileType extends AbstractStructBase
             ->setEmail($email)
             ->setDefault($default);
     }
+
     /**
      * Get idProfile value
      * @return int|null
@@ -188,6 +190,7 @@ class ReturnDocumentProfileType extends AbstractStructBase
     {
         return $this->idProfile;
     }
+
     /**
      * Set idProfile value
      * @param int $idProfile
@@ -200,9 +203,10 @@ class ReturnDocumentProfileType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($idProfile, true), gettype($idProfile)), __LINE__);
         }
         $this->idProfile = $idProfile;
-        
+
         return $this;
     }
+
     /**
      * Get name value
      * @return string|null
@@ -211,6 +215,7 @@ class ReturnDocumentProfileType extends AbstractStructBase
     {
         return $this->name;
     }
+
     /**
      * Set name value
      * @param string $name
@@ -227,9 +232,10 @@ class ReturnDocumentProfileType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 120', mb_strlen((string) $name)), __LINE__);
         }
         $this->name = $name;
-        
+
         return $this;
     }
+
     /**
      * Get name2 value
      * @return string|null
@@ -238,6 +244,7 @@ class ReturnDocumentProfileType extends AbstractStructBase
     {
         return $this->name2;
     }
+
     /**
      * Set name2 value
      * @param string $name2
@@ -254,9 +261,10 @@ class ReturnDocumentProfileType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 120', mb_strlen((string) $name2)), __LINE__);
         }
         $this->name2 = $name2;
-        
+
         return $this;
     }
+
     /**
      * Get friendlyName value
      * @return string|null
@@ -265,6 +273,7 @@ class ReturnDocumentProfileType extends AbstractStructBase
     {
         return $this->friendlyName;
     }
+
     /**
      * Set friendlyName value
      * @param string $friendlyName
@@ -281,9 +290,10 @@ class ReturnDocumentProfileType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 20', mb_strlen((string) $friendlyName)), __LINE__);
         }
         $this->friendlyName = $friendlyName;
-        
+
         return $this;
     }
+
     /**
      * Get street value
      * @return string|null
@@ -292,6 +302,7 @@ class ReturnDocumentProfileType extends AbstractStructBase
     {
         return $this->street;
     }
+
     /**
      * Set street value
      * @param string $street
@@ -308,9 +319,10 @@ class ReturnDocumentProfileType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 70', mb_strlen((string) $street)), __LINE__);
         }
         $this->street = $street;
-        
+
         return $this;
     }
+
     /**
      * Get houseNumber value
      * @return string|null
@@ -319,6 +331,7 @@ class ReturnDocumentProfileType extends AbstractStructBase
     {
         return $this->houseNumber;
     }
+
     /**
      * Set houseNumber value
      * @param string $houseNumber
@@ -335,9 +348,10 @@ class ReturnDocumentProfileType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 11', mb_strlen((string) $houseNumber)), __LINE__);
         }
         $this->houseNumber = $houseNumber;
-        
+
         return $this;
     }
+
     /**
      * Get premisesNumber value
      * @return string|null
@@ -346,6 +360,7 @@ class ReturnDocumentProfileType extends AbstractStructBase
     {
         return $this->premisesNumber;
     }
+
     /**
      * Set premisesNumber value
      * @param string $premisesNumber
@@ -362,9 +377,10 @@ class ReturnDocumentProfileType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 11', mb_strlen((string) $premisesNumber)), __LINE__);
         }
         $this->premisesNumber = $premisesNumber;
-        
+
         return $this;
     }
+
     /**
      * Get city value
      * @return string|null
@@ -373,6 +389,7 @@ class ReturnDocumentProfileType extends AbstractStructBase
     {
         return $this->city;
     }
+
     /**
      * Set city value
      * @param string $city
@@ -389,9 +406,10 @@ class ReturnDocumentProfileType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 35', mb_strlen((string) $city)), __LINE__);
         }
         $this->city = $city;
-        
+
         return $this;
     }
+
     /**
      * Get postalCode value
      * @return string|null
@@ -400,6 +418,7 @@ class ReturnDocumentProfileType extends AbstractStructBase
     {
         return $this->postalCode;
     }
+
     /**
      * Set postalCode value
      * @param string $postalCode
@@ -416,9 +435,10 @@ class ReturnDocumentProfileType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $postalCode)), __LINE__);
         }
         $this->postalCode = $postalCode;
-        
+
         return $this;
     }
+
     /**
      * Get mobile value
      * @return string|null
@@ -427,6 +447,7 @@ class ReturnDocumentProfileType extends AbstractStructBase
     {
         return $this->mobile;
     }
+
     /**
      * Set mobile value
      * @param string $mobile
@@ -443,9 +464,10 @@ class ReturnDocumentProfileType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 9', mb_strlen((string) $mobile)), __LINE__);
         }
         $this->mobile = $mobile;
-        
+
         return $this;
     }
+
     /**
      * Get phonenumber value
      * @return string|null
@@ -454,6 +476,7 @@ class ReturnDocumentProfileType extends AbstractStructBase
     {
         return $this->phonenumber;
     }
+
     /**
      * Set phonenumber value
      * @param string $phonenumber
@@ -470,9 +493,10 @@ class ReturnDocumentProfileType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 9', mb_strlen((string) $phonenumber)), __LINE__);
         }
         $this->phonenumber = $phonenumber;
-        
+
         return $this;
     }
+
     /**
      * Get email value
      * @return string|null
@@ -481,6 +505,7 @@ class ReturnDocumentProfileType extends AbstractStructBase
     {
         return $this->email;
     }
+
     /**
      * Set email value
      * @param string $email
@@ -497,9 +522,10 @@ class ReturnDocumentProfileType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 50', mb_strlen((string) $email)), __LINE__);
         }
         $this->email = $email;
-        
+
         return $this;
     }
+
     /**
      * Get default value
      * @return bool|null
@@ -508,6 +534,7 @@ class ReturnDocumentProfileType extends AbstractStructBase
     {
         return $this->default;
     }
+
     /**
      * Set default value
      * @param bool $default
@@ -520,7 +547,7 @@ class ReturnDocumentProfileType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($default, true), gettype($default)), __LINE__);
         }
         $this->default = $default;
-        
+
         return $this;
     }
 }

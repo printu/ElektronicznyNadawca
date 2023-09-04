@@ -22,6 +22,7 @@ class IsObszarMiasto extends AbstractStructBase
      * @var \PocztaPolska\StructType\ObszarAdresowyType[]
      */
     protected array $adres;
+
     /**
      * Constructor method for isObszarMiasto
      * @uses IsObszarMiasto::setAdres()
@@ -32,6 +33,7 @@ class IsObszarMiasto extends AbstractStructBase
         $this
             ->setAdres($adres);
     }
+
     /**
      * Get adres value
      * @return \PocztaPolska\StructType\ObszarAdresowyType[]
@@ -40,6 +42,7 @@ class IsObszarMiasto extends AbstractStructBase
     {
         return $this->adres;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setAdres method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAdres method
@@ -64,9 +67,10 @@ class IsObszarMiasto extends AbstractStructBase
             $message = sprintf('The adres property can only contain items of type \PocztaPolska\StructType\ObszarAdresowyType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set adres value
      * @throws InvalidArgumentException
@@ -84,9 +88,10 @@ class IsObszarMiasto extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 500', count($adres)), __LINE__);
         }
         $this->adres = $adres;
-        
+
         return $this;
     }
+
     /**
      * Add item to adres value
      * @throws InvalidArgumentException
@@ -104,7 +109,7 @@ class IsObszarMiasto extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 500', count($this->adres)), __LINE__);
         }
         $this->adres[] = $item;
-        
+
         return $this;
     }
 }

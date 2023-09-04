@@ -22,6 +22,7 @@ class GetChecklistTemplateList extends AbstractStructBase
      * @var int[]
      */
     protected ?array $idChecklistTemplate = null;
+
     /**
      * Constructor method for getChecklistTemplateList
      * @uses GetChecklistTemplateList::setIdChecklistTemplate()
@@ -32,6 +33,7 @@ class GetChecklistTemplateList extends AbstractStructBase
         $this
             ->setIdChecklistTemplate($idChecklistTemplate);
     }
+
     /**
      * Get idChecklistTemplate value
      * @return int[]
@@ -40,6 +42,7 @@ class GetChecklistTemplateList extends AbstractStructBase
     {
         return $this->idChecklistTemplate;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setIdChecklistTemplate method
      * This method is willingly generated in order to preserve the one-line inline validation within the setIdChecklistTemplate method
@@ -64,9 +67,10 @@ class GetChecklistTemplateList extends AbstractStructBase
             $message = sprintf('The idChecklistTemplate property can only contain items of type int, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set idChecklistTemplate value
      * @throws InvalidArgumentException
@@ -80,9 +84,10 @@ class GetChecklistTemplateList extends AbstractStructBase
             throw new InvalidArgumentException($idChecklistTemplateArrayErrorMessage, __LINE__);
         }
         $this->idChecklistTemplate = $idChecklistTemplate;
-        
+
         return $this;
     }
+
     /**
      * Add item to idChecklistTemplate value
      * @throws InvalidArgumentException
@@ -96,7 +101,7 @@ class GetChecklistTemplateList extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The idChecklistTemplate property can only contain items of type int, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->idChecklistTemplate[] = $item;
-        
+
         return $this;
     }
 }

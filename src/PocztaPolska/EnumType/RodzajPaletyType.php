@@ -16,22 +16,23 @@ class RodzajPaletyType extends AbstractStructEnumBase
      * Constant for value 'EUR'
      * @return string 'EUR'
      */
-    const VALUE_EUR = 'EUR';
+    public const VALUE_EUR = 'EUR';
     /**
      * Constant for value 'POLPALETA'
      * @return string 'POLPALETA'
      */
-    const VALUE_POLPALETA = 'POLPALETA';
+    public const VALUE_POLPALETA = 'POLPALETA';
     /**
      * Constant for value 'INNA'
      * @return string 'INNA'
      */
-    const VALUE_INNA = 'INNA';
+    public const VALUE_INNA = 'INNA';
     /**
      * Constant for value 'PRZEMYSLOWA'
      * @return string 'PRZEMYSLOWA'
      */
-    const VALUE_PRZEMYSLOWA = 'PRZEMYSLOWA';
+    public const VALUE_PRZEMYSLOWA = 'PRZEMYSLOWA';
+
     /**
      * Return allowed values
      * @uses self::VALUE_EUR

@@ -61,6 +61,7 @@ class PakietType extends AbstractStructBase
      * @var string|null
      */
     protected ?string $sposobNadania = null;
+
     /**
      * Constructor method for pakietType
      * @uses PakietType::setKierunek()
@@ -86,6 +87,7 @@ class PakietType extends AbstractStructBase
             ->setMiejsceOdbioru($miejsceOdbioru)
             ->setSposobNadania($sposobNadania);
     }
+
     /**
      * Get kierunek value
      * @return \PocztaPolska\StructType\KierunekType|null
@@ -94,6 +96,7 @@ class PakietType extends AbstractStructBase
     {
         return $this->kierunek;
     }
+
     /**
      * Set kierunek value
      * @param \PocztaPolska\StructType\KierunekType $kierunek
@@ -102,9 +105,10 @@ class PakietType extends AbstractStructBase
     public function setKierunek(?\PocztaPolska\StructType\KierunekType $kierunek = null): self
     {
         $this->kierunek = $kierunek;
-        
+
         return $this;
     }
+
     /**
      * Get opakowanie value
      * @return \PocztaPolska\StructType\OpakowanieType[]
@@ -113,6 +117,7 @@ class PakietType extends AbstractStructBase
     {
         return $this->opakowanie;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setOpakowanie method
      * This method is willingly generated in order to preserve the one-line inline validation within the setOpakowanie method
@@ -137,9 +142,10 @@ class PakietType extends AbstractStructBase
             $message = sprintf('The opakowanie property can only contain items of type \PocztaPolska\StructType\OpakowanieType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set opakowanie value
      * @throws InvalidArgumentException
@@ -153,9 +159,10 @@ class PakietType extends AbstractStructBase
             throw new InvalidArgumentException($opakowanieArrayErrorMessage, __LINE__);
         }
         $this->opakowanie = $opakowanie;
-        
+
         return $this;
     }
+
     /**
      * Add item to opakowanie value
      * @throws InvalidArgumentException
@@ -169,9 +176,10 @@ class PakietType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The opakowanie property can only contain items of type \PocztaPolska\StructType\OpakowanieType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->opakowanie[] = $item;
-        
+
         return $this;
     }
+
     /**
      * Get czynnoscUpustowa value
      * @return string[]
@@ -180,6 +188,7 @@ class PakietType extends AbstractStructBase
     {
         return $this->czynnoscUpustowa;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setCzynnoscUpustowa method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCzynnoscUpustowa method
@@ -204,9 +213,10 @@ class PakietType extends AbstractStructBase
             $message = sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\CzynnoscUpustowaType', is_array($invalidValues) ? implode(', ', $invalidValues) : var_export($invalidValues, true), implode(', ', \PocztaPolska\EnumType\CzynnoscUpustowaType::getValidValues()));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set czynnoscUpustowa value
      * @uses \PocztaPolska\EnumType\CzynnoscUpustowaType::valueIsValid()
@@ -222,9 +232,10 @@ class PakietType extends AbstractStructBase
             throw new InvalidArgumentException($czynnoscUpustowaArrayErrorMessage, __LINE__);
         }
         $this->czynnoscUpustowa = $czynnoscUpustowa;
-        
+
         return $this;
     }
+
     /**
      * Add item to czynnoscUpustowa value
      * @uses \PocztaPolska\EnumType\CzynnoscUpustowaType::valueIsValid()
@@ -240,9 +251,10 @@ class PakietType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\CzynnoscUpustowaType', is_array($item) ? implode(', ', $item) : var_export($item, true), implode(', ', \PocztaPolska\EnumType\CzynnoscUpustowaType::getValidValues())), __LINE__);
         }
         $this->czynnoscUpustowa[] = $item;
-        
+
         return $this;
     }
+
     /**
      * Get pakietGuid value
      * @return string|null
@@ -251,6 +263,7 @@ class PakietType extends AbstractStructBase
     {
         return $this->pakietGuid;
     }
+
     /**
      * Set pakietGuid value
      * @param string $pakietGuid
@@ -267,9 +280,10 @@ class PakietType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 32', mb_strlen((string) $pakietGuid)), __LINE__);
         }
         $this->pakietGuid = $pakietGuid;
-        
+
         return $this;
     }
+
     /**
      * Get miejsceOdbioru value
      * @return string|null
@@ -278,6 +292,7 @@ class PakietType extends AbstractStructBase
     {
         return $this->miejsceOdbioru;
     }
+
     /**
      * Set miejsceOdbioru value
      * @uses \PocztaPolska\EnumType\MiejsceOdbioruType::valueIsValid()
@@ -293,9 +308,10 @@ class PakietType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\MiejsceOdbioruType', is_array($miejsceOdbioru) ? implode(', ', $miejsceOdbioru) : var_export($miejsceOdbioru, true), implode(', ', \PocztaPolska\EnumType\MiejsceOdbioruType::getValidValues())), __LINE__);
         }
         $this->miejsceOdbioru = $miejsceOdbioru;
-        
+
         return $this;
     }
+
     /**
      * Get sposobNadania value
      * @return string|null
@@ -304,6 +320,7 @@ class PakietType extends AbstractStructBase
     {
         return $this->sposobNadania;
     }
+
     /**
      * Set sposobNadania value
      * @uses \PocztaPolska\EnumType\SposobNadaniaType::valueIsValid()
@@ -319,7 +336,7 @@ class PakietType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\SposobNadaniaType', is_array($sposobNadania) ? implode(', ', $sposobNadania) : var_export($sposobNadania, true), implode(', ', \PocztaPolska\EnumType\SposobNadaniaType::getValidValues())), __LINE__);
         }
         $this->sposobNadania = $sposobNadania;
-        
+
         return $this;
     }
 }

@@ -64,6 +64,7 @@ class SzczegolyZawartosciPrzesylkiZagranicznejType extends AbstractStructBase
      * @var string|null
      */
     protected ?string $krajPochodzeniaKodAlfa2 = null;
+
     /**
      * Constructor method for SzczegolyZawartosciPrzesylkiZagranicznejType
      * @uses SzczegolyZawartosciPrzesylkiZagranicznejType::setOkreslenieZawartosci()
@@ -89,6 +90,7 @@ class SzczegolyZawartosciPrzesylkiZagranicznejType extends AbstractStructBase
             ->setNumerTaryfyHs($numerTaryfyHs)
             ->setKrajPochodzeniaKodAlfa2($krajPochodzeniaKodAlfa2);
     }
+
     /**
      * Get okreslenieZawartosci value
      * @return string
@@ -97,6 +99,7 @@ class SzczegolyZawartosciPrzesylkiZagranicznejType extends AbstractStructBase
     {
         return $this->okreslenieZawartosci;
     }
+
     /**
      * Set okreslenieZawartosci value
      * @param string $okreslenieZawartosci
@@ -109,9 +112,10 @@ class SzczegolyZawartosciPrzesylkiZagranicznejType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($okreslenieZawartosci, true), gettype($okreslenieZawartosci)), __LINE__);
         }
         $this->okreslenieZawartosci = $okreslenieZawartosci;
-        
+
         return $this;
     }
+
     /**
      * Get ilosc value
      * @return int
@@ -120,6 +124,7 @@ class SzczegolyZawartosciPrzesylkiZagranicznejType extends AbstractStructBase
     {
         return $this->ilosc;
     }
+
     /**
      * Set ilosc value
      * @param int $ilosc
@@ -132,9 +137,10 @@ class SzczegolyZawartosciPrzesylkiZagranicznejType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($ilosc, true), gettype($ilosc)), __LINE__);
         }
         $this->ilosc = $ilosc;
-        
+
         return $this;
     }
+
     /**
      * Get wartosc value
      * @return float
@@ -143,6 +149,7 @@ class SzczegolyZawartosciPrzesylkiZagranicznejType extends AbstractStructBase
     {
         return $this->wartosc;
     }
+
     /**
      * Set wartosc value
      * @param float $wartosc
@@ -155,9 +162,10 @@ class SzczegolyZawartosciPrzesylkiZagranicznejType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($wartosc, true), gettype($wartosc)), __LINE__);
         }
         $this->wartosc = $wartosc;
-        
+
         return $this;
     }
+
     /**
      * Get masaNetto value
      * @return int|null
@@ -166,6 +174,7 @@ class SzczegolyZawartosciPrzesylkiZagranicznejType extends AbstractStructBase
     {
         return $this->masaNetto;
     }
+
     /**
      * Set masaNetto value
      * @param int $masaNetto
@@ -178,9 +187,10 @@ class SzczegolyZawartosciPrzesylkiZagranicznejType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($masaNetto, true), gettype($masaNetto)), __LINE__);
         }
         $this->masaNetto = $masaNetto;
-        
+
         return $this;
     }
+
     /**
      * Get numerTaryfyHs value
      * @return string|null
@@ -189,6 +199,7 @@ class SzczegolyZawartosciPrzesylkiZagranicznejType extends AbstractStructBase
     {
         return $this->numerTaryfyHs;
     }
+
     /**
      * Set numerTaryfyHs value
      * @param string $numerTaryfyHs
@@ -201,9 +212,10 @@ class SzczegolyZawartosciPrzesylkiZagranicznejType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($numerTaryfyHs, true), gettype($numerTaryfyHs)), __LINE__);
         }
         $this->numerTaryfyHs = $numerTaryfyHs;
-        
+
         return $this;
     }
+
     /**
      * Get krajPochodzeniaKodAlfa2 value
      * @return string|null
@@ -212,6 +224,7 @@ class SzczegolyZawartosciPrzesylkiZagranicznejType extends AbstractStructBase
     {
         return $this->krajPochodzeniaKodAlfa2;
     }
+
     /**
      * Set krajPochodzeniaKodAlfa2 value
      * @param string $krajPochodzeniaKodAlfa2
@@ -224,7 +237,7 @@ class SzczegolyZawartosciPrzesylkiZagranicznejType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($krajPochodzeniaKodAlfa2, true), gettype($krajPochodzeniaKodAlfa2)), __LINE__);
         }
         $this->krajPochodzeniaKodAlfa2 = $krajPochodzeniaKodAlfa2;
-        
+
         return $this;
     }
 }

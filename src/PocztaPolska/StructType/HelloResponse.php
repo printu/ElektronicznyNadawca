@@ -19,6 +19,7 @@ class HelloResponse extends AbstractStructBase
      * @var string|null
      */
     protected ?string $out = null;
+
     /**
      * Constructor method for helloResponse
      * @uses HelloResponse::setOut()
@@ -29,6 +30,7 @@ class HelloResponse extends AbstractStructBase
         $this
             ->setOut($out);
     }
+
     /**
      * Get out value
      * @return string|null
@@ -37,6 +39,7 @@ class HelloResponse extends AbstractStructBase
     {
         return $this->out;
     }
+
     /**
      * Set out value
      * @param string $out
@@ -49,7 +52,7 @@ class HelloResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($out, true), gettype($out)), __LINE__);
         }
         $this->out = $out;
-        
+
         return $this;
     }
 }

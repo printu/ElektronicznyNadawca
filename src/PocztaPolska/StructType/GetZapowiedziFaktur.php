@@ -22,6 +22,7 @@ class GetZapowiedziFaktur extends AbstractStructBase
      * @var string
      */
     protected string $data;
+
     /**
      * Constructor method for getZapowiedziFaktur
      * @uses GetZapowiedziFaktur::setData()
@@ -32,6 +33,7 @@ class GetZapowiedziFaktur extends AbstractStructBase
         $this
             ->setData($data);
     }
+
     /**
      * Get data value
      * @return string
@@ -40,6 +42,7 @@ class GetZapowiedziFaktur extends AbstractStructBase
     {
         return $this->data;
     }
+
     /**
      * Set data value
      * @param string $data
@@ -52,7 +55,7 @@ class GetZapowiedziFaktur extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($data, true), gettype($data)), __LINE__);
         }
         $this->data = $data;
-        
+
         return $this;
     }
 }

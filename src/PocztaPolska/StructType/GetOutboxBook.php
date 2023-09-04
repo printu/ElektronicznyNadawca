@@ -30,6 +30,7 @@ class GetOutboxBook extends AbstractStructBase
      * @var bool|null
      */
     protected ?bool $includeNierejestrowane = null;
+
     /**
      * Constructor method for getOutboxBook
      * @uses GetOutboxBook::setIdEnvelope()
@@ -43,6 +44,7 @@ class GetOutboxBook extends AbstractStructBase
             ->setIdEnvelope($idEnvelope)
             ->setIncludeNierejestrowane($includeNierejestrowane);
     }
+
     /**
      * Get idEnvelope value
      * @return int
@@ -51,6 +53,7 @@ class GetOutboxBook extends AbstractStructBase
     {
         return $this->idEnvelope;
     }
+
     /**
      * Set idEnvelope value
      * @param int $idEnvelope
@@ -63,9 +66,10 @@ class GetOutboxBook extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($idEnvelope, true), gettype($idEnvelope)), __LINE__);
         }
         $this->idEnvelope = $idEnvelope;
-        
+
         return $this;
     }
+
     /**
      * Get includeNierejestrowane value
      * @return bool|null
@@ -74,6 +78,7 @@ class GetOutboxBook extends AbstractStructBase
     {
         return $this->includeNierejestrowane;
     }
+
     /**
      * Set includeNierejestrowane value
      * @param bool $includeNierejestrowane
@@ -86,7 +91,7 @@ class GetOutboxBook extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($includeNierejestrowane, true), gettype($includeNierejestrowane)), __LINE__);
         }
         $this->includeNierejestrowane = $includeNierejestrowane;
-        
+
         return $this;
     }
 }

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace PocztaPolska\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -30,6 +29,7 @@ class LokalizacjaGeograficznaType extends AbstractStructBase
      * @var \PocztaPolska\StructType\WspolrzednaGeograficznaType
      */
     protected \PocztaPolska\StructType\WspolrzednaGeograficznaType $szerokosc;
+
     /**
      * Constructor method for lokalizacjaGeograficznaType
      * @uses LokalizacjaGeograficznaType::setDlugosc()
@@ -43,6 +43,7 @@ class LokalizacjaGeograficznaType extends AbstractStructBase
             ->setDlugosc($dlugosc)
             ->setSzerokosc($szerokosc);
     }
+
     /**
      * Get dlugosc value
      * @return \PocztaPolska\StructType\WspolrzednaGeograficznaType
@@ -51,6 +52,7 @@ class LokalizacjaGeograficznaType extends AbstractStructBase
     {
         return $this->dlugosc;
     }
+
     /**
      * Set dlugosc value
      * @param \PocztaPolska\StructType\WspolrzednaGeograficznaType $dlugosc
@@ -59,9 +61,10 @@ class LokalizacjaGeograficznaType extends AbstractStructBase
     public function setDlugosc(\PocztaPolska\StructType\WspolrzednaGeograficznaType $dlugosc): self
     {
         $this->dlugosc = $dlugosc;
-        
+
         return $this;
     }
+
     /**
      * Get szerokosc value
      * @return \PocztaPolska\StructType\WspolrzednaGeograficznaType
@@ -70,6 +73,7 @@ class LokalizacjaGeograficznaType extends AbstractStructBase
     {
         return $this->szerokosc;
     }
+
     /**
      * Set szerokosc value
      * @param \PocztaPolska\StructType\WspolrzednaGeograficznaType $szerokosc
@@ -78,7 +82,7 @@ class LokalizacjaGeograficznaType extends AbstractStructBase
     public function setSzerokosc(\PocztaPolska\StructType\WspolrzednaGeograficznaType $szerokosc): self
     {
         $this->szerokosc = $szerokosc;
-        
+
         return $this;
     }
 }

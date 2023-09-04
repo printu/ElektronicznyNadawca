@@ -33,6 +33,7 @@ class ReklamacjaInfoType extends AbstractStructBase
      * @var string
      */
     protected string $guidPrzesylki;
+
     /**
      * Constructor method for reklamacjaInfoType
      * @uses ReklamacjaInfoType::setIdReklamacja()
@@ -46,6 +47,7 @@ class ReklamacjaInfoType extends AbstractStructBase
             ->setIdReklamacja($idReklamacja)
             ->setGuidPrzesylki($guidPrzesylki);
     }
+
     /**
      * Get idReklamacja value
      * @return string
@@ -54,6 +56,7 @@ class ReklamacjaInfoType extends AbstractStructBase
     {
         return $this->idReklamacja;
     }
+
     /**
      * Set idReklamacja value
      * @param string $idReklamacja
@@ -66,9 +69,10 @@ class ReklamacjaInfoType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($idReklamacja, true), gettype($idReklamacja)), __LINE__);
         }
         $this->idReklamacja = $idReklamacja;
-        
+
         return $this;
     }
+
     /**
      * Get guidPrzesylki value
      * @return string
@@ -77,6 +81,7 @@ class ReklamacjaInfoType extends AbstractStructBase
     {
         return $this->guidPrzesylki;
     }
+
     /**
      * Set guidPrzesylki value
      * @param string $guidPrzesylki
@@ -93,7 +98,7 @@ class ReklamacjaInfoType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 32', mb_strlen((string) $guidPrzesylki)), __LINE__);
         }
         $this->guidPrzesylki = $guidPrzesylki;
-        
+
         return $this;
     }
 }

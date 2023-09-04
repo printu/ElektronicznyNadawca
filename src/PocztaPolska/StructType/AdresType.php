@@ -130,6 +130,7 @@ class AdresType extends AbstractStructBase
      * @var string|null
      */
     protected ?string $nip = null;
+
     /**
      * Constructor method for adresType
      * @uses AdresType::setNazwa()
@@ -176,6 +177,7 @@ class AdresType extends AbstractStructBase
             ->setOsobaKontaktowa($osobaKontaktowa)
             ->setNip($nip);
     }
+
     /**
      * Get nazwa value
      * @return string|null
@@ -184,6 +186,7 @@ class AdresType extends AbstractStructBase
     {
         return $this->nazwa;
     }
+
     /**
      * Set nazwa value
      * @param string $nazwa
@@ -204,9 +207,10 @@ class AdresType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $nazwa)), __LINE__);
         }
         $this->nazwa = $nazwa;
-        
+
         return $this;
     }
+
     /**
      * Get nazwa2 value
      * @return string|null
@@ -215,6 +219,7 @@ class AdresType extends AbstractStructBase
     {
         return $this->nazwa2;
     }
+
     /**
      * Set nazwa2 value
      * @param string $nazwa2
@@ -235,9 +240,10 @@ class AdresType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 0', mb_strlen((string) $nazwa2)), __LINE__);
         }
         $this->nazwa2 = $nazwa2;
-        
+
         return $this;
     }
+
     /**
      * Get ulica value
      * @return string|null
@@ -246,6 +252,7 @@ class AdresType extends AbstractStructBase
     {
         return $this->ulica;
     }
+
     /**
      * Set ulica value
      * @param string $ulica
@@ -266,9 +273,10 @@ class AdresType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $ulica)), __LINE__);
         }
         $this->ulica = $ulica;
-        
+
         return $this;
     }
+
     /**
      * Get numerDomu value
      * @return string|null
@@ -277,6 +285,7 @@ class AdresType extends AbstractStructBase
     {
         return $this->numerDomu;
     }
+
     /**
      * Set numerDomu value
      * @param string $numerDomu
@@ -297,9 +306,10 @@ class AdresType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 0', mb_strlen((string) $numerDomu)), __LINE__);
         }
         $this->numerDomu = $numerDomu;
-        
+
         return $this;
     }
+
     /**
      * Get numerLokalu value
      * @return string|null
@@ -308,6 +318,7 @@ class AdresType extends AbstractStructBase
     {
         return $this->numerLokalu;
     }
+
     /**
      * Set numerLokalu value
      * @param string $numerLokalu
@@ -328,9 +339,10 @@ class AdresType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 0', mb_strlen((string) $numerLokalu)), __LINE__);
         }
         $this->numerLokalu = $numerLokalu;
-        
+
         return $this;
     }
+
     /**
      * Get miejscowosc value
      * @return string|null
@@ -339,6 +351,7 @@ class AdresType extends AbstractStructBase
     {
         return $this->miejscowosc;
     }
+
     /**
      * Set miejscowosc value
      * @param string $miejscowosc
@@ -359,9 +372,10 @@ class AdresType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $miejscowosc)), __LINE__);
         }
         $this->miejscowosc = $miejscowosc;
-        
+
         return $this;
     }
+
     /**
      * Get kodPocztowy value
      * @return string|null
@@ -370,6 +384,7 @@ class AdresType extends AbstractStructBase
     {
         return $this->kodPocztowy;
     }
+
     /**
      * Set kodPocztowy value
      * @param string $kodPocztowy
@@ -390,9 +405,10 @@ class AdresType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 0', mb_strlen((string) $kodPocztowy)), __LINE__);
         }
         $this->kodPocztowy = $kodPocztowy;
-        
+
         return $this;
     }
+
     /**
      * Get kraj value
      * @return string|null
@@ -401,6 +417,7 @@ class AdresType extends AbstractStructBase
     {
         return $this->kraj;
     }
+
     /**
      * Set kraj value
      * @param string $kraj
@@ -421,9 +438,10 @@ class AdresType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 0', mb_strlen((string) $kraj)), __LINE__);
         }
         $this->kraj = $kraj;
-        
+
         return $this;
     }
+
     /**
      * Get telefon value
      * @return string|null
@@ -432,6 +450,7 @@ class AdresType extends AbstractStructBase
     {
         return $this->telefon;
     }
+
     /**
      * Set telefon value
      * @param string $telefon
@@ -452,9 +471,10 @@ class AdresType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 0', mb_strlen((string) $telefon)), __LINE__);
         }
         $this->telefon = $telefon;
-        
+
         return $this;
     }
+
     /**
      * Get email value
      * @return string|null
@@ -463,6 +483,7 @@ class AdresType extends AbstractStructBase
     {
         return $this->email;
     }
+
     /**
      * Set email value
      * @param string $email
@@ -483,9 +504,10 @@ class AdresType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 6', mb_strlen((string) $email)), __LINE__);
         }
         $this->email = $email;
-        
+
         return $this;
     }
+
     /**
      * Get mobile value
      * @return string|null
@@ -494,6 +516,7 @@ class AdresType extends AbstractStructBase
     {
         return $this->mobile;
     }
+
     /**
      * Set mobile value
      * @param string $mobile
@@ -506,9 +529,10 @@ class AdresType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($mobile, true), gettype($mobile)), __LINE__);
         }
         $this->mobile = $mobile;
-        
+
         return $this;
     }
+
     /**
      * Get osobaKontaktowa value
      * @return string|null
@@ -517,6 +541,7 @@ class AdresType extends AbstractStructBase
     {
         return $this->osobaKontaktowa;
     }
+
     /**
      * Set osobaKontaktowa value
      * @param string $osobaKontaktowa
@@ -529,9 +554,10 @@ class AdresType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($osobaKontaktowa, true), gettype($osobaKontaktowa)), __LINE__);
         }
         $this->osobaKontaktowa = $osobaKontaktowa;
-        
+
         return $this;
     }
+
     /**
      * Get nip value
      * @return string|null
@@ -540,6 +566,7 @@ class AdresType extends AbstractStructBase
     {
         return $this->nip;
     }
+
     /**
      * Set nip value
      * @param string $nip
@@ -552,7 +579,7 @@ class AdresType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($nip, true), gettype($nip)), __LINE__);
         }
         $this->nip = $nip;
-        
+
         return $this;
     }
 }

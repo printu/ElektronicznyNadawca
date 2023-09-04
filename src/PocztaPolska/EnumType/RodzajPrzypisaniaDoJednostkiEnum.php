@@ -16,12 +16,13 @@ class RodzajPrzypisaniaDoJednostkiEnum extends AbstractStructEnumBase
      * Constant for value 'RAPORTOWANIE'
      * @return string 'RAPORTOWANIE'
      */
-    const VALUE_RAPORTOWANIE = 'RAPORTOWANIE';
+    public const VALUE_RAPORTOWANIE = 'RAPORTOWANIE';
     /**
      * Constant for value 'NADAWANIE'
      * @return string 'NADAWANIE'
      */
-    const VALUE_NADAWANIE = 'NADAWANIE';
+    public const VALUE_NADAWANIE = 'NADAWANIE';
+
     /**
      * Return allowed values
      * @uses self::VALUE_RAPORTOWANIE

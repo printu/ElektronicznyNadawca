@@ -27,14 +27,15 @@ class Get extends AbstractSoapClientBase
             $this->setResult($resultGetUrzedyNadania = $this->getSoapClient()->__soapCall('getUrzedyNadania', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultGetUrzedyNadania;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named getUrzedyWydajaceEPrzesylki
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -49,14 +50,15 @@ class Get extends AbstractSoapClientBase
             $this->setResult($resultGetUrzedyWydajaceEPrzesylki = $this->getSoapClient()->__soapCall('getUrzedyWydajaceEPrzesylki', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultGetUrzedyWydajaceEPrzesylki;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named getEnvelopeStatus
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -71,14 +73,15 @@ class Get extends AbstractSoapClientBase
             $this->setResult($resultGetEnvelopeStatus = $this->getSoapClient()->__soapCall('getEnvelopeStatus', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultGetEnvelopeStatus;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named getKarty
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -93,14 +96,15 @@ class Get extends AbstractSoapClientBase
             $this->setResult($resultGetKarty = $this->getSoapClient()->__soapCall('getKarty', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultGetKarty;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named getPasswordExpiredDate
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -115,14 +119,15 @@ class Get extends AbstractSoapClientBase
             $this->setResult($resultGetPasswordExpiredDate = $this->getSoapClient()->__soapCall('getPasswordExpiredDate', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultGetPasswordExpiredDate;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named getEnvelopeContentShort
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -137,14 +142,15 @@ class Get extends AbstractSoapClientBase
             $this->setResult($resultGetEnvelopeContentShort = $this->getSoapClient()->__soapCall('getEnvelopeContentShort', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultGetEnvelopeContentShort;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named getEnvelopeContentFull
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -159,14 +165,15 @@ class Get extends AbstractSoapClientBase
             $this->setResult($resultGetEnvelopeContentFull = $this->getSoapClient()->__soapCall('getEnvelopeContentFull', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultGetEnvelopeContentFull;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named getAddressLabel
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -181,14 +188,15 @@ class Get extends AbstractSoapClientBase
             $this->setResult($resultGetAddressLabel = $this->getSoapClient()->__soapCall('getAddressLabel', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultGetAddressLabel;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named getOutboxBook
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -203,14 +211,15 @@ class Get extends AbstractSoapClientBase
             $this->setResult($resultGetOutboxBook = $this->getSoapClient()->__soapCall('getOutboxBook', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultGetOutboxBook;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named getFirmowaPocztaBook
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -225,14 +234,15 @@ class Get extends AbstractSoapClientBase
             $this->setResult($resultGetFirmowaPocztaBook = $this->getSoapClient()->__soapCall('getFirmowaPocztaBook', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultGetFirmowaPocztaBook;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named getEnvelopeList
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -247,14 +257,15 @@ class Get extends AbstractSoapClientBase
             $this->setResult($resultGetEnvelopeList = $this->getSoapClient()->__soapCall('getEnvelopeList', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultGetEnvelopeList;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named getAddresLabelByGuid
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -269,14 +280,15 @@ class Get extends AbstractSoapClientBase
             $this->setResult($resultGetAddresLabelByGuid = $this->getSoapClient()->__soapCall('getAddresLabelByGuid', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultGetAddresLabelByGuid;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named getPlacowkiPocztowe
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -291,14 +303,15 @@ class Get extends AbstractSoapClientBase
             $this->setResult($resultGetPlacowkiPocztowe = $this->getSoapClient()->__soapCall('getPlacowkiPocztowe', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultGetPlacowkiPocztowe;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named getGuid
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -313,14 +326,15 @@ class Get extends AbstractSoapClientBase
             $this->setResult($resultGetGuid = $this->getSoapClient()->__soapCall('getGuid', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultGetGuid;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named getKierunki
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -335,14 +349,15 @@ class Get extends AbstractSoapClientBase
             $this->setResult($resultGetKierunki = $this->getSoapClient()->__soapCall('getKierunki', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultGetKierunki;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named getKierunkiInfo
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -357,14 +372,15 @@ class Get extends AbstractSoapClientBase
             $this->setResult($resultGetKierunkiInfo = $this->getSoapClient()->__soapCall('getKierunkiInfo', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultGetKierunkiInfo;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named getEnvelopeBufor
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -379,14 +395,15 @@ class Get extends AbstractSoapClientBase
             $this->setResult($resultGetEnvelopeBufor = $this->getSoapClient()->__soapCall('getEnvelopeBufor', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultGetEnvelopeBufor;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named getEPOStatus
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -401,14 +418,15 @@ class Get extends AbstractSoapClientBase
             $this->setResult($resultGetEPOStatus = $this->getSoapClient()->__soapCall('getEPOStatus', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultGetEPOStatus;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named getAddresLabelCompact
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -423,14 +441,15 @@ class Get extends AbstractSoapClientBase
             $this->setResult($resultGetAddresLabelCompact = $this->getSoapClient()->__soapCall('getAddresLabelCompact', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultGetAddresLabelCompact;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named getAddresLabelByGuidCompact
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -445,14 +464,15 @@ class Get extends AbstractSoapClientBase
             $this->setResult($resultGetAddresLabelByGuidCompact = $this->getSoapClient()->__soapCall('getAddresLabelByGuidCompact', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultGetAddresLabelByGuidCompact;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named getEnvelopeBuforList
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -467,14 +487,15 @@ class Get extends AbstractSoapClientBase
             $this->setResult($resultGetEnvelopeBuforList = $this->getSoapClient()->__soapCall('getEnvelopeBuforList', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultGetEnvelopeBuforList;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named getUbezpieczeniaInfo
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -489,14 +510,15 @@ class Get extends AbstractSoapClientBase
             $this->setResult($resultGetUbezpieczeniaInfo = $this->getSoapClient()->__soapCall('getUbezpieczeniaInfo', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultGetUbezpieczeniaInfo;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named getBlankietPobraniaByGuids
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -511,14 +533,15 @@ class Get extends AbstractSoapClientBase
             $this->setResult($resultGetBlankietPobraniaByGuids = $this->getSoapClient()->__soapCall('getBlankietPobraniaByGuids', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultGetBlankietPobraniaByGuids;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named getAccountList
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -533,14 +556,15 @@ class Get extends AbstractSoapClientBase
             $this->setResult($resultGetAccountList = $this->getSoapClient()->__soapCall('getAccountList', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultGetAccountList;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named getProfilList
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -555,14 +579,15 @@ class Get extends AbstractSoapClientBase
             $this->setResult($resultGetProfilList = $this->getSoapClient()->__soapCall('getProfilList', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultGetProfilList;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named getReklamacje
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -577,14 +602,15 @@ class Get extends AbstractSoapClientBase
             $this->setResult($resultGetReklamacje = $this->getSoapClient()->__soapCall('getReklamacje', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultGetReklamacje;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named getZapowiedziFaktur
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -599,14 +625,15 @@ class Get extends AbstractSoapClientBase
             $this->setResult($resultGetZapowiedziFaktur = $this->getSoapClient()->__soapCall('getZapowiedziFaktur', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultGetZapowiedziFaktur;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named getListaPowodowReklamacji
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -621,14 +648,15 @@ class Get extends AbstractSoapClientBase
             $this->setResult($resultGetListaPowodowReklamacji = $this->getSoapClient()->__soapCall('getListaPowodowReklamacji', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultGetListaPowodowReklamacji;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named getEZDO
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -643,14 +671,15 @@ class Get extends AbstractSoapClientBase
             $this->setResult($resultGetEZDO = $this->getSoapClient()->__soapCall('getEZDO', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultGetEZDO;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named getEZDOList
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -665,14 +694,15 @@ class Get extends AbstractSoapClientBase
             $this->setResult($resultGetEZDOList = $this->getSoapClient()->__soapCall('getEZDOList', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultGetEZDOList;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named getWplatyCKP
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -687,14 +717,15 @@ class Get extends AbstractSoapClientBase
             $this->setResult($resultGetWplatyCKP = $this->getSoapClient()->__soapCall('getWplatyCKP', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultGetWplatyCKP;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named getListaZgodEZwrotow
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -709,14 +740,15 @@ class Get extends AbstractSoapClientBase
             $this->setResult($resultGetListaZgodEZwrotow = $this->getSoapClient()->__soapCall('getListaZgodEZwrotow', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultGetListaZgodEZwrotow;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named getJednostkaOrganizacyjna
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -731,14 +763,15 @@ class Get extends AbstractSoapClientBase
             $this->setResult($resultGetJednostkaOrganizacyjna = $this->getSoapClient()->__soapCall('getJednostkaOrganizacyjna', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultGetJednostkaOrganizacyjna;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named getPrintForParcel
      * Meta information extracted from the WSDL
@@ -755,14 +788,15 @@ class Get extends AbstractSoapClientBase
             $this->setResult($resultGetPrintForParcel = $this->getSoapClient()->__soapCall('getPrintForParcel', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultGetPrintForParcel;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named getShopEZwrotyList
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -777,14 +811,15 @@ class Get extends AbstractSoapClientBase
             $this->setResult($resultGetShopEZwrotyList = $this->getSoapClient()->__soapCall('getShopEZwrotyList', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultGetShopEZwrotyList;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named getLibrariesForLegalDeposits
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -799,14 +834,15 @@ class Get extends AbstractSoapClientBase
             $this->setResult($resultGetLibrariesForLegalDeposits = $this->getSoapClient()->__soapCall('getLibrariesForLegalDeposits', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultGetLibrariesForLegalDeposits;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named getPlacowkaPocztowa
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -821,14 +857,15 @@ class Get extends AbstractSoapClientBase
             $this->setResult($resultGetPlacowkaPocztowa = $this->getSoapClient()->__soapCall('getPlacowkaPocztowa', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultGetPlacowkaPocztowa;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named getParcelContentList
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -843,14 +880,15 @@ class Get extends AbstractSoapClientBase
             $this->setResult($resultGetParcelContentList = $this->getSoapClient()->__soapCall('getParcelContentList', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultGetParcelContentList;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named getReturnDocumentsProfileList
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -865,14 +903,15 @@ class Get extends AbstractSoapClientBase
             $this->setResult($resultGetReturnDocumentsProfileList = $this->getSoapClient()->__soapCall('getReturnDocumentsProfileList', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultGetReturnDocumentsProfileList;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named getChecklistTemplateList
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -887,14 +926,15 @@ class Get extends AbstractSoapClientBase
             $this->setResult($resultGetChecklistTemplateList = $this->getSoapClient()->__soapCall('getChecklistTemplateList', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultGetChecklistTemplateList;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named getAdditionalActivitiesList
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -909,14 +949,15 @@ class Get extends AbstractSoapClientBase
             $this->setResult($resultGetAdditionalActivitiesList = $this->getSoapClient()->__soapCall('getAdditionalActivitiesList', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultGetAdditionalActivitiesList;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Returns the result
      * @see AbstractSoapClientBase::getResult()

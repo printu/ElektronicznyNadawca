@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace PocztaPolska\StructType;
 
 use InvalidArgumentException;
-use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for subUslugaPaczkowaType StructType
@@ -78,6 +77,7 @@ class SubUslugaPaczkowaType extends PrzesylkaType
      * @var string|null
      */
     protected ?string $gabaryt = null;
+
     /**
      * Constructor method for subUslugaPaczkowaType
      * @uses SubUslugaPaczkowaType::setPobranie()
@@ -115,6 +115,7 @@ class SubUslugaPaczkowaType extends PrzesylkaType
             ->setNumerPrzesylkiKlienta($numerPrzesylkiKlienta)
             ->setGabaryt($gabaryt);
     }
+
     /**
      * Get pobranie value
      * @return \PocztaPolska\StructType\PobranieType|null
@@ -123,6 +124,7 @@ class SubUslugaPaczkowaType extends PrzesylkaType
     {
         return $this->pobranie;
     }
+
     /**
      * Set pobranie value
      * @param \PocztaPolska\StructType\PobranieType $pobranie
@@ -131,9 +133,10 @@ class SubUslugaPaczkowaType extends PrzesylkaType
     public function setPobranie(?\PocztaPolska\StructType\PobranieType $pobranie = null): self
     {
         $this->pobranie = $pobranie;
-        
+
         return $this;
     }
+
     /**
      * Get ubezpieczenie value
      * @return \PocztaPolska\StructType\UbezpieczenieType|null
@@ -142,6 +145,7 @@ class SubUslugaPaczkowaType extends PrzesylkaType
     {
         return $this->ubezpieczenie;
     }
+
     /**
      * Set ubezpieczenie value
      * @param \PocztaPolska\StructType\UbezpieczenieType $ubezpieczenie
@@ -150,9 +154,10 @@ class SubUslugaPaczkowaType extends PrzesylkaType
     public function setUbezpieczenie(?\PocztaPolska\StructType\UbezpieczenieType $ubezpieczenie = null): self
     {
         $this->ubezpieczenie = $ubezpieczenie;
-        
+
         return $this;
     }
+
     /**
      * Get numerNadania value
      * @return string|null
@@ -161,6 +166,7 @@ class SubUslugaPaczkowaType extends PrzesylkaType
     {
         return $this->numerNadania;
     }
+
     /**
      * Set numerNadania value
      * @param string $numerNadania
@@ -181,9 +187,10 @@ class SubUslugaPaczkowaType extends PrzesylkaType
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 10', mb_strlen((string) $numerNadania)), __LINE__);
         }
         $this->numerNadania = $numerNadania;
-        
+
         return $this;
     }
+
     /**
      * Get masa value
      * @return int|null
@@ -192,6 +199,7 @@ class SubUslugaPaczkowaType extends PrzesylkaType
     {
         return $this->masa;
     }
+
     /**
      * Set masa value
      * @param int $masa
@@ -212,9 +220,10 @@ class SubUslugaPaczkowaType extends PrzesylkaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 1', var_export($masa, true)), __LINE__);
         }
         $this->masa = $masa;
-        
+
         return $this;
     }
+
     /**
      * Get wartosc value
      * @return int|null
@@ -223,6 +232,7 @@ class SubUslugaPaczkowaType extends PrzesylkaType
     {
         return $this->wartosc;
     }
+
     /**
      * Set wartosc value
      * @param int $wartosc
@@ -243,9 +253,10 @@ class SubUslugaPaczkowaType extends PrzesylkaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 0', var_export($wartosc, true)), __LINE__);
         }
         $this->wartosc = $wartosc;
-        
+
         return $this;
     }
+
     /**
      * Get ostroznie value
      * @return bool|null
@@ -254,6 +265,7 @@ class SubUslugaPaczkowaType extends PrzesylkaType
     {
         return $this->ostroznie;
     }
+
     /**
      * Set ostroznie value
      * @param bool $ostroznie
@@ -266,9 +278,10 @@ class SubUslugaPaczkowaType extends PrzesylkaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($ostroznie, true), gettype($ostroznie)), __LINE__);
         }
         $this->ostroznie = $ostroznie;
-        
+
         return $this;
     }
+
     /**
      * Get opakowanie value
      * @return string|null
@@ -277,6 +290,7 @@ class SubUslugaPaczkowaType extends PrzesylkaType
     {
         return $this->opakowanie;
     }
+
     /**
      * Set opakowanie value
      * @uses \PocztaPolska\EnumType\OpakowaniePocztowaType::valueIsValid()
@@ -292,9 +306,10 @@ class SubUslugaPaczkowaType extends PrzesylkaType
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\OpakowaniePocztowaType', is_array($opakowanie) ? implode(', ', $opakowanie) : var_export($opakowanie, true), implode(', ', \PocztaPolska\EnumType\OpakowaniePocztowaType::getValidValues())), __LINE__);
         }
         $this->opakowanie = $opakowanie;
-        
+
         return $this;
     }
+
     /**
      * Get ponadgabaryt value
      * @return bool|null
@@ -303,6 +318,7 @@ class SubUslugaPaczkowaType extends PrzesylkaType
     {
         return $this->ponadgabaryt;
     }
+
     /**
      * Set ponadgabaryt value
      * @param bool $ponadgabaryt
@@ -315,9 +331,10 @@ class SubUslugaPaczkowaType extends PrzesylkaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($ponadgabaryt, true), gettype($ponadgabaryt)), __LINE__);
         }
         $this->ponadgabaryt = $ponadgabaryt;
-        
+
         return $this;
     }
+
     /**
      * Get numerPrzesylkiKlienta value
      * @return string|null
@@ -326,6 +343,7 @@ class SubUslugaPaczkowaType extends PrzesylkaType
     {
         return $this->numerPrzesylkiKlienta;
     }
+
     /**
      * Set numerPrzesylkiKlienta value
      * @param string $numerPrzesylkiKlienta
@@ -338,9 +356,10 @@ class SubUslugaPaczkowaType extends PrzesylkaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($numerPrzesylkiKlienta, true), gettype($numerPrzesylkiKlienta)), __LINE__);
         }
         $this->numerPrzesylkiKlienta = $numerPrzesylkiKlienta;
-        
+
         return $this;
     }
+
     /**
      * Get gabaryt value
      * @return string|null
@@ -349,6 +368,7 @@ class SubUslugaPaczkowaType extends PrzesylkaType
     {
         return $this->gabaryt;
     }
+
     /**
      * Set gabaryt value
      * @uses \PocztaPolska\EnumType\GabarytType::valueIsValid()
@@ -364,7 +384,7 @@ class SubUslugaPaczkowaType extends PrzesylkaType
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\GabarytType', is_array($gabaryt) ? implode(', ', $gabaryt) : var_export($gabaryt, true), implode(', ', \PocztaPolska\EnumType\GabarytType::getValidValues())), __LINE__);
         }
         $this->gabaryt = $gabaryt;
-        
+
         return $this;
     }
 }

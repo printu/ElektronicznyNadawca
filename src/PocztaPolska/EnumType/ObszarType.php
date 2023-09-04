@@ -16,12 +16,13 @@ class ObszarType extends AbstractStructEnumBase
      * Constant for value 'MIASTO'
      * @return string 'MIASTO'
      */
-    const VALUE_MIASTO = 'MIASTO';
+    public const VALUE_MIASTO = 'MIASTO';
     /**
      * Constant for value 'KRAJ'
      * @return string 'KRAJ'
      */
-    const VALUE_KRAJ = 'KRAJ';
+    public const VALUE_KRAJ = 'KRAJ';
+
     /**
      * Return allowed values
      * @uses self::VALUE_MIASTO

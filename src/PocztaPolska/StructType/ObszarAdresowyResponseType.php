@@ -28,6 +28,7 @@ class ObszarAdresowyResponseType extends AbstractStructBase
      * @var string|null
      */
     protected ?string $guid = null;
+
     /**
      * Constructor method for obszarAdresowyResponseType
      * @uses ObszarAdresowyResponseType::setIsObszarMiasto()
@@ -41,6 +42,7 @@ class ObszarAdresowyResponseType extends AbstractStructBase
             ->setIsObszarMiasto($isObszarMiasto)
             ->setGuid($guid);
     }
+
     /**
      * Get isObszarMiasto value
      * @return bool|null
@@ -49,6 +51,7 @@ class ObszarAdresowyResponseType extends AbstractStructBase
     {
         return $this->isObszarMiasto;
     }
+
     /**
      * Set isObszarMiasto value
      * @param bool $isObszarMiasto
@@ -61,9 +64,10 @@ class ObszarAdresowyResponseType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($isObszarMiasto, true), gettype($isObszarMiasto)), __LINE__);
         }
         $this->isObszarMiasto = $isObszarMiasto;
-        
+
         return $this;
     }
+
     /**
      * Get guid value
      * @return string|null
@@ -72,6 +76,7 @@ class ObszarAdresowyResponseType extends AbstractStructBase
     {
         return $this->guid;
     }
+
     /**
      * Set guid value
      * @param string $guid
@@ -88,7 +93,7 @@ class ObszarAdresowyResponseType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 32', mb_strlen((string) $guid)), __LINE__);
         }
         $this->guid = $guid;
-        
+
         return $this;
     }
 }

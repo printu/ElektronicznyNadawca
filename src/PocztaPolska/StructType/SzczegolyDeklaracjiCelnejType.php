@@ -44,6 +44,7 @@ class SzczegolyDeklaracjiCelnejType extends AbstractStructBase
      * @var string|null
      */
     protected ?string $krajPochodzenia = null;
+
     /**
      * Constructor method for szczegolyDeklaracjiCelnejType
      * @uses SzczegolyDeklaracjiCelnejType::setZawartosc()
@@ -69,6 +70,7 @@ class SzczegolyDeklaracjiCelnejType extends AbstractStructBase
             ->setNumerTaryfowy($numerTaryfowy)
             ->setKrajPochodzenia($krajPochodzenia);
     }
+
     /**
      * Get zawartosc value
      * @return string|null
@@ -77,6 +79,7 @@ class SzczegolyDeklaracjiCelnejType extends AbstractStructBase
     {
         return $this->zawartosc;
     }
+
     /**
      * Set zawartosc value
      * @param string $zawartosc
@@ -89,9 +92,10 @@ class SzczegolyDeklaracjiCelnejType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($zawartosc, true), gettype($zawartosc)), __LINE__);
         }
         $this->zawartosc = $zawartosc;
-        
+
         return $this;
     }
+
     /**
      * Get ilosc value
      * @return float|null
@@ -100,6 +104,7 @@ class SzczegolyDeklaracjiCelnejType extends AbstractStructBase
     {
         return $this->ilosc;
     }
+
     /**
      * Set ilosc value
      * @param float $ilosc
@@ -112,9 +117,10 @@ class SzczegolyDeklaracjiCelnejType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($ilosc, true), gettype($ilosc)), __LINE__);
         }
         $this->ilosc = $ilosc;
-        
+
         return $this;
     }
+
     /**
      * Get masa value
      * @return int|null
@@ -123,6 +129,7 @@ class SzczegolyDeklaracjiCelnejType extends AbstractStructBase
     {
         return $this->masa;
     }
+
     /**
      * Set masa value
      * @param int $masa
@@ -135,9 +142,10 @@ class SzczegolyDeklaracjiCelnejType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($masa, true), gettype($masa)), __LINE__);
         }
         $this->masa = $masa;
-        
+
         return $this;
     }
+
     /**
      * Get wartosc value
      * @return int|null
@@ -146,6 +154,7 @@ class SzczegolyDeklaracjiCelnejType extends AbstractStructBase
     {
         return $this->wartosc;
     }
+
     /**
      * Set wartosc value
      * @param int $wartosc
@@ -158,9 +167,10 @@ class SzczegolyDeklaracjiCelnejType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($wartosc, true), gettype($wartosc)), __LINE__);
         }
         $this->wartosc = $wartosc;
-        
+
         return $this;
     }
+
     /**
      * Get numerTaryfowy value
      * @return string|null
@@ -169,6 +179,7 @@ class SzczegolyDeklaracjiCelnejType extends AbstractStructBase
     {
         return $this->numerTaryfowy;
     }
+
     /**
      * Set numerTaryfowy value
      * @param string $numerTaryfowy
@@ -181,9 +192,10 @@ class SzczegolyDeklaracjiCelnejType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($numerTaryfowy, true), gettype($numerTaryfowy)), __LINE__);
         }
         $this->numerTaryfowy = $numerTaryfowy;
-        
+
         return $this;
     }
+
     /**
      * Get krajPochodzenia value
      * @return string|null
@@ -192,6 +204,7 @@ class SzczegolyDeklaracjiCelnejType extends AbstractStructBase
     {
         return $this->krajPochodzenia;
     }
+
     /**
      * Set krajPochodzenia value
      * @param string $krajPochodzenia
@@ -204,7 +217,7 @@ class SzczegolyDeklaracjiCelnejType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($krajPochodzenia, true), gettype($krajPochodzenia)), __LINE__);
         }
         $this->krajPochodzenia = $krajPochodzenia;
-        
+
         return $this;
     }
 }

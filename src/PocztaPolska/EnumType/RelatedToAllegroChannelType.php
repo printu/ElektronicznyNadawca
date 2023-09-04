@@ -16,17 +16,18 @@ class RelatedToAllegroChannelType extends AbstractStructEnumBase
      * Constant for value 'MS'
      * @return string 'MS'
      */
-    const VALUE_MS = 'MS';
+    public const VALUE_MS = 'MS';
     /**
      * Constant for value 'WEB_API'
      * @return string 'WEB_API'
      */
-    const VALUE_WEB_API = 'WEB_API';
+    public const VALUE_WEB_API = 'WEB_API';
     /**
      * Constant for value 'REST_API'
      * @return string 'REST_API'
      */
-    const VALUE_REST_API = 'REST_API';
+    public const VALUE_REST_API = 'REST_API';
+
     /**
      * Return allowed values
      * @uses self::VALUE_MS

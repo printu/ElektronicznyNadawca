@@ -32,6 +32,7 @@ class SposobDoreczeniaType extends AbstractStructBase
      * @var string|null
      */
     protected ?string $identyfikatorPunktuOdbioru = null;
+
     /**
      * Constructor method for sposobDoreczeniaType
      * @uses SposobDoreczeniaType::setKod()
@@ -45,6 +46,7 @@ class SposobDoreczeniaType extends AbstractStructBase
             ->setKod($kod)
             ->setIdentyfikatorPunktuOdbioru($identyfikatorPunktuOdbioru);
     }
+
     /**
      * Get kod value
      * @return string
@@ -53,6 +55,7 @@ class SposobDoreczeniaType extends AbstractStructBase
     {
         return $this->kod;
     }
+
     /**
      * Set kod value
      * @param string $kod
@@ -65,9 +68,10 @@ class SposobDoreczeniaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($kod, true), gettype($kod)), __LINE__);
         }
         $this->kod = $kod;
-        
+
         return $this;
     }
+
     /**
      * Get identyfikatorPunktuOdbioru value
      * @return string|null
@@ -76,6 +80,7 @@ class SposobDoreczeniaType extends AbstractStructBase
     {
         return $this->identyfikatorPunktuOdbioru;
     }
+
     /**
      * Set identyfikatorPunktuOdbioru value
      * @param string $identyfikatorPunktuOdbioru
@@ -88,7 +93,7 @@ class SposobDoreczeniaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($identyfikatorPunktuOdbioru, true), gettype($identyfikatorPunktuOdbioru)), __LINE__);
         }
         $this->identyfikatorPunktuOdbioru = $identyfikatorPunktuOdbioru;
-        
+
         return $this;
     }
 }

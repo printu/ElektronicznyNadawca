@@ -83,6 +83,7 @@ class AdditionalActivityType extends AbstractStructBase
      * @var string|null
      */
     protected ?string $validTo = null;
+
     /**
      * Constructor method for additionalActivityType
      * @uses AdditionalActivityType::setIdActivity()
@@ -111,6 +112,7 @@ class AdditionalActivityType extends AbstractStructBase
             ->setValidFrom($validFrom)
             ->setValidTo($validTo);
     }
+
     /**
      * Get idActivity value
      * @return int|null
@@ -119,6 +121,7 @@ class AdditionalActivityType extends AbstractStructBase
     {
         return $this->idActivity;
     }
+
     /**
      * Set idActivity value
      * @param int $idActivity
@@ -131,9 +134,10 @@ class AdditionalActivityType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($idActivity, true), gettype($idActivity)), __LINE__);
         }
         $this->idActivity = $idActivity;
-        
+
         return $this;
     }
+
     /**
      * Get name value
      * @return string|null
@@ -142,6 +146,7 @@ class AdditionalActivityType extends AbstractStructBase
     {
         return $this->name;
     }
+
     /**
      * Set name value
      * @param string $name
@@ -158,9 +163,10 @@ class AdditionalActivityType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 127', mb_strlen((string) $name)), __LINE__);
         }
         $this->name = $name;
-        
+
         return $this;
     }
+
     /**
      * Get description value
      * @return string|null
@@ -169,6 +175,7 @@ class AdditionalActivityType extends AbstractStructBase
     {
         return $this->description;
     }
+
     /**
      * Set description value
      * @param string $description
@@ -185,9 +192,10 @@ class AdditionalActivityType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 1023', mb_strlen((string) $description)), __LINE__);
         }
         $this->description = $description;
-        
+
         return $this;
     }
+
     /**
      * Get critical value
      * @return bool|null
@@ -196,6 +204,7 @@ class AdditionalActivityType extends AbstractStructBase
     {
         return $this->critical;
     }
+
     /**
      * Set critical value
      * @param bool $critical
@@ -208,9 +217,10 @@ class AdditionalActivityType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($critical, true), gettype($critical)), __LINE__);
         }
         $this->critical = $critical;
-        
+
         return $this;
     }
+
     /**
      * Get order value
      * @return int|null
@@ -219,6 +229,7 @@ class AdditionalActivityType extends AbstractStructBase
     {
         return $this->order;
     }
+
     /**
      * Set order value
      * @param int $order
@@ -231,9 +242,10 @@ class AdditionalActivityType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($order, true), gettype($order)), __LINE__);
         }
         $this->order = $order;
-        
+
         return $this;
     }
+
     /**
      * Get validFrom value
      * @return string|null
@@ -242,6 +254,7 @@ class AdditionalActivityType extends AbstractStructBase
     {
         return $this->validFrom;
     }
+
     /**
      * Set validFrom value
      * @param string $validFrom
@@ -254,9 +267,10 @@ class AdditionalActivityType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($validFrom, true), gettype($validFrom)), __LINE__);
         }
         $this->validFrom = $validFrom;
-        
+
         return $this;
     }
+
     /**
      * Get validTo value
      * @return string|null
@@ -265,6 +279,7 @@ class AdditionalActivityType extends AbstractStructBase
     {
         return $this->validTo;
     }
+
     /**
      * Set validTo value
      * @param string $validTo
@@ -277,7 +292,7 @@ class AdditionalActivityType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($validTo, true), gettype($validTo)), __LINE__);
         }
         $this->validTo = $validTo;
-        
+
         return $this;
     }
 }

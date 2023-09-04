@@ -72,6 +72,7 @@ class WplataCKPType extends AbstractStructBase
      * @var string|null
      */
     protected ?string $dataPrzelewu = null;
+
     /**
      * Constructor method for wplataCKPType
      * @uses WplataCKPType::setUnikalnyIdentyfikatorWplaty()
@@ -103,6 +104,7 @@ class WplataCKPType extends AbstractStructBase
             ->setTytulPobrania($tytulPobrania)
             ->setDataPrzelewu($dataPrzelewu);
     }
+
     /**
      * Get unikalnyIdentyfikatorWplaty value
      * @return string
@@ -111,6 +113,7 @@ class WplataCKPType extends AbstractStructBase
     {
         return $this->unikalnyIdentyfikatorWplaty;
     }
+
     /**
      * Set unikalnyIdentyfikatorWplaty value
      * @param string $unikalnyIdentyfikatorWplaty
@@ -123,9 +126,10 @@ class WplataCKPType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($unikalnyIdentyfikatorWplaty, true), gettype($unikalnyIdentyfikatorWplaty)), __LINE__);
         }
         $this->unikalnyIdentyfikatorWplaty = $unikalnyIdentyfikatorWplaty;
-        
+
         return $this;
     }
+
     /**
      * Get numerNadania value
      * @return string
@@ -134,6 +138,7 @@ class WplataCKPType extends AbstractStructBase
     {
         return $this->numerNadania;
     }
+
     /**
      * Set numerNadania value
      * @param string $numerNadania
@@ -154,9 +159,10 @@ class WplataCKPType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 10', mb_strlen((string) $numerNadania)), __LINE__);
         }
         $this->numerNadania = $numerNadania;
-        
+
         return $this;
     }
+
     /**
      * Get kwota value
      * @return int
@@ -165,6 +171,7 @@ class WplataCKPType extends AbstractStructBase
     {
         return $this->kwota;
     }
+
     /**
      * Set kwota value
      * @param int $kwota
@@ -177,9 +184,10 @@ class WplataCKPType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($kwota, true), gettype($kwota)), __LINE__);
         }
         $this->kwota = $kwota;
-        
+
         return $this;
     }
+
     /**
      * Get dataPobrania value
      * @return string
@@ -188,6 +196,7 @@ class WplataCKPType extends AbstractStructBase
     {
         return $this->dataPobrania;
     }
+
     /**
      * Set dataPobrania value
      * @param string $dataPobrania
@@ -200,9 +209,10 @@ class WplataCKPType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($dataPobrania, true), gettype($dataPobrania)), __LINE__);
         }
         $this->dataPobrania = $dataPobrania;
-        
+
         return $this;
     }
+
     /**
      * Get idUmowy value
      * @return int
@@ -211,6 +221,7 @@ class WplataCKPType extends AbstractStructBase
     {
         return $this->idUmowy;
     }
+
     /**
      * Set idUmowy value
      * @param int $idUmowy
@@ -223,9 +234,10 @@ class WplataCKPType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($idUmowy, true), gettype($idUmowy)), __LINE__);
         }
         $this->idUmowy = $idUmowy;
-        
+
         return $this;
     }
+
     /**
      * Get tytulPrzelewuZbiorczego value
      * @return string
@@ -234,6 +246,7 @@ class WplataCKPType extends AbstractStructBase
     {
         return $this->tytulPrzelewuZbiorczego;
     }
+
     /**
      * Set tytulPrzelewuZbiorczego value
      * @param string $tytulPrzelewuZbiorczego
@@ -246,9 +259,10 @@ class WplataCKPType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($tytulPrzelewuZbiorczego, true), gettype($tytulPrzelewuZbiorczego)), __LINE__);
         }
         $this->tytulPrzelewuZbiorczego = $tytulPrzelewuZbiorczego;
-        
+
         return $this;
     }
+
     /**
      * Get tytulPobrania value
      * @return string|null
@@ -257,6 +271,7 @@ class WplataCKPType extends AbstractStructBase
     {
         return $this->tytulPobrania;
     }
+
     /**
      * Set tytulPobrania value
      * @param string $tytulPobrania
@@ -269,9 +284,10 @@ class WplataCKPType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($tytulPobrania, true), gettype($tytulPobrania)), __LINE__);
         }
         $this->tytulPobrania = $tytulPobrania;
-        
+
         return $this;
     }
+
     /**
      * Get dataPrzelewu value
      * @return string|null
@@ -280,6 +296,7 @@ class WplataCKPType extends AbstractStructBase
     {
         return $this->dataPrzelewu;
     }
+
     /**
      * Set dataPrzelewu value
      * @param string $dataPrzelewu
@@ -292,7 +309,7 @@ class WplataCKPType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($dataPrzelewu, true), gettype($dataPrzelewu)), __LINE__);
         }
         $this->dataPrzelewu = $dataPrzelewu;
-        
+
         return $this;
     }
 }

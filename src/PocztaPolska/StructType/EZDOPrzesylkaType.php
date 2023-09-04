@@ -73,6 +73,7 @@ class EZDOPrzesylkaType extends AbstractStructBase
      * @var string|null
      */
     protected ?string $zwrot = null;
+
     /**
      * Constructor method for EZDOPrzesylkaType
      * @uses EZDOPrzesylkaType::setNumerNadania()
@@ -104,6 +105,7 @@ class EZDOPrzesylkaType extends AbstractStructBase
             ->setNumerWewnetrznyPrzesylki($numerWewnetrznyPrzesylki)
             ->setZwrot($zwrot);
     }
+
     /**
      * Get numerNadania value
      * @return string|null
@@ -112,6 +114,7 @@ class EZDOPrzesylkaType extends AbstractStructBase
     {
         return $this->numerNadania;
     }
+
     /**
      * Set numerNadania value
      * @param string $numerNadania
@@ -132,9 +135,10 @@ class EZDOPrzesylkaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 10', mb_strlen((string) $numerNadania)), __LINE__);
         }
         $this->numerNadania = $numerNadania;
-        
+
         return $this;
     }
+
     /**
      * Get rodzaj value
      * @return string|null
@@ -143,6 +147,7 @@ class EZDOPrzesylkaType extends AbstractStructBase
     {
         return $this->rodzaj;
     }
+
     /**
      * Set rodzaj value
      * @param string $rodzaj
@@ -155,9 +160,10 @@ class EZDOPrzesylkaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($rodzaj, true), gettype($rodzaj)), __LINE__);
         }
         $this->rodzaj = $rodzaj;
-        
+
         return $this;
     }
+
     /**
      * Get kategoria value
      * @return string|null
@@ -166,6 +172,7 @@ class EZDOPrzesylkaType extends AbstractStructBase
     {
         return $this->kategoria;
     }
+
     /**
      * Set kategoria value
      * @uses \PocztaPolska\EnumType\KategoriaType::valueIsValid()
@@ -181,9 +188,10 @@ class EZDOPrzesylkaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\KategoriaType', is_array($kategoria) ? implode(', ', $kategoria) : var_export($kategoria, true), implode(', ', \PocztaPolska\EnumType\KategoriaType::getValidValues())), __LINE__);
         }
         $this->kategoria = $kategoria;
-        
+
         return $this;
     }
+
     /**
      * Get masa value
      * @return int|null
@@ -192,6 +200,7 @@ class EZDOPrzesylkaType extends AbstractStructBase
     {
         return $this->masa;
     }
+
     /**
      * Set masa value
      * @param int $masa
@@ -212,9 +221,10 @@ class EZDOPrzesylkaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 1', var_export($masa, true)), __LINE__);
         }
         $this->masa = $masa;
-        
+
         return $this;
     }
+
     /**
      * Get wartosc value
      * @return int|null
@@ -223,6 +233,7 @@ class EZDOPrzesylkaType extends AbstractStructBase
     {
         return $this->wartosc;
     }
+
     /**
      * Set wartosc value
      * @param int $wartosc
@@ -243,9 +254,10 @@ class EZDOPrzesylkaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 0', var_export($wartosc, true)), __LINE__);
         }
         $this->wartosc = $wartosc;
-        
+
         return $this;
     }
+
     /**
      * Get kwotaPobrania value
      * @return int|null
@@ -254,6 +266,7 @@ class EZDOPrzesylkaType extends AbstractStructBase
     {
         return $this->kwotaPobrania;
     }
+
     /**
      * Set kwotaPobrania value
      * @param int $kwotaPobrania
@@ -274,9 +287,10 @@ class EZDOPrzesylkaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 0', var_export($kwotaPobrania, true)), __LINE__);
         }
         $this->kwotaPobrania = $kwotaPobrania;
-        
+
         return $this;
     }
+
     /**
      * Get numerWewnetrznyPrzesylki value
      * @return string|null
@@ -285,6 +299,7 @@ class EZDOPrzesylkaType extends AbstractStructBase
     {
         return $this->numerWewnetrznyPrzesylki;
     }
+
     /**
      * Set numerWewnetrznyPrzesylki value
      * @param string $numerWewnetrznyPrzesylki
@@ -297,9 +312,10 @@ class EZDOPrzesylkaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($numerWewnetrznyPrzesylki, true), gettype($numerWewnetrznyPrzesylki)), __LINE__);
         }
         $this->numerWewnetrznyPrzesylki = $numerWewnetrznyPrzesylki;
-        
+
         return $this;
     }
+
     /**
      * Get zwrot value
      * @return string|null
@@ -308,6 +324,7 @@ class EZDOPrzesylkaType extends AbstractStructBase
     {
         return $this->zwrot;
     }
+
     /**
      * Set zwrot value
      * @param string $zwrot
@@ -320,7 +337,7 @@ class EZDOPrzesylkaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($zwrot, true), gettype($zwrot)), __LINE__);
         }
         $this->zwrot = $zwrot;
-        
+
         return $this;
     }
 }

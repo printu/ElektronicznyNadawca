@@ -67,6 +67,7 @@ class ReklamacjaRozpatrzonaType extends AbstractStructBase
      * @var string|null
      */
     protected ?string $idReklamacja = null;
+
     /**
      * Constructor method for reklamacjaRozpatrzonaType
      * @uses ReklamacjaRozpatrzonaType::setGuid()
@@ -101,6 +102,7 @@ class ReklamacjaRozpatrzonaType extends AbstractStructBase
             ->setOsobaRozpatrujaca($osobaRozpatrujaca)
             ->setIdReklamacja($idReklamacja);
     }
+
     /**
      * Get guid value
      * @return string|null
@@ -109,6 +111,7 @@ class ReklamacjaRozpatrzonaType extends AbstractStructBase
     {
         return $this->guid;
     }
+
     /**
      * Set guid value
      * @param string $guid
@@ -125,9 +128,10 @@ class ReklamacjaRozpatrzonaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 32', mb_strlen((string) $guid)), __LINE__);
         }
         $this->guid = $guid;
-        
+
         return $this;
     }
+
     /**
      * Get numerNadania value
      * @return string|null
@@ -136,6 +140,7 @@ class ReklamacjaRozpatrzonaType extends AbstractStructBase
     {
         return $this->numerNadania;
     }
+
     /**
      * Set numerNadania value
      * @param string $numerNadania
@@ -156,9 +161,10 @@ class ReklamacjaRozpatrzonaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 10', mb_strlen((string) $numerNadania)), __LINE__);
         }
         $this->numerNadania = $numerNadania;
-        
+
         return $this;
     }
+
     /**
      * Get rozstrzygniecie value
      * @return string|null
@@ -167,6 +173,7 @@ class ReklamacjaRozpatrzonaType extends AbstractStructBase
     {
         return $this->rozstrzygniecie;
     }
+
     /**
      * Set rozstrzygniecie value
      * @uses \PocztaPolska\EnumType\RozstrzygniecieType::valueIsValid()
@@ -182,9 +189,10 @@ class ReklamacjaRozpatrzonaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\RozstrzygniecieType', is_array($rozstrzygniecie) ? implode(', ', $rozstrzygniecie) : var_export($rozstrzygniecie, true), implode(', ', \PocztaPolska\EnumType\RozstrzygniecieType::getValidValues())), __LINE__);
         }
         $this->rozstrzygniecie = $rozstrzygniecie;
-        
+
         return $this;
     }
+
     /**
      * Get przyznaneOdszkodowanie value
      * @return int|null
@@ -193,6 +201,7 @@ class ReklamacjaRozpatrzonaType extends AbstractStructBase
     {
         return $this->przyznaneOdszkodowanie;
     }
+
     /**
      * Set przyznaneOdszkodowanie value
      * @param int $przyznaneOdszkodowanie
@@ -205,9 +214,10 @@ class ReklamacjaRozpatrzonaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($przyznaneOdszkodowanie, true), gettype($przyznaneOdszkodowanie)), __LINE__);
         }
         $this->przyznaneOdszkodowanie = $przyznaneOdszkodowanie;
-        
+
         return $this;
     }
+
     /**
      * Get uzasadnienie value
      * @return string|null
@@ -216,6 +226,7 @@ class ReklamacjaRozpatrzonaType extends AbstractStructBase
     {
         return $this->uzasadnienie;
     }
+
     /**
      * Set uzasadnienie value
      * @param string $uzasadnienie
@@ -228,9 +239,10 @@ class ReklamacjaRozpatrzonaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($uzasadnienie, true), gettype($uzasadnienie)), __LINE__);
         }
         $this->uzasadnienie = $uzasadnienie;
-        
+
         return $this;
     }
+
     /**
      * Get dataRozpatrzenia value
      * @return string|null
@@ -239,6 +251,7 @@ class ReklamacjaRozpatrzonaType extends AbstractStructBase
     {
         return $this->dataRozpatrzenia;
     }
+
     /**
      * Set dataRozpatrzenia value
      * @param string $dataRozpatrzenia
@@ -251,9 +264,10 @@ class ReklamacjaRozpatrzonaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($dataRozpatrzenia, true), gettype($dataRozpatrzenia)), __LINE__);
         }
         $this->dataRozpatrzenia = $dataRozpatrzenia;
-        
+
         return $this;
     }
+
     /**
      * Get nazwaJednostkiRozpatrujacej value
      * @return string|null
@@ -262,6 +276,7 @@ class ReklamacjaRozpatrzonaType extends AbstractStructBase
     {
         return $this->nazwaJednostkiRozpatrujacej;
     }
+
     /**
      * Set nazwaJednostkiRozpatrujacej value
      * @param string $nazwaJednostkiRozpatrujacej
@@ -274,9 +289,10 @@ class ReklamacjaRozpatrzonaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($nazwaJednostkiRozpatrujacej, true), gettype($nazwaJednostkiRozpatrujacej)), __LINE__);
         }
         $this->nazwaJednostkiRozpatrujacej = $nazwaJednostkiRozpatrujacej;
-        
+
         return $this;
     }
+
     /**
      * Get osobaRozpatrujaca value
      * @return string|null
@@ -285,6 +301,7 @@ class ReklamacjaRozpatrzonaType extends AbstractStructBase
     {
         return $this->osobaRozpatrujaca;
     }
+
     /**
      * Set osobaRozpatrujaca value
      * @param string $osobaRozpatrujaca
@@ -297,9 +314,10 @@ class ReklamacjaRozpatrzonaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($osobaRozpatrujaca, true), gettype($osobaRozpatrujaca)), __LINE__);
         }
         $this->osobaRozpatrujaca = $osobaRozpatrujaca;
-        
+
         return $this;
     }
+
     /**
      * Get idReklamacja value
      * @return string|null
@@ -308,6 +326,7 @@ class ReklamacjaRozpatrzonaType extends AbstractStructBase
     {
         return $this->idReklamacja;
     }
+
     /**
      * Set idReklamacja value
      * @param string $idReklamacja
@@ -320,7 +339,7 @@ class ReklamacjaRozpatrzonaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($idReklamacja, true), gettype($idReklamacja)), __LINE__);
         }
         $this->idReklamacja = $idReklamacja;
-        
+
         return $this;
     }
 }

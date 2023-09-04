@@ -27,14 +27,15 @@ class Set extends AbstractSoapClientBase
             $this->setResult($resultSetAktywnaKarta = $this->getSoapClient()->__soapCall('setAktywnaKarta', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultSetAktywnaKarta;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named setEnvelopeBuforDataNadania
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -49,14 +50,15 @@ class Set extends AbstractSoapClientBase
             $this->setResult($resultSetEnvelopeBuforDataNadania = $this->getSoapClient()->__soapCall('setEnvelopeBuforDataNadania', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultSetEnvelopeBuforDataNadania;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named setStatusZgodyNaEZwrot
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -71,14 +73,15 @@ class Set extends AbstractSoapClientBase
             $this->setResult($resultSetStatusZgodyNaEZwrot = $this->getSoapClient()->__soapCall('setStatusZgodyNaEZwrot', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultSetStatusZgodyNaEZwrot;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named setJednostkaOrganizacyjna
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -93,14 +96,15 @@ class Set extends AbstractSoapClientBase
             $this->setResult($resultSetJednostkaOrganizacyjna = $this->getSoapClient()->__soapCall('setJednostkaOrganizacyjna', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultSetJednostkaOrganizacyjna;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Returns the result
      * @see AbstractSoapClientBase::getResult()

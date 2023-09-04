@@ -26,6 +26,7 @@ class UbezpieczeniaInfoType extends AbstractStructBase
      * @var float|null
      */
     protected ?float $kwota = null;
+
     /**
      * Constructor method for ubezpieczeniaInfoType
      * @uses UbezpieczeniaInfoType::setTypPrzesylki()
@@ -39,6 +40,7 @@ class UbezpieczeniaInfoType extends AbstractStructBase
             ->setTypPrzesylki($typPrzesylki)
             ->setKwota($kwota);
     }
+
     /**
      * Get typPrzesylki value
      * @return string|null
@@ -47,6 +49,7 @@ class UbezpieczeniaInfoType extends AbstractStructBase
     {
         return $this->typPrzesylki;
     }
+
     /**
      * Set typPrzesylki value
      * @param string $typPrzesylki
@@ -59,9 +62,10 @@ class UbezpieczeniaInfoType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($typPrzesylki, true), gettype($typPrzesylki)), __LINE__);
         }
         $this->typPrzesylki = $typPrzesylki;
-        
+
         return $this;
     }
+
     /**
      * Get kwota value
      * @return float|null
@@ -70,6 +74,7 @@ class UbezpieczeniaInfoType extends AbstractStructBase
     {
         return $this->kwota;
     }
+
     /**
      * Set kwota value
      * @param float $kwota
@@ -82,7 +87,7 @@ class UbezpieczeniaInfoType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($kwota, true), gettype($kwota)), __LINE__);
         }
         $this->kwota = $kwota;
-        
+
         return $this;
     }
 }

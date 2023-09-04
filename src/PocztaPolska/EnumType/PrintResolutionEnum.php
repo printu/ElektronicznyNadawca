@@ -16,12 +16,13 @@ class PrintResolutionEnum extends AbstractStructEnumBase
      * Constant for value 'DPI_300'
      * @return string 'DPI_300'
      */
-    const VALUE_DPI_300 = 'DPI_300';
+    public const VALUE_DPI_300 = 'DPI_300';
     /**
      * Constant for value 'DPI_203'
      * @return string 'DPI_203'
      */
-    const VALUE_DPI_203 = 'DPI_203';
+    public const VALUE_DPI_203 = 'DPI_203';
+
     /**
      * Return allowed values
      * @uses self::VALUE_DPI_300

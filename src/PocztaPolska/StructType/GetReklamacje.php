@@ -41,6 +41,7 @@ class GetReklamacje extends AbstractStructBase
      * @var \PocztaPolska\StructType\DataZlozeniaType|null
      */
     protected ?\PocztaPolska\StructType\DataZlozeniaType $dataZlozenia = null;
+
     /**
      * Constructor method for getReklamacje
      * @uses GetReklamacje::setDataRozpatrzenia()
@@ -57,6 +58,7 @@ class GetReklamacje extends AbstractStructBase
             ->setGuidPrzesylki($guidPrzesylki)
             ->setDataZlozenia($dataZlozenia);
     }
+
     /**
      * Get dataRozpatrzenia value
      * @return string|null
@@ -65,6 +67,7 @@ class GetReklamacje extends AbstractStructBase
     {
         return $this->dataRozpatrzenia;
     }
+
     /**
      * Set dataRozpatrzenia value
      * @param string $dataRozpatrzenia
@@ -77,9 +80,10 @@ class GetReklamacje extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($dataRozpatrzenia, true), gettype($dataRozpatrzenia)), __LINE__);
         }
         $this->dataRozpatrzenia = $dataRozpatrzenia;
-        
+
         return $this;
     }
+
     /**
      * Get guidPrzesylki value
      * @return string|null
@@ -88,6 +92,7 @@ class GetReklamacje extends AbstractStructBase
     {
         return $this->guidPrzesylki;
     }
+
     /**
      * Set guidPrzesylki value
      * @param string $guidPrzesylki
@@ -104,9 +109,10 @@ class GetReklamacje extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 32', mb_strlen((string) $guidPrzesylki)), __LINE__);
         }
         $this->guidPrzesylki = $guidPrzesylki;
-        
+
         return $this;
     }
+
     /**
      * Get dataZlozenia value
      * @return \PocztaPolska\StructType\DataZlozeniaType|null
@@ -115,6 +121,7 @@ class GetReklamacje extends AbstractStructBase
     {
         return $this->dataZlozenia;
     }
+
     /**
      * Set dataZlozenia value
      * @param \PocztaPolska\StructType\DataZlozeniaType $dataZlozenia
@@ -123,7 +130,7 @@ class GetReklamacje extends AbstractStructBase
     public function setDataZlozenia(?\PocztaPolska\StructType\DataZlozeniaType $dataZlozenia = null): self
     {
         $this->dataZlozenia = $dataZlozenia;
-        
+
         return $this;
     }
 }

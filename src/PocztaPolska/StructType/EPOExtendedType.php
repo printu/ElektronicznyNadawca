@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace PocztaPolska\StructType;
 
 use InvalidArgumentException;
-use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for EPOExtendedType StructType
@@ -21,6 +20,7 @@ class EPOExtendedType extends EPOType
      * @var string|null
      */
     protected ?string $zasadySpecjalne = null;
+
     /**
      * Constructor method for EPOExtendedType
      * @uses EPOExtendedType::setZasadySpecjalne()
@@ -31,6 +31,7 @@ class EPOExtendedType extends EPOType
         $this
             ->setZasadySpecjalne($zasadySpecjalne);
     }
+
     /**
      * Get zasadySpecjalne value
      * @return string|null
@@ -39,6 +40,7 @@ class EPOExtendedType extends EPOType
     {
         return $this->zasadySpecjalne;
     }
+
     /**
      * Set zasadySpecjalne value
      * @uses \PocztaPolska\EnumType\ZasadySpecjalneEnum::valueIsValid()
@@ -54,7 +56,7 @@ class EPOExtendedType extends EPOType
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\ZasadySpecjalneEnum', is_array($zasadySpecjalne) ? implode(', ', $zasadySpecjalne) : var_export($zasadySpecjalne, true), implode(', ', \PocztaPolska\EnumType\ZasadySpecjalneEnum::getValidValues())), __LINE__);
         }
         $this->zasadySpecjalne = $zasadySpecjalne;
-        
+
         return $this;
     }
 }

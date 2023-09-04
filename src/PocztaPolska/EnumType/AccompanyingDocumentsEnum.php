@@ -16,17 +16,18 @@ class AccompanyingDocumentsEnum extends AbstractStructEnumBase
      * Constant for value 'LICENSE'
      * @return string 'LICENSE'
      */
-    const VALUE_LICENSE = 'LICENSE';
+    public const VALUE_LICENSE = 'LICENSE';
     /**
      * Constant for value 'CERTIFICATE'
      * @return string 'CERTIFICATE'
      */
-    const VALUE_CERTIFICATE = 'CERTIFICATE';
+    public const VALUE_CERTIFICATE = 'CERTIFICATE';
     /**
      * Constant for value 'INVOICE'
      * @return string 'INVOICE'
      */
-    const VALUE_INVOICE = 'INVOICE';
+    public const VALUE_INVOICE = 'INVOICE';
+
     /**
      * Return allowed values
      * @uses self::VALUE_LICENSE

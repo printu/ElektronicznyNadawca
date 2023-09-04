@@ -32,6 +32,7 @@ class OplacaOdbiorcaType extends AbstractStructBase
      * @var \PocztaPolska\StructType\OplacaOdbiorcaKartaType|null
      */
     protected ?\PocztaPolska\StructType\OplacaOdbiorcaKartaType $karta = null;
+
     /**
      * Constructor method for oplacaOdbiorcaType
      * @uses OplacaOdbiorcaType::setTyp()
@@ -45,6 +46,7 @@ class OplacaOdbiorcaType extends AbstractStructBase
             ->setTyp($typ)
             ->setKarta($karta);
     }
+
     /**
      * Get typ value
      * @return string|null
@@ -53,6 +55,7 @@ class OplacaOdbiorcaType extends AbstractStructBase
     {
         return $this->typ;
     }
+
     /**
      * Set typ value
      * @uses \PocztaPolska\EnumType\TypOplacaOdbiorcaEnum::valueIsValid()
@@ -68,9 +71,10 @@ class OplacaOdbiorcaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\TypOplacaOdbiorcaEnum', is_array($typ) ? implode(', ', $typ) : var_export($typ, true), implode(', ', \PocztaPolska\EnumType\TypOplacaOdbiorcaEnum::getValidValues())), __LINE__);
         }
         $this->typ = $typ;
-        
+
         return $this;
     }
+
     /**
      * Get karta value
      * @return \PocztaPolska\StructType\OplacaOdbiorcaKartaType|null
@@ -79,6 +83,7 @@ class OplacaOdbiorcaType extends AbstractStructBase
     {
         return $this->karta;
     }
+
     /**
      * Set karta value
      * @param \PocztaPolska\StructType\OplacaOdbiorcaKartaType $karta
@@ -87,7 +92,7 @@ class OplacaOdbiorcaType extends AbstractStructBase
     public function setKarta(?\PocztaPolska\StructType\OplacaOdbiorcaKartaType $karta = null): self
     {
         $this->karta = $karta;
-        
+
         return $this;
     }
 }

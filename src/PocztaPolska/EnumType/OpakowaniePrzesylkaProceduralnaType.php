@@ -16,7 +16,8 @@ class OpakowaniePrzesylkaProceduralnaType extends AbstractStructEnumBase
      * Constant for value 'FIRMOWA_DO_1KG'
      * @return string 'FIRMOWA_DO_1KG'
      */
-    const VALUE_FIRMOWA_DO_1_KG = 'FIRMOWA_DO_1KG';
+    public const VALUE_FIRMOWA_DO_1_KG = 'FIRMOWA_DO_1KG';
+
     /**
      * Return allowed values
      * @uses self::VALUE_FIRMOWA_DO_1_KG

@@ -24,6 +24,7 @@ class GetEnvelopeList extends AbstractStructBase
      * @var string|null
      */
     protected ?string $endDate = null;
+
     /**
      * Constructor method for getEnvelopeList
      * @uses GetEnvelopeList::setStartDate()
@@ -37,6 +38,7 @@ class GetEnvelopeList extends AbstractStructBase
             ->setStartDate($startDate)
             ->setEndDate($endDate);
     }
+
     /**
      * Get startDate value
      * @return string|null
@@ -45,6 +47,7 @@ class GetEnvelopeList extends AbstractStructBase
     {
         return $this->startDate;
     }
+
     /**
      * Set startDate value
      * @param string $startDate
@@ -57,9 +60,10 @@ class GetEnvelopeList extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($startDate, true), gettype($startDate)), __LINE__);
         }
         $this->startDate = $startDate;
-        
+
         return $this;
     }
+
     /**
      * Get endDate value
      * @return string|null
@@ -68,6 +72,7 @@ class GetEnvelopeList extends AbstractStructBase
     {
         return $this->endDate;
     }
+
     /**
      * Set endDate value
      * @param string $endDate
@@ -80,7 +85,7 @@ class GetEnvelopeList extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($endDate, true), gettype($endDate)), __LINE__);
         }
         $this->endDate = $endDate;
-        
+
         return $this;
     }
 }

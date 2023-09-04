@@ -16,52 +16,53 @@ class StatusEPOEnum extends AbstractStructEnumBase
      * Constant for value 'ERROR'
      * @return string 'ERROR'
      */
-    const VALUE_ERROR = 'ERROR';
+    public const VALUE_ERROR = 'ERROR';
     /**
      * Constant for value 'NADANIE'
      * @return string 'NADANIE'
      */
-    const VALUE_NADANIE = 'NADANIE';
+    public const VALUE_NADANIE = 'NADANIE';
     /**
      * Constant for value 'W_TRANSPORCIE'
      * @return string 'W_TRANSPORCIE'
      */
-    const VALUE_W_TRANSPORCIE = 'W_TRANSPORCIE';
+    public const VALUE_W_TRANSPORCIE = 'W_TRANSPORCIE';
     /**
      * Constant for value 'CLO'
      * @return string 'CLO'
      */
-    const VALUE_CLO = 'CLO';
+    public const VALUE_CLO = 'CLO';
     /**
      * Constant for value 'SMS'
      * @return string 'SMS'
      */
-    const VALUE_SMS = 'SMS';
+    public const VALUE_SMS = 'SMS';
     /**
      * Constant for value 'W_DORECZENIU'
      * @return string 'W_DORECZENIU'
      */
-    const VALUE_W_DORECZENIU = 'W_DORECZENIU';
+    public const VALUE_W_DORECZENIU = 'W_DORECZENIU';
     /**
      * Constant for value 'AWIZO'
      * @return string 'AWIZO'
      */
-    const VALUE_AWIZO = 'AWIZO';
+    public const VALUE_AWIZO = 'AWIZO';
     /**
      * Constant for value 'PONOWNE_AWIZO'
      * @return string 'PONOWNE_AWIZO'
      */
-    const VALUE_PONOWNE_AWIZO = 'PONOWNE_AWIZO';
+    public const VALUE_PONOWNE_AWIZO = 'PONOWNE_AWIZO';
     /**
      * Constant for value 'ZWROT'
      * @return string 'ZWROT'
      */
-    const VALUE_ZWROT = 'ZWROT';
+    public const VALUE_ZWROT = 'ZWROT';
     /**
      * Constant for value 'DORECZONA'
      * @return string 'DORECZONA'
      */
-    const VALUE_DORECZONA = 'DORECZONA';
+    public const VALUE_DORECZONA = 'DORECZONA';
+
     /**
      * Return allowed values
      * @uses self::VALUE_ERROR

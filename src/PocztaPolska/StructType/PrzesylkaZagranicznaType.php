@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace PocztaPolska\StructType;
 
 use InvalidArgumentException;
-use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for przesylkaZagranicznaType StructType
@@ -82,6 +81,7 @@ class PrzesylkaZagranicznaType extends PrzesylkaNieRejestrowanaType
      * @var string|null
      */
     protected ?string $kraj = null;
+
     /**
      * Constructor method for przesylkaZagranicznaType
      * @uses PrzesylkaZagranicznaType::setAdres()
@@ -116,6 +116,7 @@ class PrzesylkaZagranicznaType extends PrzesylkaNieRejestrowanaType
             ->setEkspres($ekspres)
             ->setKraj($kraj);
     }
+
     /**
      * Get adres value
      * @return \PocztaPolska\StructType\AdresType|null
@@ -124,6 +125,7 @@ class PrzesylkaZagranicznaType extends PrzesylkaNieRejestrowanaType
     {
         return $this->adres;
     }
+
     /**
      * Set adres value
      * @param \PocztaPolska\StructType\AdresType $adres
@@ -132,9 +134,10 @@ class PrzesylkaZagranicznaType extends PrzesylkaNieRejestrowanaType
     public function setAdres(?\PocztaPolska\StructType\AdresType $adres = null): self
     {
         $this->adres = $adres;
-        
+
         return $this;
     }
+
     /**
      * Get nadawca value
      * @return \PocztaPolska\StructType\AdresType|null
@@ -143,6 +146,7 @@ class PrzesylkaZagranicznaType extends PrzesylkaNieRejestrowanaType
     {
         return $this->nadawca;
     }
+
     /**
      * Set nadawca value
      * @param \PocztaPolska\StructType\AdresType $nadawca
@@ -151,9 +155,10 @@ class PrzesylkaZagranicznaType extends PrzesylkaNieRejestrowanaType
     public function setNadawca(?\PocztaPolska\StructType\AdresType $nadawca = null): self
     {
         $this->nadawca = $nadawca;
-        
+
         return $this;
     }
+
     /**
      * Get deklaracjaCelna2 value
      * @return \PocztaPolska\StructType\DeklaracjaCelna2Type|null
@@ -162,6 +167,7 @@ class PrzesylkaZagranicznaType extends PrzesylkaNieRejestrowanaType
     {
         return $this->deklaracjaCelna2;
     }
+
     /**
      * Set deklaracjaCelna2 value
      * @param \PocztaPolska\StructType\DeklaracjaCelna2Type $deklaracjaCelna2
@@ -170,9 +176,10 @@ class PrzesylkaZagranicznaType extends PrzesylkaNieRejestrowanaType
     public function setDeklaracjaCelna2(?\PocztaPolska\StructType\DeklaracjaCelna2Type $deklaracjaCelna2 = null): self
     {
         $this->deklaracjaCelna2 = $deklaracjaCelna2;
-        
+
         return $this;
     }
+
     /**
      * Get zawartosc value
      * @return string|null
@@ -181,6 +188,7 @@ class PrzesylkaZagranicznaType extends PrzesylkaNieRejestrowanaType
     {
         return $this->zawartosc;
     }
+
     /**
      * Set zawartosc value
      * @param string $zawartosc
@@ -193,9 +201,10 @@ class PrzesylkaZagranicznaType extends PrzesylkaNieRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($zawartosc, true), gettype($zawartosc)), __LINE__);
         }
         $this->zawartosc = $zawartosc;
-        
+
         return $this;
     }
+
     /**
      * Get posteRestante value
      * @return bool|null
@@ -204,6 +213,7 @@ class PrzesylkaZagranicznaType extends PrzesylkaNieRejestrowanaType
     {
         return $this->posteRestante;
     }
+
     /**
      * Set posteRestante value
      * @param bool $posteRestante
@@ -216,9 +226,10 @@ class PrzesylkaZagranicznaType extends PrzesylkaNieRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($posteRestante, true), gettype($posteRestante)), __LINE__);
         }
         $this->posteRestante = $posteRestante;
-        
+
         return $this;
     }
+
     /**
      * Get kategoria value
      * @return string|null
@@ -227,6 +238,7 @@ class PrzesylkaZagranicznaType extends PrzesylkaNieRejestrowanaType
     {
         return $this->kategoria;
     }
+
     /**
      * Set kategoria value
      * @uses \PocztaPolska\EnumType\KategoriaType::valueIsValid()
@@ -242,9 +254,10 @@ class PrzesylkaZagranicznaType extends PrzesylkaNieRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\KategoriaType', is_array($kategoria) ? implode(', ', $kategoria) : var_export($kategoria, true), implode(', ', \PocztaPolska\EnumType\KategoriaType::getValidValues())), __LINE__);
         }
         $this->kategoria = $kategoria;
-        
+
         return $this;
     }
+
     /**
      * Get masa value
      * @return int|null
@@ -253,6 +266,7 @@ class PrzesylkaZagranicznaType extends PrzesylkaNieRejestrowanaType
     {
         return $this->masa;
     }
+
     /**
      * Set masa value
      * @param int $masa
@@ -273,9 +287,10 @@ class PrzesylkaZagranicznaType extends PrzesylkaNieRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 1', var_export($masa, true)), __LINE__);
         }
         $this->masa = $masa;
-        
+
         return $this;
     }
+
     /**
      * Get ekspres value
      * @return bool|null
@@ -284,6 +299,7 @@ class PrzesylkaZagranicznaType extends PrzesylkaNieRejestrowanaType
     {
         return $this->ekspres;
     }
+
     /**
      * Set ekspres value
      * @param bool $ekspres
@@ -296,9 +312,10 @@ class PrzesylkaZagranicznaType extends PrzesylkaNieRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($ekspres, true), gettype($ekspres)), __LINE__);
         }
         $this->ekspres = $ekspres;
-        
+
         return $this;
     }
+
     /**
      * Get kraj value
      * @return string|null
@@ -307,6 +324,7 @@ class PrzesylkaZagranicznaType extends PrzesylkaNieRejestrowanaType
     {
         return $this->kraj;
     }
+
     /**
      * Set kraj value
      * @param string $kraj
@@ -319,7 +337,7 @@ class PrzesylkaZagranicznaType extends PrzesylkaNieRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($kraj, true), gettype($kraj)), __LINE__);
         }
         $this->kraj = $kraj;
-        
+
         return $this;
     }
 }

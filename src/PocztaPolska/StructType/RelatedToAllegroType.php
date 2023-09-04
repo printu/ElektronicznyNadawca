@@ -53,6 +53,7 @@ class RelatedToAllegroType extends AbstractStructBase
      * @var string|null
      */
     protected ?string $deliveryMethod = null;
+
     /**
      * Constructor method for relatedToAllegroType
      * @uses RelatedToAllegroType::setId()
@@ -72,6 +73,7 @@ class RelatedToAllegroType extends AbstractStructBase
             ->setChannel($channel)
             ->setDeliveryMethod($deliveryMethod);
     }
+
     /**
      * Get id value
      * @return string|null
@@ -80,6 +82,7 @@ class RelatedToAllegroType extends AbstractStructBase
     {
         return $this->id;
     }
+
     /**
      * Set id value
      * @param string $id
@@ -100,9 +103,10 @@ class RelatedToAllegroType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $id)), __LINE__);
         }
         $this->id = $id;
-        
+
         return $this;
     }
+
     /**
      * Get sellerId value
      * @return string|null
@@ -111,6 +115,7 @@ class RelatedToAllegroType extends AbstractStructBase
     {
         return $this->sellerId;
     }
+
     /**
      * Set sellerId value
      * @param string $sellerId
@@ -131,9 +136,10 @@ class RelatedToAllegroType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $sellerId)), __LINE__);
         }
         $this->sellerId = $sellerId;
-        
+
         return $this;
     }
+
     /**
      * Get channel value
      * @return string|null
@@ -142,6 +148,7 @@ class RelatedToAllegroType extends AbstractStructBase
     {
         return $this->channel;
     }
+
     /**
      * Set channel value
      * @uses \PocztaPolska\EnumType\RelatedToAllegroChannelType::valueIsValid()
@@ -157,9 +164,10 @@ class RelatedToAllegroType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\RelatedToAllegroChannelType', is_array($channel) ? implode(', ', $channel) : var_export($channel, true), implode(', ', \PocztaPolska\EnumType\RelatedToAllegroChannelType::getValidValues())), __LINE__);
         }
         $this->channel = $channel;
-        
+
         return $this;
     }
+
     /**
      * Get deliveryMethod value
      * @return string|null
@@ -168,6 +176,7 @@ class RelatedToAllegroType extends AbstractStructBase
     {
         return $this->deliveryMethod;
     }
+
     /**
      * Set deliveryMethod value
      * @param string $deliveryMethod
@@ -188,7 +197,7 @@ class RelatedToAllegroType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $deliveryMethod)), __LINE__);
         }
         $this->deliveryMethod = $deliveryMethod;
-        
+
         return $this;
     }
 }

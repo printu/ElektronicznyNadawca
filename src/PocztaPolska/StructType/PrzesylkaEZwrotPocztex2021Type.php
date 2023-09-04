@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace PocztaPolska\StructType;
 
 use InvalidArgumentException;
-use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for przesylkaEZwrotPocztex2021Type StructType
@@ -39,6 +38,7 @@ class PrzesylkaEZwrotPocztex2021Type extends PrzesylkaRejestrowanaType
      * @var int|null
      */
     protected ?int $idSklepEZwrot = null;
+
     /**
      * Constructor method for przesylkaEZwrotPocztex2021Type
      * @uses PrzesylkaEZwrotPocztex2021Type::setFormat()
@@ -55,6 +55,7 @@ class PrzesylkaEZwrotPocztex2021Type extends PrzesylkaRejestrowanaType
             ->setNumerNadaniaZwrot($numerNadaniaZwrot)
             ->setIdSklepEZwrot($idSklepEZwrot);
     }
+
     /**
      * Get format value
      * @return string
@@ -63,6 +64,7 @@ class PrzesylkaEZwrotPocztex2021Type extends PrzesylkaRejestrowanaType
     {
         return $this->format;
     }
+
     /**
      * Set format value
      * @uses \PocztaPolska\EnumType\FormatPocztex2021Type::valueIsValid()
@@ -78,9 +80,10 @@ class PrzesylkaEZwrotPocztex2021Type extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\FormatPocztex2021Type', is_array($format) ? implode(', ', $format) : var_export($format, true), implode(', ', \PocztaPolska\EnumType\FormatPocztex2021Type::getValidValues())), __LINE__);
         }
         $this->format = $format;
-        
+
         return $this;
     }
+
     /**
      * Get numerNadaniaZwrot value
      * @return string|null
@@ -89,6 +92,7 @@ class PrzesylkaEZwrotPocztex2021Type extends PrzesylkaRejestrowanaType
     {
         return $this->numerNadaniaZwrot;
     }
+
     /**
      * Set numerNadaniaZwrot value
      * @param string $numerNadaniaZwrot
@@ -109,9 +113,10 @@ class PrzesylkaEZwrotPocztex2021Type extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 10', mb_strlen((string) $numerNadaniaZwrot)), __LINE__);
         }
         $this->numerNadaniaZwrot = $numerNadaniaZwrot;
-        
+
         return $this;
     }
+
     /**
      * Get idSklepEZwrot value
      * @return int|null
@@ -120,6 +125,7 @@ class PrzesylkaEZwrotPocztex2021Type extends PrzesylkaRejestrowanaType
     {
         return $this->idSklepEZwrot;
     }
+
     /**
      * Set idSklepEZwrot value
      * @param int $idSklepEZwrot
@@ -132,7 +138,7 @@ class PrzesylkaEZwrotPocztex2021Type extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($idSklepEZwrot, true), gettype($idSklepEZwrot)), __LINE__);
         }
         $this->idSklepEZwrot = $idSklepEZwrot;
-        
+
         return $this;
     }
 }

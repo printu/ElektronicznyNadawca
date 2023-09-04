@@ -22,6 +22,7 @@ class GetKarty extends AbstractStructBase
      * @var int[]
      */
     protected ?array $idKarta = null;
+
     /**
      * Constructor method for getKarty
      * @uses GetKarty::setIdKarta()
@@ -32,6 +33,7 @@ class GetKarty extends AbstractStructBase
         $this
             ->setIdKarta($idKarta);
     }
+
     /**
      * Get idKarta value
      * @return int[]
@@ -40,6 +42,7 @@ class GetKarty extends AbstractStructBase
     {
         return $this->idKarta;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setIdKarta method
      * This method is willingly generated in order to preserve the one-line inline validation within the setIdKarta method
@@ -64,9 +67,10 @@ class GetKarty extends AbstractStructBase
             $message = sprintf('The idKarta property can only contain items of type int, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set idKarta value
      * @throws InvalidArgumentException
@@ -80,9 +84,10 @@ class GetKarty extends AbstractStructBase
             throw new InvalidArgumentException($idKartaArrayErrorMessage, __LINE__);
         }
         $this->idKarta = $idKarta;
-        
+
         return $this;
     }
+
     /**
      * Add item to idKarta value
      * @throws InvalidArgumentException
@@ -96,7 +101,7 @@ class GetKarty extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The idKarta property can only contain items of type int, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->idKarta[] = $item;
-        
+
         return $this;
     }
 }

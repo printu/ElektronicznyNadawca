@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace PocztaPolska\StructType;
 
 use InvalidArgumentException;
-use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for listZwyklyFirmowyType StructType
@@ -59,6 +58,7 @@ class ListZwyklyFirmowyType extends PrzesylkaNieRejestrowanaType
      * @var string|null
      */
     protected ?string $gabaryt = null;
+
     /**
      * Constructor method for listZwyklyFirmowyType
      * @uses ListZwyklyFirmowyType::setAdres()
@@ -87,6 +87,7 @@ class ListZwyklyFirmowyType extends PrzesylkaNieRejestrowanaType
             ->setKategoria($kategoria)
             ->setGabaryt($gabaryt);
     }
+
     /**
      * Get adres value
      * @return \PocztaPolska\StructType\AdresType|null
@@ -95,6 +96,7 @@ class ListZwyklyFirmowyType extends PrzesylkaNieRejestrowanaType
     {
         return $this->adres;
     }
+
     /**
      * Set adres value
      * @param \PocztaPolska\StructType\AdresType $adres
@@ -103,9 +105,10 @@ class ListZwyklyFirmowyType extends PrzesylkaNieRejestrowanaType
     public function setAdres(?\PocztaPolska\StructType\AdresType $adres = null): self
     {
         $this->adres = $adres;
-        
+
         return $this;
     }
+
     /**
      * Get posteRestante value
      * @return bool|null
@@ -114,6 +117,7 @@ class ListZwyklyFirmowyType extends PrzesylkaNieRejestrowanaType
     {
         return $this->posteRestante;
     }
+
     /**
      * Set posteRestante value
      * @param bool $posteRestante
@@ -126,9 +130,10 @@ class ListZwyklyFirmowyType extends PrzesylkaNieRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($posteRestante, true), gettype($posteRestante)), __LINE__);
         }
         $this->posteRestante = $posteRestante;
-        
+
         return $this;
     }
+
     /**
      * Get miejscowa value
      * @return bool|null
@@ -137,6 +142,7 @@ class ListZwyklyFirmowyType extends PrzesylkaNieRejestrowanaType
     {
         return $this->miejscowa;
     }
+
     /**
      * Set miejscowa value
      * @param bool $miejscowa
@@ -149,9 +155,10 @@ class ListZwyklyFirmowyType extends PrzesylkaNieRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($miejscowa, true), gettype($miejscowa)), __LINE__);
         }
         $this->miejscowa = $miejscowa;
-        
+
         return $this;
     }
+
     /**
      * Get masa value
      * @return int|null
@@ -160,6 +167,7 @@ class ListZwyklyFirmowyType extends PrzesylkaNieRejestrowanaType
     {
         return $this->masa;
     }
+
     /**
      * Set masa value
      * @param int $masa
@@ -180,9 +188,10 @@ class ListZwyklyFirmowyType extends PrzesylkaNieRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 1', var_export($masa, true)), __LINE__);
         }
         $this->masa = $masa;
-        
+
         return $this;
     }
+
     /**
      * Get obszarMiasto value
      * @return bool|null
@@ -191,6 +200,7 @@ class ListZwyklyFirmowyType extends PrzesylkaNieRejestrowanaType
     {
         return $this->obszarMiasto;
     }
+
     /**
      * Set obszarMiasto value
      * @param bool $obszarMiasto
@@ -203,9 +213,10 @@ class ListZwyklyFirmowyType extends PrzesylkaNieRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($obszarMiasto, true), gettype($obszarMiasto)), __LINE__);
         }
         $this->obszarMiasto = $obszarMiasto;
-        
+
         return $this;
     }
+
     /**
      * Get kategoria value
      * @return string|null
@@ -214,6 +225,7 @@ class ListZwyklyFirmowyType extends PrzesylkaNieRejestrowanaType
     {
         return $this->kategoria;
     }
+
     /**
      * Set kategoria value
      * @uses \PocztaPolska\EnumType\KategoriaType::valueIsValid()
@@ -229,9 +241,10 @@ class ListZwyklyFirmowyType extends PrzesylkaNieRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\KategoriaType', is_array($kategoria) ? implode(', ', $kategoria) : var_export($kategoria, true), implode(', ', \PocztaPolska\EnumType\KategoriaType::getValidValues())), __LINE__);
         }
         $this->kategoria = $kategoria;
-        
+
         return $this;
     }
+
     /**
      * Get gabaryt value
      * @return string|null
@@ -240,6 +253,7 @@ class ListZwyklyFirmowyType extends PrzesylkaNieRejestrowanaType
     {
         return $this->gabaryt;
     }
+
     /**
      * Set gabaryt value
      * @uses \PocztaPolska\EnumType\GabarytType::valueIsValid()
@@ -255,7 +269,7 @@ class ListZwyklyFirmowyType extends PrzesylkaNieRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\GabarytType', is_array($gabaryt) ? implode(', ', $gabaryt) : var_export($gabaryt, true), implode(', ', \PocztaPolska\EnumType\GabarytType::getValidValues())), __LINE__);
         }
         $this->gabaryt = $gabaryt;
-        
+
         return $this;
     }
 }

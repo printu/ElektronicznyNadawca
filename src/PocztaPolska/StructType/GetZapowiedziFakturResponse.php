@@ -22,6 +22,7 @@ class GetZapowiedziFakturResponse extends AbstractStructBase
      * @var string[]
      */
     protected ?array $zapowiedzFakturyZipFile = null;
+
     /**
      * Constructor method for getZapowiedziFakturResponse
      * @uses GetZapowiedziFakturResponse::setZapowiedzFakturyZipFile()
@@ -32,6 +33,7 @@ class GetZapowiedziFakturResponse extends AbstractStructBase
         $this
             ->setZapowiedzFakturyZipFile($zapowiedzFakturyZipFile);
     }
+
     /**
      * Get zapowiedzFakturyZipFile value
      * @return string[]
@@ -40,6 +42,7 @@ class GetZapowiedziFakturResponse extends AbstractStructBase
     {
         return $this->zapowiedzFakturyZipFile;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setZapowiedzFakturyZipFile method
      * This method is willingly generated in order to preserve the one-line inline validation within the setZapowiedzFakturyZipFile method
@@ -64,9 +67,10 @@ class GetZapowiedziFakturResponse extends AbstractStructBase
             $message = sprintf('The zapowiedzFakturyZipFile property can only contain items of type string, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set zapowiedzFakturyZipFile value
      * @throws InvalidArgumentException
@@ -80,9 +84,10 @@ class GetZapowiedziFakturResponse extends AbstractStructBase
             throw new InvalidArgumentException($zapowiedzFakturyZipFileArrayErrorMessage, __LINE__);
         }
         $this->zapowiedzFakturyZipFile = $zapowiedzFakturyZipFile;
-        
+
         return $this;
     }
+
     /**
      * Add item to zapowiedzFakturyZipFile value
      * @throws InvalidArgumentException
@@ -96,7 +101,7 @@ class GetZapowiedziFakturResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The zapowiedzFakturyZipFile property can only contain items of type string, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->zapowiedzFakturyZipFile[] = $item;
-        
+
         return $this;
     }
 }

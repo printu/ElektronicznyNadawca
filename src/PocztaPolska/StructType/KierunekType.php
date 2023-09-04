@@ -48,6 +48,7 @@ class KierunekType extends AbstractStructBase
      * @var string|null
      */
     protected ?string $pna = null;
+
     /**
      * Constructor method for kierunekType
      * @uses KierunekType::setId()
@@ -67,6 +68,7 @@ class KierunekType extends AbstractStructBase
             ->setOpis($opis)
             ->setPna($pna);
     }
+
     /**
      * Get id value
      * @return int
@@ -75,6 +77,7 @@ class KierunekType extends AbstractStructBase
     {
         return $this->id;
     }
+
     /**
      * Set id value
      * @param int $id
@@ -87,9 +90,10 @@ class KierunekType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($id, true), gettype($id)), __LINE__);
         }
         $this->id = $id;
-        
+
         return $this;
     }
+
     /**
      * Get kodPocztowy value
      * @return string[]
@@ -98,6 +102,7 @@ class KierunekType extends AbstractStructBase
     {
         return $this->kodPocztowy;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setKodPocztowy method
      * This method is willingly generated in order to preserve the one-line inline validation within the setKodPocztowy method
@@ -122,9 +127,10 @@ class KierunekType extends AbstractStructBase
             $message = sprintf('The kodPocztowy property can only contain items of type string, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setKodPocztowy method
      * This method is willingly generated in order to preserve the one-line inline validation within the setKodPocztowy method
@@ -146,9 +152,10 @@ class KierunekType extends AbstractStructBase
             $message = sprintf('Invalid length for value(s) %s, the number of characters/octets contained by the literal must be less than or equal to 10', implode(', ', $invalidValues));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setKodPocztowy method
      * This method is willingly generated in order to preserve the one-line inline validation within the setKodPocztowy method
@@ -170,9 +177,10 @@ class KierunekType extends AbstractStructBase
             $message = sprintf('Invalid length for value(s) %s, the number of characters/octets contained by the literal must be greater than or equal to 0', implode(', ', $invalidValues));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set kodPocztowy value
      * @throws InvalidArgumentException
@@ -194,9 +202,10 @@ class KierunekType extends AbstractStructBase
             throw new InvalidArgumentException($kodPocztowyMinLengthErrorMessage, __LINE__);
         }
         $this->kodPocztowy = $kodPocztowy;
-        
+
         return $this;
     }
+
     /**
      * Add item to kodPocztowy value
      * @throws InvalidArgumentException
@@ -218,9 +227,10 @@ class KierunekType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 0', mb_strlen((string) $item)), __LINE__);
         }
         $this->kodPocztowy[] = $item;
-        
+
         return $this;
     }
+
     /**
      * Get opis value
      * @return string|null
@@ -229,6 +239,7 @@ class KierunekType extends AbstractStructBase
     {
         return $this->opis;
     }
+
     /**
      * Set opis value
      * @param string $opis
@@ -241,9 +252,10 @@ class KierunekType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($opis, true), gettype($opis)), __LINE__);
         }
         $this->opis = $opis;
-        
+
         return $this;
     }
+
     /**
      * Get pna value
      * @return string|null
@@ -252,6 +264,7 @@ class KierunekType extends AbstractStructBase
     {
         return $this->pna;
     }
+
     /**
      * Set pna value
      * @param string $pna
@@ -272,7 +285,7 @@ class KierunekType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 0', mb_strlen((string) $pna)), __LINE__);
         }
         $this->pna = $pna;
-        
+
         return $this;
     }
 }

@@ -18,27 +18,28 @@ class FormatPocztex2021Type extends AbstractStructEnumBase
      * Constant for value 'S'
      * @return string 'S'
      */
-    const VALUE_S = 'S';
+    public const VALUE_S = 'S';
     /**
      * Constant for value 'M'
      * @return string 'M'
      */
-    const VALUE_M = 'M';
+    public const VALUE_M = 'M';
     /**
      * Constant for value 'L'
      * @return string 'L'
      */
-    const VALUE_L = 'L';
+    public const VALUE_L = 'L';
     /**
      * Constant for value 'XL'
      * @return string 'XL'
      */
-    const VALUE_XL = 'XL';
+    public const VALUE_XL = 'XL';
     /**
      * Constant for value '2XL'
      * @return string '2XL'
      */
-    const VALUE_2_XL = '2XL';
+    public const VALUE_2_XL = '2XL';
+
     /**
      * Return allowed values
      * @uses self::VALUE_S

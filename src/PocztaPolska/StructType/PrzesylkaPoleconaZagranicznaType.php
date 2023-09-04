@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace PocztaPolska\StructType;
 
 use InvalidArgumentException;
-use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for przesylkaPoleconaZagranicznaType StructType
@@ -63,6 +62,7 @@ class PrzesylkaPoleconaZagranicznaType extends PrzesylkaRejestrowanaType
      * @var string|null
      */
     protected ?string $numerPrzesylkiKlienta = null;
+
     /**
      * Constructor method for przesylkaPoleconaZagranicznaType
      * @uses PrzesylkaPoleconaZagranicznaType::setDeklaracjaCelna2()
@@ -88,6 +88,7 @@ class PrzesylkaPoleconaZagranicznaType extends PrzesylkaRejestrowanaType
             ->setIloscPotwierdzenOdbioru($iloscPotwierdzenOdbioru)
             ->setNumerPrzesylkiKlienta($numerPrzesylkiKlienta);
     }
+
     /**
      * Get deklaracjaCelna2 value
      * @return \PocztaPolska\StructType\DeklaracjaCelna2Type|null
@@ -96,6 +97,7 @@ class PrzesylkaPoleconaZagranicznaType extends PrzesylkaRejestrowanaType
     {
         return $this->deklaracjaCelna2;
     }
+
     /**
      * Set deklaracjaCelna2 value
      * @param \PocztaPolska\StructType\DeklaracjaCelna2Type $deklaracjaCelna2
@@ -104,9 +106,10 @@ class PrzesylkaPoleconaZagranicznaType extends PrzesylkaRejestrowanaType
     public function setDeklaracjaCelna2(?\PocztaPolska\StructType\DeklaracjaCelna2Type $deklaracjaCelna2 = null): self
     {
         $this->deklaracjaCelna2 = $deklaracjaCelna2;
-        
+
         return $this;
     }
+
     /**
      * Get zawartosc value
      * @return string|null
@@ -115,6 +118,7 @@ class PrzesylkaPoleconaZagranicznaType extends PrzesylkaRejestrowanaType
     {
         return $this->zawartosc;
     }
+
     /**
      * Set zawartosc value
      * @param string $zawartosc
@@ -127,9 +131,10 @@ class PrzesylkaPoleconaZagranicznaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($zawartosc, true), gettype($zawartosc)), __LINE__);
         }
         $this->zawartosc = $zawartosc;
-        
+
         return $this;
     }
+
     /**
      * Get posteRestante value
      * @return bool|null
@@ -138,6 +143,7 @@ class PrzesylkaPoleconaZagranicznaType extends PrzesylkaRejestrowanaType
     {
         return $this->posteRestante;
     }
+
     /**
      * Set posteRestante value
      * @param bool $posteRestante
@@ -150,9 +156,10 @@ class PrzesylkaPoleconaZagranicznaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($posteRestante, true), gettype($posteRestante)), __LINE__);
         }
         $this->posteRestante = $posteRestante;
-        
+
         return $this;
     }
+
     /**
      * Get masa value
      * @return int|null
@@ -161,6 +168,7 @@ class PrzesylkaPoleconaZagranicznaType extends PrzesylkaRejestrowanaType
     {
         return $this->masa;
     }
+
     /**
      * Set masa value
      * @param int $masa
@@ -181,9 +189,10 @@ class PrzesylkaPoleconaZagranicznaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 1', var_export($masa, true)), __LINE__);
         }
         $this->masa = $masa;
-        
+
         return $this;
     }
+
     /**
      * Get iloscPotwierdzenOdbioru value
      * @return int|null
@@ -192,6 +201,7 @@ class PrzesylkaPoleconaZagranicznaType extends PrzesylkaRejestrowanaType
     {
         return $this->iloscPotwierdzenOdbioru;
     }
+
     /**
      * Set iloscPotwierdzenOdbioru value
      * @param int $iloscPotwierdzenOdbioru
@@ -212,9 +222,10 @@ class PrzesylkaPoleconaZagranicznaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 0', var_export($iloscPotwierdzenOdbioru, true)), __LINE__);
         }
         $this->iloscPotwierdzenOdbioru = $iloscPotwierdzenOdbioru;
-        
+
         return $this;
     }
+
     /**
      * Get numerPrzesylkiKlienta value
      * @return string|null
@@ -223,6 +234,7 @@ class PrzesylkaPoleconaZagranicznaType extends PrzesylkaRejestrowanaType
     {
         return $this->numerPrzesylkiKlienta;
     }
+
     /**
      * Set numerPrzesylkiKlienta value
      * @param string $numerPrzesylkiKlienta
@@ -235,7 +247,7 @@ class PrzesylkaPoleconaZagranicznaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($numerPrzesylkiKlienta, true), gettype($numerPrzesylkiKlienta)), __LINE__);
         }
         $this->numerPrzesylkiKlienta = $numerPrzesylkiKlienta;
-        
+
         return $this;
     }
 }

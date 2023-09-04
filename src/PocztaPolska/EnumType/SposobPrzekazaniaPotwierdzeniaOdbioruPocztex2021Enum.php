@@ -17,12 +17,13 @@ class SposobPrzekazaniaPotwierdzeniaOdbioruPocztex2021Enum extends AbstractStruc
      * Constant for value 'POCZTEX_KURIER'
      * @return string 'POCZTEX_KURIER'
      */
-    const VALUE_POCZTEX_KURIER = 'POCZTEX_KURIER';
+    public const VALUE_POCZTEX_KURIER = 'POCZTEX_KURIER';
     /**
      * Constant for value 'DRUK_24'
      * @return string 'DRUK_24'
      */
-    const VALUE_DRUK_24 = 'DRUK_24';
+    public const VALUE_DRUK_24 = 'DRUK_24';
+
     /**
      * Return allowed values
      * @uses self::VALUE_POCZTEX_KURIER

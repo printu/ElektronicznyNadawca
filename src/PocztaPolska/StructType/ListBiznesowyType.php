@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace PocztaPolska\StructType;
 
 use InvalidArgumentException;
-use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for listBiznesowyType StructType
@@ -24,6 +23,7 @@ class ListBiznesowyType extends PrzesylkaNieRejestrowanaType
      * @var int|null
      */
     protected ?int $masa = null;
+
     /**
      * Constructor method for listBiznesowyType
      * @uses ListBiznesowyType::setMasa()
@@ -34,6 +34,7 @@ class ListBiznesowyType extends PrzesylkaNieRejestrowanaType
         $this
             ->setMasa($masa);
     }
+
     /**
      * Get masa value
      * @return int|null
@@ -42,6 +43,7 @@ class ListBiznesowyType extends PrzesylkaNieRejestrowanaType
     {
         return $this->masa;
     }
+
     /**
      * Set masa value
      * @param int $masa
@@ -62,7 +64,7 @@ class ListBiznesowyType extends PrzesylkaNieRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 1', var_export($masa, true)), __LINE__);
         }
         $this->masa = $masa;
-        
+
         return $this;
     }
 }

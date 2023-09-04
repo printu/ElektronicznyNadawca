@@ -19,6 +19,7 @@ class Hello extends AbstractStructBase
      * @var string|null
      */
     protected ?string $in = null;
+
     /**
      * Constructor method for hello
      * @uses Hello::setIn()
@@ -29,6 +30,7 @@ class Hello extends AbstractStructBase
         $this
             ->setIn($in);
     }
+
     /**
      * Get in value
      * @return string|null
@@ -37,6 +39,7 @@ class Hello extends AbstractStructBase
     {
         return $this->in;
     }
+
     /**
      * Set in value
      * @param string $in
@@ -49,7 +52,7 @@ class Hello extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($in, true), gettype($in)), __LINE__);
         }
         $this->in = $in;
-        
+
         return $this;
     }
 }

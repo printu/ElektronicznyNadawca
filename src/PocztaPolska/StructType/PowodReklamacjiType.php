@@ -32,6 +32,7 @@ class PowodReklamacjiType extends AbstractStructBase
      * @var string|null
      */
     protected ?string $powodGlownyOpis = null;
+
     /**
      * Constructor method for powodReklamacjiType
      * @uses PowodReklamacjiType::setPowodSzczegolowy()
@@ -48,6 +49,7 @@ class PowodReklamacjiType extends AbstractStructBase
             ->setIdPowodGlowny($idPowodGlowny)
             ->setPowodGlownyOpis($powodGlownyOpis);
     }
+
     /**
      * Get powodSzczegolowy value
      * @return \PocztaPolska\StructType\PowodSzczegolowyType[]
@@ -56,6 +58,7 @@ class PowodReklamacjiType extends AbstractStructBase
     {
         return $this->powodSzczegolowy;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setPowodSzczegolowy method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPowodSzczegolowy method
@@ -80,9 +83,10 @@ class PowodReklamacjiType extends AbstractStructBase
             $message = sprintf('The powodSzczegolowy property can only contain items of type \PocztaPolska\StructType\PowodSzczegolowyType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set powodSzczegolowy value
      * @throws InvalidArgumentException
@@ -96,9 +100,10 @@ class PowodReklamacjiType extends AbstractStructBase
             throw new InvalidArgumentException($powodSzczegolowyArrayErrorMessage, __LINE__);
         }
         $this->powodSzczegolowy = $powodSzczegolowy;
-        
+
         return $this;
     }
+
     /**
      * Add item to powodSzczegolowy value
      * @throws InvalidArgumentException
@@ -112,9 +117,10 @@ class PowodReklamacjiType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The powodSzczegolowy property can only contain items of type \PocztaPolska\StructType\PowodSzczegolowyType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->powodSzczegolowy[] = $item;
-        
+
         return $this;
     }
+
     /**
      * Get idPowodGlowny value
      * @return int|null
@@ -123,6 +129,7 @@ class PowodReklamacjiType extends AbstractStructBase
     {
         return $this->idPowodGlowny;
     }
+
     /**
      * Set idPowodGlowny value
      * @param int $idPowodGlowny
@@ -135,9 +142,10 @@ class PowodReklamacjiType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($idPowodGlowny, true), gettype($idPowodGlowny)), __LINE__);
         }
         $this->idPowodGlowny = $idPowodGlowny;
-        
+
         return $this;
     }
+
     /**
      * Get powodGlownyOpis value
      * @return string|null
@@ -146,6 +154,7 @@ class PowodReklamacjiType extends AbstractStructBase
     {
         return $this->powodGlownyOpis;
     }
+
     /**
      * Set powodGlownyOpis value
      * @param string $powodGlownyOpis
@@ -158,7 +167,7 @@ class PowodReklamacjiType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($powodGlownyOpis, true), gettype($powodGlownyOpis)), __LINE__);
         }
         $this->powodGlownyOpis = $powodGlownyOpis;
-        
+
         return $this;
     }
 }

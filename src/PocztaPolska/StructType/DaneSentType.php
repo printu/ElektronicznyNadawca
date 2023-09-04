@@ -68,6 +68,7 @@ class DaneSentType extends AbstractStructBase
      * @var bool|null
      */
     protected ?bool $proceduraAwaryjna = null;
+
     /**
      * Constructor method for daneSentType
      * @uses DaneSentType::setNumer()
@@ -93,6 +94,7 @@ class DaneSentType extends AbstractStructBase
             ->setMasa($masa)
             ->setProceduraAwaryjna($proceduraAwaryjna);
     }
+
     /**
      * Get numer value
      * @return string
@@ -101,6 +103,7 @@ class DaneSentType extends AbstractStructBase
     {
         return $this->numer;
     }
+
     /**
      * Set numer value
      * @param string $numer
@@ -113,9 +116,10 @@ class DaneSentType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($numer, true), gettype($numer)), __LINE__);
         }
         $this->numer = $numer;
-        
+
         return $this;
     }
+
     /**
      * Get kluczPrzewoznika value
      * @return string
@@ -124,6 +128,7 @@ class DaneSentType extends AbstractStructBase
     {
         return $this->kluczPrzewoznika;
     }
+
     /**
      * Set kluczPrzewoznika value
      * @param string $kluczPrzewoznika
@@ -136,9 +141,10 @@ class DaneSentType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($kluczPrzewoznika, true), gettype($kluczPrzewoznika)), __LINE__);
         }
         $this->kluczPrzewoznika = $kluczPrzewoznika;
-        
+
         return $this;
     }
+
     /**
      * Get kodCN value
      * @return string|null
@@ -147,6 +153,7 @@ class DaneSentType extends AbstractStructBase
     {
         return $this->kodCN ?? null;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setKodCN method
      * This method is willingly generated in order to preserve the one-line inline validation within the setKodCN method
@@ -163,6 +170,7 @@ class DaneSentType extends AbstractStructBase
         $properties = [
             'kodPKWiU',
         ];
+
         try {
             foreach ($properties as $property) {
                 if (isset($this->{$property})) {
@@ -172,9 +180,10 @@ class DaneSentType extends AbstractStructBase
         } catch (InvalidArgumentException $e) {
             $message = $e->getMessage();
         }
-        
+
         return $message;
     }
+
     /**
      * Set kodCN value
      * This property belongs to a choice that allows only one property to exist. It is
@@ -199,9 +208,10 @@ class DaneSentType extends AbstractStructBase
         } else {
             $this->kodCN = $kodCN;
         }
-        
+
         return $this;
     }
+
     /**
      * Get kodPKWiU value
      * @return string|null
@@ -210,6 +220,7 @@ class DaneSentType extends AbstractStructBase
     {
         return $this->kodPKWiU ?? null;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setKodPKWiU method
      * This method is willingly generated in order to preserve the one-line inline validation within the setKodPKWiU method
@@ -226,6 +237,7 @@ class DaneSentType extends AbstractStructBase
         $properties = [
             'kodCN',
         ];
+
         try {
             foreach ($properties as $property) {
                 if (isset($this->{$property})) {
@@ -235,9 +247,10 @@ class DaneSentType extends AbstractStructBase
         } catch (InvalidArgumentException $e) {
             $message = $e->getMessage();
         }
-        
+
         return $message;
     }
+
     /**
      * Set kodPKWiU value
      * This property belongs to a choice that allows only one property to exist. It is
@@ -262,9 +275,10 @@ class DaneSentType extends AbstractStructBase
         } else {
             $this->kodPKWiU = $kodPKWiU;
         }
-        
+
         return $this;
     }
+
     /**
      * Get masa value
      * @return float|null
@@ -273,6 +287,7 @@ class DaneSentType extends AbstractStructBase
     {
         return $this->masa;
     }
+
     /**
      * Set masa value
      * @param float $masa
@@ -285,9 +300,10 @@ class DaneSentType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($masa, true), gettype($masa)), __LINE__);
         }
         $this->masa = $masa;
-        
+
         return $this;
     }
+
     /**
      * Get proceduraAwaryjna value
      * @return bool|null
@@ -296,6 +312,7 @@ class DaneSentType extends AbstractStructBase
     {
         return $this->proceduraAwaryjna;
     }
+
     /**
      * Set proceduraAwaryjna value
      * @param bool $proceduraAwaryjna
@@ -308,7 +325,7 @@ class DaneSentType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($proceduraAwaryjna, true), gettype($proceduraAwaryjna)), __LINE__);
         }
         $this->proceduraAwaryjna = $proceduraAwaryjna;
-        
+
         return $this;
     }
 }

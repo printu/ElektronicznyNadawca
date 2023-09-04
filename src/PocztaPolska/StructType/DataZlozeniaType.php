@@ -30,6 +30,7 @@ class DataZlozeniaType extends AbstractStructBase
      * @var string
      */
     protected string $do;
+
     /**
      * Constructor method for dataZlozeniaType
      * @uses DataZlozeniaType::setOd()
@@ -43,6 +44,7 @@ class DataZlozeniaType extends AbstractStructBase
             ->setOd($od)
             ->setDo($do);
     }
+
     /**
      * Get od value
      * @return string
@@ -51,6 +53,7 @@ class DataZlozeniaType extends AbstractStructBase
     {
         return $this->od;
     }
+
     /**
      * Set od value
      * @param string $od
@@ -63,9 +66,10 @@ class DataZlozeniaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($od, true), gettype($od)), __LINE__);
         }
         $this->od = $od;
-        
+
         return $this;
     }
+
     /**
      * Get do value
      * @return string
@@ -74,6 +78,7 @@ class DataZlozeniaType extends AbstractStructBase
     {
         return $this->do;
     }
+
     /**
      * Set do value
      * @param string $do
@@ -86,7 +91,7 @@ class DataZlozeniaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($do, true), gettype($do)), __LINE__);
         }
         $this->do = $do;
-        
+
         return $this;
     }
 }

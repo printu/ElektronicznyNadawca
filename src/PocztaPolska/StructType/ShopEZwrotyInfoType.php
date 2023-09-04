@@ -39,6 +39,7 @@ class ShopEZwrotyInfoType extends AbstractStructBase
      * @var string|null
      */
     protected ?string $nip = null;
+
     /**
      * Constructor method for shopEZwrotyInfoType
      * @uses ShopEZwrotyInfoType::setIdShop()
@@ -58,6 +59,7 @@ class ShopEZwrotyInfoType extends AbstractStructBase
             ->setAvailableOnWebsite($availableOnWebsite)
             ->setNip($nip);
     }
+
     /**
      * Get idShop value
      * @return int|null
@@ -66,6 +68,7 @@ class ShopEZwrotyInfoType extends AbstractStructBase
     {
         return $this->idShop;
     }
+
     /**
      * Set idShop value
      * @param int $idShop
@@ -78,9 +81,10 @@ class ShopEZwrotyInfoType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($idShop, true), gettype($idShop)), __LINE__);
         }
         $this->idShop = $idShop;
-        
+
         return $this;
     }
+
     /**
      * Get przyjaznaNazwa value
      * @return string|null
@@ -89,6 +93,7 @@ class ShopEZwrotyInfoType extends AbstractStructBase
     {
         return $this->przyjaznaNazwa;
     }
+
     /**
      * Set przyjaznaNazwa value
      * @param string $przyjaznaNazwa
@@ -109,9 +114,10 @@ class ShopEZwrotyInfoType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $przyjaznaNazwa)), __LINE__);
         }
         $this->przyjaznaNazwa = $przyjaznaNazwa;
-        
+
         return $this;
     }
+
     /**
      * Get availableOnWebsite value
      * @return bool|null
@@ -120,6 +126,7 @@ class ShopEZwrotyInfoType extends AbstractStructBase
     {
         return $this->availableOnWebsite;
     }
+
     /**
      * Set availableOnWebsite value
      * @param bool $availableOnWebsite
@@ -132,9 +139,10 @@ class ShopEZwrotyInfoType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($availableOnWebsite, true), gettype($availableOnWebsite)), __LINE__);
         }
         $this->availableOnWebsite = $availableOnWebsite;
-        
+
         return $this;
     }
+
     /**
      * Get nip value
      * @return string|null
@@ -143,6 +151,7 @@ class ShopEZwrotyInfoType extends AbstractStructBase
     {
         return $this->nip;
     }
+
     /**
      * Set nip value
      * @param string $nip
@@ -155,7 +164,7 @@ class ShopEZwrotyInfoType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($nip, true), gettype($nip)), __LINE__);
         }
         $this->nip = $nip;
-        
+
         return $this;
     }
 }

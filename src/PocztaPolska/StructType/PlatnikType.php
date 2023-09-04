@@ -32,6 +32,7 @@ class PlatnikType extends AbstractStructBase
      * @var \PocztaPolska\StructType\AdresType|null
      */
     protected ?\PocztaPolska\StructType\AdresType $adresPlatnika = null;
+
     /**
      * Constructor method for platnikType
      * @uses PlatnikType::setUiszczaOplate()
@@ -45,6 +46,7 @@ class PlatnikType extends AbstractStructBase
             ->setUiszczaOplate($uiszczaOplate)
             ->setAdresPlatnika($adresPlatnika);
     }
+
     /**
      * Get uiszczaOplate value
      * @return string|null
@@ -53,6 +55,7 @@ class PlatnikType extends AbstractStructBase
     {
         return $this->uiszczaOplate ?? null;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setUiszczaOplate method
      * This method is willingly generated in order to preserve the one-line inline validation within the setUiszczaOplate method
@@ -69,6 +72,7 @@ class PlatnikType extends AbstractStructBase
         $properties = [
             'adresPlatnika',
         ];
+
         try {
             foreach ($properties as $property) {
                 if (isset($this->{$property})) {
@@ -78,9 +82,10 @@ class PlatnikType extends AbstractStructBase
         } catch (InvalidArgumentException $e) {
             $message = $e->getMessage();
         }
-        
+
         return $message;
     }
+
     /**
      * Set uiszczaOplate value
      * This property belongs to a choice that allows only one property to exist. It is
@@ -108,9 +113,10 @@ class PlatnikType extends AbstractStructBase
         } else {
             $this->uiszczaOplate = $uiszczaOplate;
         }
-        
+
         return $this;
     }
+
     /**
      * Get adresPlatnika value
      * @return \PocztaPolska\StructType\AdresType|null
@@ -119,6 +125,7 @@ class PlatnikType extends AbstractStructBase
     {
         return $this->adresPlatnika ?? null;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setAdresPlatnika method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAdresPlatnika method
@@ -135,6 +142,7 @@ class PlatnikType extends AbstractStructBase
         $properties = [
             'uiszczaOplate',
         ];
+
         try {
             foreach ($properties as $property) {
                 if (isset($this->{$property})) {
@@ -144,9 +152,10 @@ class PlatnikType extends AbstractStructBase
         } catch (InvalidArgumentException $e) {
             $message = $e->getMessage();
         }
-        
+
         return $message;
     }
+
     /**
      * Set adresPlatnika value
      * This property belongs to a choice that allows only one property to exist. It is
@@ -167,7 +176,7 @@ class PlatnikType extends AbstractStructBase
         } else {
             $this->adresPlatnika = $adresPlatnika;
         }
-        
+
         return $this;
     }
 }

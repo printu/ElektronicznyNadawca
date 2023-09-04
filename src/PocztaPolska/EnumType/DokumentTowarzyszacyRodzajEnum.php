@@ -16,17 +16,18 @@ class DokumentTowarzyszacyRodzajEnum extends AbstractStructEnumBase
      * Constant for value 'LICENCJA'
      * @return string 'LICENCJA'
      */
-    const VALUE_LICENCJA = 'LICENCJA';
+    public const VALUE_LICENCJA = 'LICENCJA';
     /**
      * Constant for value 'CERTYFIKAT'
      * @return string 'CERTYFIKAT'
      */
-    const VALUE_CERTYFIKAT = 'CERTYFIKAT';
+    public const VALUE_CERTYFIKAT = 'CERTYFIKAT';
     /**
      * Constant for value 'FAKTURA'
      * @return string 'FAKTURA'
      */
-    const VALUE_FAKTURA = 'FAKTURA';
+    public const VALUE_FAKTURA = 'FAKTURA';
+
     /**
      * Return allowed values
      * @uses self::VALUE_LICENCJA

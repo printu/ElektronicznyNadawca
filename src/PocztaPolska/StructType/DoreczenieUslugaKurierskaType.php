@@ -54,6 +54,7 @@ class DoreczenieUslugaKurierskaType extends AbstractStructBase
      * @var bool|null
      */
     protected ?bool $po17 = null;
+
     /**
      * Constructor method for doreczenieUslugaKurierskaType
      * @uses DoreczenieUslugaKurierskaType::setOczekiwanyTerminDoreczenia()
@@ -85,6 +86,7 @@ class DoreczenieUslugaKurierskaType extends AbstractStructBase
             ->setWGodzinachOd20Do7($wGodzinachOd20Do7)
             ->setPo17($po17);
     }
+
     /**
      * Get oczekiwanyTerminDoreczenia value
      * @return string|null
@@ -93,6 +95,7 @@ class DoreczenieUslugaKurierskaType extends AbstractStructBase
     {
         return $this->oczekiwanyTerminDoreczenia;
     }
+
     /**
      * Set oczekiwanyTerminDoreczenia value
      * @param string $oczekiwanyTerminDoreczenia
@@ -105,9 +108,10 @@ class DoreczenieUslugaKurierskaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($oczekiwanyTerminDoreczenia, true), gettype($oczekiwanyTerminDoreczenia)), __LINE__);
         }
         $this->oczekiwanyTerminDoreczenia = $oczekiwanyTerminDoreczenia;
-        
+
         return $this;
     }
+
     /**
      * Get oczekiwanaGodzinaDoreczenia value
      * @return string|null
@@ -116,6 +120,7 @@ class DoreczenieUslugaKurierskaType extends AbstractStructBase
     {
         return $this->oczekiwanaGodzinaDoreczenia;
     }
+
     /**
      * Set oczekiwanaGodzinaDoreczenia value
      * @uses \PocztaPolska\EnumType\OczekiwanaGodzinaDoreczeniaUslugiType::valueIsValid()
@@ -131,9 +136,10 @@ class DoreczenieUslugaKurierskaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\OczekiwanaGodzinaDoreczeniaUslugiType', is_array($oczekiwanaGodzinaDoreczenia) ? implode(', ', $oczekiwanaGodzinaDoreczenia) : var_export($oczekiwanaGodzinaDoreczenia, true), implode(', ', \PocztaPolska\EnumType\OczekiwanaGodzinaDoreczeniaUslugiType::getValidValues())), __LINE__);
         }
         $this->oczekiwanaGodzinaDoreczenia = $oczekiwanaGodzinaDoreczenia;
-        
+
         return $this;
     }
+
     /**
      * Get wSobote value
      * @return bool|null
@@ -142,6 +148,7 @@ class DoreczenieUslugaKurierskaType extends AbstractStructBase
     {
         return $this->wSobote;
     }
+
     /**
      * Set wSobote value
      * @param bool $wSobote
@@ -154,9 +161,10 @@ class DoreczenieUslugaKurierskaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($wSobote, true), gettype($wSobote)), __LINE__);
         }
         $this->wSobote = $wSobote;
-        
+
         return $this;
     }
+
     /**
      * Get w90Minut value
      * @return bool|null
@@ -165,6 +173,7 @@ class DoreczenieUslugaKurierskaType extends AbstractStructBase
     {
         return $this->w90Minut;
     }
+
     /**
      * Set w90Minut value
      * @param bool $w90Minut
@@ -177,9 +186,10 @@ class DoreczenieUslugaKurierskaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($w90Minut, true), gettype($w90Minut)), __LINE__);
         }
         $this->w90Minut = $w90Minut;
-        
+
         return $this;
     }
+
     /**
      * Get wNiedzieleLubSwieto value
      * @return bool|null
@@ -188,6 +198,7 @@ class DoreczenieUslugaKurierskaType extends AbstractStructBase
     {
         return $this->wNiedzieleLubSwieto;
     }
+
     /**
      * Set wNiedzieleLubSwieto value
      * @param bool $wNiedzieleLubSwieto
@@ -200,9 +211,10 @@ class DoreczenieUslugaKurierskaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($wNiedzieleLubSwieto, true), gettype($wNiedzieleLubSwieto)), __LINE__);
         }
         $this->wNiedzieleLubSwieto = $wNiedzieleLubSwieto;
-        
+
         return $this;
     }
+
     /**
      * Get doRakWlasnych value
      * @return bool|null
@@ -211,6 +223,7 @@ class DoreczenieUslugaKurierskaType extends AbstractStructBase
     {
         return $this->doRakWlasnych;
     }
+
     /**
      * Set doRakWlasnych value
      * @param bool $doRakWlasnych
@@ -223,9 +236,10 @@ class DoreczenieUslugaKurierskaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($doRakWlasnych, true), gettype($doRakWlasnych)), __LINE__);
         }
         $this->doRakWlasnych = $doRakWlasnych;
-        
+
         return $this;
     }
+
     /**
      * Get wGodzinachOd20Do7 value
      * @return bool|null
@@ -234,6 +248,7 @@ class DoreczenieUslugaKurierskaType extends AbstractStructBase
     {
         return $this->wGodzinachOd20Do7;
     }
+
     /**
      * Set wGodzinachOd20Do7 value
      * @param bool $wGodzinachOd20Do7
@@ -246,9 +261,10 @@ class DoreczenieUslugaKurierskaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($wGodzinachOd20Do7, true), gettype($wGodzinachOd20Do7)), __LINE__);
         }
         $this->wGodzinachOd20Do7 = $wGodzinachOd20Do7;
-        
+
         return $this;
     }
+
     /**
      * Get po17 value
      * @return bool|null
@@ -257,6 +273,7 @@ class DoreczenieUslugaKurierskaType extends AbstractStructBase
     {
         return $this->po17;
     }
+
     /**
      * Set po17 value
      * @param bool $po17
@@ -269,7 +286,7 @@ class DoreczenieUslugaKurierskaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($po17, true), gettype($po17)), __LINE__);
         }
         $this->po17 = $po17;
-        
+
         return $this;
     }
 }

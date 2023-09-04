@@ -16,22 +16,23 @@ class MiejscePozostawieniaZawiadomieniaODoreczeniuEnum extends AbstractStructEnu
      * Constant for value 'SKRZYNKA_ADRESATA'
      * @return string 'SKRZYNKA_ADRESATA'
      */
-    const VALUE_SKRZYNKA_ADRESATA = 'SKRZYNKA_ADRESATA';
+    public const VALUE_SKRZYNKA_ADRESATA = 'SKRZYNKA_ADRESATA';
     /**
      * Constant for value 'DRZWI_MIESZKANIA'
      * @return string 'DRZWI_MIESZKANIA'
      */
-    const VALUE_DRZWI_MIESZKANIA = 'DRZWI_MIESZKANIA';
+    public const VALUE_DRZWI_MIESZKANIA = 'DRZWI_MIESZKANIA';
     /**
      * Constant for value 'INNE_WIDOCZNE_MIEJSCE'
      * @return string 'INNE_WIDOCZNE_MIEJSCE'
      */
-    const VALUE_INNE_WIDOCZNE_MIEJSCE = 'INNE_WIDOCZNE_MIEJSCE';
+    public const VALUE_INNE_WIDOCZNE_MIEJSCE = 'INNE_WIDOCZNE_MIEJSCE';
     /**
      * Constant for value 'SKRYTKA_POCZTOWA'
      * @return string 'SKRYTKA_POCZTOWA'
      */
-    const VALUE_SKRYTKA_POCZTOWA = 'SKRYTKA_POCZTOWA';
+    public const VALUE_SKRYTKA_POCZTOWA = 'SKRYTKA_POCZTOWA';
+
     /**
      * Return allowed values
      * @uses self::VALUE_SKRZYNKA_ADRESATA

@@ -64,6 +64,7 @@ class ObszarAdresowyType extends AbstractStructBase
      * @var string|null
      */
     protected ?string $numerDomu = null;
+
     /**
      * Constructor method for obszarAdresowyType
      * @uses ObszarAdresowyType::setGuid()
@@ -86,6 +87,7 @@ class ObszarAdresowyType extends AbstractStructBase
             ->setUlica($ulica)
             ->setNumerDomu($numerDomu);
     }
+
     /**
      * Get guid value
      * @return string
@@ -94,6 +96,7 @@ class ObszarAdresowyType extends AbstractStructBase
     {
         return $this->guid;
     }
+
     /**
      * Set guid value
      * @param string $guid
@@ -110,9 +113,10 @@ class ObszarAdresowyType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 32', mb_strlen((string) $guid)), __LINE__);
         }
         $this->guid = $guid;
-        
+
         return $this;
     }
+
     /**
      * Get kodPocztowy value
      * @return string|null
@@ -121,6 +125,7 @@ class ObszarAdresowyType extends AbstractStructBase
     {
         return $this->kodPocztowy;
     }
+
     /**
      * Set kodPocztowy value
      * @param string $kodPocztowy
@@ -141,9 +146,10 @@ class ObszarAdresowyType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 0', mb_strlen((string) $kodPocztowy)), __LINE__);
         }
         $this->kodPocztowy = $kodPocztowy;
-        
+
         return $this;
     }
+
     /**
      * Get miejscowosc value
      * @return string|null
@@ -152,6 +158,7 @@ class ObszarAdresowyType extends AbstractStructBase
     {
         return $this->miejscowosc;
     }
+
     /**
      * Set miejscowosc value
      * @param string $miejscowosc
@@ -172,9 +179,10 @@ class ObszarAdresowyType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $miejscowosc)), __LINE__);
         }
         $this->miejscowosc = $miejscowosc;
-        
+
         return $this;
     }
+
     /**
      * Get ulica value
      * @return string|null
@@ -183,6 +191,7 @@ class ObszarAdresowyType extends AbstractStructBase
     {
         return $this->ulica;
     }
+
     /**
      * Set ulica value
      * @param string $ulica
@@ -203,9 +212,10 @@ class ObszarAdresowyType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $ulica)), __LINE__);
         }
         $this->ulica = $ulica;
-        
+
         return $this;
     }
+
     /**
      * Get numerDomu value
      * @return string|null
@@ -214,6 +224,7 @@ class ObszarAdresowyType extends AbstractStructBase
     {
         return $this->numerDomu;
     }
+
     /**
      * Set numerDomu value
      * @param string $numerDomu
@@ -234,7 +245,7 @@ class ObszarAdresowyType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 0', mb_strlen((string) $numerDomu)), __LINE__);
         }
         $this->numerDomu = $numerDomu;
-        
+
         return $this;
     }
 }

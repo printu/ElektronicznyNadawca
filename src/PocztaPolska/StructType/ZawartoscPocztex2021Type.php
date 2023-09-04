@@ -32,6 +32,7 @@ class ZawartoscPocztex2021Type extends AbstractStructBase
      * @var string|null
      */
     protected ?string $zawartoscInna = null;
+
     /**
      * Constructor method for zawartoscPocztex2021Type
      * @uses ZawartoscPocztex2021Type::setZawartoscSpecjalna()
@@ -45,6 +46,7 @@ class ZawartoscPocztex2021Type extends AbstractStructBase
             ->setZawartoscSpecjalna($zawartoscSpecjalna)
             ->setZawartoscInna($zawartoscInna);
     }
+
     /**
      * Get zawartoscSpecjalna value
      * @return string|null
@@ -53,6 +55,7 @@ class ZawartoscPocztex2021Type extends AbstractStructBase
     {
         return $this->zawartoscSpecjalna ?? null;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setZawartoscSpecjalna method
      * This method is willingly generated in order to preserve the one-line inline validation within the setZawartoscSpecjalna method
@@ -69,6 +72,7 @@ class ZawartoscPocztex2021Type extends AbstractStructBase
         $properties = [
             'zawartoscInna',
         ];
+
         try {
             foreach ($properties as $property) {
                 if (isset($this->{$property})) {
@@ -78,9 +82,10 @@ class ZawartoscPocztex2021Type extends AbstractStructBase
         } catch (InvalidArgumentException $e) {
             $message = $e->getMessage();
         }
-        
+
         return $message;
     }
+
     /**
      * Set zawartoscSpecjalna value
      * This property belongs to a choice that allows only one property to exist. It is
@@ -108,9 +113,10 @@ class ZawartoscPocztex2021Type extends AbstractStructBase
         } else {
             $this->zawartoscSpecjalna = $zawartoscSpecjalna;
         }
-        
+
         return $this;
     }
+
     /**
      * Get zawartoscInna value
      * @return string|null
@@ -119,6 +125,7 @@ class ZawartoscPocztex2021Type extends AbstractStructBase
     {
         return $this->zawartoscInna ?? null;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setZawartoscInna method
      * This method is willingly generated in order to preserve the one-line inline validation within the setZawartoscInna method
@@ -135,6 +142,7 @@ class ZawartoscPocztex2021Type extends AbstractStructBase
         $properties = [
             'zawartoscSpecjalna',
         ];
+
         try {
             foreach ($properties as $property) {
                 if (isset($this->{$property})) {
@@ -144,9 +152,10 @@ class ZawartoscPocztex2021Type extends AbstractStructBase
         } catch (InvalidArgumentException $e) {
             $message = $e->getMessage();
         }
-        
+
         return $message;
     }
+
     /**
      * Set zawartoscInna value
      * This property belongs to a choice that allows only one property to exist. It is
@@ -171,7 +180,7 @@ class ZawartoscPocztex2021Type extends AbstractStructBase
         } else {
             $this->zawartoscInna = $zawartoscInna;
         }
-        
+
         return $this;
     }
 }

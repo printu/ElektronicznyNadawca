@@ -27,14 +27,15 @@ class Order extends AbstractSoapClientBase
             $this->setResult($resultOrderEasyReturnSolutionLabel = $this->getSoapClient()->__soapCall('orderEasyReturnSolutionLabel', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultOrderEasyReturnSolutionLabel;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Returns the result
      * @see AbstractSoapClientBase::getResult()

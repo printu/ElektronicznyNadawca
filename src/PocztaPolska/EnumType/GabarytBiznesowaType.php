@@ -18,32 +18,33 @@ class GabarytBiznesowaType extends AbstractStructEnumBase
      * Constant for value 'XS'
      * @return string 'XS'
      */
-    const VALUE_XS = 'XS';
+    public const VALUE_XS = 'XS';
     /**
      * Constant for value 'S'
      * @return string 'S'
      */
-    const VALUE_S = 'S';
+    public const VALUE_S = 'S';
     /**
      * Constant for value 'M'
      * @return string 'M'
      */
-    const VALUE_M = 'M';
+    public const VALUE_M = 'M';
     /**
      * Constant for value 'L'
      * @return string 'L'
      */
-    const VALUE_L = 'L';
+    public const VALUE_L = 'L';
     /**
      * Constant for value 'XL'
      * @return string 'XL'
      */
-    const VALUE_XL = 'XL';
+    public const VALUE_XL = 'XL';
     /**
      * Constant for value 'XXL'
      * @return string 'XXL'
      */
-    const VALUE_XXL = 'XXL';
+    public const VALUE_XXL = 'XXL';
+
     /**
      * Return allowed values
      * @uses self::VALUE_XS

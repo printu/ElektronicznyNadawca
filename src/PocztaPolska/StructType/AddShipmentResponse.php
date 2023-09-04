@@ -22,6 +22,7 @@ class AddShipmentResponse extends AbstractStructBase
      * @var \PocztaPolska\StructType\AddShipmentResponseItemType[]
      */
     protected array $retval;
+
     /**
      * Constructor method for addShipmentResponse
      * @uses AddShipmentResponse::setRetval()
@@ -32,6 +33,7 @@ class AddShipmentResponse extends AbstractStructBase
         $this
             ->setRetval($retval);
     }
+
     /**
      * Get retval value
      * @return \PocztaPolska\StructType\AddShipmentResponseItemType[]
@@ -40,6 +42,7 @@ class AddShipmentResponse extends AbstractStructBase
     {
         return $this->retval;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setRetval method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRetval method
@@ -64,9 +67,10 @@ class AddShipmentResponse extends AbstractStructBase
             $message = sprintf('The retval property can only contain items of type \PocztaPolska\StructType\AddShipmentResponseItemType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set retval value
      * @throws InvalidArgumentException
@@ -84,9 +88,10 @@ class AddShipmentResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 500', count($retval)), __LINE__);
         }
         $this->retval = $retval;
-        
+
         return $this;
     }
+
     /**
      * Add item to retval value
      * @throws InvalidArgumentException
@@ -104,7 +109,7 @@ class AddShipmentResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 500', count($this->retval)), __LINE__);
         }
         $this->retval[] = $item;
-        
+
         return $this;
     }
 }

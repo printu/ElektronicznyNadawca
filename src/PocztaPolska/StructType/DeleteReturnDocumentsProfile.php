@@ -19,6 +19,7 @@ class DeleteReturnDocumentsProfile extends AbstractStructBase
      * @var int|null
      */
     protected ?int $idProfile = null;
+
     /**
      * Constructor method for deleteReturnDocumentsProfile
      * @uses DeleteReturnDocumentsProfile::setIdProfile()
@@ -29,6 +30,7 @@ class DeleteReturnDocumentsProfile extends AbstractStructBase
         $this
             ->setIdProfile($idProfile);
     }
+
     /**
      * Get idProfile value
      * @return int|null
@@ -37,6 +39,7 @@ class DeleteReturnDocumentsProfile extends AbstractStructBase
     {
         return $this->idProfile;
     }
+
     /**
      * Set idProfile value
      * @param int $idProfile
@@ -49,7 +52,7 @@ class DeleteReturnDocumentsProfile extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($idProfile, true), gettype($idProfile)), __LINE__);
         }
         $this->idProfile = $idProfile;
-        
+
         return $this;
     }
 }

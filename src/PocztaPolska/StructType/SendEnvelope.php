@@ -47,6 +47,7 @@ class SendEnvelope extends AbstractStructBase
      * @var \PocztaPolska\StructType\ProfilType|null
      */
     protected ?\PocztaPolska\StructType\ProfilType $profil = null;
+
     /**
      * Constructor method for sendEnvelope
      * @uses SendEnvelope::setUrzadNadania()
@@ -66,6 +67,7 @@ class SendEnvelope extends AbstractStructBase
             ->setIdBufor($idBufor)
             ->setProfil($profil);
     }
+
     /**
      * Get urzadNadania value
      * @return int|null
@@ -74,6 +76,7 @@ class SendEnvelope extends AbstractStructBase
     {
         return $this->urzadNadania;
     }
+
     /**
      * Set urzadNadania value
      * @param int $urzadNadania
@@ -86,9 +89,10 @@ class SendEnvelope extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($urzadNadania, true), gettype($urzadNadania)), __LINE__);
         }
         $this->urzadNadania = $urzadNadania;
-        
+
         return $this;
     }
+
     /**
      * Get pakiet value
      * @return \PocztaPolska\StructType\PakietType[]
@@ -97,6 +101,7 @@ class SendEnvelope extends AbstractStructBase
     {
         return $this->pakiet;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setPakiet method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPakiet method
@@ -121,9 +126,10 @@ class SendEnvelope extends AbstractStructBase
             $message = sprintf('The pakiet property can only contain items of type \PocztaPolska\StructType\PakietType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set pakiet value
      * @throws InvalidArgumentException
@@ -137,9 +143,10 @@ class SendEnvelope extends AbstractStructBase
             throw new InvalidArgumentException($pakietArrayErrorMessage, __LINE__);
         }
         $this->pakiet = $pakiet;
-        
+
         return $this;
     }
+
     /**
      * Add item to pakiet value
      * @throws InvalidArgumentException
@@ -153,9 +160,10 @@ class SendEnvelope extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The pakiet property can only contain items of type \PocztaPolska\StructType\PakietType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->pakiet[] = $item;
-        
+
         return $this;
     }
+
     /**
      * Get idBufor value
      * @return int|null
@@ -164,6 +172,7 @@ class SendEnvelope extends AbstractStructBase
     {
         return $this->idBufor;
     }
+
     /**
      * Set idBufor value
      * @param int $idBufor
@@ -176,9 +185,10 @@ class SendEnvelope extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($idBufor, true), gettype($idBufor)), __LINE__);
         }
         $this->idBufor = $idBufor;
-        
+
         return $this;
     }
+
     /**
      * Get profil value
      * @return \PocztaPolska\StructType\ProfilType|null
@@ -187,6 +197,7 @@ class SendEnvelope extends AbstractStructBase
     {
         return $this->profil;
     }
+
     /**
      * Set profil value
      * @param \PocztaPolska\StructType\ProfilType $profil
@@ -195,7 +206,7 @@ class SendEnvelope extends AbstractStructBase
     public function setProfil(?\PocztaPolska\StructType\ProfilType $profil = null): self
     {
         $this->profil = $profil;
-        
+
         return $this;
     }
 }

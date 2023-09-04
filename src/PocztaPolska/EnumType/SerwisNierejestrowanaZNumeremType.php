@@ -16,22 +16,23 @@ class SerwisNierejestrowanaZNumeremType extends AbstractStructEnumBase
      * Constant for value 'NIEREJESTROWANA'
      * @return string 'NIEREJESTROWANA'
      */
-    const VALUE_NIEREJESTROWANA = 'NIEREJESTROWANA';
+    public const VALUE_NIEREJESTROWANA = 'NIEREJESTROWANA';
     /**
      * Constant for value 'HANDLOWA'
      * @return string 'HANDLOWA'
      */
-    const VALUE_HANDLOWA = 'HANDLOWA';
+    public const VALUE_HANDLOWA = 'HANDLOWA';
     /**
      * Constant for value 'LIST_BIZNESOWY'
      * @return string 'LIST_BIZNESOWY'
      */
-    const VALUE_LIST_BIZNESOWY = 'LIST_BIZNESOWY';
+    public const VALUE_LIST_BIZNESOWY = 'LIST_BIZNESOWY';
     /**
      * Constant for value 'MARKETINGOWA'
      * @return string 'MARKETINGOWA'
      */
-    const VALUE_MARKETINGOWA = 'MARKETINGOWA';
+    public const VALUE_MARKETINGOWA = 'MARKETINGOWA';
+
     /**
      * Return allowed values
      * @uses self::VALUE_NIEREJESTROWANA

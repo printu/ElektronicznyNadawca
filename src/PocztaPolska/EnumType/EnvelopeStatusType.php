@@ -16,27 +16,28 @@ class EnvelopeStatusType extends AbstractStructEnumBase
      * Constant for value 'WYSLANY'
      * @return string 'WYSLANY'
      */
-    const VALUE_WYSLANY = 'WYSLANY';
+    public const VALUE_WYSLANY = 'WYSLANY';
     /**
      * Constant for value 'DOSTARCZONY'
      * @return string 'DOSTARCZONY'
      */
-    const VALUE_DOSTARCZONY = 'DOSTARCZONY';
+    public const VALUE_DOSTARCZONY = 'DOSTARCZONY';
     /**
      * Constant for value 'PRZYJETY'
      * @return string 'PRZYJETY'
      */
-    const VALUE_PRZYJETY = 'PRZYJETY';
+    public const VALUE_PRZYJETY = 'PRZYJETY';
     /**
      * Constant for value 'WALIDOWANY'
      * @return string 'WALIDOWANY'
      */
-    const VALUE_WALIDOWANY = 'WALIDOWANY';
+    public const VALUE_WALIDOWANY = 'WALIDOWANY';
     /**
      * Constant for value 'BLEDNY'
      * @return string 'BLEDNY'
      */
-    const VALUE_BLEDNY = 'BLEDNY';
+    public const VALUE_BLEDNY = 'BLEDNY';
+
     /**
      * Return allowed values
      * @uses self::VALUE_WYSLANY

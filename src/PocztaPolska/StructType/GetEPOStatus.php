@@ -49,6 +49,7 @@ class GetEPOStatus extends AbstractStructBase
      * @var bool|null
      */
     protected ?bool $withBioepo = null;
+
     /**
      * Constructor method for getEPOStatus
      * @uses GetEPOStatus::setGuid()
@@ -68,6 +69,7 @@ class GetEPOStatus extends AbstractStructBase
             ->setIdEnvelope($idEnvelope)
             ->setWithBioepo($withBioepo);
     }
+
     /**
      * Get guid value
      * @return string[]
@@ -76,6 +78,7 @@ class GetEPOStatus extends AbstractStructBase
     {
         return $this->guid;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setGuid method
      * This method is willingly generated in order to preserve the one-line inline validation within the setGuid method
@@ -100,9 +103,10 @@ class GetEPOStatus extends AbstractStructBase
             $message = sprintf('The guid property can only contain items of type string, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setGuid method
      * This method is willingly generated in order to preserve the one-line inline validation within the setGuid method
@@ -124,9 +128,10 @@ class GetEPOStatus extends AbstractStructBase
             $message = sprintf('Invalid length for value(s) %s, the number of characters/octets contained by the literal must be equal to 32', implode(', ', $invalidValues));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set guid value
      * @throws InvalidArgumentException
@@ -148,9 +153,10 @@ class GetEPOStatus extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 500', count($guid)), __LINE__);
         }
         $this->guid = $guid;
-        
+
         return $this;
     }
+
     /**
      * Add item to guid value
      * @throws InvalidArgumentException
@@ -172,9 +178,10 @@ class GetEPOStatus extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 500', count($this->guid)), __LINE__);
         }
         $this->guid[] = $item;
-        
+
         return $this;
     }
+
     /**
      * Get endedOnly value
      * @return bool
@@ -183,6 +190,7 @@ class GetEPOStatus extends AbstractStructBase
     {
         return $this->endedOnly;
     }
+
     /**
      * Set endedOnly value
      * @param bool $endedOnly
@@ -195,9 +203,10 @@ class GetEPOStatus extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($endedOnly, true), gettype($endedOnly)), __LINE__);
         }
         $this->endedOnly = $endedOnly;
-        
+
         return $this;
     }
+
     /**
      * Get idEnvelope value
      * @return int
@@ -206,6 +215,7 @@ class GetEPOStatus extends AbstractStructBase
     {
         return $this->idEnvelope;
     }
+
     /**
      * Set idEnvelope value
      * @param int $idEnvelope
@@ -218,9 +228,10 @@ class GetEPOStatus extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($idEnvelope, true), gettype($idEnvelope)), __LINE__);
         }
         $this->idEnvelope = $idEnvelope;
-        
+
         return $this;
     }
+
     /**
      * Get withBioepo value
      * @return bool|null
@@ -229,6 +240,7 @@ class GetEPOStatus extends AbstractStructBase
     {
         return $this->withBioepo;
     }
+
     /**
      * Set withBioepo value
      * @param bool $withBioepo
@@ -241,7 +253,7 @@ class GetEPOStatus extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($withBioepo, true), gettype($withBioepo)), __LINE__);
         }
         $this->withBioepo = $withBioepo;
-        
+
         return $this;
     }
 }

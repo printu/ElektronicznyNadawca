@@ -27,14 +27,15 @@ class Download extends AbstractSoapClientBase
             $this->setResult($resultDownloadIWDContent = $this->getSoapClient()->__soapCall('downloadIWDContent', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultDownloadIWDContent;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Returns the result
      * @see AbstractSoapClientBase::getResult()

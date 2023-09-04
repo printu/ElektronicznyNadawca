@@ -22,6 +22,7 @@ class GetListaPowodowReklamacjiResponse extends AbstractStructBase
      * @var \PocztaPolska\StructType\KategoriePowodowReklamacjiType[]
      */
     protected array $kategoriePowodowReklamacji;
+
     /**
      * Constructor method for getListaPowodowReklamacjiResponse
      * @uses GetListaPowodowReklamacjiResponse::setKategoriePowodowReklamacji()
@@ -32,6 +33,7 @@ class GetListaPowodowReklamacjiResponse extends AbstractStructBase
         $this
             ->setKategoriePowodowReklamacji($kategoriePowodowReklamacji);
     }
+
     /**
      * Get kategoriePowodowReklamacji value
      * @return \PocztaPolska\StructType\KategoriePowodowReklamacjiType[]
@@ -40,6 +42,7 @@ class GetListaPowodowReklamacjiResponse extends AbstractStructBase
     {
         return $this->kategoriePowodowReklamacji;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setKategoriePowodowReklamacji method
      * This method is willingly generated in order to preserve the one-line inline validation within the setKategoriePowodowReklamacji method
@@ -64,9 +67,10 @@ class GetListaPowodowReklamacjiResponse extends AbstractStructBase
             $message = sprintf('The kategoriePowodowReklamacji property can only contain items of type \PocztaPolska\StructType\KategoriePowodowReklamacjiType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set kategoriePowodowReklamacji value
      * @throws InvalidArgumentException
@@ -80,9 +84,10 @@ class GetListaPowodowReklamacjiResponse extends AbstractStructBase
             throw new InvalidArgumentException($kategoriePowodowReklamacjiArrayErrorMessage, __LINE__);
         }
         $this->kategoriePowodowReklamacji = $kategoriePowodowReklamacji;
-        
+
         return $this;
     }
+
     /**
      * Add item to kategoriePowodowReklamacji value
      * @throws InvalidArgumentException
@@ -96,7 +101,7 @@ class GetListaPowodowReklamacjiResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The kategoriePowodowReklamacji property can only contain items of type \PocztaPolska\StructType\KategoriePowodowReklamacjiType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->kategoriePowodowReklamacji[] = $item;
-        
+
         return $this;
     }
 }

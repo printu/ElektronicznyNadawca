@@ -22,6 +22,7 @@ class GetEnvelopeContentFullResponse extends AbstractStructBase
      * @var \PocztaPolska\StructType\PrzesylkaFullType[]
      */
     protected ?array $przesylka = null;
+
     /**
      * Constructor method for getEnvelopeContentFullResponse
      * @uses GetEnvelopeContentFullResponse::setPrzesylka()
@@ -32,6 +33,7 @@ class GetEnvelopeContentFullResponse extends AbstractStructBase
         $this
             ->setPrzesylka($przesylka);
     }
+
     /**
      * Get przesylka value
      * @return \PocztaPolska\StructType\PrzesylkaFullType[]
@@ -40,6 +42,7 @@ class GetEnvelopeContentFullResponse extends AbstractStructBase
     {
         return $this->przesylka;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setPrzesylka method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPrzesylka method
@@ -64,9 +67,10 @@ class GetEnvelopeContentFullResponse extends AbstractStructBase
             $message = sprintf('The przesylka property can only contain items of type \PocztaPolska\StructType\PrzesylkaFullType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set przesylka value
      * @throws InvalidArgumentException
@@ -80,9 +84,10 @@ class GetEnvelopeContentFullResponse extends AbstractStructBase
             throw new InvalidArgumentException($przesylkaArrayErrorMessage, __LINE__);
         }
         $this->przesylka = $przesylka;
-        
+
         return $this;
     }
+
     /**
      * Add item to przesylka value
      * @throws InvalidArgumentException
@@ -96,7 +101,7 @@ class GetEnvelopeContentFullResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The przesylka property can only contain items of type \PocztaPolska\StructType\PrzesylkaFullType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->przesylka[] = $item;
-        
+
         return $this;
     }
 }

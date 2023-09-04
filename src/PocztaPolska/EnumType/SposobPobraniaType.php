@@ -16,12 +16,13 @@ class SposobPobraniaType extends AbstractStructEnumBase
      * Constant for value 'PRZEKAZ'
      * @return string 'PRZEKAZ'
      */
-    const VALUE_PRZEKAZ = 'PRZEKAZ';
+    public const VALUE_PRZEKAZ = 'PRZEKAZ';
     /**
      * Constant for value 'RACHUNEK_BANKOWY'
      * @return string 'RACHUNEK_BANKOWY'
      */
-    const VALUE_RACHUNEK_BANKOWY = 'RACHUNEK_BANKOWY';
+    public const VALUE_RACHUNEK_BANKOWY = 'RACHUNEK_BANKOWY';
+
     /**
      * Return allowed values
      * @uses self::VALUE_PRZEKAZ

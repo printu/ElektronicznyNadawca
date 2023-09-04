@@ -16,17 +16,18 @@ class EZwrotPrzesylkiType extends AbstractStructEnumBase
      * Constant for value 'ZWROTPACZKA48'
      * @return string 'ZWROTPACZKA48'
      */
-    const VALUE_ZWROTPACZKA_48 = 'ZWROTPACZKA48';
+    public const VALUE_ZWROTPACZKA_48 = 'ZWROTPACZKA48';
     /**
      * Constant for value 'ZWROTKURIEREKSPRES24'
      * @return string 'ZWROTKURIEREKSPRES24'
      */
-    const VALUE_ZWROTKURIEREKSPRES_24 = 'ZWROTKURIEREKSPRES24';
+    public const VALUE_ZWROTKURIEREKSPRES_24 = 'ZWROTKURIEREKSPRES24';
     /**
      * Constant for value 'ZWROTPOCZTEX2021'
      * @return string 'ZWROTPOCZTEX2021'
      */
-    const VALUE_ZWROTPOCZTEX_2021 = 'ZWROTPOCZTEX2021';
+    public const VALUE_ZWROTPOCZTEX_2021 = 'ZWROTPOCZTEX2021';
+
     /**
      * Return allowed values
      * @uses self::VALUE_ZWROTPACZKA_48

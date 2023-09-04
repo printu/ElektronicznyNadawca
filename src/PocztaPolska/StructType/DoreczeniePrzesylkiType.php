@@ -49,6 +49,7 @@ class DoreczeniePrzesylkiType extends AbstractStructBase
      * @var string|null
      */
     protected ?string $miejscePozostawieniaZawiadomieniaODoreczeniu = null;
+
     /**
      * Constructor method for doreczeniePrzesylkiType
      * @uses DoreczeniePrzesylkiType::setData()
@@ -77,6 +78,7 @@ class DoreczeniePrzesylkiType extends AbstractStructBase
             ->setPieczecFirmowa($pieczecFirmowa)
             ->setMiejscePozostawieniaZawiadomieniaODoreczeniu($miejscePozostawieniaZawiadomieniaODoreczeniu);
     }
+
     /**
      * Get data value
      * @return string|null
@@ -85,6 +87,7 @@ class DoreczeniePrzesylkiType extends AbstractStructBase
     {
         return $this->data;
     }
+
     /**
      * Set data value
      * @param string $data
@@ -97,9 +100,10 @@ class DoreczeniePrzesylkiType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($data, true), gettype($data)), __LINE__);
         }
         $this->data = $data;
-        
+
         return $this;
     }
+
     /**
      * Get osobaOdbierajaca value
      * @return string|null
@@ -108,6 +112,7 @@ class DoreczeniePrzesylkiType extends AbstractStructBase
     {
         return $this->osobaOdbierajaca;
     }
+
     /**
      * Set osobaOdbierajaca value
      * @param string $osobaOdbierajaca
@@ -120,9 +125,10 @@ class DoreczeniePrzesylkiType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($osobaOdbierajaca, true), gettype($osobaOdbierajaca)), __LINE__);
         }
         $this->osobaOdbierajaca = $osobaOdbierajaca;
-        
+
         return $this;
     }
+
     /**
      * Get podmiotDoreczenia value
      * @return string|null
@@ -131,6 +137,7 @@ class DoreczeniePrzesylkiType extends AbstractStructBase
     {
         return $this->podmiotDoreczenia;
     }
+
     /**
      * Set podmiotDoreczenia value
      * @uses \PocztaPolska\EnumType\PodmiotDoreczeniaEnum::valueIsValid()
@@ -146,9 +153,10 @@ class DoreczeniePrzesylkiType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\PodmiotDoreczeniaEnum', is_array($podmiotDoreczenia) ? implode(', ', $podmiotDoreczenia) : var_export($podmiotDoreczenia, true), implode(', ', \PocztaPolska\EnumType\PodmiotDoreczeniaEnum::getValidValues())), __LINE__);
         }
         $this->podmiotDoreczenia = $podmiotDoreczenia;
-        
+
         return $this;
     }
+
     /**
      * Get dataPelnomocnictwa value
      * @return string|null
@@ -157,6 +165,7 @@ class DoreczeniePrzesylkiType extends AbstractStructBase
     {
         return $this->dataPelnomocnictwa;
     }
+
     /**
      * Set dataPelnomocnictwa value
      * @param string $dataPelnomocnictwa
@@ -169,9 +178,10 @@ class DoreczeniePrzesylkiType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($dataPelnomocnictwa, true), gettype($dataPelnomocnictwa)), __LINE__);
         }
         $this->dataPelnomocnictwa = $dataPelnomocnictwa;
-        
+
         return $this;
     }
+
     /**
      * Get numerPelnomocnictwa value
      * @return string|null
@@ -180,6 +190,7 @@ class DoreczeniePrzesylkiType extends AbstractStructBase
     {
         return $this->numerPelnomocnictwa;
     }
+
     /**
      * Set numerPelnomocnictwa value
      * @param string $numerPelnomocnictwa
@@ -192,9 +203,10 @@ class DoreczeniePrzesylkiType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($numerPelnomocnictwa, true), gettype($numerPelnomocnictwa)), __LINE__);
         }
         $this->numerPelnomocnictwa = $numerPelnomocnictwa;
-        
+
         return $this;
     }
+
     /**
      * Get pieczecFirmowa value
      * @return bool|null
@@ -203,6 +215,7 @@ class DoreczeniePrzesylkiType extends AbstractStructBase
     {
         return $this->pieczecFirmowa;
     }
+
     /**
      * Set pieczecFirmowa value
      * @param bool $pieczecFirmowa
@@ -215,9 +228,10 @@ class DoreczeniePrzesylkiType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($pieczecFirmowa, true), gettype($pieczecFirmowa)), __LINE__);
         }
         $this->pieczecFirmowa = $pieczecFirmowa;
-        
+
         return $this;
     }
+
     /**
      * Get miejscePozostawieniaZawiadomieniaODoreczeniu value
      * @return string|null
@@ -226,6 +240,7 @@ class DoreczeniePrzesylkiType extends AbstractStructBase
     {
         return $this->miejscePozostawieniaZawiadomieniaODoreczeniu;
     }
+
     /**
      * Set miejscePozostawieniaZawiadomieniaODoreczeniu value
      * @uses \PocztaPolska\EnumType\MiejscePozostawieniaZawiadomieniaODoreczeniuEnum::valueIsValid()
@@ -241,7 +256,7 @@ class DoreczeniePrzesylkiType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\MiejscePozostawieniaZawiadomieniaODoreczeniuEnum', is_array($miejscePozostawieniaZawiadomieniaODoreczeniu) ? implode(', ', $miejscePozostawieniaZawiadomieniaODoreczeniu) : var_export($miejscePozostawieniaZawiadomieniaODoreczeniu, true), implode(', ', \PocztaPolska\EnumType\MiejscePozostawieniaZawiadomieniaODoreczeniuEnum::getValidValues())), __LINE__);
         }
         $this->miejscePozostawieniaZawiadomieniaODoreczeniu = $miejscePozostawieniaZawiadomieniaODoreczeniu;
-        
+
         return $this;
     }
 }

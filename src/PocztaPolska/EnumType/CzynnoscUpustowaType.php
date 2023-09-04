@@ -16,7 +16,8 @@ class CzynnoscUpustowaType extends AbstractStructEnumBase
      * Constant for value 'POSORTOWANA'
      * @return string 'POSORTOWANA'
      */
-    const VALUE_POSORTOWANA = 'POSORTOWANA';
+    public const VALUE_POSORTOWANA = 'POSORTOWANA';
+
     /**
      * Return allowed values
      * @uses self::VALUE_POSORTOWANA

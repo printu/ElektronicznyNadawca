@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace PocztaPolska\StructType;
 
 use InvalidArgumentException;
-use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for EMSType StructType
@@ -90,6 +89,7 @@ class EMSType extends PrzesylkaRejestrowanaType
      * @var string|null
      */
     protected ?string $numerPrzesylkiKlienta = null;
+
     /**
      * Constructor method for EMSType
      * @uses EMSType::setUbezpieczenie()
@@ -127,6 +127,7 @@ class EMSType extends PrzesylkaRejestrowanaType
             ->setZalaczoneDokumenty($zalaczoneDokumenty)
             ->setNumerPrzesylkiKlienta($numerPrzesylkiKlienta);
     }
+
     /**
      * Get ubezpieczenie value
      * @return \PocztaPolska\StructType\UbezpieczenieType|null
@@ -135,6 +136,7 @@ class EMSType extends PrzesylkaRejestrowanaType
     {
         return $this->ubezpieczenie;
     }
+
     /**
      * Set ubezpieczenie value
      * @param \PocztaPolska\StructType\UbezpieczenieType $ubezpieczenie
@@ -143,9 +145,10 @@ class EMSType extends PrzesylkaRejestrowanaType
     public function setUbezpieczenie(?\PocztaPolska\StructType\UbezpieczenieType $ubezpieczenie = null): self
     {
         $this->ubezpieczenie = $ubezpieczenie;
-        
+
         return $this;
     }
+
     /**
      * Get deklaracjaCelna value
      * @return \PocztaPolska\StructType\DeklaracjaCelnaType|null
@@ -154,6 +157,7 @@ class EMSType extends PrzesylkaRejestrowanaType
     {
         return $this->deklaracjaCelna;
     }
+
     /**
      * Set deklaracjaCelna value
      * @param \PocztaPolska\StructType\DeklaracjaCelnaType $deklaracjaCelna
@@ -162,9 +166,10 @@ class EMSType extends PrzesylkaRejestrowanaType
     public function setDeklaracjaCelna(?\PocztaPolska\StructType\DeklaracjaCelnaType $deklaracjaCelna = null): self
     {
         $this->deklaracjaCelna = $deklaracjaCelna;
-        
+
         return $this;
     }
+
     /**
      * Get potwierdzenieDoreczenia value
      * @return \PocztaPolska\StructType\PotwierdzenieDoreczeniaType|null
@@ -173,6 +178,7 @@ class EMSType extends PrzesylkaRejestrowanaType
     {
         return $this->potwierdzenieDoreczenia;
     }
+
     /**
      * Set potwierdzenieDoreczenia value
      * @param \PocztaPolska\StructType\PotwierdzenieDoreczeniaType $potwierdzenieDoreczenia
@@ -181,9 +187,10 @@ class EMSType extends PrzesylkaRejestrowanaType
     public function setPotwierdzenieDoreczenia(?\PocztaPolska\StructType\PotwierdzenieDoreczeniaType $potwierdzenieDoreczenia = null): self
     {
         $this->potwierdzenieDoreczenia = $potwierdzenieDoreczenia;
-        
+
         return $this;
     }
+
     /**
      * Get deklaracjaCelna2 value
      * @return \PocztaPolska\StructType\DeklaracjaCelna2Type|null
@@ -192,6 +199,7 @@ class EMSType extends PrzesylkaRejestrowanaType
     {
         return $this->deklaracjaCelna2;
     }
+
     /**
      * Set deklaracjaCelna2 value
      * @param \PocztaPolska\StructType\DeklaracjaCelna2Type $deklaracjaCelna2
@@ -200,9 +208,10 @@ class EMSType extends PrzesylkaRejestrowanaType
     public function setDeklaracjaCelna2(?\PocztaPolska\StructType\DeklaracjaCelna2Type $deklaracjaCelna2 = null): self
     {
         $this->deklaracjaCelna2 = $deklaracjaCelna2;
-        
+
         return $this;
     }
+
     /**
      * Get sposobNadaniaInterconnect value
      * @return string|null
@@ -211,6 +220,7 @@ class EMSType extends PrzesylkaRejestrowanaType
     {
         return $this->sposobNadaniaInterconnect;
     }
+
     /**
      * Set sposobNadaniaInterconnect value
      * @param string $sposobNadaniaInterconnect
@@ -223,9 +233,10 @@ class EMSType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($sposobNadaniaInterconnect, true), gettype($sposobNadaniaInterconnect)), __LINE__);
         }
         $this->sposobNadaniaInterconnect = $sposobNadaniaInterconnect;
-        
+
         return $this;
     }
+
     /**
      * Get sposobDoreczenia value
      * @return \PocztaPolska\StructType\SposobDoreczeniaType|null
@@ -234,6 +245,7 @@ class EMSType extends PrzesylkaRejestrowanaType
     {
         return $this->sposobDoreczenia;
     }
+
     /**
      * Set sposobDoreczenia value
      * @param \PocztaPolska\StructType\SposobDoreczeniaType $sposobDoreczenia
@@ -242,9 +254,10 @@ class EMSType extends PrzesylkaRejestrowanaType
     public function setSposobDoreczenia(?\PocztaPolska\StructType\SposobDoreczeniaType $sposobDoreczenia = null): self
     {
         $this->sposobDoreczenia = $sposobDoreczenia;
-        
+
         return $this;
     }
+
     /**
      * Get typOpakowania value
      * @return string|null
@@ -253,6 +266,7 @@ class EMSType extends PrzesylkaRejestrowanaType
     {
         return $this->typOpakowania;
     }
+
     /**
      * Set typOpakowania value
      * @uses \PocztaPolska\EnumType\EMSTypOpakowaniaType::valueIsValid()
@@ -268,9 +282,10 @@ class EMSType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\EMSTypOpakowaniaType', is_array($typOpakowania) ? implode(', ', $typOpakowania) : var_export($typOpakowania, true), implode(', ', \PocztaPolska\EnumType\EMSTypOpakowaniaType::getValidValues())), __LINE__);
         }
         $this->typOpakowania = $typOpakowania;
-        
+
         return $this;
     }
+
     /**
      * Get masa value
      * @return int|null
@@ -279,6 +294,7 @@ class EMSType extends PrzesylkaRejestrowanaType
     {
         return $this->masa;
     }
+
     /**
      * Set masa value
      * @param int $masa
@@ -299,9 +315,10 @@ class EMSType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 1', var_export($masa, true)), __LINE__);
         }
         $this->masa = $masa;
-        
+
         return $this;
     }
+
     /**
      * Get zalaczoneDokumenty value
      * @return bool|null
@@ -310,6 +327,7 @@ class EMSType extends PrzesylkaRejestrowanaType
     {
         return $this->zalaczoneDokumenty;
     }
+
     /**
      * Set zalaczoneDokumenty value
      * @param bool $zalaczoneDokumenty
@@ -322,9 +340,10 @@ class EMSType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($zalaczoneDokumenty, true), gettype($zalaczoneDokumenty)), __LINE__);
         }
         $this->zalaczoneDokumenty = $zalaczoneDokumenty;
-        
+
         return $this;
     }
+
     /**
      * Get numerPrzesylkiKlienta value
      * @return string|null
@@ -333,6 +352,7 @@ class EMSType extends PrzesylkaRejestrowanaType
     {
         return $this->numerPrzesylkiKlienta;
     }
+
     /**
      * Set numerPrzesylkiKlienta value
      * @param string $numerPrzesylkiKlienta
@@ -345,7 +365,7 @@ class EMSType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($numerPrzesylkiKlienta, true), gettype($numerPrzesylkiKlienta)), __LINE__);
         }
         $this->numerPrzesylkiKlienta = $numerPrzesylkiKlienta;
-        
+
         return $this;
     }
 }

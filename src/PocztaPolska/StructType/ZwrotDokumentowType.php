@@ -41,6 +41,7 @@ class ZwrotDokumentowType extends AbstractStructBase
      * @var int|null
      */
     protected ?int $odleglosc = null;
+
     /**
      * Constructor method for zwrotDokumentowType
      * @uses ZwrotDokumentowType::setRodzajPocztex()
@@ -57,6 +58,7 @@ class ZwrotDokumentowType extends AbstractStructBase
             ->setRodzajList($rodzajList)
             ->setOdleglosc($odleglosc);
     }
+
     /**
      * Get rodzajPocztex value
      * @return string|null
@@ -65,6 +67,7 @@ class ZwrotDokumentowType extends AbstractStructBase
     {
         return $this->rodzajPocztex ?? null;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setRodzajPocztex method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRodzajPocztex method
@@ -81,6 +84,7 @@ class ZwrotDokumentowType extends AbstractStructBase
         $properties = [
             'rodzajList',
         ];
+
         try {
             foreach ($properties as $property) {
                 if (isset($this->{$property})) {
@@ -90,9 +94,10 @@ class ZwrotDokumentowType extends AbstractStructBase
         } catch (InvalidArgumentException $e) {
             $message = $e->getMessage();
         }
-        
+
         return $message;
     }
+
     /**
      * Set rodzajPocztex value
      * This property belongs to a choice that allows only one property to exist. It is
@@ -120,9 +125,10 @@ class ZwrotDokumentowType extends AbstractStructBase
         } else {
             $this->rodzajPocztex = $rodzajPocztex;
         }
-        
+
         return $this;
     }
+
     /**
      * Get rodzajList value
      * @return \PocztaPolska\StructType\RodzajListType|null
@@ -131,6 +137,7 @@ class ZwrotDokumentowType extends AbstractStructBase
     {
         return $this->rodzajList ?? null;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setRodzajList method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRodzajList method
@@ -147,6 +154,7 @@ class ZwrotDokumentowType extends AbstractStructBase
         $properties = [
             'rodzajPocztex',
         ];
+
         try {
             foreach ($properties as $property) {
                 if (isset($this->{$property})) {
@@ -156,9 +164,10 @@ class ZwrotDokumentowType extends AbstractStructBase
         } catch (InvalidArgumentException $e) {
             $message = $e->getMessage();
         }
-        
+
         return $message;
     }
+
     /**
      * Set rodzajList value
      * This property belongs to a choice that allows only one property to exist. It is
@@ -179,9 +188,10 @@ class ZwrotDokumentowType extends AbstractStructBase
         } else {
             $this->rodzajList = $rodzajList;
         }
-        
+
         return $this;
     }
+
     /**
      * Get odleglosc value
      * @return int|null
@@ -190,6 +200,7 @@ class ZwrotDokumentowType extends AbstractStructBase
     {
         return $this->odleglosc;
     }
+
     /**
      * Set odleglosc value
      * @param int $odleglosc
@@ -202,7 +213,7 @@ class ZwrotDokumentowType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($odleglosc, true), gettype($odleglosc)), __LINE__);
         }
         $this->odleglosc = $odleglosc;
-        
+
         return $this;
     }
 }

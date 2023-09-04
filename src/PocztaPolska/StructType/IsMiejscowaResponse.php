@@ -22,6 +22,7 @@ class IsMiejscowaResponse extends AbstractStructBase
      * @var \PocztaPolska\StructType\TrasaResponseType[]
      */
     protected array $trasaResponse;
+
     /**
      * Constructor method for isMiejscowaResponse
      * @uses IsMiejscowaResponse::setTrasaResponse()
@@ -32,6 +33,7 @@ class IsMiejscowaResponse extends AbstractStructBase
         $this
             ->setTrasaResponse($trasaResponse);
     }
+
     /**
      * Get trasaResponse value
      * @return \PocztaPolska\StructType\TrasaResponseType[]
@@ -40,6 +42,7 @@ class IsMiejscowaResponse extends AbstractStructBase
     {
         return $this->trasaResponse;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setTrasaResponse method
      * This method is willingly generated in order to preserve the one-line inline validation within the setTrasaResponse method
@@ -64,9 +67,10 @@ class IsMiejscowaResponse extends AbstractStructBase
             $message = sprintf('The trasaResponse property can only contain items of type \PocztaPolska\StructType\TrasaResponseType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set trasaResponse value
      * @throws InvalidArgumentException
@@ -84,9 +88,10 @@ class IsMiejscowaResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 500', count($trasaResponse)), __LINE__);
         }
         $this->trasaResponse = $trasaResponse;
-        
+
         return $this;
     }
+
     /**
      * Add item to trasaResponse value
      * @throws InvalidArgumentException
@@ -104,7 +109,7 @@ class IsMiejscowaResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 500', count($this->trasaResponse)), __LINE__);
         }
         $this->trasaResponse[] = $item;
-        
+
         return $this;
     }
 }

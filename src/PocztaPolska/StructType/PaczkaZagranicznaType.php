@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace PocztaPolska\StructType;
 
 use InvalidArgumentException;
-use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for paczkaZagranicznaType StructType
@@ -117,6 +116,7 @@ class PaczkaZagranicznaType extends PrzesylkaRejestrowanaType
      * @var string|null
      */
     protected ?string $numerPrzesylkiKlienta = null;
+
     /**
      * Constructor method for paczkaZagranicznaType
      * @uses PaczkaZagranicznaType::setZwrot()
@@ -166,6 +166,7 @@ class PaczkaZagranicznaType extends PrzesylkaRejestrowanaType
             ->setNumerReferencyjnyCelny($numerReferencyjnyCelny)
             ->setNumerPrzesylkiKlienta($numerPrzesylkiKlienta);
     }
+
     /**
      * Get zwrot value
      * @return \PocztaPolska\StructType\ZwrotType|null
@@ -174,6 +175,7 @@ class PaczkaZagranicznaType extends PrzesylkaRejestrowanaType
     {
         return $this->zwrot;
     }
+
     /**
      * Set zwrot value
      * @param \PocztaPolska\StructType\ZwrotType $zwrot
@@ -182,9 +184,10 @@ class PaczkaZagranicznaType extends PrzesylkaRejestrowanaType
     public function setZwrot(?\PocztaPolska\StructType\ZwrotType $zwrot = null): self
     {
         $this->zwrot = $zwrot;
-        
+
         return $this;
     }
+
     /**
      * Get deklaracjaCelna value
      * @return \PocztaPolska\StructType\DeklaracjaCelnaType|null
@@ -193,6 +196,7 @@ class PaczkaZagranicznaType extends PrzesylkaRejestrowanaType
     {
         return $this->deklaracjaCelna;
     }
+
     /**
      * Set deklaracjaCelna value
      * @param \PocztaPolska\StructType\DeklaracjaCelnaType $deklaracjaCelna
@@ -201,9 +205,10 @@ class PaczkaZagranicznaType extends PrzesylkaRejestrowanaType
     public function setDeklaracjaCelna(?\PocztaPolska\StructType\DeklaracjaCelnaType $deklaracjaCelna = null): self
     {
         $this->deklaracjaCelna = $deklaracjaCelna;
-        
+
         return $this;
     }
+
     /**
      * Get deklaracjaCelna2 value
      * @return \PocztaPolska\StructType\DeklaracjaCelna2Type|null
@@ -212,6 +217,7 @@ class PaczkaZagranicznaType extends PrzesylkaRejestrowanaType
     {
         return $this->deklaracjaCelna2;
     }
+
     /**
      * Set deklaracjaCelna2 value
      * @param \PocztaPolska\StructType\DeklaracjaCelna2Type $deklaracjaCelna2
@@ -220,9 +226,10 @@ class PaczkaZagranicznaType extends PrzesylkaRejestrowanaType
     public function setDeklaracjaCelna2(?\PocztaPolska\StructType\DeklaracjaCelna2Type $deklaracjaCelna2 = null): self
     {
         $this->deklaracjaCelna2 = $deklaracjaCelna2;
-        
+
         return $this;
     }
+
     /**
      * Get sposobNadaniaInterconnect value
      * @return string|null
@@ -231,6 +238,7 @@ class PaczkaZagranicznaType extends PrzesylkaRejestrowanaType
     {
         return $this->sposobNadaniaInterconnect;
     }
+
     /**
      * Set sposobNadaniaInterconnect value
      * @param string $sposobNadaniaInterconnect
@@ -243,9 +251,10 @@ class PaczkaZagranicznaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($sposobNadaniaInterconnect, true), gettype($sposobNadaniaInterconnect)), __LINE__);
         }
         $this->sposobNadaniaInterconnect = $sposobNadaniaInterconnect;
-        
+
         return $this;
     }
+
     /**
      * Get sposobDoreczenia value
      * @return \PocztaPolska\StructType\SposobDoreczeniaType|null
@@ -254,6 +263,7 @@ class PaczkaZagranicznaType extends PrzesylkaRejestrowanaType
     {
         return $this->sposobDoreczenia;
     }
+
     /**
      * Set sposobDoreczenia value
      * @param \PocztaPolska\StructType\SposobDoreczeniaType $sposobDoreczenia
@@ -262,9 +272,10 @@ class PaczkaZagranicznaType extends PrzesylkaRejestrowanaType
     public function setSposobDoreczenia(?\PocztaPolska\StructType\SposobDoreczeniaType $sposobDoreczenia = null): self
     {
         $this->sposobDoreczenia = $sposobDoreczenia;
-        
+
         return $this;
     }
+
     /**
      * Get posteRestante value
      * @return bool|null
@@ -273,6 +284,7 @@ class PaczkaZagranicznaType extends PrzesylkaRejestrowanaType
     {
         return $this->posteRestante;
     }
+
     /**
      * Set posteRestante value
      * @param bool $posteRestante
@@ -285,9 +297,10 @@ class PaczkaZagranicznaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($posteRestante, true), gettype($posteRestante)), __LINE__);
         }
         $this->posteRestante = $posteRestante;
-        
+
         return $this;
     }
+
     /**
      * Get masa value
      * @return int|null
@@ -296,6 +309,7 @@ class PaczkaZagranicznaType extends PrzesylkaRejestrowanaType
     {
         return $this->masa;
     }
+
     /**
      * Set masa value
      * @param int $masa
@@ -316,9 +330,10 @@ class PaczkaZagranicznaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 1', var_export($masa, true)), __LINE__);
         }
         $this->masa = $masa;
-        
+
         return $this;
     }
+
     /**
      * Get wartosc value
      * @return int|null
@@ -327,6 +342,7 @@ class PaczkaZagranicznaType extends PrzesylkaRejestrowanaType
     {
         return $this->wartosc;
     }
+
     /**
      * Set wartosc value
      * @param int $wartosc
@@ -347,9 +363,10 @@ class PaczkaZagranicznaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 0', var_export($wartosc, true)), __LINE__);
         }
         $this->wartosc = $wartosc;
-        
+
         return $this;
     }
+
     /**
      * Get kategoria value
      * @return string|null
@@ -358,6 +375,7 @@ class PaczkaZagranicznaType extends PrzesylkaRejestrowanaType
     {
         return $this->kategoria;
     }
+
     /**
      * Set kategoria value
      * @uses \PocztaPolska\EnumType\KategoriaType::valueIsValid()
@@ -373,9 +391,10 @@ class PaczkaZagranicznaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\KategoriaType', is_array($kategoria) ? implode(', ', $kategoria) : var_export($kategoria, true), implode(', ', \PocztaPolska\EnumType\KategoriaType::getValidValues())), __LINE__);
         }
         $this->kategoria = $kategoria;
-        
+
         return $this;
     }
+
     /**
      * Get iloscPotwierdzenOdbioru value
      * @return int|null
@@ -384,6 +403,7 @@ class PaczkaZagranicznaType extends PrzesylkaRejestrowanaType
     {
         return $this->iloscPotwierdzenOdbioru;
     }
+
     /**
      * Set iloscPotwierdzenOdbioru value
      * @param int $iloscPotwierdzenOdbioru
@@ -404,9 +424,10 @@ class PaczkaZagranicznaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 0', var_export($iloscPotwierdzenOdbioru, true)), __LINE__);
         }
         $this->iloscPotwierdzenOdbioru = $iloscPotwierdzenOdbioru;
-        
+
         return $this;
     }
+
     /**
      * Get utrudnionaManipulacja value
      * @return bool|null
@@ -415,6 +436,7 @@ class PaczkaZagranicznaType extends PrzesylkaRejestrowanaType
     {
         return $this->utrudnionaManipulacja;
     }
+
     /**
      * Set utrudnionaManipulacja value
      * @param bool $utrudnionaManipulacja
@@ -427,9 +449,10 @@ class PaczkaZagranicznaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($utrudnionaManipulacja, true), gettype($utrudnionaManipulacja)), __LINE__);
         }
         $this->utrudnionaManipulacja = $utrudnionaManipulacja;
-        
+
         return $this;
     }
+
     /**
      * Get ekspres value
      * @return bool|null
@@ -438,6 +461,7 @@ class PaczkaZagranicznaType extends PrzesylkaRejestrowanaType
     {
         return $this->ekspres;
     }
+
     /**
      * Set ekspres value
      * @param bool $ekspres
@@ -450,9 +474,10 @@ class PaczkaZagranicznaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($ekspres, true), gettype($ekspres)), __LINE__);
         }
         $this->ekspres = $ekspres;
-        
+
         return $this;
     }
+
     /**
      * Get numerReferencyjnyCelny value
      * @return string|null
@@ -461,6 +486,7 @@ class PaczkaZagranicznaType extends PrzesylkaRejestrowanaType
     {
         return $this->numerReferencyjnyCelny;
     }
+
     /**
      * Set numerReferencyjnyCelny value
      * @param string $numerReferencyjnyCelny
@@ -473,9 +499,10 @@ class PaczkaZagranicznaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($numerReferencyjnyCelny, true), gettype($numerReferencyjnyCelny)), __LINE__);
         }
         $this->numerReferencyjnyCelny = $numerReferencyjnyCelny;
-        
+
         return $this;
     }
+
     /**
      * Get numerPrzesylkiKlienta value
      * @return string|null
@@ -484,6 +511,7 @@ class PaczkaZagranicznaType extends PrzesylkaRejestrowanaType
     {
         return $this->numerPrzesylkiKlienta;
     }
+
     /**
      * Set numerPrzesylkiKlienta value
      * @param string $numerPrzesylkiKlienta
@@ -496,7 +524,7 @@ class PaczkaZagranicznaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($numerPrzesylkiKlienta, true), gettype($numerPrzesylkiKlienta)), __LINE__);
         }
         $this->numerPrzesylkiKlienta = $numerPrzesylkiKlienta;
-        
+
         return $this;
     }
 }

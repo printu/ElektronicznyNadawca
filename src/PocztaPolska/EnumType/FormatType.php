@@ -19,17 +19,18 @@ class FormatType extends AbstractStructEnumBase
      * Constant for value 'S'
      * @return string 'S'
      */
-    const VALUE_S = 'S';
+    public const VALUE_S = 'S';
     /**
      * Constant for value 'M'
      * @return string 'M'
      */
-    const VALUE_M = 'M';
+    public const VALUE_M = 'M';
     /**
      * Constant for value 'L'
      * @return string 'L'
      */
-    const VALUE_L = 'L';
+    public const VALUE_L = 'L';
+
     /**
      * Return allowed values
      * @uses self::VALUE_S

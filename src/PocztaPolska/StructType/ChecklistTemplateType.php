@@ -130,6 +130,7 @@ class ChecklistTemplateType extends AbstractStructBase
      * @var string|null
      */
     protected ?string $guid = null;
+
     /**
      * Constructor method for checklistTemplateType
      * @uses ChecklistTemplateType::setIdChecklistTemplate()
@@ -176,6 +177,7 @@ class ChecklistTemplateType extends AbstractStructBase
             ->setAdditionalActivity($additionalActivity)
             ->setGuid($guid);
     }
+
     /**
      * Get idChecklistTemplate value
      * @return int|null
@@ -184,6 +186,7 @@ class ChecklistTemplateType extends AbstractStructBase
     {
         return $this->idChecklistTemplate;
     }
+
     /**
      * Set idChecklistTemplate value
      * @param int $idChecklistTemplate
@@ -196,9 +199,10 @@ class ChecklistTemplateType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($idChecklistTemplate, true), gettype($idChecklistTemplate)), __LINE__);
         }
         $this->idChecklistTemplate = $idChecklistTemplate;
-        
+
         return $this;
     }
+
     /**
      * Get idKarta value
      * @return int|null
@@ -207,6 +211,7 @@ class ChecklistTemplateType extends AbstractStructBase
     {
         return $this->idKarta;
     }
+
     /**
      * Set idKarta value
      * @param int $idKarta
@@ -219,9 +224,10 @@ class ChecklistTemplateType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($idKarta, true), gettype($idKarta)), __LINE__);
         }
         $this->idKarta = $idKarta;
-        
+
         return $this;
     }
+
     /**
      * Get name value
      * @return string|null
@@ -230,6 +236,7 @@ class ChecklistTemplateType extends AbstractStructBase
     {
         return $this->name;
     }
+
     /**
      * Set name value
      * @param string $name
@@ -246,9 +253,10 @@ class ChecklistTemplateType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 50', mb_strlen((string) $name)), __LINE__);
         }
         $this->name = $name;
-        
+
         return $this;
     }
+
     /**
      * Get title value
      * @return string|null
@@ -257,6 +265,7 @@ class ChecklistTemplateType extends AbstractStructBase
     {
         return $this->title;
     }
+
     /**
      * Set title value
      * @param string $title
@@ -273,9 +282,10 @@ class ChecklistTemplateType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 45', mb_strlen((string) $title)), __LINE__);
         }
         $this->title = $title;
-        
+
         return $this;
     }
+
     /**
      * Get description value
      * @return string|null
@@ -284,6 +294,7 @@ class ChecklistTemplateType extends AbstractStructBase
     {
         return $this->description;
     }
+
     /**
      * Set description value
      * @param string $description
@@ -300,9 +311,10 @@ class ChecklistTemplateType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 100', mb_strlen((string) $description)), __LINE__);
         }
         $this->description = $description;
-        
+
         return $this;
     }
+
     /**
      * Get infoForCourier value
      * @return string|null
@@ -311,6 +323,7 @@ class ChecklistTemplateType extends AbstractStructBase
     {
         return $this->infoForCourier;
     }
+
     /**
      * Set infoForCourier value
      * @param string $infoForCourier
@@ -327,9 +340,10 @@ class ChecklistTemplateType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 1000', mb_strlen((string) $infoForCourier)), __LINE__);
         }
         $this->infoForCourier = $infoForCourier;
-        
+
         return $this;
     }
+
     /**
      * Get default value
      * @return bool|null
@@ -338,6 +352,7 @@ class ChecklistTemplateType extends AbstractStructBase
     {
         return $this->default;
     }
+
     /**
      * Set default value
      * @param bool $default
@@ -350,9 +365,10 @@ class ChecklistTemplateType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($default, true), gettype($default)), __LINE__);
         }
         $this->default = $default;
-        
+
         return $this;
     }
+
     /**
      * Get validFrom value
      * @return string|null
@@ -361,6 +377,7 @@ class ChecklistTemplateType extends AbstractStructBase
     {
         return $this->validFrom;
     }
+
     /**
      * Set validFrom value
      * @param string $validFrom
@@ -373,9 +390,10 @@ class ChecklistTemplateType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($validFrom, true), gettype($validFrom)), __LINE__);
         }
         $this->validFrom = $validFrom;
-        
+
         return $this;
     }
+
     /**
      * Get validTo value
      * @return string|null
@@ -384,6 +402,7 @@ class ChecklistTemplateType extends AbstractStructBase
     {
         return $this->validTo;
     }
+
     /**
      * Set validTo value
      * @param string $validTo
@@ -396,9 +415,10 @@ class ChecklistTemplateType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($validTo, true), gettype($validTo)), __LINE__);
         }
         $this->validTo = $validTo;
-        
+
         return $this;
     }
+
     /**
      * Get logo value
      * @return string|null
@@ -407,6 +427,7 @@ class ChecklistTemplateType extends AbstractStructBase
     {
         return $this->logo;
     }
+
     /**
      * Set logo value
      * @param string $logo
@@ -419,9 +440,10 @@ class ChecklistTemplateType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($logo, true), gettype($logo)), __LINE__);
         }
         $this->logo = $logo;
-        
+
         return $this;
     }
+
     /**
      * Get service value
      * @return string|null
@@ -430,6 +452,7 @@ class ChecklistTemplateType extends AbstractStructBase
     {
         return $this->service;
     }
+
     /**
      * Set service value
      * @uses \PocztaPolska\EnumType\SerwisPrzesylkaProceduralnaType::valueIsValid()
@@ -445,9 +468,10 @@ class ChecklistTemplateType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\SerwisPrzesylkaProceduralnaType', is_array($service) ? implode(', ', $service) : var_export($service, true), implode(', ', \PocztaPolska\EnumType\SerwisPrzesylkaProceduralnaType::getValidValues())), __LINE__);
         }
         $this->service = $service;
-        
+
         return $this;
     }
+
     /**
      * Get additionalActivity value
      * @return \PocztaPolska\StructType\AdditionalActivityType[]
@@ -456,6 +480,7 @@ class ChecklistTemplateType extends AbstractStructBase
     {
         return $this->additionalActivity;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setAdditionalActivity method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAdditionalActivity method
@@ -480,9 +505,10 @@ class ChecklistTemplateType extends AbstractStructBase
             $message = sprintf('The additionalActivity property can only contain items of type \PocztaPolska\StructType\AdditionalActivityType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set additionalActivity value
      * @throws InvalidArgumentException
@@ -496,9 +522,10 @@ class ChecklistTemplateType extends AbstractStructBase
             throw new InvalidArgumentException($additionalActivityArrayErrorMessage, __LINE__);
         }
         $this->additionalActivity = $additionalActivity;
-        
+
         return $this;
     }
+
     /**
      * Add item to additionalActivity value
      * @throws InvalidArgumentException
@@ -512,9 +539,10 @@ class ChecklistTemplateType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The additionalActivity property can only contain items of type \PocztaPolska\StructType\AdditionalActivityType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->additionalActivity[] = $item;
-        
+
         return $this;
     }
+
     /**
      * Get guid value
      * @return string|null
@@ -523,6 +551,7 @@ class ChecklistTemplateType extends AbstractStructBase
     {
         return $this->guid;
     }
+
     /**
      * Set guid value
      * @param string $guid
@@ -539,7 +568,7 @@ class ChecklistTemplateType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 32', mb_strlen((string) $guid)), __LINE__);
         }
         $this->guid = $guid;
-        
+
         return $this;
     }
 }

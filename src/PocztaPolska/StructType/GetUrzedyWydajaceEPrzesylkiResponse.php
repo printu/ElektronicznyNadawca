@@ -22,6 +22,7 @@ class GetUrzedyWydajaceEPrzesylkiResponse extends AbstractStructBase
      * @var \PocztaPolska\StructType\UrzadWydaniaEPrzesylkiType[]
      */
     protected array $urzadWydaniaEPrzesylki;
+
     /**
      * Constructor method for getUrzedyWydajaceEPrzesylkiResponse
      * @uses GetUrzedyWydajaceEPrzesylkiResponse::setUrzadWydaniaEPrzesylki()
@@ -32,6 +33,7 @@ class GetUrzedyWydajaceEPrzesylkiResponse extends AbstractStructBase
         $this
             ->setUrzadWydaniaEPrzesylki($urzadWydaniaEPrzesylki);
     }
+
     /**
      * Get urzadWydaniaEPrzesylki value
      * @return \PocztaPolska\StructType\UrzadWydaniaEPrzesylkiType[]
@@ -40,6 +42,7 @@ class GetUrzedyWydajaceEPrzesylkiResponse extends AbstractStructBase
     {
         return $this->urzadWydaniaEPrzesylki;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setUrzadWydaniaEPrzesylki method
      * This method is willingly generated in order to preserve the one-line inline validation within the setUrzadWydaniaEPrzesylki method
@@ -64,9 +67,10 @@ class GetUrzedyWydajaceEPrzesylkiResponse extends AbstractStructBase
             $message = sprintf('The urzadWydaniaEPrzesylki property can only contain items of type \PocztaPolska\StructType\UrzadWydaniaEPrzesylkiType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set urzadWydaniaEPrzesylki value
      * @throws InvalidArgumentException
@@ -80,9 +84,10 @@ class GetUrzedyWydajaceEPrzesylkiResponse extends AbstractStructBase
             throw new InvalidArgumentException($urzadWydaniaEPrzesylkiArrayErrorMessage, __LINE__);
         }
         $this->urzadWydaniaEPrzesylki = $urzadWydaniaEPrzesylki;
-        
+
         return $this;
     }
+
     /**
      * Add item to urzadWydaniaEPrzesylki value
      * @throws InvalidArgumentException
@@ -96,7 +101,7 @@ class GetUrzedyWydajaceEPrzesylkiResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The urzadWydaniaEPrzesylki property can only contain items of type \PocztaPolska\StructType\UrzadWydaniaEPrzesylkiType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->urzadWydaniaEPrzesylki[] = $item;
-        
+
         return $this;
     }
 }

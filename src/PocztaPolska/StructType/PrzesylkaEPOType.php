@@ -63,6 +63,7 @@ class PrzesylkaEPOType extends AbstractStructBase
      * @var string|null
      */
     protected ?string $statusEPO = null;
+
     /**
      * Constructor method for przesylkaEPOType
      * @uses PrzesylkaEPOType::setEPOInfo()
@@ -88,6 +89,7 @@ class PrzesylkaEPOType extends AbstractStructBase
             ->setNumerNadania($numerNadania)
             ->setStatusEPO($statusEPO);
     }
+
     /**
      * Get EPOInfo value
      * @return \PocztaPolska\StructType\EPOInfoType|null
@@ -96,6 +98,7 @@ class PrzesylkaEPOType extends AbstractStructBase
     {
         return $this->EPOInfo;
     }
+
     /**
      * Set EPOInfo value
      * @param \PocztaPolska\StructType\EPOInfoType $ePOInfo
@@ -104,9 +107,10 @@ class PrzesylkaEPOType extends AbstractStructBase
     public function setEPOInfo(?\PocztaPolska\StructType\EPOInfoType $ePOInfo = null): self
     {
         $this->EPOInfo = $ePOInfo;
-        
+
         return $this;
     }
+
     /**
      * Get biometricSignatureContent value
      * @return string|null
@@ -115,6 +119,7 @@ class PrzesylkaEPOType extends AbstractStructBase
     {
         return $this->biometricSignatureContent;
     }
+
     /**
      * Set biometricSignatureContent value
      * @param string $biometricSignatureContent
@@ -127,9 +132,10 @@ class PrzesylkaEPOType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($biometricSignatureContent, true), gettype($biometricSignatureContent)), __LINE__);
         }
         $this->biometricSignatureContent = $biometricSignatureContent;
-        
+
         return $this;
     }
+
     /**
      * Get version value
      * @return int|null
@@ -138,6 +144,7 @@ class PrzesylkaEPOType extends AbstractStructBase
     {
         return $this->version;
     }
+
     /**
      * Set version value
      * @param int $version
@@ -150,9 +157,10 @@ class PrzesylkaEPOType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($version, true), gettype($version)), __LINE__);
         }
         $this->version = $version;
-        
+
         return $this;
     }
+
     /**
      * Get guid value
      * @return string|null
@@ -161,6 +169,7 @@ class PrzesylkaEPOType extends AbstractStructBase
     {
         return $this->guid;
     }
+
     /**
      * Set guid value
      * @param string $guid
@@ -177,9 +186,10 @@ class PrzesylkaEPOType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 32', mb_strlen((string) $guid)), __LINE__);
         }
         $this->guid = $guid;
-        
+
         return $this;
     }
+
     /**
      * Get numerNadania value
      * @return string|null
@@ -188,6 +198,7 @@ class PrzesylkaEPOType extends AbstractStructBase
     {
         return $this->numerNadania;
     }
+
     /**
      * Set numerNadania value
      * @param string $numerNadania
@@ -208,9 +219,10 @@ class PrzesylkaEPOType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 10', mb_strlen((string) $numerNadania)), __LINE__);
         }
         $this->numerNadania = $numerNadania;
-        
+
         return $this;
     }
+
     /**
      * Get statusEPO value
      * @return string|null
@@ -219,6 +231,7 @@ class PrzesylkaEPOType extends AbstractStructBase
     {
         return $this->statusEPO;
     }
+
     /**
      * Set statusEPO value
      * @uses \PocztaPolska\EnumType\StatusEPOEnum::valueIsValid()
@@ -234,7 +247,7 @@ class PrzesylkaEPOType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\StatusEPOEnum', is_array($statusEPO) ? implode(', ', $statusEPO) : var_export($statusEPO, true), implode(', ', \PocztaPolska\EnumType\StatusEPOEnum::getValidValues())), __LINE__);
         }
         $this->statusEPO = $statusEPO;
-        
+
         return $this;
     }
 }

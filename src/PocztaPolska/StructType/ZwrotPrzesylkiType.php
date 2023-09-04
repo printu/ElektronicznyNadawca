@@ -34,6 +34,7 @@ class ZwrotPrzesylkiType extends AbstractStructBase
      * @var string|null
      */
     protected ?string $przyczynaZwrotuDodatkowa = null;
+
     /**
      * Constructor method for zwrotPrzesylkiType
      * @uses ZwrotPrzesylkiType::setPrzyczyna()
@@ -50,6 +51,7 @@ class ZwrotPrzesylkiType extends AbstractStructBase
             ->setData($data)
             ->setPrzyczynaZwrotuDodatkowa($przyczynaZwrotuDodatkowa);
     }
+
     /**
      * Get przyczyna value
      * @return string|null
@@ -58,6 +60,7 @@ class ZwrotPrzesylkiType extends AbstractStructBase
     {
         return $this->przyczyna;
     }
+
     /**
      * Set przyczyna value
      * @uses \PocztaPolska\EnumType\PrzyczynaZwrotuEnum::valueIsValid()
@@ -73,9 +76,10 @@ class ZwrotPrzesylkiType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\PrzyczynaZwrotuEnum', is_array($przyczyna) ? implode(', ', $przyczyna) : var_export($przyczyna, true), implode(', ', \PocztaPolska\EnumType\PrzyczynaZwrotuEnum::getValidValues())), __LINE__);
         }
         $this->przyczyna = $przyczyna;
-        
+
         return $this;
     }
+
     /**
      * Get data value
      * @return string|null
@@ -84,6 +88,7 @@ class ZwrotPrzesylkiType extends AbstractStructBase
     {
         return $this->data;
     }
+
     /**
      * Set data value
      * @param string $data
@@ -96,9 +101,10 @@ class ZwrotPrzesylkiType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($data, true), gettype($data)), __LINE__);
         }
         $this->data = $data;
-        
+
         return $this;
     }
+
     /**
      * Get przyczynaZwrotuDodatkowa value
      * @return string|null
@@ -107,6 +113,7 @@ class ZwrotPrzesylkiType extends AbstractStructBase
     {
         return $this->przyczynaZwrotuDodatkowa;
     }
+
     /**
      * Set przyczynaZwrotuDodatkowa value
      * @param string $przyczynaZwrotuDodatkowa
@@ -123,7 +130,7 @@ class ZwrotPrzesylkiType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 255', mb_strlen((string) $przyczynaZwrotuDodatkowa)), __LINE__);
         }
         $this->przyczynaZwrotuDodatkowa = $przyczynaZwrotuDodatkowa;
-        
+
         return $this;
     }
 }

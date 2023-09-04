@@ -24,6 +24,7 @@ class EZwrotKartaType extends AbstractStructBase
      * @var int|null
      */
     protected ?int $idAdresKorespondencyjny = null;
+
     /**
      * Constructor method for eZwrotKartaType
      * @uses EZwrotKartaType::setIdKarta()
@@ -37,6 +38,7 @@ class EZwrotKartaType extends AbstractStructBase
             ->setIdKarta($idKarta)
             ->setIdAdresKorespondencyjny($idAdresKorespondencyjny);
     }
+
     /**
      * Get idKarta value
      * @return int|null
@@ -45,6 +47,7 @@ class EZwrotKartaType extends AbstractStructBase
     {
         return $this->idKarta;
     }
+
     /**
      * Set idKarta value
      * @param int $idKarta
@@ -57,9 +60,10 @@ class EZwrotKartaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($idKarta, true), gettype($idKarta)), __LINE__);
         }
         $this->idKarta = $idKarta;
-        
+
         return $this;
     }
+
     /**
      * Get idAdresKorespondencyjny value
      * @return int|null
@@ -68,6 +72,7 @@ class EZwrotKartaType extends AbstractStructBase
     {
         return $this->idAdresKorespondencyjny;
     }
+
     /**
      * Set idAdresKorespondencyjny value
      * @param int $idAdresKorespondencyjny
@@ -80,7 +85,7 @@ class EZwrotKartaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($idAdresKorespondencyjny, true), gettype($idAdresKorespondencyjny)), __LINE__);
         }
         $this->idAdresKorespondencyjny = $idAdresKorespondencyjny;
-        
+
         return $this;
     }
 }

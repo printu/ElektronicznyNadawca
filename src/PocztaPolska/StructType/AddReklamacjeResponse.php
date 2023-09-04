@@ -30,6 +30,7 @@ class AddReklamacjeResponse extends AbstractStructBase
      * @var \PocztaPolska\StructType\ReklamacjaInfoType[]
      */
     protected ?array $reklamacjaInfo = null;
+
     /**
      * Constructor method for addReklamacjeResponse
      * @uses AddReklamacjeResponse::setError()
@@ -43,6 +44,7 @@ class AddReklamacjeResponse extends AbstractStructBase
             ->setError($error)
             ->setReklamacjaInfo($reklamacjaInfo);
     }
+
     /**
      * Get error value
      * @return \PocztaPolska\StructType\ErrorType[]
@@ -51,6 +53,7 @@ class AddReklamacjeResponse extends AbstractStructBase
     {
         return $this->error;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setError method
      * This method is willingly generated in order to preserve the one-line inline validation within the setError method
@@ -75,9 +78,10 @@ class AddReklamacjeResponse extends AbstractStructBase
             $message = sprintf('The error property can only contain items of type \PocztaPolska\StructType\ErrorType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set error value
      * @throws InvalidArgumentException
@@ -91,9 +95,10 @@ class AddReklamacjeResponse extends AbstractStructBase
             throw new InvalidArgumentException($errorArrayErrorMessage, __LINE__);
         }
         $this->error = $error;
-        
+
         return $this;
     }
+
     /**
      * Add item to error value
      * @throws InvalidArgumentException
@@ -107,9 +112,10 @@ class AddReklamacjeResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The error property can only contain items of type \PocztaPolska\StructType\ErrorType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->error[] = $item;
-        
+
         return $this;
     }
+
     /**
      * Get reklamacjaInfo value
      * @return \PocztaPolska\StructType\ReklamacjaInfoType[]
@@ -118,6 +124,7 @@ class AddReklamacjeResponse extends AbstractStructBase
     {
         return $this->reklamacjaInfo;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setReklamacjaInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setReklamacjaInfo method
@@ -142,9 +149,10 @@ class AddReklamacjeResponse extends AbstractStructBase
             $message = sprintf('The reklamacjaInfo property can only contain items of type \PocztaPolska\StructType\ReklamacjaInfoType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set reklamacjaInfo value
      * @throws InvalidArgumentException
@@ -162,9 +170,10 @@ class AddReklamacjeResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 500', count($reklamacjaInfo)), __LINE__);
         }
         $this->reklamacjaInfo = $reklamacjaInfo;
-        
+
         return $this;
     }
+
     /**
      * Add item to reklamacjaInfo value
      * @throws InvalidArgumentException
@@ -182,7 +191,7 @@ class AddReklamacjeResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 500', count($this->reklamacjaInfo)), __LINE__);
         }
         $this->reklamacjaInfo[] = $item;
-        
+
         return $this;
     }
 }

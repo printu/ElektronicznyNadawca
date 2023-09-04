@@ -19,6 +19,7 @@ class GetAddressLabel extends AbstractStructBase
      * @var int|null
      */
     protected ?int $idEnvelope = null;
+
     /**
      * Constructor method for getAddressLabel
      * @uses GetAddressLabel::setIdEnvelope()
@@ -29,6 +30,7 @@ class GetAddressLabel extends AbstractStructBase
         $this
             ->setIdEnvelope($idEnvelope);
     }
+
     /**
      * Get idEnvelope value
      * @return int|null
@@ -37,6 +39,7 @@ class GetAddressLabel extends AbstractStructBase
     {
         return $this->idEnvelope;
     }
+
     /**
      * Set idEnvelope value
      * @param int $idEnvelope
@@ -49,7 +52,7 @@ class GetAddressLabel extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($idEnvelope, true), gettype($idEnvelope)), __LINE__);
         }
         $this->idEnvelope = $idEnvelope;
-        
+
         return $this;
     }
 }

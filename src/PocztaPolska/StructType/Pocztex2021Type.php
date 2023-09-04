@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace PocztaPolska\StructType;
 
 use InvalidArgumentException;
-use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for pocztex2021Type StructType
@@ -184,6 +183,7 @@ abstract class Pocztex2021Type extends PrzesylkaRejestrowanaType
      * @var bool|null
      */
     protected ?bool $doreczenieDoRakWlasnych = null;
+
     /**
      * Constructor method for pocztex2021Type
      * @uses Pocztex2021Type::setPobranie()
@@ -251,6 +251,7 @@ abstract class Pocztex2021Type extends PrzesylkaRejestrowanaType
             ->setUiszczaOplate($uiszczaOplate)
             ->setDoreczenieDoRakWlasnych($doreczenieDoRakWlasnych);
     }
+
     /**
      * Get pobranie value
      * @return \PocztaPolska\StructType\PobranieType|null
@@ -259,6 +260,7 @@ abstract class Pocztex2021Type extends PrzesylkaRejestrowanaType
     {
         return $this->pobranie;
     }
+
     /**
      * Set pobranie value
      * @param \PocztaPolska\StructType\PobranieType $pobranie
@@ -267,9 +269,10 @@ abstract class Pocztex2021Type extends PrzesylkaRejestrowanaType
     public function setPobranie(?\PocztaPolska\StructType\PobranieType $pobranie = null): self
     {
         $this->pobranie = $pobranie;
-        
+
         return $this;
     }
+
     /**
      * Get potwierdzenieDoreczenia value
      * @return \PocztaPolska\StructType\PotwierdzenieEDoreczeniaType|null
@@ -278,6 +281,7 @@ abstract class Pocztex2021Type extends PrzesylkaRejestrowanaType
     {
         return $this->potwierdzenieDoreczenia;
     }
+
     /**
      * Set potwierdzenieDoreczenia value
      * @param \PocztaPolska\StructType\PotwierdzenieEDoreczeniaType $potwierdzenieDoreczenia
@@ -286,9 +290,10 @@ abstract class Pocztex2021Type extends PrzesylkaRejestrowanaType
     public function setPotwierdzenieDoreczenia(?\PocztaPolska\StructType\PotwierdzenieEDoreczeniaType $potwierdzenieDoreczenia = null): self
     {
         $this->potwierdzenieDoreczenia = $potwierdzenieDoreczenia;
-        
+
         return $this;
     }
+
     /**
      * Get potwierdzenieOdbioru value
      * @return \PocztaPolska\StructType\PotwierdzenieOdbioruPocztex2021Type|null
@@ -297,6 +302,7 @@ abstract class Pocztex2021Type extends PrzesylkaRejestrowanaType
     {
         return $this->potwierdzenieOdbioru;
     }
+
     /**
      * Set potwierdzenieOdbioru value
      * @param \PocztaPolska\StructType\PotwierdzenieOdbioruPocztex2021Type $potwierdzenieOdbioru
@@ -305,9 +311,10 @@ abstract class Pocztex2021Type extends PrzesylkaRejestrowanaType
     public function setPotwierdzenieOdbioru(?\PocztaPolska\StructType\PotwierdzenieOdbioruPocztex2021Type $potwierdzenieOdbioru = null): self
     {
         $this->potwierdzenieOdbioru = $potwierdzenieOdbioru;
-        
+
         return $this;
     }
+
     /**
      * Get ubezpieczenie value
      * @return \PocztaPolska\StructType\UbezpieczenieType|null
@@ -316,6 +323,7 @@ abstract class Pocztex2021Type extends PrzesylkaRejestrowanaType
     {
         return $this->ubezpieczenie;
     }
+
     /**
      * Set ubezpieczenie value
      * @param \PocztaPolska\StructType\UbezpieczenieType $ubezpieczenie
@@ -324,9 +332,10 @@ abstract class Pocztex2021Type extends PrzesylkaRejestrowanaType
     public function setUbezpieczenie(?\PocztaPolska\StructType\UbezpieczenieType $ubezpieczenie = null): self
     {
         $this->ubezpieczenie = $ubezpieczenie;
-        
+
         return $this;
     }
+
     /**
      * Get masa value
      * @return int|null
@@ -335,6 +344,7 @@ abstract class Pocztex2021Type extends PrzesylkaRejestrowanaType
     {
         return $this->masa;
     }
+
     /**
      * Set masa value
      * @param int $masa
@@ -355,9 +365,10 @@ abstract class Pocztex2021Type extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 1', var_export($masa, true)), __LINE__);
         }
         $this->masa = $masa;
-        
+
         return $this;
     }
+
     /**
      * Get wartosc value
      * @return int|null
@@ -366,6 +377,7 @@ abstract class Pocztex2021Type extends PrzesylkaRejestrowanaType
     {
         return $this->wartosc;
     }
+
     /**
      * Set wartosc value
      * @param int $wartosc
@@ -386,9 +398,10 @@ abstract class Pocztex2021Type extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 0', var_export($wartosc, true)), __LINE__);
         }
         $this->wartosc = $wartosc;
-        
+
         return $this;
     }
+
     /**
      * Get ostroznie value
      * @return bool|null
@@ -397,6 +410,7 @@ abstract class Pocztex2021Type extends PrzesylkaRejestrowanaType
     {
         return $this->ostroznie;
     }
+
     /**
      * Set ostroznie value
      * @param bool $ostroznie
@@ -409,9 +423,10 @@ abstract class Pocztex2021Type extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($ostroznie, true), gettype($ostroznie)), __LINE__);
         }
         $this->ostroznie = $ostroznie;
-        
+
         return $this;
     }
+
     /**
      * Get ponadgabaryt value
      * @return bool|null
@@ -420,6 +435,7 @@ abstract class Pocztex2021Type extends PrzesylkaRejestrowanaType
     {
         return $this->ponadgabaryt;
     }
+
     /**
      * Set ponadgabaryt value
      * @param bool $ponadgabaryt
@@ -432,9 +448,10 @@ abstract class Pocztex2021Type extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($ponadgabaryt, true), gettype($ponadgabaryt)), __LINE__);
         }
         $this->ponadgabaryt = $ponadgabaryt;
-        
+
         return $this;
     }
+
     /**
      * Get format value
      * @return string|null
@@ -443,6 +460,7 @@ abstract class Pocztex2021Type extends PrzesylkaRejestrowanaType
     {
         return $this->format;
     }
+
     /**
      * Set format value
      * @uses \PocztaPolska\EnumType\FormatPocztex2021Type::valueIsValid()
@@ -458,9 +476,10 @@ abstract class Pocztex2021Type extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\FormatPocztex2021Type', is_array($format) ? implode(', ', $format) : var_export($format, true), implode(', ', \PocztaPolska\EnumType\FormatPocztex2021Type::getValidValues())), __LINE__);
         }
         $this->format = $format;
-        
+
         return $this;
     }
+
     /**
      * Get numerPrzesylkiKlienta value
      * @return string|null
@@ -469,6 +488,7 @@ abstract class Pocztex2021Type extends PrzesylkaRejestrowanaType
     {
         return $this->numerPrzesylkiKlienta;
     }
+
     /**
      * Set numerPrzesylkiKlienta value
      * @param string $numerPrzesylkiKlienta
@@ -485,9 +505,10 @@ abstract class Pocztex2021Type extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 25', mb_strlen((string) $numerPrzesylkiKlienta)), __LINE__);
         }
         $this->numerPrzesylkiKlienta = $numerPrzesylkiKlienta;
-        
+
         return $this;
     }
+
     /**
      * Get zwrotDokumentow value
      * @return string|null
@@ -496,6 +517,7 @@ abstract class Pocztex2021Type extends PrzesylkaRejestrowanaType
     {
         return $this->zwrotDokumentow;
     }
+
     /**
      * Set zwrotDokumentow value
      * @uses \PocztaPolska\EnumType\ZwrotDokumentowPocztex2021Enum::valueIsValid()
@@ -511,9 +533,10 @@ abstract class Pocztex2021Type extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\ZwrotDokumentowPocztex2021Enum', is_array($zwrotDokumentow) ? implode(', ', $zwrotDokumentow) : var_export($zwrotDokumentow, true), implode(', ', \PocztaPolska\EnumType\ZwrotDokumentowPocztex2021Enum::getValidValues())), __LINE__);
         }
         $this->zwrotDokumentow = $zwrotDokumentow;
-        
+
         return $this;
     }
+
     /**
      * Get idDokumentyZwrotneAdresy value
      * @return int|null
@@ -522,6 +545,7 @@ abstract class Pocztex2021Type extends PrzesylkaRejestrowanaType
     {
         return $this->idDokumentyZwrotneAdresy;
     }
+
     /**
      * Set idDokumentyZwrotneAdresy value
      * @param int $idDokumentyZwrotneAdresy
@@ -534,9 +558,10 @@ abstract class Pocztex2021Type extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($idDokumentyZwrotneAdresy, true), gettype($idDokumentyZwrotneAdresy)), __LINE__);
         }
         $this->idDokumentyZwrotneAdresy = $idDokumentyZwrotneAdresy;
-        
+
         return $this;
     }
+
     /**
      * Get epo value
      * @return \PocztaPolska\StructType\EPOType|null
@@ -545,6 +570,7 @@ abstract class Pocztex2021Type extends PrzesylkaRejestrowanaType
     {
         return $this->epo;
     }
+
     /**
      * Set epo value
      * @param \PocztaPolska\StructType\EPOType $epo
@@ -553,9 +579,10 @@ abstract class Pocztex2021Type extends PrzesylkaRejestrowanaType
     public function setEpo(?\PocztaPolska\StructType\EPOType $epo = null): self
     {
         $this->epo = $epo;
-        
+
         return $this;
     }
+
     /**
      * Get adresDlaZwrotu value
      * @return \PocztaPolska\StructType\AdresType|null
@@ -564,6 +591,7 @@ abstract class Pocztex2021Type extends PrzesylkaRejestrowanaType
     {
         return $this->adresDlaZwrotu;
     }
+
     /**
      * Set adresDlaZwrotu value
      * @param \PocztaPolska\StructType\AdresType $adresDlaZwrotu
@@ -572,9 +600,10 @@ abstract class Pocztex2021Type extends PrzesylkaRejestrowanaType
     public function setAdresDlaZwrotu(?\PocztaPolska\StructType\AdresType $adresDlaZwrotu = null): self
     {
         $this->adresDlaZwrotu = $adresDlaZwrotu;
-        
+
         return $this;
     }
+
     /**
      * Get odbiorWSobote value
      * @return bool|null
@@ -583,6 +612,7 @@ abstract class Pocztex2021Type extends PrzesylkaRejestrowanaType
     {
         return $this->odbiorWSobote;
     }
+
     /**
      * Set odbiorWSobote value
      * @param bool $odbiorWSobote
@@ -595,9 +625,10 @@ abstract class Pocztex2021Type extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($odbiorWSobote, true), gettype($odbiorWSobote)), __LINE__);
         }
         $this->odbiorWSobote = $odbiorWSobote;
-        
+
         return $this;
     }
+
     /**
      * Get zasadySpecjalne value
      * @return string|null
@@ -606,6 +637,7 @@ abstract class Pocztex2021Type extends PrzesylkaRejestrowanaType
     {
         return $this->zasadySpecjalne;
     }
+
     /**
      * Set zasadySpecjalne value
      * @uses \PocztaPolska\EnumType\ZasadySpecjalneEnum::valueIsValid()
@@ -621,9 +653,10 @@ abstract class Pocztex2021Type extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\ZasadySpecjalneEnum', is_array($zasadySpecjalne) ? implode(', ', $zasadySpecjalne) : var_export($zasadySpecjalne, true), implode(', ', \PocztaPolska\EnumType\ZasadySpecjalneEnum::getValidValues())), __LINE__);
         }
         $this->zasadySpecjalne = $zasadySpecjalne;
-        
+
         return $this;
     }
+
     /**
      * Get zawartosc value
      * @return \PocztaPolska\StructType\ZawartoscPocztex2021Type|null
@@ -632,6 +665,7 @@ abstract class Pocztex2021Type extends PrzesylkaRejestrowanaType
     {
         return $this->zawartosc;
     }
+
     /**
      * Set zawartosc value
      * @param \PocztaPolska\StructType\ZawartoscPocztex2021Type $zawartosc
@@ -640,9 +674,10 @@ abstract class Pocztex2021Type extends PrzesylkaRejestrowanaType
     public function setZawartosc(?\PocztaPolska\StructType\ZawartoscPocztex2021Type $zawartosc = null): self
     {
         $this->zawartosc = $zawartosc;
-        
+
         return $this;
     }
+
     /**
      * Get sprawdzenieZawartosciPrzesylkiPrzezOdbiorce value
      * @return bool|null
@@ -651,6 +686,7 @@ abstract class Pocztex2021Type extends PrzesylkaRejestrowanaType
     {
         return $this->sprawdzenieZawartosciPrzesylkiPrzezOdbiorce;
     }
+
     /**
      * Set sprawdzenieZawartosciPrzesylkiPrzezOdbiorce value
      * @param bool $sprawdzenieZawartosciPrzesylkiPrzezOdbiorce
@@ -663,9 +699,10 @@ abstract class Pocztex2021Type extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($sprawdzenieZawartosciPrzesylkiPrzezOdbiorce, true), gettype($sprawdzenieZawartosciPrzesylkiPrzezOdbiorce)), __LINE__);
         }
         $this->sprawdzenieZawartosciPrzesylkiPrzezOdbiorce = $sprawdzenieZawartosciPrzesylkiPrzezOdbiorce;
-        
+
         return $this;
     }
+
     /**
      * Get uiszczaOplate value
      * @return string|null
@@ -674,6 +711,7 @@ abstract class Pocztex2021Type extends PrzesylkaRejestrowanaType
     {
         return $this->uiszczaOplate;
     }
+
     /**
      * Set uiszczaOplate value
      * @uses \PocztaPolska\EnumType\UiszczaOplateType::valueIsValid()
@@ -689,9 +727,10 @@ abstract class Pocztex2021Type extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\UiszczaOplateType', is_array($uiszczaOplate) ? implode(', ', $uiszczaOplate) : var_export($uiszczaOplate, true), implode(', ', \PocztaPolska\EnumType\UiszczaOplateType::getValidValues())), __LINE__);
         }
         $this->uiszczaOplate = $uiszczaOplate;
-        
+
         return $this;
     }
+
     /**
      * Get doreczenieDoRakWlasnych value
      * @return bool|null
@@ -700,6 +739,7 @@ abstract class Pocztex2021Type extends PrzesylkaRejestrowanaType
     {
         return $this->doreczenieDoRakWlasnych;
     }
+
     /**
      * Set doreczenieDoRakWlasnych value
      * @param bool $doreczenieDoRakWlasnych
@@ -712,7 +752,7 @@ abstract class Pocztex2021Type extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($doreczenieDoRakWlasnych, true), gettype($doreczenieDoRakWlasnych)), __LINE__);
         }
         $this->doreczenieDoRakWlasnych = $doreczenieDoRakWlasnych;
-        
+
         return $this;
     }
 }

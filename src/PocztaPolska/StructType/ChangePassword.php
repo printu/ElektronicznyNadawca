@@ -19,6 +19,7 @@ class ChangePassword extends AbstractStructBase
      * @var string|null
      */
     protected ?string $newPassword = null;
+
     /**
      * Constructor method for changePassword
      * @uses ChangePassword::setNewPassword()
@@ -29,6 +30,7 @@ class ChangePassword extends AbstractStructBase
         $this
             ->setNewPassword($newPassword);
     }
+
     /**
      * Get newPassword value
      * @return string|null
@@ -37,6 +39,7 @@ class ChangePassword extends AbstractStructBase
     {
         return $this->newPassword;
     }
+
     /**
      * Set newPassword value
      * @param string $newPassword
@@ -49,7 +52,7 @@ class ChangePassword extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($newPassword, true), gettype($newPassword)), __LINE__);
         }
         $this->newPassword = $newPassword;
-        
+
         return $this;
     }
 }

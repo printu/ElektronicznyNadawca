@@ -29,6 +29,7 @@ class DownloadIWDContentResponse extends AbstractStructBase
      * @var \PocztaPolska\StructType\ErrorType[]
      */
     protected ?array $error = null;
+
     /**
      * Constructor method for downloadIWDContentResponse
      * @uses DownloadIWDContentResponse::setIWDContent()
@@ -42,6 +43,7 @@ class DownloadIWDContentResponse extends AbstractStructBase
             ->setIWDContent($iWDContent)
             ->setError($error);
     }
+
     /**
      * Get IWDContent value
      * @return string
@@ -50,6 +52,7 @@ class DownloadIWDContentResponse extends AbstractStructBase
     {
         return $this->IWDContent;
     }
+
     /**
      * Set IWDContent value
      * @param string $iWDContent
@@ -62,9 +65,10 @@ class DownloadIWDContentResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($iWDContent, true), gettype($iWDContent)), __LINE__);
         }
         $this->IWDContent = $iWDContent;
-        
+
         return $this;
     }
+
     /**
      * Get error value
      * @return \PocztaPolska\StructType\ErrorType[]
@@ -73,6 +77,7 @@ class DownloadIWDContentResponse extends AbstractStructBase
     {
         return $this->error;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setError method
      * This method is willingly generated in order to preserve the one-line inline validation within the setError method
@@ -97,9 +102,10 @@ class DownloadIWDContentResponse extends AbstractStructBase
             $message = sprintf('The error property can only contain items of type \PocztaPolska\StructType\ErrorType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set error value
      * @throws InvalidArgumentException
@@ -113,9 +119,10 @@ class DownloadIWDContentResponse extends AbstractStructBase
             throw new InvalidArgumentException($errorArrayErrorMessage, __LINE__);
         }
         $this->error = $error;
-        
+
         return $this;
     }
+
     /**
      * Add item to error value
      * @throws InvalidArgumentException
@@ -129,7 +136,7 @@ class DownloadIWDContentResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The error property can only contain items of type \PocztaPolska\StructType\ErrorType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->error[] = $item;
-        
+
         return $this;
     }
 }

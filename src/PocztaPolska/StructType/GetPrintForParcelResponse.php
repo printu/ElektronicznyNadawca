@@ -30,6 +30,7 @@ class GetPrintForParcelResponse extends AbstractStructBase
      * @var \PocztaPolska\StructType\ErrorType[]
      */
     protected ?array $error = null;
+
     /**
      * Constructor method for getPrintForParcelResponse
      * @uses GetPrintForParcelResponse::setPrintResult()
@@ -43,6 +44,7 @@ class GetPrintForParcelResponse extends AbstractStructBase
             ->setPrintResult($printResult)
             ->setError($error);
     }
+
     /**
      * Get printResult value
      * @return \PocztaPolska\StructType\PrintResultType[]
@@ -51,6 +53,7 @@ class GetPrintForParcelResponse extends AbstractStructBase
     {
         return $this->printResult;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setPrintResult method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPrintResult method
@@ -75,9 +78,10 @@ class GetPrintForParcelResponse extends AbstractStructBase
             $message = sprintf('The printResult property can only contain items of type \PocztaPolska\StructType\PrintResultType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set printResult value
      * @throws InvalidArgumentException
@@ -91,9 +95,10 @@ class GetPrintForParcelResponse extends AbstractStructBase
             throw new InvalidArgumentException($printResultArrayErrorMessage, __LINE__);
         }
         $this->printResult = $printResult;
-        
+
         return $this;
     }
+
     /**
      * Add item to printResult value
      * @throws InvalidArgumentException
@@ -107,9 +112,10 @@ class GetPrintForParcelResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The printResult property can only contain items of type \PocztaPolska\StructType\PrintResultType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->printResult[] = $item;
-        
+
         return $this;
     }
+
     /**
      * Get error value
      * @return \PocztaPolska\StructType\ErrorType[]
@@ -118,6 +124,7 @@ class GetPrintForParcelResponse extends AbstractStructBase
     {
         return $this->error;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setError method
      * This method is willingly generated in order to preserve the one-line inline validation within the setError method
@@ -142,9 +149,10 @@ class GetPrintForParcelResponse extends AbstractStructBase
             $message = sprintf('The error property can only contain items of type \PocztaPolska\StructType\ErrorType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set error value
      * @throws InvalidArgumentException
@@ -158,9 +166,10 @@ class GetPrintForParcelResponse extends AbstractStructBase
             throw new InvalidArgumentException($errorArrayErrorMessage, __LINE__);
         }
         $this->error = $error;
-        
+
         return $this;
     }
+
     /**
      * Add item to error value
      * @throws InvalidArgumentException
@@ -174,7 +183,7 @@ class GetPrintForParcelResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The error property can only contain items of type \PocztaPolska\StructType\ErrorType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->error[] = $item;
-        
+
         return $this;
     }
 }

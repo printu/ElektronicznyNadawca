@@ -22,6 +22,7 @@ class ProduktyInKartaType extends AbstractStructBase
      * @var \PocztaPolska\StructType\ProduktInKartaType[]
      */
     protected ?array $produktInKarta = null;
+
     /**
      * Constructor method for produktyInKartaType
      * @uses ProduktyInKartaType::setProduktInKarta()
@@ -32,6 +33,7 @@ class ProduktyInKartaType extends AbstractStructBase
         $this
             ->setProduktInKarta($produktInKarta);
     }
+
     /**
      * Get produktInKarta value
      * @return \PocztaPolska\StructType\ProduktInKartaType[]
@@ -40,6 +42,7 @@ class ProduktyInKartaType extends AbstractStructBase
     {
         return $this->produktInKarta;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setProduktInKarta method
      * This method is willingly generated in order to preserve the one-line inline validation within the setProduktInKarta method
@@ -64,9 +67,10 @@ class ProduktyInKartaType extends AbstractStructBase
             $message = sprintf('The produktInKarta property can only contain items of type \PocztaPolska\StructType\ProduktInKartaType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set produktInKarta value
      * @throws InvalidArgumentException
@@ -80,9 +84,10 @@ class ProduktyInKartaType extends AbstractStructBase
             throw new InvalidArgumentException($produktInKartaArrayErrorMessage, __LINE__);
         }
         $this->produktInKarta = $produktInKarta;
-        
+
         return $this;
     }
+
     /**
      * Add item to produktInKarta value
      * @throws InvalidArgumentException
@@ -96,7 +101,7 @@ class ProduktyInKartaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The produktInKarta property can only contain items of type \PocztaPolska\StructType\ProduktInKartaType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->produktInKarta[] = $item;
-        
+
         return $this;
     }
 }

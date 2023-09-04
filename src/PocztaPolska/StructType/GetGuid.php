@@ -19,6 +19,7 @@ class GetGuid extends AbstractStructBase
      * @var int|null
      */
     protected ?int $ilosc = null;
+
     /**
      * Constructor method for getGuid
      * @uses GetGuid::setIlosc()
@@ -29,6 +30,7 @@ class GetGuid extends AbstractStructBase
         $this
             ->setIlosc($ilosc);
     }
+
     /**
      * Get ilosc value
      * @return int|null
@@ -37,6 +39,7 @@ class GetGuid extends AbstractStructBase
     {
         return $this->ilosc;
     }
+
     /**
      * Set ilosc value
      * @param int $ilosc
@@ -49,7 +52,7 @@ class GetGuid extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($ilosc, true), gettype($ilosc)), __LINE__);
         }
         $this->ilosc = $ilosc;
-        
+
         return $this;
     }
 }

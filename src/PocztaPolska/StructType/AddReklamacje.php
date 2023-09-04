@@ -22,6 +22,7 @@ class AddReklamacje extends AbstractStructBase
      * @var \PocztaPolska\StructType\ReklamowanaPrzesylkaType[]
      */
     protected array $reklamowanaPrzesylka;
+
     /**
      * Constructor method for addReklamacje
      * @uses AddReklamacje::setReklamowanaPrzesylka()
@@ -32,6 +33,7 @@ class AddReklamacje extends AbstractStructBase
         $this
             ->setReklamowanaPrzesylka($reklamowanaPrzesylka);
     }
+
     /**
      * Get reklamowanaPrzesylka value
      * @return \PocztaPolska\StructType\ReklamowanaPrzesylkaType[]
@@ -40,6 +42,7 @@ class AddReklamacje extends AbstractStructBase
     {
         return $this->reklamowanaPrzesylka;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setReklamowanaPrzesylka method
      * This method is willingly generated in order to preserve the one-line inline validation within the setReklamowanaPrzesylka method
@@ -64,9 +67,10 @@ class AddReklamacje extends AbstractStructBase
             $message = sprintf('The reklamowanaPrzesylka property can only contain items of type \PocztaPolska\StructType\ReklamowanaPrzesylkaType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set reklamowanaPrzesylka value
      * @throws InvalidArgumentException
@@ -84,9 +88,10 @@ class AddReklamacje extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 500', count($reklamowanaPrzesylka)), __LINE__);
         }
         $this->reklamowanaPrzesylka = $reklamowanaPrzesylka;
-        
+
         return $this;
     }
+
     /**
      * Add item to reklamowanaPrzesylka value
      * @throws InvalidArgumentException
@@ -104,7 +109,7 @@ class AddReklamacje extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 500', count($this->reklamowanaPrzesylka)), __LINE__);
         }
         $this->reklamowanaPrzesylka[] = $item;
-        
+
         return $this;
     }
 }

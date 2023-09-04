@@ -16,12 +16,13 @@ class MiejsceOdbioruType extends AbstractStructEnumBase
      * Constant for value 'NADAWCA'
      * @return string 'NADAWCA'
      */
-    const VALUE_NADAWCA = 'NADAWCA';
+    public const VALUE_NADAWCA = 'NADAWCA';
     /**
      * Constant for value 'URZAD_NADANIA'
      * @return string 'URZAD_NADANIA'
      */
-    const VALUE_URZAD_NADANIA = 'URZAD_NADANIA';
+    public const VALUE_URZAD_NADANIA = 'URZAD_NADANIA';
+
     /**
      * Return allowed values
      * @uses self::VALUE_NADAWCA

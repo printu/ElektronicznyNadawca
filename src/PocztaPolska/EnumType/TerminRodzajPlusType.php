@@ -16,17 +16,18 @@ class TerminRodzajPlusType extends AbstractStructEnumBase
      * Constant for value 'PORANEK'
      * @return string 'PORANEK'
      */
-    const VALUE_PORANEK = 'PORANEK';
+    public const VALUE_PORANEK = 'PORANEK';
     /**
      * Constant for value 'POLUDNIE'
      * @return string 'POLUDNIE'
      */
-    const VALUE_POLUDNIE = 'POLUDNIE';
+    public const VALUE_POLUDNIE = 'POLUDNIE';
     /**
      * Constant for value 'STANDARD'
      * @return string 'STANDARD'
      */
-    const VALUE_STANDARD = 'STANDARD';
+    public const VALUE_STANDARD = 'STANDARD';
+
     /**
      * Return allowed values
      * @uses self::VALUE_PORANEK

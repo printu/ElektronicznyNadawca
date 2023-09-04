@@ -25,6 +25,7 @@ class WyslijLinkaOStatusieEZwrotu extends AbstractStructBase
      * @var string[]
      */
     protected array $guidZgodaEZwrot;
+
     /**
      * Constructor method for wyslijLinkaOStatusieEZwrotu
      * @uses WyslijLinkaOStatusieEZwrotu::setGuidZgodaEZwrot()
@@ -35,6 +36,7 @@ class WyslijLinkaOStatusieEZwrotu extends AbstractStructBase
         $this
             ->setGuidZgodaEZwrot($guidZgodaEZwrot);
     }
+
     /**
      * Get guidZgodaEZwrot value
      * @return string[]
@@ -43,6 +45,7 @@ class WyslijLinkaOStatusieEZwrotu extends AbstractStructBase
     {
         return $this->guidZgodaEZwrot;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setGuidZgodaEZwrot method
      * This method is willingly generated in order to preserve the one-line inline validation within the setGuidZgodaEZwrot method
@@ -67,9 +70,10 @@ class WyslijLinkaOStatusieEZwrotu extends AbstractStructBase
             $message = sprintf('The guidZgodaEZwrot property can only contain items of type string, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setGuidZgodaEZwrot method
      * This method is willingly generated in order to preserve the one-line inline validation within the setGuidZgodaEZwrot method
@@ -91,9 +95,10 @@ class WyslijLinkaOStatusieEZwrotu extends AbstractStructBase
             $message = sprintf('Invalid length for value(s) %s, the number of characters/octets contained by the literal must be equal to 32', implode(', ', $invalidValues));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set guidZgodaEZwrot value
      * @throws InvalidArgumentException
@@ -111,9 +116,10 @@ class WyslijLinkaOStatusieEZwrotu extends AbstractStructBase
             throw new InvalidArgumentException($guidZgodaEZwrotLengthErrorMessage, __LINE__);
         }
         $this->guidZgodaEZwrot = $guidZgodaEZwrot;
-        
+
         return $this;
     }
+
     /**
      * Add item to guidZgodaEZwrot value
      * @throws InvalidArgumentException
@@ -131,7 +137,7 @@ class WyslijLinkaOStatusieEZwrotu extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 32', mb_strlen((string) $item)), __LINE__);
         }
         $this->guidZgodaEZwrot[] = $item;
-        
+
         return $this;
     }
 }

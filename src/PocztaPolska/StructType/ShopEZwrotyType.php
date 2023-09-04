@@ -205,6 +205,7 @@ class ShopEZwrotyType extends AbstractStructBase
      * @var string|null
      */
     protected ?string $infoForClient = null;
+
     /**
      * Constructor method for shopEZwrotyType
      * @uses ShopEZwrotyType::setEZwrotPrzesylki()
@@ -284,6 +285,7 @@ class ShopEZwrotyType extends AbstractStructBase
             ->setContractorCost($contractorCost)
             ->setInfoForClient($infoForClient);
     }
+
     /**
      * Get eZwrotPrzesylki value
      * @return string[]
@@ -292,6 +294,7 @@ class ShopEZwrotyType extends AbstractStructBase
     {
         return $this->eZwrotPrzesylki;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setEZwrotPrzesylki method
      * This method is willingly generated in order to preserve the one-line inline validation within the setEZwrotPrzesylki method
@@ -316,9 +319,10 @@ class ShopEZwrotyType extends AbstractStructBase
             $message = sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\EZwrotPrzesylkiType', is_array($invalidValues) ? implode(', ', $invalidValues) : var_export($invalidValues, true), implode(', ', \PocztaPolska\EnumType\EZwrotPrzesylkiType::getValidValues()));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set eZwrotPrzesylki value
      * @uses \PocztaPolska\EnumType\EZwrotPrzesylkiType::valueIsValid()
@@ -338,9 +342,10 @@ class ShopEZwrotyType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 2', count($eZwrotPrzesylki)), __LINE__);
         }
         $this->eZwrotPrzesylki = $eZwrotPrzesylki;
-        
+
         return $this;
     }
+
     /**
      * Add item to eZwrotPrzesylki value
      * @uses \PocztaPolska\EnumType\EZwrotPrzesylkiType::valueIsValid()
@@ -360,9 +365,10 @@ class ShopEZwrotyType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 2', count($this->eZwrotPrzesylki)), __LINE__);
         }
         $this->eZwrotPrzesylki[] = $item;
-        
+
         return $this;
     }
+
     /**
      * Get nazwa value
      * @return string
@@ -371,6 +377,7 @@ class ShopEZwrotyType extends AbstractStructBase
     {
         return $this->nazwa;
     }
+
     /**
      * Set nazwa value
      * @param string $nazwa
@@ -391,9 +398,10 @@ class ShopEZwrotyType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $nazwa)), __LINE__);
         }
         $this->nazwa = $nazwa;
-        
+
         return $this;
     }
+
     /**
      * Get przyjaznaNazwa value
      * @return string
@@ -402,6 +410,7 @@ class ShopEZwrotyType extends AbstractStructBase
     {
         return $this->przyjaznaNazwa;
     }
+
     /**
      * Set przyjaznaNazwa value
      * @param string $przyjaznaNazwa
@@ -422,9 +431,10 @@ class ShopEZwrotyType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $przyjaznaNazwa)), __LINE__);
         }
         $this->przyjaznaNazwa = $przyjaznaNazwa;
-        
+
         return $this;
     }
+
     /**
      * Get ulica value
      * @return string
@@ -433,6 +443,7 @@ class ShopEZwrotyType extends AbstractStructBase
     {
         return $this->ulica;
     }
+
     /**
      * Set ulica value
      * @param string $ulica
@@ -453,9 +464,10 @@ class ShopEZwrotyType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $ulica)), __LINE__);
         }
         $this->ulica = $ulica;
-        
+
         return $this;
     }
+
     /**
      * Get numerDomu value
      * @return string
@@ -464,6 +476,7 @@ class ShopEZwrotyType extends AbstractStructBase
     {
         return $this->numerDomu;
     }
+
     /**
      * Set numerDomu value
      * @param string $numerDomu
@@ -484,9 +497,10 @@ class ShopEZwrotyType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 0', mb_strlen((string) $numerDomu)), __LINE__);
         }
         $this->numerDomu = $numerDomu;
-        
+
         return $this;
     }
+
     /**
      * Get miejscowosc value
      * @return string
@@ -495,6 +509,7 @@ class ShopEZwrotyType extends AbstractStructBase
     {
         return $this->miejscowosc;
     }
+
     /**
      * Set miejscowosc value
      * @param string $miejscowosc
@@ -515,9 +530,10 @@ class ShopEZwrotyType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $miejscowosc)), __LINE__);
         }
         $this->miejscowosc = $miejscowosc;
-        
+
         return $this;
     }
+
     /**
      * Get kodPocztowy value
      * @return string
@@ -526,6 +542,7 @@ class ShopEZwrotyType extends AbstractStructBase
     {
         return $this->kodPocztowy;
     }
+
     /**
      * Set kodPocztowy value
      * @param string $kodPocztowy
@@ -546,9 +563,10 @@ class ShopEZwrotyType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 0', mb_strlen((string) $kodPocztowy)), __LINE__);
         }
         $this->kodPocztowy = $kodPocztowy;
-        
+
         return $this;
     }
+
     /**
      * Get mobile value
      * @return string
@@ -557,6 +575,7 @@ class ShopEZwrotyType extends AbstractStructBase
     {
         return $this->mobile;
     }
+
     /**
      * Set mobile value
      * @param string $mobile
@@ -569,9 +588,10 @@ class ShopEZwrotyType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($mobile, true), gettype($mobile)), __LINE__);
         }
         $this->mobile = $mobile;
-        
+
         return $this;
     }
+
     /**
      * Get email value
      * @return string
@@ -580,6 +600,7 @@ class ShopEZwrotyType extends AbstractStructBase
     {
         return $this->email;
     }
+
     /**
      * Set email value
      * @param string $email
@@ -600,9 +621,10 @@ class ShopEZwrotyType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 6', mb_strlen((string) $email)), __LINE__);
         }
         $this->email = $email;
-        
+
         return $this;
     }
+
     /**
      * Get eZwrotKarta value
      * @return \PocztaPolska\StructType\EZwrotKartaType|null
@@ -611,6 +633,7 @@ class ShopEZwrotyType extends AbstractStructBase
     {
         return $this->eZwrotKarta;
     }
+
     /**
      * Set eZwrotKarta value
      * @param \PocztaPolska\StructType\EZwrotKartaType $eZwrotKarta
@@ -619,9 +642,10 @@ class ShopEZwrotyType extends AbstractStructBase
     public function setEZwrotKarta(?\PocztaPolska\StructType\EZwrotKartaType $eZwrotKarta = null): self
     {
         $this->eZwrotKarta = $eZwrotKarta;
-        
+
         return $this;
     }
+
     /**
      * Get idShop value
      * @return int|null
@@ -630,6 +654,7 @@ class ShopEZwrotyType extends AbstractStructBase
     {
         return $this->idShop;
     }
+
     /**
      * Set idShop value
      * @param int $idShop
@@ -642,9 +667,10 @@ class ShopEZwrotyType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($idShop, true), gettype($idShop)), __LINE__);
         }
         $this->idShop = $idShop;
-        
+
         return $this;
     }
+
     /**
      * Get nazwa2 value
      * @return string|null
@@ -653,6 +679,7 @@ class ShopEZwrotyType extends AbstractStructBase
     {
         return $this->nazwa2;
     }
+
     /**
      * Set nazwa2 value
      * @param string $nazwa2
@@ -673,9 +700,10 @@ class ShopEZwrotyType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $nazwa2)), __LINE__);
         }
         $this->nazwa2 = $nazwa2;
-        
+
         return $this;
     }
+
     /**
      * Get numerLokalu value
      * @return string|null
@@ -684,6 +712,7 @@ class ShopEZwrotyType extends AbstractStructBase
     {
         return $this->numerLokalu;
     }
+
     /**
      * Set numerLokalu value
      * @param string $numerLokalu
@@ -704,9 +733,10 @@ class ShopEZwrotyType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 0', mb_strlen((string) $numerLokalu)), __LINE__);
         }
         $this->numerLokalu = $numerLokalu;
-        
+
         return $this;
     }
+
     /**
      * Get nip value
      * @return string|null
@@ -715,6 +745,7 @@ class ShopEZwrotyType extends AbstractStructBase
     {
         return $this->nip;
     }
+
     /**
      * Set nip value
      * @param string $nip
@@ -727,9 +758,10 @@ class ShopEZwrotyType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($nip, true), gettype($nip)), __LINE__);
         }
         $this->nip = $nip;
-        
+
         return $this;
     }
+
     /**
      * Get regon value
      * @return string|null
@@ -738,6 +770,7 @@ class ShopEZwrotyType extends AbstractStructBase
     {
         return $this->regon;
     }
+
     /**
      * Set regon value
      * @param string $regon
@@ -750,9 +783,10 @@ class ShopEZwrotyType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($regon, true), gettype($regon)), __LINE__);
         }
         $this->regon = $regon;
-        
+
         return $this;
     }
+
     /**
      * Get krs value
      * @return string|null
@@ -761,6 +795,7 @@ class ShopEZwrotyType extends AbstractStructBase
     {
         return $this->krs;
     }
+
     /**
      * Set krs value
      * @param string $krs
@@ -773,9 +808,10 @@ class ShopEZwrotyType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($krs, true), gettype($krs)), __LINE__);
         }
         $this->krs = $krs;
-        
+
         return $this;
     }
+
     /**
      * Get eZwrotTyp value
      * @return string|null
@@ -784,6 +820,7 @@ class ShopEZwrotyType extends AbstractStructBase
     {
         return $this->eZwrotTyp;
     }
+
     /**
      * Set eZwrotTyp value
      * @uses \PocztaPolska\EnumType\EZwrotTypZgodyType::valueIsValid()
@@ -799,9 +836,10 @@ class ShopEZwrotyType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\EZwrotTypZgodyType', is_array($eZwrotTyp) ? implode(', ', $eZwrotTyp) : var_export($eZwrotTyp, true), implode(', ', \PocztaPolska\EnumType\EZwrotTypZgodyType::getValidValues())), __LINE__);
         }
         $this->eZwrotTyp = $eZwrotTyp;
-        
+
         return $this;
     }
+
     /**
      * Get wymagalnoscNumeruIdentyfikujacegoPrzesylke value
      * @return string|null
@@ -810,6 +848,7 @@ class ShopEZwrotyType extends AbstractStructBase
     {
         return $this->wymagalnoscNumeruIdentyfikujacegoPrzesylke;
     }
+
     /**
      * Set wymagalnoscNumeruIdentyfikujacegoPrzesylke value
      * @uses \PocztaPolska\EnumType\WymagalnoscNumeruIdentyfikujacegoPrzesylkeEnum::valueIsValid()
@@ -825,9 +864,10 @@ class ShopEZwrotyType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\WymagalnoscNumeruIdentyfikujacegoPrzesylkeEnum', is_array($wymagalnoscNumeruIdentyfikujacegoPrzesylke) ? implode(', ', $wymagalnoscNumeruIdentyfikujacegoPrzesylke) : var_export($wymagalnoscNumeruIdentyfikujacegoPrzesylke, true), implode(', ', \PocztaPolska\EnumType\WymagalnoscNumeruIdentyfikujacegoPrzesylkeEnum::getValidValues())), __LINE__);
         }
         $this->wymagalnoscNumeruIdentyfikujacegoPrzesylke = $wymagalnoscNumeruIdentyfikujacegoPrzesylke;
-        
+
         return $this;
     }
+
     /**
      * Get availableOnWebsite value
      * @return bool|null
@@ -836,6 +876,7 @@ class ShopEZwrotyType extends AbstractStructBase
     {
         return $this->availableOnWebsite;
     }
+
     /**
      * Set availableOnWebsite value
      * @param bool $availableOnWebsite
@@ -848,9 +889,10 @@ class ShopEZwrotyType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($availableOnWebsite, true), gettype($availableOnWebsite)), __LINE__);
         }
         $this->availableOnWebsite = $availableOnWebsite;
-        
+
         return $this;
     }
+
     /**
      * Get emailForEZwrot value
      * @return string|null
@@ -859,6 +901,7 @@ class ShopEZwrotyType extends AbstractStructBase
     {
         return $this->emailForEZwrot;
     }
+
     /**
      * Set emailForEZwrot value
      * @param string $emailForEZwrot
@@ -879,9 +922,10 @@ class ShopEZwrotyType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 6', mb_strlen((string) $emailForEZwrot)), __LINE__);
         }
         $this->emailForEZwrot = $emailForEZwrot;
-        
+
         return $this;
     }
+
     /**
      * Get paid value
      * @return bool|null
@@ -890,6 +934,7 @@ class ShopEZwrotyType extends AbstractStructBase
     {
         return $this->paid;
     }
+
     /**
      * Set paid value
      * @param bool $paid
@@ -902,9 +947,10 @@ class ShopEZwrotyType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($paid, true), gettype($paid)), __LINE__);
         }
         $this->paid = $paid;
-        
+
         return $this;
     }
+
     /**
      * Get consentValidFor value
      * @return int|null
@@ -913,6 +959,7 @@ class ShopEZwrotyType extends AbstractStructBase
     {
         return $this->consentValidFor;
     }
+
     /**
      * Set consentValidFor value
      * @param int $consentValidFor
@@ -925,9 +972,10 @@ class ShopEZwrotyType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($consentValidFor, true), gettype($consentValidFor)), __LINE__);
         }
         $this->consentValidFor = $consentValidFor;
-        
+
         return $this;
     }
+
     /**
      * Get contractorCost value
      * @return int|null
@@ -936,6 +984,7 @@ class ShopEZwrotyType extends AbstractStructBase
     {
         return $this->contractorCost;
     }
+
     /**
      * Set contractorCost value
      * @param int $contractorCost
@@ -948,9 +997,10 @@ class ShopEZwrotyType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($contractorCost, true), gettype($contractorCost)), __LINE__);
         }
         $this->contractorCost = $contractorCost;
-        
+
         return $this;
     }
+
     /**
      * Get infoForClient value
      * @return string|null
@@ -959,6 +1009,7 @@ class ShopEZwrotyType extends AbstractStructBase
     {
         return $this->infoForClient;
     }
+
     /**
      * Set infoForClient value
      * @param string $infoForClient
@@ -975,7 +1026,7 @@ class ShopEZwrotyType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 300', mb_strlen((string) $infoForClient)), __LINE__);
         }
         $this->infoForClient = $infoForClient;
-        
+
         return $this;
     }
 }

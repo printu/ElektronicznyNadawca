@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace PocztaPolska\StructType;
 
 use InvalidArgumentException;
-use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for subPrzesylkaPaletowaType StructType
@@ -37,6 +36,7 @@ class SubPrzesylkaPaletowaType extends PrzesylkaType
      * @var int|null
      */
     protected ?int $masa = null;
+
     /**
      * Constructor method for subPrzesylkaPaletowaType
      * @uses SubPrzesylkaPaletowaType::setPaleta()
@@ -53,6 +53,7 @@ class SubPrzesylkaPaletowaType extends PrzesylkaType
             ->setZawartosc($zawartosc)
             ->setMasa($masa);
     }
+
     /**
      * Get paleta value
      * @return \PocztaPolska\StructType\PaletaType
@@ -61,6 +62,7 @@ class SubPrzesylkaPaletowaType extends PrzesylkaType
     {
         return $this->paleta;
     }
+
     /**
      * Set paleta value
      * @param \PocztaPolska\StructType\PaletaType $paleta
@@ -69,9 +71,10 @@ class SubPrzesylkaPaletowaType extends PrzesylkaType
     public function setPaleta(\PocztaPolska\StructType\PaletaType $paleta): self
     {
         $this->paleta = $paleta;
-        
+
         return $this;
     }
+
     /**
      * Get zawartosc value
      * @return string|null
@@ -80,6 +83,7 @@ class SubPrzesylkaPaletowaType extends PrzesylkaType
     {
         return $this->zawartosc;
     }
+
     /**
      * Set zawartosc value
      * @param string $zawartosc
@@ -92,9 +96,10 @@ class SubPrzesylkaPaletowaType extends PrzesylkaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($zawartosc, true), gettype($zawartosc)), __LINE__);
         }
         $this->zawartosc = $zawartosc;
-        
+
         return $this;
     }
+
     /**
      * Get masa value
      * @return int|null
@@ -103,6 +108,7 @@ class SubPrzesylkaPaletowaType extends PrzesylkaType
     {
         return $this->masa;
     }
+
     /**
      * Set masa value
      * @param int $masa
@@ -123,7 +129,7 @@ class SubPrzesylkaPaletowaType extends PrzesylkaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 1', var_export($masa, true)), __LINE__);
         }
         $this->masa = $masa;
-        
+
         return $this;
     }
 }

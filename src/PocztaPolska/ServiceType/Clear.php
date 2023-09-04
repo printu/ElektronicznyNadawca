@@ -27,14 +27,15 @@ class Clear extends AbstractSoapClientBase
             $this->setResult($resultClearEnvelope = $this->getSoapClient()->__soapCall('clearEnvelope', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultClearEnvelope;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named clearEnvelopeByGuids
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -49,14 +50,15 @@ class Clear extends AbstractSoapClientBase
             $this->setResult($resultClearEnvelopeByGuids = $this->getSoapClient()->__soapCall('clearEnvelopeByGuids', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultClearEnvelopeByGuids;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Returns the result
      * @see AbstractSoapClientBase::getResult()

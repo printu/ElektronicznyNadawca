@@ -105,6 +105,7 @@ class CustomsDeclarationType extends AbstractStructBase
      * @var string|null
      */
     protected ?string $customsReferenceNumber = null;
+
     /**
      * Constructor method for CustomsDeclarationType
      * @uses CustomsDeclarationType::setContent()
@@ -145,6 +146,7 @@ class CustomsDeclarationType extends AbstractStructBase
             ->setImporterPhoneNumber($importerPhoneNumber)
             ->setCustomsReferenceNumber($customsReferenceNumber);
     }
+
     /**
      * Get content value
      * @return string
@@ -153,6 +155,7 @@ class CustomsDeclarationType extends AbstractStructBase
     {
         return $this->content;
     }
+
     /**
      * Set content value
      * @uses \PocztaPolska\EnumType\CustomsDeclarationContentEnum::valueIsValid()
@@ -168,9 +171,10 @@ class CustomsDeclarationType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\CustomsDeclarationContentEnum', is_array($content) ? implode(', ', $content) : var_export($content, true), implode(', ', \PocztaPolska\EnumType\CustomsDeclarationContentEnum::getValidValues())), __LINE__);
         }
         $this->content = $content;
-        
+
         return $this;
     }
+
     /**
      * Get currencyCode value
      * @return string
@@ -179,6 +183,7 @@ class CustomsDeclarationType extends AbstractStructBase
     {
         return $this->currencyCode;
     }
+
     /**
      * Set currencyCode value
      * @param string $currencyCode
@@ -191,9 +196,10 @@ class CustomsDeclarationType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($currencyCode, true), gettype($currencyCode)), __LINE__);
         }
         $this->currencyCode = $currencyCode;
-        
+
         return $this;
     }
+
     /**
      * Get shipmentContentsDetails value
      * @return \PocztaPolska\StructType\ShipmentContentsDetailsType[]
@@ -202,6 +208,7 @@ class CustomsDeclarationType extends AbstractStructBase
     {
         return $this->shipmentContentsDetails;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setShipmentContentsDetails method
      * This method is willingly generated in order to preserve the one-line inline validation within the setShipmentContentsDetails method
@@ -226,9 +233,10 @@ class CustomsDeclarationType extends AbstractStructBase
             $message = sprintf('The shipmentContentsDetails property can only contain items of type \PocztaPolska\StructType\ShipmentContentsDetailsType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set shipmentContentsDetails value
      * @throws InvalidArgumentException
@@ -242,9 +250,10 @@ class CustomsDeclarationType extends AbstractStructBase
             throw new InvalidArgumentException($shipmentContentsDetailsArrayErrorMessage, __LINE__);
         }
         $this->shipmentContentsDetails = $shipmentContentsDetails;
-        
+
         return $this;
     }
+
     /**
      * Add item to shipmentContentsDetails value
      * @throws InvalidArgumentException
@@ -258,9 +267,10 @@ class CustomsDeclarationType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The shipmentContentsDetails property can only contain items of type \PocztaPolska\StructType\ShipmentContentsDetailsType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->shipmentContentsDetails[] = $item;
-        
+
         return $this;
     }
+
     /**
      * Get type value
      * @return string|null
@@ -269,6 +279,7 @@ class CustomsDeclarationType extends AbstractStructBase
     {
         return $this->type;
     }
+
     /**
      * Set type value
      * @uses \PocztaPolska\EnumType\CustomsDeclarationTypeEnum::valueIsValid()
@@ -284,9 +295,10 @@ class CustomsDeclarationType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\CustomsDeclarationTypeEnum', is_array($type) ? implode(', ', $type) : var_export($type, true), implode(', ', \PocztaPolska\EnumType\CustomsDeclarationTypeEnum::getValidValues())), __LINE__);
         }
         $this->type = $type;
-        
+
         return $this;
     }
+
     /**
      * Get accompanyingDocuments value
      * @return \PocztaPolska\StructType\AccompanyingDocumentsType[]
@@ -295,6 +307,7 @@ class CustomsDeclarationType extends AbstractStructBase
     {
         return $this->accompanyingDocuments;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setAccompanyingDocuments method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAccompanyingDocuments method
@@ -319,9 +332,10 @@ class CustomsDeclarationType extends AbstractStructBase
             $message = sprintf('The accompanyingDocuments property can only contain items of type \PocztaPolska\StructType\AccompanyingDocumentsType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set accompanyingDocuments value
      * @throws InvalidArgumentException
@@ -335,9 +349,10 @@ class CustomsDeclarationType extends AbstractStructBase
             throw new InvalidArgumentException($accompanyingDocumentsArrayErrorMessage, __LINE__);
         }
         $this->accompanyingDocuments = $accompanyingDocuments;
-        
+
         return $this;
     }
+
     /**
      * Add item to accompanyingDocuments value
      * @throws InvalidArgumentException
@@ -351,9 +366,10 @@ class CustomsDeclarationType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The accompanyingDocuments property can only contain items of type \PocztaPolska\StructType\AccompanyingDocumentsType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->accompanyingDocuments[] = $item;
-        
+
         return $this;
     }
+
     /**
      * Get explanation value
      * @return string|null
@@ -362,6 +378,7 @@ class CustomsDeclarationType extends AbstractStructBase
     {
         return $this->explanation;
     }
+
     /**
      * Set explanation value
      * @param string $explanation
@@ -374,9 +391,10 @@ class CustomsDeclarationType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($explanation, true), gettype($explanation)), __LINE__);
         }
         $this->explanation = $explanation;
-        
+
         return $this;
     }
+
     /**
      * Get postalCharges value
      * @return string|null
@@ -385,6 +403,7 @@ class CustomsDeclarationType extends AbstractStructBase
     {
         return $this->postalCharges;
     }
+
     /**
      * Set postalCharges value
      * @param string $postalCharges
@@ -397,9 +416,10 @@ class CustomsDeclarationType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($postalCharges, true), gettype($postalCharges)), __LINE__);
         }
         $this->postalCharges = $postalCharges;
-        
+
         return $this;
     }
+
     /**
      * Get comments value
      * @return string|null
@@ -408,6 +428,7 @@ class CustomsDeclarationType extends AbstractStructBase
     {
         return $this->comments;
     }
+
     /**
      * Set comments value
      * @param string $comments
@@ -420,9 +441,10 @@ class CustomsDeclarationType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($comments, true), gettype($comments)), __LINE__);
         }
         $this->comments = $comments;
-        
+
         return $this;
     }
+
     /**
      * Get importerReferenceNumber value
      * @return string|null
@@ -431,6 +453,7 @@ class CustomsDeclarationType extends AbstractStructBase
     {
         return $this->importerReferenceNumber;
     }
+
     /**
      * Set importerReferenceNumber value
      * @param string $importerReferenceNumber
@@ -443,9 +466,10 @@ class CustomsDeclarationType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($importerReferenceNumber, true), gettype($importerReferenceNumber)), __LINE__);
         }
         $this->importerReferenceNumber = $importerReferenceNumber;
-        
+
         return $this;
     }
+
     /**
      * Get importerPhoneNumber value
      * @return string|null
@@ -454,6 +478,7 @@ class CustomsDeclarationType extends AbstractStructBase
     {
         return $this->importerPhoneNumber;
     }
+
     /**
      * Set importerPhoneNumber value
      * @param string $importerPhoneNumber
@@ -466,9 +491,10 @@ class CustomsDeclarationType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($importerPhoneNumber, true), gettype($importerPhoneNumber)), __LINE__);
         }
         $this->importerPhoneNumber = $importerPhoneNumber;
-        
+
         return $this;
     }
+
     /**
      * Get customsReferenceNumber value
      * @return string|null
@@ -477,6 +503,7 @@ class CustomsDeclarationType extends AbstractStructBase
     {
         return $this->customsReferenceNumber;
     }
+
     /**
      * Set customsReferenceNumber value
      * @param string $customsReferenceNumber
@@ -489,7 +516,7 @@ class CustomsDeclarationType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($customsReferenceNumber, true), gettype($customsReferenceNumber)), __LINE__);
         }
         $this->customsReferenceNumber = $customsReferenceNumber;
-        
+
         return $this;
     }
 }

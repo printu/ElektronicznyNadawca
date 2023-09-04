@@ -22,6 +22,7 @@ class GetEZDOListResponse extends AbstractStructBase
      * @var \PocztaPolska\StructType\EZDOPakietType[]
      */
     protected ?array $EZDOPakiet = null;
+
     /**
      * Constructor method for getEZDOListResponse
      * @uses GetEZDOListResponse::setEZDOPakiet()
@@ -32,6 +33,7 @@ class GetEZDOListResponse extends AbstractStructBase
         $this
             ->setEZDOPakiet($eZDOPakiet);
     }
+
     /**
      * Get EZDOPakiet value
      * @return \PocztaPolska\StructType\EZDOPakietType[]
@@ -40,6 +42,7 @@ class GetEZDOListResponse extends AbstractStructBase
     {
         return $this->EZDOPakiet;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setEZDOPakiet method
      * This method is willingly generated in order to preserve the one-line inline validation within the setEZDOPakiet method
@@ -64,9 +67,10 @@ class GetEZDOListResponse extends AbstractStructBase
             $message = sprintf('The EZDOPakiet property can only contain items of type \PocztaPolska\StructType\EZDOPakietType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set EZDOPakiet value
      * @throws InvalidArgumentException
@@ -80,9 +84,10 @@ class GetEZDOListResponse extends AbstractStructBase
             throw new InvalidArgumentException($eZDOPakietArrayErrorMessage, __LINE__);
         }
         $this->EZDOPakiet = $eZDOPakiet;
-        
+
         return $this;
     }
+
     /**
      * Add item to EZDOPakiet value
      * @throws InvalidArgumentException
@@ -96,7 +101,7 @@ class GetEZDOListResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The EZDOPakiet property can only contain items of type \PocztaPolska\StructType\EZDOPakietType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->EZDOPakiet[] = $item;
-        
+
         return $this;
     }
 }

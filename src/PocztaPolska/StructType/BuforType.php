@@ -67,6 +67,7 @@ class BuforType extends AbstractStructBase
      * @var bool|null
      */
     protected ?bool $aktualizujPlanowanaDateNadaniaPrzesylek = null;
+
     /**
      * Constructor method for buforType
      * @uses BuforType::setProfil()
@@ -98,6 +99,7 @@ class BuforType extends AbstractStructBase
             ->setOpis($opis)
             ->setAktualizujPlanowanaDateNadaniaPrzesylek($aktualizujPlanowanaDateNadaniaPrzesylek);
     }
+
     /**
      * Get profil value
      * @return \PocztaPolska\StructType\ProfilType|null
@@ -106,6 +108,7 @@ class BuforType extends AbstractStructBase
     {
         return $this->profil;
     }
+
     /**
      * Set profil value
      * @param \PocztaPolska\StructType\ProfilType $profil
@@ -114,9 +117,10 @@ class BuforType extends AbstractStructBase
     public function setProfil(?\PocztaPolska\StructType\ProfilType $profil = null): self
     {
         $this->profil = $profil;
-        
+
         return $this;
     }
+
     /**
      * Get idKarta value
      * @return int|null
@@ -125,6 +129,7 @@ class BuforType extends AbstractStructBase
     {
         return $this->idKarta;
     }
+
     /**
      * Set idKarta value
      * @param int $idKarta
@@ -137,9 +142,10 @@ class BuforType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($idKarta, true), gettype($idKarta)), __LINE__);
         }
         $this->idKarta = $idKarta;
-        
+
         return $this;
     }
+
     /**
      * Get idBufor value
      * @return int|null
@@ -148,6 +154,7 @@ class BuforType extends AbstractStructBase
     {
         return $this->idBufor;
     }
+
     /**
      * Set idBufor value
      * @param int $idBufor
@@ -160,9 +167,10 @@ class BuforType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($idBufor, true), gettype($idBufor)), __LINE__);
         }
         $this->idBufor = $idBufor;
-        
+
         return $this;
     }
+
     /**
      * Get dataNadania value
      * @return string|null
@@ -171,6 +179,7 @@ class BuforType extends AbstractStructBase
     {
         return $this->dataNadania;
     }
+
     /**
      * Set dataNadania value
      * @param string $dataNadania
@@ -183,9 +192,10 @@ class BuforType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($dataNadania, true), gettype($dataNadania)), __LINE__);
         }
         $this->dataNadania = $dataNadania;
-        
+
         return $this;
     }
+
     /**
      * Get urzadNadania value
      * @return int|null
@@ -194,6 +204,7 @@ class BuforType extends AbstractStructBase
     {
         return $this->urzadNadania;
     }
+
     /**
      * Set urzadNadania value
      * @param int $urzadNadania
@@ -206,9 +217,10 @@ class BuforType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($urzadNadania, true), gettype($urzadNadania)), __LINE__);
         }
         $this->urzadNadania = $urzadNadania;
-        
+
         return $this;
     }
+
     /**
      * Get active value
      * @return bool|null
@@ -217,6 +229,7 @@ class BuforType extends AbstractStructBase
     {
         return $this->active;
     }
+
     /**
      * Set active value
      * @param bool $active
@@ -229,9 +242,10 @@ class BuforType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($active, true), gettype($active)), __LINE__);
         }
         $this->active = $active;
-        
+
         return $this;
     }
+
     /**
      * Get opis value
      * @return string|null
@@ -240,6 +254,7 @@ class BuforType extends AbstractStructBase
     {
         return $this->opis;
     }
+
     /**
      * Set opis value
      * @param string $opis
@@ -252,9 +267,10 @@ class BuforType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($opis, true), gettype($opis)), __LINE__);
         }
         $this->opis = $opis;
-        
+
         return $this;
     }
+
     /**
      * Get aktualizujPlanowanaDateNadaniaPrzesylek value
      * @return bool|null
@@ -263,6 +279,7 @@ class BuforType extends AbstractStructBase
     {
         return $this->aktualizujPlanowanaDateNadaniaPrzesylek;
     }
+
     /**
      * Set aktualizujPlanowanaDateNadaniaPrzesylek value
      * @param bool $aktualizujPlanowanaDateNadaniaPrzesylek
@@ -275,7 +292,7 @@ class BuforType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($aktualizujPlanowanaDateNadaniaPrzesylek, true), gettype($aktualizujPlanowanaDateNadaniaPrzesylek)), __LINE__);
         }
         $this->aktualizujPlanowanaDateNadaniaPrzesylek = $aktualizujPlanowanaDateNadaniaPrzesylek;
-        
+
         return $this;
     }
 }

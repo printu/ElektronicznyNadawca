@@ -44,6 +44,7 @@ class GetWplatyCKP extends AbstractStructBase
      * @var string|null
      */
     protected ?string $stopDate = null;
+
     /**
      * Constructor method for getWplatyCKP
      * @uses GetWplatyCKP::setNumerNadania()
@@ -60,6 +61,7 @@ class GetWplatyCKP extends AbstractStructBase
             ->setStartDate($startDate)
             ->setStopDate($stopDate);
     }
+
     /**
      * Get numerNadania value
      * @return string|null
@@ -68,6 +70,7 @@ class GetWplatyCKP extends AbstractStructBase
     {
         return $this->numerNadania ?? null;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setNumerNadania method
      * This method is willingly generated in order to preserve the one-line inline validation within the setNumerNadania method
@@ -83,6 +86,7 @@ class GetWplatyCKP extends AbstractStructBase
         }
         $properties = [
         ];
+
         try {
             foreach ($properties as $property) {
                 if (isset($this->{$property})) {
@@ -92,9 +96,10 @@ class GetWplatyCKP extends AbstractStructBase
         } catch (InvalidArgumentException $e) {
             $message = $e->getMessage();
         }
-        
+
         return $message;
     }
+
     /**
      * Set numerNadania value
      * This property belongs to a choice that allows only one property to exist. It is
@@ -127,9 +132,10 @@ class GetWplatyCKP extends AbstractStructBase
         } else {
             $this->numerNadania = $numerNadania;
         }
-        
+
         return $this;
     }
+
     /**
      * Get startDate value
      * @return string
@@ -138,6 +144,7 @@ class GetWplatyCKP extends AbstractStructBase
     {
         return $this->startDate;
     }
+
     /**
      * Set startDate value
      * @param string $startDate
@@ -150,9 +157,10 @@ class GetWplatyCKP extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($startDate, true), gettype($startDate)), __LINE__);
         }
         $this->startDate = $startDate;
-        
+
         return $this;
     }
+
     /**
      * Get stopDate value
      * @return string|null
@@ -161,6 +169,7 @@ class GetWplatyCKP extends AbstractStructBase
     {
         return $this->stopDate;
     }
+
     /**
      * Set stopDate value
      * @param string $stopDate
@@ -173,7 +182,7 @@ class GetWplatyCKP extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($stopDate, true), gettype($stopDate)), __LINE__);
         }
         $this->stopDate = $stopDate;
-        
+
         return $this;
     }
 }

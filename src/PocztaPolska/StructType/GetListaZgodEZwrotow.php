@@ -30,6 +30,7 @@ class GetListaZgodEZwrotow extends AbstractStructBase
      * @var int|null
      */
     protected ?int $idShop = null;
+
     /**
      * Constructor method for getListaZgodEZwrotow
      * @uses GetListaZgodEZwrotow::setStatus()
@@ -43,6 +44,7 @@ class GetListaZgodEZwrotow extends AbstractStructBase
             ->setStatus($status)
             ->setIdShop($idShop);
     }
+
     /**
      * Get status value
      * @return string|null
@@ -51,6 +53,7 @@ class GetListaZgodEZwrotow extends AbstractStructBase
     {
         return $this->status;
     }
+
     /**
      * Set status value
      * @uses \PocztaPolska\EnumType\StatusZgodyEZwrotNameType::valueIsValid()
@@ -66,9 +69,10 @@ class GetListaZgodEZwrotow extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\StatusZgodyEZwrotNameType', is_array($status) ? implode(', ', $status) : var_export($status, true), implode(', ', \PocztaPolska\EnumType\StatusZgodyEZwrotNameType::getValidValues())), __LINE__);
         }
         $this->status = $status;
-        
+
         return $this;
     }
+
     /**
      * Get idShop value
      * @return int|null
@@ -77,6 +81,7 @@ class GetListaZgodEZwrotow extends AbstractStructBase
     {
         return $this->idShop;
     }
+
     /**
      * Set idShop value
      * @param int $idShop
@@ -89,7 +94,7 @@ class GetListaZgodEZwrotow extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($idShop, true), gettype($idShop)), __LINE__);
         }
         $this->idShop = $idShop;
-        
+
         return $this;
     }
 }

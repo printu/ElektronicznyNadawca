@@ -24,6 +24,7 @@ class AccompanyingDocumentsType extends AbstractStructBase
      * @var string|null
      */
     protected ?string $number = null;
+
     /**
      * Constructor method for AccompanyingDocumentsType
      * @uses AccompanyingDocumentsType::setType()
@@ -37,6 +38,7 @@ class AccompanyingDocumentsType extends AbstractStructBase
             ->setType($type)
             ->setNumber($number);
     }
+
     /**
      * Get type value
      * @return string|null
@@ -45,6 +47,7 @@ class AccompanyingDocumentsType extends AbstractStructBase
     {
         return $this->type;
     }
+
     /**
      * Set type value
      * @uses \PocztaPolska\EnumType\AccompanyingDocumentsEnum::valueIsValid()
@@ -60,9 +63,10 @@ class AccompanyingDocumentsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\AccompanyingDocumentsEnum', is_array($type) ? implode(', ', $type) : var_export($type, true), implode(', ', \PocztaPolska\EnumType\AccompanyingDocumentsEnum::getValidValues())), __LINE__);
         }
         $this->type = $type;
-        
+
         return $this;
     }
+
     /**
      * Get number value
      * @return string|null
@@ -71,6 +75,7 @@ class AccompanyingDocumentsType extends AbstractStructBase
     {
         return $this->number;
     }
+
     /**
      * Set number value
      * @param string $number
@@ -83,7 +88,7 @@ class AccompanyingDocumentsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($number, true), gettype($number)), __LINE__);
         }
         $this->number = $number;
-        
+
         return $this;
     }
 }

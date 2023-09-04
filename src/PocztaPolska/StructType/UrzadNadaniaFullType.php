@@ -31,6 +31,7 @@ class UrzadNadaniaFullType extends AbstractStructBase
      * @var string|null
      */
     protected ?string $nazwaWydruk = null;
+
     /**
      * Constructor method for urzadNadaniaFullType
      * @uses UrzadNadaniaFullType::setUrzadNadania()
@@ -47,6 +48,7 @@ class UrzadNadaniaFullType extends AbstractStructBase
             ->setOpis($opis)
             ->setNazwaWydruk($nazwaWydruk);
     }
+
     /**
      * Get urzadNadania value
      * @return int|null
@@ -55,6 +57,7 @@ class UrzadNadaniaFullType extends AbstractStructBase
     {
         return $this->urzadNadania;
     }
+
     /**
      * Set urzadNadania value
      * @param int $urzadNadania
@@ -67,9 +70,10 @@ class UrzadNadaniaFullType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($urzadNadania, true), gettype($urzadNadania)), __LINE__);
         }
         $this->urzadNadania = $urzadNadania;
-        
+
         return $this;
     }
+
     /**
      * Get opis value
      * @return string|null
@@ -78,6 +82,7 @@ class UrzadNadaniaFullType extends AbstractStructBase
     {
         return $this->opis;
     }
+
     /**
      * Set opis value
      * @param string $opis
@@ -90,9 +95,10 @@ class UrzadNadaniaFullType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($opis, true), gettype($opis)), __LINE__);
         }
         $this->opis = $opis;
-        
+
         return $this;
     }
+
     /**
      * Get nazwaWydruk value
      * @return string|null
@@ -101,6 +107,7 @@ class UrzadNadaniaFullType extends AbstractStructBase
     {
         return $this->nazwaWydruk;
     }
+
     /**
      * Set nazwaWydruk value
      * @param string $nazwaWydruk
@@ -113,7 +120,7 @@ class UrzadNadaniaFullType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($nazwaWydruk, true), gettype($nazwaWydruk)), __LINE__);
         }
         $this->nazwaWydruk = $nazwaWydruk;
-        
+
         return $this;
     }
 }

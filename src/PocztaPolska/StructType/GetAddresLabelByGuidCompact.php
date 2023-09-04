@@ -33,6 +33,7 @@ class GetAddresLabelByGuidCompact extends AbstractStructBase
      * @var int|null
      */
     protected ?int $idBufor = null;
+
     /**
      * Constructor method for getAddresLabelByGuidCompact
      * @uses GetAddresLabelByGuidCompact::setGuid()
@@ -46,6 +47,7 @@ class GetAddresLabelByGuidCompact extends AbstractStructBase
             ->setGuid($guid)
             ->setIdBufor($idBufor);
     }
+
     /**
      * Get guid value
      * @return string[]
@@ -54,6 +56,7 @@ class GetAddresLabelByGuidCompact extends AbstractStructBase
     {
         return $this->guid;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setGuid method
      * This method is willingly generated in order to preserve the one-line inline validation within the setGuid method
@@ -78,9 +81,10 @@ class GetAddresLabelByGuidCompact extends AbstractStructBase
             $message = sprintf('The guid property can only contain items of type string, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setGuid method
      * This method is willingly generated in order to preserve the one-line inline validation within the setGuid method
@@ -102,9 +106,10 @@ class GetAddresLabelByGuidCompact extends AbstractStructBase
             $message = sprintf('Invalid length for value(s) %s, the number of characters/octets contained by the literal must be equal to 32', implode(', ', $invalidValues));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set guid value
      * @throws InvalidArgumentException
@@ -122,9 +127,10 @@ class GetAddresLabelByGuidCompact extends AbstractStructBase
             throw new InvalidArgumentException($guidLengthErrorMessage, __LINE__);
         }
         $this->guid = $guid;
-        
+
         return $this;
     }
+
     /**
      * Add item to guid value
      * @throws InvalidArgumentException
@@ -142,9 +148,10 @@ class GetAddresLabelByGuidCompact extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 32', mb_strlen((string) $item)), __LINE__);
         }
         $this->guid[] = $item;
-        
+
         return $this;
     }
+
     /**
      * Get idBufor value
      * @return int|null
@@ -153,6 +160,7 @@ class GetAddresLabelByGuidCompact extends AbstractStructBase
     {
         return $this->idBufor;
     }
+
     /**
      * Set idBufor value
      * @param int $idBufor
@@ -165,7 +173,7 @@ class GetAddresLabelByGuidCompact extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($idBufor, true), gettype($idBufor)), __LINE__);
         }
         $this->idBufor = $idBufor;
-        
+
         return $this;
     }
 }

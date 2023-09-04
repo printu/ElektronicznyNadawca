@@ -93,6 +93,7 @@ class LibraryForLegalDepositType extends AbstractStructBase
      * @var string|null
      */
     protected ?string $city = null;
+
     /**
      * Constructor method for LibraryForLegalDepositType
      * @uses LibraryForLegalDepositType::setIdLibraryForLegalDeposit()
@@ -121,6 +122,7 @@ class LibraryForLegalDepositType extends AbstractStructBase
             ->setZipCode($zipCode)
             ->setCity($city);
     }
+
     /**
      * Get idLibraryForLegalDeposit value
      * @return string
@@ -129,6 +131,7 @@ class LibraryForLegalDepositType extends AbstractStructBase
     {
         return $this->idLibraryForLegalDeposit;
     }
+
     /**
      * Set idLibraryForLegalDeposit value
      * @param string $idLibraryForLegalDeposit
@@ -149,9 +152,10 @@ class LibraryForLegalDepositType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 4', mb_strlen((string) $idLibraryForLegalDeposit)), __LINE__);
         }
         $this->idLibraryForLegalDeposit = $idLibraryForLegalDeposit;
-        
+
         return $this;
     }
+
     /**
      * Get libraryName value
      * @return string
@@ -160,6 +164,7 @@ class LibraryForLegalDepositType extends AbstractStructBase
     {
         return $this->libraryName;
     }
+
     /**
      * Set libraryName value
      * @param string $libraryName
@@ -180,9 +185,10 @@ class LibraryForLegalDepositType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $libraryName)), __LINE__);
         }
         $this->libraryName = $libraryName;
-        
+
         return $this;
     }
+
     /**
      * Get street value
      * @return string|null
@@ -191,6 +197,7 @@ class LibraryForLegalDepositType extends AbstractStructBase
     {
         return $this->street;
     }
+
     /**
      * Set street value
      * @param string $street
@@ -211,9 +218,10 @@ class LibraryForLegalDepositType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $street)), __LINE__);
         }
         $this->street = $street;
-        
+
         return $this;
     }
+
     /**
      * Get houseNumber value
      * @return string|null
@@ -222,6 +230,7 @@ class LibraryForLegalDepositType extends AbstractStructBase
     {
         return $this->houseNumber;
     }
+
     /**
      * Set houseNumber value
      * @param string $houseNumber
@@ -242,9 +251,10 @@ class LibraryForLegalDepositType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $houseNumber)), __LINE__);
         }
         $this->houseNumber = $houseNumber;
-        
+
         return $this;
     }
+
     /**
      * Get apartmentNumber value
      * @return string|null
@@ -253,6 +263,7 @@ class LibraryForLegalDepositType extends AbstractStructBase
     {
         return $this->apartmentNumber;
     }
+
     /**
      * Set apartmentNumber value
      * @param string $apartmentNumber
@@ -273,9 +284,10 @@ class LibraryForLegalDepositType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $apartmentNumber)), __LINE__);
         }
         $this->apartmentNumber = $apartmentNumber;
-        
+
         return $this;
     }
+
     /**
      * Get zipCode value
      * @return string|null
@@ -284,6 +296,7 @@ class LibraryForLegalDepositType extends AbstractStructBase
     {
         return $this->zipCode;
     }
+
     /**
      * Set zipCode value
      * @param string $zipCode
@@ -304,9 +317,10 @@ class LibraryForLegalDepositType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $zipCode)), __LINE__);
         }
         $this->zipCode = $zipCode;
-        
+
         return $this;
     }
+
     /**
      * Get city value
      * @return string|null
@@ -315,6 +329,7 @@ class LibraryForLegalDepositType extends AbstractStructBase
     {
         return $this->city;
     }
+
     /**
      * Set city value
      * @param string $city
@@ -335,7 +350,7 @@ class LibraryForLegalDepositType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $city)), __LINE__);
         }
         $this->city = $city;
-        
+
         return $this;
     }
 }

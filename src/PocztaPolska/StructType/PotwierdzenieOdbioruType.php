@@ -28,6 +28,7 @@ class PotwierdzenieOdbioruType extends AbstractStructBase
      * @var string|null
      */
     protected ?string $sposob = null;
+
     /**
      * Constructor method for potwierdzenieOdbioruType
      * @uses PotwierdzenieOdbioruType::setIlosc()
@@ -41,6 +42,7 @@ class PotwierdzenieOdbioruType extends AbstractStructBase
             ->setIlosc($ilosc)
             ->setSposob($sposob);
     }
+
     /**
      * Get ilosc value
      * @return int|null
@@ -49,6 +51,7 @@ class PotwierdzenieOdbioruType extends AbstractStructBase
     {
         return $this->ilosc;
     }
+
     /**
      * Set ilosc value
      * @param int $ilosc
@@ -69,9 +72,10 @@ class PotwierdzenieOdbioruType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 0', var_export($ilosc, true)), __LINE__);
         }
         $this->ilosc = $ilosc;
-        
+
         return $this;
     }
+
     /**
      * Get sposob value
      * @return string|null
@@ -80,6 +84,7 @@ class PotwierdzenieOdbioruType extends AbstractStructBase
     {
         return $this->sposob;
     }
+
     /**
      * Set sposob value
      * @uses \PocztaPolska\EnumType\SposobPrzekazaniaPotwierdzeniaOdbioruType::valueIsValid()
@@ -95,7 +100,7 @@ class PotwierdzenieOdbioruType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\SposobPrzekazaniaPotwierdzeniaOdbioruType', is_array($sposob) ? implode(', ', $sposob) : var_export($sposob, true), implode(', ', \PocztaPolska\EnumType\SposobPrzekazaniaPotwierdzeniaOdbioruType::getValidValues())), __LINE__);
         }
         $this->sposob = $sposob;
-        
+
         return $this;
     }
 }

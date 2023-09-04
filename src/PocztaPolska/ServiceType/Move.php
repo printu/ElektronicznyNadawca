@@ -27,14 +27,15 @@ class Move extends AbstractSoapClientBase
             $this->setResult($resultMoveShipments = $this->getSoapClient()->__soapCall('moveShipments', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultMoveShipments;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Returns the result
      * @see AbstractSoapClientBase::getResult()

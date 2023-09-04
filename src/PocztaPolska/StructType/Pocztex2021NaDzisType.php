@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace PocztaPolska\StructType;
 
 use InvalidArgumentException;
-use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for pocztex2021NaDzisType StructType
@@ -38,6 +37,7 @@ class Pocztex2021NaDzisType extends Pocztex2021Type
      * @var string|null
      */
     protected ?string $obszar = null;
+
     /**
      * Constructor method for pocztex2021NaDzisType
      * @uses Pocztex2021NaDzisType::setSubPrzesylka()
@@ -54,6 +54,7 @@ class Pocztex2021NaDzisType extends Pocztex2021Type
             ->setOdleglosc($odleglosc)
             ->setObszar($obszar);
     }
+
     /**
      * Get subPrzesylka value
      * @return \PocztaPolska\StructType\SubPocztex2021NaDzisType[]
@@ -62,6 +63,7 @@ class Pocztex2021NaDzisType extends Pocztex2021Type
     {
         return $this->subPrzesylka;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setSubPrzesylka method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSubPrzesylka method
@@ -86,9 +88,10 @@ class Pocztex2021NaDzisType extends Pocztex2021Type
             $message = sprintf('The subPrzesylka property can only contain items of type \PocztaPolska\StructType\SubPocztex2021NaDzisType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set subPrzesylka value
      * @throws InvalidArgumentException
@@ -102,9 +105,10 @@ class Pocztex2021NaDzisType extends Pocztex2021Type
             throw new InvalidArgumentException($subPrzesylkaArrayErrorMessage, __LINE__);
         }
         $this->subPrzesylka = $subPrzesylka;
-        
+
         return $this;
     }
+
     /**
      * Add item to subPrzesylka value
      * @throws InvalidArgumentException
@@ -118,9 +122,10 @@ class Pocztex2021NaDzisType extends Pocztex2021Type
             throw new InvalidArgumentException(sprintf('The subPrzesylka property can only contain items of type \PocztaPolska\StructType\SubPocztex2021NaDzisType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->subPrzesylka[] = $item;
-        
+
         return $this;
     }
+
     /**
      * Get odleglosc value
      * @return int|null
@@ -129,6 +134,7 @@ class Pocztex2021NaDzisType extends Pocztex2021Type
     {
         return $this->odleglosc;
     }
+
     /**
      * Set odleglosc value
      * @param int $odleglosc
@@ -141,9 +147,10 @@ class Pocztex2021NaDzisType extends Pocztex2021Type
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($odleglosc, true), gettype($odleglosc)), __LINE__);
         }
         $this->odleglosc = $odleglosc;
-        
+
         return $this;
     }
+
     /**
      * Get obszar value
      * @return string|null
@@ -152,6 +159,7 @@ class Pocztex2021NaDzisType extends Pocztex2021Type
     {
         return $this->obszar;
     }
+
     /**
      * Set obszar value
      * @uses \PocztaPolska\EnumType\ObszarType::valueIsValid()
@@ -167,7 +175,7 @@ class Pocztex2021NaDzisType extends Pocztex2021Type
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\ObszarType', is_array($obszar) ? implode(', ', $obszar) : var_export($obszar, true), implode(', ', \PocztaPolska\EnumType\ObszarType::getValidValues())), __LINE__);
         }
         $this->obszar = $obszar;
-        
+
         return $this;
     }
 }

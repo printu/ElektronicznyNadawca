@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace PocztaPolska\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,6 +21,7 @@ class UpdateProfil extends AbstractStructBase
      * @var \PocztaPolska\StructType\ProfilType
      */
     protected \PocztaPolska\StructType\ProfilType $profil;
+
     /**
      * Constructor method for updateProfil
      * @uses UpdateProfil::setProfil()
@@ -32,6 +32,7 @@ class UpdateProfil extends AbstractStructBase
         $this
             ->setProfil($profil);
     }
+
     /**
      * Get profil value
      * @return \PocztaPolska\StructType\ProfilType
@@ -40,6 +41,7 @@ class UpdateProfil extends AbstractStructBase
     {
         return $this->profil;
     }
+
     /**
      * Set profil value
      * @param \PocztaPolska\StructType\ProfilType $profil
@@ -48,7 +50,7 @@ class UpdateProfil extends AbstractStructBase
     public function setProfil(\PocztaPolska\StructType\ProfilType $profil): self
     {
         $this->profil = $profil;
-        
+
         return $this;
     }
 }

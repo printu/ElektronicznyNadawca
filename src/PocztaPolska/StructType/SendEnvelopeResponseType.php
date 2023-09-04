@@ -46,6 +46,7 @@ class SendEnvelopeResponseType extends AbstractStructBase
      * @var string|null
      */
     protected ?string $envelopeFilename = null;
+
     /**
      * Constructor method for sendEnvelopeResponseType
      * @uses SendEnvelopeResponseType::setIdEnvelope()
@@ -65,6 +66,7 @@ class SendEnvelopeResponseType extends AbstractStructBase
             ->setError($error)
             ->setEnvelopeFilename($envelopeFilename);
     }
+
     /**
      * Get idEnvelope value
      * @return int|null
@@ -73,6 +75,7 @@ class SendEnvelopeResponseType extends AbstractStructBase
     {
         return $this->idEnvelope;
     }
+
     /**
      * Set idEnvelope value
      * @param int $idEnvelope
@@ -85,9 +88,10 @@ class SendEnvelopeResponseType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($idEnvelope, true), gettype($idEnvelope)), __LINE__);
         }
         $this->idEnvelope = $idEnvelope;
-        
+
         return $this;
     }
+
     /**
      * Get envelopeStatus value
      * @return string|null
@@ -96,6 +100,7 @@ class SendEnvelopeResponseType extends AbstractStructBase
     {
         return $this->envelopeStatus;
     }
+
     /**
      * Set envelopeStatus value
      * @uses \PocztaPolska\EnumType\EnvelopeStatusType::valueIsValid()
@@ -111,9 +116,10 @@ class SendEnvelopeResponseType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\EnvelopeStatusType', is_array($envelopeStatus) ? implode(', ', $envelopeStatus) : var_export($envelopeStatus, true), implode(', ', \PocztaPolska\EnumType\EnvelopeStatusType::getValidValues())), __LINE__);
         }
         $this->envelopeStatus = $envelopeStatus;
-        
+
         return $this;
     }
+
     /**
      * Get error value
      * @return \PocztaPolska\StructType\ErrorType[]
@@ -122,6 +128,7 @@ class SendEnvelopeResponseType extends AbstractStructBase
     {
         return $this->error;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setError method
      * This method is willingly generated in order to preserve the one-line inline validation within the setError method
@@ -146,9 +153,10 @@ class SendEnvelopeResponseType extends AbstractStructBase
             $message = sprintf('The error property can only contain items of type \PocztaPolska\StructType\ErrorType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set error value
      * @throws InvalidArgumentException
@@ -162,9 +170,10 @@ class SendEnvelopeResponseType extends AbstractStructBase
             throw new InvalidArgumentException($errorArrayErrorMessage, __LINE__);
         }
         $this->error = $error;
-        
+
         return $this;
     }
+
     /**
      * Add item to error value
      * @throws InvalidArgumentException
@@ -178,9 +187,10 @@ class SendEnvelopeResponseType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The error property can only contain items of type \PocztaPolska\StructType\ErrorType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->error[] = $item;
-        
+
         return $this;
     }
+
     /**
      * Get envelopeFilename value
      * @return string|null
@@ -189,6 +199,7 @@ class SendEnvelopeResponseType extends AbstractStructBase
     {
         return $this->envelopeFilename;
     }
+
     /**
      * Set envelopeFilename value
      * @param string $envelopeFilename
@@ -201,7 +212,7 @@ class SendEnvelopeResponseType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($envelopeFilename, true), gettype($envelopeFilename)), __LINE__);
         }
         $this->envelopeFilename = $envelopeFilename;
-        
+
         return $this;
     }
 }

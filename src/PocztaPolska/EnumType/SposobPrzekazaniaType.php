@@ -16,12 +16,13 @@ class SposobPrzekazaniaType extends AbstractStructEnumBase
      * Constant for value 'LIST_ZWYKLY_PRIOTYTET'
      * @return string 'LIST_ZWYKLY_PRIOTYTET'
      */
-    const VALUE_LIST_ZWYKLY_PRIOTYTET = 'LIST_ZWYKLY_PRIOTYTET';
+    public const VALUE_LIST_ZWYKLY_PRIOTYTET = 'LIST_ZWYKLY_PRIOTYTET';
     /**
      * Constant for value 'POCZTEX'
      * @return string 'POCZTEX'
      */
-    const VALUE_POCZTEX = 'POCZTEX';
+    public const VALUE_POCZTEX = 'POCZTEX';
+
     /**
      * Return allowed values
      * @uses self::VALUE_LIST_ZWYKLY_PRIOTYTET

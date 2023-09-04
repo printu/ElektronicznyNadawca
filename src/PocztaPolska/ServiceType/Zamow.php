@@ -27,14 +27,15 @@ class Zamow extends AbstractSoapClientBase
             $this->setResult($resultZamowKuriera = $this->getSoapClient()->__soapCall('zamowKuriera', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultZamowKuriera;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Returns the result
      * @see AbstractSoapClientBase::getResult()

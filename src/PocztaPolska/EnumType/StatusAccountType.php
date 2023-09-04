@@ -16,17 +16,18 @@ class StatusAccountType extends AbstractStructEnumBase
      * Constant for value 'WYLACZONY'
      * @return string 'WYLACZONY'
      */
-    const VALUE_WYLACZONY = 'WYLACZONY';
+    public const VALUE_WYLACZONY = 'WYLACZONY';
     /**
      * Constant for value 'ZABLOKOWANY'
      * @return string 'ZABLOKOWANY'
      */
-    const VALUE_ZABLOKOWANY = 'ZABLOKOWANY';
+    public const VALUE_ZABLOKOWANY = 'ZABLOKOWANY';
     /**
      * Constant for value 'ODBLOKOWANY'
      * @return string 'ODBLOKOWANY'
      */
-    const VALUE_ODBLOKOWANY = 'ODBLOKOWANY';
+    public const VALUE_ODBLOKOWANY = 'ODBLOKOWANY';
+
     /**
      * Return allowed values
      * @uses self::VALUE_WYLACZONY

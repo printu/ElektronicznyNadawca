@@ -34,6 +34,7 @@ class WspolrzednaGeograficznaType extends AbstractStructBase
      * @var float|null
      */
     protected ?float $sekunda = null;
+
     /**
      * Constructor method for wspolrzednaGeograficznaType
      * @uses WspolrzednaGeograficznaType::setDec()
@@ -53,6 +54,7 @@ class WspolrzednaGeograficznaType extends AbstractStructBase
             ->setMinuta($minuta)
             ->setSekunda($sekunda);
     }
+
     /**
      * Get dec value
      * @return float|null
@@ -61,6 +63,7 @@ class WspolrzednaGeograficznaType extends AbstractStructBase
     {
         return $this->dec;
     }
+
     /**
      * Set dec value
      * @param float $dec
@@ -73,9 +76,10 @@ class WspolrzednaGeograficznaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($dec, true), gettype($dec)), __LINE__);
         }
         $this->dec = $dec;
-        
+
         return $this;
     }
+
     /**
      * Get stopien value
      * @return int|null
@@ -84,6 +88,7 @@ class WspolrzednaGeograficznaType extends AbstractStructBase
     {
         return $this->stopien;
     }
+
     /**
      * Set stopien value
      * @param int $stopien
@@ -96,9 +101,10 @@ class WspolrzednaGeograficznaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($stopien, true), gettype($stopien)), __LINE__);
         }
         $this->stopien = $stopien;
-        
+
         return $this;
     }
+
     /**
      * Get minuta value
      * @return int|null
@@ -107,6 +113,7 @@ class WspolrzednaGeograficznaType extends AbstractStructBase
     {
         return $this->minuta;
     }
+
     /**
      * Set minuta value
      * @param int $minuta
@@ -119,9 +126,10 @@ class WspolrzednaGeograficznaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($minuta, true), gettype($minuta)), __LINE__);
         }
         $this->minuta = $minuta;
-        
+
         return $this;
     }
+
     /**
      * Get sekunda value
      * @return float|null
@@ -130,6 +138,7 @@ class WspolrzednaGeograficznaType extends AbstractStructBase
     {
         return $this->sekunda;
     }
+
     /**
      * Set sekunda value
      * @param float $sekunda
@@ -142,7 +151,7 @@ class WspolrzednaGeograficznaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($sekunda, true), gettype($sekunda)), __LINE__);
         }
         $this->sekunda = $sekunda;
-        
+
         return $this;
     }
 }

@@ -43,6 +43,7 @@ class OpakowanieType extends AbstractStructBase
      * @var string|null
      */
     protected ?string $numerOpakowaniaZbiorczego = null;
+
     /**
      * Constructor method for opakowanieType
      * @uses OpakowanieType::setOpakowanieGuid()
@@ -65,6 +66,7 @@ class OpakowanieType extends AbstractStructBase
             ->setIlosc($ilosc)
             ->setNumerOpakowaniaZbiorczego($numerOpakowaniaZbiorczego);
     }
+
     /**
      * Get opakowanieGuid value
      * @return string|null
@@ -73,6 +75,7 @@ class OpakowanieType extends AbstractStructBase
     {
         return $this->opakowanieGuid;
     }
+
     /**
      * Set opakowanieGuid value
      * @param string $opakowanieGuid
@@ -89,9 +92,10 @@ class OpakowanieType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 32', mb_strlen((string) $opakowanieGuid)), __LINE__);
         }
         $this->opakowanieGuid = $opakowanieGuid;
-        
+
         return $this;
     }
+
     /**
      * Get typ value
      * @return string|null
@@ -100,6 +104,7 @@ class OpakowanieType extends AbstractStructBase
     {
         return $this->typ;
     }
+
     /**
      * Set typ value
      * @uses \PocztaPolska\EnumType\TypOpakowanieType::valueIsValid()
@@ -115,9 +120,10 @@ class OpakowanieType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\TypOpakowanieType', is_array($typ) ? implode(', ', $typ) : var_export($typ, true), implode(', ', \PocztaPolska\EnumType\TypOpakowanieType::getValidValues())), __LINE__);
         }
         $this->typ = $typ;
-        
+
         return $this;
     }
+
     /**
      * Get sygnatura value
      * @return string|null
@@ -126,6 +132,7 @@ class OpakowanieType extends AbstractStructBase
     {
         return $this->sygnatura;
     }
+
     /**
      * Set sygnatura value
      * @param string $sygnatura
@@ -138,9 +145,10 @@ class OpakowanieType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($sygnatura, true), gettype($sygnatura)), __LINE__);
         }
         $this->sygnatura = $sygnatura;
-        
+
         return $this;
     }
+
     /**
      * Get ilosc value
      * @return int|null
@@ -149,6 +157,7 @@ class OpakowanieType extends AbstractStructBase
     {
         return $this->ilosc;
     }
+
     /**
      * Set ilosc value
      * @param int $ilosc
@@ -161,9 +170,10 @@ class OpakowanieType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($ilosc, true), gettype($ilosc)), __LINE__);
         }
         $this->ilosc = $ilosc;
-        
+
         return $this;
     }
+
     /**
      * Get numerOpakowaniaZbiorczego value
      * @return string|null
@@ -172,6 +182,7 @@ class OpakowanieType extends AbstractStructBase
     {
         return $this->numerOpakowaniaZbiorczego;
     }
+
     /**
      * Set numerOpakowaniaZbiorczego value
      * @param string $numerOpakowaniaZbiorczego
@@ -184,7 +195,7 @@ class OpakowanieType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($numerOpakowaniaZbiorczego, true), gettype($numerOpakowaniaZbiorczego)), __LINE__);
         }
         $this->numerOpakowaniaZbiorczego = $numerOpakowaniaZbiorczego;
-        
+
         return $this;
     }
 }

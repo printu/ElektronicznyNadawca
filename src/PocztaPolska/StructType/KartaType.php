@@ -54,6 +54,7 @@ class KartaType extends AbstractStructBase
      * @var int|null
      */
     protected ?int $typ = null;
+
     /**
      * Constructor method for kartaType
      * @uses KartaType::setProduktyInKarta()
@@ -79,6 +80,7 @@ class KartaType extends AbstractStructBase
             ->setAktywna($aktywna)
             ->setTyp($typ);
     }
+
     /**
      * Get produktyInKarta value
      * @return \PocztaPolska\StructType\ProduktyInKartaType|null
@@ -87,6 +89,7 @@ class KartaType extends AbstractStructBase
     {
         return $this->produktyInKarta;
     }
+
     /**
      * Set produktyInKarta value
      * @param \PocztaPolska\StructType\ProduktyInKartaType $produktyInKarta
@@ -95,9 +98,10 @@ class KartaType extends AbstractStructBase
     public function setProduktyInKarta(?\PocztaPolska\StructType\ProduktyInKartaType $produktyInKarta = null): self
     {
         $this->produktyInKarta = $produktyInKarta;
-        
+
         return $this;
     }
+
     /**
      * Get adresKorespondencyjny value
      * @return \PocztaPolska\StructType\AdresKorespondencyjny[]
@@ -106,6 +110,7 @@ class KartaType extends AbstractStructBase
     {
         return $this->adresKorespondencyjny;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setAdresKorespondencyjny method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAdresKorespondencyjny method
@@ -130,9 +135,10 @@ class KartaType extends AbstractStructBase
             $message = sprintf('The adresKorespondencyjny property can only contain items of type \PocztaPolska\StructType\AdresKorespondencyjny, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set adresKorespondencyjny value
      * @throws InvalidArgumentException
@@ -146,9 +152,10 @@ class KartaType extends AbstractStructBase
             throw new InvalidArgumentException($adresKorespondencyjnyArrayErrorMessage, __LINE__);
         }
         $this->adresKorespondencyjny = $adresKorespondencyjny;
-        
+
         return $this;
     }
+
     /**
      * Add item to adresKorespondencyjny value
      * @throws InvalidArgumentException
@@ -162,9 +169,10 @@ class KartaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The adresKorespondencyjny property can only contain items of type \PocztaPolska\StructType\AdresKorespondencyjny, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->adresKorespondencyjny[] = $item;
-        
+
         return $this;
     }
+
     /**
      * Get idKarta value
      * @return int|null
@@ -173,6 +181,7 @@ class KartaType extends AbstractStructBase
     {
         return $this->idKarta;
     }
+
     /**
      * Set idKarta value
      * @param int $idKarta
@@ -185,9 +194,10 @@ class KartaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($idKarta, true), gettype($idKarta)), __LINE__);
         }
         $this->idKarta = $idKarta;
-        
+
         return $this;
     }
+
     /**
      * Get opis value
      * @return string|null
@@ -196,6 +206,7 @@ class KartaType extends AbstractStructBase
     {
         return $this->opis;
     }
+
     /**
      * Set opis value
      * @param string $opis
@@ -208,9 +219,10 @@ class KartaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($opis, true), gettype($opis)), __LINE__);
         }
         $this->opis = $opis;
-        
+
         return $this;
     }
+
     /**
      * Get aktywna value
      * @return bool|null
@@ -219,6 +231,7 @@ class KartaType extends AbstractStructBase
     {
         return $this->aktywna;
     }
+
     /**
      * Set aktywna value
      * @param bool $aktywna
@@ -231,9 +244,10 @@ class KartaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($aktywna, true), gettype($aktywna)), __LINE__);
         }
         $this->aktywna = $aktywna;
-        
+
         return $this;
     }
+
     /**
      * Get typ value
      * @return int|null
@@ -242,6 +256,7 @@ class KartaType extends AbstractStructBase
     {
         return $this->typ;
     }
+
     /**
      * Set typ value
      * @param int $typ
@@ -254,7 +269,7 @@ class KartaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($typ, true), gettype($typ)), __LINE__);
         }
         $this->typ = $typ;
-        
+
         return $this;
     }
 }

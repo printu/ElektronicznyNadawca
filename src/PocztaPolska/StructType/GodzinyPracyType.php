@@ -86,6 +86,7 @@ class GodzinyPracyType extends AbstractStructBase
      * @var \PocztaPolska\StructType\GodzinyPracyOdDoType[]
      */
     protected ?array $swieta = null;
+
     /**
      * Constructor method for godzinyPracyType
      * @uses GodzinyPracyType::setPoniedzialek()
@@ -120,6 +121,7 @@ class GodzinyPracyType extends AbstractStructBase
             ->setRobocze($robocze)
             ->setSwieta($swieta);
     }
+
     /**
      * Get poniedzialek value
      * @return \PocztaPolska\StructType\GodzinyPracyOdDoType[]
@@ -128,6 +130,7 @@ class GodzinyPracyType extends AbstractStructBase
     {
         return $this->poniedzialek;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setPoniedzialek method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPoniedzialek method
@@ -152,9 +155,10 @@ class GodzinyPracyType extends AbstractStructBase
             $message = sprintf('The poniedzialek property can only contain items of type \PocztaPolska\StructType\GodzinyPracyOdDoType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set poniedzialek value
      * @throws InvalidArgumentException
@@ -168,9 +172,10 @@ class GodzinyPracyType extends AbstractStructBase
             throw new InvalidArgumentException($poniedzialekArrayErrorMessage, __LINE__);
         }
         $this->poniedzialek = $poniedzialek;
-        
+
         return $this;
     }
+
     /**
      * Add item to poniedzialek value
      * @throws InvalidArgumentException
@@ -184,9 +189,10 @@ class GodzinyPracyType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The poniedzialek property can only contain items of type \PocztaPolska\StructType\GodzinyPracyOdDoType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->poniedzialek[] = $item;
-        
+
         return $this;
     }
+
     /**
      * Get wtorek value
      * @return \PocztaPolska\StructType\GodzinyPracyOdDoType[]
@@ -195,6 +201,7 @@ class GodzinyPracyType extends AbstractStructBase
     {
         return $this->wtorek;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setWtorek method
      * This method is willingly generated in order to preserve the one-line inline validation within the setWtorek method
@@ -219,9 +226,10 @@ class GodzinyPracyType extends AbstractStructBase
             $message = sprintf('The wtorek property can only contain items of type \PocztaPolska\StructType\GodzinyPracyOdDoType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set wtorek value
      * @throws InvalidArgumentException
@@ -235,9 +243,10 @@ class GodzinyPracyType extends AbstractStructBase
             throw new InvalidArgumentException($wtorekArrayErrorMessage, __LINE__);
         }
         $this->wtorek = $wtorek;
-        
+
         return $this;
     }
+
     /**
      * Add item to wtorek value
      * @throws InvalidArgumentException
@@ -251,9 +260,10 @@ class GodzinyPracyType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The wtorek property can only contain items of type \PocztaPolska\StructType\GodzinyPracyOdDoType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->wtorek[] = $item;
-        
+
         return $this;
     }
+
     /**
      * Get sroda value
      * @return \PocztaPolska\StructType\GodzinyPracyOdDoType[]
@@ -262,6 +272,7 @@ class GodzinyPracyType extends AbstractStructBase
     {
         return $this->sroda;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setSroda method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSroda method
@@ -286,9 +297,10 @@ class GodzinyPracyType extends AbstractStructBase
             $message = sprintf('The sroda property can only contain items of type \PocztaPolska\StructType\GodzinyPracyOdDoType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set sroda value
      * @throws InvalidArgumentException
@@ -302,9 +314,10 @@ class GodzinyPracyType extends AbstractStructBase
             throw new InvalidArgumentException($srodaArrayErrorMessage, __LINE__);
         }
         $this->sroda = $sroda;
-        
+
         return $this;
     }
+
     /**
      * Add item to sroda value
      * @throws InvalidArgumentException
@@ -318,9 +331,10 @@ class GodzinyPracyType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The sroda property can only contain items of type \PocztaPolska\StructType\GodzinyPracyOdDoType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->sroda[] = $item;
-        
+
         return $this;
     }
+
     /**
      * Get czwartek value
      * @return \PocztaPolska\StructType\GodzinyPracyOdDoType[]
@@ -329,6 +343,7 @@ class GodzinyPracyType extends AbstractStructBase
     {
         return $this->czwartek;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setCzwartek method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCzwartek method
@@ -353,9 +368,10 @@ class GodzinyPracyType extends AbstractStructBase
             $message = sprintf('The czwartek property can only contain items of type \PocztaPolska\StructType\GodzinyPracyOdDoType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set czwartek value
      * @throws InvalidArgumentException
@@ -369,9 +385,10 @@ class GodzinyPracyType extends AbstractStructBase
             throw new InvalidArgumentException($czwartekArrayErrorMessage, __LINE__);
         }
         $this->czwartek = $czwartek;
-        
+
         return $this;
     }
+
     /**
      * Add item to czwartek value
      * @throws InvalidArgumentException
@@ -385,9 +402,10 @@ class GodzinyPracyType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The czwartek property can only contain items of type \PocztaPolska\StructType\GodzinyPracyOdDoType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->czwartek[] = $item;
-        
+
         return $this;
     }
+
     /**
      * Get piatek value
      * @return \PocztaPolska\StructType\GodzinyPracyOdDoType[]
@@ -396,6 +414,7 @@ class GodzinyPracyType extends AbstractStructBase
     {
         return $this->piatek;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setPiatek method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPiatek method
@@ -420,9 +439,10 @@ class GodzinyPracyType extends AbstractStructBase
             $message = sprintf('The piatek property can only contain items of type \PocztaPolska\StructType\GodzinyPracyOdDoType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set piatek value
      * @throws InvalidArgumentException
@@ -436,9 +456,10 @@ class GodzinyPracyType extends AbstractStructBase
             throw new InvalidArgumentException($piatekArrayErrorMessage, __LINE__);
         }
         $this->piatek = $piatek;
-        
+
         return $this;
     }
+
     /**
      * Add item to piatek value
      * @throws InvalidArgumentException
@@ -452,9 +473,10 @@ class GodzinyPracyType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The piatek property can only contain items of type \PocztaPolska\StructType\GodzinyPracyOdDoType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->piatek[] = $item;
-        
+
         return $this;
     }
+
     /**
      * Get sobota value
      * @return \PocztaPolska\StructType\GodzinyPracyOdDoType[]
@@ -463,6 +485,7 @@ class GodzinyPracyType extends AbstractStructBase
     {
         return $this->sobota;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setSobota method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSobota method
@@ -487,9 +510,10 @@ class GodzinyPracyType extends AbstractStructBase
             $message = sprintf('The sobota property can only contain items of type \PocztaPolska\StructType\GodzinyPracyOdDoType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set sobota value
      * @throws InvalidArgumentException
@@ -503,9 +527,10 @@ class GodzinyPracyType extends AbstractStructBase
             throw new InvalidArgumentException($sobotaArrayErrorMessage, __LINE__);
         }
         $this->sobota = $sobota;
-        
+
         return $this;
     }
+
     /**
      * Add item to sobota value
      * @throws InvalidArgumentException
@@ -519,9 +544,10 @@ class GodzinyPracyType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The sobota property can only contain items of type \PocztaPolska\StructType\GodzinyPracyOdDoType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->sobota[] = $item;
-        
+
         return $this;
     }
+
     /**
      * Get niedziela value
      * @return \PocztaPolska\StructType\GodzinyPracyOdDoType[]
@@ -530,6 +556,7 @@ class GodzinyPracyType extends AbstractStructBase
     {
         return $this->niedziela;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setNiedziela method
      * This method is willingly generated in order to preserve the one-line inline validation within the setNiedziela method
@@ -554,9 +581,10 @@ class GodzinyPracyType extends AbstractStructBase
             $message = sprintf('The niedziela property can only contain items of type \PocztaPolska\StructType\GodzinyPracyOdDoType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set niedziela value
      * @throws InvalidArgumentException
@@ -570,9 +598,10 @@ class GodzinyPracyType extends AbstractStructBase
             throw new InvalidArgumentException($niedzielaArrayErrorMessage, __LINE__);
         }
         $this->niedziela = $niedziela;
-        
+
         return $this;
     }
+
     /**
      * Add item to niedziela value
      * @throws InvalidArgumentException
@@ -586,9 +615,10 @@ class GodzinyPracyType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The niedziela property can only contain items of type \PocztaPolska\StructType\GodzinyPracyOdDoType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->niedziela[] = $item;
-        
+
         return $this;
     }
+
     /**
      * Get robocze value
      * @return \PocztaPolska\StructType\GodzinyPracyOdDoType[]
@@ -597,6 +627,7 @@ class GodzinyPracyType extends AbstractStructBase
     {
         return $this->robocze;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setRobocze method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRobocze method
@@ -621,9 +652,10 @@ class GodzinyPracyType extends AbstractStructBase
             $message = sprintf('The robocze property can only contain items of type \PocztaPolska\StructType\GodzinyPracyOdDoType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set robocze value
      * @throws InvalidArgumentException
@@ -637,9 +669,10 @@ class GodzinyPracyType extends AbstractStructBase
             throw new InvalidArgumentException($roboczeArrayErrorMessage, __LINE__);
         }
         $this->robocze = $robocze;
-        
+
         return $this;
     }
+
     /**
      * Add item to robocze value
      * @throws InvalidArgumentException
@@ -653,9 +686,10 @@ class GodzinyPracyType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The robocze property can only contain items of type \PocztaPolska\StructType\GodzinyPracyOdDoType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->robocze[] = $item;
-        
+
         return $this;
     }
+
     /**
      * Get swieta value
      * @return \PocztaPolska\StructType\GodzinyPracyOdDoType[]
@@ -664,6 +698,7 @@ class GodzinyPracyType extends AbstractStructBase
     {
         return $this->swieta;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setSwieta method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSwieta method
@@ -688,9 +723,10 @@ class GodzinyPracyType extends AbstractStructBase
             $message = sprintf('The swieta property can only contain items of type \PocztaPolska\StructType\GodzinyPracyOdDoType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set swieta value
      * @throws InvalidArgumentException
@@ -704,9 +740,10 @@ class GodzinyPracyType extends AbstractStructBase
             throw new InvalidArgumentException($swietaArrayErrorMessage, __LINE__);
         }
         $this->swieta = $swieta;
-        
+
         return $this;
     }
+
     /**
      * Add item to swieta value
      * @throws InvalidArgumentException
@@ -720,7 +757,7 @@ class GodzinyPracyType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The swieta property can only contain items of type \PocztaPolska\StructType\GodzinyPracyOdDoType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->swieta[] = $item;
-        
+
         return $this;
     }
 }

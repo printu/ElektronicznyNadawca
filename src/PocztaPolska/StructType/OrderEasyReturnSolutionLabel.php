@@ -65,6 +65,7 @@ class OrderEasyReturnSolutionLabel extends AbstractStructBase
      * @var string|null
      */
     protected ?string $description = null;
+
     /**
      * Constructor method for orderEasyReturnSolutionLabel
      * @uses OrderEasyReturnSolutionLabel::setSenderAddress()
@@ -90,6 +91,7 @@ class OrderEasyReturnSolutionLabel extends AbstractStructBase
             ->setDeliveryMethod($deliveryMethod)
             ->setDescription($description);
     }
+
     /**
      * Get senderAddress value
      * @return \PocztaPolska\StructType\AddressType
@@ -98,6 +100,7 @@ class OrderEasyReturnSolutionLabel extends AbstractStructBase
     {
         return $this->senderAddress;
     }
+
     /**
      * Set senderAddress value
      * @param \PocztaPolska\StructType\AddressType $senderAddress
@@ -106,9 +109,10 @@ class OrderEasyReturnSolutionLabel extends AbstractStructBase
     public function setSenderAddress(\PocztaPolska\StructType\AddressType $senderAddress): self
     {
         $this->senderAddress = $senderAddress;
-        
+
         return $this;
     }
+
     /**
      * Get recipientAddress value
      * @return \PocztaPolska\StructType\AddressType
@@ -117,6 +121,7 @@ class OrderEasyReturnSolutionLabel extends AbstractStructBase
     {
         return $this->recipientAddress;
     }
+
     /**
      * Set recipientAddress value
      * @param \PocztaPolska\StructType\AddressType $recipientAddress
@@ -125,9 +130,10 @@ class OrderEasyReturnSolutionLabel extends AbstractStructBase
     public function setRecipientAddress(\PocztaPolska\StructType\AddressType $recipientAddress): self
     {
         $this->recipientAddress = $recipientAddress;
-        
+
         return $this;
     }
+
     /**
      * Get weight value
      * @return int|null
@@ -136,6 +142,7 @@ class OrderEasyReturnSolutionLabel extends AbstractStructBase
     {
         return $this->weight;
     }
+
     /**
      * Set weight value
      * @param int $weight
@@ -148,9 +155,10 @@ class OrderEasyReturnSolutionLabel extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($weight, true), gettype($weight)), __LINE__);
         }
         $this->weight = $weight;
-        
+
         return $this;
     }
+
     /**
      * Get customsDeclaration value
      * @return \PocztaPolska\StructType\CustomsDeclarationType|null
@@ -159,6 +167,7 @@ class OrderEasyReturnSolutionLabel extends AbstractStructBase
     {
         return $this->customsDeclaration;
     }
+
     /**
      * Set customsDeclaration value
      * @param \PocztaPolska\StructType\CustomsDeclarationType $customsDeclaration
@@ -167,9 +176,10 @@ class OrderEasyReturnSolutionLabel extends AbstractStructBase
     public function setCustomsDeclaration(?\PocztaPolska\StructType\CustomsDeclarationType $customsDeclaration = null): self
     {
         $this->customsDeclaration = $customsDeclaration;
-        
+
         return $this;
     }
+
     /**
      * Get deliveryMethod value
      * @return \PocztaPolska\StructType\DeliveryMethodType|null
@@ -178,6 +188,7 @@ class OrderEasyReturnSolutionLabel extends AbstractStructBase
     {
         return $this->deliveryMethod;
     }
+
     /**
      * Set deliveryMethod value
      * @param \PocztaPolska\StructType\DeliveryMethodType $deliveryMethod
@@ -186,9 +197,10 @@ class OrderEasyReturnSolutionLabel extends AbstractStructBase
     public function setDeliveryMethod(?\PocztaPolska\StructType\DeliveryMethodType $deliveryMethod = null): self
     {
         $this->deliveryMethod = $deliveryMethod;
-        
+
         return $this;
     }
+
     /**
      * Get description value
      * @return string|null
@@ -197,6 +209,7 @@ class OrderEasyReturnSolutionLabel extends AbstractStructBase
     {
         return $this->description;
     }
+
     /**
      * Set description value
      * @param string $description
@@ -209,7 +222,7 @@ class OrderEasyReturnSolutionLabel extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($description, true), gettype($description)), __LINE__);
         }
         $this->description = $description;
-        
+
         return $this;
     }
 }

@@ -30,6 +30,7 @@ class AddZalacznikDoReklamacji extends AbstractStructBase
      * @var \PocztaPolska\StructType\ZalacznikDoReklamacjiType[]
      */
     protected array $zalacznik;
+
     /**
      * Constructor method for addZalacznikDoReklamacji
      * @uses AddZalacznikDoReklamacji::setIdReklamacja()
@@ -43,6 +44,7 @@ class AddZalacznikDoReklamacji extends AbstractStructBase
             ->setIdReklamacja($idReklamacja)
             ->setZalacznik($zalacznik);
     }
+
     /**
      * Get idReklamacja value
      * @return string
@@ -51,6 +53,7 @@ class AddZalacznikDoReklamacji extends AbstractStructBase
     {
         return $this->idReklamacja;
     }
+
     /**
      * Set idReklamacja value
      * @param string $idReklamacja
@@ -63,9 +66,10 @@ class AddZalacznikDoReklamacji extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($idReklamacja, true), gettype($idReklamacja)), __LINE__);
         }
         $this->idReklamacja = $idReklamacja;
-        
+
         return $this;
     }
+
     /**
      * Get zalacznik value
      * @return \PocztaPolska\StructType\ZalacznikDoReklamacjiType[]
@@ -74,6 +78,7 @@ class AddZalacznikDoReklamacji extends AbstractStructBase
     {
         return $this->zalacznik;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setZalacznik method
      * This method is willingly generated in order to preserve the one-line inline validation within the setZalacznik method
@@ -98,9 +103,10 @@ class AddZalacznikDoReklamacji extends AbstractStructBase
             $message = sprintf('The zalacznik property can only contain items of type \PocztaPolska\StructType\ZalacznikDoReklamacjiType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set zalacznik value
      * @throws InvalidArgumentException
@@ -118,9 +124,10 @@ class AddZalacznikDoReklamacji extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 5', count($zalacznik)), __LINE__);
         }
         $this->zalacznik = $zalacznik;
-        
+
         return $this;
     }
+
     /**
      * Add item to zalacznik value
      * @throws InvalidArgumentException
@@ -138,7 +145,7 @@ class AddZalacznikDoReklamacji extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 5', count($this->zalacznik)), __LINE__);
         }
         $this->zalacznik[] = $item;
-        
+
         return $this;
     }
 }

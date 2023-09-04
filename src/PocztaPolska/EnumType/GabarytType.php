@@ -16,12 +16,13 @@ class GabarytType extends AbstractStructEnumBase
      * Constant for value 'GABARYT_A'
      * @return string 'GABARYT_A'
      */
-    const VALUE_GABARYT_A = 'GABARYT_A';
+    public const VALUE_GABARYT_A = 'GABARYT_A';
     /**
      * Constant for value 'GABARYT_B'
      * @return string 'GABARYT_B'
      */
-    const VALUE_GABARYT_B = 'GABARYT_B';
+    public const VALUE_GABARYT_B = 'GABARYT_B';
+
     /**
      * Return allowed values
      * @uses self::VALUE_GABARYT_A

@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace PocztaPolska\StructType;
 
 use InvalidArgumentException;
-use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for przesylkaNaWarunkachSzczegolnychType StructType
@@ -62,6 +61,7 @@ class PrzesylkaNaWarunkachSzczegolnychType extends PrzesylkaRejestrowanaType
      * @var int|null
      */
     protected ?int $masa = null;
+
     /**
      * Constructor method for przesylkaNaWarunkachSzczegolnychType
      * @uses PrzesylkaNaWarunkachSzczegolnychType::setKategoria()
@@ -84,6 +84,7 @@ class PrzesylkaNaWarunkachSzczegolnychType extends PrzesylkaRejestrowanaType
             ->setWartosc($wartosc)
             ->setMasa($masa);
     }
+
     /**
      * Get kategoria value
      * @return string
@@ -92,6 +93,7 @@ class PrzesylkaNaWarunkachSzczegolnychType extends PrzesylkaRejestrowanaType
     {
         return $this->kategoria;
     }
+
     /**
      * Set kategoria value
      * @uses \PocztaPolska\EnumType\KategoriaType::valueIsValid()
@@ -107,9 +109,10 @@ class PrzesylkaNaWarunkachSzczegolnychType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\KategoriaType', is_array($kategoria) ? implode(', ', $kategoria) : var_export($kategoria, true), implode(', ', \PocztaPolska\EnumType\KategoriaType::getValidValues())), __LINE__);
         }
         $this->kategoria = $kategoria;
-        
+
         return $this;
     }
+
     /**
      * Get posteRestante value
      * @return bool|null
@@ -118,6 +121,7 @@ class PrzesylkaNaWarunkachSzczegolnychType extends PrzesylkaRejestrowanaType
     {
         return $this->posteRestante;
     }
+
     /**
      * Set posteRestante value
      * @param bool $posteRestante
@@ -130,9 +134,10 @@ class PrzesylkaNaWarunkachSzczegolnychType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($posteRestante, true), gettype($posteRestante)), __LINE__);
         }
         $this->posteRestante = $posteRestante;
-        
+
         return $this;
     }
+
     /**
      * Get iloscPotwierdzenOdbioru value
      * @return int|null
@@ -141,6 +146,7 @@ class PrzesylkaNaWarunkachSzczegolnychType extends PrzesylkaRejestrowanaType
     {
         return $this->iloscPotwierdzenOdbioru;
     }
+
     /**
      * Set iloscPotwierdzenOdbioru value
      * @param int $iloscPotwierdzenOdbioru
@@ -161,9 +167,10 @@ class PrzesylkaNaWarunkachSzczegolnychType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 0', var_export($iloscPotwierdzenOdbioru, true)), __LINE__);
         }
         $this->iloscPotwierdzenOdbioru = $iloscPotwierdzenOdbioru;
-        
+
         return $this;
     }
+
     /**
      * Get wartosc value
      * @return int|null
@@ -172,6 +179,7 @@ class PrzesylkaNaWarunkachSzczegolnychType extends PrzesylkaRejestrowanaType
     {
         return $this->wartosc;
     }
+
     /**
      * Set wartosc value
      * @param int $wartosc
@@ -192,9 +200,10 @@ class PrzesylkaNaWarunkachSzczegolnychType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 0', var_export($wartosc, true)), __LINE__);
         }
         $this->wartosc = $wartosc;
-        
+
         return $this;
     }
+
     /**
      * Get masa value
      * @return int|null
@@ -203,6 +212,7 @@ class PrzesylkaNaWarunkachSzczegolnychType extends PrzesylkaRejestrowanaType
     {
         return $this->masa;
     }
+
     /**
      * Set masa value
      * @param int $masa
@@ -223,7 +233,7 @@ class PrzesylkaNaWarunkachSzczegolnychType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 1', var_export($masa, true)), __LINE__);
         }
         $this->masa = $masa;
-        
+
         return $this;
     }
 }

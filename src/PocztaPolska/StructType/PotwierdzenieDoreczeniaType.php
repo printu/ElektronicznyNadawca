@@ -24,6 +24,7 @@ class PotwierdzenieDoreczeniaType extends AbstractStructBase
      * @var string|null
      */
     protected ?string $kontakt = null;
+
     /**
      * Constructor method for potwierdzenieDoreczeniaType
      * @uses PotwierdzenieDoreczeniaType::setSposob()
@@ -37,6 +38,7 @@ class PotwierdzenieDoreczeniaType extends AbstractStructBase
             ->setSposob($sposob)
             ->setKontakt($kontakt);
     }
+
     /**
      * Get sposob value
      * @return string|null
@@ -45,6 +47,7 @@ class PotwierdzenieDoreczeniaType extends AbstractStructBase
     {
         return $this->sposob;
     }
+
     /**
      * Set sposob value
      * @uses \PocztaPolska\EnumType\SposobDoreczeniaPotwierdzeniaType::valueIsValid()
@@ -60,9 +63,10 @@ class PotwierdzenieDoreczeniaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\SposobDoreczeniaPotwierdzeniaType', is_array($sposob) ? implode(', ', $sposob) : var_export($sposob, true), implode(', ', \PocztaPolska\EnumType\SposobDoreczeniaPotwierdzeniaType::getValidValues())), __LINE__);
         }
         $this->sposob = $sposob;
-        
+
         return $this;
     }
+
     /**
      * Get kontakt value
      * @return string|null
@@ -71,6 +75,7 @@ class PotwierdzenieDoreczeniaType extends AbstractStructBase
     {
         return $this->kontakt;
     }
+
     /**
      * Set kontakt value
      * @param string $kontakt
@@ -83,7 +88,7 @@ class PotwierdzenieDoreczeniaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($kontakt, true), gettype($kontakt)), __LINE__);
         }
         $this->kontakt = $kontakt;
-        
+
         return $this;
     }
 }

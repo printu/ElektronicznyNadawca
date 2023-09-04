@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace PocztaPolska\StructType;
 
 use InvalidArgumentException;
-use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for marketingowaZAdresemType StructType
@@ -42,6 +41,7 @@ class MarketingowaZAdresemType extends PrzesylkaType
      * @var string|null
      */
     protected ?string $gabaryt = null;
+
     /**
      * Constructor method for marketingowaZAdresemType
      * @uses MarketingowaZAdresemType::setAdres()
@@ -58,6 +58,7 @@ class MarketingowaZAdresemType extends PrzesylkaType
             ->setMasa($masa)
             ->setGabaryt($gabaryt);
     }
+
     /**
      * Get adres value
      * @return \PocztaPolska\StructType\AdresType
@@ -66,6 +67,7 @@ class MarketingowaZAdresemType extends PrzesylkaType
     {
         return $this->adres;
     }
+
     /**
      * Set adres value
      * @param \PocztaPolska\StructType\AdresType $adres
@@ -74,9 +76,10 @@ class MarketingowaZAdresemType extends PrzesylkaType
     public function setAdres(\PocztaPolska\StructType\AdresType $adres): self
     {
         $this->adres = $adres;
-        
+
         return $this;
     }
+
     /**
      * Get masa value
      * @return int|null
@@ -85,6 +88,7 @@ class MarketingowaZAdresemType extends PrzesylkaType
     {
         return $this->masa;
     }
+
     /**
      * Set masa value
      * @param int $masa
@@ -105,9 +109,10 @@ class MarketingowaZAdresemType extends PrzesylkaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 1', var_export($masa, true)), __LINE__);
         }
         $this->masa = $masa;
-        
+
         return $this;
     }
+
     /**
      * Get gabaryt value
      * @return string|null
@@ -116,6 +121,7 @@ class MarketingowaZAdresemType extends PrzesylkaType
     {
         return $this->gabaryt;
     }
+
     /**
      * Set gabaryt value
      * @uses \PocztaPolska\EnumType\GabarytType::valueIsValid()
@@ -131,7 +137,7 @@ class MarketingowaZAdresemType extends PrzesylkaType
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\GabarytType', is_array($gabaryt) ? implode(', ', $gabaryt) : var_export($gabaryt, true), implode(', ', \PocztaPolska\EnumType\GabarytType::getValidValues())), __LINE__);
         }
         $this->gabaryt = $gabaryt;
-        
+
         return $this;
     }
 }

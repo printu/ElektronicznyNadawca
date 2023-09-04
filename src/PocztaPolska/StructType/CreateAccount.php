@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace PocztaPolska\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,6 +21,7 @@ class CreateAccount extends AbstractStructBase
      * @var \PocztaPolska\StructType\AccountType
      */
     protected \PocztaPolska\StructType\AccountType $account;
+
     /**
      * Constructor method for createAccount
      * @uses CreateAccount::setAccount()
@@ -32,6 +32,7 @@ class CreateAccount extends AbstractStructBase
         $this
             ->setAccount($account);
     }
+
     /**
      * Get account value
      * @return \PocztaPolska\StructType\AccountType
@@ -40,6 +41,7 @@ class CreateAccount extends AbstractStructBase
     {
         return $this->account;
     }
+
     /**
      * Set account value
      * @param \PocztaPolska\StructType\AccountType $account
@@ -48,7 +50,7 @@ class CreateAccount extends AbstractStructBase
     public function setAccount(\PocztaPolska\StructType\AccountType $account): self
     {
         $this->account = $account;
-        
+
         return $this;
     }
 }

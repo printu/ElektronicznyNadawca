@@ -33,6 +33,7 @@ class PotwierdzenieOdbioruPocztex2021Type extends AbstractStructBase
      * @var string
      */
     protected string $sposobPotwierdzeniaOdbioru;
+
     /**
      * Constructor method for potwierdzenieOdbioruPocztex2021Type
      * @uses PotwierdzenieOdbioruPocztex2021Type::setIlosc()
@@ -46,6 +47,7 @@ class PotwierdzenieOdbioruPocztex2021Type extends AbstractStructBase
             ->setIlosc($ilosc)
             ->setSposobPotwierdzeniaOdbioru($sposobPotwierdzeniaOdbioru);
     }
+
     /**
      * Get ilosc value
      * @return int
@@ -54,6 +56,7 @@ class PotwierdzenieOdbioruPocztex2021Type extends AbstractStructBase
     {
         return $this->ilosc;
     }
+
     /**
      * Set ilosc value
      * @param int $ilosc
@@ -74,9 +77,10 @@ class PotwierdzenieOdbioruPocztex2021Type extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 1', var_export($ilosc, true)), __LINE__);
         }
         $this->ilosc = $ilosc;
-        
+
         return $this;
     }
+
     /**
      * Get sposobPotwierdzeniaOdbioru value
      * @return string
@@ -85,6 +89,7 @@ class PotwierdzenieOdbioruPocztex2021Type extends AbstractStructBase
     {
         return $this->sposobPotwierdzeniaOdbioru;
     }
+
     /**
      * Set sposobPotwierdzeniaOdbioru value
      * @uses \PocztaPolska\EnumType\SposobPrzekazaniaPotwierdzeniaOdbioruPocztex2021Enum::valueIsValid()
@@ -100,7 +105,7 @@ class PotwierdzenieOdbioruPocztex2021Type extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\SposobPrzekazaniaPotwierdzeniaOdbioruPocztex2021Enum', is_array($sposobPotwierdzeniaOdbioru) ? implode(', ', $sposobPotwierdzeniaOdbioru) : var_export($sposobPotwierdzeniaOdbioru, true), implode(', ', \PocztaPolska\EnumType\SposobPrzekazaniaPotwierdzeniaOdbioruPocztex2021Enum::getValidValues())), __LINE__);
         }
         $this->sposobPotwierdzeniaOdbioru = $sposobPotwierdzeniaOdbioru;
-        
+
         return $this;
     }
 }

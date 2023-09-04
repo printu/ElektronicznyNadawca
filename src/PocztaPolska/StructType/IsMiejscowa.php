@@ -22,6 +22,7 @@ class IsMiejscowa extends AbstractStructBase
      * @var \PocztaPolska\StructType\TrasaRequestType[]
      */
     protected array $trasaRequest;
+
     /**
      * Constructor method for isMiejscowa
      * @uses IsMiejscowa::setTrasaRequest()
@@ -32,6 +33,7 @@ class IsMiejscowa extends AbstractStructBase
         $this
             ->setTrasaRequest($trasaRequest);
     }
+
     /**
      * Get trasaRequest value
      * @return \PocztaPolska\StructType\TrasaRequestType[]
@@ -40,6 +42,7 @@ class IsMiejscowa extends AbstractStructBase
     {
         return $this->trasaRequest;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setTrasaRequest method
      * This method is willingly generated in order to preserve the one-line inline validation within the setTrasaRequest method
@@ -64,9 +67,10 @@ class IsMiejscowa extends AbstractStructBase
             $message = sprintf('The trasaRequest property can only contain items of type \PocztaPolska\StructType\TrasaRequestType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set trasaRequest value
      * @throws InvalidArgumentException
@@ -84,9 +88,10 @@ class IsMiejscowa extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 500', count($trasaRequest)), __LINE__);
         }
         $this->trasaRequest = $trasaRequest;
-        
+
         return $this;
     }
+
     /**
      * Add item to trasaRequest value
      * @throws InvalidArgumentException
@@ -104,7 +109,7 @@ class IsMiejscowa extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 500', count($this->trasaRequest)), __LINE__);
         }
         $this->trasaRequest[] = $item;
-        
+
         return $this;
     }
 }

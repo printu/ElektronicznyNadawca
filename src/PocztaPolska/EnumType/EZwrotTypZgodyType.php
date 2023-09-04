@@ -16,17 +16,18 @@ class EZwrotTypZgodyType extends AbstractStructEnumBase
      * Constant for value 'ZGODA_BRAK'
      * @return string 'ZGODA_BRAK'
      */
-    const VALUE_ZGODA_BRAK = 'ZGODA_BRAK';
+    public const VALUE_ZGODA_BRAK = 'ZGODA_BRAK';
     /**
      * Constant for value 'ZGODA_AUTOMATYCZNA'
      * @return string 'ZGODA_AUTOMATYCZNA'
      */
-    const VALUE_ZGODA_AUTOMATYCZNA = 'ZGODA_AUTOMATYCZNA';
+    public const VALUE_ZGODA_AUTOMATYCZNA = 'ZGODA_AUTOMATYCZNA';
     /**
      * Constant for value 'ZGODA_INDYWIDUALNA'
      * @return string 'ZGODA_INDYWIDUALNA'
      */
-    const VALUE_ZGODA_INDYWIDUALNA = 'ZGODA_INDYWIDUALNA';
+    public const VALUE_ZGODA_INDYWIDUALNA = 'ZGODA_INDYWIDUALNA';
+
     /**
      * Return allowed values
      * @uses self::VALUE_ZGODA_BRAK

@@ -58,6 +58,7 @@ class StatusZgodyEZwrotType extends AbstractStructBase
      * @var string|null
      */
     protected ?string $dataWygasnieciaZgody = null;
+
     /**
      * Constructor method for statusZgodyEZwrotType
      * @uses StatusZgodyEZwrotType::setEZwrotPrzesylki()
@@ -83,6 +84,7 @@ class StatusZgodyEZwrotType extends AbstractStructBase
             ->setKosztKontrahenta($kosztKontrahenta)
             ->setDataWygasnieciaZgody($dataWygasnieciaZgody);
     }
+
     /**
      * Get eZwrotPrzesylki value
      * @return string[]
@@ -91,6 +93,7 @@ class StatusZgodyEZwrotType extends AbstractStructBase
     {
         return $this->eZwrotPrzesylki;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setEZwrotPrzesylki method
      * This method is willingly generated in order to preserve the one-line inline validation within the setEZwrotPrzesylki method
@@ -115,9 +118,10 @@ class StatusZgodyEZwrotType extends AbstractStructBase
             $message = sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\EZwrotPrzesylkiType', is_array($invalidValues) ? implode(', ', $invalidValues) : var_export($invalidValues, true), implode(', ', \PocztaPolska\EnumType\EZwrotPrzesylkiType::getValidValues()));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set eZwrotPrzesylki value
      * @uses \PocztaPolska\EnumType\EZwrotPrzesylkiType::valueIsValid()
@@ -137,9 +141,10 @@ class StatusZgodyEZwrotType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 2', count($eZwrotPrzesylki)), __LINE__);
         }
         $this->eZwrotPrzesylki = $eZwrotPrzesylki;
-        
+
         return $this;
     }
+
     /**
      * Add item to eZwrotPrzesylki value
      * @uses \PocztaPolska\EnumType\EZwrotPrzesylkiType::valueIsValid()
@@ -159,9 +164,10 @@ class StatusZgodyEZwrotType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 2', count($this->eZwrotPrzesylki)), __LINE__);
         }
         $this->eZwrotPrzesylki[] = $item;
-        
+
         return $this;
     }
+
     /**
      * Get guidZgodaEZwrot value
      * @return string|null
@@ -170,6 +176,7 @@ class StatusZgodyEZwrotType extends AbstractStructBase
     {
         return $this->guidZgodaEZwrot;
     }
+
     /**
      * Set guidZgodaEZwrot value
      * @param string $guidZgodaEZwrot
@@ -186,9 +193,10 @@ class StatusZgodyEZwrotType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 32', mb_strlen((string) $guidZgodaEZwrot)), __LINE__);
         }
         $this->guidZgodaEZwrot = $guidZgodaEZwrot;
-        
+
         return $this;
     }
+
     /**
      * Get status value
      * @return string|null
@@ -197,6 +205,7 @@ class StatusZgodyEZwrotType extends AbstractStructBase
     {
         return $this->status;
     }
+
     /**
      * Set status value
      * @uses \PocztaPolska\EnumType\StatusZgodyEZwrotNameType::valueIsValid()
@@ -212,9 +221,10 @@ class StatusZgodyEZwrotType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\StatusZgodyEZwrotNameType', is_array($status) ? implode(', ', $status) : var_export($status, true), implode(', ', \PocztaPolska\EnumType\StatusZgodyEZwrotNameType::getValidValues())), __LINE__);
         }
         $this->status = $status;
-        
+
         return $this;
     }
+
     /**
      * Get platnoscZaPrzesylke value
      * @return bool|null
@@ -223,6 +233,7 @@ class StatusZgodyEZwrotType extends AbstractStructBase
     {
         return $this->platnoscZaPrzesylke;
     }
+
     /**
      * Set platnoscZaPrzesylke value
      * @param bool $platnoscZaPrzesylke
@@ -235,9 +246,10 @@ class StatusZgodyEZwrotType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($platnoscZaPrzesylke, true), gettype($platnoscZaPrzesylke)), __LINE__);
         }
         $this->platnoscZaPrzesylke = $platnoscZaPrzesylke;
-        
+
         return $this;
     }
+
     /**
      * Get kosztKontrahenta value
      * @return int|null
@@ -246,6 +258,7 @@ class StatusZgodyEZwrotType extends AbstractStructBase
     {
         return $this->kosztKontrahenta;
     }
+
     /**
      * Set kosztKontrahenta value
      * @param int $kosztKontrahenta
@@ -258,9 +271,10 @@ class StatusZgodyEZwrotType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($kosztKontrahenta, true), gettype($kosztKontrahenta)), __LINE__);
         }
         $this->kosztKontrahenta = $kosztKontrahenta;
-        
+
         return $this;
     }
+
     /**
      * Get dataWygasnieciaZgody value
      * @return string|null
@@ -269,6 +283,7 @@ class StatusZgodyEZwrotType extends AbstractStructBase
     {
         return $this->dataWygasnieciaZgody;
     }
+
     /**
      * Set dataWygasnieciaZgody value
      * @param string $dataWygasnieciaZgody
@@ -281,7 +296,7 @@ class StatusZgodyEZwrotType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($dataWygasnieciaZgody, true), gettype($dataWygasnieciaZgody)), __LINE__);
         }
         $this->dataWygasnieciaZgody = $dataWygasnieciaZgody;
-        
+
         return $this;
     }
 }

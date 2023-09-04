@@ -16,12 +16,13 @@ class PrintFormatEnum extends AbstractStructEnumBase
      * Constant for value 'PDF_FORMAT'
      * @return string 'PDF_FORMAT'
      */
-    const VALUE_PDF_FORMAT = 'PDF_FORMAT';
+    public const VALUE_PDF_FORMAT = 'PDF_FORMAT';
     /**
      * Constant for value 'ZPL_FORMAT'
      * @return string 'ZPL_FORMAT'
      */
-    const VALUE_ZPL_FORMAT = 'ZPL_FORMAT';
+    public const VALUE_ZPL_FORMAT = 'ZPL_FORMAT';
+
     /**
      * Return allowed values
      * @uses self::VALUE_PDF_FORMAT

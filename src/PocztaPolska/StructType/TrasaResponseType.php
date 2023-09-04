@@ -28,6 +28,7 @@ class TrasaResponseType extends AbstractStructBase
      * @var string|null
      */
     protected ?string $guid = null;
+
     /**
      * Constructor method for trasaResponseType
      * @uses TrasaResponseType::setIsMiejscowa()
@@ -41,6 +42,7 @@ class TrasaResponseType extends AbstractStructBase
             ->setIsMiejscowa($isMiejscowa)
             ->setGuid($guid);
     }
+
     /**
      * Get isMiejscowa value
      * @return bool|null
@@ -49,6 +51,7 @@ class TrasaResponseType extends AbstractStructBase
     {
         return $this->isMiejscowa;
     }
+
     /**
      * Set isMiejscowa value
      * @param bool $isMiejscowa
@@ -61,9 +64,10 @@ class TrasaResponseType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($isMiejscowa, true), gettype($isMiejscowa)), __LINE__);
         }
         $this->isMiejscowa = $isMiejscowa;
-        
+
         return $this;
     }
+
     /**
      * Get guid value
      * @return string|null
@@ -72,6 +76,7 @@ class TrasaResponseType extends AbstractStructBase
     {
         return $this->guid;
     }
+
     /**
      * Set guid value
      * @param string $guid
@@ -88,7 +93,7 @@ class TrasaResponseType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 32', mb_strlen((string) $guid)), __LINE__);
         }
         $this->guid = $guid;
-        
+
         return $this;
     }
 }

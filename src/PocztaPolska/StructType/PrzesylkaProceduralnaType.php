@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace PocztaPolska\StructType;
 
 use InvalidArgumentException;
-use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for przesylkaProceduralnaType StructType
@@ -106,6 +105,7 @@ class PrzesylkaProceduralnaType extends PrzesylkaRejestrowanaType
      * @var int|null
      */
     protected ?int $idAdresPrzesylkaPowrot = null;
+
     /**
      * Constructor method for przesylkaProceduralnaType
      * @uses PrzesylkaProceduralnaType::setUbezpieczenie()
@@ -155,6 +155,7 @@ class PrzesylkaProceduralnaType extends PrzesylkaRejestrowanaType
             ->setWartosc($wartosc)
             ->setIdAdresPrzesylkaPowrot($idAdresPrzesylkaPowrot);
     }
+
     /**
      * Get ubezpieczenie value
      * @return \PocztaPolska\StructType\UbezpieczenieType|null
@@ -163,6 +164,7 @@ class PrzesylkaProceduralnaType extends PrzesylkaRejestrowanaType
     {
         return $this->ubezpieczenie;
     }
+
     /**
      * Set ubezpieczenie value
      * @param \PocztaPolska\StructType\UbezpieczenieType $ubezpieczenie
@@ -171,9 +173,10 @@ class PrzesylkaProceduralnaType extends PrzesylkaRejestrowanaType
     public function setUbezpieczenie(?\PocztaPolska\StructType\UbezpieczenieType $ubezpieczenie = null): self
     {
         $this->ubezpieczenie = $ubezpieczenie;
-        
+
         return $this;
     }
+
     /**
      * Get epo value
      * @return \PocztaPolska\StructType\EPOType|null
@@ -182,6 +185,7 @@ class PrzesylkaProceduralnaType extends PrzesylkaRejestrowanaType
     {
         return $this->epo;
     }
+
     /**
      * Set epo value
      * @param \PocztaPolska\StructType\EPOType $epo
@@ -190,9 +194,10 @@ class PrzesylkaProceduralnaType extends PrzesylkaRejestrowanaType
     public function setEpo(?\PocztaPolska\StructType\EPOType $epo = null): self
     {
         $this->epo = $epo;
-        
+
         return $this;
     }
+
     /**
      * Get urzadWydaniaEPrzesylki value
      * @return \PocztaPolska\StructType\UrzadWydaniaEPrzesylkiType|null
@@ -201,6 +206,7 @@ class PrzesylkaProceduralnaType extends PrzesylkaRejestrowanaType
     {
         return $this->urzadWydaniaEPrzesylki;
     }
+
     /**
      * Set urzadWydaniaEPrzesylki value
      * @param \PocztaPolska\StructType\UrzadWydaniaEPrzesylkiType $urzadWydaniaEPrzesylki
@@ -209,9 +215,10 @@ class PrzesylkaProceduralnaType extends PrzesylkaRejestrowanaType
     public function setUrzadWydaniaEPrzesylki(?\PocztaPolska\StructType\UrzadWydaniaEPrzesylkiType $urzadWydaniaEPrzesylki = null): self
     {
         $this->urzadWydaniaEPrzesylki = $urzadWydaniaEPrzesylki;
-        
+
         return $this;
     }
+
     /**
      * Get pobranie value
      * @return \PocztaPolska\StructType\PobranieType|null
@@ -220,6 +227,7 @@ class PrzesylkaProceduralnaType extends PrzesylkaRejestrowanaType
     {
         return $this->pobranie;
     }
+
     /**
      * Set pobranie value
      * @param \PocztaPolska\StructType\PobranieType $pobranie
@@ -228,9 +236,10 @@ class PrzesylkaProceduralnaType extends PrzesylkaRejestrowanaType
     public function setPobranie(?\PocztaPolska\StructType\PobranieType $pobranie = null): self
     {
         $this->pobranie = $pobranie;
-        
+
         return $this;
     }
+
     /**
      * Get serwis value
      * @return string|null
@@ -239,6 +248,7 @@ class PrzesylkaProceduralnaType extends PrzesylkaRejestrowanaType
     {
         return $this->serwis;
     }
+
     /**
      * Set serwis value
      * @uses \PocztaPolska\EnumType\SerwisPrzesylkaProceduralnaType::valueIsValid()
@@ -254,9 +264,10 @@ class PrzesylkaProceduralnaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\SerwisPrzesylkaProceduralnaType', is_array($serwis) ? implode(', ', $serwis) : var_export($serwis, true), implode(', ', \PocztaPolska\EnumType\SerwisPrzesylkaProceduralnaType::getValidValues())), __LINE__);
         }
         $this->serwis = $serwis;
-        
+
         return $this;
     }
+
     /**
      * Get numerNadaniaPowrot1 value
      * @return string|null
@@ -265,6 +276,7 @@ class PrzesylkaProceduralnaType extends PrzesylkaRejestrowanaType
     {
         return $this->numerNadaniaPowrot1;
     }
+
     /**
      * Set numerNadaniaPowrot1 value
      * @param string $numerNadaniaPowrot1
@@ -277,9 +289,10 @@ class PrzesylkaProceduralnaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($numerNadaniaPowrot1, true), gettype($numerNadaniaPowrot1)), __LINE__);
         }
         $this->numerNadaniaPowrot1 = $numerNadaniaPowrot1;
-        
+
         return $this;
     }
+
     /**
      * Get numerNadaniaPowrot2 value
      * @return string|null
@@ -288,6 +301,7 @@ class PrzesylkaProceduralnaType extends PrzesylkaRejestrowanaType
     {
         return $this->numerNadaniaPowrot2;
     }
+
     /**
      * Set numerNadaniaPowrot2 value
      * @param string $numerNadaniaPowrot2
@@ -300,9 +314,10 @@ class PrzesylkaProceduralnaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($numerNadaniaPowrot2, true), gettype($numerNadaniaPowrot2)), __LINE__);
         }
         $this->numerNadaniaPowrot2 = $numerNadaniaPowrot2;
-        
+
         return $this;
     }
+
     /**
      * Get idPrzesylkaZawartosc value
      * @return int|null
@@ -311,6 +326,7 @@ class PrzesylkaProceduralnaType extends PrzesylkaRejestrowanaType
     {
         return $this->idPrzesylkaZawartosc;
     }
+
     /**
      * Set idPrzesylkaZawartosc value
      * @param int $idPrzesylkaZawartosc
@@ -323,9 +339,10 @@ class PrzesylkaProceduralnaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($idPrzesylkaZawartosc, true), gettype($idPrzesylkaZawartosc)), __LINE__);
         }
         $this->idPrzesylkaZawartosc = $idPrzesylkaZawartosc;
-        
+
         return $this;
     }
+
     /**
      * Get idListaCzynnosci value
      * @return int|null
@@ -334,6 +351,7 @@ class PrzesylkaProceduralnaType extends PrzesylkaRejestrowanaType
     {
         return $this->idListaCzynnosci;
     }
+
     /**
      * Set idListaCzynnosci value
      * @param int $idListaCzynnosci
@@ -346,9 +364,10 @@ class PrzesylkaProceduralnaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($idListaCzynnosci, true), gettype($idListaCzynnosci)), __LINE__);
         }
         $this->idListaCzynnosci = $idListaCzynnosci;
-        
+
         return $this;
     }
+
     /**
      * Get masa value
      * @return int|null
@@ -357,6 +376,7 @@ class PrzesylkaProceduralnaType extends PrzesylkaRejestrowanaType
     {
         return $this->masa;
     }
+
     /**
      * Set masa value
      * @param int $masa
@@ -377,9 +397,10 @@ class PrzesylkaProceduralnaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 1', var_export($masa, true)), __LINE__);
         }
         $this->masa = $masa;
-        
+
         return $this;
     }
+
     /**
      * Get opakowanie value
      * @return string|null
@@ -388,6 +409,7 @@ class PrzesylkaProceduralnaType extends PrzesylkaRejestrowanaType
     {
         return $this->opakowanie;
     }
+
     /**
      * Set opakowanie value
      * @uses \PocztaPolska\EnumType\OpakowaniePrzesylkaProceduralnaType::valueIsValid()
@@ -403,9 +425,10 @@ class PrzesylkaProceduralnaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\OpakowaniePrzesylkaProceduralnaType', is_array($opakowanie) ? implode(', ', $opakowanie) : var_export($opakowanie, true), implode(', ', \PocztaPolska\EnumType\OpakowaniePrzesylkaProceduralnaType::getValidValues())), __LINE__);
         }
         $this->opakowanie = $opakowanie;
-        
+
         return $this;
     }
+
     /**
      * Get numerPrzesylkiKlienta value
      * @return string|null
@@ -414,6 +437,7 @@ class PrzesylkaProceduralnaType extends PrzesylkaRejestrowanaType
     {
         return $this->numerPrzesylkiKlienta;
     }
+
     /**
      * Set numerPrzesylkiKlienta value
      * @param string $numerPrzesylkiKlienta
@@ -426,9 +450,10 @@ class PrzesylkaProceduralnaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($numerPrzesylkiKlienta, true), gettype($numerPrzesylkiKlienta)), __LINE__);
         }
         $this->numerPrzesylkiKlienta = $numerPrzesylkiKlienta;
-        
+
         return $this;
     }
+
     /**
      * Get wartosc value
      * @return int|null
@@ -437,6 +462,7 @@ class PrzesylkaProceduralnaType extends PrzesylkaRejestrowanaType
     {
         return $this->wartosc;
     }
+
     /**
      * Set wartosc value
      * @param int $wartosc
@@ -457,9 +483,10 @@ class PrzesylkaProceduralnaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 0', var_export($wartosc, true)), __LINE__);
         }
         $this->wartosc = $wartosc;
-        
+
         return $this;
     }
+
     /**
      * Get idAdresPrzesylkaPowrot value
      * @return int|null
@@ -468,6 +495,7 @@ class PrzesylkaProceduralnaType extends PrzesylkaRejestrowanaType
     {
         return $this->idAdresPrzesylkaPowrot;
     }
+
     /**
      * Set idAdresPrzesylkaPowrot value
      * @param int $idAdresPrzesylkaPowrot
@@ -480,7 +508,7 @@ class PrzesylkaProceduralnaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($idAdresPrzesylkaPowrot, true), gettype($idAdresPrzesylkaPowrot)), __LINE__);
         }
         $this->idAdresPrzesylkaPowrot = $idAdresPrzesylkaPowrot;
-        
+
         return $this;
     }
 }

@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace PocztaPolska\StructType;
 
 use InvalidArgumentException;
-use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for subPocztex2021Type StructType
@@ -99,6 +98,7 @@ abstract class SubPocztex2021Type extends PrzesylkaType
      * @var string|null
      */
     protected ?string $numerPrzesylkiKlienta = null;
+
     /**
      * Constructor method for subPocztex2021Type
      * @uses SubPocztex2021Type::setPobranie()
@@ -133,6 +133,7 @@ abstract class SubPocztex2021Type extends PrzesylkaType
             ->setFormat($format)
             ->setNumerPrzesylkiKlienta($numerPrzesylkiKlienta);
     }
+
     /**
      * Get pobranie value
      * @return \PocztaPolska\StructType\PobranieType|null
@@ -141,6 +142,7 @@ abstract class SubPocztex2021Type extends PrzesylkaType
     {
         return $this->pobranie;
     }
+
     /**
      * Set pobranie value
      * @param \PocztaPolska\StructType\PobranieType $pobranie
@@ -149,9 +151,10 @@ abstract class SubPocztex2021Type extends PrzesylkaType
     public function setPobranie(?\PocztaPolska\StructType\PobranieType $pobranie = null): self
     {
         $this->pobranie = $pobranie;
-        
+
         return $this;
     }
+
     /**
      * Get ubezpieczenie value
      * @return \PocztaPolska\StructType\UbezpieczenieType|null
@@ -160,6 +163,7 @@ abstract class SubPocztex2021Type extends PrzesylkaType
     {
         return $this->ubezpieczenie;
     }
+
     /**
      * Set ubezpieczenie value
      * @param \PocztaPolska\StructType\UbezpieczenieType $ubezpieczenie
@@ -168,9 +172,10 @@ abstract class SubPocztex2021Type extends PrzesylkaType
     public function setUbezpieczenie(?\PocztaPolska\StructType\UbezpieczenieType $ubezpieczenie = null): self
     {
         $this->ubezpieczenie = $ubezpieczenie;
-        
+
         return $this;
     }
+
     /**
      * Get numerNadania value
      * @return string|null
@@ -179,6 +184,7 @@ abstract class SubPocztex2021Type extends PrzesylkaType
     {
         return $this->numerNadania;
     }
+
     /**
      * Set numerNadania value
      * @param string $numerNadania
@@ -199,9 +205,10 @@ abstract class SubPocztex2021Type extends PrzesylkaType
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 10', mb_strlen((string) $numerNadania)), __LINE__);
         }
         $this->numerNadania = $numerNadania;
-        
+
         return $this;
     }
+
     /**
      * Get masa value
      * @return int|null
@@ -210,6 +217,7 @@ abstract class SubPocztex2021Type extends PrzesylkaType
     {
         return $this->masa;
     }
+
     /**
      * Set masa value
      * @param int $masa
@@ -230,9 +238,10 @@ abstract class SubPocztex2021Type extends PrzesylkaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 1', var_export($masa, true)), __LINE__);
         }
         $this->masa = $masa;
-        
+
         return $this;
     }
+
     /**
      * Get wartosc value
      * @return int|null
@@ -241,6 +250,7 @@ abstract class SubPocztex2021Type extends PrzesylkaType
     {
         return $this->wartosc;
     }
+
     /**
      * Set wartosc value
      * @param int $wartosc
@@ -261,9 +271,10 @@ abstract class SubPocztex2021Type extends PrzesylkaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 0', var_export($wartosc, true)), __LINE__);
         }
         $this->wartosc = $wartosc;
-        
+
         return $this;
     }
+
     /**
      * Get ostroznie value
      * @return bool|null
@@ -272,6 +283,7 @@ abstract class SubPocztex2021Type extends PrzesylkaType
     {
         return $this->ostroznie;
     }
+
     /**
      * Set ostroznie value
      * @param bool $ostroznie
@@ -284,9 +296,10 @@ abstract class SubPocztex2021Type extends PrzesylkaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($ostroznie, true), gettype($ostroznie)), __LINE__);
         }
         $this->ostroznie = $ostroznie;
-        
+
         return $this;
     }
+
     /**
      * Get ponadgabaryt value
      * @return bool|null
@@ -295,6 +308,7 @@ abstract class SubPocztex2021Type extends PrzesylkaType
     {
         return $this->ponadgabaryt;
     }
+
     /**
      * Set ponadgabaryt value
      * @param bool $ponadgabaryt
@@ -307,9 +321,10 @@ abstract class SubPocztex2021Type extends PrzesylkaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($ponadgabaryt, true), gettype($ponadgabaryt)), __LINE__);
         }
         $this->ponadgabaryt = $ponadgabaryt;
-        
+
         return $this;
     }
+
     /**
      * Get format value
      * @return string|null
@@ -318,6 +333,7 @@ abstract class SubPocztex2021Type extends PrzesylkaType
     {
         return $this->format;
     }
+
     /**
      * Set format value
      * @uses \PocztaPolska\EnumType\FormatPocztex2021Type::valueIsValid()
@@ -333,9 +349,10 @@ abstract class SubPocztex2021Type extends PrzesylkaType
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\FormatPocztex2021Type', is_array($format) ? implode(', ', $format) : var_export($format, true), implode(', ', \PocztaPolska\EnumType\FormatPocztex2021Type::getValidValues())), __LINE__);
         }
         $this->format = $format;
-        
+
         return $this;
     }
+
     /**
      * Get numerPrzesylkiKlienta value
      * @return string|null
@@ -344,6 +361,7 @@ abstract class SubPocztex2021Type extends PrzesylkaType
     {
         return $this->numerPrzesylkiKlienta;
     }
+
     /**
      * Set numerPrzesylkiKlienta value
      * @param string $numerPrzesylkiKlienta
@@ -360,7 +378,7 @@ abstract class SubPocztex2021Type extends PrzesylkaType
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 25', mb_strlen((string) $numerPrzesylkiKlienta)), __LINE__);
         }
         $this->numerPrzesylkiKlienta = $numerPrzesylkiKlienta;
-        
+
         return $this;
     }
 }

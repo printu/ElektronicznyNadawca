@@ -27,14 +27,15 @@ class Hello extends AbstractSoapClientBase
             $this->setResult($resultHello = $this->getSoapClient()->__soapCall('hello', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultHello;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Returns the result
      * @see AbstractSoapClientBase::getResult()

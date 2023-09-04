@@ -22,6 +22,7 @@ class GetEnvelopeListResponse extends AbstractStructBase
      * @var \PocztaPolska\StructType\EnvelopeInfoType[]
      */
     protected ?array $envelopes = null;
+
     /**
      * Constructor method for getEnvelopeListResponse
      * @uses GetEnvelopeListResponse::setEnvelopes()
@@ -32,6 +33,7 @@ class GetEnvelopeListResponse extends AbstractStructBase
         $this
             ->setEnvelopes($envelopes);
     }
+
     /**
      * Get envelopes value
      * @return \PocztaPolska\StructType\EnvelopeInfoType[]
@@ -40,6 +42,7 @@ class GetEnvelopeListResponse extends AbstractStructBase
     {
         return $this->envelopes;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setEnvelopes method
      * This method is willingly generated in order to preserve the one-line inline validation within the setEnvelopes method
@@ -64,9 +67,10 @@ class GetEnvelopeListResponse extends AbstractStructBase
             $message = sprintf('The envelopes property can only contain items of type \PocztaPolska\StructType\EnvelopeInfoType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set envelopes value
      * @throws InvalidArgumentException
@@ -80,9 +84,10 @@ class GetEnvelopeListResponse extends AbstractStructBase
             throw new InvalidArgumentException($envelopesArrayErrorMessage, __LINE__);
         }
         $this->envelopes = $envelopes;
-        
+
         return $this;
     }
+
     /**
      * Add item to envelopes value
      * @throws InvalidArgumentException
@@ -96,7 +101,7 @@ class GetEnvelopeListResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The envelopes property can only contain items of type \PocztaPolska\StructType\EnvelopeInfoType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->envelopes[] = $item;
-        
+
         return $this;
     }
 }

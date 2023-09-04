@@ -16,32 +16,33 @@ class CustomsDeclarationContentEnum extends AbstractStructEnumBase
      * Constant for value 'GOODS_SALE'
      * @return string 'GOODS_SALE'
      */
-    const VALUE_GOODS_SALE = 'GOODS_SALE';
+    public const VALUE_GOODS_SALE = 'GOODS_SALE';
     /**
      * Constant for value 'GOODS_RETURN'
      * @return string 'GOODS_RETURN'
      */
-    const VALUE_GOODS_RETURN = 'GOODS_RETURN';
+    public const VALUE_GOODS_RETURN = 'GOODS_RETURN';
     /**
      * Constant for value 'GIFT'
      * @return string 'GIFT'
      */
-    const VALUE_GIFT = 'GIFT';
+    public const VALUE_GIFT = 'GIFT';
     /**
      * Constant for value 'COMMERCIAL_SAMPLE'
      * @return string 'COMMERCIAL_SAMPLE'
      */
-    const VALUE_COMMERCIAL_SAMPLE = 'COMMERCIAL_SAMPLE';
+    public const VALUE_COMMERCIAL_SAMPLE = 'COMMERCIAL_SAMPLE';
     /**
      * Constant for value 'DOCUMENT'
      * @return string 'DOCUMENT'
      */
-    const VALUE_DOCUMENT = 'DOCUMENT';
+    public const VALUE_DOCUMENT = 'DOCUMENT';
     /**
      * Constant for value 'OTHER'
      * @return string 'OTHER'
      */
-    const VALUE_OTHER = 'OTHER';
+    public const VALUE_OTHER = 'OTHER';
+
     /**
      * Return allowed values
      * @uses self::VALUE_GOODS_SALE

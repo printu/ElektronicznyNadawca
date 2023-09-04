@@ -22,6 +22,7 @@ class GetUrzedyNadaniaResponse extends AbstractStructBase
      * @var \PocztaPolska\StructType\UrzadNadaniaFullType[]
      */
     protected ?array $urzedyNadania = null;
+
     /**
      * Constructor method for getUrzedyNadaniaResponse
      * @uses GetUrzedyNadaniaResponse::setUrzedyNadania()
@@ -32,6 +33,7 @@ class GetUrzedyNadaniaResponse extends AbstractStructBase
         $this
             ->setUrzedyNadania($urzedyNadania);
     }
+
     /**
      * Get urzedyNadania value
      * @return \PocztaPolska\StructType\UrzadNadaniaFullType[]
@@ -40,6 +42,7 @@ class GetUrzedyNadaniaResponse extends AbstractStructBase
     {
         return $this->urzedyNadania;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setUrzedyNadania method
      * This method is willingly generated in order to preserve the one-line inline validation within the setUrzedyNadania method
@@ -64,9 +67,10 @@ class GetUrzedyNadaniaResponse extends AbstractStructBase
             $message = sprintf('The urzedyNadania property can only contain items of type \PocztaPolska\StructType\UrzadNadaniaFullType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set urzedyNadania value
      * @throws InvalidArgumentException
@@ -80,9 +84,10 @@ class GetUrzedyNadaniaResponse extends AbstractStructBase
             throw new InvalidArgumentException($urzedyNadaniaArrayErrorMessage, __LINE__);
         }
         $this->urzedyNadania = $urzedyNadania;
-        
+
         return $this;
     }
+
     /**
      * Add item to urzedyNadania value
      * @throws InvalidArgumentException
@@ -96,7 +101,7 @@ class GetUrzedyNadaniaResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The urzedyNadania property can only contain items of type \PocztaPolska\StructType\UrzadNadaniaFullType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->urzedyNadania[] = $item;
-        
+
         return $this;
     }
 }

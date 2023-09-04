@@ -30,6 +30,7 @@ class AddShipment extends AbstractStructBase
      * @var int|null
      */
     protected ?int $idBufor = null;
+
     /**
      * Constructor method for addShipment
      * @uses AddShipment::setPrzesylki()
@@ -43,6 +44,7 @@ class AddShipment extends AbstractStructBase
             ->setPrzesylki($przesylki)
             ->setIdBufor($idBufor);
     }
+
     /**
      * Get przesylki value
      * @return \PocztaPolska\StructType\PrzesylkaType[]
@@ -51,6 +53,7 @@ class AddShipment extends AbstractStructBase
     {
         return $this->przesylki;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setPrzesylki method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPrzesylki method
@@ -75,9 +78,10 @@ class AddShipment extends AbstractStructBase
             $message = sprintf('The przesylki property can only contain items of type \PocztaPolska\StructType\PrzesylkaType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set przesylki value
      * @throws InvalidArgumentException
@@ -95,9 +99,10 @@ class AddShipment extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 500', count($przesylki)), __LINE__);
         }
         $this->przesylki = $przesylki;
-        
+
         return $this;
     }
+
     /**
      * Add item to przesylki value
      * @throws InvalidArgumentException
@@ -115,9 +120,10 @@ class AddShipment extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 500', count($this->przesylki)), __LINE__);
         }
         $this->przesylki[] = $item;
-        
+
         return $this;
     }
+
     /**
      * Get idBufor value
      * @return int|null
@@ -126,6 +132,7 @@ class AddShipment extends AbstractStructBase
     {
         return $this->idBufor;
     }
+
     /**
      * Set idBufor value
      * @param int $idBufor
@@ -138,7 +145,7 @@ class AddShipment extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($idBufor, true), gettype($idBufor)), __LINE__);
         }
         $this->idBufor = $idBufor;
-        
+
         return $this;
     }
 }

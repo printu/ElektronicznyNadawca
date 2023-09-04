@@ -34,6 +34,7 @@ class PaletaType extends AbstractStructBase
      * @var string|null
      */
     protected ?string $wysokosc = null;
+
     /**
      * Constructor method for paletaType
      * @uses PaletaType::setRodzajPalety()
@@ -53,6 +54,7 @@ class PaletaType extends AbstractStructBase
             ->setDlugosc($dlugosc)
             ->setWysokosc($wysokosc);
     }
+
     /**
      * Get rodzajPalety value
      * @return string|null
@@ -61,6 +63,7 @@ class PaletaType extends AbstractStructBase
     {
         return $this->rodzajPalety;
     }
+
     /**
      * Set rodzajPalety value
      * @uses \PocztaPolska\EnumType\RodzajPaletyType::valueIsValid()
@@ -76,9 +79,10 @@ class PaletaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\RodzajPaletyType', is_array($rodzajPalety) ? implode(', ', $rodzajPalety) : var_export($rodzajPalety, true), implode(', ', \PocztaPolska\EnumType\RodzajPaletyType::getValidValues())), __LINE__);
         }
         $this->rodzajPalety = $rodzajPalety;
-        
+
         return $this;
     }
+
     /**
      * Get szerokosc value
      * @return int|null
@@ -87,6 +91,7 @@ class PaletaType extends AbstractStructBase
     {
         return $this->szerokosc;
     }
+
     /**
      * Set szerokosc value
      * @param int $szerokosc
@@ -99,9 +104,10 @@ class PaletaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($szerokosc, true), gettype($szerokosc)), __LINE__);
         }
         $this->szerokosc = $szerokosc;
-        
+
         return $this;
     }
+
     /**
      * Get dlugosc value
      * @return string|null
@@ -110,6 +116,7 @@ class PaletaType extends AbstractStructBase
     {
         return $this->dlugosc;
     }
+
     /**
      * Set dlugosc value
      * @param string $dlugosc
@@ -122,9 +129,10 @@ class PaletaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($dlugosc, true), gettype($dlugosc)), __LINE__);
         }
         $this->dlugosc = $dlugosc;
-        
+
         return $this;
     }
+
     /**
      * Get wysokosc value
      * @return string|null
@@ -133,6 +141,7 @@ class PaletaType extends AbstractStructBase
     {
         return $this->wysokosc;
     }
+
     /**
      * Set wysokosc value
      * @param string $wysokosc
@@ -145,7 +154,7 @@ class PaletaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($wysokosc, true), gettype($wysokosc)), __LINE__);
         }
         $this->wysokosc = $wysokosc;
-        
+
         return $this;
     }
 }

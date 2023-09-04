@@ -16,32 +16,33 @@ class TerminZwrotDokumentowKurierskaType extends AbstractStructEnumBase
      * Constant for value 'MIEJSKI_DO_3H_DO_5KM'
      * @return string 'MIEJSKI_DO_3H_DO_5KM'
      */
-    const VALUE_MIEJSKI_DO_3_H_DO_5_KM = 'MIEJSKI_DO_3H_DO_5KM';
+    public const VALUE_MIEJSKI_DO_3_H_DO_5_KM = 'MIEJSKI_DO_3H_DO_5KM';
     /**
      * Constant for value 'MIEJSKI_DO_3H_DO_10KM'
      * @return string 'MIEJSKI_DO_3H_DO_10KM'
      */
-    const VALUE_MIEJSKI_DO_3_H_DO_10_KM = 'MIEJSKI_DO_3H_DO_10KM';
+    public const VALUE_MIEJSKI_DO_3_H_DO_10_KM = 'MIEJSKI_DO_3H_DO_10KM';
     /**
      * Constant for value 'MIEJSKI_DO_3H_DO_15KM'
      * @return string 'MIEJSKI_DO_3H_DO_15KM'
      */
-    const VALUE_MIEJSKI_DO_3_H_DO_15_KM = 'MIEJSKI_DO_3H_DO_15KM';
+    public const VALUE_MIEJSKI_DO_3_H_DO_15_KM = 'MIEJSKI_DO_3H_DO_15KM';
     /**
      * Constant for value 'MIEJSKI_DO_3H_POWYZEJ_15KM'
      * @return string 'MIEJSKI_DO_3H_POWYZEJ_15KM'
      */
-    const VALUE_MIEJSKI_DO_3_H_POWYZEJ_15_KM = 'MIEJSKI_DO_3H_POWYZEJ_15KM';
+    public const VALUE_MIEJSKI_DO_3_H_POWYZEJ_15_KM = 'MIEJSKI_DO_3H_POWYZEJ_15KM';
     /**
      * Constant for value 'BEZPOSREDNI_DO_20KG'
      * @return string 'BEZPOSREDNI_DO_20KG'
      */
-    const VALUE_BEZPOSREDNI_DO_20_KG = 'BEZPOSREDNI_DO_20KG';
+    public const VALUE_BEZPOSREDNI_DO_20_KG = 'BEZPOSREDNI_DO_20KG';
     /**
      * Constant for value 'EKSPRES24'
      * @return string 'EKSPRES24'
      */
-    const VALUE_EKSPRES_24 = 'EKSPRES24';
+    public const VALUE_EKSPRES_24 = 'EKSPRES24';
+
     /**
      * Return allowed values
      * @uses self::VALUE_MIEJSKI_DO_3_H_DO_5_KM

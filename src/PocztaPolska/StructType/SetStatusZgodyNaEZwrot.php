@@ -22,6 +22,7 @@ class SetStatusZgodyNaEZwrot extends AbstractStructBase
      * @var \PocztaPolska\StructType\StatusZgodyEZwrotType[]
      */
     protected array $statusZgody;
+
     /**
      * Constructor method for setStatusZgodyNaEZwrot
      * @uses SetStatusZgodyNaEZwrot::setStatusZgody()
@@ -32,6 +33,7 @@ class SetStatusZgodyNaEZwrot extends AbstractStructBase
         $this
             ->setStatusZgody($statusZgody);
     }
+
     /**
      * Get statusZgody value
      * @return \PocztaPolska\StructType\StatusZgodyEZwrotType[]
@@ -40,6 +42,7 @@ class SetStatusZgodyNaEZwrot extends AbstractStructBase
     {
         return $this->statusZgody;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setStatusZgody method
      * This method is willingly generated in order to preserve the one-line inline validation within the setStatusZgody method
@@ -64,9 +67,10 @@ class SetStatusZgodyNaEZwrot extends AbstractStructBase
             $message = sprintf('The statusZgody property can only contain items of type \PocztaPolska\StructType\StatusZgodyEZwrotType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set statusZgody value
      * @throws InvalidArgumentException
@@ -80,9 +84,10 @@ class SetStatusZgodyNaEZwrot extends AbstractStructBase
             throw new InvalidArgumentException($statusZgodyArrayErrorMessage, __LINE__);
         }
         $this->statusZgody = $statusZgody;
-        
+
         return $this;
     }
+
     /**
      * Add item to statusZgody value
      * @throws InvalidArgumentException
@@ -96,7 +101,7 @@ class SetStatusZgodyNaEZwrot extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The statusZgody property can only contain items of type \PocztaPolska\StructType\StatusZgodyEZwrotType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->statusZgody[] = $item;
-        
+
         return $this;
     }
 }

@@ -22,6 +22,7 @@ class GetPlacowkiPocztowe extends AbstractStructBase
      * @var string
      */
     protected string $idWojewodztwo;
+
     /**
      * Constructor method for getPlacowkiPocztowe
      * @uses GetPlacowkiPocztowe::setIdWojewodztwo()
@@ -32,6 +33,7 @@ class GetPlacowkiPocztowe extends AbstractStructBase
         $this
             ->setIdWojewodztwo($idWojewodztwo);
     }
+
     /**
      * Get idWojewodztwo value
      * @return string
@@ -40,6 +42,7 @@ class GetPlacowkiPocztowe extends AbstractStructBase
     {
         return $this->idWojewodztwo;
     }
+
     /**
      * Set idWojewodztwo value
      * @uses \PocztaPolska\EnumType\IdWojewodztwoType::valueIsValid()
@@ -55,7 +58,7 @@ class GetPlacowkiPocztowe extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\IdWojewodztwoType', is_array($idWojewodztwo) ? implode(', ', $idWojewodztwo) : var_export($idWojewodztwo, true), implode(', ', \PocztaPolska\EnumType\IdWojewodztwoType::getValidValues())), __LINE__);
         }
         $this->idWojewodztwo = $idWojewodztwo;
-        
+
         return $this;
     }
 }

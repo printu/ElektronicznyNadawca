@@ -24,6 +24,7 @@ class UslugiType extends AbstractStructBase
      * @var string|null
      */
     protected ?string $opis = null;
+
     /**
      * Constructor method for uslugiType
      * @uses UslugiType::setId()
@@ -37,6 +38,7 @@ class UslugiType extends AbstractStructBase
             ->setId($id)
             ->setOpis($opis);
     }
+
     /**
      * Get id value
      * @return string|null
@@ -45,6 +47,7 @@ class UslugiType extends AbstractStructBase
     {
         return $this->id;
     }
+
     /**
      * Set id value
      * @param string $id
@@ -57,9 +60,10 @@ class UslugiType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($id, true), gettype($id)), __LINE__);
         }
         $this->id = $id;
-        
+
         return $this;
     }
+
     /**
      * Get opis value
      * @return string|null
@@ -68,6 +72,7 @@ class UslugiType extends AbstractStructBase
     {
         return $this->opis;
     }
+
     /**
      * Set opis value
      * @param string $opis
@@ -80,7 +85,7 @@ class UslugiType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($opis, true), gettype($opis)), __LINE__);
         }
         $this->opis = $opis;
-        
+
         return $this;
     }
 }

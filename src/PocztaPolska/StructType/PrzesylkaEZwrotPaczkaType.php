@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace PocztaPolska\StructType;
 
 use InvalidArgumentException;
-use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for przesylkaEZwrotPaczkaType StructType
@@ -31,6 +30,7 @@ class PrzesylkaEZwrotPaczkaType extends PrzesylkaRejestrowanaType
      * @var string|null
      */
     protected ?string $numerNadaniaZwrot = null;
+
     /**
      * Constructor method for przesylkaEZwrotPaczkaType
      * @uses PrzesylkaEZwrotPaczkaType::setIdSklepEZwrot()
@@ -44,6 +44,7 @@ class PrzesylkaEZwrotPaczkaType extends PrzesylkaRejestrowanaType
             ->setIdSklepEZwrot($idSklepEZwrot)
             ->setNumerNadaniaZwrot($numerNadaniaZwrot);
     }
+
     /**
      * Get idSklepEZwrot value
      * @return int|null
@@ -52,6 +53,7 @@ class PrzesylkaEZwrotPaczkaType extends PrzesylkaRejestrowanaType
     {
         return $this->idSklepEZwrot;
     }
+
     /**
      * Set idSklepEZwrot value
      * @param int $idSklepEZwrot
@@ -64,9 +66,10 @@ class PrzesylkaEZwrotPaczkaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($idSklepEZwrot, true), gettype($idSklepEZwrot)), __LINE__);
         }
         $this->idSklepEZwrot = $idSklepEZwrot;
-        
+
         return $this;
     }
+
     /**
      * Get numerNadaniaZwrot value
      * @return string|null
@@ -75,6 +78,7 @@ class PrzesylkaEZwrotPaczkaType extends PrzesylkaRejestrowanaType
     {
         return $this->numerNadaniaZwrot;
     }
+
     /**
      * Set numerNadaniaZwrot value
      * @param string $numerNadaniaZwrot
@@ -95,7 +99,7 @@ class PrzesylkaEZwrotPaczkaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 10', mb_strlen((string) $numerNadaniaZwrot)), __LINE__);
         }
         $this->numerNadaniaZwrot = $numerNadaniaZwrot;
-        
+
         return $this;
     }
 }

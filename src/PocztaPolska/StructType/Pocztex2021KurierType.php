@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace PocztaPolska\StructType;
 
 use InvalidArgumentException;
-use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for pocztex2021KurierType StructType
@@ -62,6 +61,7 @@ class Pocztex2021KurierType extends Pocztex2021Type
      * @var string|null
      */
     protected ?string $doreczenieWeWskazanymDniu = null;
+
     /**
      * Constructor method for pocztex2021KurierType
      * @uses Pocztex2021KurierType::setSubPrzesylka()
@@ -87,6 +87,7 @@ class Pocztex2021KurierType extends Pocztex2021Type
             ->setGodzinaDoreczenia($godzinaDoreczenia)
             ->setDoreczenieWeWskazanymDniu($doreczenieWeWskazanymDniu);
     }
+
     /**
      * Get subPrzesylka value
      * @return \PocztaPolska\StructType\SubPocztex2021KurierType[]
@@ -95,6 +96,7 @@ class Pocztex2021KurierType extends Pocztex2021Type
     {
         return $this->subPrzesylka;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setSubPrzesylka method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSubPrzesylka method
@@ -119,9 +121,10 @@ class Pocztex2021KurierType extends Pocztex2021Type
             $message = sprintf('The subPrzesylka property can only contain items of type \PocztaPolska\StructType\SubPocztex2021KurierType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set subPrzesylka value
      * @throws InvalidArgumentException
@@ -135,9 +138,10 @@ class Pocztex2021KurierType extends Pocztex2021Type
             throw new InvalidArgumentException($subPrzesylkaArrayErrorMessage, __LINE__);
         }
         $this->subPrzesylka = $subPrzesylka;
-        
+
         return $this;
     }
+
     /**
      * Add item to subPrzesylka value
      * @throws InvalidArgumentException
@@ -151,9 +155,10 @@ class Pocztex2021KurierType extends Pocztex2021Type
             throw new InvalidArgumentException(sprintf('The subPrzesylka property can only contain items of type \PocztaPolska\StructType\SubPocztex2021KurierType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->subPrzesylka[] = $item;
-        
+
         return $this;
     }
+
     /**
      * Get punktOdbioru value
      * @return \PocztaPolska\StructType\PunktOdbioruType|null
@@ -162,6 +167,7 @@ class Pocztex2021KurierType extends Pocztex2021Type
     {
         return $this->punktOdbioru;
     }
+
     /**
      * Set punktOdbioru value
      * @param \PocztaPolska\StructType\PunktOdbioruType $punktOdbioru
@@ -170,9 +176,10 @@ class Pocztex2021KurierType extends Pocztex2021Type
     public function setPunktOdbioru(?\PocztaPolska\StructType\PunktOdbioruType $punktOdbioru = null): self
     {
         $this->punktOdbioru = $punktOdbioru;
-        
+
         return $this;
     }
+
     /**
      * Get punktNadania value
      * @return \PocztaPolska\StructType\PunktNadaniaType|null
@@ -181,6 +188,7 @@ class Pocztex2021KurierType extends Pocztex2021Type
     {
         return $this->punktNadania;
     }
+
     /**
      * Set punktNadania value
      * @param \PocztaPolska\StructType\PunktNadaniaType $punktNadania
@@ -189,9 +197,10 @@ class Pocztex2021KurierType extends Pocztex2021Type
     public function setPunktNadania(?\PocztaPolska\StructType\PunktNadaniaType $punktNadania = null): self
     {
         $this->punktNadania = $punktNadania;
-        
+
         return $this;
     }
+
     /**
      * Get kopertaPocztex value
      * @return bool|null
@@ -200,6 +209,7 @@ class Pocztex2021KurierType extends Pocztex2021Type
     {
         return $this->kopertaPocztex;
     }
+
     /**
      * Set kopertaPocztex value
      * @param bool $kopertaPocztex
@@ -212,9 +222,10 @@ class Pocztex2021KurierType extends Pocztex2021Type
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($kopertaPocztex, true), gettype($kopertaPocztex)), __LINE__);
         }
         $this->kopertaPocztex = $kopertaPocztex;
-        
+
         return $this;
     }
+
     /**
      * Get godzinaDoreczenia value
      * @return string|null
@@ -223,6 +234,7 @@ class Pocztex2021KurierType extends Pocztex2021Type
     {
         return $this->godzinaDoreczenia;
     }
+
     /**
      * Set godzinaDoreczenia value
      * @uses \PocztaPolska\EnumType\GodzinaDoreczeniaPocztex2021Enum::valueIsValid()
@@ -238,9 +250,10 @@ class Pocztex2021KurierType extends Pocztex2021Type
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\GodzinaDoreczeniaPocztex2021Enum', is_array($godzinaDoreczenia) ? implode(', ', $godzinaDoreczenia) : var_export($godzinaDoreczenia, true), implode(', ', \PocztaPolska\EnumType\GodzinaDoreczeniaPocztex2021Enum::getValidValues())), __LINE__);
         }
         $this->godzinaDoreczenia = $godzinaDoreczenia;
-        
+
         return $this;
     }
+
     /**
      * Get doreczenieWeWskazanymDniu value
      * @return string|null
@@ -249,6 +262,7 @@ class Pocztex2021KurierType extends Pocztex2021Type
     {
         return $this->doreczenieWeWskazanymDniu;
     }
+
     /**
      * Set doreczenieWeWskazanymDniu value
      * @param string $doreczenieWeWskazanymDniu
@@ -261,7 +275,7 @@ class Pocztex2021KurierType extends Pocztex2021Type
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($doreczenieWeWskazanymDniu, true), gettype($doreczenieWeWskazanymDniu)), __LINE__);
         }
         $this->doreczenieWeWskazanymDniu = $doreczenieWeWskazanymDniu;
-        
+
         return $this;
     }
 }

@@ -16,12 +16,13 @@ class KategoriaType extends AbstractStructEnumBase
      * Constant for value 'EKONOMICZNA'
      * @return string 'EKONOMICZNA'
      */
-    const VALUE_EKONOMICZNA = 'EKONOMICZNA';
+    public const VALUE_EKONOMICZNA = 'EKONOMICZNA';
     /**
      * Constant for value 'PRIORYTETOWA'
      * @return string 'PRIORYTETOWA'
      */
-    const VALUE_PRIORYTETOWA = 'PRIORYTETOWA';
+    public const VALUE_PRIORYTETOWA = 'PRIORYTETOWA';
+
     /**
      * Return allowed values
      * @uses self::VALUE_EKONOMICZNA

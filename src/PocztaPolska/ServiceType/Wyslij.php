@@ -27,14 +27,15 @@ class Wyslij extends AbstractSoapClientBase
             $this->setResult($resultWyslijLinkaOStatusieEZwrotu = $this->getSoapClient()->__soapCall('wyslijLinkaOStatusieEZwrotu', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultWyslijLinkaOStatusieEZwrotu;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Returns the result
      * @see AbstractSoapClientBase::getResult()

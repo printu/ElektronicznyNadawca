@@ -22,6 +22,7 @@ class GetPlacowkaPocztowa extends AbstractStructBase
      * @var int[]
      */
     protected array $pni;
+
     /**
      * Constructor method for getPlacowkaPocztowa
      * @uses GetPlacowkaPocztowa::setPni()
@@ -32,6 +33,7 @@ class GetPlacowkaPocztowa extends AbstractStructBase
         $this
             ->setPni($pni);
     }
+
     /**
      * Get pni value
      * @return int[]
@@ -40,6 +42,7 @@ class GetPlacowkaPocztowa extends AbstractStructBase
     {
         return $this->pni;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setPni method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPni method
@@ -64,9 +67,10 @@ class GetPlacowkaPocztowa extends AbstractStructBase
             $message = sprintf('The pni property can only contain items of type int, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set pni value
      * @throws InvalidArgumentException
@@ -84,9 +88,10 @@ class GetPlacowkaPocztowa extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 5000', count($pni)), __LINE__);
         }
         $this->pni = $pni;
-        
+
         return $this;
     }
+
     /**
      * Add item to pni value
      * @throws InvalidArgumentException
@@ -104,7 +109,7 @@ class GetPlacowkaPocztowa extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 5000', count($this->pni)), __LINE__);
         }
         $this->pni[] = $item;
-        
+
         return $this;
     }
 }

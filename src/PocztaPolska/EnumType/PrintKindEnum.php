@@ -16,52 +16,53 @@ class PrintKindEnum extends AbstractStructEnumBase
      * Constant for value 'ADDRESS_LABEL'
      * @return string 'ADDRESS_LABEL'
      */
-    const VALUE_ADDRESS_LABEL = 'ADDRESS_LABEL';
+    public const VALUE_ADDRESS_LABEL = 'ADDRESS_LABEL';
     /**
      * Constant for value 'ADDRESS_LABEL_BY_GUID'
      * @return string 'ADDRESS_LABEL_BY_GUID'
      */
-    const VALUE_ADDRESS_LABEL_BY_GUID = 'ADDRESS_LABEL_BY_GUID';
+    public const VALUE_ADDRESS_LABEL_BY_GUID = 'ADDRESS_LABEL_BY_GUID';
     /**
      * Constant for value 'CUSTOMS_DECLARATION'
      * @return string 'CUSTOMS_DECLARATION'
      */
-    const VALUE_CUSTOMS_DECLARATION = 'CUSTOMS_DECLARATION';
+    public const VALUE_CUSTOMS_DECLARATION = 'CUSTOMS_DECLARATION';
     /**
      * Constant for value 'ADDRESS_LABEL_FOR_RETURN_DOCUMENTS'
      * @return string 'ADDRESS_LABEL_FOR_RETURN_DOCUMENTS'
      */
-    const VALUE_ADDRESS_LABEL_FOR_RETURN_DOCUMENTS = 'ADDRESS_LABEL_FOR_RETURN_DOCUMENTS';
+    public const VALUE_ADDRESS_LABEL_FOR_RETURN_DOCUMENTS = 'ADDRESS_LABEL_FOR_RETURN_DOCUMENTS';
     /**
      * Constant for value 'CHECKLIST'
      * @return string 'CHECKLIST'
      */
-    const VALUE_CHECKLIST = 'CHECKLIST';
+    public const VALUE_CHECKLIST = 'CHECKLIST';
     /**
      * Constant for value 'COLLECT_ON_DELIVERY_FORM'
      * @return string 'COLLECT_ON_DELIVERY_FORM'
      */
-    const VALUE_COLLECT_ON_DELIVERY_FORM = 'COLLECT_ON_DELIVERY_FORM';
+    public const VALUE_COLLECT_ON_DELIVERY_FORM = 'COLLECT_ON_DELIVERY_FORM';
     /**
      * Constant for value 'WAYBILL'
      * @return string 'WAYBILL'
      */
-    const VALUE_WAYBILL = 'WAYBILL';
+    public const VALUE_WAYBILL = 'WAYBILL';
     /**
      * Constant for value 'REPORT'
      * @return string 'REPORT'
      */
-    const VALUE_REPORT = 'REPORT';
+    public const VALUE_REPORT = 'REPORT';
     /**
      * Constant for value 'ADDRESS_LABEL_FOR_ERETURN'
      * @return string 'ADDRESS_LABEL_FOR_ERETURN'
      */
-    const VALUE_ADDRESS_LABEL_FOR_ERETURN = 'ADDRESS_LABEL_FOR_ERETURN';
+    public const VALUE_ADDRESS_LABEL_FOR_ERETURN = 'ADDRESS_LABEL_FOR_ERETURN';
     /**
      * Constant for value 'ADDRESS_LABEL_FOR_FOREGIN_RETURN'
      * @return string 'ADDRESS_LABEL_FOR_FOREGIN_RETURN'
      */
-    const VALUE_ADDRESS_LABEL_FOR_FOREGIN_RETURN = 'ADDRESS_LABEL_FOR_FOREGIN_RETURN';
+    public const VALUE_ADDRESS_LABEL_FOR_FOREGIN_RETURN = 'ADDRESS_LABEL_FOR_FOREGIN_RETURN';
+
     /**
      * Return allowed values
      * @uses self::VALUE_ADDRESS_LABEL

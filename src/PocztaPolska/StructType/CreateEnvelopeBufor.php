@@ -22,6 +22,7 @@ class CreateEnvelopeBufor extends AbstractStructBase
      * @var \PocztaPolska\StructType\BuforType[]
      */
     protected array $bufor;
+
     /**
      * Constructor method for createEnvelopeBufor
      * @uses CreateEnvelopeBufor::setBufor()
@@ -32,6 +33,7 @@ class CreateEnvelopeBufor extends AbstractStructBase
         $this
             ->setBufor($bufor);
     }
+
     /**
      * Get bufor value
      * @return \PocztaPolska\StructType\BuforType[]
@@ -40,6 +42,7 @@ class CreateEnvelopeBufor extends AbstractStructBase
     {
         return $this->bufor;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setBufor method
      * This method is willingly generated in order to preserve the one-line inline validation within the setBufor method
@@ -64,9 +67,10 @@ class CreateEnvelopeBufor extends AbstractStructBase
             $message = sprintf('The bufor property can only contain items of type \PocztaPolska\StructType\BuforType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set bufor value
      * @throws InvalidArgumentException
@@ -80,9 +84,10 @@ class CreateEnvelopeBufor extends AbstractStructBase
             throw new InvalidArgumentException($buforArrayErrorMessage, __LINE__);
         }
         $this->bufor = $bufor;
-        
+
         return $this;
     }
+
     /**
      * Add item to bufor value
      * @throws InvalidArgumentException
@@ -96,7 +101,7 @@ class CreateEnvelopeBufor extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The bufor property can only contain items of type \PocztaPolska\StructType\BuforType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->bufor[] = $item;
-        
+
         return $this;
     }
 }

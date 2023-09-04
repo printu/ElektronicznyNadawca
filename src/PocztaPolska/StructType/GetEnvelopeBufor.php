@@ -22,6 +22,7 @@ class GetEnvelopeBufor extends AbstractStructBase
      * @var int|null
      */
     protected ?int $idBufor = null;
+
     /**
      * Constructor method for getEnvelopeBufor
      * @uses GetEnvelopeBufor::setIdBufor()
@@ -32,6 +33,7 @@ class GetEnvelopeBufor extends AbstractStructBase
         $this
             ->setIdBufor($idBufor);
     }
+
     /**
      * Get idBufor value
      * @return int|null
@@ -40,6 +42,7 @@ class GetEnvelopeBufor extends AbstractStructBase
     {
         return $this->idBufor;
     }
+
     /**
      * Set idBufor value
      * @param int $idBufor
@@ -52,7 +55,7 @@ class GetEnvelopeBufor extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($idBufor, true), gettype($idBufor)), __LINE__);
         }
         $this->idBufor = $idBufor;
-        
+
         return $this;
     }
 }

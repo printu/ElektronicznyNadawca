@@ -27,14 +27,15 @@ class Change extends AbstractSoapClientBase
             $this->setResult($resultChangePassword = $this->getSoapClient()->__soapCall('changePassword', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultChangePassword;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Returns the result
      * @see AbstractSoapClientBase::getResult()

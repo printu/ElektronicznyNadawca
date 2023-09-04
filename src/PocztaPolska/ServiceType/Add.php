@@ -27,14 +27,15 @@ class Add extends AbstractSoapClientBase
             $this->setResult($resultAddShipment = $this->getSoapClient()->__soapCall('addShipment', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultAddShipment;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named addReklamacje
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -49,14 +50,15 @@ class Add extends AbstractSoapClientBase
             $this->setResult($resultAddReklamacje = $this->getSoapClient()->__soapCall('addReklamacje', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultAddReklamacje;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named addOdwolanieDoReklamacji
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -71,14 +73,15 @@ class Add extends AbstractSoapClientBase
             $this->setResult($resultAddOdwolanieDoReklamacji = $this->getSoapClient()->__soapCall('addOdwolanieDoReklamacji', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultAddOdwolanieDoReklamacji;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named addRozbieznoscDoZapowiedziFaktur
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -93,14 +96,15 @@ class Add extends AbstractSoapClientBase
             $this->setResult($resultAddRozbieznoscDoZapowiedziFaktur = $this->getSoapClient()->__soapCall('addRozbieznoscDoZapowiedziFaktur', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultAddRozbieznoscDoZapowiedziFaktur;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named addZalacznikDoReklamacji
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -115,14 +119,15 @@ class Add extends AbstractSoapClientBase
             $this->setResult($resultAddZalacznikDoReklamacji = $this->getSoapClient()->__soapCall('addZalacznikDoReklamacji', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultAddZalacznikDoReklamacji;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Returns the result
      * @see AbstractSoapClientBase::getResult()

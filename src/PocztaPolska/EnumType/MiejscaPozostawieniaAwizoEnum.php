@@ -16,37 +16,38 @@ class MiejscaPozostawieniaAwizoEnum extends AbstractStructEnumBase
      * Constant for value 'SKRZYNKA_ODDAWCZA'
      * @return string 'SKRZYNKA_ODDAWCZA'
      */
-    const VALUE_SKRZYNKA_ODDAWCZA = 'SKRZYNKA_ODDAWCZA';
+    public const VALUE_SKRZYNKA_ODDAWCZA = 'SKRZYNKA_ODDAWCZA';
     /**
      * Constant for value 'DRZWI_MIESZKANIA'
      * @return string 'DRZWI_MIESZKANIA'
      */
-    const VALUE_DRZWI_MIESZKANIA = 'DRZWI_MIESZKANIA';
+    public const VALUE_DRZWI_MIESZKANIA = 'DRZWI_MIESZKANIA';
     /**
      * Constant for value 'DRZWI_INNEGO_POMIESZCZENIA'
      * @return string 'DRZWI_INNEGO_POMIESZCZENIA'
      */
-    const VALUE_DRZWI_INNEGO_POMIESZCZENIA = 'DRZWI_INNEGO_POMIESZCZENIA';
+    public const VALUE_DRZWI_INNEGO_POMIESZCZENIA = 'DRZWI_INNEGO_POMIESZCZENIA';
     /**
      * Constant for value 'PRZY_WEJSCIU_NA_POSESJE'
      * @return string 'PRZY_WEJSCIU_NA_POSESJE'
      */
-    const VALUE_PRZY_WEJSCIU_NA_POSESJE = 'PRZY_WEJSCIU_NA_POSESJE';
+    public const VALUE_PRZY_WEJSCIU_NA_POSESJE = 'PRZY_WEJSCIU_NA_POSESJE';
     /**
      * Constant for value 'SKRYTKA_POCZTOWA'
      * @return string 'SKRYTKA_POCZTOWA'
      */
-    const VALUE_SKRYTKA_POCZTOWA = 'SKRYTKA_POCZTOWA';
+    public const VALUE_SKRYTKA_POCZTOWA = 'SKRYTKA_POCZTOWA';
     /**
      * Constant for value 'INNE_WIDOCZNE_MIEJSCE'
      * @return string 'INNE_WIDOCZNE_MIEJSCE'
      */
-    const VALUE_INNE_WIDOCZNE_MIEJSCE = 'INNE_WIDOCZNE_MIEJSCE';
+    public const VALUE_INNE_WIDOCZNE_MIEJSCE = 'INNE_WIDOCZNE_MIEJSCE';
     /**
      * Constant for value 'DRZWI_BIURA'
      * @return string 'DRZWI_BIURA'
      */
-    const VALUE_DRZWI_BIURA = 'DRZWI_BIURA';
+    public const VALUE_DRZWI_BIURA = 'DRZWI_BIURA';
+
     /**
      * Return allowed values
      * @uses self::VALUE_SKRZYNKA_ODDAWCZA

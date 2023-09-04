@@ -22,6 +22,7 @@ class UpdateChecklistTemplate extends AbstractStructBase
      * @var \PocztaPolska\StructType\ChecklistTemplateType[]
      */
     protected array $checklistTemplate;
+
     /**
      * Constructor method for updateChecklistTemplate
      * @uses UpdateChecklistTemplate::setChecklistTemplate()
@@ -32,6 +33,7 @@ class UpdateChecklistTemplate extends AbstractStructBase
         $this
             ->setChecklistTemplate($checklistTemplate);
     }
+
     /**
      * Get checklistTemplate value
      * @return \PocztaPolska\StructType\ChecklistTemplateType[]
@@ -40,6 +42,7 @@ class UpdateChecklistTemplate extends AbstractStructBase
     {
         return $this->checklistTemplate;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setChecklistTemplate method
      * This method is willingly generated in order to preserve the one-line inline validation within the setChecklistTemplate method
@@ -64,9 +67,10 @@ class UpdateChecklistTemplate extends AbstractStructBase
             $message = sprintf('The checklistTemplate property can only contain items of type \PocztaPolska\StructType\ChecklistTemplateType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set checklistTemplate value
      * @throws InvalidArgumentException
@@ -80,9 +84,10 @@ class UpdateChecklistTemplate extends AbstractStructBase
             throw new InvalidArgumentException($checklistTemplateArrayErrorMessage, __LINE__);
         }
         $this->checklistTemplate = $checklistTemplate;
-        
+
         return $this;
     }
+
     /**
      * Add item to checklistTemplate value
      * @throws InvalidArgumentException
@@ -96,7 +101,7 @@ class UpdateChecklistTemplate extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The checklistTemplate property can only contain items of type \PocztaPolska\StructType\ChecklistTemplateType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->checklistTemplate[] = $item;
-        
+
         return $this;
     }
 }

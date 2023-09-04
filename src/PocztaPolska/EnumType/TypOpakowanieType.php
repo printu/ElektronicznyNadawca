@@ -16,87 +16,88 @@ class TypOpakowanieType extends AbstractStructEnumBase
      * Constant for value 'KL1'
      * @return string 'KL1'
      */
-    const VALUE_KL_1 = 'KL1';
+    public const VALUE_KL_1 = 'KL1';
     /**
      * Constant for value 'KL2'
      * @return string 'KL2'
      */
-    const VALUE_KL_2 = 'KL2';
+    public const VALUE_KL_2 = 'KL2';
     /**
      * Constant for value 'KL3'
      * @return string 'KL3'
      */
-    const VALUE_KL_3 = 'KL3';
+    public const VALUE_KL_3 = 'KL3';
     /**
      * Constant for value 'S21'
      * @return string 'S21'
      */
-    const VALUE_S_21 = 'S21';
+    public const VALUE_S_21 = 'S21';
     /**
      * Constant for value 'S22'
      * @return string 'S22'
      */
-    const VALUE_S_22 = 'S22';
+    public const VALUE_S_22 = 'S22';
     /**
      * Constant for value 'S23'
      * @return string 'S23'
      */
-    const VALUE_S_23 = 'S23';
+    public const VALUE_S_23 = 'S23';
     /**
      * Constant for value 'P31'
      * @return string 'P31'
      */
-    const VALUE_P_31 = 'P31';
+    public const VALUE_P_31 = 'P31';
     /**
      * Constant for value 'P32'
      * @return string 'P32'
      */
-    const VALUE_P_32 = 'P32';
+    public const VALUE_P_32 = 'P32';
     /**
      * Constant for value 'P33'
      * @return string 'P33'
      */
-    const VALUE_P_33 = 'P33';
+    public const VALUE_P_33 = 'P33';
     /**
      * Constant for value 'SP41'
      * @return string 'SP41'
      */
-    const VALUE_SP_41 = 'SP41';
+    public const VALUE_SP_41 = 'SP41';
     /**
      * Constant for value 'SP42'
      * @return string 'SP42'
      */
-    const VALUE_SP_42 = 'SP42';
+    public const VALUE_SP_42 = 'SP42';
     /**
      * Constant for value 'WKL51'
      * @return string 'WKL51'
      */
-    const VALUE_WKL_51 = 'WKL51';
+    public const VALUE_WKL_51 = 'WKL51';
     /**
      * Constant for value 'K1'
      * @return string 'K1'
      */
-    const VALUE_K_1 = 'K1';
+    public const VALUE_K_1 = 'K1';
     /**
      * Constant for value 'K2'
      * @return string 'K2'
      */
-    const VALUE_K_2 = 'K2';
+    public const VALUE_K_2 = 'K2';
     /**
      * Constant for value 'K3'
      * @return string 'K3'
      */
-    const VALUE_K_3 = 'K3';
+    public const VALUE_K_3 = 'K3';
     /**
      * Constant for value 'P'
      * @return string 'P'
      */
-    const VALUE_P = 'P';
+    public const VALUE_P = 'P';
     /**
      * Constant for value 'W'
      * @return string 'W'
      */
-    const VALUE_W = 'W';
+    public const VALUE_W = 'W';
+
     /**
      * Return allowed values
      * @uses self::VALUE_KL_1

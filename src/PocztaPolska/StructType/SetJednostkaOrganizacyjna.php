@@ -22,6 +22,7 @@ class SetJednostkaOrganizacyjna extends AbstractStructBase
      * @var \PocztaPolska\StructType\JednostkaOrganizacyjnaType[]
      */
     protected array $jednostkaOrganizacyjna;
+
     /**
      * Constructor method for setJednostkaOrganizacyjna
      * @uses SetJednostkaOrganizacyjna::setJednostkaOrganizacyjna()
@@ -32,6 +33,7 @@ class SetJednostkaOrganizacyjna extends AbstractStructBase
         $this
             ->setJednostkaOrganizacyjna($jednostkaOrganizacyjna);
     }
+
     /**
      * Get jednostkaOrganizacyjna value
      * @return \PocztaPolska\StructType\JednostkaOrganizacyjnaType[]
@@ -40,6 +42,7 @@ class SetJednostkaOrganizacyjna extends AbstractStructBase
     {
         return $this->jednostkaOrganizacyjna;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setJednostkaOrganizacyjna method
      * This method is willingly generated in order to preserve the one-line inline validation within the setJednostkaOrganizacyjna method
@@ -64,9 +67,10 @@ class SetJednostkaOrganizacyjna extends AbstractStructBase
             $message = sprintf('The jednostkaOrganizacyjna property can only contain items of type \PocztaPolska\StructType\JednostkaOrganizacyjnaType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set jednostkaOrganizacyjna value
      * @throws InvalidArgumentException
@@ -80,9 +84,10 @@ class SetJednostkaOrganizacyjna extends AbstractStructBase
             throw new InvalidArgumentException($jednostkaOrganizacyjnaArrayErrorMessage, __LINE__);
         }
         $this->jednostkaOrganizacyjna = $jednostkaOrganizacyjna;
-        
+
         return $this;
     }
+
     /**
      * Add item to jednostkaOrganizacyjna value
      * @throws InvalidArgumentException
@@ -96,7 +101,7 @@ class SetJednostkaOrganizacyjna extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The jednostkaOrganizacyjna property can only contain items of type \PocztaPolska\StructType\JednostkaOrganizacyjnaType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->jednostkaOrganizacyjna[] = $item;
-        
+
         return $this;
     }
 }

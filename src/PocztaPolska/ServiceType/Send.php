@@ -27,14 +27,15 @@ class Send extends AbstractSoapClientBase
             $this->setResult($resultSendEnvelope = $this->getSoapClient()->__soapCall('sendEnvelope', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultSendEnvelope;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Returns the result
      * @see AbstractSoapClientBase::getResult()

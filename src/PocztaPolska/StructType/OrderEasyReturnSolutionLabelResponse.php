@@ -33,6 +33,7 @@ class OrderEasyReturnSolutionLabelResponse extends AbstractStructBase
      * @var \PocztaPolska\StructType\ErrorType[]
      */
     protected ?array $error = null;
+
     /**
      * Constructor method for orderEasyReturnSolutionLabelResponse
      * @uses OrderEasyReturnSolutionLabelResponse::setGuid()
@@ -46,6 +47,7 @@ class OrderEasyReturnSolutionLabelResponse extends AbstractStructBase
             ->setGuid($guid)
             ->setError($error);
     }
+
     /**
      * Get guid value
      * @return string|null
@@ -54,6 +56,7 @@ class OrderEasyReturnSolutionLabelResponse extends AbstractStructBase
     {
         return $this->guid;
     }
+
     /**
      * Set guid value
      * @param string $guid
@@ -70,9 +73,10 @@ class OrderEasyReturnSolutionLabelResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 32', mb_strlen((string) $guid)), __LINE__);
         }
         $this->guid = $guid;
-        
+
         return $this;
     }
+
     /**
      * Get error value
      * @return \PocztaPolska\StructType\ErrorType[]
@@ -81,6 +85,7 @@ class OrderEasyReturnSolutionLabelResponse extends AbstractStructBase
     {
         return $this->error;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setError method
      * This method is willingly generated in order to preserve the one-line inline validation within the setError method
@@ -105,9 +110,10 @@ class OrderEasyReturnSolutionLabelResponse extends AbstractStructBase
             $message = sprintf('The error property can only contain items of type \PocztaPolska\StructType\ErrorType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set error value
      * @throws InvalidArgumentException
@@ -121,9 +127,10 @@ class OrderEasyReturnSolutionLabelResponse extends AbstractStructBase
             throw new InvalidArgumentException($errorArrayErrorMessage, __LINE__);
         }
         $this->error = $error;
-        
+
         return $this;
     }
+
     /**
      * Add item to error value
      * @throws InvalidArgumentException
@@ -137,7 +144,7 @@ class OrderEasyReturnSolutionLabelResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The error property can only contain items of type \PocztaPolska\StructType\ErrorType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->error[] = $item;
-        
+
         return $this;
     }
 }

@@ -16,12 +16,13 @@ class SposobPrzekazaniaPotwierdzeniaBiznesowaType extends AbstractStructEnumBase
      * Constant for value 'LIST_ZWYKLY_PRIORYTETOWY'
      * @return string 'LIST_ZWYKLY_PRIORYTETOWY'
      */
-    const VALUE_LIST_ZWYKLY_PRIORYTETOWY = 'LIST_ZWYKLY_PRIORYTETOWY';
+    public const VALUE_LIST_ZWYKLY_PRIORYTETOWY = 'LIST_ZWYKLY_PRIORYTETOWY';
     /**
      * Constant for value 'EKSPRES24'
      * @return string 'EKSPRES24'
      */
-    const VALUE_EKSPRES_24 = 'EKSPRES24';
+    public const VALUE_EKSPRES_24 = 'EKSPRES24';
+
     /**
      * Return allowed values
      * @uses self::VALUE_LIST_ZWYKLY_PRIORYTETOWY

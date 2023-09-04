@@ -16,17 +16,18 @@ class RozstrzygniecieType extends AbstractStructEnumBase
      * Constant for value 'UZASADNIONA'
      * @return string 'UZASADNIONA'
      */
-    const VALUE_UZASADNIONA = 'UZASADNIONA';
+    public const VALUE_UZASADNIONA = 'UZASADNIONA';
     /**
      * Constant for value 'NIEUZASADNIONA'
      * @return string 'NIEUZASADNIONA'
      */
-    const VALUE_NIEUZASADNIONA = 'NIEUZASADNIONA';
+    public const VALUE_NIEUZASADNIONA = 'NIEUZASADNIONA';
     /**
      * Constant for value 'NIEWNIESIONA'
      * @return string 'NIEWNIESIONA'
      */
-    const VALUE_NIEWNIESIONA = 'NIEWNIESIONA';
+    public const VALUE_NIEWNIESIONA = 'NIEWNIESIONA';
+
     /**
      * Return allowed values
      * @uses self::VALUE_UZASADNIONA

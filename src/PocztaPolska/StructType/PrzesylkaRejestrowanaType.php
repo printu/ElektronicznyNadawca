@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace PocztaPolska\StructType;
 
 use InvalidArgumentException;
-use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for przesylkaRejestrowanaType StructType
@@ -82,6 +81,7 @@ abstract class PrzesylkaRejestrowanaType extends PrzesylkaType
      * @var bool|null
      */
     protected ?bool $weryfikacjaPlatnosci = null;
+
     /**
      * Constructor method for przesylkaRejestrowanaType
      * @uses PrzesylkaRejestrowanaType::setAdres()
@@ -113,6 +113,7 @@ abstract class PrzesylkaRejestrowanaType extends PrzesylkaType
             ->setRodzaj($rodzaj)
             ->setWeryfikacjaPlatnosci($weryfikacjaPlatnosci);
     }
+
     /**
      * Get adres value
      * @return \PocztaPolska\StructType\AdresType|null
@@ -121,6 +122,7 @@ abstract class PrzesylkaRejestrowanaType extends PrzesylkaType
     {
         return $this->adres;
     }
+
     /**
      * Set adres value
      * @param \PocztaPolska\StructType\AdresType $adres
@@ -129,9 +131,10 @@ abstract class PrzesylkaRejestrowanaType extends PrzesylkaType
     public function setAdres(?\PocztaPolska\StructType\AdresType $adres = null): self
     {
         $this->adres = $adres;
-        
+
         return $this;
     }
+
     /**
      * Get nadawca value
      * @return \PocztaPolska\StructType\AdresType|null
@@ -140,6 +143,7 @@ abstract class PrzesylkaRejestrowanaType extends PrzesylkaType
     {
         return $this->nadawca;
     }
+
     /**
      * Set nadawca value
      * @param \PocztaPolska\StructType\AdresType $nadawca
@@ -148,9 +152,10 @@ abstract class PrzesylkaRejestrowanaType extends PrzesylkaType
     public function setNadawca(?\PocztaPolska\StructType\AdresType $nadawca = null): self
     {
         $this->nadawca = $nadawca;
-        
+
         return $this;
     }
+
     /**
      * Get relatedToAllegro value
      * @return \PocztaPolska\StructType\RelatedToAllegroType|null
@@ -159,6 +164,7 @@ abstract class PrzesylkaRejestrowanaType extends PrzesylkaType
     {
         return $this->relatedToAllegro;
     }
+
     /**
      * Set relatedToAllegro value
      * @param \PocztaPolska\StructType\RelatedToAllegroType $relatedToAllegro
@@ -167,9 +173,10 @@ abstract class PrzesylkaRejestrowanaType extends PrzesylkaType
     public function setRelatedToAllegro(?\PocztaPolska\StructType\RelatedToAllegroType $relatedToAllegro = null): self
     {
         $this->relatedToAllegro = $relatedToAllegro;
-        
+
         return $this;
     }
+
     /**
      * Get numerNadania value
      * @return string|null
@@ -178,6 +185,7 @@ abstract class PrzesylkaRejestrowanaType extends PrzesylkaType
     {
         return $this->numerNadania;
     }
+
     /**
      * Set numerNadania value
      * @param string $numerNadania
@@ -198,9 +206,10 @@ abstract class PrzesylkaRejestrowanaType extends PrzesylkaType
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 10', mb_strlen((string) $numerNadania)), __LINE__);
         }
         $this->numerNadania = $numerNadania;
-        
+
         return $this;
     }
+
     /**
      * Get sygnatura value
      * @return string|null
@@ -209,6 +218,7 @@ abstract class PrzesylkaRejestrowanaType extends PrzesylkaType
     {
         return $this->sygnatura;
     }
+
     /**
      * Set sygnatura value
      * @param string $sygnatura
@@ -229,9 +239,10 @@ abstract class PrzesylkaRejestrowanaType extends PrzesylkaType
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 0', mb_strlen((string) $sygnatura)), __LINE__);
         }
         $this->sygnatura = $sygnatura;
-        
+
         return $this;
     }
+
     /**
      * Get terminSprawy value
      * @return string|null
@@ -240,6 +251,7 @@ abstract class PrzesylkaRejestrowanaType extends PrzesylkaType
     {
         return $this->terminSprawy;
     }
+
     /**
      * Set terminSprawy value
      * @param string $terminSprawy
@@ -252,9 +264,10 @@ abstract class PrzesylkaRejestrowanaType extends PrzesylkaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($terminSprawy, true), gettype($terminSprawy)), __LINE__);
         }
         $this->terminSprawy = $terminSprawy;
-        
+
         return $this;
     }
+
     /**
      * Get rodzaj value
      * @return string|null
@@ -263,6 +276,7 @@ abstract class PrzesylkaRejestrowanaType extends PrzesylkaType
     {
         return $this->rodzaj;
     }
+
     /**
      * Set rodzaj value
      * @param string $rodzaj
@@ -283,9 +297,10 @@ abstract class PrzesylkaRejestrowanaType extends PrzesylkaType
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 0', mb_strlen((string) $rodzaj)), __LINE__);
         }
         $this->rodzaj = $rodzaj;
-        
+
         return $this;
     }
+
     /**
      * Get weryfikacjaPlatnosci value
      * @return bool|null
@@ -294,6 +309,7 @@ abstract class PrzesylkaRejestrowanaType extends PrzesylkaType
     {
         return $this->weryfikacjaPlatnosci;
     }
+
     /**
      * Set weryfikacjaPlatnosci value
      * @param bool $weryfikacjaPlatnosci
@@ -306,7 +322,7 @@ abstract class PrzesylkaRejestrowanaType extends PrzesylkaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($weryfikacjaPlatnosci, true), gettype($weryfikacjaPlatnosci)), __LINE__);
         }
         $this->weryfikacjaPlatnosci = $weryfikacjaPlatnosci;
-        
+
         return $this;
     }
 }

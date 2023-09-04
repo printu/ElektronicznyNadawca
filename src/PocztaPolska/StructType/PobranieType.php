@@ -52,6 +52,7 @@ class PobranieType extends AbstractStructBase
      * @var bool|null
      */
     protected ?bool $sprawdzenieZawartosciPrzesylkiPrzezOdbiorce = null;
+
     /**
      * Constructor method for pobranieType
      * @uses PobranieType::setSposobPobrania()
@@ -74,6 +75,7 @@ class PobranieType extends AbstractStructBase
             ->setTytulem($tytulem)
             ->setSprawdzenieZawartosciPrzesylkiPrzezOdbiorce($sprawdzenieZawartosciPrzesylkiPrzezOdbiorce);
     }
+
     /**
      * Get sposobPobrania value
      * @return string|null
@@ -82,6 +84,7 @@ class PobranieType extends AbstractStructBase
     {
         return $this->sposobPobrania;
     }
+
     /**
      * Set sposobPobrania value
      * @uses \PocztaPolska\EnumType\SposobPobraniaType::valueIsValid()
@@ -97,9 +100,10 @@ class PobranieType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\SposobPobraniaType', is_array($sposobPobrania) ? implode(', ', $sposobPobrania) : var_export($sposobPobrania, true), implode(', ', \PocztaPolska\EnumType\SposobPobraniaType::getValidValues())), __LINE__);
         }
         $this->sposobPobrania = $sposobPobrania;
-        
+
         return $this;
     }
+
     /**
      * Get kwotaPobrania value
      * @return int|null
@@ -108,6 +112,7 @@ class PobranieType extends AbstractStructBase
     {
         return $this->kwotaPobrania;
     }
+
     /**
      * Set kwotaPobrania value
      * @param int $kwotaPobrania
@@ -128,9 +133,10 @@ class PobranieType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 0', var_export($kwotaPobrania, true)), __LINE__);
         }
         $this->kwotaPobrania = $kwotaPobrania;
-        
+
         return $this;
     }
+
     /**
      * Get nrb value
      * @return string|null
@@ -139,6 +145,7 @@ class PobranieType extends AbstractStructBase
     {
         return $this->nrb;
     }
+
     /**
      * Set nrb value
      * @param string $nrb
@@ -159,9 +166,10 @@ class PobranieType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 0', mb_strlen((string) $nrb)), __LINE__);
         }
         $this->nrb = $nrb;
-        
+
         return $this;
     }
+
     /**
      * Get tytulem value
      * @return string|null
@@ -170,6 +178,7 @@ class PobranieType extends AbstractStructBase
     {
         return $this->tytulem;
     }
+
     /**
      * Set tytulem value
      * @param string $tytulem
@@ -190,9 +199,10 @@ class PobranieType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 0', mb_strlen((string) $tytulem)), __LINE__);
         }
         $this->tytulem = $tytulem;
-        
+
         return $this;
     }
+
     /**
      * Get sprawdzenieZawartosciPrzesylkiPrzezOdbiorce value
      * @return bool|null
@@ -201,6 +211,7 @@ class PobranieType extends AbstractStructBase
     {
         return $this->sprawdzenieZawartosciPrzesylkiPrzezOdbiorce;
     }
+
     /**
      * Set sprawdzenieZawartosciPrzesylkiPrzezOdbiorce value
      * @param bool $sprawdzenieZawartosciPrzesylkiPrzezOdbiorce
@@ -213,7 +224,7 @@ class PobranieType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($sprawdzenieZawartosciPrzesylkiPrzezOdbiorce, true), gettype($sprawdzenieZawartosciPrzesylkiPrzezOdbiorce)), __LINE__);
         }
         $this->sprawdzenieZawartosciPrzesylkiPrzezOdbiorce = $sprawdzenieZawartosciPrzesylkiPrzezOdbiorce;
-        
+
         return $this;
     }
 }

@@ -103,6 +103,7 @@ class DeklaracjaCelna2Type extends AbstractStructBase
      * @var string|null
      */
     protected ?string $numerReferencyjnyCelny = null;
+
     /**
      * Constructor method for deklaracjaCelna2Type
      * @uses DeklaracjaCelna2Type::setRodzaj()
@@ -143,6 +144,7 @@ class DeklaracjaCelna2Type extends AbstractStructBase
             ->setNumerTelefonuImportera($numerTelefonuImportera)
             ->setNumerReferencyjnyCelny($numerReferencyjnyCelny);
     }
+
     /**
      * Get rodzaj value
      * @return string
@@ -151,6 +153,7 @@ class DeklaracjaCelna2Type extends AbstractStructBase
     {
         return $this->rodzaj;
     }
+
     /**
      * Set rodzaj value
      * @uses \PocztaPolska\EnumType\DeklaracaCelnaRodzajEnum::valueIsValid()
@@ -166,9 +169,10 @@ class DeklaracjaCelna2Type extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\DeklaracaCelnaRodzajEnum', is_array($rodzaj) ? implode(', ', $rodzaj) : var_export($rodzaj, true), implode(', ', \PocztaPolska\EnumType\DeklaracaCelnaRodzajEnum::getValidValues())), __LINE__);
         }
         $this->rodzaj = $rodzaj;
-        
+
         return $this;
     }
+
     /**
      * Get zawartoscPrzesylki value
      * @return string
@@ -177,6 +181,7 @@ class DeklaracjaCelna2Type extends AbstractStructBase
     {
         return $this->zawartoscPrzesylki;
     }
+
     /**
      * Set zawartoscPrzesylki value
      * @uses \PocztaPolska\EnumType\ZawartoscPrzesylkiZagranicznejEnum::valueIsValid()
@@ -192,9 +197,10 @@ class DeklaracjaCelna2Type extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\ZawartoscPrzesylkiZagranicznejEnum', is_array($zawartoscPrzesylki) ? implode(', ', $zawartoscPrzesylki) : var_export($zawartoscPrzesylki, true), implode(', ', \PocztaPolska\EnumType\ZawartoscPrzesylkiZagranicznejEnum::getValidValues())), __LINE__);
         }
         $this->zawartoscPrzesylki = $zawartoscPrzesylki;
-        
+
         return $this;
     }
+
     /**
      * Get walutaKodISO value
      * @return string
@@ -203,6 +209,7 @@ class DeklaracjaCelna2Type extends AbstractStructBase
     {
         return $this->walutaKodISO;
     }
+
     /**
      * Set walutaKodISO value
      * @param string $walutaKodISO
@@ -215,9 +222,10 @@ class DeklaracjaCelna2Type extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($walutaKodISO, true), gettype($walutaKodISO)), __LINE__);
         }
         $this->walutaKodISO = $walutaKodISO;
-        
+
         return $this;
     }
+
     /**
      * Get szczegolyZawartosciPrzesylki value
      * @return \PocztaPolska\StructType\SzczegolyZawartosciPrzesylkiZagranicznejType[]
@@ -226,6 +234,7 @@ class DeklaracjaCelna2Type extends AbstractStructBase
     {
         return $this->szczegolyZawartosciPrzesylki;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setSzczegolyZawartosciPrzesylki method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSzczegolyZawartosciPrzesylki method
@@ -250,9 +259,10 @@ class DeklaracjaCelna2Type extends AbstractStructBase
             $message = sprintf('The szczegolyZawartosciPrzesylki property can only contain items of type \PocztaPolska\StructType\SzczegolyZawartosciPrzesylkiZagranicznejType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set szczegolyZawartosciPrzesylki value
      * @throws InvalidArgumentException
@@ -270,9 +280,10 @@ class DeklaracjaCelna2Type extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 5', count($szczegolyZawartosciPrzesylki)), __LINE__);
         }
         $this->szczegolyZawartosciPrzesylki = $szczegolyZawartosciPrzesylki;
-        
+
         return $this;
     }
+
     /**
      * Add item to szczegolyZawartosciPrzesylki value
      * @throws InvalidArgumentException
@@ -290,9 +301,10 @@ class DeklaracjaCelna2Type extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 5', count($this->szczegolyZawartosciPrzesylki)), __LINE__);
         }
         $this->szczegolyZawartosciPrzesylki[] = $item;
-        
+
         return $this;
     }
+
     /**
      * Get dokumentyTowarzyszace value
      * @return \PocztaPolska\StructType\DokumentyTowarzyszaceType[]
@@ -301,6 +313,7 @@ class DeklaracjaCelna2Type extends AbstractStructBase
     {
         return $this->dokumentyTowarzyszace;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setDokumentyTowarzyszace method
      * This method is willingly generated in order to preserve the one-line inline validation within the setDokumentyTowarzyszace method
@@ -325,9 +338,10 @@ class DeklaracjaCelna2Type extends AbstractStructBase
             $message = sprintf('The dokumentyTowarzyszace property can only contain items of type \PocztaPolska\StructType\DokumentyTowarzyszaceType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set dokumentyTowarzyszace value
      * @throws InvalidArgumentException
@@ -345,9 +359,10 @@ class DeklaracjaCelna2Type extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 5', count($dokumentyTowarzyszace)), __LINE__);
         }
         $this->dokumentyTowarzyszace = $dokumentyTowarzyszace;
-        
+
         return $this;
     }
+
     /**
      * Add item to dokumentyTowarzyszace value
      * @throws InvalidArgumentException
@@ -365,9 +380,10 @@ class DeklaracjaCelna2Type extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 5', count($this->dokumentyTowarzyszace)), __LINE__);
         }
         $this->dokumentyTowarzyszace[] = $item;
-        
+
         return $this;
     }
+
     /**
      * Get wyjasnienie value
      * @return string|null
@@ -376,6 +392,7 @@ class DeklaracjaCelna2Type extends AbstractStructBase
     {
         return $this->wyjasnienie;
     }
+
     /**
      * Set wyjasnienie value
      * @param string $wyjasnienie
@@ -388,9 +405,10 @@ class DeklaracjaCelna2Type extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($wyjasnienie, true), gettype($wyjasnienie)), __LINE__);
         }
         $this->wyjasnienie = $wyjasnienie;
-        
+
         return $this;
     }
+
     /**
      * Get oplatyPocztowe value
      * @return string|null
@@ -399,6 +417,7 @@ class DeklaracjaCelna2Type extends AbstractStructBase
     {
         return $this->oplatyPocztowe;
     }
+
     /**
      * Set oplatyPocztowe value
      * @param string $oplatyPocztowe
@@ -411,9 +430,10 @@ class DeklaracjaCelna2Type extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($oplatyPocztowe, true), gettype($oplatyPocztowe)), __LINE__);
         }
         $this->oplatyPocztowe = $oplatyPocztowe;
-        
+
         return $this;
     }
+
     /**
      * Get uwagi value
      * @return string|null
@@ -422,6 +442,7 @@ class DeklaracjaCelna2Type extends AbstractStructBase
     {
         return $this->uwagi;
     }
+
     /**
      * Set uwagi value
      * @param string $uwagi
@@ -434,9 +455,10 @@ class DeklaracjaCelna2Type extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($uwagi, true), gettype($uwagi)), __LINE__);
         }
         $this->uwagi = $uwagi;
-        
+
         return $this;
     }
+
     /**
      * Get numerReferencyjnyImportera value
      * @return string|null
@@ -445,6 +467,7 @@ class DeklaracjaCelna2Type extends AbstractStructBase
     {
         return $this->numerReferencyjnyImportera;
     }
+
     /**
      * Set numerReferencyjnyImportera value
      * @param string $numerReferencyjnyImportera
@@ -457,9 +480,10 @@ class DeklaracjaCelna2Type extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($numerReferencyjnyImportera, true), gettype($numerReferencyjnyImportera)), __LINE__);
         }
         $this->numerReferencyjnyImportera = $numerReferencyjnyImportera;
-        
+
         return $this;
     }
+
     /**
      * Get numerTelefonuImportera value
      * @return string|null
@@ -468,6 +492,7 @@ class DeklaracjaCelna2Type extends AbstractStructBase
     {
         return $this->numerTelefonuImportera;
     }
+
     /**
      * Set numerTelefonuImportera value
      * @param string $numerTelefonuImportera
@@ -480,9 +505,10 @@ class DeklaracjaCelna2Type extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($numerTelefonuImportera, true), gettype($numerTelefonuImportera)), __LINE__);
         }
         $this->numerTelefonuImportera = $numerTelefonuImportera;
-        
+
         return $this;
     }
+
     /**
      * Get numerReferencyjnyCelny value
      * @return string|null
@@ -491,6 +517,7 @@ class DeklaracjaCelna2Type extends AbstractStructBase
     {
         return $this->numerReferencyjnyCelny;
     }
+
     /**
      * Set numerReferencyjnyCelny value
      * @param string $numerReferencyjnyCelny
@@ -503,7 +530,7 @@ class DeklaracjaCelna2Type extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($numerReferencyjnyCelny, true), gettype($numerReferencyjnyCelny)), __LINE__);
         }
         $this->numerReferencyjnyCelny = $numerReferencyjnyCelny;
-        
+
         return $this;
     }
 }

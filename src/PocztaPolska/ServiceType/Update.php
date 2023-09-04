@@ -27,14 +27,15 @@ class Update extends AbstractSoapClientBase
             $this->setResult($resultUpdateEnvelopeBufor = $this->getSoapClient()->__soapCall('updateEnvelopeBufor', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultUpdateEnvelopeBufor;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named updateAccount
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -49,14 +50,15 @@ class Update extends AbstractSoapClientBase
             $this->setResult($resultUpdateAccount = $this->getSoapClient()->__soapCall('updateAccount', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultUpdateAccount;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named updateProfil
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -71,14 +73,15 @@ class Update extends AbstractSoapClientBase
             $this->setResult($resultUpdateProfil = $this->getSoapClient()->__soapCall('updateProfil', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultUpdateProfil;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named updateShopEZwroty
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -93,14 +96,15 @@ class Update extends AbstractSoapClientBase
             $this->setResult($resultUpdateShopEZwroty = $this->getSoapClient()->__soapCall('updateShopEZwroty', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultUpdateShopEZwroty;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named updateParcelContent
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -115,14 +119,15 @@ class Update extends AbstractSoapClientBase
             $this->setResult($resultUpdateParcelContent = $this->getSoapClient()->__soapCall('updateParcelContent', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultUpdateParcelContent;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named updateReturnDocumentsProfile
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -137,14 +142,15 @@ class Update extends AbstractSoapClientBase
             $this->setResult($resultUpdateReturnDocumentsProfile = $this->getSoapClient()->__soapCall('updateReturnDocumentsProfile', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultUpdateReturnDocumentsProfile;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named updateChecklistTemplate
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -159,14 +165,15 @@ class Update extends AbstractSoapClientBase
             $this->setResult($resultUpdateChecklistTemplate = $this->getSoapClient()->__soapCall('updateChecklistTemplate', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultUpdateChecklistTemplate;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Returns the result
      * @see AbstractSoapClientBase::getResult()

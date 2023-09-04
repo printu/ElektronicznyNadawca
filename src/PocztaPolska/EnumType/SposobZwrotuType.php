@@ -16,12 +16,13 @@ class SposobZwrotuType extends AbstractStructEnumBase
      * Constant for value 'LADOWO_MORSKA'
      * @return string 'LADOWO_MORSKA'
      */
-    const VALUE_LADOWO_MORSKA = 'LADOWO_MORSKA';
+    public const VALUE_LADOWO_MORSKA = 'LADOWO_MORSKA';
     /**
      * Constant for value 'LOTNICZA'
      * @return string 'LOTNICZA'
      */
-    const VALUE_LOTNICZA = 'LOTNICZA';
+    public const VALUE_LOTNICZA = 'LOTNICZA';
+
     /**
      * Return allowed values
      * @uses self::VALUE_LADOWO_MORSKA

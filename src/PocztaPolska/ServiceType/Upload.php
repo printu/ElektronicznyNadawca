@@ -27,14 +27,15 @@ class Upload extends AbstractSoapClientBase
             $this->setResult($resultUploadIWDContent = $this->getSoapClient()->__soapCall('uploadIWDContent', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultUploadIWDContent;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Returns the result
      * @see AbstractSoapClientBase::getResult()

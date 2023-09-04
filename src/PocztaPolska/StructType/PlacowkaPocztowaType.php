@@ -187,6 +187,7 @@ class PlacowkaPocztowaType extends AbstractStructBase
      * @var string|null
      */
     protected ?string $idZPO = null;
+
     /**
      * Constructor method for placowkaPocztowaType
      * @uses PlacowkaPocztowaType::setId()
@@ -272,6 +273,7 @@ class PlacowkaPocztowaType extends AbstractStructBase
             ->setSiecPlacowek($siecPlacowek)
             ->setIdZPO($idZPO);
     }
+
     /**
      * Get id value
      * @return int
@@ -280,6 +282,7 @@ class PlacowkaPocztowaType extends AbstractStructBase
     {
         return $this->id;
     }
+
     /**
      * Set id value
      * @param int $id
@@ -292,9 +295,10 @@ class PlacowkaPocztowaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($id, true), gettype($id)), __LINE__);
         }
         $this->id = $id;
-        
+
         return $this;
     }
+
     /**
      * Get lokalizacjaGeograficzna value
      * @return \PocztaPolska\StructType\LokalizacjaGeograficznaType|null
@@ -303,6 +307,7 @@ class PlacowkaPocztowaType extends AbstractStructBase
     {
         return $this->lokalizacjaGeograficzna;
     }
+
     /**
      * Set lokalizacjaGeograficzna value
      * @param \PocztaPolska\StructType\LokalizacjaGeograficznaType $lokalizacjaGeograficzna
@@ -311,9 +316,10 @@ class PlacowkaPocztowaType extends AbstractStructBase
     public function setLokalizacjaGeograficzna(?\PocztaPolska\StructType\LokalizacjaGeograficznaType $lokalizacjaGeograficzna = null): self
     {
         $this->lokalizacjaGeograficzna = $lokalizacjaGeograficzna;
-        
+
         return $this;
     }
+
     /**
      * Get godzinyPracy value
      * @return \PocztaPolska\StructType\GodzinyPracyType|null
@@ -322,6 +328,7 @@ class PlacowkaPocztowaType extends AbstractStructBase
     {
         return $this->godzinyPracy;
     }
+
     /**
      * Set godzinyPracy value
      * @param \PocztaPolska\StructType\GodzinyPracyType $godzinyPracy
@@ -330,9 +337,10 @@ class PlacowkaPocztowaType extends AbstractStructBase
     public function setGodzinyPracy(?\PocztaPolska\StructType\GodzinyPracyType $godzinyPracy = null): self
     {
         $this->godzinyPracy = $godzinyPracy;
-        
+
         return $this;
     }
+
     /**
      * Get opis value
      * @return string|null
@@ -341,6 +349,7 @@ class PlacowkaPocztowaType extends AbstractStructBase
     {
         return $this->opis;
     }
+
     /**
      * Set opis value
      * @param string $opis
@@ -353,9 +362,10 @@ class PlacowkaPocztowaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($opis, true), gettype($opis)), __LINE__);
         }
         $this->opis = $opis;
-        
+
         return $this;
     }
+
     /**
      * Get deliveryPath value
      * @return \PocztaPolska\StructType\DeliveryPathType|null
@@ -364,6 +374,7 @@ class PlacowkaPocztowaType extends AbstractStructBase
     {
         return $this->deliveryPath;
     }
+
     /**
      * Set deliveryPath value
      * @param \PocztaPolska\StructType\DeliveryPathType $deliveryPath
@@ -372,9 +383,10 @@ class PlacowkaPocztowaType extends AbstractStructBase
     public function setDeliveryPath(?\PocztaPolska\StructType\DeliveryPathType $deliveryPath = null): self
     {
         $this->deliveryPath = $deliveryPath;
-        
+
         return $this;
     }
+
     /**
      * Get typ value
      * @return string|null
@@ -383,6 +395,7 @@ class PlacowkaPocztowaType extends AbstractStructBase
     {
         return $this->typ;
     }
+
     /**
      * Set typ value
      * @uses \PocztaPolska\EnumType\TypPlacowkiPocztowejEnum::valueIsValid()
@@ -398,9 +411,10 @@ class PlacowkaPocztowaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\TypPlacowkiPocztowejEnum', is_array($typ) ? implode(', ', $typ) : var_export($typ, true), implode(', ', \PocztaPolska\EnumType\TypPlacowkiPocztowejEnum::getValidValues())), __LINE__);
         }
         $this->typ = $typ;
-        
+
         return $this;
     }
+
     /**
      * Get rodzajPlatnosci value
      * @return string[]
@@ -409,6 +423,7 @@ class PlacowkaPocztowaType extends AbstractStructBase
     {
         return $this->rodzajPlatnosci;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setRodzajPlatnosci method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRodzajPlatnosci method
@@ -433,9 +448,10 @@ class PlacowkaPocztowaType extends AbstractStructBase
             $message = sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\RodzajPlatnosciEnum', is_array($invalidValues) ? implode(', ', $invalidValues) : var_export($invalidValues, true), implode(', ', \PocztaPolska\EnumType\RodzajPlatnosciEnum::getValidValues()));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set rodzajPlatnosci value
      * @uses \PocztaPolska\EnumType\RodzajPlatnosciEnum::valueIsValid()
@@ -451,9 +467,10 @@ class PlacowkaPocztowaType extends AbstractStructBase
             throw new InvalidArgumentException($rodzajPlatnosciArrayErrorMessage, __LINE__);
         }
         $this->rodzajPlatnosci = $rodzajPlatnosci;
-        
+
         return $this;
     }
+
     /**
      * Add item to rodzajPlatnosci value
      * @uses \PocztaPolska\EnumType\RodzajPlatnosciEnum::valueIsValid()
@@ -469,9 +486,10 @@ class PlacowkaPocztowaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\RodzajPlatnosciEnum', is_array($item) ? implode(', ', $item) : var_export($item, true), implode(', ', \PocztaPolska\EnumType\RodzajPlatnosciEnum::getValidValues())), __LINE__);
         }
         $this->rodzajPlatnosci[] = $item;
-        
+
         return $this;
     }
+
     /**
      * Get funkcja value
      * @return string|null
@@ -480,6 +498,7 @@ class PlacowkaPocztowaType extends AbstractStructBase
     {
         return $this->funkcja;
     }
+
     /**
      * Set funkcja value
      * @uses \PocztaPolska\EnumType\FunkcjaPlacowkiPocztowejType::valueIsValid()
@@ -495,9 +514,10 @@ class PlacowkaPocztowaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\FunkcjaPlacowkiPocztowejType', is_array($funkcja) ? implode(', ', $funkcja) : var_export($funkcja, true), implode(', ', \PocztaPolska\EnumType\FunkcjaPlacowkiPocztowejType::getValidValues())), __LINE__);
         }
         $this->funkcja = $funkcja;
-        
+
         return $this;
     }
+
     /**
      * Get maksymalnaKwotaPobrania value
      * @return int|null
@@ -506,6 +526,7 @@ class PlacowkaPocztowaType extends AbstractStructBase
     {
         return $this->maksymalnaKwotaPobrania;
     }
+
     /**
      * Set maksymalnaKwotaPobrania value
      * @param int $maksymalnaKwotaPobrania
@@ -518,9 +539,10 @@ class PlacowkaPocztowaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($maksymalnaKwotaPobrania, true), gettype($maksymalnaKwotaPobrania)), __LINE__);
         }
         $this->maksymalnaKwotaPobrania = $maksymalnaKwotaPobrania;
-        
+
         return $this;
     }
+
     /**
      * Get prefixNazwy value
      * @return string|null
@@ -529,6 +551,7 @@ class PlacowkaPocztowaType extends AbstractStructBase
     {
         return $this->prefixNazwy;
     }
+
     /**
      * Set prefixNazwy value
      * @param string $prefixNazwy
@@ -541,9 +564,10 @@ class PlacowkaPocztowaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($prefixNazwy, true), gettype($prefixNazwy)), __LINE__);
         }
         $this->prefixNazwy = $prefixNazwy;
-        
+
         return $this;
     }
+
     /**
      * Get nazwa value
      * @return string|null
@@ -552,6 +576,7 @@ class PlacowkaPocztowaType extends AbstractStructBase
     {
         return $this->nazwa;
     }
+
     /**
      * Set nazwa value
      * @param string $nazwa
@@ -564,9 +589,10 @@ class PlacowkaPocztowaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($nazwa, true), gettype($nazwa)), __LINE__);
         }
         $this->nazwa = $nazwa;
-        
+
         return $this;
     }
+
     /**
      * Get wojewodztwo value
      * @return string|null
@@ -575,6 +601,7 @@ class PlacowkaPocztowaType extends AbstractStructBase
     {
         return $this->wojewodztwo;
     }
+
     /**
      * Set wojewodztwo value
      * @param string $wojewodztwo
@@ -587,9 +614,10 @@ class PlacowkaPocztowaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($wojewodztwo, true), gettype($wojewodztwo)), __LINE__);
         }
         $this->wojewodztwo = $wojewodztwo;
-        
+
         return $this;
     }
+
     /**
      * Get powiat value
      * @return string|null
@@ -598,6 +626,7 @@ class PlacowkaPocztowaType extends AbstractStructBase
     {
         return $this->powiat;
     }
+
     /**
      * Set powiat value
      * @param string $powiat
@@ -610,9 +639,10 @@ class PlacowkaPocztowaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($powiat, true), gettype($powiat)), __LINE__);
         }
         $this->powiat = $powiat;
-        
+
         return $this;
     }
+
     /**
      * Get miejsce value
      * @return string|null
@@ -621,6 +651,7 @@ class PlacowkaPocztowaType extends AbstractStructBase
     {
         return $this->miejsce;
     }
+
     /**
      * Set miejsce value
      * @param string $miejsce
@@ -633,9 +664,10 @@ class PlacowkaPocztowaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($miejsce, true), gettype($miejsce)), __LINE__);
         }
         $this->miejsce = $miejsce;
-        
+
         return $this;
     }
+
     /**
      * Get kodPocztowy value
      * @return string|null
@@ -644,6 +676,7 @@ class PlacowkaPocztowaType extends AbstractStructBase
     {
         return $this->kodPocztowy;
     }
+
     /**
      * Set kodPocztowy value
      * @param string $kodPocztowy
@@ -660,9 +693,10 @@ class PlacowkaPocztowaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 5', mb_strlen((string) $kodPocztowy)), __LINE__);
         }
         $this->kodPocztowy = $kodPocztowy;
-        
+
         return $this;
     }
+
     /**
      * Get miejscowosc value
      * @return string|null
@@ -671,6 +705,7 @@ class PlacowkaPocztowaType extends AbstractStructBase
     {
         return $this->miejscowosc;
     }
+
     /**
      * Set miejscowosc value
      * @param string $miejscowosc
@@ -691,9 +726,10 @@ class PlacowkaPocztowaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 0', mb_strlen((string) $miejscowosc)), __LINE__);
         }
         $this->miejscowosc = $miejscowosc;
-        
+
         return $this;
     }
+
     /**
      * Get ulica value
      * @return string|null
@@ -702,6 +738,7 @@ class PlacowkaPocztowaType extends AbstractStructBase
     {
         return $this->ulica;
     }
+
     /**
      * Set ulica value
      * @param string $ulica
@@ -714,9 +751,10 @@ class PlacowkaPocztowaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($ulica, true), gettype($ulica)), __LINE__);
         }
         $this->ulica = $ulica;
-        
+
         return $this;
     }
+
     /**
      * Get numerDomu value
      * @return string|null
@@ -725,6 +763,7 @@ class PlacowkaPocztowaType extends AbstractStructBase
     {
         return $this->numerDomu;
     }
+
     /**
      * Set numerDomu value
      * @param string $numerDomu
@@ -737,9 +776,10 @@ class PlacowkaPocztowaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($numerDomu, true), gettype($numerDomu)), __LINE__);
         }
         $this->numerDomu = $numerDomu;
-        
+
         return $this;
     }
+
     /**
      * Get numerLokalu value
      * @return string|null
@@ -748,6 +788,7 @@ class PlacowkaPocztowaType extends AbstractStructBase
     {
         return $this->numerLokalu;
     }
+
     /**
      * Set numerLokalu value
      * @param string $numerLokalu
@@ -760,9 +801,10 @@ class PlacowkaPocztowaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($numerLokalu, true), gettype($numerLokalu)), __LINE__);
         }
         $this->numerLokalu = $numerLokalu;
-        
+
         return $this;
     }
+
     /**
      * Get nazwaWydruk value
      * @return string|null
@@ -771,6 +813,7 @@ class PlacowkaPocztowaType extends AbstractStructBase
     {
         return $this->nazwaWydruk;
     }
+
     /**
      * Set nazwaWydruk value
      * @param string $nazwaWydruk
@@ -783,9 +826,10 @@ class PlacowkaPocztowaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($nazwaWydruk, true), gettype($nazwaWydruk)), __LINE__);
         }
         $this->nazwaWydruk = $nazwaWydruk;
-        
+
         return $this;
     }
+
     /**
      * Get punktWydaniaEPrzesylki value
      * @return bool|null
@@ -794,6 +838,7 @@ class PlacowkaPocztowaType extends AbstractStructBase
     {
         return $this->punktWydaniaEPrzesylki;
     }
+
     /**
      * Set punktWydaniaEPrzesylki value
      * @param bool $punktWydaniaEPrzesylki
@@ -806,9 +851,10 @@ class PlacowkaPocztowaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($punktWydaniaEPrzesylki, true), gettype($punktWydaniaEPrzesylki)), __LINE__);
         }
         $this->punktWydaniaEPrzesylki = $punktWydaniaEPrzesylki;
-        
+
         return $this;
     }
+
     /**
      * Get powiadomienieSMS value
      * @return bool|null
@@ -817,6 +863,7 @@ class PlacowkaPocztowaType extends AbstractStructBase
     {
         return $this->powiadomienieSMS;
     }
+
     /**
      * Set powiadomienieSMS value
      * @param bool $powiadomienieSMS
@@ -829,9 +876,10 @@ class PlacowkaPocztowaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($powiadomienieSMS, true), gettype($powiadomienieSMS)), __LINE__);
         }
         $this->powiadomienieSMS = $powiadomienieSMS;
-        
+
         return $this;
     }
+
     /**
      * Get punktWydaniaPrzesylkiBiznesowejPlus value
      * @return bool|null
@@ -840,6 +888,7 @@ class PlacowkaPocztowaType extends AbstractStructBase
     {
         return $this->punktWydaniaPrzesylkiBiznesowejPlus;
     }
+
     /**
      * Set punktWydaniaPrzesylkiBiznesowejPlus value
      * @param bool $punktWydaniaPrzesylkiBiznesowejPlus
@@ -852,9 +901,10 @@ class PlacowkaPocztowaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($punktWydaniaPrzesylkiBiznesowejPlus, true), gettype($punktWydaniaPrzesylkiBiznesowejPlus)), __LINE__);
         }
         $this->punktWydaniaPrzesylkiBiznesowejPlus = $punktWydaniaPrzesylkiBiznesowejPlus;
-        
+
         return $this;
     }
+
     /**
      * Get punktWydaniaPrzesylkiBiznesowej value
      * @return bool|null
@@ -863,6 +913,7 @@ class PlacowkaPocztowaType extends AbstractStructBase
     {
         return $this->punktWydaniaPrzesylkiBiznesowej;
     }
+
     /**
      * Set punktWydaniaPrzesylkiBiznesowej value
      * @param bool $punktWydaniaPrzesylkiBiznesowej
@@ -875,9 +926,10 @@ class PlacowkaPocztowaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($punktWydaniaPrzesylkiBiznesowej, true), gettype($punktWydaniaPrzesylkiBiznesowej)), __LINE__);
         }
         $this->punktWydaniaPrzesylkiBiznesowej = $punktWydaniaPrzesylkiBiznesowej;
-        
+
         return $this;
     }
+
     /**
      * Get siecPlacowek value
      * @return string|null
@@ -886,6 +938,7 @@ class PlacowkaPocztowaType extends AbstractStructBase
     {
         return $this->siecPlacowek;
     }
+
     /**
      * Set siecPlacowek value
      * @param string $siecPlacowek
@@ -898,9 +951,10 @@ class PlacowkaPocztowaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($siecPlacowek, true), gettype($siecPlacowek)), __LINE__);
         }
         $this->siecPlacowek = $siecPlacowek;
-        
+
         return $this;
     }
+
     /**
      * Get idZPO value
      * @return string|null
@@ -909,6 +963,7 @@ class PlacowkaPocztowaType extends AbstractStructBase
     {
         return $this->idZPO;
     }
+
     /**
      * Set idZPO value
      * @param string $idZPO
@@ -921,7 +976,7 @@ class PlacowkaPocztowaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($idZPO, true), gettype($idZPO)), __LINE__);
         }
         $this->idZPO = $idZPO;
-        
+
         return $this;
     }
 }

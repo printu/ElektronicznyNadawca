@@ -27,14 +27,15 @@ class Is extends AbstractSoapClientBase
             $this->setResult($resultIsMiejscowa = $this->getSoapClient()->__soapCall('isMiejscowa', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultIsMiejscowa;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named isObszarMiasto
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -49,14 +50,15 @@ class Is extends AbstractSoapClientBase
             $this->setResult($resultIsObszarMiasto = $this->getSoapClient()->__soapCall('isObszarMiasto', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultIsObszarMiasto;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Returns the result
      * @see AbstractSoapClientBase::getResult()

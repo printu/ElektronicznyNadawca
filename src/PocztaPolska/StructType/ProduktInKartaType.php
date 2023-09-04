@@ -38,6 +38,7 @@ class ProduktInKartaType extends AbstractStructBase
      * @var string|null
      */
     protected ?string $nazwaProduktu = null;
+
     /**
      * Constructor method for produktInKartaType
      * @uses ProduktInKartaType::setSymbolIWD()
@@ -54,6 +55,7 @@ class ProduktInKartaType extends AbstractStructBase
             ->setNazwaWyswietlana($nazwaWyswietlana)
             ->setNazwaProduktu($nazwaProduktu);
     }
+
     /**
      * Get symbolIWD value
      * @return string|null
@@ -62,6 +64,7 @@ class ProduktInKartaType extends AbstractStructBase
     {
         return $this->symbolIWD;
     }
+
     /**
      * Set symbolIWD value
      * @param string $symbolIWD
@@ -78,9 +81,10 @@ class ProduktInKartaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $symbolIWD)), __LINE__);
         }
         $this->symbolIWD = $symbolIWD;
-        
+
         return $this;
     }
+
     /**
      * Get nazwaWyswietlana value
      * @return string|null
@@ -89,6 +93,7 @@ class ProduktInKartaType extends AbstractStructBase
     {
         return $this->nazwaWyswietlana;
     }
+
     /**
      * Set nazwaWyswietlana value
      * @param string $nazwaWyswietlana
@@ -105,9 +110,10 @@ class ProduktInKartaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 100', mb_strlen((string) $nazwaWyswietlana)), __LINE__);
         }
         $this->nazwaWyswietlana = $nazwaWyswietlana;
-        
+
         return $this;
     }
+
     /**
      * Get nazwaProduktu value
      * @return string|null
@@ -116,6 +122,7 @@ class ProduktInKartaType extends AbstractStructBase
     {
         return $this->nazwaProduktu;
     }
+
     /**
      * Set nazwaProduktu value
      * @param string $nazwaProduktu
@@ -132,7 +139,7 @@ class ProduktInKartaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 60', mb_strlen((string) $nazwaProduktu)), __LINE__);
         }
         $this->nazwaProduktu = $nazwaProduktu;
-        
+
         return $this;
     }
 }

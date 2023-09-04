@@ -73,6 +73,7 @@ class ZamowKuriera extends AbstractStructBase
      * @var string|null
      */
     protected ?string $potwierdzenieZamowieniaEmail = null;
+
     /**
      * Constructor method for zamowKuriera
      * @uses ZamowKuriera::setMiejsceOdbioru()
@@ -101,6 +102,7 @@ class ZamowKuriera extends AbstractStructBase
             ->setNadawca($nadawca)
             ->setPotwierdzenieZamowieniaEmail($potwierdzenieZamowieniaEmail);
     }
+
     /**
      * Get miejsceOdbioru value
      * @return \PocztaPolska\StructType\AdresType
@@ -109,6 +111,7 @@ class ZamowKuriera extends AbstractStructBase
     {
         return $this->miejsceOdbioru;
     }
+
     /**
      * Set miejsceOdbioru value
      * @param \PocztaPolska\StructType\AdresType $miejsceOdbioru
@@ -117,9 +120,10 @@ class ZamowKuriera extends AbstractStructBase
     public function setMiejsceOdbioru(\PocztaPolska\StructType\AdresType $miejsceOdbioru): self
     {
         $this->miejsceOdbioru = $miejsceOdbioru;
-        
+
         return $this;
     }
+
     /**
      * Get oczekiwanaDataOdbioru value
      * @return string
@@ -128,6 +132,7 @@ class ZamowKuriera extends AbstractStructBase
     {
         return $this->oczekiwanaDataOdbioru;
     }
+
     /**
      * Set oczekiwanaDataOdbioru value
      * @param string $oczekiwanaDataOdbioru
@@ -140,9 +145,10 @@ class ZamowKuriera extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($oczekiwanaDataOdbioru, true), gettype($oczekiwanaDataOdbioru)), __LINE__);
         }
         $this->oczekiwanaDataOdbioru = $oczekiwanaDataOdbioru;
-        
+
         return $this;
     }
+
     /**
      * Get oczekiwanaGodzinaOdbioru value
      * @return string
@@ -151,6 +157,7 @@ class ZamowKuriera extends AbstractStructBase
     {
         return $this->oczekiwanaGodzinaOdbioru;
     }
+
     /**
      * Set oczekiwanaGodzinaOdbioru value
      * @param string $oczekiwanaGodzinaOdbioru
@@ -163,9 +170,10 @@ class ZamowKuriera extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($oczekiwanaGodzinaOdbioru, true), gettype($oczekiwanaGodzinaOdbioru)), __LINE__);
         }
         $this->oczekiwanaGodzinaOdbioru = $oczekiwanaGodzinaOdbioru;
-        
+
         return $this;
     }
+
     /**
      * Get szacowanaIloscPrzeslek value
      * @return string
@@ -174,6 +182,7 @@ class ZamowKuriera extends AbstractStructBase
     {
         return $this->szacowanaIloscPrzeslek;
     }
+
     /**
      * Set szacowanaIloscPrzeslek value
      * @param string $szacowanaIloscPrzeslek
@@ -186,9 +195,10 @@ class ZamowKuriera extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($szacowanaIloscPrzeslek, true), gettype($szacowanaIloscPrzeslek)), __LINE__);
         }
         $this->szacowanaIloscPrzeslek = $szacowanaIloscPrzeslek;
-        
+
         return $this;
     }
+
     /**
      * Get szacowanaLacznaMasaPrzesylek value
      * @return string
@@ -197,6 +207,7 @@ class ZamowKuriera extends AbstractStructBase
     {
         return $this->szacowanaLacznaMasaPrzesylek;
     }
+
     /**
      * Set szacowanaLacznaMasaPrzesylek value
      * @param string $szacowanaLacznaMasaPrzesylek
@@ -209,9 +220,10 @@ class ZamowKuriera extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($szacowanaLacznaMasaPrzesylek, true), gettype($szacowanaLacznaMasaPrzesylek)), __LINE__);
         }
         $this->szacowanaLacznaMasaPrzesylek = $szacowanaLacznaMasaPrzesylek;
-        
+
         return $this;
     }
+
     /**
      * Get nadawca value
      * @return \PocztaPolska\StructType\AdresType|null
@@ -220,6 +232,7 @@ class ZamowKuriera extends AbstractStructBase
     {
         return $this->nadawca;
     }
+
     /**
      * Set nadawca value
      * @param \PocztaPolska\StructType\AdresType $nadawca
@@ -228,9 +241,10 @@ class ZamowKuriera extends AbstractStructBase
     public function setNadawca(?\PocztaPolska\StructType\AdresType $nadawca = null): self
     {
         $this->nadawca = $nadawca;
-        
+
         return $this;
     }
+
     /**
      * Get potwierdzenieZamowieniaEmail value
      * @return string|null
@@ -239,6 +253,7 @@ class ZamowKuriera extends AbstractStructBase
     {
         return $this->potwierdzenieZamowieniaEmail;
     }
+
     /**
      * Set potwierdzenieZamowieniaEmail value
      * @param string $potwierdzenieZamowieniaEmail
@@ -259,7 +274,7 @@ class ZamowKuriera extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 6', mb_strlen((string) $potwierdzenieZamowieniaEmail)), __LINE__);
         }
         $this->potwierdzenieZamowieniaEmail = $potwierdzenieZamowieniaEmail;
-        
+
         return $this;
     }
 }

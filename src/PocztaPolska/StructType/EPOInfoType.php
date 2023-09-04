@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace PocztaPolska\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -35,6 +34,7 @@ class EPOInfoType extends AbstractStructBase
      * @var \PocztaPolska\StructType\ZwrotPrzesylkiType|null
      */
     protected ?\PocztaPolska\StructType\ZwrotPrzesylkiType $zwrotPrzesylki = null;
+
     /**
      * Constructor method for EPOInfoType
      * @uses EPOInfoType::setAwizoPrzesylki()
@@ -51,6 +51,7 @@ class EPOInfoType extends AbstractStructBase
             ->setDoreczeniePrzesylki($doreczeniePrzesylki)
             ->setZwrotPrzesylki($zwrotPrzesylki);
     }
+
     /**
      * Get awizoPrzesylki value
      * @return \PocztaPolska\StructType\AwizoPrzesylkiType|null
@@ -59,6 +60,7 @@ class EPOInfoType extends AbstractStructBase
     {
         return $this->awizoPrzesylki;
     }
+
     /**
      * Set awizoPrzesylki value
      * @param \PocztaPolska\StructType\AwizoPrzesylkiType $awizoPrzesylki
@@ -67,9 +69,10 @@ class EPOInfoType extends AbstractStructBase
     public function setAwizoPrzesylki(?\PocztaPolska\StructType\AwizoPrzesylkiType $awizoPrzesylki = null): self
     {
         $this->awizoPrzesylki = $awizoPrzesylki;
-        
+
         return $this;
     }
+
     /**
      * Get doreczeniePrzesylki value
      * @return \PocztaPolska\StructType\DoreczeniePrzesylkiType|null
@@ -78,6 +81,7 @@ class EPOInfoType extends AbstractStructBase
     {
         return $this->doreczeniePrzesylki;
     }
+
     /**
      * Set doreczeniePrzesylki value
      * @param \PocztaPolska\StructType\DoreczeniePrzesylkiType $doreczeniePrzesylki
@@ -86,9 +90,10 @@ class EPOInfoType extends AbstractStructBase
     public function setDoreczeniePrzesylki(?\PocztaPolska\StructType\DoreczeniePrzesylkiType $doreczeniePrzesylki = null): self
     {
         $this->doreczeniePrzesylki = $doreczeniePrzesylki;
-        
+
         return $this;
     }
+
     /**
      * Get zwrotPrzesylki value
      * @return \PocztaPolska\StructType\ZwrotPrzesylkiType|null
@@ -97,6 +102,7 @@ class EPOInfoType extends AbstractStructBase
     {
         return $this->zwrotPrzesylki;
     }
+
     /**
      * Set zwrotPrzesylki value
      * @param \PocztaPolska\StructType\ZwrotPrzesylkiType $zwrotPrzesylki
@@ -105,7 +111,7 @@ class EPOInfoType extends AbstractStructBase
     public function setZwrotPrzesylki(?\PocztaPolska\StructType\ZwrotPrzesylkiType $zwrotPrzesylki = null): self
     {
         $this->zwrotPrzesylki = $zwrotPrzesylki;
-        
+
         return $this;
     }
 }

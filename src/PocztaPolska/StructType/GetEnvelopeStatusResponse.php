@@ -30,6 +30,7 @@ class GetEnvelopeStatusResponse extends AbstractStructBase
      * @var \PocztaPolska\StructType\ErrorType[]
      */
     protected ?array $error = null;
+
     /**
      * Constructor method for getEnvelopeStatusResponse
      * @uses GetEnvelopeStatusResponse::setEnvelopeStatus()
@@ -43,6 +44,7 @@ class GetEnvelopeStatusResponse extends AbstractStructBase
             ->setEnvelopeStatus($envelopeStatus)
             ->setError($error);
     }
+
     /**
      * Get envelopeStatus value
      * @return string|null
@@ -51,6 +53,7 @@ class GetEnvelopeStatusResponse extends AbstractStructBase
     {
         return $this->envelopeStatus;
     }
+
     /**
      * Set envelopeStatus value
      * @uses \PocztaPolska\EnumType\EnvelopeStatusType::valueIsValid()
@@ -66,9 +69,10 @@ class GetEnvelopeStatusResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\EnvelopeStatusType', is_array($envelopeStatus) ? implode(', ', $envelopeStatus) : var_export($envelopeStatus, true), implode(', ', \PocztaPolska\EnumType\EnvelopeStatusType::getValidValues())), __LINE__);
         }
         $this->envelopeStatus = $envelopeStatus;
-        
+
         return $this;
     }
+
     /**
      * Get error value
      * @return \PocztaPolska\StructType\ErrorType[]
@@ -77,6 +81,7 @@ class GetEnvelopeStatusResponse extends AbstractStructBase
     {
         return $this->error;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setError method
      * This method is willingly generated in order to preserve the one-line inline validation within the setError method
@@ -101,9 +106,10 @@ class GetEnvelopeStatusResponse extends AbstractStructBase
             $message = sprintf('The error property can only contain items of type \PocztaPolska\StructType\ErrorType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set error value
      * @throws InvalidArgumentException
@@ -117,9 +123,10 @@ class GetEnvelopeStatusResponse extends AbstractStructBase
             throw new InvalidArgumentException($errorArrayErrorMessage, __LINE__);
         }
         $this->error = $error;
-        
+
         return $this;
     }
+
     /**
      * Add item to error value
      * @throws InvalidArgumentException
@@ -133,7 +140,7 @@ class GetEnvelopeStatusResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The error property can only contain items of type \PocztaPolska\StructType\ErrorType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->error[] = $item;
-        
+
         return $this;
     }
 }

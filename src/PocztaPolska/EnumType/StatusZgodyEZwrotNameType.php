@@ -16,17 +16,18 @@ class StatusZgodyEZwrotNameType extends AbstractStructEnumBase
      * Constant for value 'NOWY'
      * @return string 'NOWY'
      */
-    const VALUE_NOWY = 'NOWY';
+    public const VALUE_NOWY = 'NOWY';
     /**
      * Constant for value 'ZAAKCEPTOWANY'
      * @return string 'ZAAKCEPTOWANY'
      */
-    const VALUE_ZAAKCEPTOWANY = 'ZAAKCEPTOWANY';
+    public const VALUE_ZAAKCEPTOWANY = 'ZAAKCEPTOWANY';
     /**
      * Constant for value 'ODRZUCONY'
      * @return string 'ODRZUCONY'
      */
-    const VALUE_ODRZUCONY = 'ODRZUCONY';
+    public const VALUE_ODRZUCONY = 'ODRZUCONY';
+
     /**
      * Return allowed values
      * @uses self::VALUE_NOWY

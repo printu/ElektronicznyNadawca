@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace PocztaPolska\StructType;
 
 use InvalidArgumentException;
-use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for subPrzesylkaBiznesowaType StructType
@@ -71,6 +70,7 @@ class SubPrzesylkaBiznesowaType extends PrzesylkaType
      * @var bool|null
      */
     protected ?bool $niestandardowa = null;
+
     /**
      * Constructor method for subPrzesylkaBiznesowaType
      * @uses SubPrzesylkaBiznesowaType::setUbezpieczenie()
@@ -102,6 +102,7 @@ class SubPrzesylkaBiznesowaType extends PrzesylkaType
             ->setNumerPrzesylkiKlienta($numerPrzesylkiKlienta)
             ->setNiestandardowa($niestandardowa);
     }
+
     /**
      * Get ubezpieczenie value
      * @return \PocztaPolska\StructType\UbezpieczenieType|null
@@ -110,6 +111,7 @@ class SubPrzesylkaBiznesowaType extends PrzesylkaType
     {
         return $this->ubezpieczenie;
     }
+
     /**
      * Set ubezpieczenie value
      * @param \PocztaPolska\StructType\UbezpieczenieType $ubezpieczenie
@@ -118,9 +120,10 @@ class SubPrzesylkaBiznesowaType extends PrzesylkaType
     public function setUbezpieczenie(?\PocztaPolska\StructType\UbezpieczenieType $ubezpieczenie = null): self
     {
         $this->ubezpieczenie = $ubezpieczenie;
-        
+
         return $this;
     }
+
     /**
      * Get numerNadania value
      * @return string|null
@@ -129,6 +132,7 @@ class SubPrzesylkaBiznesowaType extends PrzesylkaType
     {
         return $this->numerNadania;
     }
+
     /**
      * Set numerNadania value
      * @param string $numerNadania
@@ -149,9 +153,10 @@ class SubPrzesylkaBiznesowaType extends PrzesylkaType
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 10', mb_strlen((string) $numerNadania)), __LINE__);
         }
         $this->numerNadania = $numerNadania;
-        
+
         return $this;
     }
+
     /**
      * Get masa value
      * @return int|null
@@ -160,6 +165,7 @@ class SubPrzesylkaBiznesowaType extends PrzesylkaType
     {
         return $this->masa;
     }
+
     /**
      * Set masa value
      * @param int $masa
@@ -180,9 +186,10 @@ class SubPrzesylkaBiznesowaType extends PrzesylkaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 1', var_export($masa, true)), __LINE__);
         }
         $this->masa = $masa;
-        
+
         return $this;
     }
+
     /**
      * Get gabaryt value
      * @return string|null
@@ -191,6 +198,7 @@ class SubPrzesylkaBiznesowaType extends PrzesylkaType
     {
         return $this->gabaryt;
     }
+
     /**
      * Set gabaryt value
      * @uses \PocztaPolska\EnumType\GabarytBiznesowaType::valueIsValid()
@@ -206,9 +214,10 @@ class SubPrzesylkaBiznesowaType extends PrzesylkaType
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\GabarytBiznesowaType', is_array($gabaryt) ? implode(', ', $gabaryt) : var_export($gabaryt, true), implode(', ', \PocztaPolska\EnumType\GabarytBiznesowaType::getValidValues())), __LINE__);
         }
         $this->gabaryt = $gabaryt;
-        
+
         return $this;
     }
+
     /**
      * Get wartosc value
      * @return int|null
@@ -217,6 +226,7 @@ class SubPrzesylkaBiznesowaType extends PrzesylkaType
     {
         return $this->wartosc;
     }
+
     /**
      * Set wartosc value
      * @param int $wartosc
@@ -237,9 +247,10 @@ class SubPrzesylkaBiznesowaType extends PrzesylkaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 0', var_export($wartosc, true)), __LINE__);
         }
         $this->wartosc = $wartosc;
-        
+
         return $this;
     }
+
     /**
      * Get ostroznie value
      * @return bool|null
@@ -248,6 +259,7 @@ class SubPrzesylkaBiznesowaType extends PrzesylkaType
     {
         return $this->ostroznie;
     }
+
     /**
      * Set ostroznie value
      * @param bool $ostroznie
@@ -260,9 +272,10 @@ class SubPrzesylkaBiznesowaType extends PrzesylkaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($ostroznie, true), gettype($ostroznie)), __LINE__);
         }
         $this->ostroznie = $ostroznie;
-        
+
         return $this;
     }
+
     /**
      * Get numerPrzesylkiKlienta value
      * @return string|null
@@ -271,6 +284,7 @@ class SubPrzesylkaBiznesowaType extends PrzesylkaType
     {
         return $this->numerPrzesylkiKlienta;
     }
+
     /**
      * Set numerPrzesylkiKlienta value
      * @param string $numerPrzesylkiKlienta
@@ -283,9 +297,10 @@ class SubPrzesylkaBiznesowaType extends PrzesylkaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($numerPrzesylkiKlienta, true), gettype($numerPrzesylkiKlienta)), __LINE__);
         }
         $this->numerPrzesylkiKlienta = $numerPrzesylkiKlienta;
-        
+
         return $this;
     }
+
     /**
      * Get niestandardowa value
      * @return bool|null
@@ -294,6 +309,7 @@ class SubPrzesylkaBiznesowaType extends PrzesylkaType
     {
         return $this->niestandardowa;
     }
+
     /**
      * Set niestandardowa value
      * @param bool $niestandardowa
@@ -306,7 +322,7 @@ class SubPrzesylkaBiznesowaType extends PrzesylkaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($niestandardowa, true), gettype($niestandardowa)), __LINE__);
         }
         $this->niestandardowa = $niestandardowa;
-        
+
         return $this;
     }
 }

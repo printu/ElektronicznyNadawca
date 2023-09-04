@@ -22,6 +22,7 @@ class AddOdwolanieDoReklamacji extends AbstractStructBase
      * @var \PocztaPolska\StructType\ReklamowanaPrzesylkaType[]
      */
     protected array $reklamacja;
+
     /**
      * Constructor method for addOdwolanieDoReklamacji
      * @uses AddOdwolanieDoReklamacji::setReklamacja()
@@ -32,6 +33,7 @@ class AddOdwolanieDoReklamacji extends AbstractStructBase
         $this
             ->setReklamacja($reklamacja);
     }
+
     /**
      * Get reklamacja value
      * @return \PocztaPolska\StructType\ReklamowanaPrzesylkaType[]
@@ -40,6 +42,7 @@ class AddOdwolanieDoReklamacji extends AbstractStructBase
     {
         return $this->reklamacja;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setReklamacja method
      * This method is willingly generated in order to preserve the one-line inline validation within the setReklamacja method
@@ -64,9 +67,10 @@ class AddOdwolanieDoReklamacji extends AbstractStructBase
             $message = sprintf('The reklamacja property can only contain items of type \PocztaPolska\StructType\ReklamowanaPrzesylkaType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set reklamacja value
      * @throws InvalidArgumentException
@@ -84,9 +88,10 @@ class AddOdwolanieDoReklamacji extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 500', count($reklamacja)), __LINE__);
         }
         $this->reklamacja = $reklamacja;
-        
+
         return $this;
     }
+
     /**
      * Add item to reklamacja value
      * @throws InvalidArgumentException
@@ -104,7 +109,7 @@ class AddOdwolanieDoReklamacji extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 500', count($this->reklamacja)), __LINE__);
         }
         $this->reklamacja[] = $item;
-        
+
         return $this;
     }
 }

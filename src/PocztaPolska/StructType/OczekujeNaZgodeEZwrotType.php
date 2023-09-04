@@ -75,6 +75,7 @@ class OczekujeNaZgodeEZwrotType extends AbstractStructBase
      * @var string|null
      */
     protected ?string $guidZgodaEZwrot = null;
+
     /**
      * Constructor method for oczekujeNaZgodeEZwrotType
      * @uses OczekujeNaZgodeEZwrotType::setSklepEZwrot()
@@ -106,6 +107,7 @@ class OczekujeNaZgodeEZwrotType extends AbstractStructBase
             ->setDataNadania($dataNadania)
             ->setGuidZgodaEZwrot($guidZgodaEZwrot);
     }
+
     /**
      * Get sklepEZwrot value
      * @return \PocztaPolska\StructType\ShopEZwrotyType|null
@@ -114,6 +116,7 @@ class OczekujeNaZgodeEZwrotType extends AbstractStructBase
     {
         return $this->sklepEZwrot;
     }
+
     /**
      * Set sklepEZwrot value
      * @param \PocztaPolska\StructType\ShopEZwrotyType $sklepEZwrot
@@ -122,9 +125,10 @@ class OczekujeNaZgodeEZwrotType extends AbstractStructBase
     public function setSklepEZwrot(?\PocztaPolska\StructType\ShopEZwrotyType $sklepEZwrot = null): self
     {
         $this->sklepEZwrot = $sklepEZwrot;
-        
+
         return $this;
     }
+
     /**
      * Get idZgody value
      * @return int|null
@@ -133,6 +137,7 @@ class OczekujeNaZgodeEZwrotType extends AbstractStructBase
     {
         return $this->idZgody;
     }
+
     /**
      * Set idZgody value
      * @param int $idZgody
@@ -145,9 +150,10 @@ class OczekujeNaZgodeEZwrotType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($idZgody, true), gettype($idZgody)), __LINE__);
         }
         $this->idZgody = $idZgody;
-        
+
         return $this;
     }
+
     /**
      * Get nazwaProduktu value
      * @return string|null
@@ -156,6 +162,7 @@ class OczekujeNaZgodeEZwrotType extends AbstractStructBase
     {
         return $this->nazwaProduktu;
     }
+
     /**
      * Set nazwaProduktu value
      * @param string $nazwaProduktu
@@ -172,9 +179,10 @@ class OczekujeNaZgodeEZwrotType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 60', mb_strlen((string) $nazwaProduktu)), __LINE__);
         }
         $this->nazwaProduktu = $nazwaProduktu;
-        
+
         return $this;
     }
+
     /**
      * Get numerZamowienia value
      * @return string|null
@@ -183,6 +191,7 @@ class OczekujeNaZgodeEZwrotType extends AbstractStructBase
     {
         return $this->numerZamowienia;
     }
+
     /**
      * Set numerZamowienia value
      * @param string $numerZamowienia
@@ -199,9 +208,10 @@ class OczekujeNaZgodeEZwrotType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 150', mb_strlen((string) $numerZamowienia)), __LINE__);
         }
         $this->numerZamowienia = $numerZamowienia;
-        
+
         return $this;
     }
+
     /**
      * Get numerNadania value
      * @return string|null
@@ -210,6 +220,7 @@ class OczekujeNaZgodeEZwrotType extends AbstractStructBase
     {
         return $this->numerNadania;
     }
+
     /**
      * Set numerNadania value
      * @param string $numerNadania
@@ -230,9 +241,10 @@ class OczekujeNaZgodeEZwrotType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 10', mb_strlen((string) $numerNadania)), __LINE__);
         }
         $this->numerNadania = $numerNadania;
-        
+
         return $this;
     }
+
     /**
      * Get email value
      * @return string|null
@@ -241,6 +253,7 @@ class OczekujeNaZgodeEZwrotType extends AbstractStructBase
     {
         return $this->email;
     }
+
     /**
      * Set email value
      * @param string $email
@@ -261,9 +274,10 @@ class OczekujeNaZgodeEZwrotType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 6', mb_strlen((string) $email)), __LINE__);
         }
         $this->email = $email;
-        
+
         return $this;
     }
+
     /**
      * Get dataNadania value
      * @return string|null
@@ -272,6 +286,7 @@ class OczekujeNaZgodeEZwrotType extends AbstractStructBase
     {
         return $this->dataNadania;
     }
+
     /**
      * Set dataNadania value
      * @param string $dataNadania
@@ -284,9 +299,10 @@ class OczekujeNaZgodeEZwrotType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($dataNadania, true), gettype($dataNadania)), __LINE__);
         }
         $this->dataNadania = $dataNadania;
-        
+
         return $this;
     }
+
     /**
      * Get guidZgodaEZwrot value
      * @return string|null
@@ -295,6 +311,7 @@ class OczekujeNaZgodeEZwrotType extends AbstractStructBase
     {
         return $this->guidZgodaEZwrot;
     }
+
     /**
      * Set guidZgodaEZwrot value
      * @param string $guidZgodaEZwrot
@@ -311,7 +328,7 @@ class OczekujeNaZgodeEZwrotType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 32', mb_strlen((string) $guidZgodaEZwrot)), __LINE__);
         }
         $this->guidZgodaEZwrot = $guidZgodaEZwrot;
-        
+
         return $this;
     }
 }

@@ -22,6 +22,7 @@ class DoreczenieBiznesowaType extends AbstractStructBase
      * @var bool|null
      */
     protected ?bool $doRakWlasnych = null;
+
     /**
      * Constructor method for doreczenieBiznesowaType
      * @uses DoreczenieBiznesowaType::setDoRakWlasnych()
@@ -32,6 +33,7 @@ class DoreczenieBiznesowaType extends AbstractStructBase
         $this
             ->setDoRakWlasnych($doRakWlasnych);
     }
+
     /**
      * Get doRakWlasnych value
      * @return bool|null
@@ -40,6 +42,7 @@ class DoreczenieBiznesowaType extends AbstractStructBase
     {
         return $this->doRakWlasnych;
     }
+
     /**
      * Set doRakWlasnych value
      * @param bool $doRakWlasnych
@@ -52,7 +55,7 @@ class DoreczenieBiznesowaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($doRakWlasnych, true), gettype($doRakWlasnych)), __LINE__);
         }
         $this->doRakWlasnych = $doRakWlasnych;
-        
+
         return $this;
     }
 }

@@ -19,6 +19,7 @@ class GetKierunkiInfo extends AbstractStructBase
      * @var string|null
      */
     protected ?string $plan = null;
+
     /**
      * Constructor method for getKierunkiInfo
      * @uses GetKierunkiInfo::setPlan()
@@ -29,6 +30,7 @@ class GetKierunkiInfo extends AbstractStructBase
         $this
             ->setPlan($plan);
     }
+
     /**
      * Get plan value
      * @return string|null
@@ -37,6 +39,7 @@ class GetKierunkiInfo extends AbstractStructBase
     {
         return $this->plan;
     }
+
     /**
      * Set plan value
      * @param string $plan
@@ -49,7 +52,7 @@ class GetKierunkiInfo extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($plan, true), gettype($plan)), __LINE__);
         }
         $this->plan = $plan;
-        
+
         return $this;
     }
 }

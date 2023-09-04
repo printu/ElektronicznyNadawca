@@ -24,6 +24,7 @@ class DokumentyTowarzyszaceType extends AbstractStructBase
      * @var string|null
      */
     protected ?string $numer = null;
+
     /**
      * Constructor method for DokumentyTowarzyszaceType
      * @uses DokumentyTowarzyszaceType::setRodzaj()
@@ -37,6 +38,7 @@ class DokumentyTowarzyszaceType extends AbstractStructBase
             ->setRodzaj($rodzaj)
             ->setNumer($numer);
     }
+
     /**
      * Get rodzaj value
      * @return string|null
@@ -45,6 +47,7 @@ class DokumentyTowarzyszaceType extends AbstractStructBase
     {
         return $this->rodzaj;
     }
+
     /**
      * Set rodzaj value
      * @uses \PocztaPolska\EnumType\DokumentTowarzyszacyRodzajEnum::valueIsValid()
@@ -60,9 +63,10 @@ class DokumentyTowarzyszaceType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\DokumentTowarzyszacyRodzajEnum', is_array($rodzaj) ? implode(', ', $rodzaj) : var_export($rodzaj, true), implode(', ', \PocztaPolska\EnumType\DokumentTowarzyszacyRodzajEnum::getValidValues())), __LINE__);
         }
         $this->rodzaj = $rodzaj;
-        
+
         return $this;
     }
+
     /**
      * Get numer value
      * @return string|null
@@ -71,6 +75,7 @@ class DokumentyTowarzyszaceType extends AbstractStructBase
     {
         return $this->numer;
     }
+
     /**
      * Set numer value
      * @param string $numer
@@ -83,7 +88,7 @@ class DokumentyTowarzyszaceType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($numer, true), gettype($numer)), __LINE__);
         }
         $this->numer = $numer;
-        
+
         return $this;
     }
 }

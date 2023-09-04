@@ -24,6 +24,7 @@ class PowodSzczegolowyType extends AbstractStructBase
      * @var string|null
      */
     protected ?string $powodSzczegolowyOpis = null;
+
     /**
      * Constructor method for powodSzczegolowyType
      * @uses PowodSzczegolowyType::setIdPowodSzczegolowy()
@@ -37,6 +38,7 @@ class PowodSzczegolowyType extends AbstractStructBase
             ->setIdPowodSzczegolowy($idPowodSzczegolowy)
             ->setPowodSzczegolowyOpis($powodSzczegolowyOpis);
     }
+
     /**
      * Get idPowodSzczegolowy value
      * @return int|null
@@ -45,6 +47,7 @@ class PowodSzczegolowyType extends AbstractStructBase
     {
         return $this->idPowodSzczegolowy;
     }
+
     /**
      * Set idPowodSzczegolowy value
      * @param int $idPowodSzczegolowy
@@ -57,9 +60,10 @@ class PowodSzczegolowyType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($idPowodSzczegolowy, true), gettype($idPowodSzczegolowy)), __LINE__);
         }
         $this->idPowodSzczegolowy = $idPowodSzczegolowy;
-        
+
         return $this;
     }
+
     /**
      * Get powodSzczegolowyOpis value
      * @return string|null
@@ -68,6 +72,7 @@ class PowodSzczegolowyType extends AbstractStructBase
     {
         return $this->powodSzczegolowyOpis;
     }
+
     /**
      * Set powodSzczegolowyOpis value
      * @param string $powodSzczegolowyOpis
@@ -80,7 +85,7 @@ class PowodSzczegolowyType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($powodSzczegolowyOpis, true), gettype($powodSzczegolowyOpis)), __LINE__);
         }
         $this->powodSzczegolowyOpis = $powodSzczegolowyOpis;
-        
+
         return $this;
     }
 }

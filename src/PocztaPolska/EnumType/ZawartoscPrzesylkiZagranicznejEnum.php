@@ -16,32 +16,33 @@ class ZawartoscPrzesylkiZagranicznejEnum extends AbstractStructEnumBase
      * Constant for value 'SPRZEDAZ_TOWARU'
      * @return string 'SPRZEDAZ_TOWARU'
      */
-    const VALUE_SPRZEDAZ_TOWARU = 'SPRZEDAZ_TOWARU';
+    public const VALUE_SPRZEDAZ_TOWARU = 'SPRZEDAZ_TOWARU';
     /**
      * Constant for value 'ZWROT_TOWARU'
      * @return string 'ZWROT_TOWARU'
      */
-    const VALUE_ZWROT_TOWARU = 'ZWROT_TOWARU';
+    public const VALUE_ZWROT_TOWARU = 'ZWROT_TOWARU';
     /**
      * Constant for value 'PREZENT'
      * @return string 'PREZENT'
      */
-    const VALUE_PREZENT = 'PREZENT';
+    public const VALUE_PREZENT = 'PREZENT';
     /**
      * Constant for value 'PROBKA_HANDLOWA'
      * @return string 'PROBKA_HANDLOWA'
      */
-    const VALUE_PROBKA_HANDLOWA = 'PROBKA_HANDLOWA';
+    public const VALUE_PROBKA_HANDLOWA = 'PROBKA_HANDLOWA';
     /**
      * Constant for value 'DOKUMENT'
      * @return string 'DOKUMENT'
      */
-    const VALUE_DOKUMENT = 'DOKUMENT';
+    public const VALUE_DOKUMENT = 'DOKUMENT';
     /**
      * Constant for value 'INNE'
      * @return string 'INNE'
      */
-    const VALUE_INNE = 'INNE';
+    public const VALUE_INNE = 'INNE';
+
     /**
      * Return allowed values
      * @uses self::VALUE_SPRZEDAZ_TOWARU

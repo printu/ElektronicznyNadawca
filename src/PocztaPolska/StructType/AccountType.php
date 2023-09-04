@@ -119,6 +119,7 @@ class AccountType extends AbstractStructBase
      * @var string|null
      */
     protected ?string $status = null;
+
     /**
      * Constructor method for accountType
      * @uses AccountType::setProfil()
@@ -171,6 +172,7 @@ class AccountType extends AbstractStructBase
             ->setEmail($email)
             ->setStatus($status);
     }
+
     /**
      * Get profil value
      * @return \PocztaPolska\StructType\ProfilType[]
@@ -179,6 +181,7 @@ class AccountType extends AbstractStructBase
     {
         return $this->profil;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setProfil method
      * This method is willingly generated in order to preserve the one-line inline validation within the setProfil method
@@ -203,9 +206,10 @@ class AccountType extends AbstractStructBase
             $message = sprintf('The profil property can only contain items of type \PocztaPolska\StructType\ProfilType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set profil value
      * @throws InvalidArgumentException
@@ -219,9 +223,10 @@ class AccountType extends AbstractStructBase
             throw new InvalidArgumentException($profilArrayErrorMessage, __LINE__);
         }
         $this->profil = $profil;
-        
+
         return $this;
     }
+
     /**
      * Add item to profil value
      * @throws InvalidArgumentException
@@ -235,9 +240,10 @@ class AccountType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The profil property can only contain items of type \PocztaPolska\StructType\ProfilType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->profil[] = $item;
-        
+
         return $this;
     }
+
     /**
      * Get karta value
      * @return \PocztaPolska\StructType\KartaType[]
@@ -246,6 +252,7 @@ class AccountType extends AbstractStructBase
     {
         return $this->karta;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setKarta method
      * This method is willingly generated in order to preserve the one-line inline validation within the setKarta method
@@ -270,9 +277,10 @@ class AccountType extends AbstractStructBase
             $message = sprintf('The karta property can only contain items of type \PocztaPolska\StructType\KartaType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set karta value
      * @throws InvalidArgumentException
@@ -286,9 +294,10 @@ class AccountType extends AbstractStructBase
             throw new InvalidArgumentException($kartaArrayErrorMessage, __LINE__);
         }
         $this->karta = $karta;
-        
+
         return $this;
     }
+
     /**
      * Add item to karta value
      * @throws InvalidArgumentException
@@ -302,9 +311,10 @@ class AccountType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The karta property can only contain items of type \PocztaPolska\StructType\KartaType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->karta[] = $item;
-        
+
         return $this;
     }
+
     /**
      * Get permision value
      * @return string[]
@@ -313,6 +323,7 @@ class AccountType extends AbstractStructBase
     {
         return $this->permision;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setPermision method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPermision method
@@ -337,9 +348,10 @@ class AccountType extends AbstractStructBase
             $message = sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\PermisionType', is_array($invalidValues) ? implode(', ', $invalidValues) : var_export($invalidValues, true), implode(', ', \PocztaPolska\EnumType\PermisionType::getValidValues()));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set permision value
      * @uses \PocztaPolska\EnumType\PermisionType::valueIsValid()
@@ -355,9 +367,10 @@ class AccountType extends AbstractStructBase
             throw new InvalidArgumentException($permisionArrayErrorMessage, __LINE__);
         }
         $this->permision = $permision;
-        
+
         return $this;
     }
+
     /**
      * Add item to permision value
      * @uses \PocztaPolska\EnumType\PermisionType::valueIsValid()
@@ -373,9 +386,10 @@ class AccountType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\PermisionType', is_array($item) ? implode(', ', $item) : var_export($item, true), implode(', ', \PocztaPolska\EnumType\PermisionType::getValidValues())), __LINE__);
         }
         $this->permision[] = $item;
-        
+
         return $this;
     }
+
     /**
      * Get jednostka value
      * @return \PocztaPolska\StructType\JednostkaOrganizacyjnaType[]
@@ -384,6 +398,7 @@ class AccountType extends AbstractStructBase
     {
         return $this->jednostka;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setJednostka method
      * This method is willingly generated in order to preserve the one-line inline validation within the setJednostka method
@@ -408,9 +423,10 @@ class AccountType extends AbstractStructBase
             $message = sprintf('The jednostka property can only contain items of type \PocztaPolska\StructType\JednostkaOrganizacyjnaType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set jednostka value
      * @throws InvalidArgumentException
@@ -424,9 +440,10 @@ class AccountType extends AbstractStructBase
             throw new InvalidArgumentException($jednostkaArrayErrorMessage, __LINE__);
         }
         $this->jednostka = $jednostka;
-        
+
         return $this;
     }
+
     /**
      * Add item to jednostka value
      * @throws InvalidArgumentException
@@ -440,9 +457,10 @@ class AccountType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The jednostka property can only contain items of type \PocztaPolska\StructType\JednostkaOrganizacyjnaType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->jednostka[] = $item;
-        
+
         return $this;
     }
+
     /**
      * Get domyslnaJednostka value
      * @return \PocztaPolska\StructType\JednostkaOrganizacyjnaType|null
@@ -451,6 +469,7 @@ class AccountType extends AbstractStructBase
     {
         return $this->domyslnaJednostka;
     }
+
     /**
      * Set domyslnaJednostka value
      * @param \PocztaPolska\StructType\JednostkaOrganizacyjnaType $domyslnaJednostka
@@ -459,9 +478,10 @@ class AccountType extends AbstractStructBase
     public function setDomyslnaJednostka(?\PocztaPolska\StructType\JednostkaOrganizacyjnaType $domyslnaJednostka = null): self
     {
         $this->domyslnaJednostka = $domyslnaJednostka;
-        
+
         return $this;
     }
+
     /**
      * Get domyslnyProfil value
      * @return \PocztaPolska\StructType\ProfilType|null
@@ -470,6 +490,7 @@ class AccountType extends AbstractStructBase
     {
         return $this->domyslnyProfil;
     }
+
     /**
      * Set domyslnyProfil value
      * @param \PocztaPolska\StructType\ProfilType $domyslnyProfil
@@ -478,9 +499,10 @@ class AccountType extends AbstractStructBase
     public function setDomyslnyProfil(?\PocztaPolska\StructType\ProfilType $domyslnyProfil = null): self
     {
         $this->domyslnyProfil = $domyslnyProfil;
-        
+
         return $this;
     }
+
     /**
      * Get dostepPoAdresieIP value
      * @return string[]
@@ -489,6 +511,7 @@ class AccountType extends AbstractStructBase
     {
         return $this->dostepPoAdresieIP;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setDostepPoAdresieIP method
      * This method is willingly generated in order to preserve the one-line inline validation within the setDostepPoAdresieIP method
@@ -513,9 +536,10 @@ class AccountType extends AbstractStructBase
             $message = sprintf('The dostepPoAdresieIP property can only contain items of type string, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set dostepPoAdresieIP value
      * @throws InvalidArgumentException
@@ -529,9 +553,10 @@ class AccountType extends AbstractStructBase
             throw new InvalidArgumentException($dostepPoAdresieIPArrayErrorMessage, __LINE__);
         }
         $this->dostepPoAdresieIP = $dostepPoAdresieIP;
-        
+
         return $this;
     }
+
     /**
      * Add item to dostepPoAdresieIP value
      * @throws InvalidArgumentException
@@ -545,9 +570,10 @@ class AccountType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The dostepPoAdresieIP property can only contain items of type string, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->dostepPoAdresieIP[] = $item;
-        
+
         return $this;
     }
+
     /**
      * Get idDomyslnyProfilDokZwrKlient value
      * @return int|null
@@ -556,6 +582,7 @@ class AccountType extends AbstractStructBase
     {
         return $this->idDomyslnyProfilDokZwrKlient;
     }
+
     /**
      * Set idDomyslnyProfilDokZwrKlient value
      * @param int $idDomyslnyProfilDokZwrKlient
@@ -568,9 +595,10 @@ class AccountType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($idDomyslnyProfilDokZwrKlient, true), gettype($idDomyslnyProfilDokZwrKlient)), __LINE__);
         }
         $this->idDomyslnyProfilDokZwrKlient = $idDomyslnyProfilDokZwrKlient;
-        
+
         return $this;
     }
+
     /**
      * Get idDomyslnyProfilDokZwrUzytk value
      * @return int|null
@@ -579,6 +607,7 @@ class AccountType extends AbstractStructBase
     {
         return $this->idDomyslnyProfilDokZwrUzytk;
     }
+
     /**
      * Set idDomyslnyProfilDokZwrUzytk value
      * @param int $idDomyslnyProfilDokZwrUzytk
@@ -591,9 +620,10 @@ class AccountType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($idDomyslnyProfilDokZwrUzytk, true), gettype($idDomyslnyProfilDokZwrUzytk)), __LINE__);
         }
         $this->idDomyslnyProfilDokZwrUzytk = $idDomyslnyProfilDokZwrUzytk;
-        
+
         return $this;
     }
+
     /**
      * Get rodzajPrzypisania value
      * @return string[]
@@ -602,6 +632,7 @@ class AccountType extends AbstractStructBase
     {
         return $this->rodzajPrzypisania;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setRodzajPrzypisania method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRodzajPrzypisania method
@@ -626,9 +657,10 @@ class AccountType extends AbstractStructBase
             $message = sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\RodzajPrzypisaniaDoJednostkiEnum', is_array($invalidValues) ? implode(', ', $invalidValues) : var_export($invalidValues, true), implode(', ', \PocztaPolska\EnumType\RodzajPrzypisaniaDoJednostkiEnum::getValidValues()));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set rodzajPrzypisania value
      * @uses \PocztaPolska\EnumType\RodzajPrzypisaniaDoJednostkiEnum::valueIsValid()
@@ -648,9 +680,10 @@ class AccountType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 2', count($rodzajPrzypisania)), __LINE__);
         }
         $this->rodzajPrzypisania = $rodzajPrzypisania;
-        
+
         return $this;
     }
+
     /**
      * Add item to rodzajPrzypisania value
      * @uses \PocztaPolska\EnumType\RodzajPrzypisaniaDoJednostkiEnum::valueIsValid()
@@ -670,9 +703,10 @@ class AccountType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 2', count($this->rodzajPrzypisania)), __LINE__);
         }
         $this->rodzajPrzypisania[] = $item;
-        
+
         return $this;
     }
+
     /**
      * Get userName value
      * @return string|null
@@ -681,6 +715,7 @@ class AccountType extends AbstractStructBase
     {
         return $this->userName;
     }
+
     /**
      * Set userName value
      * @param string $userName
@@ -693,9 +728,10 @@ class AccountType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($userName, true), gettype($userName)), __LINE__);
         }
         $this->userName = $userName;
-        
+
         return $this;
     }
+
     /**
      * Get firstName value
      * @return string|null
@@ -704,6 +740,7 @@ class AccountType extends AbstractStructBase
     {
         return $this->firstName;
     }
+
     /**
      * Set firstName value
      * @param string $firstName
@@ -716,9 +753,10 @@ class AccountType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($firstName, true), gettype($firstName)), __LINE__);
         }
         $this->firstName = $firstName;
-        
+
         return $this;
     }
+
     /**
      * Get lastName value
      * @return string|null
@@ -727,6 +765,7 @@ class AccountType extends AbstractStructBase
     {
         return $this->lastName;
     }
+
     /**
      * Set lastName value
      * @param string $lastName
@@ -739,9 +778,10 @@ class AccountType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($lastName, true), gettype($lastName)), __LINE__);
         }
         $this->lastName = $lastName;
-        
+
         return $this;
     }
+
     /**
      * Get email value
      * @return string|null
@@ -750,6 +790,7 @@ class AccountType extends AbstractStructBase
     {
         return $this->email;
     }
+
     /**
      * Set email value
      * @param string $email
@@ -762,9 +803,10 @@ class AccountType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($email, true), gettype($email)), __LINE__);
         }
         $this->email = $email;
-        
+
         return $this;
     }
+
     /**
      * Get status value
      * @return string|null
@@ -773,6 +815,7 @@ class AccountType extends AbstractStructBase
     {
         return $this->status;
     }
+
     /**
      * Set status value
      * @uses \PocztaPolska\EnumType\StatusAccountType::valueIsValid()
@@ -788,7 +831,7 @@ class AccountType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\StatusAccountType', is_array($status) ? implode(', ', $status) : var_export($status, true), implode(', ', \PocztaPolska\EnumType\StatusAccountType::getValidValues())), __LINE__);
         }
         $this->status = $status;
-        
+
         return $this;
     }
 }

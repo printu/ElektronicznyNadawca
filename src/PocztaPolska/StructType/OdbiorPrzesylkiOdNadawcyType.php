@@ -29,6 +29,7 @@ class OdbiorPrzesylkiOdNadawcyType extends AbstractStructBase
      * @var bool|null
      */
     protected ?bool $wGodzinachOd20Do7 = null;
+
     /**
      * Constructor method for odbiorPrzesylkiOdNadawcyType
      * @uses OdbiorPrzesylkiOdNadawcyType::setWSobote()
@@ -45,6 +46,7 @@ class OdbiorPrzesylkiOdNadawcyType extends AbstractStructBase
             ->setWNiedzieleLubSwieto($wNiedzieleLubSwieto)
             ->setWGodzinachOd20Do7($wGodzinachOd20Do7);
     }
+
     /**
      * Get wSobote value
      * @return bool|null
@@ -53,6 +55,7 @@ class OdbiorPrzesylkiOdNadawcyType extends AbstractStructBase
     {
         return $this->wSobote;
     }
+
     /**
      * Set wSobote value
      * @param bool $wSobote
@@ -65,9 +68,10 @@ class OdbiorPrzesylkiOdNadawcyType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($wSobote, true), gettype($wSobote)), __LINE__);
         }
         $this->wSobote = $wSobote;
-        
+
         return $this;
     }
+
     /**
      * Get wNiedzieleLubSwieto value
      * @return bool|null
@@ -76,6 +80,7 @@ class OdbiorPrzesylkiOdNadawcyType extends AbstractStructBase
     {
         return $this->wNiedzieleLubSwieto;
     }
+
     /**
      * Set wNiedzieleLubSwieto value
      * @param bool $wNiedzieleLubSwieto
@@ -88,9 +93,10 @@ class OdbiorPrzesylkiOdNadawcyType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($wNiedzieleLubSwieto, true), gettype($wNiedzieleLubSwieto)), __LINE__);
         }
         $this->wNiedzieleLubSwieto = $wNiedzieleLubSwieto;
-        
+
         return $this;
     }
+
     /**
      * Get wGodzinachOd20Do7 value
      * @return bool|null
@@ -99,6 +105,7 @@ class OdbiorPrzesylkiOdNadawcyType extends AbstractStructBase
     {
         return $this->wGodzinachOd20Do7;
     }
+
     /**
      * Set wGodzinachOd20Do7 value
      * @param bool $wGodzinachOd20Do7
@@ -111,7 +118,7 @@ class OdbiorPrzesylkiOdNadawcyType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($wGodzinachOd20Do7, true), gettype($wGodzinachOd20Do7)), __LINE__);
         }
         $this->wGodzinachOd20Do7 = $wGodzinachOd20Do7;
-        
+
         return $this;
     }
 }

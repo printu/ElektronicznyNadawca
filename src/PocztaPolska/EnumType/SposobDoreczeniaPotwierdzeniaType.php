@@ -16,22 +16,23 @@ class SposobDoreczeniaPotwierdzeniaType extends AbstractStructEnumBase
      * Constant for value 'TELEFON'
      * @return string 'TELEFON'
      */
-    const VALUE_TELEFON = 'TELEFON';
+    public const VALUE_TELEFON = 'TELEFON';
     /**
      * Constant for value 'TELEFAX'
      * @return string 'TELEFAX'
      */
-    const VALUE_TELEFAX = 'TELEFAX';
+    public const VALUE_TELEFAX = 'TELEFAX';
     /**
      * Constant for value 'SMS'
      * @return string 'SMS'
      */
-    const VALUE_SMS = 'SMS';
+    public const VALUE_SMS = 'SMS';
     /**
      * Constant for value 'EMAIL'
      * @return string 'EMAIL'
      */
-    const VALUE_EMAIL = 'EMAIL';
+    public const VALUE_EMAIL = 'EMAIL';
+
     /**
      * Return allowed values
      * @uses self::VALUE_TELEFON

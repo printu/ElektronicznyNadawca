@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace PocztaPolska\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,6 +21,7 @@ class UpdateShopEZwroty extends AbstractStructBase
      * @var \PocztaPolska\StructType\ShopEZwrotyType
      */
     protected \PocztaPolska\StructType\ShopEZwrotyType $shop;
+
     /**
      * Constructor method for updateShopEZwroty
      * @uses UpdateShopEZwroty::setShop()
@@ -32,6 +32,7 @@ class UpdateShopEZwroty extends AbstractStructBase
         $this
             ->setShop($shop);
     }
+
     /**
      * Get shop value
      * @return \PocztaPolska\StructType\ShopEZwrotyType
@@ -40,6 +41,7 @@ class UpdateShopEZwroty extends AbstractStructBase
     {
         return $this->shop;
     }
+
     /**
      * Set shop value
      * @param \PocztaPolska\StructType\ShopEZwrotyType $shop
@@ -48,7 +50,7 @@ class UpdateShopEZwroty extends AbstractStructBase
     public function setShop(\PocztaPolska\StructType\ShopEZwrotyType $shop): self
     {
         $this->shop = $shop;
-        
+
         return $this;
     }
 }

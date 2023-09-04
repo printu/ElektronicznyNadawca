@@ -33,6 +33,7 @@ class PotwierdzenieOdbioruBiznesowaType extends AbstractStructBase
      * @var int|null
      */
     protected ?int $ilosc = null;
+
     /**
      * Constructor method for potwierdzenieOdbioruBiznesowaType
      * @uses PotwierdzenieOdbioruBiznesowaType::setSposob()
@@ -46,6 +47,7 @@ class PotwierdzenieOdbioruBiznesowaType extends AbstractStructBase
             ->setSposob($sposob)
             ->setIlosc($ilosc);
     }
+
     /**
      * Get sposob value
      * @return string
@@ -54,6 +56,7 @@ class PotwierdzenieOdbioruBiznesowaType extends AbstractStructBase
     {
         return $this->sposob;
     }
+
     /**
      * Set sposob value
      * @uses \PocztaPolska\EnumType\SposobPrzekazaniaPotwierdzeniaBiznesowaType::valueIsValid()
@@ -69,9 +72,10 @@ class PotwierdzenieOdbioruBiznesowaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\SposobPrzekazaniaPotwierdzeniaBiznesowaType', is_array($sposob) ? implode(', ', $sposob) : var_export($sposob, true), implode(', ', \PocztaPolska\EnumType\SposobPrzekazaniaPotwierdzeniaBiznesowaType::getValidValues())), __LINE__);
         }
         $this->sposob = $sposob;
-        
+
         return $this;
     }
+
     /**
      * Get ilosc value
      * @return int|null
@@ -80,6 +84,7 @@ class PotwierdzenieOdbioruBiznesowaType extends AbstractStructBase
     {
         return $this->ilosc;
     }
+
     /**
      * Set ilosc value
      * @param int $ilosc
@@ -100,7 +105,7 @@ class PotwierdzenieOdbioruBiznesowaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 0', var_export($ilosc, true)), __LINE__);
         }
         $this->ilosc = $ilosc;
-        
+
         return $this;
     }
 }

@@ -16,12 +16,13 @@ class ESposobPowiadomieniaType extends AbstractStructEnumBase
      * Constant for value 'SMS'
      * @return string 'SMS'
      */
-    const VALUE_SMS = 'SMS';
+    public const VALUE_SMS = 'SMS';
     /**
      * Constant for value 'EMAIL'
      * @return string 'EMAIL'
      */
-    const VALUE_EMAIL = 'EMAIL';
+    public const VALUE_EMAIL = 'EMAIL';
+
     /**
      * Return allowed values
      * @uses self::VALUE_SMS

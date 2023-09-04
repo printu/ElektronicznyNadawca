@@ -22,6 +22,7 @@ class SetAktywnaKarta extends AbstractStructBase
      * @var int
      */
     protected int $idKarta;
+
     /**
      * Constructor method for setAktywnaKarta
      * @uses SetAktywnaKarta::setIdKarta()
@@ -32,6 +33,7 @@ class SetAktywnaKarta extends AbstractStructBase
         $this
             ->setIdKarta($idKarta);
     }
+
     /**
      * Get idKarta value
      * @return int
@@ -40,6 +42,7 @@ class SetAktywnaKarta extends AbstractStructBase
     {
         return $this->idKarta;
     }
+
     /**
      * Set idKarta value
      * @param int $idKarta
@@ -52,7 +55,7 @@ class SetAktywnaKarta extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($idKarta, true), gettype($idKarta)), __LINE__);
         }
         $this->idKarta = $idKarta;
-        
+
         return $this;
     }
 }

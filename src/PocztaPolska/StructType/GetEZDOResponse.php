@@ -48,6 +48,7 @@ class GetEZDOResponse extends AbstractStructBase
      * @var string|null
      */
     protected ?string $numerEZDO = null;
+
     /**
      * Constructor method for getEZDOResponse
      * @uses GetEZDOResponse::setAdres()
@@ -70,6 +71,7 @@ class GetEZDOResponse extends AbstractStructBase
             ->setNumerKD($numerKD)
             ->setNumerEZDO($numerEZDO);
     }
+
     /**
      * Get adres value
      * @return \PocztaPolska\StructType\AdresType
@@ -78,6 +80,7 @@ class GetEZDOResponse extends AbstractStructBase
     {
         return $this->adres;
     }
+
     /**
      * Set adres value
      * @param \PocztaPolska\StructType\AdresType $adres
@@ -86,9 +89,10 @@ class GetEZDOResponse extends AbstractStructBase
     public function setAdres(\PocztaPolska\StructType\AdresType $adres): self
     {
         $this->adres = $adres;
-        
+
         return $this;
     }
+
     /**
      * Get przesylka value
      * @return \PocztaPolska\StructType\EZDOPrzesylkaType[]
@@ -97,6 +101,7 @@ class GetEZDOResponse extends AbstractStructBase
     {
         return $this->przesylka;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setPrzesylka method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPrzesylka method
@@ -121,9 +126,10 @@ class GetEZDOResponse extends AbstractStructBase
             $message = sprintf('The przesylka property can only contain items of type \PocztaPolska\StructType\EZDOPrzesylkaType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set przesylka value
      * @throws InvalidArgumentException
@@ -137,9 +143,10 @@ class GetEZDOResponse extends AbstractStructBase
             throw new InvalidArgumentException($przesylkaArrayErrorMessage, __LINE__);
         }
         $this->przesylka = $przesylka;
-        
+
         return $this;
     }
+
     /**
      * Add item to przesylka value
      * @throws InvalidArgumentException
@@ -153,9 +160,10 @@ class GetEZDOResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The przesylka property can only contain items of type \PocztaPolska\StructType\EZDOPrzesylkaType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->przesylka[] = $item;
-        
+
         return $this;
     }
+
     /**
      * Get error value
      * @return \PocztaPolska\StructType\ErrorType[]
@@ -164,6 +172,7 @@ class GetEZDOResponse extends AbstractStructBase
     {
         return $this->error;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setError method
      * This method is willingly generated in order to preserve the one-line inline validation within the setError method
@@ -188,9 +197,10 @@ class GetEZDOResponse extends AbstractStructBase
             $message = sprintf('The error property can only contain items of type \PocztaPolska\StructType\ErrorType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set error value
      * @throws InvalidArgumentException
@@ -204,9 +214,10 @@ class GetEZDOResponse extends AbstractStructBase
             throw new InvalidArgumentException($errorArrayErrorMessage, __LINE__);
         }
         $this->error = $error;
-        
+
         return $this;
     }
+
     /**
      * Add item to error value
      * @throws InvalidArgumentException
@@ -220,9 +231,10 @@ class GetEZDOResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The error property can only contain items of type \PocztaPolska\StructType\ErrorType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->error[] = $item;
-        
+
         return $this;
     }
+
     /**
      * Get numerKD value
      * @return string|null
@@ -231,6 +243,7 @@ class GetEZDOResponse extends AbstractStructBase
     {
         return $this->numerKD;
     }
+
     /**
      * Set numerKD value
      * @param string $numerKD
@@ -243,9 +256,10 @@ class GetEZDOResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($numerKD, true), gettype($numerKD)), __LINE__);
         }
         $this->numerKD = $numerKD;
-        
+
         return $this;
     }
+
     /**
      * Get numerEZDO value
      * @return string|null
@@ -254,6 +268,7 @@ class GetEZDOResponse extends AbstractStructBase
     {
         return $this->numerEZDO;
     }
+
     /**
      * Set numerEZDO value
      * @param string $numerEZDO
@@ -266,7 +281,7 @@ class GetEZDOResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($numerEZDO, true), gettype($numerEZDO)), __LINE__);
         }
         $this->numerEZDO = $numerEZDO;
-        
+
         return $this;
     }
 }

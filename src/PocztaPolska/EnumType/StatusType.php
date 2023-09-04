@@ -16,22 +16,23 @@ class StatusType extends AbstractStructEnumBase
      * Constant for value 'NIEPOTWIERDZONA'
      * @return string 'NIEPOTWIERDZONA'
      */
-    const VALUE_NIEPOTWIERDZONA = 'NIEPOTWIERDZONA';
+    public const VALUE_NIEPOTWIERDZONA = 'NIEPOTWIERDZONA';
     /**
      * Constant for value 'POTWIERDZONA'
      * @return string 'POTWIERDZONA'
      */
-    const VALUE_POTWIERDZONA = 'POTWIERDZONA';
+    public const VALUE_POTWIERDZONA = 'POTWIERDZONA';
     /**
      * Constant for value 'NOWA'
      * @return string 'NOWA'
      */
-    const VALUE_NOWA = 'NOWA';
+    public const VALUE_NOWA = 'NOWA';
     /**
      * Constant for value 'BRAK'
      * @return string 'BRAK'
      */
-    const VALUE_BRAK = 'BRAK';
+    public const VALUE_BRAK = 'BRAK';
+
     /**
      * Return allowed values
      * @uses self::VALUE_NIEPOTWIERDZONA

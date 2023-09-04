@@ -68,6 +68,7 @@ class ShipmentContentsDetailsType extends AbstractStructBase
      * @var string|null
      */
     protected ?string $originLocationCode = null;
+
     /**
      * Constructor method for ShipmentContentsDetailsType
      * @uses ShipmentContentsDetailsType::setDescription()
@@ -93,6 +94,7 @@ class ShipmentContentsDetailsType extends AbstractStructBase
             ->setHarmonizedSystemCode($harmonizedSystemCode)
             ->setOriginLocationCode($originLocationCode);
     }
+
     /**
      * Get description value
      * @return string
@@ -101,6 +103,7 @@ class ShipmentContentsDetailsType extends AbstractStructBase
     {
         return $this->description;
     }
+
     /**
      * Set description value
      * @param string $description
@@ -113,9 +116,10 @@ class ShipmentContentsDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($description, true), gettype($description)), __LINE__);
         }
         $this->description = $description;
-        
+
         return $this;
     }
+
     /**
      * Get quantity value
      * @return int
@@ -124,6 +128,7 @@ class ShipmentContentsDetailsType extends AbstractStructBase
     {
         return $this->quantity;
     }
+
     /**
      * Set quantity value
      * @param int $quantity
@@ -136,9 +141,10 @@ class ShipmentContentsDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($quantity, true), gettype($quantity)), __LINE__);
         }
         $this->quantity = $quantity;
-        
+
         return $this;
     }
+
     /**
      * Get declaredValue value
      * @return int
@@ -147,6 +153,7 @@ class ShipmentContentsDetailsType extends AbstractStructBase
     {
         return $this->declaredValue;
     }
+
     /**
      * Set declaredValue value
      * @param int $declaredValue
@@ -159,9 +166,10 @@ class ShipmentContentsDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($declaredValue, true), gettype($declaredValue)), __LINE__);
         }
         $this->declaredValue = $declaredValue;
-        
+
         return $this;
     }
+
     /**
      * Get netWeight value
      * @return int|null
@@ -170,6 +178,7 @@ class ShipmentContentsDetailsType extends AbstractStructBase
     {
         return $this->netWeight;
     }
+
     /**
      * Set netWeight value
      * @param int $netWeight
@@ -182,9 +191,10 @@ class ShipmentContentsDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($netWeight, true), gettype($netWeight)), __LINE__);
         }
         $this->netWeight = $netWeight;
-        
+
         return $this;
     }
+
     /**
      * Get harmonizedSystemCode value
      * @return string|null
@@ -193,6 +203,7 @@ class ShipmentContentsDetailsType extends AbstractStructBase
     {
         return $this->harmonizedSystemCode;
     }
+
     /**
      * Set harmonizedSystemCode value
      * @param string $harmonizedSystemCode
@@ -209,9 +220,10 @@ class ShipmentContentsDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /\\d{1,10}/', var_export($harmonizedSystemCode, true)), __LINE__);
         }
         $this->harmonizedSystemCode = $harmonizedSystemCode;
-        
+
         return $this;
     }
+
     /**
      * Get originLocationCode value
      * @return string|null
@@ -220,6 +232,7 @@ class ShipmentContentsDetailsType extends AbstractStructBase
     {
         return $this->originLocationCode;
     }
+
     /**
      * Set originLocationCode value
      * @param string $originLocationCode
@@ -232,7 +245,7 @@ class ShipmentContentsDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($originLocationCode, true), gettype($originLocationCode)), __LINE__);
         }
         $this->originLocationCode = $originLocationCode;
-        
+
         return $this;
     }
 }

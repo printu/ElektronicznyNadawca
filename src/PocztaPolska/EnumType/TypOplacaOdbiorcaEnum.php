@@ -16,17 +16,18 @@ class TypOplacaOdbiorcaEnum extends AbstractStructEnumBase
      * Constant for value 'ADRESAT_INDYWIDUALNY'
      * @return string 'ADRESAT_INDYWIDUALNY'
      */
-    const VALUE_ADRESAT_INDYWIDUALNY = 'ADRESAT_INDYWIDUALNY';
+    public const VALUE_ADRESAT_INDYWIDUALNY = 'ADRESAT_INDYWIDUALNY';
     /**
      * Constant for value 'ADRESAT_UMOWNY'
      * @return string 'ADRESAT_UMOWNY'
      */
-    const VALUE_ADRESAT_UMOWNY = 'ADRESAT_UMOWNY';
+    public const VALUE_ADRESAT_UMOWNY = 'ADRESAT_UMOWNY';
     /**
      * Constant for value 'ODDZIAL'
      * @return string 'ODDZIAL'
      */
-    const VALUE_ODDZIAL = 'ODDZIAL';
+    public const VALUE_ODDZIAL = 'ODDZIAL';
+
     /**
      * Return allowed values
      * @uses self::VALUE_ADRESAT_INDYWIDUALNY

@@ -27,6 +27,7 @@ class GetKierunki extends AbstractStructBase
      * @var string|null
      */
     protected ?string $prefixKodPocztowy = null;
+
     /**
      * Constructor method for getKierunki
      * @uses GetKierunki::setPlan()
@@ -40,6 +41,7 @@ class GetKierunki extends AbstractStructBase
             ->setPlan($plan)
             ->setPrefixKodPocztowy($prefixKodPocztowy);
     }
+
     /**
      * Get plan value
      * @return string|null
@@ -48,6 +50,7 @@ class GetKierunki extends AbstractStructBase
     {
         return $this->plan;
     }
+
     /**
      * Set plan value
      * @param string $plan
@@ -60,9 +63,10 @@ class GetKierunki extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($plan, true), gettype($plan)), __LINE__);
         }
         $this->plan = $plan;
-        
+
         return $this;
     }
+
     /**
      * Get prefixKodPocztowy value
      * @return string|null
@@ -71,6 +75,7 @@ class GetKierunki extends AbstractStructBase
     {
         return $this->prefixKodPocztowy;
     }
+
     /**
      * Set prefixKodPocztowy value
      * @param string $prefixKodPocztowy
@@ -87,7 +92,7 @@ class GetKierunki extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 2', mb_strlen((string) $prefixKodPocztowy)), __LINE__);
         }
         $this->prefixKodPocztowy = $prefixKodPocztowy;
-        
+
         return $this;
     }
 }

@@ -27,14 +27,15 @@ class Cancel extends AbstractSoapClientBase
             $this->setResult($resultCancelReklamacja = $this->getSoapClient()->__soapCall('cancelReklamacja', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultCancelReklamacja;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
+
     /**
      * Returns the result
      * @see AbstractSoapClientBase::getResult()

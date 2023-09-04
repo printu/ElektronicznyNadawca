@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace PocztaPolska\StructType;
 
 use InvalidArgumentException;
-use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for przesylkaPaletowaType StructType
@@ -203,6 +202,7 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
      * @var bool|null
      */
     protected ?bool $awizoSMS = null;
+
     /**
      * Constructor method for przesylkaPaletowaType
      * @uses PrzesylkaPaletowaType::setPaleta()
@@ -303,6 +303,7 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
             ->setWniesienie($wniesienie)
             ->setAwizoSMS($awizoSMS);
     }
+
     /**
      * Get paleta value
      * @return \PocztaPolska\StructType\PaletaType
@@ -311,6 +312,7 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
     {
         return $this->paleta;
     }
+
     /**
      * Set paleta value
      * @param \PocztaPolska\StructType\PaletaType $paleta
@@ -319,9 +321,10 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
     public function setPaleta(\PocztaPolska\StructType\PaletaType $paleta): self
     {
         $this->paleta = $paleta;
-        
+
         return $this;
     }
+
     /**
      * Get miejsceOdbioru value
      * @return \PocztaPolska\StructType\AdresType|null
@@ -330,6 +333,7 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
     {
         return $this->miejsceOdbioru;
     }
+
     /**
      * Set miejsceOdbioru value
      * @param \PocztaPolska\StructType\AdresType $miejsceOdbioru
@@ -338,9 +342,10 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
     public function setMiejsceOdbioru(?\PocztaPolska\StructType\AdresType $miejsceOdbioru = null): self
     {
         $this->miejsceOdbioru = $miejsceOdbioru;
-        
+
         return $this;
     }
+
     /**
      * Get miejsceDoreczenia value
      * @return \PocztaPolska\StructType\AdresType|null
@@ -349,6 +354,7 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
     {
         return $this->miejsceDoreczenia;
     }
+
     /**
      * Set miejsceDoreczenia value
      * @param \PocztaPolska\StructType\AdresType $miejsceDoreczenia
@@ -357,9 +363,10 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
     public function setMiejsceDoreczenia(?\PocztaPolska\StructType\AdresType $miejsceDoreczenia = null): self
     {
         $this->miejsceDoreczenia = $miejsceDoreczenia;
-        
+
         return $this;
     }
+
     /**
      * Get platnik value
      * @return \PocztaPolska\StructType\PlatnikType|null
@@ -368,6 +375,7 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
     {
         return $this->platnik;
     }
+
     /**
      * Set platnik value
      * @param \PocztaPolska\StructType\PlatnikType $platnik
@@ -376,9 +384,10 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
     public function setPlatnik(?\PocztaPolska\StructType\PlatnikType $platnik = null): self
     {
         $this->platnik = $platnik;
-        
+
         return $this;
     }
+
     /**
      * Get pobranie value
      * @return \PocztaPolska\StructType\PobranieType|null
@@ -387,6 +396,7 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
     {
         return $this->pobranie;
     }
+
     /**
      * Set pobranie value
      * @param \PocztaPolska\StructType\PobranieType $pobranie
@@ -395,9 +405,10 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
     public function setPobranie(?\PocztaPolska\StructType\PobranieType $pobranie = null): self
     {
         $this->pobranie = $pobranie;
-        
+
         return $this;
     }
+
     /**
      * Get subPaleta value
      * @return \PocztaPolska\StructType\SubPrzesylkaPaletowaType[]
@@ -406,6 +417,7 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
     {
         return $this->subPaleta;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setSubPaleta method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSubPaleta method
@@ -430,9 +442,10 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
             $message = sprintf('The subPaleta property can only contain items of type \PocztaPolska\StructType\SubPrzesylkaPaletowaType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set subPaleta value
      * @throws InvalidArgumentException
@@ -450,9 +463,10 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 32', count($subPaleta)), __LINE__);
         }
         $this->subPaleta = $subPaleta;
-        
+
         return $this;
     }
+
     /**
      * Add item to subPaleta value
      * @throws InvalidArgumentException
@@ -470,9 +484,10 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 32', count($this->subPaleta)), __LINE__);
         }
         $this->subPaleta[] = $item;
-        
+
         return $this;
     }
+
     /**
      * Get daneSent value
      * @return \PocztaPolska\StructType\DaneSentType[]
@@ -481,6 +496,7 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
     {
         return $this->daneSent;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setDaneSent method
      * This method is willingly generated in order to preserve the one-line inline validation within the setDaneSent method
@@ -505,9 +521,10 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
             $message = sprintf('The daneSent property can only contain items of type \PocztaPolska\StructType\DaneSentType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set daneSent value
      * @throws InvalidArgumentException
@@ -525,9 +542,10 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 10', count($daneSent)), __LINE__);
         }
         $this->daneSent = $daneSent;
-        
+
         return $this;
     }
+
     /**
      * Add item to daneSent value
      * @throws InvalidArgumentException
@@ -545,9 +563,10 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 10', count($this->daneSent)), __LINE__);
         }
         $this->daneSent[] = $item;
-        
+
         return $this;
     }
+
     /**
      * Get awizacja value
      * @return \PocztaPolska\StructType\AwizacjaType|null
@@ -556,6 +575,7 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
     {
         return $this->awizacja;
     }
+
     /**
      * Set awizacja value
      * @param \PocztaPolska\StructType\AwizacjaType $awizacja
@@ -564,9 +584,10 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
     public function setAwizacja(?\PocztaPolska\StructType\AwizacjaType $awizacja = null): self
     {
         $this->awizacja = $awizacja;
-        
+
         return $this;
     }
+
     /**
      * Get zawartosc value
      * @return string|null
@@ -575,6 +596,7 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
     {
         return $this->zawartosc;
     }
+
     /**
      * Set zawartosc value
      * @param string $zawartosc
@@ -587,9 +609,10 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($zawartosc, true), gettype($zawartosc)), __LINE__);
         }
         $this->zawartosc = $zawartosc;
-        
+
         return $this;
     }
+
     /**
      * Get masa value
      * @return int|null
@@ -598,6 +621,7 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
     {
         return $this->masa;
     }
+
     /**
      * Set masa value
      * @param int $masa
@@ -618,9 +642,10 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 1', var_export($masa, true)), __LINE__);
         }
         $this->masa = $masa;
-        
+
         return $this;
     }
+
     /**
      * Get dataZaladunku value
      * @return string|null
@@ -629,6 +654,7 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
     {
         return $this->dataZaladunku;
     }
+
     /**
      * Set dataZaladunku value
      * @param string $dataZaladunku
@@ -641,9 +667,10 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($dataZaladunku, true), gettype($dataZaladunku)), __LINE__);
         }
         $this->dataZaladunku = $dataZaladunku;
-        
+
         return $this;
     }
+
     /**
      * Get dataDostawy value
      * @return string|null
@@ -652,6 +679,7 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
     {
         return $this->dataDostawy;
     }
+
     /**
      * Set dataDostawy value
      * @param string $dataDostawy
@@ -664,9 +692,10 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($dataDostawy, true), gettype($dataDostawy)), __LINE__);
         }
         $this->dataDostawy = $dataDostawy;
-        
+
         return $this;
     }
+
     /**
      * Get wartosc value
      * @return int|null
@@ -675,6 +704,7 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
     {
         return $this->wartosc;
     }
+
     /**
      * Set wartosc value
      * @param int $wartosc
@@ -695,9 +725,10 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 0', var_export($wartosc, true)), __LINE__);
         }
         $this->wartosc = $wartosc;
-        
+
         return $this;
     }
+
     /**
      * Get iloscZwracanychPaletEUR value
      * @return int|null
@@ -706,6 +737,7 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
     {
         return $this->iloscZwracanychPaletEUR;
     }
+
     /**
      * Set iloscZwracanychPaletEUR value
      * @param int $iloscZwracanychPaletEUR
@@ -718,9 +750,10 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($iloscZwracanychPaletEUR, true), gettype($iloscZwracanychPaletEUR)), __LINE__);
         }
         $this->iloscZwracanychPaletEUR = $iloscZwracanychPaletEUR;
-        
+
         return $this;
     }
+
     /**
      * Get zalaczonaFV value
      * @return string|null
@@ -729,6 +762,7 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
     {
         return $this->zalaczonaFV;
     }
+
     /**
      * Set zalaczonaFV value
      * @param string $zalaczonaFV
@@ -741,9 +775,10 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($zalaczonaFV, true), gettype($zalaczonaFV)), __LINE__);
         }
         $this->zalaczonaFV = $zalaczonaFV;
-        
+
         return $this;
     }
+
     /**
      * Get zalaczonyWZ value
      * @return string|null
@@ -752,6 +787,7 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
     {
         return $this->zalaczonyWZ;
     }
+
     /**
      * Set zalaczonyWZ value
      * @param string $zalaczonyWZ
@@ -764,9 +800,10 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($zalaczonyWZ, true), gettype($zalaczonyWZ)), __LINE__);
         }
         $this->zalaczonyWZ = $zalaczonyWZ;
-        
+
         return $this;
     }
+
     /**
      * Get zalaczoneInne value
      * @return string|null
@@ -775,6 +812,7 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
     {
         return $this->zalaczoneInne;
     }
+
     /**
      * Set zalaczoneInne value
      * @param string $zalaczoneInne
@@ -787,9 +825,10 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($zalaczoneInne, true), gettype($zalaczoneInne)), __LINE__);
         }
         $this->zalaczoneInne = $zalaczoneInne;
-        
+
         return $this;
     }
+
     /**
      * Get zwracanaFV value
      * @return string|null
@@ -798,6 +837,7 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
     {
         return $this->zwracanaFV;
     }
+
     /**
      * Set zwracanaFV value
      * @param string $zwracanaFV
@@ -810,9 +850,10 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($zwracanaFV, true), gettype($zwracanaFV)), __LINE__);
         }
         $this->zwracanaFV = $zwracanaFV;
-        
+
         return $this;
     }
+
     /**
      * Get zwracanyWZ value
      * @return string|null
@@ -821,6 +862,7 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
     {
         return $this->zwracanyWZ;
     }
+
     /**
      * Set zwracanyWZ value
      * @param string $zwracanyWZ
@@ -833,9 +875,10 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($zwracanyWZ, true), gettype($zwracanyWZ)), __LINE__);
         }
         $this->zwracanyWZ = $zwracanyWZ;
-        
+
         return $this;
     }
+
     /**
      * Get zwracaneInne value
      * @return string|null
@@ -844,6 +887,7 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
     {
         return $this->zwracaneInne;
     }
+
     /**
      * Set zwracaneInne value
      * @param string $zwracaneInne
@@ -856,9 +900,10 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($zwracaneInne, true), gettype($zwracaneInne)), __LINE__);
         }
         $this->zwracaneInne = $zwracaneInne;
-        
+
         return $this;
     }
+
     /**
      * Get powiadomienieNadawcy value
      * @return string|null
@@ -867,6 +912,7 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
     {
         return $this->powiadomienieNadawcy;
     }
+
     /**
      * Set powiadomienieNadawcy value
      * @param string $powiadomienieNadawcy
@@ -879,9 +925,10 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($powiadomienieNadawcy, true), gettype($powiadomienieNadawcy)), __LINE__);
         }
         $this->powiadomienieNadawcy = $powiadomienieNadawcy;
-        
+
         return $this;
     }
+
     /**
      * Get powiadomienieOdbiorcy value
      * @return string|null
@@ -890,6 +937,7 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
     {
         return $this->powiadomienieOdbiorcy;
     }
+
     /**
      * Set powiadomienieOdbiorcy value
      * @uses \PocztaPolska\EnumType\ESposobPowiadomieniaType::valueIsValid()
@@ -905,9 +953,10 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\ESposobPowiadomieniaType', is_array($powiadomienieOdbiorcy) ? implode(', ', $powiadomienieOdbiorcy) : var_export($powiadomienieOdbiorcy, true), implode(', ', \PocztaPolska\EnumType\ESposobPowiadomieniaType::getValidValues())), __LINE__);
         }
         $this->powiadomienieOdbiorcy = $powiadomienieOdbiorcy;
-        
+
         return $this;
     }
+
     /**
      * Get dostawaWSobote value
      * @return bool|null
@@ -916,6 +965,7 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
     {
         return $this->dostawaWSobote;
     }
+
     /**
      * Set dostawaWSobote value
      * @param bool $dostawaWSobote
@@ -928,9 +978,10 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($dostawaWSobote, true), gettype($dostawaWSobote)), __LINE__);
         }
         $this->dostawaWSobote = $dostawaWSobote;
-        
+
         return $this;
     }
+
     /**
      * Get przygotowanieDokumentowPrzewozowych value
      * @return bool|null
@@ -939,6 +990,7 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
     {
         return $this->przygotowanieDokumentowPrzewozowych;
     }
+
     /**
      * Set przygotowanieDokumentowPrzewozowych value
      * @param bool $przygotowanieDokumentowPrzewozowych
@@ -951,9 +1003,10 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($przygotowanieDokumentowPrzewozowych, true), gettype($przygotowanieDokumentowPrzewozowych)), __LINE__);
         }
         $this->przygotowanieDokumentowPrzewozowych = $przygotowanieDokumentowPrzewozowych;
-        
+
         return $this;
     }
+
     /**
      * Get dostawaSamochodemDedykowanym value
      * @return bool|null
@@ -962,6 +1015,7 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
     {
         return $this->dostawaSamochodemDedykowanym;
     }
+
     /**
      * Set dostawaSamochodemDedykowanym value
      * @param bool $dostawaSamochodemDedykowanym
@@ -974,9 +1028,10 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($dostawaSamochodemDedykowanym, true), gettype($dostawaSamochodemDedykowanym)), __LINE__);
         }
         $this->dostawaSamochodemDedykowanym = $dostawaSamochodemDedykowanym;
-        
+
         return $this;
     }
+
     /**
      * Get zmianaDanychAdresowych value
      * @return bool|null
@@ -985,6 +1040,7 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
     {
         return $this->zmianaDanychAdresowych;
     }
+
     /**
      * Set zmianaDanychAdresowych value
      * @param bool $zmianaDanychAdresowych
@@ -997,9 +1053,10 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($zmianaDanychAdresowych, true), gettype($zmianaDanychAdresowych)), __LINE__);
         }
         $this->zmianaDanychAdresowych = $zmianaDanychAdresowych;
-        
+
         return $this;
     }
+
     /**
      * Get ustalenieTerminuDostawy value
      * @return bool|null
@@ -1008,6 +1065,7 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
     {
         return $this->ustalenieTerminuDostawy;
     }
+
     /**
      * Set ustalenieTerminuDostawy value
      * @param bool $ustalenieTerminuDostawy
@@ -1020,9 +1078,10 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($ustalenieTerminuDostawy, true), gettype($ustalenieTerminuDostawy)), __LINE__);
         }
         $this->ustalenieTerminuDostawy = $ustalenieTerminuDostawy;
-        
+
         return $this;
     }
+
     /**
      * Get samochodZWinda value
      * @return bool|null
@@ -1031,6 +1090,7 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
     {
         return $this->samochodZWinda;
     }
+
     /**
      * Set samochodZWinda value
      * @param bool $samochodZWinda
@@ -1043,9 +1103,10 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($samochodZWinda, true), gettype($samochodZWinda)), __LINE__);
         }
         $this->samochodZWinda = $samochodZWinda;
-        
+
         return $this;
     }
+
     /**
      * Get zabranieOpakowania value
      * @return bool|null
@@ -1054,6 +1115,7 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
     {
         return $this->zabranieOpakowania;
     }
+
     /**
      * Set zabranieOpakowania value
      * @param bool $zabranieOpakowania
@@ -1066,9 +1128,10 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($zabranieOpakowania, true), gettype($zabranieOpakowania)), __LINE__);
         }
         $this->zabranieOpakowania = $zabranieOpakowania;
-        
+
         return $this;
     }
+
     /**
      * Get wniesienie value
      * @return bool|null
@@ -1077,6 +1140,7 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
     {
         return $this->wniesienie;
     }
+
     /**
      * Set wniesienie value
      * @param bool $wniesienie
@@ -1089,9 +1153,10 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($wniesienie, true), gettype($wniesienie)), __LINE__);
         }
         $this->wniesienie = $wniesienie;
-        
+
         return $this;
     }
+
     /**
      * Get awizoSMS value
      * @return bool|null
@@ -1100,6 +1165,7 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
     {
         return $this->awizoSMS;
     }
+
     /**
      * Set awizoSMS value
      * @param bool $awizoSMS
@@ -1112,7 +1178,7 @@ class PrzesylkaPaletowaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($awizoSMS, true), gettype($awizoSMS)), __LINE__);
         }
         $this->awizoSMS = $awizoSMS;
-        
+
         return $this;
     }
 }

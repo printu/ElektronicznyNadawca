@@ -70,6 +70,7 @@ class ParcelContentType extends AbstractStructBase
      * @var string|null
      */
     protected ?string $guid = null;
+
     /**
      * Constructor method for parcelContentType
      * @uses ParcelContentType::setIdParcelContent()
@@ -95,6 +96,7 @@ class ParcelContentType extends AbstractStructBase
             ->setIdKarta($idKarta)
             ->setGuid($guid);
     }
+
     /**
      * Get IdParcelContent value
      * @return int|null
@@ -103,6 +105,7 @@ class ParcelContentType extends AbstractStructBase
     {
         return $this->IdParcelContent;
     }
+
     /**
      * Set IdParcelContent value
      * @param int $idParcelContent
@@ -115,9 +118,10 @@ class ParcelContentType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($idParcelContent, true), gettype($idParcelContent)), __LINE__);
         }
         $this->IdParcelContent = $idParcelContent;
-        
+
         return $this;
     }
+
     /**
      * Get order value
      * @return int|null
@@ -126,6 +130,7 @@ class ParcelContentType extends AbstractStructBase
     {
         return $this->order;
     }
+
     /**
      * Set order value
      * @param int $order
@@ -138,9 +143,10 @@ class ParcelContentType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($order, true), gettype($order)), __LINE__);
         }
         $this->order = $order;
-        
+
         return $this;
     }
+
     /**
      * Get name value
      * @return string|null
@@ -149,6 +155,7 @@ class ParcelContentType extends AbstractStructBase
     {
         return $this->name;
     }
+
     /**
      * Set name value
      * @param string $name
@@ -165,9 +172,10 @@ class ParcelContentType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 50', mb_strlen((string) $name)), __LINE__);
         }
         $this->name = $name;
-        
+
         return $this;
     }
+
     /**
      * Get description value
      * @return string|null
@@ -176,6 +184,7 @@ class ParcelContentType extends AbstractStructBase
     {
         return $this->description;
     }
+
     /**
      * Set description value
      * @param string $description
@@ -192,9 +201,10 @@ class ParcelContentType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 200', mb_strlen((string) $description)), __LINE__);
         }
         $this->description = $description;
-        
+
         return $this;
     }
+
     /**
      * Get idKarta value
      * @return int|null
@@ -203,6 +213,7 @@ class ParcelContentType extends AbstractStructBase
     {
         return $this->idKarta;
     }
+
     /**
      * Set idKarta value
      * @param int $idKarta
@@ -215,9 +226,10 @@ class ParcelContentType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($idKarta, true), gettype($idKarta)), __LINE__);
         }
         $this->idKarta = $idKarta;
-        
+
         return $this;
     }
+
     /**
      * Get guid value
      * @return string|null
@@ -226,6 +238,7 @@ class ParcelContentType extends AbstractStructBase
     {
         return $this->guid;
     }
+
     /**
      * Set guid value
      * @param string $guid
@@ -242,7 +255,7 @@ class ParcelContentType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 32', mb_strlen((string) $guid)), __LINE__);
         }
         $this->guid = $guid;
-        
+
         return $this;
     }
 }

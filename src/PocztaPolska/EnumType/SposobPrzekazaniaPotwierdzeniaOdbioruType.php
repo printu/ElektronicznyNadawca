@@ -16,57 +16,58 @@ class SposobPrzekazaniaPotwierdzeniaOdbioruType extends AbstractStructEnumBase
      * Constant for value 'MIEJSKI_DO_3H_DO_5KM'
      * @return string 'MIEJSKI_DO_3H_DO_5KM'
      */
-    const VALUE_MIEJSKI_DO_3_H_DO_5_KM = 'MIEJSKI_DO_3H_DO_5KM';
+    public const VALUE_MIEJSKI_DO_3_H_DO_5_KM = 'MIEJSKI_DO_3H_DO_5KM';
     /**
      * Constant for value 'MIEJSKI_DO_3H_DO_10KM'
      * @return string 'MIEJSKI_DO_3H_DO_10KM'
      */
-    const VALUE_MIEJSKI_DO_3_H_DO_10_KM = 'MIEJSKI_DO_3H_DO_10KM';
+    public const VALUE_MIEJSKI_DO_3_H_DO_10_KM = 'MIEJSKI_DO_3H_DO_10KM';
     /**
      * Constant for value 'MIEJSKI_DO_3H_DO_15KM'
      * @return string 'MIEJSKI_DO_3H_DO_15KM'
      */
-    const VALUE_MIEJSKI_DO_3_H_DO_15_KM = 'MIEJSKI_DO_3H_DO_15KM';
+    public const VALUE_MIEJSKI_DO_3_H_DO_15_KM = 'MIEJSKI_DO_3H_DO_15KM';
     /**
      * Constant for value 'MIEJSKI_DO_3H_POWYZEJ_15KM'
      * @return string 'MIEJSKI_DO_3H_POWYZEJ_15KM'
      */
-    const VALUE_MIEJSKI_DO_3_H_POWYZEJ_15_KM = 'MIEJSKI_DO_3H_POWYZEJ_15KM';
+    public const VALUE_MIEJSKI_DO_3_H_POWYZEJ_15_KM = 'MIEJSKI_DO_3H_POWYZEJ_15KM';
     /**
      * Constant for value 'MIEJSKI_DO_4H_DO_10KM'
      * @return string 'MIEJSKI_DO_4H_DO_10KM'
      */
-    const VALUE_MIEJSKI_DO_4_H_DO_10_KM = 'MIEJSKI_DO_4H_DO_10KM';
+    public const VALUE_MIEJSKI_DO_4_H_DO_10_KM = 'MIEJSKI_DO_4H_DO_10KM';
     /**
      * Constant for value 'MIEJSKI_DO_4H_DO_15KM'
      * @return string 'MIEJSKI_DO_4H_DO_15KM'
      */
-    const VALUE_MIEJSKI_DO_4_H_DO_15_KM = 'MIEJSKI_DO_4H_DO_15KM';
+    public const VALUE_MIEJSKI_DO_4_H_DO_15_KM = 'MIEJSKI_DO_4H_DO_15KM';
     /**
      * Constant for value 'MIEJSKI_DO_4H_DO_20KM'
      * @return string 'MIEJSKI_DO_4H_DO_20KM'
      */
-    const VALUE_MIEJSKI_DO_4_H_DO_20_KM = 'MIEJSKI_DO_4H_DO_20KM';
+    public const VALUE_MIEJSKI_DO_4_H_DO_20_KM = 'MIEJSKI_DO_4H_DO_20KM';
     /**
      * Constant for value 'MIEJSKI_DO_4H_DO_30KM'
      * @return string 'MIEJSKI_DO_4H_DO_30KM'
      */
-    const VALUE_MIEJSKI_DO_4_H_DO_30_KM = 'MIEJSKI_DO_4H_DO_30KM';
+    public const VALUE_MIEJSKI_DO_4_H_DO_30_KM = 'MIEJSKI_DO_4H_DO_30KM';
     /**
      * Constant for value 'MIEJSKI_DO_4H_DO_40KM'
      * @return string 'MIEJSKI_DO_4H_DO_40KM'
      */
-    const VALUE_MIEJSKI_DO_4_H_DO_40_KM = 'MIEJSKI_DO_4H_DO_40KM';
+    public const VALUE_MIEJSKI_DO_4_H_DO_40_KM = 'MIEJSKI_DO_4H_DO_40KM';
     /**
      * Constant for value 'EKSPRES24'
      * @return string 'EKSPRES24'
      */
-    const VALUE_EKSPRES_24 = 'EKSPRES24';
+    public const VALUE_EKSPRES_24 = 'EKSPRES24';
     /**
      * Constant for value 'LIST_ZWYKLY'
      * @return string 'LIST_ZWYKLY'
      */
-    const VALUE_LIST_ZWYKLY = 'LIST_ZWYKLY';
+    public const VALUE_LIST_ZWYKLY = 'LIST_ZWYKLY';
+
     /**
      * Return allowed values
      * @uses self::VALUE_MIEJSKI_DO_3_H_DO_5_KM

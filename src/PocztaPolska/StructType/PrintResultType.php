@@ -33,6 +33,7 @@ class PrintResultType extends AbstractStructBase
      * @var string|null
      */
     protected ?string $print = null;
+
     /**
      * Constructor method for PrintResultType
      * @uses PrintResultType::setGuid()
@@ -46,6 +47,7 @@ class PrintResultType extends AbstractStructBase
             ->setGuid($guid)
             ->setPrint($print);
     }
+
     /**
      * Get guid value
      * @return string|null
@@ -54,6 +56,7 @@ class PrintResultType extends AbstractStructBase
     {
         return $this->guid;
     }
+
     /**
      * Set guid value
      * @param string $guid
@@ -70,9 +73,10 @@ class PrintResultType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 32', mb_strlen((string) $guid)), __LINE__);
         }
         $this->guid = $guid;
-        
+
         return $this;
     }
+
     /**
      * Get print value
      * @return string|null
@@ -81,6 +85,7 @@ class PrintResultType extends AbstractStructBase
     {
         return $this->print;
     }
+
     /**
      * Set print value
      * @param string $print
@@ -93,7 +98,7 @@ class PrintResultType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($print, true), gettype($print)), __LINE__);
         }
         $this->print = $print;
-        
+
         return $this;
     }
 }

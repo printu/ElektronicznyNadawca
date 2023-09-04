@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace PocztaPolska\StructType;
 
 use InvalidArgumentException;
-use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for przesylkaHandlowaType StructType
@@ -33,6 +32,7 @@ class PrzesylkaHandlowaType extends PrzesylkaRejestrowanaType
      * @var int|null
      */
     protected ?int $masa = null;
+
     /**
      * Constructor method for przesylkaHandlowaType
      * @uses PrzesylkaHandlowaType::setPosteRestante()
@@ -46,6 +46,7 @@ class PrzesylkaHandlowaType extends PrzesylkaRejestrowanaType
             ->setPosteRestante($posteRestante)
             ->setMasa($masa);
     }
+
     /**
      * Get posteRestante value
      * @return bool|null
@@ -54,6 +55,7 @@ class PrzesylkaHandlowaType extends PrzesylkaRejestrowanaType
     {
         return $this->posteRestante;
     }
+
     /**
      * Set posteRestante value
      * @param bool $posteRestante
@@ -66,9 +68,10 @@ class PrzesylkaHandlowaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($posteRestante, true), gettype($posteRestante)), __LINE__);
         }
         $this->posteRestante = $posteRestante;
-        
+
         return $this;
     }
+
     /**
      * Get masa value
      * @return int|null
@@ -77,6 +80,7 @@ class PrzesylkaHandlowaType extends PrzesylkaRejestrowanaType
     {
         return $this->masa;
     }
+
     /**
      * Set masa value
      * @param int $masa
@@ -97,7 +101,7 @@ class PrzesylkaHandlowaType extends PrzesylkaRejestrowanaType
             throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 1', var_export($masa, true)), __LINE__);
         }
         $this->masa = $masa;
-        
+
         return $this;
     }
 }

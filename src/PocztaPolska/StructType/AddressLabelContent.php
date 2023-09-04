@@ -29,6 +29,7 @@ class AddressLabelContent extends AbstractStructBase
      * @var string|null
      */
     protected ?string $guid = null;
+
     /**
      * Constructor method for addressLabelContent
      * @uses AddressLabelContent::setPdfContent()
@@ -45,6 +46,7 @@ class AddressLabelContent extends AbstractStructBase
             ->setNrNadania($nrNadania)
             ->setGuid($guid);
     }
+
     /**
      * Get pdfContent value
      * @return string|null
@@ -53,6 +55,7 @@ class AddressLabelContent extends AbstractStructBase
     {
         return $this->pdfContent;
     }
+
     /**
      * Set pdfContent value
      * @param string $pdfContent
@@ -65,9 +68,10 @@ class AddressLabelContent extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($pdfContent, true), gettype($pdfContent)), __LINE__);
         }
         $this->pdfContent = $pdfContent;
-        
+
         return $this;
     }
+
     /**
      * Get nrNadania value
      * @return string|null
@@ -76,6 +80,7 @@ class AddressLabelContent extends AbstractStructBase
     {
         return $this->nrNadania;
     }
+
     /**
      * Set nrNadania value
      * @param string $nrNadania
@@ -88,9 +93,10 @@ class AddressLabelContent extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($nrNadania, true), gettype($nrNadania)), __LINE__);
         }
         $this->nrNadania = $nrNadania;
-        
+
         return $this;
     }
+
     /**
      * Get guid value
      * @return string|null
@@ -99,6 +105,7 @@ class AddressLabelContent extends AbstractStructBase
     {
         return $this->guid;
     }
+
     /**
      * Set guid value
      * @param string $guid
@@ -111,7 +118,7 @@ class AddressLabelContent extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($guid, true), gettype($guid)), __LINE__);
         }
         $this->guid = $guid;
-        
+
         return $this;
     }
 }

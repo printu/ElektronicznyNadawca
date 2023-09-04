@@ -29,6 +29,7 @@ class ZwrotType extends AbstractStructBase
      * @var string|null
      */
     protected ?string $sposobZwrotu = null;
+
     /**
      * Constructor method for zwrotType
      * @uses ZwrotType::setZwrotPoLiczbieDni()
@@ -45,6 +46,7 @@ class ZwrotType extends AbstractStructBase
             ->setTraktowacJakPorzucona($traktowacJakPorzucona)
             ->setSposobZwrotu($sposobZwrotu);
     }
+
     /**
      * Get zwrotPoLiczbieDni value
      * @return int|null
@@ -53,6 +55,7 @@ class ZwrotType extends AbstractStructBase
     {
         return $this->zwrotPoLiczbieDni;
     }
+
     /**
      * Set zwrotPoLiczbieDni value
      * @param int $zwrotPoLiczbieDni
@@ -65,9 +68,10 @@ class ZwrotType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($zwrotPoLiczbieDni, true), gettype($zwrotPoLiczbieDni)), __LINE__);
         }
         $this->zwrotPoLiczbieDni = $zwrotPoLiczbieDni;
-        
+
         return $this;
     }
+
     /**
      * Get traktowacJakPorzucona value
      * @return bool|null
@@ -76,6 +80,7 @@ class ZwrotType extends AbstractStructBase
     {
         return $this->traktowacJakPorzucona;
     }
+
     /**
      * Set traktowacJakPorzucona value
      * @param bool $traktowacJakPorzucona
@@ -88,9 +93,10 @@ class ZwrotType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($traktowacJakPorzucona, true), gettype($traktowacJakPorzucona)), __LINE__);
         }
         $this->traktowacJakPorzucona = $traktowacJakPorzucona;
-        
+
         return $this;
     }
+
     /**
      * Get sposobZwrotu value
      * @return string|null
@@ -99,6 +105,7 @@ class ZwrotType extends AbstractStructBase
     {
         return $this->sposobZwrotu;
     }
+
     /**
      * Set sposobZwrotu value
      * @uses \PocztaPolska\EnumType\SposobZwrotuType::valueIsValid()
@@ -114,7 +121,7 @@ class ZwrotType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\SposobZwrotuType', is_array($sposobZwrotu) ? implode(', ', $sposobZwrotu) : var_export($sposobZwrotu, true), implode(', ', \PocztaPolska\EnumType\SposobZwrotuType::getValidValues())), __LINE__);
         }
         $this->sposobZwrotu = $sposobZwrotu;
-        
+
         return $this;
     }
 }

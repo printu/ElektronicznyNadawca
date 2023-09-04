@@ -96,6 +96,7 @@ class ReklamowanaPrzesylkaType extends AbstractStructBase
      * @var int|null
      */
     protected ?int $oczekiwaneOdszkodowanie = null;
+
     /**
      * Constructor method for reklamowanaPrzesylkaType
      * @uses ReklamowanaPrzesylkaType::setPrzesylka()
@@ -136,6 +137,7 @@ class ReklamowanaPrzesylkaType extends AbstractStructBase
             ->setOplata($oplata)
             ->setOczekiwaneOdszkodowanie($oczekiwaneOdszkodowanie);
     }
+
     /**
      * Get przesylka value
      * @return \PocztaPolska\StructType\PrzesylkaType
@@ -144,6 +146,7 @@ class ReklamowanaPrzesylkaType extends AbstractStructBase
     {
         return $this->przesylka;
     }
+
     /**
      * Set przesylka value
      * @param \PocztaPolska\StructType\PrzesylkaType $przesylka
@@ -152,9 +155,10 @@ class ReklamowanaPrzesylkaType extends AbstractStructBase
     public function setPrzesylka(\PocztaPolska\StructType\PrzesylkaType $przesylka): self
     {
         $this->przesylka = $przesylka;
-        
+
         return $this;
     }
+
     /**
      * Get powodReklamacji value
      * @return \PocztaPolska\StructType\PowodReklamacjiType
@@ -163,6 +167,7 @@ class ReklamowanaPrzesylkaType extends AbstractStructBase
     {
         return $this->powodReklamacji;
     }
+
     /**
      * Set powodReklamacji value
      * @param \PocztaPolska\StructType\PowodReklamacjiType $powodReklamacji
@@ -171,9 +176,10 @@ class ReklamowanaPrzesylkaType extends AbstractStructBase
     public function setPowodReklamacji(\PocztaPolska\StructType\PowodReklamacjiType $powodReklamacji): self
     {
         $this->powodReklamacji = $powodReklamacji;
-        
+
         return $this;
     }
+
     /**
      * Get dataNadania value
      * @return string
@@ -182,6 +188,7 @@ class ReklamowanaPrzesylkaType extends AbstractStructBase
     {
         return $this->dataNadania;
     }
+
     /**
      * Set dataNadania value
      * @param string $dataNadania
@@ -194,9 +201,10 @@ class ReklamowanaPrzesylkaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($dataNadania, true), gettype($dataNadania)), __LINE__);
         }
         $this->dataNadania = $dataNadania;
-        
+
         return $this;
     }
+
     /**
      * Get nrb value
      * @return string|null
@@ -205,6 +213,7 @@ class ReklamowanaPrzesylkaType extends AbstractStructBase
     {
         return $this->nrb;
     }
+
     /**
      * Set nrb value
      * @param string $nrb
@@ -225,9 +234,10 @@ class ReklamowanaPrzesylkaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 0', mb_strlen((string) $nrb)), __LINE__);
         }
         $this->nrb = $nrb;
-        
+
         return $this;
     }
+
     /**
      * Get numerFaktury value
      * @return string|null
@@ -236,6 +246,7 @@ class ReklamowanaPrzesylkaType extends AbstractStructBase
     {
         return $this->numerFaktury;
     }
+
     /**
      * Set numerFaktury value
      * @param string $numerFaktury
@@ -256,9 +267,10 @@ class ReklamowanaPrzesylkaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 0', mb_strlen((string) $numerFaktury)), __LINE__);
         }
         $this->numerFaktury = $numerFaktury;
-        
+
         return $this;
     }
+
     /**
      * Get ezgoda value
      * @return bool|null
@@ -267,6 +279,7 @@ class ReklamowanaPrzesylkaType extends AbstractStructBase
     {
         return $this->ezgoda;
     }
+
     /**
      * Set ezgoda value
      * @param bool $ezgoda
@@ -279,9 +292,10 @@ class ReklamowanaPrzesylkaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($ezgoda, true), gettype($ezgoda)), __LINE__);
         }
         $this->ezgoda = $ezgoda;
-        
+
         return $this;
     }
+
     /**
      * Get urzadNadania value
      * @return int|null
@@ -290,6 +304,7 @@ class ReklamowanaPrzesylkaType extends AbstractStructBase
     {
         return $this->urzadNadania;
     }
+
     /**
      * Set urzadNadania value
      * @param int $urzadNadania
@@ -302,9 +317,10 @@ class ReklamowanaPrzesylkaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($urzadNadania, true), gettype($urzadNadania)), __LINE__);
         }
         $this->urzadNadania = $urzadNadania;
-        
+
         return $this;
     }
+
     /**
      * Get powodReklamacjiOpis value
      * @return string|null
@@ -313,6 +329,7 @@ class ReklamowanaPrzesylkaType extends AbstractStructBase
     {
         return $this->powodReklamacjiOpis;
     }
+
     /**
      * Set powodReklamacjiOpis value
      * @param string $powodReklamacjiOpis
@@ -325,9 +342,10 @@ class ReklamowanaPrzesylkaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($powodReklamacjiOpis, true), gettype($powodReklamacjiOpis)), __LINE__);
         }
         $this->powodReklamacjiOpis = $powodReklamacjiOpis;
-        
+
         return $this;
     }
+
     /**
      * Get odszkodowanie value
      * @return int|null
@@ -336,6 +354,7 @@ class ReklamowanaPrzesylkaType extends AbstractStructBase
     {
         return $this->odszkodowanie;
     }
+
     /**
      * Set odszkodowanie value
      * @param int $odszkodowanie
@@ -348,9 +367,10 @@ class ReklamowanaPrzesylkaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($odszkodowanie, true), gettype($odszkodowanie)), __LINE__);
         }
         $this->odszkodowanie = $odszkodowanie;
-        
+
         return $this;
     }
+
     /**
      * Get oplata value
      * @return int|null
@@ -359,6 +379,7 @@ class ReklamowanaPrzesylkaType extends AbstractStructBase
     {
         return $this->oplata;
     }
+
     /**
      * Set oplata value
      * @param int $oplata
@@ -371,9 +392,10 @@ class ReklamowanaPrzesylkaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($oplata, true), gettype($oplata)), __LINE__);
         }
         $this->oplata = $oplata;
-        
+
         return $this;
     }
+
     /**
      * Get oczekiwaneOdszkodowanie value
      * @return int|null
@@ -382,6 +404,7 @@ class ReklamowanaPrzesylkaType extends AbstractStructBase
     {
         return $this->oczekiwaneOdszkodowanie;
     }
+
     /**
      * Set oczekiwaneOdszkodowanie value
      * @param int $oczekiwaneOdszkodowanie
@@ -394,7 +417,7 @@ class ReklamowanaPrzesylkaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($oczekiwaneOdszkodowanie, true), gettype($oczekiwaneOdszkodowanie)), __LINE__);
         }
         $this->oczekiwaneOdszkodowanie = $oczekiwaneOdszkodowanie;
-        
+
         return $this;
     }
 }

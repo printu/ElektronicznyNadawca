@@ -22,6 +22,7 @@ class GetPlacowkaPocztowaResponse extends AbstractStructBase
      * @var \PocztaPolska\StructType\PlacowkaPocztowaType[]
      */
     protected array $placowka;
+
     /**
      * Constructor method for getPlacowkaPocztowaResponse
      * @uses GetPlacowkaPocztowaResponse::setPlacowka()
@@ -32,6 +33,7 @@ class GetPlacowkaPocztowaResponse extends AbstractStructBase
         $this
             ->setPlacowka($placowka);
     }
+
     /**
      * Get placowka value
      * @return \PocztaPolska\StructType\PlacowkaPocztowaType[]
@@ -40,6 +42,7 @@ class GetPlacowkaPocztowaResponse extends AbstractStructBase
     {
         return $this->placowka;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setPlacowka method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPlacowka method
@@ -64,9 +67,10 @@ class GetPlacowkaPocztowaResponse extends AbstractStructBase
             $message = sprintf('The placowka property can only contain items of type \PocztaPolska\StructType\PlacowkaPocztowaType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set placowka value
      * @throws InvalidArgumentException
@@ -84,9 +88,10 @@ class GetPlacowkaPocztowaResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 5000', count($placowka)), __LINE__);
         }
         $this->placowka = $placowka;
-        
+
         return $this;
     }
+
     /**
      * Add item to placowka value
      * @throws InvalidArgumentException
@@ -104,7 +109,7 @@ class GetPlacowkaPocztowaResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 5000', count($this->placowka)), __LINE__);
         }
         $this->placowka[] = $item;
-        
+
         return $this;
     }
 }

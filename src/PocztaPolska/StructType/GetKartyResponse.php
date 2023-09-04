@@ -30,6 +30,7 @@ class GetKartyResponse extends AbstractStructBase
      * @var \PocztaPolska\StructType\ErrorType[]
      */
     protected ?array $error = null;
+
     /**
      * Constructor method for getKartyResponse
      * @uses GetKartyResponse::setKarta()
@@ -43,6 +44,7 @@ class GetKartyResponse extends AbstractStructBase
             ->setKarta($karta)
             ->setError($error);
     }
+
     /**
      * Get karta value
      * @return \PocztaPolska\StructType\KartaType[]
@@ -51,6 +53,7 @@ class GetKartyResponse extends AbstractStructBase
     {
         return $this->karta;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setKarta method
      * This method is willingly generated in order to preserve the one-line inline validation within the setKarta method
@@ -75,9 +78,10 @@ class GetKartyResponse extends AbstractStructBase
             $message = sprintf('The karta property can only contain items of type \PocztaPolska\StructType\KartaType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set karta value
      * @throws InvalidArgumentException
@@ -91,9 +95,10 @@ class GetKartyResponse extends AbstractStructBase
             throw new InvalidArgumentException($kartaArrayErrorMessage, __LINE__);
         }
         $this->karta = $karta;
-        
+
         return $this;
     }
+
     /**
      * Add item to karta value
      * @throws InvalidArgumentException
@@ -107,9 +112,10 @@ class GetKartyResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The karta property can only contain items of type \PocztaPolska\StructType\KartaType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->karta[] = $item;
-        
+
         return $this;
     }
+
     /**
      * Get error value
      * @return \PocztaPolska\StructType\ErrorType[]
@@ -118,6 +124,7 @@ class GetKartyResponse extends AbstractStructBase
     {
         return $this->error;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setError method
      * This method is willingly generated in order to preserve the one-line inline validation within the setError method
@@ -142,9 +149,10 @@ class GetKartyResponse extends AbstractStructBase
             $message = sprintf('The error property can only contain items of type \PocztaPolska\StructType\ErrorType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set error value
      * @throws InvalidArgumentException
@@ -158,9 +166,10 @@ class GetKartyResponse extends AbstractStructBase
             throw new InvalidArgumentException($errorArrayErrorMessage, __LINE__);
         }
         $this->error = $error;
-        
+
         return $this;
     }
+
     /**
      * Add item to error value
      * @throws InvalidArgumentException
@@ -174,7 +183,7 @@ class GetKartyResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The error property can only contain items of type \PocztaPolska\StructType\ErrorType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->error[] = $item;
-        
+
         return $this;
     }
 }

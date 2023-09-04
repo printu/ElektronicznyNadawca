@@ -16,17 +16,18 @@ class FunkcjaPlacowkiPocztowejType extends AbstractStructEnumBase
      * Constant for value 'NADAWCZA'
      * @return string 'NADAWCZA'
      */
-    const VALUE_NADAWCZA = 'NADAWCZA';
+    public const VALUE_NADAWCZA = 'NADAWCZA';
     /**
      * Constant for value 'ODDAWCZA'
      * @return string 'ODDAWCZA'
      */
-    const VALUE_ODDAWCZA = 'ODDAWCZA';
+    public const VALUE_ODDAWCZA = 'ODDAWCZA';
     /**
      * Constant for value 'NADAWCZO-ODDAWCZA'
      * @return string 'NADAWCZO-ODDAWCZA'
      */
-    const VALUE_NADAWCZO_ODDAWCZA = 'NADAWCZO-ODDAWCZA';
+    public const VALUE_NADAWCZO_ODDAWCZA = 'NADAWCZO-ODDAWCZA';
+
     /**
      * Return allowed values
      * @uses self::VALUE_NADAWCZA

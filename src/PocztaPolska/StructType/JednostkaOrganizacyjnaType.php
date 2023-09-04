@@ -68,6 +68,7 @@ class JednostkaOrganizacyjnaType extends AbstractStructBase
      * @var string|null
      */
     protected ?string $mpk = null;
+
     /**
      * Constructor method for jednostkaOrganizacyjnaType
      * @uses JednostkaOrganizacyjnaType::setAccount()
@@ -96,6 +97,7 @@ class JednostkaOrganizacyjnaType extends AbstractStructBase
             ->setOpis($opis)
             ->setMpk($mpk);
     }
+
     /**
      * Get account value
      * @return \PocztaPolska\StructType\AccountType[]
@@ -104,6 +106,7 @@ class JednostkaOrganizacyjnaType extends AbstractStructBase
     {
         return $this->account;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setAccount method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAccount method
@@ -128,9 +131,10 @@ class JednostkaOrganizacyjnaType extends AbstractStructBase
             $message = sprintf('The account property can only contain items of type \PocztaPolska\StructType\AccountType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set account value
      * @throws InvalidArgumentException
@@ -144,9 +148,10 @@ class JednostkaOrganizacyjnaType extends AbstractStructBase
             throw new InvalidArgumentException($accountArrayErrorMessage, __LINE__);
         }
         $this->account = $account;
-        
+
         return $this;
     }
+
     /**
      * Add item to account value
      * @throws InvalidArgumentException
@@ -160,9 +165,10 @@ class JednostkaOrganizacyjnaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The account property can only contain items of type \PocztaPolska\StructType\AccountType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->account[] = $item;
-        
+
         return $this;
     }
+
     /**
      * Get jednostkaNadrzedna value
      * @return \PocztaPolska\StructType\JednostkaOrganizacyjnaType|null
@@ -171,6 +177,7 @@ class JednostkaOrganizacyjnaType extends AbstractStructBase
     {
         return $this->jednostkaNadrzedna;
     }
+
     /**
      * Set jednostkaNadrzedna value
      * @param \PocztaPolska\StructType\JednostkaOrganizacyjnaType $jednostkaNadrzedna
@@ -179,9 +186,10 @@ class JednostkaOrganizacyjnaType extends AbstractStructBase
     public function setJednostkaNadrzedna(?\PocztaPolska\StructType\JednostkaOrganizacyjnaType $jednostkaNadrzedna = null): self
     {
         $this->jednostkaNadrzedna = $jednostkaNadrzedna;
-        
+
         return $this;
     }
+
     /**
      * Get rodzajPrzypisania value
      * @return string[]
@@ -190,6 +198,7 @@ class JednostkaOrganizacyjnaType extends AbstractStructBase
     {
         return $this->rodzajPrzypisania;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setRodzajPrzypisania method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRodzajPrzypisania method
@@ -214,9 +223,10 @@ class JednostkaOrganizacyjnaType extends AbstractStructBase
             $message = sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PocztaPolska\EnumType\RodzajPrzypisaniaDoJednostkiEnum', is_array($invalidValues) ? implode(', ', $invalidValues) : var_export($invalidValues, true), implode(', ', \PocztaPolska\EnumType\RodzajPrzypisaniaDoJednostkiEnum::getValidValues()));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set rodzajPrzypisania value
      * @uses \PocztaPolska\EnumType\RodzajPrzypisaniaDoJednostkiEnum::valueIsValid()
@@ -236,9 +246,10 @@ class JednostkaOrganizacyjnaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 2', count($rodzajPrzypisania)), __LINE__);
         }
         $this->rodzajPrzypisania = $rodzajPrzypisania;
-        
+
         return $this;
     }
+
     /**
      * Add item to rodzajPrzypisania value
      * @uses \PocztaPolska\EnumType\RodzajPrzypisaniaDoJednostkiEnum::valueIsValid()
@@ -258,9 +269,10 @@ class JednostkaOrganizacyjnaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 2', count($this->rodzajPrzypisania)), __LINE__);
         }
         $this->rodzajPrzypisania[] = $item;
-        
+
         return $this;
     }
+
     /**
      * Get id value
      * @return int|null
@@ -269,6 +281,7 @@ class JednostkaOrganizacyjnaType extends AbstractStructBase
     {
         return $this->id;
     }
+
     /**
      * Set id value
      * @param int $id
@@ -281,9 +294,10 @@ class JednostkaOrganizacyjnaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($id, true), gettype($id)), __LINE__);
         }
         $this->id = $id;
-        
+
         return $this;
     }
+
     /**
      * Get nazwa value
      * @return string|null
@@ -292,6 +306,7 @@ class JednostkaOrganizacyjnaType extends AbstractStructBase
     {
         return $this->nazwa;
     }
+
     /**
      * Set nazwa value
      * @param string $nazwa
@@ -312,9 +327,10 @@ class JednostkaOrganizacyjnaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $nazwa)), __LINE__);
         }
         $this->nazwa = $nazwa;
-        
+
         return $this;
     }
+
     /**
      * Get opis value
      * @return string|null
@@ -323,6 +339,7 @@ class JednostkaOrganizacyjnaType extends AbstractStructBase
     {
         return $this->opis;
     }
+
     /**
      * Set opis value
      * @param string $opis
@@ -343,9 +360,10 @@ class JednostkaOrganizacyjnaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 0', mb_strlen((string) $opis)), __LINE__);
         }
         $this->opis = $opis;
-        
+
         return $this;
     }
+
     /**
      * Get mpk value
      * @return string|null
@@ -354,6 +372,7 @@ class JednostkaOrganizacyjnaType extends AbstractStructBase
     {
         return $this->mpk;
     }
+
     /**
      * Set mpk value
      * @param string $mpk
@@ -366,7 +385,7 @@ class JednostkaOrganizacyjnaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($mpk, true), gettype($mpk)), __LINE__);
         }
         $this->mpk = $mpk;
-        
+
         return $this;
     }
 }

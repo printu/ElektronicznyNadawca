@@ -22,6 +22,7 @@ class GetReklamacjeResponse extends AbstractStructBase
      * @var \PocztaPolska\StructType\ReklamacjaRozpatrzonaType[]
      */
     protected ?array $reklamacja = null;
+
     /**
      * Constructor method for getReklamacjeResponse
      * @uses GetReklamacjeResponse::setReklamacja()
@@ -32,6 +33,7 @@ class GetReklamacjeResponse extends AbstractStructBase
         $this
             ->setReklamacja($reklamacja);
     }
+
     /**
      * Get reklamacja value
      * @return \PocztaPolska\StructType\ReklamacjaRozpatrzonaType[]
@@ -40,6 +42,7 @@ class GetReklamacjeResponse extends AbstractStructBase
     {
         return $this->reklamacja;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setReklamacja method
      * This method is willingly generated in order to preserve the one-line inline validation within the setReklamacja method
@@ -64,9 +67,10 @@ class GetReklamacjeResponse extends AbstractStructBase
             $message = sprintf('The reklamacja property can only contain items of type \PocztaPolska\StructType\ReklamacjaRozpatrzonaType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set reklamacja value
      * @throws InvalidArgumentException
@@ -80,9 +84,10 @@ class GetReklamacjeResponse extends AbstractStructBase
             throw new InvalidArgumentException($reklamacjaArrayErrorMessage, __LINE__);
         }
         $this->reklamacja = $reklamacja;
-        
+
         return $this;
     }
+
     /**
      * Add item to reklamacja value
      * @throws InvalidArgumentException
@@ -96,7 +101,7 @@ class GetReklamacjeResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The reklamacja property can only contain items of type \PocztaPolska\StructType\ReklamacjaRozpatrzonaType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->reklamacja[] = $item;
-        
+
         return $this;
     }
 }
