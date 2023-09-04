@@ -96,7 +96,7 @@ class GetPlacowkaPocztowa extends AbstractStructBase
     public function addToPni(int $item): self
     {
         // validation for constraint: itemType
-        if (!(is_int($item) || ctype_digit($item))) {
+        if (!is_int($item)) {
             throw new InvalidArgumentException(sprintf('The pni property can only contain items of type int, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: maxOccurs(5000)
