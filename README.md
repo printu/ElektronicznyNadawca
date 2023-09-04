@@ -2,7 +2,7 @@
 
 PHP bindings for the e-nadawca Poczta Polska (https://e-nadawca.poczta-polska.pl/).
 
-[API Documentation](https://e-nadawca.poczta-polska.pl/download/en_opis_webapi_w64_20190306.zip)
+[API Documentation](https://e-nadawca.poczta-polska.pl/download/en_webapi_v87_20230620.zip)
 
 ## Installation
 
@@ -13,7 +13,7 @@ In your composer.json file:
 ```js
 {
     "require": {
-        "printu/elektroniczny-nadawca": "^1.0.64"
+        "printu/elektroniczny-nadawca": "^2.0.87"
     }
 }
 ```
