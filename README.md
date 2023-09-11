@@ -20,6 +20,31 @@ In your composer.json file:
 
 Once the composer.json file is created you can run `composer install` for the initial package install and `composer update` to update to the latest version of the API client.
 
+## Example
+
+```php
+require_once __DIR__ . '/vendor/autoload.php';
+/**
+ * Minimal options
+ */
+$options = [
+    WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_URL => \PocztaPolska\EnumType\WsdlType::WSDL_FILE',
+    WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_CLASSMAP => \PocztaPolska\ClassMap::get(),
+];
+/**
+ * Samples for Service ServiceType
+ */
+$service = new \PocztaPolska\ServiceType\Service($options);
+/**
+ * Sample call for addShipment operation/method
+ */
+if ($service->addShipment(new \PocztaPolska\StructType\AddShipment()) !== false) {
+    print_r($service->getResult());
+} else {
+    print_r($service->getLastError());
+}
+```
+
 ## License
 
 MIT license. See the [LICENSE](LICENSE) file for more details.

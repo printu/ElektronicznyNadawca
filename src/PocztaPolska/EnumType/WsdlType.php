@@ -9,6 +9,6 @@ namespace PocztaPolska\EnumType;
  */
 class WsdlType
 {
-    const WSDL_FILE = 'wsdl/en.wsdl';
-    const WSDL_TEST_FILE = 'wsdl/test/en.wsdl';
+    public const WSDL_FILE = './wsdl/en.wsdl';
+    public const WSDL_TEST_FILE = './wsdl/test/en.wsdl';
 }
