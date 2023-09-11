@@ -1,3 +1,9 @@
 .idea
 /vendor/
 bin/
+composer.lock
+.php-cs-fixer.cache
+/PocztaPolska
+*.phar
+/build
+psalm_cache

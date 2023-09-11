@@ -2,7 +2,7 @@
 
 PHP bindings for the e-nadawca Poczta Polska (https://e-nadawca.poczta-polska.pl/).
 
-[API Documentation](https://e-nadawca.poczta-polska.pl/download/en_opis_webapi_w64_20190306.zip)
+[API Documentation](https://e-nadawca.poczta-polska.pl/download/en_webapi_v87_20230620.zip)
 
 ## Installation
 
@@ -13,12 +13,37 @@ In your composer.json file:
 ```js
 {
     "require": {
-        "printu/elektroniczny-nadawca": "^1.0.64"
+        "printu/elektroniczny-nadawca": "^14.0.0"
     }
 }
 ```
 
 Once the composer.json file is created you can run `composer install` for the initial package install and `composer update` to update to the latest version of the API client.
+
+## Example
+
+```php
+require_once __DIR__ . '/vendor/autoload.php';
+/**
+ * Minimal options
+ */
+$options = [
+    WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_URL => \PocztaPolska\EnumType\WsdlType::WSDL_FILE,
+    WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_CLASSMAP => \PocztaPolska\ClassMap::get(),
+];
+/**
+ * Samples for Service ServiceType
+ */
+$service = new \PocztaPolska\ServiceType\Service($options);
+/**
+ * Sample call for addShipment operation/method
+ */
+if ($service->addShipment(new \PocztaPolska\StructType\AddShipment()) !== false) {
+    print_r($service->getResult());
+} else {
+    print_r($service->getLastError());
+}
+```
 
 ## License
 

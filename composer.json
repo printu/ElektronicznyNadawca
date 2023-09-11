@@ -15,17 +15,25 @@
     "authors": [
         {
             "name": "Paweł Krzaczkowski",
-            "email": "pawel@freshmind.pl",
+            "email": "pawel@printu.pl",
             "homepage": "https://github.com/krzaczek"
         }
     ],
     "minimum-stability": "stable",
     "require": {
-        "php": ">=5.4"
+        "php": "^7.4|^8.1",
+        "ext-soap": "*",
+        "wsdltophp/packagebase": "~5.0",
+        "wsdltophp/wssecurity": "~2.0"
     },
     "autoload": {
         "psr-4": {
             "PocztaPolska\\": "src/PocztaPolska"
         }
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.25",
+        "vimeo/psalm": "^5.15",
+        "wsdltophp/packagegenerator": "^4.1"
     }
 }
