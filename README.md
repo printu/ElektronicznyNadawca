@@ -13,7 +13,7 @@ In your composer.json file:
 ```js
 {
     "require": {
-        "printu/elektroniczny-nadawca": "^2.0.87"
+        "printu/elektroniczny-nadawca": "^14.0.0"
     }
 }
 ```
