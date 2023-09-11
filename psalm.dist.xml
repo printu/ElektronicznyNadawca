@@ -40,6 +40,10 @@
                 <directory name="src/"/>
             </errorLevel>
         </RedundantPropertyInitializationCheck>
-
+        <UndefinedAttributeClass>
+            <errorLevel type="suppress">
+                <directory name="src/"/>
+            </errorLevel>
+        </UndefinedAttributeClass>
     </issueHandlers>
 </psalm>
