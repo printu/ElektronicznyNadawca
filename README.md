@@ -27,9 +27,9 @@ require_once __DIR__ . '/vendor/autoload.php';
 /**
  * Minimal options
  */
-$reflector = new \ReflectionClass(WsdlType::class);
+$reflector = new \ReflectionClass(\PocztaPolska\EnumType\WsdlType::class);
 $options = [
-    WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_URL => realpath(dirname($reflector->getFileName()) . '/' . WsdlType::WSDL_FILE);
+    WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_URL => realpath(dirname($reflector->getFileName()) . '/' . \PocztaPolska\EnumType\WsdlType::WSDL_FILE);
     WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_CLASSMAP => \PocztaPolska\ClassMap::get(),
     WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_LOGIN = "login",
     WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_PASSWORD = "secret",
