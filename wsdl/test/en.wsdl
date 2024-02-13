@@ -2012,7 +2012,7 @@
             </xsd:element>
             <xsd:simpleType name="statusEPOEnum">
                 <xsd:restriction base="xsd:string">
-                    <xsd:enumeration value="ERROR"/>
+                    <xsd:enumeration value="NIEZNANY"/>
                     <xsd:enumeration value="NADANIE"/>
                     <xsd:enumeration value="W_TRANSPORCIE"/>
                     <xsd:enumeration value="CLO"/>
@@ -3254,6 +3254,7 @@
                 <xsd:attribute name="osobaRozpatrujaca"
                                type="xsd:string"/>
                 <xsd:attribute name="idReklamacja" type="xsd:string"/>
+                <xsd:attribute name="numerReklamacji" type="xsd:string"/>
             </xsd:complexType>
             <xsd:simpleType name="rozstrzygniecieType">
                 <xsd:restriction base="xsd:string">
@@ -7756,7 +7757,7 @@
     <wsdl:service name="ElektronicznyNadawca">
         <wsdl:port name="ENSoap" binding="tns:ENBinding">
             <soap:address
-                    location="https://en-testwebapi.poczta-polska.pl/websrv/en.php"/>
+                    location="https://e-nadawca.poczta-polska.pl/websrv/en.php"/>
         </wsdl:port>
     </wsdl:service>
 </wsdl:definitions>

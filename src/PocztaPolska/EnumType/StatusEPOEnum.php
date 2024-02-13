@@ -13,10 +13,10 @@ use WsdlToPhp\PackageBase\AbstractStructEnumBase;
 class StatusEPOEnum extends AbstractStructEnumBase
 {
     /**
-     * Constant for value 'ERROR'
-     * @return string 'ERROR'
+     * Constant for value 'NIEZNANY'
+     * @return string 'NIEZNANY'
      */
-    public const VALUE_ERROR = 'ERROR';
+    public const VALUE_NIEZNANY = 'NIEZNANY';
     /**
      * Constant for value 'NADANIE'
      * @return string 'NADANIE'
@@ -65,7 +65,7 @@ class StatusEPOEnum extends AbstractStructEnumBase
 
     /**
      * Return allowed values
-     * @uses self::VALUE_ERROR
+     * @uses self::VALUE_NIEZNANY
      * @uses self::VALUE_NADANIE
      * @uses self::VALUE_W_TRANSPORCIE
      * @uses self::VALUE_CLO
@@ -80,7 +80,7 @@ class StatusEPOEnum extends AbstractStructEnumBase
     public static function getValidValues(): array
     {
         return [
-            self::VALUE_ERROR,
+            self::VALUE_NIEZNANY,
             self::VALUE_NADANIE,
             self::VALUE_W_TRANSPORCIE,
             self::VALUE_CLO,
