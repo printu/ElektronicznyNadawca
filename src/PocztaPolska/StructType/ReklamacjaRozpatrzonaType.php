@@ -67,6 +67,11 @@ class ReklamacjaRozpatrzonaType extends AbstractStructBase
      * @var string|null
      */
     protected ?string $idReklamacja = null;
+    /**
+     * The numerReklamacji
+     * @var string|null
+     */
+    protected ?string $numerReklamacji = null;
 
     /**
      * Constructor method for reklamacjaRozpatrzonaType
@@ -79,6 +84,7 @@ class ReklamacjaRozpatrzonaType extends AbstractStructBase
      * @uses ReklamacjaRozpatrzonaType::setNazwaJednostkiRozpatrujacej()
      * @uses ReklamacjaRozpatrzonaType::setOsobaRozpatrujaca()
      * @uses ReklamacjaRozpatrzonaType::setIdReklamacja()
+     * @uses ReklamacjaRozpatrzonaType::setNumerReklamacji()
      * @param string $guid
      * @param string $numerNadania
      * @param string $rozstrzygniecie
@@ -88,8 +94,9 @@ class ReklamacjaRozpatrzonaType extends AbstractStructBase
      * @param string $nazwaJednostkiRozpatrujacej
      * @param string $osobaRozpatrujaca
      * @param string $idReklamacja
+     * @param string $numerReklamacji
      */
-    public function __construct(?string $guid = null, ?string $numerNadania = null, ?string $rozstrzygniecie = null, ?int $przyznaneOdszkodowanie = null, ?string $uzasadnienie = null, ?string $dataRozpatrzenia = null, ?string $nazwaJednostkiRozpatrujacej = null, ?string $osobaRozpatrujaca = null, ?string $idReklamacja = null)
+    public function __construct(?string $guid = null, ?string $numerNadania = null, ?string $rozstrzygniecie = null, ?int $przyznaneOdszkodowanie = null, ?string $uzasadnienie = null, ?string $dataRozpatrzenia = null, ?string $nazwaJednostkiRozpatrujacej = null, ?string $osobaRozpatrujaca = null, ?string $idReklamacja = null, ?string $numerReklamacji = null)
     {
         $this
             ->setGuid($guid)
@@ -100,7 +107,8 @@ class ReklamacjaRozpatrzonaType extends AbstractStructBase
             ->setDataRozpatrzenia($dataRozpatrzenia)
             ->setNazwaJednostkiRozpatrujacej($nazwaJednostkiRozpatrujacej)
             ->setOsobaRozpatrujaca($osobaRozpatrujaca)
-            ->setIdReklamacja($idReklamacja);
+            ->setIdReklamacja($idReklamacja)
+            ->setNumerReklamacji($numerReklamacji);
     }
 
     /**
@@ -339,6 +347,31 @@ class ReklamacjaRozpatrzonaType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($idReklamacja, true), gettype($idReklamacja)), __LINE__);
         }
         $this->idReklamacja = $idReklamacja;
+
+        return $this;
+    }
+
+    /**
+     * Get numerReklamacji value
+     * @return string|null
+     */
+    public function getNumerReklamacji(): ?string
+    {
+        return $this->numerReklamacji;
+    }
+
+    /**
+     * Set numerReklamacji value
+     * @param string $numerReklamacji
+     * @return \PocztaPolska\StructType\ReklamacjaRozpatrzonaType
+     */
+    public function setNumerReklamacji(?string $numerReklamacji = null): self
+    {
+        // validation for constraint: string
+        if (!is_null($numerReklamacji) && !is_string($numerReklamacji)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($numerReklamacji, true), gettype($numerReklamacji)), __LINE__);
+        }
+        $this->numerReklamacji = $numerReklamacji;
 
         return $this;
     }
