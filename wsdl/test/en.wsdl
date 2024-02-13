@@ -7757,7 +7757,7 @@
     <wsdl:service name="ElektronicznyNadawca">
         <wsdl:port name="ENSoap" binding="tns:ENBinding">
             <soap:address
-                    location="https://e-nadawca.poczta-polska.pl/websrv/en.php"/>
+                    location="https://en-testwebapi.poczta-polska.pl/websrv/en.php"/>
         </wsdl:port>
     </wsdl:service>
 </wsdl:definitions>
